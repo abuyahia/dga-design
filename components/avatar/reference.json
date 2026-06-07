@@ -1,0 +1,105 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "avatar",
+    "description": "دائرة أو مربع يمثّل المستخدم — صورة، أحرف أولى، أو أيقونة افتراضية."
+  },
+  "axes": ["type", "square", "size"],
+  "axis_values": {
+    "type": ["icon", "initials", "image"],
+    "square": [false, true],
+    "size": [24, 32, 40, 48, 64, 80, 120]
+  },
+  "size_source_files": {
+    "24":  "_figma/sizes/avatar--24-details.json",
+    "32":  "_figma/sizes/avatar--32-details.json",
+    "40":  "_figma/sizes/avatar--40-details.json",
+    "48":  "_figma/sizes/avatar--48-details.json",
+    "64":  "_figma/sizes/avatar--64-details.json",
+    "80":  "_figma/sizes/avatar--80-details.json",
+    "120": "_figma/sizes/avatar--120-details.json"
+  },
+  "size_tokens": {
+    "24": {
+      "size":        "24px",
+      "border":      "2px solid var(--Border-border-white, #FFF)",
+      "icon-size":   "16px",
+      "font-size":   "var(--Size-Text-typo-size-text-2xs, 10px)",
+      "font-weight": "700",
+      "css-modifier": ".avatar--24"
+    },
+    "32": {
+      "size":        "32px",
+      "border":      "2px solid var(--Border-border-white, #FFF)",
+      "icon-size":   "24px",
+      "font-size":   "var(--Size-Text-typo-size-text-xs, 12px)",
+      "font-weight": "600",
+      "css-modifier": ".avatar--32"
+    },
+    "40": {
+      "size":        "40px",
+      "border":      "2px solid var(--Border-border-white, #FFF)",
+      "icon-size":   "32px",
+      "font-size":   "var(--Size-Text-typo-size-text-sm, 14px)",
+      "font-weight": "600",
+      "css-modifier": ".avatar--40"
+    },
+    "48": {
+      "size":        "48px",
+      "border":      "2px solid var(--Border-border-white, #FFF)",
+      "icon-size":   "32px",
+      "font-size":   "var(--Size-Text-typo-size-text-md, 16px)",
+      "font-weight": "500",
+      "css-modifier": ".avatar--48"
+    },
+    "64": {
+      "size":        "64px",
+      "border":      "2px solid var(--Border-border-white, #FFF)",
+      "icon-size":   "40px",
+      "font-size":   "var(--Size-Text-typo-size-text-xl, 20px)",
+      "font-weight": "500",
+      "css-modifier": ".avatar--64"
+    },
+    "80": {
+      "size":        "80px",
+      "border":      "2px solid var(--Border-border-white, #FFF)",
+      "icon-size":   "56px",
+      "font-size":   "var(--Size-Display-typo-size-display-sm, 30px)",
+      "font-weight": "500",
+      "css-modifier": ".avatar--80"
+    },
+    "120": {
+      "size":        "120px",
+      "border":      "4px solid var(--Border-border-white, #FFF)",
+      "icon-size":   "80px",
+      "font-size":   "var(--Size-Display-typo-size-display-md, 36px)",
+      "font-weight": "500",
+      "css-modifier": ".avatar--120"
+    }
+  },
+  "shape_tokens": {
+    "circle": {
+      "border-radius": "var(--radius-round, 9999px)",
+      "css-modifier": ""
+    },
+    "square": {
+      "border-radius-default": "var(--radius-4, 4px)",
+      "border-radius-120":     "var(--radius-8, 8px)",
+      "css-modifier": ".avatar--square"
+    }
+  },
+  "group_source_files": {
+    "stacked": "_figma/group/avatar-group--stacked-details.json",
+    "flat":    "_figma/group/avatar-group--flat-details.json"
+  },
+  "group_tokens": {
+    "stacked": {
+      "gap": "-4px",
+      "css-modifier": ".avatar-group--stacked"
+    },
+    "flat": {
+      "gap": "var(--spacing-xs, 4px)",
+      "css-modifier": ".avatar-group--flat"
+    }
+  }
+}

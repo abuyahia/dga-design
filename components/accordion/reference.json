@@ -1,0 +1,128 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "accordion",
+    "description": "Accordion component with expandable content sections and interactive states."
+  },
+  "axes": ["variant", "expanded", "state", "size"],
+  "axis_values": {
+    "variant": ["normal", "flush", "leading", "leading-flush"],
+    "expanded": [false, true],
+    "state": ["default", "hovered", "focused", "pressed", "disabled"],
+    "size": ["large", "medium", "small"]
+  },
+  "source_files": {
+    "normal": {
+      "expanded-false": "_figma/normal/expanded-false/",
+      "expanded-true":  "_figma/normal/expanded-true/"
+    },
+    "flush": {
+      "expanded-false": "_figma/flush/expanded-false/",
+      "expanded-true":  "_figma/flush/expanded-true/"
+    },
+    "leading": {
+      "expanded-false": "_figma/leading/expanded-false/",
+      "expanded-true":  "_figma/leading/expanded-true/"
+    },
+    "leading-flush": {
+      "expanded-false": "_figma/leading-flush/expanded-false/",
+      "expanded-true":  "_figma/leading-flush/expanded-true/"
+    }
+  },
+  "size_files": {
+    "medium": "sizes/meduim/",
+    "small":  "sizes/small/"
+  },
+  "list_file": "list/list.json",
+  "css_class": {
+    "base": ".accordion",
+    "list": ".accordion-list (wraps multiple .accordion items, adds border-bottom)",
+    "variant": ".accordion--{variant}",
+    "size": ".accordion--{size} (large is default, no modifier)",
+    "expanded": ".is-expanded (on root)",
+    "state": {
+      "hovered":  ".accordion__header.is-hovered",
+      "focused":  ".accordion__header.is-focused",
+      "pressed":  ".accordion__header.is-pressed",
+      "disabled": ".accordion--disabled (on root)"
+    }
+  },
+  "tokens": {
+    "normal": {
+      "border-color":  "var(--accordion-normal-border-color)",
+      "title-color":   "var(--accordion-normal-title-color)",
+      "content-color": "var(--accordion-normal-content-color)",
+      "bg-hover":      "var(--accordion-normal-bg-hover)",
+      "bg-pressed":    "var(--accordion-normal-bg-pressed)",
+      "focus-ring":    "var(--accordion-normal-focus-ring)",
+      "disabled-text": "var(--accordion-normal-disabled-text)"
+    },
+    "flush": "inherits all tokens from normal — only padding differs",
+    "size": "size modifier only affects header padding-block; all other tokens are shared"
+  },
+  "variants": [
+    { "id": "normal-false-default",  "variant": "normal", "expanded": false, "state": "default",  "source": "_figma/normal/expanded-false/default.json"  },
+    { "id": "normal-false-hovered",  "variant": "normal", "expanded": false, "state": "hovered",  "source": "_figma/normal/expanded-false/hover.json"    },
+    { "id": "normal-false-focused",  "variant": "normal", "expanded": false, "state": "focused",  "source": "_figma/normal/expanded-false/focused.json"  },
+    { "id": "normal-false-pressed",  "variant": "normal", "expanded": false, "state": "pressed",  "source": "_figma/normal/expanded-false/pressed.json"  },
+    { "id": "normal-false-disabled", "variant": "normal", "expanded": false, "state": "disabled", "source": "_figma/normal/expanded-false/disabled.json" },
+    { "id": "normal-true-default",   "variant": "normal", "expanded": true,  "state": "default",  "source": "_figma/normal/expanded-true/default.json"   },
+    { "id": "normal-true-hovered",   "variant": "normal", "expanded": true,  "state": "hovered",  "source": "_figma/normal/expanded-true/hover.json"     },
+    { "id": "normal-true-focused",   "variant": "normal", "expanded": true,  "state": "focused",  "source": "_figma/normal/expanded-true/focused.json"   },
+    { "id": "normal-true-pressed",   "variant": "normal", "expanded": true,  "state": "pressed",  "source": "_figma/normal/expanded-true/pressed.json"   },
+    { "id": "normal-true-disabled",  "variant": "normal", "expanded": true,  "state": "disabled", "source": "_figma/normal/expanded-true/disabled.json"  },
+
+    { "id": "flush-false-default",   "variant": "flush", "expanded": false, "state": "default",  "source": "_figma/flush/expanded-false/default.json"  },
+    { "id": "flush-false-hovered",   "variant": "flush", "expanded": false, "state": "hovered",  "source": "_figma/flush/expanded-false/hover.json"    },
+    { "id": "flush-false-focused",   "variant": "flush", "expanded": false, "state": "focused",  "source": "_figma/flush/expanded-false/focused.json"  },
+    { "id": "flush-false-pressed",   "variant": "flush", "expanded": false, "state": "pressed",  "source": "_figma/flush/expanded-false/pressed.json"  },
+    { "id": "flush-false-disabled",  "variant": "flush", "expanded": false, "state": "disabled", "source": "_figma/flush/expanded-false/disabled.json" },
+    { "id": "flush-true-default",    "variant": "flush", "expanded": true,  "state": "default",  "source": "_figma/flush/expanded-true/default.json"   },
+    { "id": "flush-true-hovered",    "variant": "flush", "expanded": true,  "state": "hovered",  "source": "_figma/flush/expanded-true/hover.json"     },
+    { "id": "flush-true-focused",    "variant": "flush", "expanded": true,  "state": "focused",  "source": "_figma/flush/expanded-true/focused.json"   },
+    { "id": "flush-true-pressed",    "variant": "flush", "expanded": true,  "state": "pressed",  "source": "_figma/flush/expanded-true/pressed.json"   },
+    { "id": "flush-true-disabled",   "variant": "flush", "expanded": true,  "state": "disabled", "source": "_figma/flush/expanded-true/disabled.json"  },
+
+    { "id": "leading-false-default",  "variant": "leading", "expanded": false, "state": "default",  "source": "_figma/leading/expanded-false/default.json"  },
+    { "id": "leading-false-hovered",  "variant": "leading", "expanded": false, "state": "hovered",  "source": "_figma/leading/expanded-false/hover.json"    },
+    { "id": "leading-false-focused",  "variant": "leading", "expanded": false, "state": "focused",  "source": "_figma/leading/expanded-false/focused.json"  },
+    { "id": "leading-false-pressed",  "variant": "leading", "expanded": false, "state": "pressed",  "source": "_figma/leading/expanded-false/pressed.json"  },
+    { "id": "leading-false-disabled", "variant": "leading", "expanded": false, "state": "disabled", "source": "_figma/leading/expanded-false/disabled.json" },
+    { "id": "leading-true-default",   "variant": "leading", "expanded": true,  "state": "default",  "source": "_figma/leading/expanded-true/default.json"   },
+    { "id": "leading-true-hovered",   "variant": "leading", "expanded": true,  "state": "hovered",  "source": "_figma/leading/expanded-true/hover.json"     },
+    { "id": "leading-true-focused",   "variant": "leading", "expanded": true,  "state": "focused",  "source": "_figma/leading/expanded-true/focused.json"   },
+    { "id": "leading-true-pressed",   "variant": "leading", "expanded": true,  "state": "pressed",  "source": "_figma/leading/expanded-true/pressed.json"   },
+    { "id": "leading-true-disabled",  "variant": "leading", "expanded": true,  "state": "disabled", "source": "_figma/leading/expanded-true/disabled.json"  },
+
+    { "id": "leading-flush-false-default",  "variant": "leading-flush", "expanded": false, "state": "default",  "source": "_figma/leading-flush/expanded-false/default.json"  },
+    { "id": "leading-flush-false-hovered",  "variant": "leading-flush", "expanded": false, "state": "hovered",  "source": "_figma/leading-flush/expanded-false/hover.json"    },
+    { "id": "leading-flush-false-focused",  "variant": "leading-flush", "expanded": false, "state": "focused",  "source": "_figma/leading-flush/expanded-false/focused.json"  },
+    { "id": "leading-flush-false-pressed",  "variant": "leading-flush", "expanded": false, "state": "pressed",  "source": "_figma/leading-flush/expanded-false/pressed.json"  },
+    { "id": "leading-flush-false-disabled", "variant": "leading-flush", "expanded": false, "state": "disabled", "source": "_figma/leading-flush/expanded-false/disabled.json" },
+    { "id": "leading-flush-true-default",   "variant": "leading-flush", "expanded": true,  "state": "default",  "source": "_figma/leading-flush/expanded-true/default.json"   },
+    { "id": "leading-flush-true-hovered",   "variant": "leading-flush", "expanded": true,  "state": "hovered",  "source": "_figma/leading-flush/expanded-true/hover.json"     },
+    { "id": "leading-flush-true-focused",   "variant": "leading-flush", "expanded": true,  "state": "focused",  "source": "_figma/leading-flush/expanded-true/focused.json"   },
+    { "id": "leading-flush-true-pressed",   "variant": "leading-flush", "expanded": true,  "state": "pressed",  "source": "_figma/leading-flush/expanded-true/pressed.json"   },
+    { "id": "leading-flush-true-disabled",  "variant": "leading-flush", "expanded": true,  "state": "disabled", "source": "_figma/leading-flush/expanded-true/disabled.json"  },
+
+    { "id": "medium-false-default",  "size": "medium", "expanded": false, "state": "default",  "source": "sizes/meduim/default.json"          },
+    { "id": "medium-false-hovered",  "size": "medium", "expanded": false, "state": "hovered",  "source": "sizes/meduim/hover.json"            },
+    { "id": "medium-false-focused",  "size": "medium", "expanded": false, "state": "focused",  "source": "sizes/meduim/focused.json"          },
+    { "id": "medium-false-pressed",  "size": "medium", "expanded": false, "state": "pressed",  "source": "sizes/meduim/pressed.json"          },
+    { "id": "medium-true-default",   "size": "medium", "expanded": true,  "state": "default",  "source": "sizes/meduim/expanded-default.json" },
+    { "id": "medium-true-hovered",   "size": "medium", "expanded": true,  "state": "hovered",  "source": "sizes/meduim/expanded-hover.json"   },
+    { "id": "medium-true-focused",   "size": "medium", "expanded": true,  "state": "focused",  "source": "sizes/meduim/expanded-focused.json" },
+    { "id": "medium-true-pressed",   "size": "medium", "expanded": true,  "state": "pressed",  "source": "sizes/meduim/expanded-pressed.json" },
+    { "id": "medium-true-disabled",  "size": "medium", "expanded": true,  "state": "disabled", "source": "sizes/meduim/expanded-disabled.json"},
+
+    { "id": "small-false-default",   "size": "small",  "expanded": false, "state": "default",  "source": "sizes/small/default.json"           },
+    { "id": "small-false-hovered",   "size": "small",  "expanded": false, "state": "hovered",  "source": "sizes/small/hover.json"             },
+    { "id": "small-false-focused",   "size": "small",  "expanded": false, "state": "focused",  "source": "sizes/small/focused.json"           },
+    { "id": "small-false-pressed",   "size": "small",  "expanded": false, "state": "pressed",  "source": "sizes/small/pressed.json"           },
+    { "id": "small-true-default",    "size": "small",  "expanded": true,  "state": "default",  "source": "sizes/small/expanded-default.json"  },
+    { "id": "small-true-hovered",    "size": "small",  "expanded": true,  "state": "hovered",  "source": "sizes/small/expanded-hover.json"    },
+    { "id": "small-true-focused",    "size": "small",  "expanded": true,  "state": "focused",  "source": "sizes/small/expanded-focused.json"  },
+    { "id": "small-true-pressed",    "size": "small",  "expanded": true,  "state": "pressed",  "source": "sizes/small/expanded-pressed.json"  },
+    { "id": "small-true-disabled",   "size": "small",  "expanded": true,  "state": "disabled", "source": "sizes/small/expanded-disabled.json" }
+  ]
+}

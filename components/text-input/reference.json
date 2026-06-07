@@ -1,0 +1,389 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "text-input",
+    "description": "Base text input field with label, supporting six interactive states, two sizes, error mode, and three background styles."
+  },
+  "axes": ["state", "size", "error", "style"],
+  "axis_values": {
+    "state": ["default", "hovered", "focused", "pressed", "disabled", "read-only"],
+    "size": ["large", "medium"],
+    "error": [false, true],
+    "style": ["default", "filled-darker", "filled-lighter"]
+  },
+  "discarded_axes": [
+    {
+      "axis": "RTL",
+      "reason": "CSS logical properties (padding-inline-start, padding-inline-end) produce identical output for LTR and RTL. RTL is triggered by dir='rtl' on an ancestor element. No separate CSS class or modifier needed."
+    },
+    {
+      "axis": "Filled",
+      "reason": "Filled=True/False represents whether the user has entered text. This is a runtime browser state handled by <input>::placeholder CSS. Both Filled values share identical field CSS. No modifier class needed."
+    }
+  ],
+  "size_tokens": {
+    "large": {
+      "height": "var(--text-input-lg-height, 40px)",
+      "font-size": "var(--text-input-lg-font-size, 16px)",
+      "line-height": "var(--text-input-lg-line-height, 24px)",
+      "css-modifier": null
+    },
+    "medium": {
+      "height": "var(--text-input-md-height, 32px)",
+      "font-size": "var(--text-input-md-font-size, 14px)",
+      "line-height": "var(--text-input-md-line-height, 20px)",
+      "css-modifier": ".text-input--md"
+    }
+  },
+  "style_tokens": {
+    "default": {
+      "background": "var(--text-input-bg-default, #FFF)",
+      "border": "1px solid var(--text-input-border-default, #9DA4AE)",
+      "css-modifier": null
+    },
+    "filled-darker": {
+      "background": "var(--text-input-bg-darker, #F3F4F6)",
+      "border": "none",
+      "css-modifier": ".text-input--filled-darker"
+    },
+    "filled-lighter": {
+      "background": "var(--text-input-bg-lighter, #FCFCFD)",
+      "border": "none",
+      "css-modifier": ".text-input--filled-lighter"
+    }
+  },
+  "variants": [
+    {
+      "id": "large-default-default",
+      "axes": { "state": "default", "size": "large", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "1px solid var(--text-input-border-default, #9DA4AE)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-placeholder, #6C737F)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "large-default-error",
+      "axes": { "state": "default", "size": "large", "error": true, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "1px solid var(--text-input-border-error, #B42318)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-placeholder, #6C737F)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "large-hovered-default",
+      "axes": { "state": "hovered", "size": "large", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "1px solid var(--text-input-border-hovered, #384250)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-placeholder, #6C737F)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "large-hovered-error",
+      "axes": { "state": "hovered", "size": "large", "error": true, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "1px solid var(--text-input-border-error, #B42318)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-placeholder, #6C737F)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "large-focused-default",
+      "axes": { "state": "focused", "size": "large", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "1px solid transparent",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-focused, #384250)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": {
+          "position": "absolute",
+          "bottom": "0",
+          "left": "0",
+          "right": "0",
+          "height": "var(--text-input-underline-height, 2px)",
+          "background": "var(--text-input-underline-default, #0D121C)"
+        }
+      }
+    },
+    {
+      "id": "large-focused-error",
+      "axes": { "state": "focused", "size": "large", "error": true, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "1px solid transparent",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-focused, #384250)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": {
+          "background": "var(--text-input-underline-error, #B42318)"
+        }
+      }
+    },
+    {
+      "id": "large-pressed-default",
+      "axes": { "state": "pressed", "size": "large", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "1px solid var(--text-input-border-default, #9DA4AE)",
+          "background": "var(--text-input-bg-pressed, #F3F4F6)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-pressed, #384250)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": {
+          "position": "absolute",
+          "bottom": "0",
+          "left": "0",
+          "width": "50%",
+          "height": "var(--text-input-underline-height, 2px)",
+          "background": "var(--text-input-underline-default, #0D121C)"
+        }
+      }
+    },
+    {
+      "id": "large-disabled-default",
+      "axes": { "state": "disabled", "size": "large", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "1px solid var(--text-input-border-disabled, #D2D6DB)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-disabled, #9DA4AE)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)",
+          "cursor": "not-allowed"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "large-readonly-default",
+      "axes": { "state": "read-only", "size": "large", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "1px solid var(--text-input-border-readonly, #D2D6DB)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-readonly, #161616)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "medium-default-default",
+      "axes": { "state": "default", "size": "medium", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-md-height, 32px)",
+          "border": "1px solid var(--text-input-border-default, #9DA4AE)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-placeholder, #6C737F)",
+          "font-size": "var(--text-input-md-font-size, 14px)",
+          "line-height": "var(--text-input-md-line-height, 20px)"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "medium-default-error",
+      "axes": { "state": "default", "size": "medium", "error": true, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-md-height, 32px)",
+          "border": "1px solid var(--text-input-border-error, #B42318)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-placeholder, #6C737F)",
+          "font-size": "var(--text-input-md-font-size, 14px)",
+          "line-height": "var(--text-input-md-line-height, 20px)"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "medium-focused-default",
+      "axes": { "state": "focused", "size": "medium", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-md-height, 32px)",
+          "border": "1px solid transparent",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-focused, #384250)",
+          "font-size": "var(--text-input-md-font-size, 14px)",
+          "line-height": "var(--text-input-md-line-height, 20px)"
+        },
+        "underline": {
+          "background": "var(--text-input-underline-default, #0D121C)"
+        }
+      }
+    },
+    {
+      "id": "medium-disabled-default",
+      "axes": { "state": "disabled", "size": "medium", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-md-height, 32px)",
+          "border": "1px solid var(--text-input-border-disabled, #D2D6DB)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-disabled, #9DA4AE)",
+          "font-size": "var(--text-input-md-font-size, 14px)",
+          "line-height": "var(--text-input-md-line-height, 20px)",
+          "cursor": "not-allowed"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "medium-readonly-default",
+      "axes": { "state": "read-only", "size": "medium", "error": false, "style": "default" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-md-height, 32px)",
+          "border": "1px solid var(--text-input-border-readonly, #D2D6DB)",
+          "background": "var(--text-input-bg-default, #FFF)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-readonly, #161616)",
+          "font-size": "var(--text-input-md-font-size, 14px)",
+          "line-height": "var(--text-input-md-line-height, 20px)"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "large-default-filled-darker",
+      "axes": { "state": "default", "size": "large", "error": false, "style": "filled-darker" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "none",
+          "background": "var(--text-input-bg-darker, #F3F4F6)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-placeholder, #6C737F)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": null
+      }
+    },
+    {
+      "id": "large-default-filled-lighter",
+      "axes": { "state": "default", "size": "large", "error": false, "style": "filled-lighter" },
+      "status": "available",
+      "properties": {
+        "field": {
+          "height": "var(--text-input-lg-height, 40px)",
+          "border": "none",
+          "background": "var(--text-input-bg-lighter, #FCFCFD)",
+          "border-radius": "var(--text-input-radius, 4px)"
+        },
+        "input_text": {
+          "color": "var(--text-input-text-placeholder, #6C737F)",
+          "font-size": "var(--text-input-lg-font-size, 16px)",
+          "line-height": "var(--text-input-lg-line-height, 24px)"
+        },
+        "underline": null
+      }
+    }
+  ],
+  "implementation_notes": [
+    "RTL: Use dir='rtl' on the <html> or wrapper element. Logical CSS properties handle mirror automatically.",
+    "Filled state: The browser manages filled vs placeholder text display natively via <input> and ::placeholder.",
+    "Focused state: Implemented via :focus-within on .text-input__field. Border becomes transparent; ::after shows 2px underline.",
+    "Pressed underline width: Figma uses fixed 112px on a 320px component (35%). Responsive implementation uses 50% approximation.",
+    "Error state on disabled: Disabled takes visual priority. .text-input--disabled overrides .text-input--error border.",
+    "Assembly: text-input is a standalone base. Compose with input-affix for prefix/suffix icons. Compose with form-field for error messages."
+  ]
+}

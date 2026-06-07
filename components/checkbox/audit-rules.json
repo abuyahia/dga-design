@@ -1,0 +1,233 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "checkbox",
+  "selector_root": ".checkbox",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "CHK-A11Y-001",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Checkbox input must have an accessible label",
+      "description": "Every <input type='checkbox'> must have a non-empty accessible name computable by the accessibility tree. Satisfied by: a <label> wrapping element, an associated <label for='id'>, aria-label on the input, or aria-labelledby pointing to a visible element.",
+      "target": "input[type='checkbox'].checkbox__input",
+      "expected": "element has accessible name via associated label OR aria-label OR aria-labelledby",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "any_of",
+        "conditions": [
+          "element is within a <label> element",
+          "element has id matching a <label for='id'>",
+          "element has non-empty aria-label attribute",
+          "element has aria-labelledby whose target has non-empty text content"
+        ]
+      },
+      "message": "Checkbox input has no accessible label. Wrap in a <label> element or add aria-label to the input.",
+      "fix": "Wrap the input and visual span inside <label class='checkbox-wrapper'>. Or add aria-label='Option description' directly on the input element.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-CHECKBOX-002"]
+    },
+
+    {
+      "id": "CHK-A11Y-002",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "state_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Indeterminate checkbox must declare aria-checked='mixed'",
+      "description": "When the visual .checkbox has class .checkbox--indeterminate, the associated native input must carry aria-checked='mixed'. The indeterminate property set via JS alone is insufficient; aria-checked='mixed' must be explicitly set.",
+      "target": ".checkbox.checkbox--indeterminate",
+      "expected": "associated input[type='checkbox'] has aria-checked='mixed'",
+      "check": {
+        "type": "state_required",
+        "trigger": "element has class checkbox--indeterminate",
+        "target_input": "preceding-sibling input[type='checkbox'].checkbox__input OR parent label input[type='checkbox']",
+        "attribute": "aria-checked",
+        "valid_values": ["mixed"]
+      },
+      "message": "Indeterminate checkbox is missing aria-checked='mixed' on the native input. Screen readers will not announce the mixed state.",
+      "fix": "Add aria-checked=\"mixed\" to the <input> element. Also call inputElement.indeterminate = true in JavaScript.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-CHECKBOX-004"]
+    },
+
+    {
+      "id": "CHK-A11Y-003",
+      "standard_id": "WCAG-2.1-2.1.1",
+      "rule_type": "semantic_element_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Visual checkbox must be paired with a native input",
+      "description": "The .checkbox visual span must be preceded by or sibling to an <input type='checkbox' class='checkbox__input'>. A custom visual without a native input is not keyboard operable and breaks screen reader semantics.",
+      "target": ".checkbox",
+      "expected": "a sibling or parent-child <input type='checkbox' class='checkbox__input'> exists in the DOM",
+      "check": {
+        "type": "semantic_element_required",
+        "selector": ".checkbox",
+        "required_sibling_or_child": "input[type='checkbox'].checkbox__input"
+      },
+      "message": "Visual .checkbox has no associated native <input type='checkbox'>. Keyboard and screen reader users cannot interact with it.",
+      "fix": "Add <input type='checkbox' class='checkbox__input sr-only' /> as a sibling before the .checkbox span.",
+      "standard_refs": ["WCAG-2.1-2.1.1", "WCAG-2.1-4.1.2", "PLATFORM-CODE-CHECKBOX-002"]
+    },
+
+    {
+      "id": "CHK-A11Y-004",
+      "standard_id": "PLATFORM-CODE-FOCUS-001",
+      "rule_type": "focus_indicator_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Focus ring must not be suppressed",
+      "description": "The checkbox stylesheet activates .checkbox__focus-ring via input:focus-visible. Any override that sets display:none or visibility:hidden on the focus ring, or sets outline:none on the native input without a visual replacement, violates WCAG 2.4.7.",
+      "target": ".checkbox__focus-ring",
+      "expected": "element is not hidden when parent input receives :focus-visible; box-shadow is non-null",
+      "check": {
+        "type": "focus_indicator_required",
+        "selector": ".checkbox__input:focus-visible ~ .checkbox .checkbox__focus-ring",
+        "forbidden_css": { "display": "none", "visibility": "hidden", "box-shadow": "none" }
+      },
+      "message": "Focus ring is suppressed. Keyboard users cannot see which checkbox is focused.",
+      "fix": "Remove any override that hides .checkbox__focus-ring. Do not set display:none or box-shadow:none on the focus ring element.",
+      "standard_refs": ["WCAG-2.1-2.4.7", "PLATFORM-CODE-FOCUS-001", "PLATFORM-CODE-A11Y-002"]
+    },
+
+    {
+      "id": "CHK-A11Y-005",
+      "standard_id": "PLATFORM-CODE-A11Y-005",
+      "rule_type": "disabled_behavior_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Disabled checkbox must use correct mechanism",
+      "description": "The disabled checkbox visual (.checkbox--disabled) must be paired with either: (a) HTML disabled attribute — removes from tab order, or (b) aria-disabled='true' — keeps in tab order for discoverability. Using aria-disabled with tabindex='-1' is contradictory.",
+      "target": ".checkbox.checkbox--disabled",
+      "expected": "associated input has 'disabled' attribute OR has 'aria-disabled=true' without 'tabindex=-1'",
+      "check": {
+        "type": "disabled_behavior_required",
+        "allowed_patterns": [
+          { "attributes": ["disabled"], "note": "Removes from tab order — standard disabled" },
+          { "attributes": ["aria-disabled=true"], "note": "Stays in tab order — use when checkbox must be discoverable" }
+        ],
+        "invalid_combinations": [
+          { "attributes": ["aria-disabled=true", "tabindex=-1"], "reason": "Contradictory — aria-disabled without HTML disabled is intended to keep element in tab order" }
+        ]
+      },
+      "message": "Disabled checkbox uses aria-disabled='true' with tabindex='-1'. This prevents keyboard discovery of an intentionally in-tab-order element.",
+      "fix": "Remove tabindex='-1'. Use HTML disabled if you want to remove from tab order entirely.",
+      "standard_refs": ["WCAG-2.1-2.1.1", "PLATFORM-CODE-A11Y-005"]
+    },
+
+    {
+      "id": "CHK-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-CHECKBOX-002",
+      "rule_type": "semantic_element_required",
+      "category": "html-structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Visual checkbox must not be the sole interactive element",
+      "description": "A <span class='checkbox'> is not inherently interactive. It must always be paired with a native <input type='checkbox'>. Keyboard and AT users require the native semantics.",
+      "target": ".checkbox",
+      "expected": "parent or sibling input[type='checkbox'] exists",
+      "check": {
+        "type": "semantic_element_required",
+        "selector": ".checkbox",
+        "allowed_tags": ["span"],
+        "required_partner": "input[type='checkbox']"
+      },
+      "message": "Visual .checkbox is a <span> with no native input partner. The component is not operable by keyboard.",
+      "fix": "Add <input type='checkbox' class='checkbox__input sr-only'> before the visual .checkbox span.",
+      "standard_refs": ["PLATFORM-CODE-CHECKBOX-002", "WCAG-2.1-4.1.2"]
+    },
+
+    {
+      "id": "CHK-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-CHECKBOX-001",
+      "rule_type": "no_hardcoded_values",
+      "category": "token-usage",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Colors and sizes must reference design tokens",
+      "description": "All color, background, border, and opacity values applied to .checkbox elements must use CSS custom properties (var(--token-name)). Hardcoded hex, rgb(), hsl(), or numeric opacity values bypass the token system.",
+      "target": ".checkbox, .checkbox *, .checkbox::before, .checkbox::after",
+      "expected": "background, color, border-color, box-shadow, opacity all use var(--) — or are transparent, none, inherit, currentColor",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".checkbox, .checkbox *, .checkbox::before, .checkbox::after",
+        "properties": ["background", "background-color", "color", "border-color", "box-shadow", "opacity"],
+        "allowed_literal_values": ["transparent", "none", "inherit", "currentColor", "0", "1"]
+      },
+      "message": "Hardcoded value '{value}' found on '{property}'. Replace with the corresponding design token.",
+      "fix": "Replace e.g. background: #1B8354 with var(--checkbox-bg-selected-primary). See token surface in checkbox.contract.md §8.",
+      "standard_refs": ["PLATFORM-CODE-CHECKBOX-001", "PLATFORM-CODE-TOKEN-001"]
+    },
+
+    {
+      "id": "CHK-TOKEN-002",
+      "standard_id": "PLATFORM-CODE-TOKEN-001",
+      "rule_type": "no_hardcoded_values",
+      "category": "token-usage",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Primitive tokens must not leak into component selectors",
+      "description": "Component CSS must reference component-level semantic tokens (--checkbox-*), not primitive tokens (--sa-600, --gray-200, --Radius-radius-xs) directly in component selectors.",
+      "target": ".checkbox, .checkbox__control, .checkbox__focus-ring",
+      "expected": "properties reference --checkbox-* tokens; no --sa-*, --gray-* or other primitive tokens in component selectors",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".checkbox, .checkbox__control, .checkbox__focus-ring",
+        "forbidden_token_prefixes": ["--sa-", "--gray-", "--blue-", "--transition-"]
+      },
+      "message": "Primitive token '{token}' used directly in component selector. Map to a --checkbox-* semantic token first.",
+      "fix": "Introduce a --checkbox-* token and map it to the primitive in token.css or the component token file.",
+      "standard_refs": ["PLATFORM-CODE-TOKEN-001"]
+    },
+
+    {
+      "id": "CHK-STATE-001",
+      "standard_id": "PLATFORM-CODE-STATE-001",
+      "rule_type": "state_required",
+      "category": "state",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Indeterminate and checked modifiers must not co-exist",
+      "description": "Applying both .checkbox--checked and .checkbox--indeterminate simultaneously produces undefined visual behavior. When indeterminate, only .checkbox--indeterminate should be present.",
+      "target": ".checkbox.checkbox--checked.checkbox--indeterminate",
+      "expected": "no element has both .checkbox--checked and .checkbox--indeterminate simultaneously",
+      "check": {
+        "type": "class_combination_forbidden",
+        "selector": ".checkbox",
+        "forbidden_combination": ["checkbox--checked", "checkbox--indeterminate"]
+      },
+      "message": "Both .checkbox--checked and .checkbox--indeterminate are applied to the same element. Remove .checkbox--checked when indeterminate.",
+      "fix": "Use only .checkbox--indeterminate. The indeterminate state implies checked background by design.",
+      "standard_refs": ["PLATFORM-CODE-STATE-001"]
+    }
+
+  ],
+
+  "severity_legend": {
+    "error": "Blocks release. Must be resolved before component ships to production.",
+    "warning": "Must be reviewed. Should be resolved; requires documented justification to waive.",
+    "info": "Advisory. No action required but noted in audit report."
+  },
+
+  "validation_status_legend": {
+    "not_run": "Rule has been defined but not yet executed against this component.",
+    "pass": "Rule was executed and the component passed.",
+    "fail": "Rule was executed and the component failed. See audit report for details.",
+    "skipped": "Rule was intentionally skipped with documented justification.",
+    "manual_required": "Rule cannot be validated automatically and requires human review."
+  },
+
+  "run_context": {
+    "static_analysis": ["CHK-TOKEN-001", "CHK-TOKEN-002", "CHK-A11Y-004"],
+    "dom_inspection": ["CHK-A11Y-001", "CHK-A11Y-002", "CHK-A11Y-003", "CHK-A11Y-005", "CHK-STRUCT-001", "CHK-STATE-001"],
+    "manual_review": []
+  }
+}

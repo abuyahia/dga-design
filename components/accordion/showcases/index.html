@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Accordion — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css"/>
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../accordion.css"/>
+    <!-- 3. Page layout -->
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--gray-50);
+        font-family: var(--font-sans);
+        color: var(--gray-900);
+        min-height: 100dvh;
+        padding: var(--space-48) var(--space-32);
+      }
+
+      .page {
+        max-width: 1120px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-48);
+      }
+
+      /* ── Header ───────────────────────────────────────── */
+      .page__header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .page__meta {
+        font-size: var(--fs-text-sm);
+        color: var(--gray-500);
+        line-height: var(--lh-text-sm);
+      }
+
+      .page__title {
+        font-size: var(--fs-display-xs);
+        font-weight: var(--font-weight-heading);
+        line-height: var(--lh-display-xs);
+        color: var(--gray-900);
+      }
+
+      /* ── Variant section ──────────────────────────────── */
+      .variant {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+      }
+
+      .variant__title {
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: var(--lh-text-sm);
+      }
+
+      .variant__sub {
+        font-size: var(--fs-text-xs);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-400);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: var(--lh-text-xs);
+        margin-top: var(--space-8);
+      }
+
+      /* ── Showcase table ───────────────────────────────── */
+      .showcase {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--white);
+      }
+
+      .showcase__row {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-24);
+        padding: var(--space-20) var(--space-24);
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .showcase__row:last-child {
+        border-bottom: none;
+      }
+
+      .showcase__label {
+        font-size: var(--fs-text-sm);
+        color: var(--gray-500);
+        line-height: var(--lh-text-sm);
+        min-width: 72px;
+        flex-shrink: 0;
+        padding-top: var(--space-16);
+      }
+
+      .showcase__item {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .showcase__props {
+        font-size: 11px;
+        font-family: 'ui-monospace', Menlo, Consolas, monospace;
+        color: var(--gray-400);
+        direction: ltr;
+        text-align: left;
+        letter-spacing: 0.01em;
+        line-height: 1.5;
+      }
+
+      /* ── Interactive ──────────────────────────────────── */
+      .interactive {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+        padding: var(--space-24);
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        background: var(--white);
+      }
+
+      .interactive__title {
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: var(--lh-text-sm);
+      }
+
+      /* ── Preview / Code Tabs ──────────────────────────────── */
+      .preview-block {
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+
+      .preview-tabs {
+        display: flex;
+        align-items: flex-end;
+        gap: 4px;
+        padding: 8px 12px 0;
+        background: var(--gray-50);
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      .preview-tab {
+        padding: 6px 14px;
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-medium);
+        color: var(--gray-400);
+        background: transparent;
+        border: 1px solid transparent;
+        border-bottom: none;
+        border-radius: 6px 6px 0 0;
+        cursor: pointer;
+        line-height: var(--lh-text-sm);
+        margin-bottom: -1px;
+        transition: color 0.15s;
+      }
+
+      .preview-tab:hover {
+        color: var(--gray-600);
+      }
+
+      .preview-tab.is-active {
+        color: var(--gray-900);
+        background: var(--white);
+        border-color: var(--gray-200);
+      }
+
+      .preview-pane .interactive,
+      .preview-pane .showcase {
+        border: none;
+        border-radius: 0;
+      }
+
+      .code-pane {
+        background: #16181d;
+        overflow-x: auto;
+      }
+
+      .code-pane__toolbar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 8px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .code-copy-btn {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.45);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+        padding: 3px 10px;
+        cursor: pointer;
+        transition: color 0.15s, background 0.15s;
+      }
+
+      .code-copy-btn:hover {
+        color: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.10);
+      }
+
+      .code-pane pre {
+        margin: 0;
+        padding: 20px 24px;
+        font-family: 'ui-monospace', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+        font-size: 12.5px;
+        line-height: 1.65;
+        color: #cdd6f4;
+        white-space: pre;
+        tab-size: 2;
+      }
+
+      /* ── Figma Props ─────────────────────────────────── */
+      .prop-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        direction: ltr;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px dashed var(--gray-150, #eaecf0);
+      }
+      .prop-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 7px;
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
+        border-radius: 3px;
+        font-size: 11px;
+        font-family: "ui-monospace", Menlo, Consolas, monospace;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
+      .prop-tag__key { color: var(--gray-400); }
+      .prop-tag__eq  { color: var(--gray-300); margin: 0 2px; }
+      .prop-tag__val { color: var(--gray-700); font-weight: 500; }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+
+      <!-- ── Page header ──────────────────────────────────── -->
+      <header class="page__header">
+        <p class="page__meta">Design System / Components / Accordion</p>
+        <h1 class="page__title">Accordion Showcase</h1>
+      </header>
+
+      <!-- ════════════════════════════════════════════════════ Normal — Collapsed (Expanded = false) ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Normal</h2>
+
+        <p class="variant__sub">Collapsed — Expanded = false</p>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Default, Expanded=False, Flush=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal">
+                <button class="accordion__header" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Hovered, Expanded=False, Flush=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Focused, Expanded=False, Flush=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal">
+                <button class="accordion__header is-focused" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Pressed, Expanded=False, Flush=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Disabled, Expanded=False, Flush=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--disabled">
+                <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase collapsed -->
+
+        <!-- ════════════════════════════════════════════════ Normal — Expanded (Expanded = true) ════════════════════════════════════════════════ -->
+        <p class="variant__sub">Expanded — Expanded = true</p>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Default, Expanded=True, Flush=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Hovered, Expanded=True, Flush=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal is-expanded">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Focused, Expanded=True, Flush=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal is-expanded">
+                <button class="accordion__header is-focused" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Pressed, Expanded=True, Flush=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal is-expanded">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Disabled, Expanded=True, Flush=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--disabled is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase expanded -->
+
+        <!-- ════════════════════════════════════════════════ Interactive live section ════════════════════════════════════════════════ -->
+        <div class="interactive">
+          <p class="interactive__title">Interactive — Toggle</p>
+
+          <div class="accordion accordion--normal" id="accordion-interactive-1">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="acc-panel-1">
+              <span class="accordion__title">What is an accordion component?</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" id="acc-panel-1" role="region">
+              <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content within the constraints of the accordion.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--normal" id="accordion-interactive-2">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="acc-panel-2">
+              <span class="accordion__title">When should I use accordions?</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" id="acc-panel-2" role="region">
+              <p class="accordion__body">Use accordions when you have multiple sections of content that users may not all need to see at once. They work well for FAQs, settings panels, and navigation menus with sub-items.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--normal accordion--disabled" id="accordion-interactive-3">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+              <span class="accordion__title">This item is disabled</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" role="region">
+              <p class="accordion__body">This content is not accessible when the accordion is disabled.</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- /interactive -->
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Flush ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Flush</h2>
+
+        <p class="variant__sub">Collapsed — Expanded = false</p>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Default, Expanded=False, Flush=True">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush">
+                <button class="accordion__header" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Hovered, Expanded=False, Flush=True">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Focused, Expanded=False, Flush=True">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush">
+                <button class="accordion__header is-focused" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Pressed, Expanded=False, Flush=True">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Disabled, Expanded=False, Flush=True">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush accordion--disabled">
+                <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase flush collapsed -->
+
+        <p class="variant__sub">Expanded — Expanded = true</p>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Default, Expanded=True, Flush=True">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Hovered, Expanded=True, Flush=True">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush is-expanded">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Focused, Expanded=True, Flush=True">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush is-expanded">
+                <button class="accordion__header is-focused" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Pressed, Expanded=True, Flush=True">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush is-expanded">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Trailing, State=Disabled, Expanded=True, Flush=True">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--flush accordion--disabled is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase flush expanded -->
+
+        <!-- ════════════════════════════════════════════════ Interactive live section ════════════════════════════════════════════════ -->
+        <div class="interactive">
+          <p class="interactive__title">Interactive — Toggle</p>
+
+          <div class="accordion accordion--flush">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="flush-panel-1">
+              <span class="accordion__title">What makes flush different?</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" id="flush-panel-1" role="region">
+              <p class="accordion__body">The flush variant removes the horizontal padding from the header and content, making the accordion sit edge-to-edge within its container. This is useful when the accordion is placed inside a card or panel that already provides the necessary padding.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--flush">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="flush-panel-2">
+              <span class="accordion__title">When should I use flush?</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" id="flush-panel-2" role="region">
+              <p class="accordion__body">Use the flush variant when embedding accordions inside containers that already define their own horizontal spacing, such as cards, sidebars, or drawers.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--flush accordion--disabled">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+              <span class="accordion__title">This item is disabled</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" role="region">
+              <p class="accordion__body">This content is not accessible when the accordion is disabled.</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- /interactive flush -->
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Leading ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Leading</h2>
+
+        <p class="variant__sub">Collapsed — Expanded = false</p>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Default, Expanded=False, Flush=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading">
+                <button class="accordion__header" type="button" aria-expanded="false">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Hovered, Expanded=False, Flush=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="false">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Focused, Expanded=False, Flush=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading">
+                <button class="accordion__header is-focused" type="button" aria-expanded="false">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Pressed, Expanded=False, Flush=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="false">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Disabled, Expanded=False, Flush=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading accordion--disabled">
+                <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase leading collapsed -->
+
+        <p class="variant__sub">Expanded — Expanded = true</p>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Default, Expanded=True, Flush=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Hovered, Expanded=True, Flush=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading is-expanded">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="true">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Focused, Expanded=True, Flush=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading is-expanded">
+                <button class="accordion__header is-focused" type="button" aria-expanded="true">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Pressed, Expanded=True, Flush=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading is-expanded">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="true">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Disabled, Expanded=True, Flush=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading accordion--disabled is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase leading expanded -->
+
+        <!-- ════════════════════════════════════════════════ Interactive live section ════════════════════════════════════════════════ -->
+        <div class="interactive">
+          <p class="interactive__title">Interactive — Toggle</p>
+
+          <div class="accordion accordion--leading">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="leading-panel-1">
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="accordion__title">What makes leading different?</span>
+            </button>
+            <div class="accordion__content" id="leading-panel-1" role="region">
+              <p class="accordion__body">The leading variant places the expand/collapse icon before the title, aligning it with the start of the text. The expanded content is indented to align under the title text, matching the icon's width and gap.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--leading">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="leading-panel-2">
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="accordion__title">When should I use leading?</span>
+            </button>
+            <div class="accordion__content" id="leading-panel-2" role="region">
+              <p class="accordion__body">Use the leading variant when the visual hierarchy benefits from the icon acting as a disclosure indicator at the start of the row, such as in tree views, nested lists, or content-heavy layouts.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--leading accordion--disabled">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="accordion__title">This item is disabled</span>
+            </button>
+            <div class="accordion__content" role="region">
+              <p class="accordion__body">This content is not accessible when the accordion is disabled.</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- /interactive leading -->
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Leading Flush ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Leading Flush</h2>
+
+        <p class="variant__sub">Collapsed — Expanded = false</p>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Default, Expanded=False, Flush=True">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush">
+                <button class="accordion__header" type="button" aria-expanded="false">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Hovered, Expanded=False, Flush=True">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="false">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Focused, Expanded=False, Flush=True">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush">
+                <button class="accordion__header is-focused" type="button" aria-expanded="false">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Pressed, Expanded=False, Flush=True">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="false">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Disabled, Expanded=False, Flush=True">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush accordion--disabled">
+                <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase leading-flush collapsed -->
+
+        <p class="variant__sub">Expanded — Expanded = true</p>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Default, Expanded=True, Flush=True">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Hovered, Expanded=True, Flush=True">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush is-expanded">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="true">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Focused, Expanded=True, Flush=True">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush is-expanded">
+                <button class="accordion__header is-focused" type="button" aria-expanded="true">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Pressed, Expanded=True, Flush=True">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush is-expanded">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="true">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, Icon alignment=Leading, State=Disabled, Expanded=True, Flush=True">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--leading-flush accordion--disabled is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span class="accordion__title">Accordion Title</span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase leading-flush expanded -->
+
+        <!-- ════════════════════════════════════════════════ Interactive live section ════════════════════════════════════════════════ -->
+        <div class="interactive">
+          <p class="interactive__title">Interactive — Toggle</p>
+
+          <div class="accordion accordion--leading-flush">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="leading-flush-panel-1">
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="accordion__title">What makes leading-flush different?</span>
+            </button>
+            <div class="accordion__content" id="leading-flush-panel-1" role="region">
+              <p class="accordion__body">The leading-flush variant combines a leading icon with no horizontal padding on the header. The expanded content indents by 32px from the start — matching the icon width plus gap — with no end padding.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--leading-flush">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="leading-flush-panel-2">
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="accordion__title">When should I use leading-flush?</span>
+            </button>
+            <div class="accordion__content" id="leading-flush-panel-2" role="region">
+              <p class="accordion__body">Use leading-flush when embedding accordions inside containers that already define their own horizontal spacing and you also want the icon to lead. It combines the space-efficiency of flush with the disclosure affordance of a leading icon.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--leading-flush accordion--disabled">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="accordion__title">This item is disabled</span>
+            </button>
+            <div class="accordion__content" role="region">
+              <p class="accordion__body">This content is not accessible when the accordion is disabled.</p>
+            </div>
+          </div>
+
+        </div>
+        <!-- /interactive leading-flush -->
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Medium size ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Medium</h2>
+
+        <p class="variant__sub">Collapsed — Expanded = false</p>
+
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Default, Expanded=False, Flush=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium">
+                <button class="accordion__header" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Hovered, Expanded=False, Flush=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Focused, Expanded=False, Flush=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium">
+                <button class="accordion__header is-focused" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Pressed, Expanded=False, Flush=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Disabled, Expanded=False, Flush=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium accordion--disabled">
+                <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase medium collapsed -->
+
+        <p class="variant__sub">Expanded — Expanded = true</p>
+
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Default, Expanded=True, Flush=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Hovered, Expanded=True, Flush=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium is-expanded">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Focused, Expanded=True, Flush=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium is-expanded">
+                <button class="accordion__header is-focused" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Pressed, Expanded=True, Flush=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium is-expanded">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, Icon alignment=Trailing, State=Disabled, Expanded=True, Flush=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--medium accordion--disabled is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase medium expanded -->
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Small size ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Small</h2>
+
+        <p class="variant__sub">Collapsed — Expanded = false</p>
+
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Default, Expanded=False, Flush=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small">
+                <button class="accordion__header" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Hovered, Expanded=False, Flush=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Focused, Expanded=False, Flush=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small">
+                <button class="accordion__header is-focused" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Pressed, Expanded=False, Flush=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="false">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Disabled, Expanded=False, Flush=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small accordion--disabled">
+                <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase small collapsed -->
+
+        <p class="variant__sub">Expanded — Expanded = true</p>
+
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Default, Expanded=True, Flush=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Hovered, Expanded=True, Flush=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small is-expanded">
+                <button class="accordion__header is-hovered" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Focused, Expanded=True, Flush=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small is-expanded">
+                <button class="accordion__header is-focused" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Pressed, Expanded=True, Flush=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small is-expanded">
+                <button class="accordion__header is-pressed" type="button" aria-expanded="true">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, Icon alignment=Trailing, State=Disabled, Expanded=True, Flush=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <div class="accordion accordion--normal accordion--small accordion--disabled is-expanded">
+                <button class="accordion__header" type="button" aria-expanded="true" aria-disabled="true" disabled="disabled">
+                  <span class="accordion__title">Accordion Title</span>
+                  <span class="accordion__icon" aria-hidden="true">
+                    <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                </button>
+                <div class="accordion__content" role="region">
+                  <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /showcase small expanded -->
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ List — stacked group with closing border ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">List</h2>
+
+        <div class="accordion-list">
+          <div class="accordion accordion--normal">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="list-panel-1">
+              <span class="accordion__title">First Accordion Item</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" id="list-panel-1" role="region">
+              <p class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--normal">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="list-panel-2">
+              <span class="accordion__title">Second Accordion Item</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" id="list-panel-2" role="region">
+              <p class="accordion__body">The user gets key details about the underlying content and can choose to expand that content within the constraints of the accordion.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--normal">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="list-panel-3">
+              <span class="accordion__title">Third Accordion Item</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" id="list-panel-3" role="region">
+              <p class="accordion__body">Use accordions when you have multiple sections of content that users may not all need to see at once.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--normal">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-controls="list-panel-4">
+              <span class="accordion__title">Fourth Accordion Item</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" id="list-panel-4" role="region">
+              <p class="accordion__body">They work well for FAQs, settings panels, and navigation menus with sub-items.</p>
+            </div>
+          </div>
+
+          <div class="accordion accordion--normal accordion--disabled">
+            <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled="disabled">
+              <span class="accordion__title">Fifth Accordion Item (Disabled)</span>
+              <span class="accordion__icon" aria-hidden="true">
+                <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion__content" role="region">
+              <p class="accordion__body">This content is not accessible when the accordion is disabled.</p>
+            </div>
+          </div>
+        </div>
+        <!-- /accordion-list -->
+
+      </section>
+
+    </main>
+
+    <script>
+      /* ── Preview / Code Tabs ── */
+      function extractComponentCode(el) {
+        if (el.classList.contains('showcase')) {
+          var parts = [];
+          el
+            .querySelectorAll('.showcase__row')
+            .forEach(function (row) {
+              var label = row.querySelector('.showcase__label');
+              var labelText = label
+                ? label
+                  .textContent
+                  .trim()
+                : '';
+              var item = row.querySelector('.showcase__item');
+              var code;
+              if (item) {
+                code = item
+                  .innerHTML
+                  .trim();
+              } else {
+                var siblings = Array
+                  .from(row.children)
+                  .filter(function (c) {
+                    return !c
+                      .classList
+                      .contains('showcase__label');
+                  });
+                code = siblings
+                  .map(function (c) {
+                    return c.outerHTML;
+                  })
+                  .join('\n')
+                  .trim();
+              }
+              if (labelText) 
+                parts.push('<!-- ' + labelText + ' -->');
+              if (code) 
+                parts.push(code);
+              parts.push('');
+            });
+          return parts
+            .join('\n')
+            .trim();
+        }
+        if (el.classList.contains('interactive')) {
+          var items = Array
+            .from(el.children)
+            .filter(function (c) {
+              return !c
+                .classList
+                .contains('interactive__title');
+            });
+          return items
+            .map(function (c) {
+              return c.outerHTML;
+            })
+            .join('\n\n')
+            .trim();
+        }
+        return el
+          .innerHTML
+          .trim();
+      }
+
+      document
+        .querySelectorAll('.showcase, .interactive')
+        .forEach(function (el) {
+          var sourceHTML = extractComponentCode(el);
+
+          var block = document.createElement('div');
+          block.className = 'preview-block';
+
+          var tabs = document.createElement('div');
+          tabs.className = 'preview-tabs';
+
+          var btnPreview = document.createElement('button');
+          btnPreview.className = 'preview-tab is-active';
+          btnPreview.textContent = 'Preview';
+
+          var btnCode = document.createElement('button');
+          btnCode.className = 'preview-tab';
+          btnCode.textContent = 'Code';
+
+          tabs.appendChild(btnPreview);
+          tabs.appendChild(btnCode);
+
+          var previewPane = document.createElement('div');
+          previewPane.className = 'preview-pane';
+
+          var codePane = document.createElement('div');
+          codePane.className = 'code-pane';
+          codePane.hidden = true;
+
+          var toolbar = document.createElement('div');
+          toolbar.className = 'code-pane__toolbar';
+          var copyBtn = document.createElement('button');
+          copyBtn.className = 'code-copy-btn';
+          copyBtn.textContent = 'Copy';
+          toolbar.appendChild(copyBtn);
+
+          var pre = document.createElement('pre');
+          var code = document.createElement('code');
+          code.textContent = sourceHTML;
+          pre.appendChild(code);
+
+          codePane.appendChild(toolbar);
+          codePane.appendChild(pre);
+
+          el
+            .parentNode
+            .insertBefore(block, el);
+          previewPane.appendChild(el);
+          block.appendChild(tabs);
+          block.appendChild(previewPane);
+          block.appendChild(codePane);
+
+          function activate(showCode) {
+            btnPreview
+              .classList
+              .toggle('is-active', !showCode);
+            btnCode
+              .classList
+              .toggle('is-active', showCode);
+            previewPane.hidden = showCode;
+            codePane.hidden = !showCode;
+          }
+
+          btnPreview.addEventListener('click', function () {
+            activate(false);
+          });
+          btnCode.addEventListener('click', function () {
+            activate(true);
+          });
+
+          copyBtn.addEventListener('click', function () {
+            navigator
+              .clipboard
+              .writeText(sourceHTML)
+              .then(function () {
+                copyBtn.textContent = 'Copied!';
+                setTimeout(function () {
+                  copyBtn.textContent = 'Copy';
+                }, 2000);
+              });
+          });
+        });
+
+      /* ── Component Props ── */
+      (function () {
+        var VARIANT_MAP = {
+          'normal': 'Normal',
+          'flush': 'Flush',
+          'leading': 'Leading',
+          'leading flush': 'Leading-Flush'
+        };
+        var SIZE_MAP = {
+          'medium': 'Medium',
+          'small': 'Small'
+        };
+        var STATE_MAP = {
+          'default': 'Default',
+          'hovered': 'Hovered',
+          'focused': 'Focused',
+          'pressed': 'Pressed',
+          'disabled': 'Disabled'
+        };
+
+        function hostInSection(el) {
+          var h = el;
+          while (h.parentElement && !h.parentElement.classList.contains('variant')) {
+            h = h.parentElement;
+          }
+          return h;
+        }
+
+        function prevSubText(showcase) {
+          var host = hostInSection(showcase);
+          var prev = host.previousElementSibling;
+          while (prev) {
+            if (prev.classList.contains('variant__sub')) 
+              return prev
+                .textContent
+                .trim()
+                .toLowerCase();
+            prev = prev.previousElementSibling;
+          }
+          return '';
+        }
+
+        function injectProps(row, propsStr) {
+          var item = row.querySelector('.showcase__item');
+          if (!item) {
+            item = document.createElement('div');
+            item.className = 'showcase__item';
+            Array
+              .from(row.children)
+              .filter(function (c) {
+                return !c
+                  .classList
+                  .contains('showcase__label');
+              })
+              .forEach(function (c) {
+                item.appendChild(c);
+              });
+            row.appendChild(item);
+          }
+          var tag = document.createElement('span');
+          tag.className = 'showcase__props';
+          tag.textContent = propsStr;
+          item.appendChild(tag);
+        }
+
+        document
+          .querySelectorAll('section.variant')
+          .forEach(function (section) {
+            var titleEl = section.querySelector('h2.variant__title');
+            if (!titleEl) 
+              return;
+            var titleKey = titleEl
+              .textContent
+              .trim()
+              .toLowerCase();
+            var variantName = VARIANT_MAP[titleKey] || null;
+            var sizeName = SIZE_MAP[titleKey] || null;
+            if (!variantName && !sizeName) 
+              return;
+            
+            section
+              .querySelectorAll('.showcase')
+              .forEach(function (showcase) {
+                var subText = prevSubText(showcase);
+                var expanded = subText.includes('true')
+                  ? 'True'
+                  : 'False';
+
+                showcase
+                  .querySelectorAll('.showcase__row')
+                  .forEach(function (row) {
+                    var labelEl = row.querySelector('.showcase__label');
+                    if (!labelEl) 
+                      return;
+                    var stateKey = labelEl
+                      .textContent
+                      .trim()
+                      .toLowerCase();
+                    var stateName = STATE_MAP[stateKey];
+                    if (!stateName) 
+                      return;
+                    
+                    var parts = [];
+                    if (variantName) 
+                      parts.push('Variant=' + variantName);
+                    if (sizeName) 
+                      parts.push('Size=' + sizeName);
+                    parts.push('Expanded=' + expanded);
+                    parts.push('State=' + stateName);
+                    injectProps(row, parts.join(', '));
+                  });
+              });
+          });
+      })();
+
+      /* ── Accordion Toggle ── */
+      document
+        .querySelectorAll('.accordion:not(.accordion--disabled) .accordion__header')
+        .forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var root = btn.closest('.accordion');
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            root
+              .classList
+              .toggle('is-expanded', !expanded);
+          });
+        });
+    </script>
+    <script>
+      /* ── Figma Props renderer ─────────────────────────────────── */
+      (function () {
+        document.querySelectorAll('.showcase__row[data-props]').forEach(function(row) {
+          var label = row.querySelector('.showcase__label');
+          var others = Array.from(row.children).filter(function(c){ return c !== label; });
+          if (!others.length) return;
+          var first = others[0];
+          var item;
+          if (first.classList.contains('showcase__item')) {
+            item = first;
+          } else {
+            item = document.createElement('div');
+            item.className = 'showcase__item';
+            first.replaceWith(item);
+            item.appendChild(first);
+          }
+          row.style.alignItems = 'flex-start';
+          var tags = document.createElement('div');
+          tags.className = 'prop-tags';
+          row.getAttribute('data-props').split(',').forEach(function(part) {
+            part = part.trim();
+            var eq = part.indexOf('=');
+            if (eq < 0) return;
+            var k = part.slice(0, eq).trim();
+            var v = part.slice(eq + 1).trim();
+            var t = document.createElement('span');
+            t.className = 'prop-tag';
+            t.innerHTML = '<span class="prop-tag__key">' + k + '</span>'
+                        + '<span class="prop-tag__eq">=</span>'
+                        + '<span class="prop-tag__val">' + v + '</span>';
+            tags.appendChild(t);
+          });
+          item.appendChild(tags);
+        });
+      }());
+    </script>
+  </body>
+</html>

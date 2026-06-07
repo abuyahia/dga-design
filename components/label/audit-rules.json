@@ -1,0 +1,88 @@
+{
+  "component": "label",
+  "schema_version": "1.0.0",
+  "generated": "2026-06-06",
+  "rules": [
+
+    {
+      "id": "PLATFORM-CODE-LABEL-001",
+      "type": "structural",
+      "severity": "high",
+      "title": "Semantic element required",
+      "description": "Label component must render as a semantic <label> HTML element.",
+      "check": "element.tagName === 'LABEL'",
+      "remediation": "Replace non-semantic wrapper (<div>, <span>) with <label>. Semantic element is required for browser form association and screen reader announcements."
+    },
+
+    {
+      "id": "PLATFORM-CODE-LABEL-002",
+      "type": "accessibility",
+      "severity": "high",
+      "title": "Required asterisk must be aria-hidden",
+      "description": "The .label__required span must carry aria-hidden='true'. Required state must be communicated separately via aria-required='true' on the form control.",
+      "check": ".label__required[aria-hidden='true']",
+      "remediation": "Add aria-hidden='true' to the .label__required span. Add aria-required='true' to the associated input, select, or textarea element."
+    },
+
+    {
+      "id": "PLATFORM-CODE-LABEL-003",
+      "type": "accessibility",
+      "severity": "high",
+      "title": "Label must be associated with a form control",
+      "description": "The <label> must be linked to its form control via a for attribute matching the control's id, or by nesting the control inside the label.",
+      "check": "label[for] or label containing input/select/textarea",
+      "remediation": "Add a for='field-id' attribute to the label and a matching id='field-id' on the form control. Alternatively, nest the form control inside the label element."
+    },
+
+    {
+      "id": "PLATFORM-CODE-LABEL-004",
+      "type": "token",
+      "severity": "medium",
+      "title": "No hardcoded visual values in component CSS",
+      "description": "Component CSS must not use hardcoded hex, rgba, pixel sizes, or font values outside of token fallbacks in var().",
+      "check": "No raw color, size, or typography values outside var(--label-*, fallback) patterns",
+      "remediation": "Replace hardcoded values with component-level tokens (--label-*). Use var() with a single token reference. Fallbacks inside var() are acceptable as a safety net pending token.css update."
+    },
+
+    {
+      "id": "PLATFORM-CODE-LABEL-005",
+      "type": "state",
+      "severity": "medium",
+      "title": "Disabled state must use class and aria-disabled",
+      "description": "Disabled label must have both .label--disabled class (for CSS) and aria-disabled='true' attribute (for AT). The <label> element has no native :disabled pseudo-class.",
+      "check": ".label--disabled[aria-disabled='true']",
+      "remediation": "Add .label--disabled class and aria-disabled='true' attribute together on the <label> element when the associated field is disabled."
+    },
+
+    {
+      "id": "PLATFORM-CODE-LABEL-006",
+      "type": "i18n",
+      "severity": "medium",
+      "title": "RTL must use dir attribute, not hardcoded CSS direction",
+      "description": "RTL layout must be triggered by dir='rtl' on the label element or an ancestor. Do not use hardcoded text-align: right or flex-direction: row-reverse in component CSS.",
+      "check": "No hardcoded text-align: right or flex-direction: row-reverse in .label base selectors",
+      "remediation": "Set dir='rtl' on the <label> element or an ancestor element (<html>, a wrapping <div>). The browser handles inline-flex child order reversal automatically."
+    },
+
+    {
+      "id": "PLATFORM-CODE-LABEL-007",
+      "type": "structural",
+      "severity": "low",
+      "title": "Label text must be in .label__text child span",
+      "description": "Visible label text must be wrapped in a <span class='label__text'> for correct slot targeting and assembly compatibility.",
+      "check": ".label > .label__text",
+      "remediation": "Wrap label text content in <span class='label__text'>. Do not place text directly as a text node inside .label."
+    },
+
+    {
+      "id": "PLATFORM-CODE-LABEL-008",
+      "type": "token",
+      "severity": "low",
+      "title": "Component tokens should be in token.css",
+      "description": "The --label-* token definitions are currently scoped on .label in label.css. Per design system convention, they should be defined in the global token.css under a Label section.",
+      "check": "token.css contains --label-gap, --label-text-color, --label-required-color, --label-text-color-disabled, and all --label-font-* tokens",
+      "remediation": "Add a '/* Label state tokens */' section to token.css with the tokens listed in analysis.md Missing Tokens. Remove the scoped definitions from label.css after adding to token.css."
+    }
+
+  ]
+}

@@ -1,0 +1,103 @@
+<!--
+  Button — Component Template
+  ════════════════════════════════════════════════════════════════════
+  هذا الملف مرجع هيكلي فقط. الـ {{ }} تمثّل متغيرات قابلة للتغيير
+  عند بناء أي تطبيق (React, Vue, Jinja, Handlebars …).
+  لا يُفتح هذا الملف في المتصفح — للعرض الحي انظر: showcases/index.html
+  ════════════════════════════════════════════════════════════════════
+
+  ── المتغيرات ────────────────────────────────────────────────────
+
+  {{ variant }}   string   الشكل البصري للزر
+                           primary | neutral | secondary-solid
+                           secondary-outline | subtle | transparent
+                           + نسخة on-color لكل منها: primary-on-color …
+
+  {{ size }}      string   الحجم  →  "" (large/افتراضي) | "btn--md" | "btn--sm"
+
+  {{ label }}     string   نص الزر  (مطلوب في كل الأنماط عدا icon-only)
+
+  {{ icon }}      SVG      أيقونة SVG خام  (اختياري في label+icon، مطلوب في icon-only)
+
+  {{ disabled }}  boolean  disabled="disabled" أو تُحذف الخاصية
+
+  ── قواعد CSS الخاصة بالحالات ────────────────────────────────────
+  :hover    →  btn--hovered  (أو CSS :hover الطبيعي)
+  :focus    →  btn--focused
+  :active   →  btn--pressed
+  disabled  →  btn--disabled  +  disabled attr
+  selected  →  btn--selected
+-->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 1 — نص فقط  (label only)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<button class="btn btn--{{ variant }} {{ size }}" type="button" {{ disabled }}>
+  <span class="btn__text">{{ label }}</span>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 2 — أيقونة + نص  (icon + label)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<button class="btn btn--{{ variant }} {{ size }}" type="button" {{ disabled }}>
+  <span class="btn__icon" aria-hidden="true">
+    {{ icon }}
+  </span>
+  <span class="btn__text">{{ label }}</span>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 3 — أيقونة فقط  (icon only)
+     يستخدم: btn--icon-only  +  aria-label بدلاً من نص مرئي
+     ═══════════════════════════════════════════════════════════════ -->
+
+<button class="btn btn--{{ variant }} btn--icon-only {{ size }}" type="button"
+        aria-label="{{ label }}" {{ disabled }}>
+  <span class="btn__icon" aria-hidden="true">
+    {{ icon }}
+  </span>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     أمثلة حقيقية (قيم ثابتة للتوضيح)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- primary / large / default -->
+<button class="btn btn--primary" type="button">
+  <span class="btn__text">حفظ</span>
+</button>
+
+<!-- primary / large / icon+label -->
+<button class="btn btn--primary" type="button">
+  <span class="btn__icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 12H19M19 12L13 6M19 12L13 18"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+  <span class="btn__text">التالي</span>
+</button>
+
+<!-- neutral / medium / disabled -->
+<button class="btn btn--neutral btn--md" type="button" disabled>
+  <span class="btn__text">غير متاح</span>
+</button>
+
+<!-- secondary-outline / small / icon-only -->
+<button class="btn btn--secondary-outline btn--icon-only btn--sm" type="button"
+        aria-label="إغلاق">
+  <span class="btn__icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M18 6L6 18M6 6l12 12"
+            stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>

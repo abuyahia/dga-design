@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "{{component_id}}",
+  "selector_root": "{{selector_root}}",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+  "rules": [
+    {
+      "id": "{{rule_prefix}}-A11Y-001",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "{{component_name}} must have an accessible label",
+      "description": "Every {{component_name}} instance must have a non-empty accessible name computable by the accessibility tree.",
+      "target": "{{selector_root}}",
+      "expected": "element has accessible name via text content OR aria-label OR aria-labelledby",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "any_of",
+        "conditions": [
+          "element has non-empty trimmed text content",
+          "element has non-empty aria-label attribute",
+          "element has aria-labelledby whose target has non-empty text content"
+        ]
+      },
+      "message": "{{component_name}} has no accessible label. Add visible text or an accessible name attribute.",
+      "fix": "Add visible text, aria-label, or aria-labelledby to the root element.",
+      "standard_refs": ["WCAG-2.1-4.1.2"]
+    },
+    {
+      "id": "{{rule_prefix}}-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-{{rule_prefix}}-001",
+      "rule_type": "no_hardcoded_values",
+      "category": "token-usage",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "{{component_name}} visual values must reference design tokens",
+      "description": "All color, spacing, radius, typography, and motion values applied to {{selector_root}} must reference design tokens.",
+      "target": "{{selector_root}}, {{selector_root}} *",
+      "expected": "visual CSS properties use var(--) tokens or allowed literal values",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": "{{selector_root}}, {{selector_root}} *",
+        "properties": ["background", "background-color", "color", "border-color", "outline-color"],
+        "allowed_literal_values": ["transparent", "none", "inherit", "currentColor"]
+      },
+      "message": "Hardcoded value '{value}' found on '{property}'. Replace it with the corresponding design token.",
+      "fix": "Replace hardcoded visual values with component or global design tokens.",
+      "standard_refs": ["PLATFORM-CODE-{{rule_prefix}}-001"]
+    },
+    {
+      "id": "{{rule_prefix}}-RTL-001",
+      "standard_id": "PLATFORM-CODE-{{rule_prefix}}-002",
+      "rule_type": "no_hardcoded_values",
+      "category": "rtl",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "{{component_name}} must use logical CSS properties",
+      "description": "Physical left/right CSS properties break RTL layouts unless intentionally overridden.",
+      "target": "{{selector_root}}, {{selector_root}} *",
+      "expected": "uses logical properties such as padding-inline, margin-inline, inset-inline, border-inline",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": "{{selector_root}}, {{selector_root}} *",
+        "forbidden_properties": ["left", "right", "margin-left", "margin-right", "padding-left", "padding-right"]
+      },
+      "message": "Physical RTL-sensitive property '{property}' found. Use a logical CSS property instead.",
+      "fix": "Replace left/right properties with logical inline equivalents.",
+      "standard_refs": ["PLATFORM-CODE-{{rule_prefix}}-002"]
+    }
+  ]
+}

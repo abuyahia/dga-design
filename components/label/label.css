@@ -1,0 +1,103 @@
+/* =============================================================
+   label  ·  Reference: label/reference.json
+   ============================================================= */
+
+/* ── Component tokens ───────────────────────────────────────── */
+/*
+ * TODO: Move these tokens to token.css under a "Label state tokens" section
+ * once the global token set is updated. While here, the component is
+ * self-contained. Remove scoped definitions after token.css update.
+ *
+ * Missing in token.css:
+ *   --label-text-color: #161616 — no exact primitive match. Figma: --Form-field-text-label.
+ *     Propose adding --color-text-form: #161616 as a global semantic token.
+ *   --label-required-color — maps to var(--error-700). Figma: --Form-field-border-error.
+ *   --label-text-color-disabled — maps to var(--gray-400). Figma: --Global-input-text-disabled.
+ *   --label-gap — maps to var(--spacing-xs). Figma: --Form-label-gap.
+ *   All --label-font-* tokens — map to existing token.css primitives.
+ */
+.label {
+  --label-gap:                     var(--spacing-xs, 4px);
+  --label-font-family:             var(--font-sans);
+  --label-font-size-md:            var(--fs-text-sm, 14px);
+  --label-line-height-md:          var(--lh-text-sm, 20px);
+  --label-font-size-lg:            var(--fs-text-md, 16px);
+  --label-line-height-lg:          var(--lh-text-md, 24px);
+  --label-font-weight-regular:     var(--font-weight-body, 400);
+  --label-font-weight-semibold:    var(--font-weight-semibold, 600);
+  /* TODO: --label-text-color missing in token.css. #161616 has no exact primitive match. */
+  --label-text-color:              #161616;
+  /* TODO: --label-required-color missing in token.css. Proposed: var(--error-700). */
+  --label-required-color:          var(--error-700, #B42318);
+  /* TODO: --label-text-color-disabled missing in token.css. Proposed: var(--gray-400). */
+  --label-text-color-disabled:     var(--gray-400, #9DA4AE);
+  --label-required-color-disabled: var(--gray-400, #9DA4AE);
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+.label {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: var(--label-gap);
+  font-family: var(--label-font-family);
+  font-size: var(--label-font-size-md);
+  font-weight: var(--label-font-weight-regular);
+  line-height: var(--label-line-height-md);
+  font-style: normal;
+  cursor: default;
+}
+
+/* ── Children ───────────────────────────────────────────────── */
+.label__text {
+  color: var(--label-text-color);
+}
+
+.label__required {
+  color: var(--label-required-color);
+}
+
+/* =============================================================
+   Size modifier — default is Medium
+   ============================================================= */
+
+.label--large {
+  font-size: var(--label-font-size-lg);
+  line-height: var(--label-line-height-lg);
+}
+
+/* =============================================================
+   Type modifier — default is Regular
+   ============================================================= */
+
+.label--semibold {
+  font-weight: var(--label-font-weight-semibold);
+}
+
+/* =============================================================
+   Disabled state
+   <label> has no native :disabled — use class + aria-disabled
+   ============================================================= */
+
+.label--disabled,
+.label[aria-disabled="true"] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.label--disabled .label__text,
+.label[aria-disabled="true"] .label__text {
+  color: var(--label-text-color-disabled);
+}
+
+.label--disabled .label__required,
+.label[aria-disabled="true"] .label__required {
+  color: var(--label-required-color-disabled);
+}
+
+/* =============================================================
+   RTL
+   No component-level CSS needed. Inherit direction from
+   [dir="rtl"] ancestor. inline-flex child order reverses
+   automatically: [.label__required, .label__text] renders as
+   "Text Asterisk" in RTL (asterisk at logical start = right).
+   ============================================================= */

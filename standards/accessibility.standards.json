@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "PLATFORM-CODE-A11Y",
+  "name": "Platform Accessibility Internal Standards",
+  "description": "Accessibility-specific internal standards for this Government Design System. These interpret and extend WCAG 2.1 AA requirements as concrete, component-level rules for Arabic-language government digital services. source_status is 'internal_mapping' — they reference WCAG but have not been formally audited against the official WCAG test procedures.",
+  "source_status": "internal_mapping",
+  "official_reference": "WCAG 2.1 (https://www.w3.org/TR/WCAG21/) — referenced, not formally mapped",
+  "version": "1.0.0-draft",
+
+  "standards": [
+
+    {
+      "id": "PLATFORM-CODE-A11Y-001",
+      "title": "Arabic language font support required",
+      "description": "All text-bearing components must apply a font family that supports the Arabic Unicode block (U+0600–U+06FF). In this design system, that font is IBM Plex Sans Arabic, applied via the --button-label-font-family token (or equivalent per-component token). Components must not override the font to a Latin-only typeface.",
+      "category": "language",
+      "applies_to": ["button", "all-text-bearing"],
+      "wcag_reference": null,
+      "source_status": "internal_mapping",
+      "official_reference": "DGA Digital Accessibility Guidelines (pending formal reference)",
+      "audit_rule_type": "token_used",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-002",
+      "title": "Label language must match document language context",
+      "description": "Button and control labels rendered on Arabic-language pages (lang='ar') must use Arabic text unless the label is a proper noun, brand name, or technical term with no Arabic equivalent. Mixed-language labels must be marked with the lang attribute on the containing span. This rule cannot be automatically enforced and requires manual review.",
+      "category": "language",
+      "applies_to": ["button", "all-labeled"],
+      "wcag_reference": "WCAG 3.1.1 Language of Page",
+      "source_status": "internal_mapping",
+      "official_reference": "DGA Digital Accessibility Guidelines (pending formal reference)",
+      "audit_rule_type": "aria_attribute_required",
+      "severity": "warning",
+      "manual_review_required": true
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-003",
+      "title": "Visible focus indicator required on all interactive elements",
+      "description": "Every interactive element must display a visible focus ring when it receives keyboard focus. The design system mandates the two-layer ring pattern (see PLATFORM-CODE-FOCUS-001). No inline style, global reset, or page-level CSS may suppress :focus-visible on design system components.",
+      "category": "focus",
+      "applies_to": ["button", "all-interactive"],
+      "wcag_reference": "WCAG 2.4.7 Focus Visible (AA)",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "focus_indicator_required",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-004",
+      "title": "Keyboard operability for all interactive components",
+      "description": "All interactive components must be fully operable via keyboard alone. Native HTML elements (button, a, input) are keyboard-operable by default and satisfy this requirement without additional JavaScript. Custom interactive elements (div[role=button]) must additionally handle keydown events for Enter (activation) and Space (activation for buttons). Tab key must reach all interactive elements unless intentionally excluded from tab order (roving tabindex pattern).",
+      "category": "keyboard",
+      "applies_to": ["button", "all-interactive"],
+      "wcag_reference": "WCAG 2.1.1 Keyboard (A)",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "keyboard_support_required",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-005",
+      "title": "Disabled state must be communicated to assistive technology",
+      "description": "Interactive elements in a disabled state must communicate that state to assistive technology. Use the HTML disabled attribute (removes from tab order, announces as 'dimmed' to screen readers) or aria-disabled='true' (keeps in tab order, announces as 'unavailable'). Never communicate disabled state via CSS class alone — it has no effect on the accessibility tree.",
+      "category": "state",
+      "applies_to": ["button", "all-interactive"],
+      "wcag_reference": "WCAG 4.1.2 Name, Role, Value (AA)",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "disabled_behavior_required",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-006",
+      "title": "Icon-only elements must have an accessible text alternative",
+      "description": "Interactive or informational elements that are represented only by an icon (no visible text) must provide an accessible name via aria-label on the interactive element. The icon element (svg or img) must carry aria-hidden='true' to prevent redundant announcements. Title elements inside SVG do not reliably serve as accessible names in all assistive technology combinations.",
+      "category": "accessible-name",
+      "applies_to": ["button", "all-icon-only"],
+      "wcag_reference": "WCAG 1.1.1 Non-text Content (A)",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "aria_attribute_required",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-007",
+      "title": "Toggle and expandable elements must communicate state via ARIA",
+      "description": "Interactive elements that toggle or expand must communicate their current state using the correct ARIA attribute: aria-pressed for toggle buttons (on/off), aria-expanded for disclosure widgets (open/closed). The attribute must be present from initial render and updated via JavaScript as state changes. Relying on visual appearance alone (color, icon swap) is not sufficient.",
+      "category": "state",
+      "applies_to": ["button", "accordion", "all-stateful"],
+      "wcag_reference": "WCAG 4.1.2 Name, Role, Value (AA)",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "state_required",
+      "severity": "error"
+    }
+
+  ]
+}

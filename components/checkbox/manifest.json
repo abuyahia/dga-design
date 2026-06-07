@@ -1,0 +1,5042 @@
+[
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Default, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Default, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Default, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Default, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Default, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Default, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Default, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Default, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Default, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Default, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Default, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Default, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Default, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Default, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Default, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Default, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Default, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Default, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Hovered, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Hovered, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Hovered, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Hovered, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Hovered, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Hovered, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Hovered, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Hovered, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Hovered, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Hovered, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Hovered, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Hovered, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Hovered, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Hovered, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Hovered, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Hovered, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Hovered, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Hovered, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Pressed, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Pressed, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Pressed, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Pressed, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Pressed, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Pressed, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Pressed, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Pressed, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Pressed, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Pressed, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Pressed, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Pressed, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Pressed, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Pressed, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Pressed, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Pressed, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Pressed, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Pressed, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Focused, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "32px",
+          "height": "32px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Focused, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "32px",
+          "height": "32px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Focused, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "28px",
+          "height": "28px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Focused, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "28px",
+          "height": "28px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Focused, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "24px",
+          "height": "24px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Focused, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "24px",
+          "height": "24px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Focused, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "32px",
+          "height": "32px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Focused, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "32px",
+          "height": "32px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Focused, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "28px",
+          "height": "28px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Focused, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "28px",
+          "height": "28px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Focused, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "24px",
+          "height": "24px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Focused, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "24px",
+          "height": "24px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Focused, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "32px",
+          "height": "32px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Focused, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "32px",
+          "height": "32px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Focused, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "28px",
+          "height": "28px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Focused, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "28px",
+          "height": "28px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Focused, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "24px",
+          "height": "24px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Focused, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "24px",
+          "height": "24px",
+          "mix-blend-mode": "multiply",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 2px var(--Checkbox-checkbox-focus-ring, #161616)"
+        },
+        "type": "FRAME",
+        "name": "Focus Ring"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Read-only, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Read-only, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Read-only, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Read-only, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Read-only, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Read-only, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Read-only, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Read-only, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Read-only, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Read-only, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Read-only, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Read-only, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Read-only, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Read-only, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Read-only, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Read-only, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Read-only, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.7"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Read-only, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Disabled, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Disabled, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Disabled, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Disabled, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Disabled, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=False, Indeterminate=False, State=Disabled, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--Checkbox-checkbox-border-unselected, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1"
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Disabled, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Disabled, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "9.116px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Disabled, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Disabled, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "7.596px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Disabled, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=False, State=Disabled, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "checkmark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "6.077px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Disabled, Size=Medium, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "24px",
+      "height": "24px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Disabled, Size=Medium, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "24px",
+          "height": "24px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "12.000px",
+                  "height": "3.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Disabled, Size=Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "20px",
+      "height": "20px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Disabled, Size=Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "20px",
+          "height": "20px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "20px",
+              "height": "20px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "10.000px",
+                  "height": "2.500px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Disabled, Size=x Small, Style=Primary",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected, #1B8354)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "cssProps": {
+      "position": "relative",
+      "display": "flex",
+      "width": "16px",
+      "height": "16px",
+      "justify-content": "center",
+      "align-items": "center",
+      "opacity": "0.5"
+    },
+    "type": "COMPONENT",
+    "name": "Checked=True, Indeterminate=True, State=Disabled, Size=x Small, Style=Neutral",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "16px",
+          "height": "16px",
+          "justify-content": "center",
+          "align-items": "center",
+          "flex-shrink": "0",
+          "border-radius": "var(--Radius-radius-xs, 2px)",
+          "background": "var(--Checkbox-checkbox-background-selected-neutral, #161616)"
+        },
+        "type": "INSTANCE",
+        "name": "_CheckboxBase1",
+        "children": [
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px",
+              "overflow": "hidden",
+              "position": "relative"
+            },
+            "type": "FRAME",
+            "name": "Indeterminate mark",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "8.000px",
+                  "height": "2.000px",
+                  "flex-shrink": "0",
+                  "fill": "var(--Checkbox-checkbox-icon-oncolor, #FFF)"
+                },
+                "type": "VECTOR",
+                "name": "Icon"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

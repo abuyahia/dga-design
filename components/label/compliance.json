@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "label",
+  "generated": "2026-06-06",
+  "overall_status": "pending_audit",
+  "official_compliance_claim": false,
+  "_note": "Status 'mapped' means the component has been mapped to this criterion internally. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.1.1",
+          "title": "Non-text Content",
+          "status": "mapped",
+          "evidence": "Required asterisk (*) is aria-hidden='true'. All meaningful content is in .label__text as visible text. No images or icons present in this component.",
+          "audit_rule_ids": ["PLATFORM-CODE-LABEL-002"]
+        },
+        {
+          "id": "1.3.1",
+          "title": "Info and Relationships",
+          "status": "mapped",
+          "evidence": "Semantic <label> element with for attribute creates a programmatic relationship with its form control. Required state communicated via aria-required='true' on the form control.",
+          "audit_rule_ids": ["PLATFORM-CODE-LABEL-001", "PLATFORM-CODE-LABEL-003"]
+        },
+        {
+          "id": "1.4.3",
+          "title": "Contrast (Minimum)",
+          "status": "mapped",
+          "evidence": "Enabled text: #161616 on white ~19:1 — passes AA and AAA. Disabled text: #9DA4AE on white ~2.5:1 — exempt per WCAG 1.4.3 for inactive UI components. Formal audit required to confirm against actual page backgrounds.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "Label is not an interactive element and does not receive keyboard focus. Form control focus is managed by the associated input, not the label. No keyboard operability requirements apply to this component.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "3.3.2",
+          "title": "Labels or Instructions",
+          "status": "mapped",
+          "evidence": "Component provides the visible label for a form control. Required indication via asterisk is visual-only; aria-required on the form control provides the programmatic equivalent.",
+          "audit_rule_ids": ["PLATFORM-CODE-A11Y-001"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-INTERNAL",
+      "name": "Platform Code Internal Design System Standards",
+      "source_status": "internal_mapping",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-LABEL-001",
+          "title": "Semantic element",
+          "status": "mapped",
+          "evidence": "template.html uses <label> element. Audit rule PLATFORM-CODE-LABEL-001 enforces this.",
+          "audit_rule_ids": ["PLATFORM-CODE-LABEL-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-LABEL-002",
+          "title": "Required asterisk aria-hidden",
+          "status": "mapped",
+          "evidence": "All template.html examples include aria-hidden='true' on .label__required.",
+          "audit_rule_ids": ["PLATFORM-CODE-LABEL-002"]
+        },
+        {
+          "id": "PLATFORM-CODE-LABEL-003",
+          "title": "Form control association",
+          "status": "mapped",
+          "evidence": "All template.html examples include for attribute. Nesting model documented in contract.",
+          "audit_rule_ids": ["PLATFORM-CODE-LABEL-003"]
+        },
+        {
+          "id": "PLATFORM-CODE-TOKEN-001",
+          "title": "Component CSS uses component-level semantic tokens only",
+          "status": "mapped",
+          "evidence": "label.css uses --label-* tokens throughout. Tokens are scoped on .label pending token.css update. Fallback values provided inline. Three missing tokens documented in analysis.md.",
+          "audit_rule_ids": ["PLATFORM-CODE-LABEL-004"]
+        },
+        {
+          "id": "PLATFORM-CODE-STATE-001",
+          "title": "Disabled state visually distinct",
+          "status": "mapped",
+          "evidence": ".label--disabled changes all text to --label-text-color-disabled (#9DA4AE). aria-disabled='true' is required on the element.",
+          "audit_rule_ids": ["PLATFORM-CODE-LABEL-005"]
+        },
+        {
+          "id": "PLATFORM-CODE-A11Y-001",
+          "title": "Required state communicated to AT",
+          "status": "mapped",
+          "evidence": "Required asterisk is aria-hidden. aria-required='true' on form control is the consumer's responsibility. Contract documents this clearly.",
+          "audit_rule_ids": ["PLATFORM-CODE-LABEL-002"]
+        }
+      ]
+    }
+  ],
+
+  "variant_compliance_notes": [
+    {
+      "variant_id": "all",
+      "note": "RTL variants rely on dir attribute inheritance. No CSS direction overrides applied. Correct visual order verified by design (inline-flex + direction:rtl reverses child order)."
+    },
+    {
+      "variant_id": "all-disabled",
+      "note": "Disabled label (#9DA4AE) has ~2.5:1 contrast on white. Exempt per WCAG 1.4.3 inactive component exception."
+    }
+  ]
+}

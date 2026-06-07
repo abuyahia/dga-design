@@ -1,0 +1,104 @@
+<!--
+  Avatar — Component Template
+  ════════════════════════════════════════════════════════════════
+  هذا الملف مرجع هيكلي فقط. الـ {{ }} تمثّل متغيرات قابلة للتغيير
+  عند بناء أي تطبيق (React, Vue, Jinja, Handlebars …).
+  لا يُفتح هذا الملف في المتصفح — للعرض الحي انظر: showcases/index.html
+  ════════════════════════════════════════════════════════════════
+
+  ── المتغيرات ────────────────────────────────────────────────────
+
+  {{ size }}     number   الحجم بالبكسل
+                          24 | 32 | 40 | 48 | 64 | 80 | 120
+                          → CSS modifier: .avatar--{size}
+
+  {{ square }}   boolean  الشكل المربع  →  إضافة .avatar--square
+                          false (افتراضي = دائري) | true
+
+  {{ type }}     string   نوع المحتوى الداخلي
+                          "icon" | "initials" | "image"
+
+  {{ src }}      string   URL الصورة  (مطلوب عند type=image)
+
+  {{ alt }}      string   نص بديل للصورة  (مطلوب عند type=image)
+
+  {{ initials }} string   أحرف العرض  (مطلوب عند type=initials)
+                          مثال: "AB" أو "ر م"
+
+  {{ icon }}     SVG      أيقونة SVG خام  (مطلوب عند type=icon)
+
+  {{ overflow }} string   نص عداد الـ group ("+99" …)
+                          → يُستخدم مع .avatar--overflow
+
+  ── ملاحظات ──────────────────────────────────────────────────────
+  • الحجم 120px يستخدم border: 4px بدلاً من 2px
+  • الشكل المربع عند 120px يستخدم border-radius: var(--radius-8, 8px)
+  • الشكل الدائري دائماً: border-radius: var(--radius-round, 9999px)
+-->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 1 — Icon
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="avatar avatar--{{ size }}{{ square ? ' avatar--square' : '' }}"
+     role="img" aria-label="{{ alt }}">
+  <span class="avatar__icon" aria-hidden="true">
+    {{ icon }}
+  </span>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 2 — Initials
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="avatar avatar--{{ size }}{{ square ? ' avatar--square' : '' }}"
+     role="img" aria-label="{{ alt }}">
+  <span class="avatar__initials" aria-hidden="true">{{ initials }}</span>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 3 — Image
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="avatar avatar--{{ size }} avatar--image{{ square ? ' avatar--square' : '' }}">
+  <img class="avatar__image" src="{{ src }}" alt="{{ alt }}" />
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 4 — Avatar Group (Stacked)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="avatar-group avatar-group--stacked" role="group" aria-label="{{ groupLabel }}">
+  <!-- كرِّر .avatar بعدد المستخدمين المطلوب -->
+  <div class="avatar avatar--32 avatar--image">
+    <img class="avatar__image" src="{{ src1 }}" alt="{{ alt1 }}" />
+  </div>
+  <div class="avatar avatar--32 avatar--image">
+    <img class="avatar__image" src="{{ src2 }}" alt="{{ alt2 }}" />
+  </div>
+  <!-- عداد الزيادة -->
+  <div class="avatar avatar--32 avatar--overflow" aria-hidden="true">
+    <span class="avatar__initials">{{ overflow }}</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 5 — Avatar Group (Flat / Non-stacked)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="avatar-group avatar-group--flat" role="group" aria-label="{{ groupLabel }}">
+  <div class="avatar avatar--32 avatar--image">
+    <img class="avatar__image" src="{{ src1 }}" alt="{{ alt1 }}" />
+  </div>
+  <div class="avatar avatar--32 avatar--image">
+    <img class="avatar__image" src="{{ src2 }}" alt="{{ alt2 }}" />
+  </div>
+  <div class="avatar avatar--32 avatar--overflow" aria-hidden="true">
+    <span class="avatar__initials">{{ overflow }}</span>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "PLATFORM-CODE-DS",
+  "name": "Platform Design System Internal Standards",
+  "description": "Internal component authoring rules specific to this Government Design System. These standards define structural, token, RTL, hierarchy, and sizing requirements that go beyond general accessibility guidelines. They have not been mapped to an official external standard. source_status is 'internal_mapping' until formal ratification.",
+  "source_status": "internal_mapping",
+  "official_reference": null,
+  "version": "1.0.0-draft",
+
+  "standards": [
+
+    {
+      "id": "PLATFORM-CODE-BTN-001",
+      "title": "Component must use design tokens for all visual values",
+      "description": "All color, spacing, border-radius, and typography values applied to a component must reference CSS custom properties defined in token.css. Hardcoded hex, rgb(), hsl(), or numeric pixel values for these properties bypass the token system and break theme, dark-mode, and high-contrast compliance.",
+      "category": "token-usage",
+      "applies_to": ["button", "all"],
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "no_hardcoded_values",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-BTN-002",
+      "title": "RTL layout support is mandatory for all components",
+      "description": "Every component must render correctly when dir='rtl' is set on any ancestor element. Layout must mirror without additional CSS classes or JavaScript. Physical CSS properties (padding-left, margin-right, border-right, etc.) must not be used on direction-sensitive elements — use logical equivalents (padding-inline-start, margin-inline-end) instead.",
+      "category": "rtl",
+      "applies_to": ["button", "all"],
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "no_hardcoded_values",
+      "severity": "warning"
+    },
+
+    {
+      "id": "PLATFORM-CODE-BTN-003",
+      "title": "One primary action per visual group",
+      "description": "No page section, form, dialog, or toolbar may contain more than one element using the primary action style (btn--primary or equivalent). Multiple primary actions dilute hierarchy and fail government UX standards for clear call-to-action. Secondary and tertiary shapes must be used for supporting actions.",
+      "category": "usage",
+      "applies_to": ["button"],
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "sibling_count_limit",
+      "severity": "warning"
+    },
+
+    {
+      "id": "PLATFORM-CODE-BTN-004",
+      "title": "Semantic HTML element required for interactive components",
+      "description": "Interactive components must use native HTML elements that carry implicit semantics and keyboard behavior. div and span elements must not be used as buttons, links, or controls without explicit ARIA role and tabindex attributes. Prefer native <button> or <a> at all times.",
+      "category": "html-structure",
+      "applies_to": ["button", "all-interactive"],
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "semantic_element_required",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-BTN-005",
+      "title": "Minimum touch target: 24×24px",
+      "description": "The smallest interactive element size in this design system is 24×24px (button --sm, icon-only --sm). No interactive element may collapse below this minimum in any state, including when text is absent. This aligns with WCAG 2.5.8 (AAA) and mobile usability standards for government services.",
+      "category": "sizing",
+      "applies_to": ["button", "all-interactive"],
+      "source_status": "internal_mapping",
+      "official_reference": "WCAG-2.5.8 (reference only, not formally mapped)",
+      "audit_rule_type": "token_used",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-TOKEN-001",
+      "title": "Component token surface must be declared in token.css",
+      "description": "Every CSS custom property consumed by a component must be declared in the shared token.css file. Tokens defined only in component CSS are not visible to the token system and cannot be overridden at the theme level.",
+      "category": "token-usage",
+      "applies_to": ["all"],
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "audit_rule_type": "token_exists",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-FOCUS-001",
+      "title": "Focus indicator must follow the two-layer ring pattern",
+      "description": "All interactive components in this design system use a two-layer focus indicator: an outer border on the element root and an inner ring via ::after pseudo-element. This pattern must not be replaced by a single outline or box-shadow unless formally approved. The pattern ensures visibility against both light and dark backgrounds.",
+      "category": "accessibility",
+      "applies_to": ["button", "all-interactive"],
+      "source_status": "internal_mapping",
+      "official_reference": "WCAG-2.4.7 (reference only, not formally mapped)",
+      "audit_rule_type": "focus_indicator_required",
+      "severity": "error"
+    },
+
+    {
+      "id": "PLATFORM-CODE-STATE-001",
+      "title": "Interactive state changes must be communicated via ARIA",
+      "description": "Any component that changes state in response to user interaction (toggle, expand, select, check) must reflect that state change via an ARIA attribute update. CSS-only state changes that are not communicated to the accessibility tree are violations.",
+      "category": "accessibility",
+      "applies_to": ["button", "accordion", "all-interactive"],
+      "source_status": "internal_mapping",
+      "official_reference": "WCAG-4.1.2 (reference only, not formally mapped)",
+      "audit_rule_type": "state_required",
+      "severity": "error"
+    }
+
+  ]
+}

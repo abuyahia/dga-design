@@ -1,0 +1,174 @@
+<!-- ============================================================
+  Text Input — Reference Template
+  Contract: text-input.contract.md
+  CSS:      text-input.css
+  ============================================================ -->
+
+
+<!-- ── Standard (Large, Default) ───────────────────────────── -->
+<div class="text-input">
+  <label class="text-input__label" for="ti-standard">Label</label>
+  <div class="text-input__field">
+    <div class="text-input__inner">
+      <input
+        class="text-input__input"
+        type="text"
+        id="ti-standard"
+        name="ti-standard"
+        placeholder="Placeholder text"
+      />
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Required field ──────────────────────────────────────── -->
+<div class="text-input">
+  <label class="text-input__label" for="ti-required">
+    Label <span aria-hidden="true">*</span>
+  </label>
+  <div class="text-input__field">
+    <div class="text-input__inner">
+      <input
+        class="text-input__input"
+        type="text"
+        id="ti-required"
+        name="ti-required"
+        placeholder="Placeholder text"
+        required
+        aria-required="true"
+      />
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Medium size ─────────────────────────────────────────── -->
+<div class="text-input text-input--md">
+  <label class="text-input__label" for="ti-medium">Label</label>
+  <div class="text-input__field">
+    <div class="text-input__inner">
+      <input
+        class="text-input__input"
+        type="text"
+        id="ti-medium"
+        name="ti-medium"
+        placeholder="Placeholder text"
+      />
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Error state ─────────────────────────────────────────── -->
+<!--
+  aria-describedby points to the error message element.
+  The error message element is the consumer's responsibility
+  (form-field or form assembly layer).
+-->
+<div class="text-input text-input--error">
+  <label class="text-input__label" for="ti-error">Label</label>
+  <div class="text-input__field">
+    <div class="text-input__inner">
+      <input
+        class="text-input__input"
+        type="text"
+        id="ti-error"
+        name="ti-error"
+        placeholder="Placeholder text"
+        aria-describedby="ti-error-msg"
+        aria-invalid="true"
+      />
+    </div>
+  </div>
+  <span id="ti-error-msg" role="alert" style="color: var(--text-input-border-error, #B42318); font-size: 12px;">
+    This field is required
+  </span>
+</div>
+
+
+<!-- ── Disabled state ──────────────────────────────────────── -->
+<div class="text-input text-input--disabled">
+  <label class="text-input__label" for="ti-disabled">Label</label>
+  <div class="text-input__field">
+    <div class="text-input__inner">
+      <input
+        class="text-input__input"
+        type="text"
+        id="ti-disabled"
+        name="ti-disabled"
+        placeholder="Placeholder text"
+        disabled
+      />
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Read-only state ─────────────────────────────────────── -->
+<div class="text-input text-input--readonly">
+  <label class="text-input__label" for="ti-readonly">Label</label>
+  <div class="text-input__field">
+    <div class="text-input__inner">
+      <input
+        class="text-input__input"
+        type="text"
+        id="ti-readonly"
+        name="ti-readonly"
+        value="Read-only value"
+        readonly
+      />
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Style: Filled Darker ────────────────────────────────── -->
+<div class="text-input text-input--filled-darker">
+  <label class="text-input__label" for="ti-darker">Label</label>
+  <div class="text-input__field">
+    <div class="text-input__inner">
+      <input
+        class="text-input__input"
+        type="text"
+        id="ti-darker"
+        name="ti-darker"
+        placeholder="Placeholder text"
+      />
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Style: Filled Lighter ───────────────────────────────── -->
+<div class="text-input text-input--filled-lighter">
+  <label class="text-input__label" for="ti-lighter">Label</label>
+  <div class="text-input__field">
+    <div class="text-input__inner">
+      <input
+        class="text-input__input"
+        type="text"
+        id="ti-lighter"
+        name="ti-lighter"
+        placeholder="Placeholder text"
+      />
+    </div>
+  </div>
+</div>
+
+
+<!-- ── RTL (dir attribute on wrapper or ancestor) ──────────── -->
+<div class="text-input" dir="rtl">
+  <label class="text-input__label" for="ti-rtl">التسمية</label>
+  <div class="text-input__field">
+    <div class="text-input__inner">
+      <input
+        class="text-input__input"
+        type="text"
+        id="ti-rtl"
+        name="ti-rtl"
+        placeholder="نص توضيحي"
+      />
+    </div>
+  </div>
+</div>

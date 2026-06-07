@@ -1,0 +1,472 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "label",
+    "description": "Form field label. Associates a visible text label with a form control. Supports required indication, two sizes, two weights, disabled state, and RTL."
+  },
+  "axes": ["type", "size", "disabled", "rtl"],
+  "axis_values": {
+    "type": ["regular", "semibold"],
+    "size": ["medium", "large"],
+    "disabled": [false, true],
+    "rtl": [false, true]
+  },
+  "size_tokens": {
+    "medium": {
+      "font-size":   "var(--label-font-size-md, 14px)",
+      "line-height": "var(--label-line-height-md, 20px)",
+      "css-modifier": null
+    },
+    "large": {
+      "font-size":   "var(--label-font-size-lg, 16px)",
+      "line-height": "var(--label-line-height-lg, 24px)",
+      "css-modifier": ".label--large"
+    }
+  },
+  "type_tokens": {
+    "regular": {
+      "font-weight": "var(--label-font-weight-regular, 400)",
+      "css-modifier": null
+    },
+    "semibold": {
+      "font-weight": "var(--label-font-weight-semibold, 600)",
+      "css-modifier": ".label--semibold"
+    }
+  },
+  "discarded_axes": [],
+  "rtl_implementation": "RTL is handled via dir='rtl' attribute on the label element or an ancestor. DOM child order stays constant [.label__required, .label__text] — inline-flex direction reversal produces the correct visual output. No RTL-specific CSS rules are needed on the component.",
+  "variants": [
+    {
+      "id": "regular-medium-enabled-ltr",
+      "axes": { "type": "regular", "size": "medium", "disabled": false, "rtl": false },
+      "status": "available",
+      "figma_name": "RTL=False, Type=Regular (Default), Size=Medium, Disabled=False",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-md, 14px)",
+          "font-weight": "var(--label-font-weight-regular, 400)",
+          "line-height": "var(--label-line-height-md, 20px)",
+          "font-style": "normal"
+        },
+        "text_css": {
+          "color": "var(--label-text-color, #161616)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color, #B42318)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "regular-medium-enabled-rtl",
+      "axes": { "type": "regular", "size": "medium", "disabled": false, "rtl": true },
+      "status": "available",
+      "figma_name": "RTL=True, Type=Regular (Default), Size=Medium, Disabled=False",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-md, 14px)",
+          "font-weight": "var(--label-font-weight-regular, 400)",
+          "line-height": "var(--label-line-height-md, 20px)",
+          "font-style": "normal",
+          "direction": "rtl"
+        },
+        "text_css": {
+          "color": "var(--label-text-color, #161616)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color, #B42318)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "regular-medium-disabled-ltr",
+      "axes": { "type": "regular", "size": "medium", "disabled": true, "rtl": false },
+      "status": "available",
+      "figma_name": "RTL=False, Type=Regular (Default), Size=Medium, Disabled=True",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-md, 14px)",
+          "font-weight": "var(--label-font-weight-regular, 400)",
+          "line-height": "var(--label-line-height-md, 20px)",
+          "font-style": "normal",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--label-text-color-disabled, #9DA4AE)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color-disabled, #9DA4AE)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "regular-medium-disabled-rtl",
+      "axes": { "type": "regular", "size": "medium", "disabled": true, "rtl": true },
+      "status": "available",
+      "figma_name": "RTL=True, Type=Regular (Default), Size=Medium, Disabled=True",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-md, 14px)",
+          "font-weight": "var(--label-font-weight-regular, 400)",
+          "line-height": "var(--label-line-height-md, 20px)",
+          "font-style": "normal",
+          "direction": "rtl",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--label-text-color-disabled, #9DA4AE)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color-disabled, #9DA4AE)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "semibold-medium-enabled-ltr",
+      "axes": { "type": "semibold", "size": "medium", "disabled": false, "rtl": false },
+      "status": "available",
+      "figma_name": "RTL=False, Type=Semibold, Size=Medium, Disabled=False",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-md, 14px)",
+          "font-weight": "var(--label-font-weight-semibold, 600)",
+          "line-height": "var(--label-line-height-md, 20px)",
+          "font-style": "normal"
+        },
+        "text_css": {
+          "color": "var(--label-text-color, #161616)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color, #B42318)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "semibold-medium-enabled-rtl",
+      "axes": { "type": "semibold", "size": "medium", "disabled": false, "rtl": true },
+      "status": "available",
+      "figma_name": "RTL=True, Type=Semibold, Size=Medium, Disabled=False",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-md, 14px)",
+          "font-weight": "var(--label-font-weight-semibold, 600)",
+          "line-height": "var(--label-line-height-md, 20px)",
+          "font-style": "normal",
+          "direction": "rtl"
+        },
+        "text_css": {
+          "color": "var(--label-text-color, #161616)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color, #B42318)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "semibold-medium-disabled-ltr",
+      "axes": { "type": "semibold", "size": "medium", "disabled": true, "rtl": false },
+      "status": "available",
+      "figma_name": "RTL=False, Type=Semibold, Size=Medium, Disabled=True",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-md, 14px)",
+          "font-weight": "var(--label-font-weight-semibold, 600)",
+          "line-height": "var(--label-line-height-md, 20px)",
+          "font-style": "normal",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--label-text-color-disabled, #9DA4AE)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color-disabled, #9DA4AE)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "semibold-medium-disabled-rtl",
+      "axes": { "type": "semibold", "size": "medium", "disabled": true, "rtl": true },
+      "status": "available",
+      "figma_name": "RTL=True, Type=Semibold, Size=Medium, Disabled=True",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-md, 14px)",
+          "font-weight": "var(--label-font-weight-semibold, 600)",
+          "line-height": "var(--label-line-height-md, 20px)",
+          "font-style": "normal",
+          "direction": "rtl",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--label-text-color-disabled, #9DA4AE)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color-disabled, #9DA4AE)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "regular-large-enabled-ltr",
+      "axes": { "type": "regular", "size": "large", "disabled": false, "rtl": false },
+      "status": "available",
+      "figma_name": "RTL=False, Type=Regular (Default), Size=Large, Disabled=False",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-lg, 16px)",
+          "font-weight": "var(--label-font-weight-regular, 400)",
+          "line-height": "var(--label-line-height-lg, 24px)",
+          "font-style": "normal"
+        },
+        "text_css": {
+          "color": "var(--label-text-color, #161616)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color, #B42318)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "regular-large-enabled-rtl",
+      "axes": { "type": "regular", "size": "large", "disabled": false, "rtl": true },
+      "status": "available",
+      "figma_name": "RTL=True, Type=Regular (Default), Size=Large, Disabled=False",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-lg, 16px)",
+          "font-weight": "var(--label-font-weight-regular, 400)",
+          "line-height": "var(--label-line-height-lg, 24px)",
+          "font-style": "normal",
+          "direction": "rtl"
+        },
+        "text_css": {
+          "color": "var(--label-text-color, #161616)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color, #B42318)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "regular-large-disabled-ltr",
+      "axes": { "type": "regular", "size": "large", "disabled": true, "rtl": false },
+      "status": "available",
+      "figma_name": "RTL=False, Type=Regular (Default), Size=Large, Disabled=True",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-lg, 16px)",
+          "font-weight": "var(--label-font-weight-regular, 400)",
+          "line-height": "var(--label-line-height-lg, 24px)",
+          "font-style": "normal",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--label-text-color-disabled, #9DA4AE)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color-disabled, #9DA4AE)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "regular-large-disabled-rtl",
+      "axes": { "type": "regular", "size": "large", "disabled": true, "rtl": true },
+      "status": "available",
+      "figma_name": "RTL=True, Type=Regular (Default), Size=Large, Disabled=True",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-lg, 16px)",
+          "font-weight": "var(--label-font-weight-regular, 400)",
+          "line-height": "var(--label-line-height-lg, 24px)",
+          "font-style": "normal",
+          "direction": "rtl",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--label-text-color-disabled, #9DA4AE)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color-disabled, #9DA4AE)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "semibold-large-enabled-ltr",
+      "axes": { "type": "semibold", "size": "large", "disabled": false, "rtl": false },
+      "status": "available",
+      "figma_name": "RTL=False, Type=Semibold, Size=Large, Disabled=False",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-lg, 16px)",
+          "font-weight": "var(--label-font-weight-semibold, 600)",
+          "line-height": "var(--label-line-height-lg, 24px)",
+          "font-style": "normal"
+        },
+        "text_css": {
+          "color": "var(--label-text-color, #161616)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color, #B42318)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "semibold-large-enabled-rtl",
+      "axes": { "type": "semibold", "size": "large", "disabled": false, "rtl": true },
+      "status": "available",
+      "figma_name": "RTL=True, Type=Semibold, Size=Large, Disabled=False",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-lg, 16px)",
+          "font-weight": "var(--label-font-weight-semibold, 600)",
+          "line-height": "var(--label-line-height-lg, 24px)",
+          "font-style": "normal",
+          "direction": "rtl"
+        },
+        "text_css": {
+          "color": "var(--label-text-color, #161616)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color, #B42318)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "semibold-large-disabled-ltr",
+      "axes": { "type": "semibold", "size": "large", "disabled": true, "rtl": false },
+      "status": "available",
+      "figma_name": "RTL=False, Type=Semibold, Size=Large, Disabled=True",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-lg, 16px)",
+          "font-weight": "var(--label-font-weight-semibold, 600)",
+          "line-height": "var(--label-line-height-lg, 24px)",
+          "font-style": "normal",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--label-text-color-disabled, #9DA4AE)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color-disabled, #9DA4AE)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "semibold-large-disabled-rtl",
+      "axes": { "type": "semibold", "size": "large", "disabled": true, "rtl": true },
+      "status": "available",
+      "figma_name": "RTL=True, Type=Semibold, Size=Large, Disabled=True",
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--label-gap, 4px)",
+          "font-family": "var(--label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--label-font-size-lg, 16px)",
+          "font-weight": "var(--label-font-weight-semibold, 600)",
+          "line-height": "var(--label-line-height-lg, 24px)",
+          "font-style": "normal",
+          "direction": "rtl",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--label-text-color-disabled, #9DA4AE)"
+        },
+        "required_css": {
+          "color": "var(--label-required-color-disabled, #9DA4AE)"
+        },
+        "focus_outline_css": null
+      }
+    }
+  ],
+  "implementation_notes": [
+    "Default (no modifier) = Medium size, Regular type.",
+    "RTL: dir='rtl' on the label element or ancestor. DOM child order [.label__required, .label__text] is constant — inline-flex reversal handles visual order.",
+    "Disabled: .label--disabled class + aria-disabled='true'. The <label> element has no native :disabled pseudo-class.",
+    "Required asterisk (.label__required) is optional. Omit when the field is not required.",
+    "aria-required='true' must be set on the associated form control, not on the <label> itself.",
+    "The <label> must be linked to its form control via for='field-id' or by nesting the control inside the label."
+  ]
+}

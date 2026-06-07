@@ -1,0 +1,1821 @@
+{
+  "$schema": "https://schema.org/component-spec",
+  "meta": {
+    "designSystem": "Platform Code (منصة كود) — Saudi Digital Government Authority (DGA)",
+    "source": "Components Library - Platforms Code (Community).fig",
+    "page": "Card",
+    "componentSet": "Card",
+    "exportedAt": "2026-06-06",
+    "version": "PC 1.0 Components – Desktop",
+    "totalVariants": 102,
+    "frames": [
+      {
+        "name": "Design system header",
+        "figmaNodeId": "30057:12136",
+        "type": "INSTANCE"
+      },
+      {
+        "name": "Card",
+        "figmaNodeId": "30195:10358",
+        "type": "FRAME"
+      }
+    ]
+  },
+  "header": {
+    "figmaNodeId": "30057:12136",
+    "title": "Card",
+    "description": "A card serves as a container for information and actions related to a specific concept or object. It typically resembles a rectangular box that combines images, text, and potentially some interactive elements. Cards enhance the visibility of information and facilitate predictable patterns.",
+    "style": {
+      "width": 2650,
+      "height": 518,
+      "variant": "ColorDark"
+    }
+  },
+  "tokens": {
+    "colors": {
+      "surface": "#FFFFFF",
+      "featuredIcon": "#161616",
+      "textTitle": "#1F2A37",
+      "textBody": "#1F2A37",
+      "border": "#D2D6DB",
+      "focusRing": "#9747FF"
+    },
+    "typography": {
+      "fontFamily": "IBM Plex Sans Arabic",
+      "cardTitle": {
+        "fontSize": 18,
+        "lineHeight": 28,
+        "fontWeight": 700
+      },
+      "cardContent": {
+        "fontSize": 16,
+        "lineHeight": 24,
+        "fontWeight": 400
+      }
+    },
+    "radius": {
+      "card": 16
+    },
+    "spacing": {
+      "padding": 16,
+      "sectionGap": 24,
+      "contentGap": 8,
+      "actionGap": 16
+    },
+    "shadow": {
+      "withShadow": "0px 4px 8px -2px rgba(16,24,40,0.1), 0px 2px 4px -2px rgba(16,24,40,0.06)"
+    },
+    "featuredIcon": {
+      "width": 48,
+      "height": 48,
+      "style": "Stroke / Rounded"
+    }
+  },
+  "propertyAxes": {
+    "RTL": {
+      "values": [
+        "no",
+        "yes"
+      ],
+      "description": "Reading direction (Arabic = yes / RTL)."
+    },
+    "type": {
+      "values": [
+        "Default",
+        "Expandable",
+        "Selectable"
+      ],
+      "description": "Default = two action buttons; Expandable = single icon/expand action; Selectable = checkbox."
+    },
+    "state": {
+      "values": [
+        "Default",
+        "Hover",
+        "Focused",
+        "Disabled"
+      ]
+    },
+    "effect": {
+      "values": [
+        "With Shadow",
+        "No Shadow",
+        "Stroke"
+      ],
+      "description": "Card elevation / container treatment."
+    },
+    "expanded": {
+      "values": [
+        true,
+        false
+      ],
+      "description": "Only meaningful for Expandable type."
+    },
+    "selected": {
+      "values": [
+        true,
+        false
+      ],
+      "description": "Only meaningful for Selectable type."
+    }
+  },
+  "effectStyles": {
+    "With Shadow": {
+      "boxShadow": "0px 4px 8px -2px rgba(16,24,40,0.1), 0px 2px 4px -2px rgba(16,24,40,0.06)",
+      "border": "none"
+    },
+    "No Shadow": {
+      "boxShadow": "none",
+      "border": "none"
+    },
+    "Stroke": {
+      "boxShadow": "none",
+      "border": "1px solid #D2D6DB"
+    }
+  },
+  "stateStyles": {
+    "Default": {
+      "description": "Resting state."
+    },
+    "Hover": {
+      "description": "Pointer hovering; subtle surface/border emphasis."
+    },
+    "Focused": {
+      "description": "Keyboard focus; 1px focus ring #9747FF.",
+      "focusRing": "#9747FF"
+    },
+    "Disabled": {
+      "description": "Non-interactive; muted greys, reduced opacity.",
+      "opacity": 0.5
+    }
+  },
+  "typeAnatomy": {
+    "Default": {
+      "slots": [
+        "featuredIcon",
+        "content(title+body)",
+        "actions(2 buttons)"
+      ],
+      "baseSize": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    "Expandable": {
+      "slots": [
+        "featuredIcon",
+        "content(title+body)",
+        "actions(icon button, bottom-end)"
+      ],
+      "baseSize": {
+        "width": 360,
+        "height": 228
+      },
+      "note": "Height grows when Expanded=true."
+    },
+    "Selectable": {
+      "slots": [
+        "featuredIcon",
+        "content(title+body)",
+        "checkbox(top-end)"
+      ],
+      "baseSize": {
+        "width": 360,
+        "height": 164
+      }
+    }
+  },
+  "variants": [
+    {
+      "figmaNodeId": "30195:10359",
+      "figmaVariantName": "RTL=no, Type=Default, State=Default, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Default",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10376",
+      "figmaVariantName": "RTL=no, Type=Default, State=Default, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Default",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10393",
+      "figmaVariantName": "RTL=no, Type=Default, State=Default, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Default",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10410",
+      "figmaVariantName": "RTL=yes, Type=Default, State=Default, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Default",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10427",
+      "figmaVariantName": "RTL=yes, Type=Default, State=Default, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Default",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10444",
+      "figmaVariantName": "RTL=yes, Type=Default, State=Default, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Default",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10461",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Default, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10477",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Default, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10493",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Default, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10509",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Default, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10525",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Default, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10541",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Default, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10557",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Default, Effect=With Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10573",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Default, Effect=No Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10589",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Default, Effect=Stroke, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10605",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Default, Effect=With Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10621",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Default, Effect=No Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10637",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Default, Effect=Stroke, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10653",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Focused, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10669",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Focused, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10685",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Focused, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10701",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Focused, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10717",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Focused, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10733",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Focused, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10749",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Focused, Effect=With Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "With Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10765",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Focused, Effect=No Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "No Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10781",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Focused, Effect=Stroke, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "Stroke",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10797",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Focused, Effect=With Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "With Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10813",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Focused, Effect=No Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "No Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10829",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Focused, Effect=Stroke, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Focused",
+        "effect": "Stroke",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10845",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Disabled, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10861",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Disabled, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10877",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Disabled, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10893",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Disabled, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10909",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Disabled, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10925",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Disabled, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:10941",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Disabled, Effect=With Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "With Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10957",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Disabled, Effect=No Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "No Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10973",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Disabled, Effect=Stroke, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "Stroke",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:10989",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Disabled, Effect=With Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "With Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:11005",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Disabled, Effect=No Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "No Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:11021",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Disabled, Effect=Stroke, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Disabled",
+        "effect": "Stroke",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:11037",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Hover, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:11053",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Hover, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:11069",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Hover, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:11085",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Hover, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:11101",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Hover, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:11117",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Hover, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 228
+      }
+    },
+    {
+      "figmaNodeId": "30195:11133",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Hover, Effect=With Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "With Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:11149",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Hover, Effect=No Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "No Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:11165",
+      "figmaVariantName": "RTL=no, Type=Expandable, State=Hover, Effect=Stroke, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "Stroke",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:11181",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Hover, Effect=With Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "With Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:11197",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Hover, Effect=No Shadow, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "No Shadow",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:11213",
+      "figmaVariantName": "RTL=yes, Type=Expandable, State=Hover, Effect=Stroke, Expanded=True, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Expandable",
+        "state": "Hover",
+        "effect": "Stroke",
+        "expanded": true,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 360
+      }
+    },
+    {
+      "figmaNodeId": "30195:11229",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Default, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11244",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Default, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11259",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Default, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11274",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Default, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11289",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Default, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11304",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Default, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11319",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Default, Effect=With Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11334",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Default, Effect=No Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11349",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Default, Effect=Stroke, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11364",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Default, Effect=With Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11379",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Default, Effect=No Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11394",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Default, Effect=Stroke, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Default",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11409",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Hover, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11424",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Hover, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11439",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Hover, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11454",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Hover, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11469",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Hover, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11484",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Hover, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11499",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Hover, Effect=With Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11514",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Hover, Effect=No Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11529",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Hover, Effect=Stroke, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11544",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Hover, Effect=With Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11559",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Hover, Effect=No Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11574",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Hover, Effect=Stroke, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Hover",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11589",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Focused, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11604",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Focused, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11619",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Focused, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11634",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Focused, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11649",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Focused, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11664",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Focused, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11679",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Focused, Effect=With Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11694",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Focused, Effect=No Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11709",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Focused, Effect=Stroke, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11724",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Focused, Effect=With Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11739",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Focused, Effect=No Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11754",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Focused, Effect=Stroke, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Focused",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11769",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Disabled, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11784",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Disabled, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11799",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Disabled, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11814",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Disabled, Effect=With Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11829",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Disabled, Effect=No Shadow, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11844",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Disabled, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": false
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11859",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Disabled, Effect=With Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11874",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Disabled, Effect=No Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11889",
+      "figmaVariantName": "RTL=no, Type=Selectable, State=Disabled, Effect=Stroke, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "no",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11904",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Disabled, Effect=With Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "With Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11919",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Disabled, Effect=No Shadow, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "No Shadow",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    },
+    {
+      "figmaNodeId": "30195:11934",
+      "figmaVariantName": "RTL=yes, Type=Selectable, State=Disabled, Effect=Stroke, Expanded=False, Selected=True",
+      "properties": {
+        "RTL": "yes",
+        "type": "Selectable",
+        "state": "Disabled",
+        "effect": "Stroke",
+        "expanded": false,
+        "selected": true
+      },
+      "size": {
+        "width": 360,
+        "height": 164
+      }
+    }
+  ]
+}

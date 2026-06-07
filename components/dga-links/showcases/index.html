@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Link — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css"/>
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../link.css"/>
+    <!-- 3. Page layout -->
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--gray-50);
+        font-family: var(--font-sans);
+        color: var(--gray-900);
+        min-height: 100dvh;
+        padding: var(--space-48) var(--space-32);
+      }
+
+      .page {
+        max-width: 1240px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-48);
+      }
+
+      /* ── Header ───────────────────────────────────────── */
+      .page__header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .page__meta {
+        font-size: var(--fs-text-sm);
+        color: var(--gray-500);
+        line-height: var(--lh-text-sm);
+      }
+
+      .page__title {
+        font-size: var(--fs-display-xs);
+        font-weight: var(--font-weight-heading);
+        line-height: var(--lh-display-xs);
+        color: var(--gray-900);
+      }
+
+      /* ── Variant section ──────────────────────────────── */
+      .variant {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+      }
+
+      .variant__title {
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: var(--lh-text-sm);
+      }
+
+      /* ── Showcase table ───────────────────────────────── */
+      .showcase {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--white);
+      }
+
+      .showcase__row {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-32);
+        padding: var(--space-20) var(--space-24);
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .showcase__row:last-child {
+        border-bottom: none;
+      }
+
+      .showcase__label {
+        font-size: var(--fs-text-sm);
+        color: var(--gray-500);
+        line-height: var(--lh-text-sm);
+        min-width: 72px;
+        flex-shrink: 0;
+      }
+
+      .showcase__item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+        min-width: 0;
+      }
+
+      /* ── Prop tags ───────────────────────────────────── */
+      .prop-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        direction: ltr;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px dashed var(--gray-150, #eaecf0);
+      }
+
+      .prop-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 7px;
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
+        border-radius: 3px;
+        font-size: 11px;
+        font-family: "ui-monospace", Menlo, Consolas, monospace;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
+
+      .prop-tag__key { color: var(--gray-400); }
+      .prop-tag__eq  { color: var(--gray-300); margin: 0 2px; }
+      .prop-tag__val { color: var(--gray-700); font-weight: 500; }
+
+      /* ── On-Color context (dark background) ──────────── */
+      .showcase--on-color {
+        background: var(--sa-800);
+      }
+
+      .showcase--on-color .showcase__row {
+        border-bottom-color: rgba(255, 255, 255, 0.10);
+      }
+
+      .showcase--on-color .showcase__label {
+        color: rgba(255, 255, 255, 0.60);
+      }
+
+      .showcase--on-color .prop-tag {
+        background: rgba(255,255,255,0.06);
+        border-color: rgba(255,255,255,0.15);
+      }
+
+      .showcase--on-color .prop-tag__key { color: rgba(255,255,255,0.40); }
+      .showcase--on-color .prop-tag__eq  { color: rgba(255,255,255,0.25); }
+      .showcase--on-color .prop-tag__val { color: rgba(255,255,255,0.80); }
+
+      /* ── Interactive ──────────────────────────────────── */
+      .interactive {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+        padding: var(--space-24);
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        background: var(--white);
+      }
+
+      .interactive__title {
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: var(--lh-text-sm);
+      }
+
+      .interactive--on-color {
+        background: var(--sa-800);
+        border-color: rgba(255,255,255,0.15);
+      }
+
+      .interactive--on-color .interactive__title {
+        color: rgba(255, 255, 255, 0.60);
+      }
+
+      /* ── Inline context paragraph ─────────────────────── */
+      .inline-context {
+        font-size: var(--fs-text-md);
+        line-height: var(--lh-text-md);
+        color: var(--gray-800);
+        max-width: 560px;
+      }
+
+      .inline-context--dark {
+        color: rgba(255, 255, 255, 0.85);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+
+      <!-- ── Page header ──────────────────────────────────── -->
+      <header class="page__header">
+        <p class="page__meta">Design System / Components / Link</p>
+        <h1 class="page__title">Link Showcase</h1>
+      </header>
+
+      <!-- ════════════════════════════════════════════════════
+           Primary
+           ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Primary</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=Primary, Size=Medium, Inline=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Primary</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Default</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, State=Hovered, Style=Primary, Size=Medium, Inline=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary"
+                 style="color: var(--Link-link-primary-hovered, #54C08A); text-decoration-line: underline; text-decoration-style: solid; text-decoration-skip-ink: none;">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Primary</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Hovered</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, State=Focused, Style=Primary, Size=Medium, Inline=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary is-focused">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Primary</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Focused</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, State=Pressed, Style=Primary, Size=Medium, Inline=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary is-pressed">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Primary</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Pressed</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visited -->
+          <div class="showcase__row" data-props="RTL=False, State=Visited, Style=Primary, Size=Medium, Inline=False">
+            <span class="showcase__label">Visited</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary is-visited">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Primary</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Visited</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, State=Disabled, Style=Primary, Size=Medium, Inline=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary" aria-disabled="true">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Primary</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Disabled</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=Primary, Size=Medium, Inline=False">
+            <span class="showcase__label">Medium</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary">
+                <span class="link__text">رابط متوسط</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=Primary, Size=Small, Inline=False">
+            <span class="showcase__label">Small</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary link--sm">
+                <span class="link__text">رابط صغير</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Inline mode -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=Primary, Size=Medium, Inline=True">
+            <span class="showcase__label">Inline</span>
+            <div class="showcase__item">
+              <p class="inline-context">
+                يمكنك الاطلاع على
+                <a href="#" class="link link--primary link--inline">سياسة الخصوصية</a>
+                و
+                <a href="#" class="link link--primary link--inline">شروط الاستخدام</a>
+                للمزيد من المعلومات.
+              </p>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Primary</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">True</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Disabled, Style=Primary, Size=Medium, Inline=True">
+            <span class="showcase__label">Inline Disabled</span>
+            <div class="showcase__item">
+              <p class="inline-context">
+                هذا
+                <a href="#" class="link link--primary link--inline" aria-disabled="true">رابط معطّل</a>
+                داخل الجملة.
+              </p>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Primary</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Disabled</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">True</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Icon variants -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=Primary, Size=Medium, Inline=False, Icon=Leading">
+            <span class="showcase__label">Icon leading</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary">
+                <span class="link__icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.167 10h11.666M10 4.167 15.833 10 10 15.833"
+                          stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="link__text">التالي</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=Primary, Size=Medium, Inline=False, Icon=Trailing">
+            <span class="showcase__label">Icon trailing</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary">
+                <span class="link__text">فتح الرابط</span>
+                <span class="link__icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.667 3.333H16.667V8.333M16.667 3.333 9.167 10.833M8.333 5H4.167C3.706 5 3.333 5.373 3.333 5.833V15.833C3.333 16.294 3.706 16.667 4.167 16.667H14.167C14.627 16.667 15 16.294 15 15.833V11.667"
+                          stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=Primary, Size=Small, Inline=False, Icon=Trailing">
+            <span class="showcase__label">Small + icon</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--primary link--sm">
+                <span class="link__text">تفاصيل</span>
+                <span class="link__icon" aria-hidden="true">
+                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.167 10h11.666M10 4.167 15.833 10 10 15.833"
+                          stroke="currentColor" stroke-width="1.5"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive">
+          <h3 class="interactive__title">Interactive</h3>
+          <a href="#" class="link link--primary">
+            <span class="link__text">حاول التفاعل معي</span>
+          </a>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+           Neutral
+           ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Neutral</h2>
+
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=Neutral, Size=Medium, Inline=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--neutral">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Neutral</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Default</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Hovered, Style=Neutral, Size=Medium, Inline=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--neutral"
+                 style="color: var(--Link-link-neutral-hovered, #6C737F); text-decoration-line: underline; text-decoration-style: solid; text-decoration-skip-ink: none;">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Neutral</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Hovered</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Focused, Style=Neutral, Size=Medium, Inline=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--neutral is-focused">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Neutral</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Focused</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Pressed, Style=Neutral, Size=Medium, Inline=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--neutral is-pressed">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Neutral</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Pressed</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Visited, Style=Neutral, Size=Medium, Inline=False">
+            <span class="showcase__label">Visited</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--neutral is-visited">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Neutral</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Visited</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Disabled, Style=Neutral, Size=Medium, Inline=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--neutral" aria-disabled="true">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Neutral</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Disabled</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Inline mode -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=Neutral, Size=Medium, Inline=True">
+            <span class="showcase__label">Inline</span>
+            <div class="showcase__item">
+              <p class="inline-context">
+                اقرأ
+                <a href="#" class="link link--neutral link--inline">الوثائق الرسمية</a>
+                للاطلاع على كامل التفاصيل.
+              </p>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Neutral</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">True</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive">
+          <h3 class="interactive__title">Interactive</h3>
+          <a href="#" class="link link--neutral">
+            <span class="link__text">حاول التفاعل معي</span>
+          </a>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════
+           On-Color  (على خلفية داكنة)
+           ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">On-Color</h2>
+
+        <div class="showcase showcase--on-color">
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=On-color, Size=Medium, Inline=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--on-color">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">On-color</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Default</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Hovered, Style=On-color, Size=Medium, Inline=False">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--on-color"
+                 style="color: var(--Link-link-oncolor-hovered, rgba(255,255,255,0.80)); text-decoration-line: underline; text-decoration-style: solid; text-decoration-skip-ink: none;">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">On-color</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Hovered</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Focused, Style=On-color, Size=Medium, Inline=False">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--on-color is-focused">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">On-color</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Focused</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Pressed, Style=On-color, Size=Medium, Inline=False">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--on-color is-pressed">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">On-color</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Pressed</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Visited, Style=On-color, Size=Medium, Inline=False">
+            <span class="showcase__label">Visited</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--on-color is-visited">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">On-color</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Visited</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Disabled, Style=On-color, Size=Medium, Inline=False">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <a href="#" class="link link--on-color" aria-disabled="true">
+                <span class="link__text">رابط</span>
+              </a>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">On-color</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Disabled</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Size</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Medium</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">False</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- On-Color Inline -->
+        <div class="showcase showcase--on-color">
+
+          <div class="showcase__row" data-props="RTL=False, State=Default, Style=On-color, Size=Medium, Inline=True">
+            <span class="showcase__label">Inline</span>
+            <div class="showcase__item">
+              <p class="inline-context inline-context--dark">
+                تفضّل بزيارة
+                <a href="#" class="link link--on-color link--inline">صفحة الدعم</a>
+                للحصول على المساعدة.
+              </p>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">On-color</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">True</span></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, State=Disabled, Style=On-color, Size=Medium, Inline=True">
+            <span class="showcase__label">Inline Disabled</span>
+            <div class="showcase__item">
+              <p class="inline-context inline-context--dark">
+                هذا
+                <a href="#" class="link link--on-color link--inline" aria-disabled="true">رابط معطّل</a>
+                داخل الجملة.
+              </p>
+              <div class="prop-tags">
+                <span class="prop-tag"><span class="prop-tag__key">Style</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">On-color</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">State</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">Disabled</span></span>
+                <span class="prop-tag"><span class="prop-tag__key">Inline</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">True</span></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive interactive--on-color">
+          <h3 class="interactive__title">Interactive</h3>
+          <a href="#" class="link link--on-color">
+            <span class="link__text">حاول التفاعل معي</span>
+          </a>
+        </section>
+
+      </section>
+
+    </main>
+  </body>
+</html>

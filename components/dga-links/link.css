@@ -1,0 +1,202 @@
+/* =============================================================
+   link  ·  Reference: _figma/
+   ============================================================= */
+
+/* ── Base ──────────────────────────────────────────────────── */
+.link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  gap: var(--space-8);
+  font-family: var(--font-sans);
+  font-size: var(--fs-text-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--lh-text-md);
+  font-style: normal;
+  text-decoration: none;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+/* ── Icon ───────────────────────────────────────────────────── */
+.link__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.link__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Small size ─────────────────────────────────────────────── */
+.link--sm {
+  gap: var(--space-4);
+  font-size: var(--fs-text-sm);
+  line-height: var(--lh-text-sm);
+}
+
+.link--sm .link__icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Inline modifier (always underlined) ────────────────────── */
+.link--inline {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+}
+
+/* =============================================================
+   Primary variant
+   ============================================================= */
+
+.link--primary {
+  color: var(--Link-link-primary, #1B8354);
+}
+
+.link--primary:hover:not([aria-disabled="true"]):not(.is-disabled) {
+  color: var(--Link-link-primary-hovered, #54C08A);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+}
+
+.link--primary:focus,
+.link--primary:focus-visible,
+.link--primary.is-focused {
+  color: var(--Link-link-primary-focused, #1B8354);
+  border-color: var(--Border-border-black, #161616);
+  text-decoration: none;
+}
+
+.link--primary:active:not([aria-disabled="true"]):not(.is-disabled),
+.link--primary.is-pressed {
+  color: var(--Link-link-primary-pressed, #88D8AD);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  border-color: transparent;
+}
+
+.link--primary:visited,
+.link--primary.is-visited {
+  color: var(--Link-link-primary-visited, #14573A);
+}
+
+.link--primary[aria-disabled="true"],
+.link--primary.is-disabled {
+  color: var(--Global-text-default-disabled, #9DA4AE);
+  text-decoration: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* =============================================================
+   Neutral variant
+   ============================================================= */
+
+.link--neutral {
+  color: var(--Link-link-neutral, #384250);
+}
+
+.link--neutral:hover:not([aria-disabled="true"]):not(.is-disabled) {
+  color: var(--Link-link-neutral-hovered, #6C737F);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+}
+
+.link--neutral:focus,
+.link--neutral:focus-visible,
+.link--neutral.is-focused {
+  color: var(--Link-link-neutral-focused, #384250);
+  border-color: var(--Border-border-black, #161616);
+  text-decoration: none;
+}
+
+.link--neutral:active:not([aria-disabled="true"]):not(.is-disabled),
+.link--neutral.is-pressed {
+  color: var(--Link-link-neutral-pressed, #9DA4AE);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  border-color: transparent;
+}
+
+.link--neutral:visited,
+.link--neutral.is-visited {
+  color: var(--Link-link-primary-visited, #14573A);
+}
+
+.link--neutral[aria-disabled="true"],
+.link--neutral.is-disabled {
+  color: var(--Global-text-default-disabled, #9DA4AE);
+  text-decoration: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* =============================================================
+   On-Color variant  (for use on colored/dark backgrounds)
+   ============================================================= */
+
+.link--on-color {
+  color: var(--Link-link-oncolor, #FFF);
+}
+
+.link--on-color:hover:not([aria-disabled="true"]):not(.is-disabled) {
+  color: var(--Link-link-oncolor-hovered, rgba(255, 255, 255, 0.80));
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+}
+
+.link--on-color:focus,
+.link--on-color:focus-visible,
+.link--on-color.is-focused {
+  color: var(--Link-link-oncolor-focused, #FFF);
+  border-color: var(--Border-border-white, #FFF);
+  text-decoration: none;
+}
+
+.link--on-color:active:not([aria-disabled="true"]):not(.is-disabled),
+.link--on-color.is-pressed {
+  color: var(--Link-link-oncolor-pressed, rgba(255, 255, 255, 0.60));
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  border-color: transparent;
+}
+
+.link--on-color:visited,
+.link--on-color.is-visited {
+  color: var(--Link-link-oncolor-visited, rgba(255, 255, 255, 0.90));
+}
+
+.link--on-color[aria-disabled="true"],
+.link--on-color.is-disabled {
+  color: var(--Link-link-oncolor-disabled, rgba(255, 255, 255, 0.30));
+  text-decoration: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}

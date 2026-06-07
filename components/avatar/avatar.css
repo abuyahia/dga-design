@@ -1,0 +1,111 @@
+/* ═══════════════════════════════════════════════════════════════
+   Avatar — Component Styles
+   Figma source: components/avatar/avatar.json
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Base ──────────────────────────────────────────────────────── */
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-round, 9999px);
+  border: 2px solid var(--Border-border-white, #fff);
+  background: var(--Button-button-background-neutral-default, #f3f4f6);
+  overflow: hidden;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* ── Shape modifier — Square ───────────────────────────────────── */
+.avatar--square {
+  border-radius: var(--radius-4, 4px);
+}
+
+.avatar--square.avatar--120 {
+  border-radius: var(--radius-8, 8px);
+}
+
+/* ── Size modifiers ────────────────────────────────────────────── */
+.avatar--24  { width: 24px;  height: 24px; }
+.avatar--32  { width: 32px;  height: 32px; }
+.avatar--40  { width: 40px;  height: 40px; }
+.avatar--48  { width: 48px;  height: 48px; }
+.avatar--64  { width: 64px;  height: 64px; }
+.avatar--80  { width: 80px;  height: 80px; }
+.avatar--120 { width: 120px; height: 120px; border-width: 4px; }
+
+/* ── Icon type ─────────────────────────────────────────────────── */
+.avatar__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--Text-text-default, #161616);
+  pointer-events: none;
+}
+
+.avatar--24  .avatar__icon { width: 16px; height: 16px; }
+.avatar--32  .avatar__icon { width: 24px; height: 24px; }
+.avatar--40  .avatar__icon { width: 32px; height: 32px; }
+.avatar--48  .avatar__icon { width: 32px; height: 32px; }
+.avatar--64  .avatar__icon { width: 40px; height: 40px; }
+.avatar--80  .avatar__icon { width: 56px; height: 56px; }
+.avatar--120 .avatar__icon { width: 80px; height: 80px; }
+
+/* ── Initials type ─────────────────────────────────────────────── */
+.avatar__initials {
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  color: var(--Text-text-default, #161616);
+  text-align: center;
+  line-height: 1;
+  user-select: none;
+}
+
+.avatar--24  .avatar__initials { font-size: var(--Size-Text-typo-size-text-2xs, 10px);       font-weight: 700; }
+.avatar--32  .avatar__initials { font-size: var(--Size-Text-typo-size-text-xs, 12px);         font-weight: 600; }
+.avatar--40  .avatar__initials { font-size: var(--Size-Text-typo-size-text-sm, 14px);         font-weight: 600; }
+.avatar--48  .avatar__initials { font-size: var(--Size-Text-typo-size-text-md, 16px);         font-weight: 500; }
+.avatar--64  .avatar__initials { font-size: var(--Size-Text-typo-size-text-xl, 20px);         font-weight: 500; }
+.avatar--80  .avatar__initials { font-size: var(--Size-Display-typo-size-display-sm, 30px);   font-weight: 500; }
+.avatar--120 .avatar__initials { font-size: var(--Size-Display-typo-size-display-md, 36px);   font-weight: 500; }
+
+/* ── Image type ────────────────────────────────────────────────── */
+.avatar--image {
+  background: var(--Background-background-white, #fff);
+}
+
+.avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Avatar Group
+   ═══════════════════════════════════════════════════════════════ */
+.avatar-group {
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+/* Stacked — negative gap so avatars overlap */
+.avatar-group--stacked .avatar + .avatar {
+  margin-inline-start: -4px;
+}
+
+/* Flat — avatars side by side */
+.avatar-group--flat {
+  gap: var(--Global-spacing-xs, 4px);
+}
+
+/* ── Overflow counter (".avatar--overflow") ──────────────────── */
+.avatar--overflow {
+  background: var(--Button-button-background-neutral-default, #f3f4f6);
+}
+
+.avatar--overflow .avatar__initials {
+  font-size: var(--Size-Text-typo-size-text-xs, 12px);
+  font-weight: 600;
+  color: var(--Text-text-default, #161616);
+}

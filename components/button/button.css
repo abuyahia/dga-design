@@ -1,0 +1,742 @@
+/* =============================================================
+   btn--primary  ·  Reference: button-component-reference.json
+   ============================================================= */
+
+/* ── Base ──────────────────────────────────────────────────── */
+.btn {
+  position: relative;
+  display: inline-flex;
+  height: var(--button-lg-height);
+  min-height: var(--button-lg-height);
+  max-height: var(--button-lg-height);
+  padding: calc(var(--button-lg-padding-inline) / 2) var(--button-lg-padding-inline);
+  justify-content: center;
+  align-items: center;
+  gap: var(--button-lg-gap);
+  border-radius: var(--button-radius);
+  border: none;
+  cursor: pointer;
+  font-family: var(--button-label-font-family);
+  font-size: var(--button-label-font-size);
+  font-weight: var(--button-label-font-weight);
+  line-height: var(--button-label-line-height);
+  font-style: normal;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background var(--transition-fast) var(--ease-in-out);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+/* ── Icon ───────────────────────────────────────────────────── */
+.btn__icon {
+  width: var(--button-icon-size);
+  height: var(--button-icon-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Text wrapper ───────────────────────────────────────────── */
+.btn__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =============================================================
+   Size modifiers  ·  orthogonal to shape — combine freely
+   Default (no modifier) = Large
+   ============================================================= */
+
+.btn--sm {
+  height: var(--button-sm-height);
+  min-height: var(--button-sm-height);
+  max-height: var(--button-sm-height);
+  padding: calc(var(--button-sm-padding-inline) / 2) var(--button-sm-padding-inline);
+  gap: var(--button-sm-gap);
+  font-size: var(--button-sm-label-font-size);
+  line-height: var(--button-sm-label-line-height);
+}
+
+.btn--sm .btn__icon {
+  width: var(--button-sm-icon-size);
+  height: var(--button-sm-icon-size);
+}
+
+.btn--md {
+  height: var(--button-md-height);
+  min-height: var(--button-md-height);
+  max-height: var(--button-md-height);
+  padding: calc(var(--button-md-padding-inline) / 2) var(--button-md-padding-inline);
+  gap: var(--button-md-gap);
+  font-size: var(--button-md-label-font-size);
+  line-height: var(--button-md-label-line-height);
+}
+
+.btn--md .btn__icon {
+  width: var(--button-md-icon-size);
+  height: var(--button-md-icon-size);
+}
+
+/* =============================================================
+   Icon-only modifier  ·  square button, no text
+   Combine with size modifiers: .btn--icon-only (= large),
+   .btn--icon-only.btn--sm, .btn--icon-only.btn--md
+   ============================================================= */
+
+.btn--icon-only {
+  display: flex;
+  width: var(--button-lg-height);
+  min-width: var(--button-lg-height);
+  max-width: var(--button-lg-height);
+  padding: 0;
+}
+
+.btn--icon-only.btn--sm {
+  width: var(--button-sm-height);
+  min-width: var(--button-sm-height);
+  max-width: var(--button-sm-height);
+}
+
+.btn--icon-only.btn--md {
+  width: var(--button-md-height);
+  min-width: var(--button-md-height);
+  max-width: var(--button-md-height);
+}
+
+/* =============================================================
+   Primary variant
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--primary {
+  background: var(--button-primary-bg-default);
+  color: var(--button-primary-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--primary:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-primary-bg-hover);
+}
+
+/* Focused ---------------------------------------------------- */
+.btn--primary:focus,
+.btn--primary:focus-visible,
+.btn--primary.is-focused {
+  background: var(--button-primary-bg-default);
+  border: var(--button-focus-border-width) solid var(--button-focus-ring-outer-color);
+}
+
+.btn--primary:focus::after,
+.btn--primary:focus-visible::after,
+.btn--primary.is-focused::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--button-radius);
+  border: var(--button-focus-ring-inner) solid var(--button-focus-ring-inner-color);
+  pointer-events: none;
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--primary:active:not(:disabled):not([aria-disabled="true"]),
+.btn--primary.is-pressed {
+  background: var(--button-primary-bg-pressed);
+  border: none;
+}
+
+.btn--primary:active:not(:disabled):not([aria-disabled="true"])::after,
+.btn--primary.is-pressed::after {
+  display: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--primary:disabled,
+.btn--primary[aria-disabled="true"] {
+  background: var(--button-disabled-bg);
+  color: var(--button-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--primary[aria-pressed="true"],
+.btn--primary.is-selected {
+  background: var(--button-primary-bg-selected);
+  color: var(--button-primary-text);
+}
+
+/* =============================================================
+   Neutral variant
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--neutral {
+  background: var(--button-neutral-bg-default);
+  color: var(--button-neutral-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--neutral:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-neutral-bg-hover);
+}
+
+/* Focused ---------------------------------------------------- */
+.btn--neutral:focus,
+.btn--neutral:focus-visible,
+.btn--neutral.is-focused {
+  background: var(--button-neutral-bg-default);
+  border: var(--button-focus-border-width) solid var(--button-focus-ring-outer-color);
+}
+
+.btn--neutral:focus::after,
+.btn--neutral:focus-visible::after,
+.btn--neutral.is-focused::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--button-radius);
+  border: var(--button-focus-ring-inner) solid var(--button-focus-ring-inner-color);
+  pointer-events: none;
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--neutral:active:not(:disabled):not([aria-disabled="true"]),
+.btn--neutral.is-pressed {
+  background: var(--button-neutral-bg-pressed);
+  border: none;
+}
+
+.btn--neutral:active:not(:disabled):not([aria-disabled="true"])::after,
+.btn--neutral.is-pressed::after {
+  display: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--neutral:disabled,
+.btn--neutral[aria-disabled="true"] {
+  background: var(--button-disabled-bg);
+  color: var(--button-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--neutral[aria-pressed="true"],
+.btn--neutral.is-selected {
+  background: var(--button-neutral-bg-selected);
+  color: var(--button-neutral-text);
+}
+
+/* =============================================================
+   Secondary-Solid variant
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--secondary-solid {
+  background: var(--button-secondary-solid-bg-default);
+  color: var(--button-secondary-solid-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--secondary-solid:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-secondary-solid-bg-hover);
+}
+
+/* Focused — outer border only (light bg: no inner white ring) */
+.btn--secondary-solid:focus,
+.btn--secondary-solid:focus-visible,
+.btn--secondary-solid.is-focused {
+  background: var(--button-secondary-solid-bg-default);
+  border: var(--button-focus-border-width) solid var(--button-focus-ring-outer-color);
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--secondary-solid:active:not(:disabled):not([aria-disabled="true"]),
+.btn--secondary-solid.is-pressed {
+  background: var(--button-secondary-solid-bg-pressed);
+  border: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--secondary-solid:disabled,
+.btn--secondary-solid[aria-disabled="true"] {
+  background: var(--button-disabled-bg);
+  color: var(--button-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--secondary-solid[aria-pressed="true"],
+.btn--secondary-solid.is-selected {
+  background: var(--button-secondary-solid-bg-selected);
+  color: var(--button-secondary-solid-text);
+}
+
+/* =============================================================
+   Secondary-Solid On-Color variant  (for use on colored/dark backgrounds)
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--secondary-solid-on-color {
+  background: var(--button-secondary-solid-on-color-bg-default);
+  color: var(--button-secondary-solid-on-color-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--secondary-solid-on-color:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-secondary-solid-on-color-bg-hover);
+}
+
+/* Focused — white outer border only (no inner ring) ---------- */
+.btn--secondary-solid-on-color:focus,
+.btn--secondary-solid-on-color:focus-visible,
+.btn--secondary-solid-on-color.is-focused {
+  background: var(--button-secondary-solid-on-color-bg-default);
+  border: var(--button-focus-border-width) solid var(--white);
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--secondary-solid-on-color:active:not(:disabled):not([aria-disabled="true"]),
+.btn--secondary-solid-on-color.is-pressed {
+  background: var(--button-secondary-solid-on-color-bg-pressed);
+  border: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--secondary-solid-on-color:disabled,
+.btn--secondary-solid-on-color[aria-disabled="true"] {
+  background: var(--button-secondary-solid-on-color-disabled-bg);
+  color: var(--button-secondary-solid-on-color-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--secondary-solid-on-color[aria-pressed="true"],
+.btn--secondary-solid-on-color.is-selected {
+  background: var(--button-secondary-solid-on-color-bg-selected);
+  color: var(--button-secondary-solid-on-color-text);
+}
+
+/* =============================================================
+   Secondary-Outline variant
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--secondary-outline {
+  background: transparent;
+  color: var(--button-secondary-outline-text);
+  border: 1px solid var(--button-secondary-outline-border);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--secondary-outline:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-secondary-outline-bg-hover);
+  border-color: var(--button-secondary-outline-border-hover);
+}
+
+/* Focused — outer border only (transparent bg: no inner white ring) */
+.btn--secondary-outline:focus,
+.btn--secondary-outline:focus-visible,
+.btn--secondary-outline.is-focused {
+  background: transparent;
+  border: var(--button-focus-border-width) solid var(--button-focus-ring-outer-color);
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--secondary-outline:active:not(:disabled):not([aria-disabled="true"]),
+.btn--secondary-outline.is-pressed {
+  background: var(--button-secondary-outline-bg-pressed);
+  border: 1px solid var(--button-secondary-outline-border);
+}
+
+/* Disabled — transparent bg, muted border, muted text ------- */
+.btn--secondary-outline:disabled,
+.btn--secondary-outline[aria-disabled="true"] {
+  background: transparent;
+  border: 1px solid var(--button-secondary-outline-border-hover);
+  color: var(--button-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--secondary-outline[aria-pressed="true"],
+.btn--secondary-outline.is-selected {
+  background: var(--button-secondary-outline-bg-selected);
+  border: 1px solid var(--button-secondary-outline-border);
+  color: var(--button-secondary-outline-text);
+}
+
+/* =============================================================
+   Secondary-Outline On-Color variant  (for use on colored/dark backgrounds)
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--secondary-outline-on-color {
+  background: transparent;
+  color: var(--button-secondary-outline-on-color-text);
+  border: 1px solid var(--button-secondary-outline-on-color-border);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--secondary-outline-on-color:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-secondary-outline-on-color-bg-hover);
+}
+
+/* Focused — white border only (2px, no inner ring) ----------- */
+.btn--secondary-outline-on-color:focus,
+.btn--secondary-outline-on-color:focus-visible,
+.btn--secondary-outline-on-color.is-focused {
+  background: transparent;
+  border: var(--button-focus-border-width) solid var(--white);
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--secondary-outline-on-color:active:not(:disabled):not([aria-disabled="true"]),
+.btn--secondary-outline-on-color.is-pressed {
+  background: var(--button-secondary-outline-on-color-bg-pressed);
+  border: 1px solid var(--button-secondary-outline-on-color-border);
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--secondary-outline-on-color:disabled,
+.btn--secondary-outline-on-color[aria-disabled="true"] {
+  background: transparent;
+  border: 1px solid var(--button-secondary-outline-on-color-border);
+  color: var(--button-secondary-outline-on-color-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--secondary-outline-on-color[aria-pressed="true"],
+.btn--secondary-outline-on-color.is-selected {
+  background: var(--button-secondary-outline-on-color-bg-selected);
+  border: 1px solid var(--button-secondary-outline-on-color-border);
+  color: var(--button-secondary-outline-on-color-text);
+}
+
+/* =============================================================
+   Subtle variant
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--subtle {
+  background: transparent;
+  color: var(--button-subtle-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--subtle:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-subtle-bg-hover);
+}
+
+/* Focused — outer border only (transparent bg: no inner white ring) */
+.btn--subtle:focus,
+.btn--subtle:focus-visible,
+.btn--subtle.is-focused {
+  background: transparent;
+  border: var(--button-focus-border-width) solid var(--button-focus-ring-outer-color);
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--subtle:active:not(:disabled):not([aria-disabled="true"]),
+.btn--subtle.is-pressed {
+  background: var(--button-subtle-bg-pressed);
+  border: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--subtle:disabled,
+.btn--subtle[aria-disabled="true"] {
+  background: transparent;
+  color: var(--button-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--subtle[aria-pressed="true"],
+.btn--subtle.is-selected {
+  background: var(--button-subtle-bg-selected);
+  color: var(--button-subtle-text);
+}
+
+/* =============================================================
+   Transparent variant
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--transparent {
+  background: transparent;
+  color: var(--button-transparent-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--transparent:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: transparent;
+  color: var(--button-transparent-text-hover);
+}
+
+/* Focused — outer border only (transparent bg: no inner white ring) */
+.btn--transparent:focus,
+.btn--transparent:focus-visible,
+.btn--transparent.is-focused {
+  background: transparent;
+  color: var(--button-transparent-text);
+  border: var(--button-focus-border-width) solid var(--button-focus-ring-outer-color);
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--transparent:active:not(:disabled):not([aria-disabled="true"]),
+.btn--transparent.is-pressed {
+  background: transparent;
+  color: var(--button-transparent-text-pressed);
+  border: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--transparent:disabled,
+.btn--transparent[aria-disabled="true"] {
+  background: transparent;
+  color: var(--button-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--transparent[aria-pressed="true"],
+.btn--transparent.is-selected {
+  background: transparent;
+  color: var(--button-transparent-text-selected);
+}
+
+/* =============================================================
+   Neutral On-Color variant  (for use on colored/dark backgrounds)
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--neutral-on-color {
+  background: var(--button-neutral-on-color-bg-default);
+  color: var(--button-neutral-on-color-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--neutral-on-color:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-neutral-on-color-bg-hover);
+}
+
+/* Focused — white outer border + black inner ring ------------ */
+.btn--neutral-on-color:focus,
+.btn--neutral-on-color:focus-visible,
+.btn--neutral-on-color.is-focused {
+  background: var(--button-neutral-on-color-bg-default);
+  border: var(--button-focus-border-width) solid var(--white);
+}
+
+.btn--neutral-on-color:focus::after,
+.btn--neutral-on-color:focus-visible::after,
+.btn--neutral-on-color.is-focused::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--button-radius);
+  border: var(--button-focus-ring-inner) solid var(--black);
+  pointer-events: none;
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--neutral-on-color:active:not(:disabled):not([aria-disabled="true"]),
+.btn--neutral-on-color.is-pressed {
+  background: var(--button-neutral-on-color-bg-pressed);
+  border: none;
+}
+
+.btn--neutral-on-color:active:not(:disabled):not([aria-disabled="true"])::after,
+.btn--neutral-on-color.is-pressed::after {
+  display: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--neutral-on-color:disabled,
+.btn--neutral-on-color[aria-disabled="true"] {
+  background: var(--button-neutral-on-color-disabled-bg);
+  color: var(--button-neutral-on-color-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--neutral-on-color[aria-pressed="true"],
+.btn--neutral-on-color.is-selected {
+  background: var(--button-neutral-on-color-bg-selected);
+  color: var(--button-neutral-on-color-text);
+}
+
+/* =============================================================
+   Primary On-Color variant  (for use on colored/dark backgrounds)
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--primary-on-color {
+  background: var(--button-primary-on-color-bg-default);
+  color: var(--button-primary-on-color-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--primary-on-color:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-primary-on-color-bg-hover);
+}
+
+/* Focused — white outer border + black inner ring ------------ */
+.btn--primary-on-color:focus,
+.btn--primary-on-color:focus-visible,
+.btn--primary-on-color.is-focused {
+  background: var(--button-primary-on-color-bg-default);
+  border: var(--button-focus-border-width) solid var(--white);
+}
+
+.btn--primary-on-color:focus::after,
+.btn--primary-on-color:focus-visible::after,
+.btn--primary-on-color.is-focused::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--button-radius);
+  border: var(--button-focus-ring-inner) solid var(--black);
+  pointer-events: none;
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--primary-on-color:active:not(:disabled):not([aria-disabled="true"]),
+.btn--primary-on-color.is-pressed {
+  background: var(--button-primary-on-color-bg-pressed);
+  border: none;
+}
+
+.btn--primary-on-color:active:not(:disabled):not([aria-disabled="true"])::after,
+.btn--primary-on-color.is-pressed::after {
+  display: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--primary-on-color:disabled,
+.btn--primary-on-color[aria-disabled="true"] {
+  background: var(--button-primary-on-color-disabled-bg);
+  color: var(--button-primary-on-color-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--primary-on-color[aria-pressed="true"],
+.btn--primary-on-color.is-selected {
+  background: var(--button-primary-on-color-bg-selected);
+  color: var(--button-primary-on-color-text);
+}
+
+/* =============================================================
+   Subtle On-Color variant  (for use on colored/dark backgrounds)
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--subtle-on-color {
+  background: transparent;
+  color: var(--button-subtle-on-color-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--subtle-on-color:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--button-subtle-on-color-bg-hover);
+}
+
+/* Focused — white border only (no inner ring) ---------------- */
+.btn--subtle-on-color:focus,
+.btn--subtle-on-color:focus-visible,
+.btn--subtle-on-color.is-focused {
+  background: transparent;
+  border: var(--button-focus-border-width) solid var(--white);
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--subtle-on-color:active:not(:disabled):not([aria-disabled="true"]),
+.btn--subtle-on-color.is-pressed {
+  background: var(--button-subtle-on-color-bg-pressed);
+  border: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--subtle-on-color:disabled,
+.btn--subtle-on-color[aria-disabled="true"] {
+  background: transparent;
+  color: var(--button-subtle-on-color-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--subtle-on-color[aria-pressed="true"],
+.btn--subtle-on-color.is-selected {
+  background: var(--button-subtle-on-color-bg-selected);
+  color: var(--button-subtle-on-color-text);
+}
+
+/* =============================================================
+   Transparent On-Color variant  (for use on colored/dark backgrounds)
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.btn--transparent-on-color {
+  background: transparent;
+  color: var(--button-transparent-on-color-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.btn--transparent-on-color:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: transparent;
+  color: var(--button-transparent-on-color-text-hover);
+}
+
+/* Focused — white border only (no inner ring) ---------------- */
+.btn--transparent-on-color:focus,
+.btn--transparent-on-color:focus-visible,
+.btn--transparent-on-color.is-focused {
+  background: transparent;
+  color: var(--button-transparent-on-color-text);
+  border: var(--button-focus-border-width) solid var(--white);
+}
+
+/* Pressed ---------------------------------------------------- */
+.btn--transparent-on-color:active:not(:disabled):not([aria-disabled="true"]),
+.btn--transparent-on-color.is-pressed {
+  background: transparent;
+  color: var(--button-transparent-on-color-text-pressed);
+  border: none;
+}
+
+/* Disabled --------------------------------------------------- */
+.btn--transparent-on-color:disabled,
+.btn--transparent-on-color[aria-disabled="true"] {
+  background: transparent;
+  color: var(--button-transparent-on-color-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Selected --------------------------------------------------- */
+.btn--transparent-on-color[aria-pressed="true"],
+.btn--transparent-on-color.is-selected {
+  background: transparent;
+  color: var(--button-transparent-on-color-text-selected);
+}

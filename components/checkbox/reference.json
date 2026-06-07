@@ -1,0 +1,237 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "checkbox",
+    "description": "Checkbox control with three check-states (unchecked, checked, indeterminate), three sizes, two styles, and six interaction states."
+  },
+  "axes": ["check_state", "style", "size", "state"],
+  "axis_values": {
+    "check_state": ["unchecked", "checked", "indeterminate"],
+    "style": ["primary", "neutral"],
+    "size": ["md", "sm", "xs"],
+    "state": ["default", "hovered", "pressed", "focused", "readonly", "disabled"]
+  },
+
+  "size_tokens": {
+    "md": {
+      "dimension": "var(--checkbox-size-md, 24px)",
+      "focus_ring_outer": "32px",
+      "focus_ring_offset": "var(--checkbox-focus-ring-offset, 4px)",
+      "checkmark_icon_width": "12px",
+      "checkmark_icon_height": "9.116px",
+      "indeterminate_icon_width": "12px",
+      "indeterminate_icon_height": "3px",
+      "css_modifier": ".checkbox--md"
+    },
+    "sm": {
+      "dimension": "var(--checkbox-size-sm, 20px)",
+      "focus_ring_outer": "28px",
+      "focus_ring_offset": "var(--checkbox-focus-ring-offset, 4px)",
+      "checkmark_icon_width": "10px",
+      "checkmark_icon_height": "7.596px",
+      "indeterminate_icon_width": "10px",
+      "indeterminate_icon_height": "2.5px",
+      "css_modifier": ".checkbox--sm"
+    },
+    "xs": {
+      "dimension": "var(--checkbox-size-xs, 16px)",
+      "focus_ring_outer": "24px",
+      "focus_ring_offset": "var(--checkbox-focus-ring-offset, 4px)",
+      "checkmark_icon_width": "8px",
+      "checkmark_icon_height": "6.077px",
+      "indeterminate_icon_width": "8px",
+      "indeterminate_icon_height": "2px",
+      "css_modifier": ".checkbox--xs"
+    }
+  },
+
+  "tokens": {
+    "border_unselected":          "var(--checkbox-border-unselected, #161616)",
+    "bg_selected_primary":        "var(--checkbox-bg-selected-primary, #1B8354)",
+    "bg_selected_neutral":        "var(--checkbox-bg-selected-neutral, #161616)",
+    "icon_oncolor":               "var(--checkbox-icon-oncolor, #FFF)",
+    "focus_ring_color":           "var(--checkbox-focus-ring-color, #161616)",
+    "border_radius":              "var(--checkbox-border-radius, var(--Radius-radius-xs, 2px))",
+    "opacity_readonly":           "var(--checkbox-opacity-readonly, 0.7)",
+    "opacity_disabled":           "var(--checkbox-opacity-disabled, 0.5)",
+    "focus_ring_width":           "var(--checkbox-focus-ring-width, 2px)",
+    "bg_hover":                   "var(--checkbox-bg-hover)",
+    "bg_pressed":                 "var(--checkbox-bg-pressed)",
+    "transition_duration":        "var(--checkbox-transition-duration, 0.15s)",
+    "transition_easing":          "var(--checkbox-transition-easing, ease)"
+  },
+
+  "missing_tokens": [
+    "--checkbox-bg-hover",
+    "--checkbox-bg-pressed",
+    "--checkbox-opacity-readonly",
+    "--checkbox-opacity-disabled",
+    "--checkbox-focus-ring-offset",
+    "--checkbox-focus-ring-width",
+    "--checkbox-transition-duration",
+    "--checkbox-transition-easing"
+  ],
+
+  "variants": [
+    {
+      "id": "unchecked-primary-md-default",
+      "axes": { "check_state": "unchecked", "style": "primary", "size": "md", "state": "default" },
+      "status": "available",
+      "properties": {
+        "root_css": {
+          "position": "relative",
+          "display": "inline-flex",
+          "width": "var(--checkbox-size-md, 24px)",
+          "height": "var(--checkbox-size-md, 24px)",
+          "justify-content": "center",
+          "align-items": "center"
+        },
+        "control_css": {
+          "border-radius": "var(--checkbox-border-radius, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--checkbox-border-unselected, #161616)",
+          "background": "transparent"
+        },
+        "focus_ring_css": null
+      }
+    },
+    {
+      "id": "checked-primary-md-default",
+      "axes": { "check_state": "checked", "style": "primary", "size": "md", "state": "default" },
+      "status": "available",
+      "properties": {
+        "root_css": {
+          "position": "relative",
+          "display": "inline-flex",
+          "width": "var(--checkbox-size-md, 24px)",
+          "height": "var(--checkbox-size-md, 24px)",
+          "justify-content": "center",
+          "align-items": "center"
+        },
+        "control_css": {
+          "border-radius": "var(--checkbox-border-radius, 2px)",
+          "background": "var(--checkbox-bg-selected-primary, #1B8354)"
+        },
+        "icon_css": {
+          "width": "12px",
+          "height": "9.116px",
+          "fill": "var(--checkbox-icon-oncolor, #FFF)"
+        },
+        "focus_ring_css": null
+      }
+    },
+    {
+      "id": "checked-neutral-md-default",
+      "axes": { "check_state": "checked", "style": "neutral", "size": "md", "state": "default" },
+      "status": "available",
+      "properties": {
+        "root_css": {
+          "position": "relative",
+          "display": "inline-flex",
+          "width": "var(--checkbox-size-md, 24px)",
+          "height": "var(--checkbox-size-md, 24px)",
+          "justify-content": "center",
+          "align-items": "center"
+        },
+        "control_css": {
+          "border-radius": "var(--checkbox-border-radius, 2px)",
+          "background": "var(--checkbox-bg-selected-neutral, #161616)"
+        },
+        "icon_css": {
+          "width": "12px",
+          "height": "9.116px",
+          "fill": "var(--checkbox-icon-oncolor, #FFF)"
+        },
+        "focus_ring_css": null
+      }
+    },
+    {
+      "id": "indeterminate-primary-md-default",
+      "axes": { "check_state": "indeterminate", "style": "primary", "size": "md", "state": "default" },
+      "status": "available",
+      "properties": {
+        "root_css": {
+          "position": "relative",
+          "display": "inline-flex",
+          "width": "var(--checkbox-size-md, 24px)",
+          "height": "var(--checkbox-size-md, 24px)",
+          "justify-content": "center",
+          "align-items": "center"
+        },
+        "control_css": {
+          "border-radius": "var(--checkbox-border-radius, 2px)",
+          "background": "var(--checkbox-bg-selected-primary, #1B8354)"
+        },
+        "icon_css": {
+          "width": "12px",
+          "height": "3px",
+          "fill": "var(--checkbox-icon-oncolor, #FFF)"
+        },
+        "focus_ring_css": null
+      }
+    },
+    {
+      "id": "unchecked-primary-md-focused",
+      "axes": { "check_state": "unchecked", "style": "primary", "size": "md", "state": "focused" },
+      "status": "available",
+      "properties": {
+        "root_css": {
+          "position": "relative",
+          "display": "inline-flex",
+          "width": "var(--checkbox-size-md, 24px)",
+          "height": "var(--checkbox-size-md, 24px)",
+          "justify-content": "center",
+          "align-items": "center"
+        },
+        "control_css": {
+          "border-radius": "var(--checkbox-border-radius, 2px)",
+          "box-shadow": "inset 0 0 0 1px var(--checkbox-border-unselected, #161616)",
+          "background": "transparent"
+        },
+        "focus_ring_css": {
+          "position": "absolute",
+          "left": "-4px",
+          "top": "-4px",
+          "width": "32px",
+          "height": "32px",
+          "border-radius": "var(--checkbox-border-radius, 2px)",
+          "mix-blend-mode": "multiply",
+          "box-shadow": "inset 0 0 0 2px var(--checkbox-focus-ring-color, #161616)"
+        }
+      }
+    },
+    {
+      "id": "unchecked-primary-md-readonly",
+      "axes": { "check_state": "unchecked", "style": "primary", "size": "md", "state": "readonly" },
+      "status": "available",
+      "properties": {
+        "root_css": {
+          "opacity": "var(--checkbox-opacity-readonly, 0.7)",
+          "pointer-events": "none"
+        }
+      }
+    },
+    {
+      "id": "unchecked-primary-md-disabled",
+      "axes": { "check_state": "unchecked", "style": "primary", "size": "md", "state": "disabled" },
+      "status": "available",
+      "properties": {
+        "root_css": {
+          "opacity": "var(--checkbox-opacity-disabled, 0.5)",
+          "pointer-events": "none",
+          "cursor": "not-allowed"
+        }
+      }
+    }
+  ],
+
+  "discarded_axes": [],
+
+  "implementation_notes": [
+    "Checked=False + Indeterminate=True is architecturally invalid and not in manifest. Do not render this combination.",
+    "Hovered and Pressed states have identical Figma CSS to Default. Interaction feedback must be added via CSS :hover/:active and missing hover/pressed tokens.",
+    "Focus ring uses mix-blend-mode: multiply and is positioned absolutely at -4px offset from all edges.",
+    "The indeterminate property must be set via JavaScript (input.indeterminate = true) — it cannot be set in HTML.",
+    "Style axis only affects the selected/indeterminate background color. All other tokens are shared.",
+    "Variant count in this reference is representative. Full matrix = 3 check-states × 6 states × 3 sizes × 2 styles = 108."
+  ]
+}

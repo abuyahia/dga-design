@@ -1,0 +1,224 @@
+/* =============================================================
+   input-affix  ·  Reference: reference.json
+   Figma source: _Input Prefix-Suffix
+   ============================================================= */
+
+/* ── Base ──────────────────────────────────────────────────── */
+/* TODO: Register all --input-affix-* tokens in token.css.
+   Fallback values are used until tokens are added. */
+
+.input-affix {
+  display: inline-flex;
+  height: var(--input-affix-lg-height, 40px);
+  padding-block: var(--input-affix-lg-padding-block, 2px);
+  padding-inline: var(--input-affix-lg-padding-inline, 16px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--input-affix-lg-gap, 4px);
+  border-radius: var(--input-affix-radius, 0);
+  border: none;
+  box-sizing: border-box;
+  font-family: var(--input-affix-font-family, "IBM Plex Sans Arabic");
+  font-size: var(--input-affix-lg-font-size, 16px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--input-affix-lg-line-height, 24px);
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-appearance: none;
+}
+
+/* ── Icon ───────────────────────────────────────────────────── */
+.input-affix__icon {
+  width: var(--input-affix-lg-icon-size, 24px);
+  height: var(--input-affix-lg-icon-size, 24px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.input-affix__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Text wrapper ───────────────────────────────────────────── */
+.input-affix__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ── Arrow ──────────────────────────────────────────────────── */
+.input-affix__arrow {
+  width: var(--input-affix-lg-arrow-size, 20px);
+  height: var(--input-affix-lg-arrow-size, 20px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.input-affix__arrow svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =============================================================
+   Size modifier  ·  Large is default (no modifier)
+   ============================================================= */
+
+.input-affix--md {
+  height: var(--input-affix-md-height, 32px);
+  padding-block: var(--input-affix-md-padding-block, 2px);
+  padding-inline: var(--input-affix-md-padding-inline, 12px);
+  gap: var(--input-affix-md-gap, 4px);
+  font-size: var(--input-affix-md-font-size, 14px);
+  line-height: var(--input-affix-md-line-height, 20px);
+}
+
+.input-affix--md .input-affix__icon {
+  width: var(--input-affix-md-icon-size, 20px);
+  height: var(--input-affix-md-icon-size, 20px);
+}
+
+.input-affix--md .input-affix__arrow {
+  width: var(--input-affix-md-arrow-size, 16px);
+  height: var(--input-affix-md-arrow-size, 16px);
+}
+
+/* =============================================================
+   Type: Text  ·  .input-affix--text
+   Read-only, non-interactive. Renders as <div>.
+   ============================================================= */
+
+.input-affix--text {
+  cursor: default;
+}
+
+.input-affix--text .input-affix__text {
+  color: var(--input-affix-text-placeholder, #6C737F);
+}
+
+/* ── Text · Disabled ─────────────────────────────────────────── */
+.input-affix--text[aria-disabled="true"] .input-affix__text {
+  color: var(--input-affix-text-disabled, #9DA4AE);
+}
+
+/* =============================================================
+   Type: Dropdown  ·  .input-affix--dropdown
+   Interactive. Renders as <button type="button">.
+   ============================================================= */
+
+.input-affix--dropdown {
+  cursor: pointer;
+}
+
+.input-affix--dropdown .input-affix__text {
+  color: var(--input-affix-text-default, #161616);
+}
+
+/* ── Dropdown · Hovered ──────────────────────────────────────── */
+.input-affix--dropdown:hover {
+  background: var(--input-affix-bg-hovered, #F3F4F6);
+}
+
+/* ── Dropdown · Pressed ──────────────────────────────────────── */
+.input-affix--dropdown:active {
+  background: var(--input-affix-bg-pressed, #E5E7EB);
+}
+
+/* ── Dropdown · Focused ──────────────────────────────────────── */
+/* Deviation from Figma: outline instead of border to avoid layout shift.
+   See analysis.md → Intentional Deviations. */
+.input-affix--dropdown:focus-visible {
+  outline: var(--input-affix-focus-ring-width, 4px) solid var(--input-affix-focus-ring-color, #161616);
+  outline-offset: 0;
+}
+
+/* ── Dropdown · Selected ─────────────────────────────────────── */
+.input-affix--dropdown[aria-selected="true"] {
+  background: var(--input-affix-bg-selected, #384250);
+}
+
+.input-affix--dropdown[aria-selected="true"] .input-affix__text {
+  color: var(--input-affix-text-selected, #FFF);
+}
+
+/* ── Dropdown · Disabled ─────────────────────────────────────── */
+.input-affix--dropdown[disabled],
+.input-affix--dropdown:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.input-affix--dropdown[disabled] .input-affix__text,
+.input-affix--dropdown:disabled .input-affix__text {
+  color: var(--input-affix-text-disabled, #9DA4AE);
+}
+
+/* =============================================================
+   Style: Solid  ·  .input-affix--solid
+   ============================================================= */
+
+.input-affix--solid {
+  background: var(--input-affix-bg-solid-default, #F3F4F6);
+}
+
+.input-affix--solid.input-affix--dropdown:hover {
+  background: var(--input-affix-bg-hovered, #F3F4F6);
+}
+
+.input-affix--solid.input-affix--dropdown:active {
+  background: var(--input-affix-bg-pressed, #E5E7EB);
+}
+
+.input-affix--solid.input-affix--dropdown:focus-visible {
+  background: var(--input-affix-bg-focused, #F3F4F6);
+}
+
+.input-affix--solid.input-affix--text[aria-disabled="true"],
+.input-affix--solid.input-affix--dropdown[disabled],
+.input-affix--solid.input-affix--dropdown:disabled {
+  background: var(--input-affix-bg-disabled, #E5E7EB);
+}
+
+/* =============================================================
+   Style: Subtle  ·  .input-affix--subtle
+   Transparent on Default. Background appears on interaction.
+   ============================================================= */
+
+.input-affix--subtle {
+  background: transparent;
+}
+
+.input-affix--subtle.input-affix--dropdown:hover {
+  background: var(--input-affix-bg-hovered, #F3F4F6);
+}
+
+.input-affix--subtle.input-affix--dropdown:active {
+  background: var(--input-affix-bg-pressed, #E5E7EB);
+}
+
+.input-affix--subtle.input-affix--dropdown:focus-visible {
+  background: transparent;
+}
+
+.input-affix--subtle.input-affix--text[aria-disabled="true"],
+.input-affix--subtle.input-affix--dropdown[disabled],
+.input-affix--subtle.input-affix--dropdown:disabled {
+  background: transparent;
+}
+
+/* =============================================================
+   RTL support
+   Child order reversal is handled by flex-direction via [dir="rtl"]
+   on the page ancestor. No additional class modifier needed.
+   ============================================================= */
+
+[dir="rtl"] .input-affix {
+  direction: rtl;
+}

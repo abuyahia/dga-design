@@ -1,0 +1,398 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "input-affix",
+    "figma_name": "_Input Prefix-Suffix",
+    "description": "Input affix (prefix/suffix) subcomponent. Attaches to the leading or trailing edge of a text-input. Two types: Text (static read-only label) and Dropdown (interactive trigger). Participates in text-input and form-field assemblies."
+  },
+  "axes": ["type", "style", "size", "state"],
+  "axis_values": {
+    "type": ["text", "dropdown"],
+    "style": ["solid", "subtle"],
+    "size": ["large", "medium"],
+    "state": ["default", "hovered", "pressed", "focused", "selected", "disabled"]
+  },
+  "discarded_axes": {
+    "RTL": "RTL=True and RTL=False produce identical visuals with reversed child order only. Layout reversal is handled by [dir=\"rtl\"] on the page ancestor via CSS flex-direction. No separate CSS modifier is generated."
+  },
+  "state_applicability": {
+    "text": ["default", "disabled"],
+    "dropdown": ["default", "hovered", "pressed", "focused", "selected", "disabled"]
+  },
+  "size_tokens": {
+    "large": {
+      "height": "var(--input-affix-lg-height, 40px)",
+      "padding-inline": "var(--input-affix-lg-padding-inline, 16px)",
+      "padding-block": "var(--input-affix-lg-padding-block, 2px)",
+      "gap": "var(--input-affix-lg-gap, 4px)",
+      "font-size": "var(--input-affix-lg-font-size, 16px)",
+      "line-height": "var(--input-affix-lg-line-height, 24px)",
+      "icon-size": "var(--input-affix-lg-icon-size, 24px)",
+      "arrow-size": "var(--input-affix-lg-arrow-size, 20px)",
+      "css-modifier": null
+    },
+    "medium": {
+      "height": "var(--input-affix-md-height, 32px)",
+      "padding-inline": "var(--input-affix-md-padding-inline, 12px)",
+      "padding-block": "var(--input-affix-md-padding-block, 2px)",
+      "gap": "var(--input-affix-md-gap, 4px)",
+      "font-size": "var(--input-affix-md-font-size, 14px)",
+      "line-height": "var(--input-affix-md-line-height, 20px)",
+      "icon-size": "var(--input-affix-md-icon-size, 20px)",
+      "arrow-size": "var(--input-affix-md-arrow-size, 16px)",
+      "css-modifier": ".input-affix--md"
+    }
+  },
+  "color_tokens": {
+    "backgrounds": {
+      "solid-default": "var(--input-affix-bg-solid-default, #F3F4F6)",
+      "hovered": "var(--input-affix-bg-hovered, #F3F4F6)",
+      "pressed": "var(--input-affix-bg-pressed, #E5E7EB)",
+      "focused": "var(--input-affix-bg-focused, #F3F4F6)",
+      "selected": "var(--input-affix-bg-selected, #384250)",
+      "disabled-solid": "var(--input-affix-bg-disabled, #E5E7EB)"
+    },
+    "text": {
+      "default": "var(--input-affix-text-default, #161616)",
+      "placeholder": "var(--input-affix-text-placeholder, #6C737F)",
+      "selected": "var(--input-affix-text-selected, #FFF)",
+      "disabled": "var(--input-affix-text-disabled, #9DA4AE)"
+    },
+    "focus": {
+      "ring-color": "var(--input-affix-focus-ring-color, #161616)",
+      "ring-width": "var(--input-affix-focus-ring-width, 4px)"
+    }
+  },
+  "implementation_notes": [
+    "Type=Dropdown renders as <button type=\"button\">. Type=Text renders as <div>.",
+    "RTL layout is handled by [dir=\"rtl\"] on the page ancestor — no separate RTL class modifier.",
+    "Focus ring uses CSS outline (not border) to avoid layout shift. This deviates from Figma's border: 4px solid approach.",
+    "Solid Subtle Hovered background is the same hex value as Solid Default (#F3F4F6). Verify with design.",
+    "Selected state requires parent ARIA context (text-input assembly) for full accessibility compliance.",
+    "All --input-affix-* tokens are pending registration in token.css. CSS fallback values are used until then."
+  ],
+  "variants": [
+    {
+      "id": "dropdown-solid-large-default",
+      "axes": { "type": "dropdown", "style": "solid", "size": "large", "state": "default" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--input-affix-lg-height, 40px)",
+          "padding": "var(--input-affix-lg-padding-block, 2px) var(--input-affix-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--input-affix-lg-gap, 4px)",
+          "border-radius": "var(--input-affix-radius, 0)",
+          "background": "var(--input-affix-bg-solid-default, #F3F4F6)"
+        },
+        "text_css": { "color": "var(--input-affix-text-default, #161616)", "font-size": "var(--input-affix-lg-font-size, 16px)", "line-height": "var(--input-affix-lg-line-height, 24px)" },
+        "icon_css": { "width": "var(--input-affix-lg-icon-size, 24px)", "height": "var(--input-affix-lg-icon-size, 24px)" },
+        "arrow_css": { "width": "var(--input-affix-lg-arrow-size, 20px)", "height": "var(--input-affix-lg-arrow-size, 20px)" }
+      }
+    },
+    {
+      "id": "dropdown-solid-large-hovered",
+      "axes": { "type": "dropdown", "style": "solid", "size": "large", "state": "hovered" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "var(--input-affix-bg-hovered, #F3F4F6)"
+        },
+        "text_css": { "color": "var(--input-affix-text-default, #161616)" }
+      }
+    },
+    {
+      "id": "dropdown-solid-large-pressed",
+      "axes": { "type": "dropdown", "style": "solid", "size": "large", "state": "pressed" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "var(--input-affix-bg-pressed, #E5E7EB)"
+        },
+        "text_css": { "color": "var(--input-affix-text-default, #161616)" }
+      }
+    },
+    {
+      "id": "dropdown-solid-large-focused",
+      "axes": { "type": "dropdown", "style": "solid", "size": "large", "state": "focused" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "var(--input-affix-bg-focused, #F3F4F6)",
+          "outline": "var(--input-affix-focus-ring-width, 4px) solid var(--input-affix-focus-ring-color, #161616)"
+        },
+        "text_css": { "color": "var(--input-affix-text-default, #161616)" }
+      }
+    },
+    {
+      "id": "dropdown-solid-large-selected",
+      "axes": { "type": "dropdown", "style": "solid", "size": "large", "state": "selected" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "var(--input-affix-bg-selected, #384250)"
+        },
+        "text_css": { "color": "var(--input-affix-text-selected, #FFF)" }
+      }
+    },
+    {
+      "id": "dropdown-solid-large-disabled",
+      "axes": { "type": "dropdown", "style": "solid", "size": "large", "state": "disabled" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "var(--input-affix-bg-disabled, #E5E7EB)",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": { "color": "var(--input-affix-text-disabled, #9DA4AE)" }
+      }
+    },
+    {
+      "id": "dropdown-subtle-large-default",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "large", "state": "default" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "transparent"
+        },
+        "text_css": { "color": "var(--input-affix-text-default, #161616)" }
+      }
+    },
+    {
+      "id": "dropdown-subtle-large-hovered",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "large", "state": "hovered" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "var(--input-affix-bg-hovered, #F3F4F6)"
+        },
+        "text_css": { "color": "var(--input-affix-text-default, #161616)" }
+      }
+    },
+    {
+      "id": "dropdown-subtle-large-pressed",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "large", "state": "pressed" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "var(--input-affix-bg-pressed, #E5E7EB)"
+        },
+        "text_css": { "color": "var(--input-affix-text-default, #161616)" }
+      }
+    },
+    {
+      "id": "dropdown-subtle-large-focused",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "large", "state": "focused" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "transparent",
+          "outline": "var(--input-affix-focus-ring-width, 4px) solid var(--input-affix-focus-ring-color, #161616)"
+        },
+        "text_css": { "color": "var(--input-affix-text-default, #161616)" }
+      }
+    },
+    {
+      "id": "dropdown-subtle-large-selected",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "large", "state": "selected" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "var(--input-affix-bg-selected, #384250)"
+        },
+        "text_css": { "color": "var(--input-affix-text-selected, #FFF)" }
+      }
+    },
+    {
+      "id": "dropdown-subtle-large-disabled",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "large", "state": "disabled" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "background": "transparent",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": { "color": "var(--input-affix-text-disabled, #9DA4AE)" }
+      }
+    },
+    {
+      "id": "dropdown-solid-medium-default",
+      "axes": { "type": "dropdown", "style": "solid", "size": "medium", "state": "default" },
+      "status": "available",
+      "properties": {
+        "element": "button",
+        "root_css_props": {
+          "height": "var(--input-affix-md-height, 32px)",
+          "padding": "var(--input-affix-md-padding-block, 2px) var(--input-affix-md-padding-inline, 12px)",
+          "gap": "var(--input-affix-md-gap, 4px)",
+          "background": "var(--input-affix-bg-solid-default, #F3F4F6)"
+        },
+        "text_css": { "color": "var(--input-affix-text-default, #161616)", "font-size": "var(--input-affix-md-font-size, 14px)", "line-height": "var(--input-affix-md-line-height, 20px)" },
+        "icon_css": { "width": "var(--input-affix-md-icon-size, 20px)", "height": "var(--input-affix-md-icon-size, 20px)" },
+        "arrow_css": { "width": "var(--input-affix-md-arrow-size, 16px)", "height": "var(--input-affix-md-arrow-size, 16px)" }
+      }
+    },
+    {
+      "id": "dropdown-solid-medium-hovered",
+      "axes": { "type": "dropdown", "style": "solid", "size": "medium", "state": "hovered" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "var(--input-affix-bg-hovered, #F3F4F6)" } }
+    },
+    {
+      "id": "dropdown-solid-medium-pressed",
+      "axes": { "type": "dropdown", "style": "solid", "size": "medium", "state": "pressed" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "var(--input-affix-bg-pressed, #E5E7EB)" } }
+    },
+    {
+      "id": "dropdown-solid-medium-focused",
+      "axes": { "type": "dropdown", "style": "solid", "size": "medium", "state": "focused" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "var(--input-affix-bg-focused, #F3F4F6)", "outline": "var(--input-affix-focus-ring-width, 4px) solid var(--input-affix-focus-ring-color, #161616)" } }
+    },
+    {
+      "id": "dropdown-solid-medium-selected",
+      "axes": { "type": "dropdown", "style": "solid", "size": "medium", "state": "selected" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "var(--input-affix-bg-selected, #384250)" }, "text_css": { "color": "var(--input-affix-text-selected, #FFF)" } }
+    },
+    {
+      "id": "dropdown-solid-medium-disabled",
+      "axes": { "type": "dropdown", "style": "solid", "size": "medium", "state": "disabled" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "var(--input-affix-bg-disabled, #E5E7EB)", "cursor": "not-allowed", "pointer-events": "none" }, "text_css": { "color": "var(--input-affix-text-disabled, #9DA4AE)" } }
+    },
+    {
+      "id": "dropdown-subtle-medium-default",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "medium", "state": "default" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "transparent" } }
+    },
+    {
+      "id": "dropdown-subtle-medium-hovered",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "medium", "state": "hovered" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "var(--input-affix-bg-hovered, #F3F4F6)" } }
+    },
+    {
+      "id": "dropdown-subtle-medium-pressed",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "medium", "state": "pressed" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "var(--input-affix-bg-pressed, #E5E7EB)" } }
+    },
+    {
+      "id": "dropdown-subtle-medium-focused",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "medium", "state": "focused" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "transparent", "outline": "var(--input-affix-focus-ring-width, 4px) solid var(--input-affix-focus-ring-color, #161616)" } }
+    },
+    {
+      "id": "dropdown-subtle-medium-selected",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "medium", "state": "selected" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "var(--input-affix-bg-selected, #384250)" }, "text_css": { "color": "var(--input-affix-text-selected, #FFF)" } }
+    },
+    {
+      "id": "dropdown-subtle-medium-disabled",
+      "axes": { "type": "dropdown", "style": "subtle", "size": "medium", "state": "disabled" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "transparent", "cursor": "not-allowed", "pointer-events": "none" }, "text_css": { "color": "var(--input-affix-text-disabled, #9DA4AE)" } }
+    },
+    {
+      "id": "text-solid-large-default",
+      "axes": { "type": "text", "style": "solid", "size": "large", "state": "default" },
+      "status": "available",
+      "properties": {
+        "element": "div",
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--input-affix-lg-height, 40px)",
+          "padding": "var(--input-affix-lg-padding-block, 2px) var(--input-affix-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "border-radius": "var(--input-affix-radius, 0)",
+          "background": "var(--input-affix-bg-solid-default, #F3F4F6)"
+        },
+        "text_css": { "color": "var(--input-affix-text-placeholder, #6C737F)", "font-size": "var(--input-affix-lg-font-size, 16px)", "line-height": "var(--input-affix-lg-line-height, 24px)" }
+      }
+    },
+    {
+      "id": "text-solid-large-disabled",
+      "axes": { "type": "text", "style": "solid", "size": "large", "state": "disabled" },
+      "status": "available",
+      "properties": {
+        "element": "div",
+        "root_css_props": { "background": "var(--input-affix-bg-disabled, #E5E7EB)" },
+        "text_css": { "color": "var(--input-affix-text-disabled, #9DA4AE)" }
+      }
+    },
+    {
+      "id": "text-subtle-large-default",
+      "axes": { "type": "text", "style": "subtle", "size": "large", "state": "default" },
+      "status": "available",
+      "properties": {
+        "element": "div",
+        "root_css_props": { "background": "transparent" },
+        "text_css": { "color": "var(--input-affix-text-placeholder, #6C737F)" }
+      }
+    },
+    {
+      "id": "text-subtle-large-disabled",
+      "axes": { "type": "text", "style": "subtle", "size": "large", "state": "disabled" },
+      "status": "available",
+      "properties": {
+        "element": "div",
+        "root_css_props": { "background": "transparent" },
+        "text_css": { "color": "var(--input-affix-text-disabled, #9DA4AE)" }
+      }
+    },
+    {
+      "id": "text-solid-medium-default",
+      "axes": { "type": "text", "style": "solid", "size": "medium", "state": "default" },
+      "status": "available",
+      "properties": {
+        "element": "div",
+        "root_css_props": {
+          "height": "var(--input-affix-md-height, 32px)",
+          "padding": "var(--input-affix-md-padding-block, 2px) var(--input-affix-md-padding-inline, 12px)",
+          "background": "var(--input-affix-bg-solid-default, #F3F4F6)"
+        },
+        "text_css": { "color": "var(--input-affix-text-placeholder, #6C737F)", "font-size": "var(--input-affix-md-font-size, 14px)", "line-height": "var(--input-affix-md-line-height, 20px)" }
+      }
+    },
+    {
+      "id": "text-solid-medium-disabled",
+      "axes": { "type": "text", "style": "solid", "size": "medium", "state": "disabled" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "var(--input-affix-bg-disabled, #E5E7EB)" }, "text_css": { "color": "var(--input-affix-text-disabled, #9DA4AE)" } }
+    },
+    {
+      "id": "text-subtle-medium-default",
+      "axes": { "type": "text", "style": "subtle", "size": "medium", "state": "default" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "transparent" }, "text_css": { "color": "var(--input-affix-text-placeholder, #6C737F)" } }
+    },
+    {
+      "id": "text-subtle-medium-disabled",
+      "axes": { "type": "text", "style": "subtle", "size": "medium", "state": "disabled" },
+      "status": "available",
+      "properties": { "root_css_props": { "background": "transparent" }, "text_css": { "color": "var(--input-affix-text-disabled, #9DA4AE)" } }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+[
+  {
+    "cssProps": {
+      "width": "120px",
+      "height": "120px"
+    },
+    "type": "COMPONENT",
+    "name": "Type=Icon, Square=False, Size=120px",
+    "children": [
+      {
+        "cssProps": {
+          "width": "120px",
+          "height": "120px",
+          "border-radius": "var(--radius-round, 9999px)",
+          "border": "4px solid var(--Border-border-white, #FFF)",
+          "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+          "topLeftRadius-variable": "--global-radiusround",
+          "topLeftRadius-collection": "global",
+          "topLeftRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030",
+          "topRightRadius-variable": "--global-radiusround",
+          "topRightRadius-collection": "global",
+          "topRightRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030",
+          "bottomLeftRadius-variable": "--global-radiusround",
+          "bottomLeftRadius-collection": "global",
+          "bottomLeftRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030",
+          "bottomRightRadius-variable": "--global-radiusround",
+          "bottomRightRadius-collection": "global",
+          "bottomRightRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030"
+        },
+        "type": "RECTANGLE",
+        "name": "bg"
+      },
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "80px",
+          "height": "80px",
+          "padding": "var(--Global-spacing-none, 0)",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "FRAME",
+        "name": "Placeholder",
+        "children": [
+          {
+            "cssProps": {
+              "width": "80px",
+              "height": "80px",
+              "flex-shrink": "0"
+            },
+            "type": "INSTANCE",
+            "name": "user",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "65.001px",
+                  "height": "71.667px"
+                },
+                "type": "GROUP",
+                "name": "elements"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

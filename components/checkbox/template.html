@@ -1,0 +1,387 @@
+<!--
+  Checkbox — Template
+  Component:  checkbox
+  Contract:   checkbox.contract.md
+  CSS:        checkbox.css
+
+  USAGE PATTERN:
+  - Wrap the native input + visual span inside a <label class="checkbox-wrapper">.
+  - The .checkbox span is aria-hidden="true" — all semantics live on the native <input>.
+  - Add modifier classes for size (.checkbox--md | --sm | --xs) and style (.checkbox--primary | --neutral).
+  - Sync state classes (.checkbox--checked, .checkbox--indeterminate, .checkbox--focused,
+    .checkbox--readonly, .checkbox--disabled) via JavaScript.
+  - For indeterminate: also call inputElement.indeterminate = true AND set aria-checked="mixed".
+
+  SVG PATHS NOTE:
+  The checkmark and indeterminate dash SVG paths below are standard proxy shapes.
+  Confirm actual vector paths from Figma before production release.
+-->
+
+<!-- ============================================================
+     PATTERN 1 — Unchecked, Primary, Medium (default)
+     ============================================================ -->
+<label class="checkbox-wrapper" for="chk-example-1">
+  <input
+    type="checkbox"
+    class="checkbox__input sr-only"
+    id="chk-example-1"
+  />
+  <span class="checkbox checkbox--md checkbox--primary" aria-hidden="true">
+    <span class="checkbox__control">
+      <span class="checkbox__checkmark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 9.116"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.5 4.5L4.833 7.833L10.5 1.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="checkbox__indeterminate-mark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 3"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="12" height="3" rx="1.5" fill="currentColor" />
+        </svg>
+      </span>
+    </span>
+    <span class="checkbox__focus-ring"></span>
+  </span>
+  <span class="checkbox-label">Option label</span>
+</label>
+
+
+<!-- ============================================================
+     PATTERN 2 — Checked, Primary, Medium
+     ============================================================ -->
+<label class="checkbox-wrapper" for="chk-example-2">
+  <input
+    type="checkbox"
+    class="checkbox__input sr-only"
+    id="chk-example-2"
+    checked
+  />
+  <span class="checkbox checkbox--md checkbox--primary checkbox--checked" aria-hidden="true">
+    <span class="checkbox__control">
+      <span class="checkbox__checkmark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 9.116"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.5 4.5L4.833 7.833L10.5 1.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="checkbox__indeterminate-mark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 3"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="12" height="3" rx="1.5" fill="currentColor" />
+        </svg>
+      </span>
+    </span>
+    <span class="checkbox__focus-ring"></span>
+  </span>
+  <span class="checkbox-label">Checked option</span>
+</label>
+
+
+<!-- ============================================================
+     PATTERN 3 — Indeterminate, Primary, Medium
+     Requires JS: inputElement.indeterminate = true
+     ============================================================ -->
+<label class="checkbox-wrapper" for="chk-example-3">
+  <input
+    type="checkbox"
+    class="checkbox__input sr-only"
+    id="chk-example-3"
+    aria-checked="mixed"
+  />
+  <span class="checkbox checkbox--md checkbox--primary checkbox--indeterminate" aria-hidden="true">
+    <span class="checkbox__control">
+      <span class="checkbox__checkmark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 9.116"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.5 4.5L4.833 7.833L10.5 1.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="checkbox__indeterminate-mark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 3"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="12" height="3" rx="1.5" fill="currentColor" />
+        </svg>
+      </span>
+    </span>
+    <span class="checkbox__focus-ring"></span>
+  </span>
+  <span class="checkbox-label">Indeterminate option</span>
+</label>
+<script>
+  document.getElementById('chk-example-3').indeterminate = true;
+</script>
+
+
+<!-- ============================================================
+     PATTERN 4 — Unchecked, Neutral, Medium
+     ============================================================ -->
+<label class="checkbox-wrapper" for="chk-example-4">
+  <input
+    type="checkbox"
+    class="checkbox__input sr-only"
+    id="chk-example-4"
+  />
+  <span class="checkbox checkbox--md checkbox--neutral" aria-hidden="true">
+    <span class="checkbox__control">
+      <span class="checkbox__checkmark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 9.116"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.5 4.5L4.833 7.833L10.5 1.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="checkbox__indeterminate-mark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 3"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="12" height="3" rx="1.5" fill="currentColor" />
+        </svg>
+      </span>
+    </span>
+    <span class="checkbox__focus-ring"></span>
+  </span>
+  <span class="checkbox-label">Neutral option</span>
+</label>
+
+
+<!-- ============================================================
+     PATTERN 5 — Disabled (unchecked)
+     ============================================================ -->
+<label class="checkbox-wrapper" for="chk-example-5">
+  <input
+    type="checkbox"
+    class="checkbox__input sr-only"
+    id="chk-example-5"
+    disabled
+  />
+  <span class="checkbox checkbox--md checkbox--primary checkbox--disabled" aria-hidden="true">
+    <span class="checkbox__control">
+      <span class="checkbox__checkmark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 9.116"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.5 4.5L4.833 7.833L10.5 1.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="checkbox__indeterminate-mark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 3"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="12" height="3" rx="1.5" fill="currentColor" />
+        </svg>
+      </span>
+    </span>
+    <span class="checkbox__focus-ring"></span>
+  </span>
+  <span class="checkbox-label">Disabled option</span>
+</label>
+
+
+<!-- ============================================================
+     PATTERN 6 — Read-only (checked)
+     ============================================================ -->
+<label class="checkbox-wrapper" for="chk-example-6">
+  <input
+    type="checkbox"
+    class="checkbox__input sr-only"
+    id="chk-example-6"
+    checked
+    aria-readonly="true"
+  />
+  <span class="checkbox checkbox--md checkbox--primary checkbox--checked checkbox--readonly" aria-hidden="true">
+    <span class="checkbox__control">
+      <span class="checkbox__checkmark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 9.116"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.5 4.5L4.833 7.833L10.5 1.5"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="checkbox__indeterminate-mark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 12 3"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="12" height="3" rx="1.5" fill="currentColor" />
+        </svg>
+      </span>
+    </span>
+    <span class="checkbox__focus-ring"></span>
+  </span>
+  <span class="checkbox-label">Read-only option</span>
+</label>
+
+
+<!-- ============================================================
+     PATTERN 7 — Small size, Primary, Unchecked
+     ============================================================ -->
+<label class="checkbox-wrapper" for="chk-example-7">
+  <input
+    type="checkbox"
+    class="checkbox__input sr-only"
+    id="chk-example-7"
+  />
+  <span class="checkbox checkbox--sm checkbox--primary" aria-hidden="true">
+    <span class="checkbox__control">
+      <span class="checkbox__checkmark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 10 7.596"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.25 3.75L4.028 6.528L8.75 1.25"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="checkbox__indeterminate-mark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 10 2.5"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="10" height="2.5" rx="1.25" fill="currentColor" />
+        </svg>
+      </span>
+    </span>
+    <span class="checkbox__focus-ring"></span>
+  </span>
+  <span class="checkbox-label">Small option</span>
+</label>
+
+
+<!-- ============================================================
+     PATTERN 8 — x-Small size, Primary, Checked
+     ============================================================ -->
+<label class="checkbox-wrapper" for="chk-example-8">
+  <input
+    type="checkbox"
+    class="checkbox__input sr-only"
+    id="chk-example-8"
+    checked
+  />
+  <span class="checkbox checkbox--xs checkbox--primary checkbox--checked" aria-hidden="true">
+    <span class="checkbox__control">
+      <span class="checkbox__checkmark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 8 6.077"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 3L3.222 5.222L7 1"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </span>
+      <span class="checkbox__indeterminate-mark">
+        <svg
+          class="checkbox__icon"
+          aria-hidden="true"
+          viewBox="0 0 8 2"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="8" height="2" rx="1" fill="currentColor" />
+        </svg>
+      </span>
+    </span>
+    <span class="checkbox__focus-ring"></span>
+  </span>
+  <span class="checkbox-label">x-Small checked option</span>
+</label>

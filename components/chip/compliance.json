@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "chip",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "_note": "Status 'mapped' means the component has been mapped to this criterion against internal platform standards only. No WCAG or external compliance claim is made. Run audit-rules.json checks and update validation_status before changing overall_status. See analysis.md for full risk and token finding details.",
+
+  "standards": [
+
+    {
+      "id": "PLATFORM-CODE-CHIP",
+      "name": "Platform Design System — Chip Component Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Internal platform rules for the Chip component. IDs are stable. See standards/platform-code.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-CHIP-001",
+          "title": "Component must use design tokens for all visual values",
+          "status": "fail",
+          "evidence": "chip.css references var(--chip-*) component-scoped tokens exclusively. However, no chip-scoped tokens exist in token.css at this time. All token references are pending resolution. The CSS architecture is correct; the token definitions are missing. See analysis.md §Token Findings.",
+          "audit_rule_ids": ["CHIP-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-CHIP-002",
+          "title": "RTL layout support is mandatory",
+          "status": "mapped",
+          "evidence": "chip.css uses padding-inline (logical property). Physical directional properties (padding-left, padding-right) are absent. RTL direction is inherited from [dir='rtl'] at the container level, consistent with the manifest analysis which confirmed RTL=True produces zero CSS differences in Figma.",
+          "audit_rule_ids": ["CHIP-RTL-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-CHIP-003",
+          "title": "Semantic HTML element required",
+          "status": "mapped",
+          "evidence": "<button> is the required root element for interactive chips. <span> is permitted for display-only chips. chip.contract.md §HTML Contract documents all valid element/role combinations. CHIP-STRUCT-001 enforces this at the DOM level.",
+          "audit_rule_ids": ["CHIP-STRUCT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-CHIP-004",
+          "title": "Minimum touch target 24×24px",
+          "status": "fail",
+          "evidence": "Small chip height is 20px (var(--chip-sm-height)), below the 24px minimum. Medium (24px) and Large (32px) pass. CHIP-A11Y-004 flags Small size chips. Design team must either raise the minimum height or document an explicit exception.",
+          "audit_rule_ids": ["CHIP-A11Y-004"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y",
+      "name": "Platform Accessibility Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Accessibility-specific internal standards. See standards/accessibility.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-A11Y-001",
+          "title": "Arabic language font support required",
+          "status": "mapped",
+          "evidence": "IBM Plex Sans Arabic is applied via var(--chip-font-family), which maps to var(--font-sans). All label text inherits this token. No override to a Latin-only font is present in chip.css.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "PLATFORM-CODE-STATE-001",
+          "title": "Toggle chip must declare aria-pressed or aria-selected",
+          "status": "mapped",
+          "evidence": "chip.css targets [aria-pressed='true'] and [aria-selected='true'] for the Selected visual state. chip.contract.md §Aria Contract documents the rule: Selected = persistent toggle via aria-pressed (standalone) or aria-selected (group context). CHIP-A11Y-003 enforces the presence of at least one attribute when .is-selected is used.",
+          "audit_rule_ids": ["CHIP-A11Y-003"]
+        },
+        {
+          "id": "PLATFORM-CODE-FOCUS-001",
+          "title": "Focus ring must not be suppressed",
+          "status": "mapped",
+          "evidence": "chip.css defines a focus outline via the ::after pseudo-element on :focus and :focus-visible. outline:none is set on the root to suppress browser default, but the custom ::after ring replaces it. CHIP-A11Y-002 catches suppression without replacement. Implementation deviation: inset:-4px used instead of Figma fixed pixel widths to support dynamic content — documented in chip.contract.md §Focus Behavior.",
+          "audit_rule_ids": ["CHIP-A11Y-002"]
+        },
+        {
+          "id": "PLATFORM-CODE-TOKEN-001",
+          "title": "No hardcoded color, spacing, or radius values in component CSS",
+          "status": "fail",
+          "evidence": "chip.css contains no hardcoded hex, rgb(), or hsl() values. All visual properties reference var(--chip-*) semantic tokens. However, those tokens are not yet defined in token.css — they are pending. The CSS structure is compliant; the token definitions are the blocking gap. CHIP-TOKEN-001 will pass once token.css is updated.",
+          "audit_rule_ids": ["CHIP-TOKEN-001"]
+        }
+      ]
+    }
+
+  ],
+
+  "variant_compliance_notes": {
+    "chip--sm": "PLATFORM-CODE-CHIP-004: Small chip height is 20px, below the 24px internal minimum touch target. Requires design team sign-off or a raised height token before this variant can be marked compliant.",
+    "chip--on-color": "Contrast cannot be verified without knowing the deployment background color. On-color chips must be verified per-deployment to confirm adequate contrast between chip surface and background.",
+    "disabled (all variants)": "Low contrast of the disabled state is intentional. Inactive UI components are exempt from active-state contrast requirements per internal accessibility standards.",
+    "chip--primary pressed": "Text color for Primary/Pressed (--chip-text-primary-pressed) previously referenced a Button-namespaced token in Figma. A chip-scoped token is required. See analysis.md §KI-6."
+  }
+}

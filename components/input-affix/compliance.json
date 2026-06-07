@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "input-affix",
+  "generated": "2026-06-06",
+  "overall_status": "pending_audit",
+  "official_compliance_claim": false,
+  "_note": "Status 'mapped' means the component has been mapped to this criterion via analysis. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.1.1",
+          "title": "Non-text Content",
+          "status": "mapped",
+          "evidence": "Icon and arrow slots carry aria-hidden='true'. They are decorative. The accessible name of Dropdown affix is provided by the visible text in .input-affix__text.",
+          "audit_rule_ids": ["AFFIX-A11Y-001", "AFFIX-A11Y-002"]
+        },
+        {
+          "id": "1.4.3",
+          "title": "Contrast (Minimum)",
+          "status": "mapped",
+          "evidence": "Default text (#161616) on Solid Default background (#F3F4F6) = ~13:1. Placeholder text (#6C737F) on Solid Default (#F3F4F6) = ~4.63:1. Selected text (#FFF) on selected background (#384250) = ~9.7:1. Disabled text (#9DA4AE) on disabled background (#E5E7EB) = ~2.1:1 — exempt per WCAG 1.4.3 for inactive UI components.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "Dropdown type uses native <button> element — keyboard operable by default (Enter and Space). Text type uses <div> — non-interactive, no keyboard interaction required.",
+          "audit_rule_ids": ["AFFIX-STRUCT-001"]
+        },
+        {
+          "id": "2.4.7",
+          "title": "Focus Visible",
+          "status": "mapped",
+          "evidence": "Dropdown type shows a 4px solid outline on :focus-visible. Outline uses --input-affix-focus-ring-color token. Text type has no focusable state. Focus suppression (outline:none without replacement) is caught by AFFIX-A11Y-003.",
+          "audit_rule_ids": ["AFFIX-A11Y-003"]
+        },
+        {
+          "id": "4.1.2",
+          "title": "Name, Role, Value",
+          "status": "mapped",
+          "evidence": "Dropdown: role=button (implicit from <button>), name=text content of .input-affix__text, expanded state via aria-expanded. Text: role=presentation (div with no interactive role). Selected state via aria-selected requires parent listbox context — deferred to text-input assembly.",
+          "audit_rule_ids": ["AFFIX-A11Y-001", "AFFIX-A11Y-004"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-DS",
+      "name": "Platform Design System Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Internal platform rules. IDs are stable across components.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-AFFIX-001",
+          "title": "Component must use design tokens for all visual values",
+          "status": "mapped",
+          "evidence": "All color, spacing, radius, and font values in input-affix.css reference --input-affix-* CSS custom properties with fallback values. Hardcoded value detection enforced by AFFIX-TOKEN-001.",
+          "audit_rule_ids": ["AFFIX-TOKEN-001"],
+          "_note": "Tokens are pending registration in token.css. Fallback values are present. Full token compliance pending."
+        },
+        {
+          "id": "PLATFORM-CODE-AFFIX-002",
+          "title": "RTL layout support is mandatory",
+          "status": "mapped",
+          "evidence": "input-affix.css uses padding-inline and gap. RTL layout handled by [dir=\"rtl\"] on page ancestor. Physical padding properties (padding-left/right) are not used on the root. RTL audit enforced by AFFIX-RTL-001.",
+          "audit_rule_ids": ["AFFIX-RTL-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-AFFIX-003",
+          "title": "Semantic HTML element required",
+          "status": "mapped",
+          "evidence": "input-affix.contract.md specifies <button> for Dropdown type and <div> for Text type as the only valid root elements. AFFIX-STRUCT-001 enforces this.",
+          "audit_rule_ids": ["AFFIX-STRUCT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-AFFIX-004",
+          "title": "Subcomponent must not be used in isolation",
+          "status": "mapped",
+          "evidence": "Documented in contract §10 (Assembly Context). input-affix must be used within a text-input host. AFFIX-USAGE-001 warns when affix appears without a sibling or parent input element.",
+          "audit_rule_ids": ["AFFIX-USAGE-001"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y",
+      "name": "Platform Accessibility Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-A11Y-001",
+          "title": "Arabic language font support required",
+          "status": "mapped",
+          "evidence": "IBM Plex Sans Arabic is applied via --input-affix-font-family token. All text slots inherit this token.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "PLATFORM-CODE-A11Y-002",
+          "title": "Label language must match document language context",
+          "status": "mapped",
+          "evidence": "Cannot be verified automatically. Marked for manual review. Documented in input-affix.contract.md §9.",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        }
+      ]
+    }
+
+  ],
+
+  "variant_compliance_notes": {
+    "text-type (all variants)": "Text type has no interactive states. aria-hidden='true' is recommended to suppress redundant announcements when the label is already communicated via the connected input's label or placeholder.",
+    "dropdown-selected": "WCAG 4.1.2: aria-selected='true' requires a parent element with role='listbox' or role='group' to be meaningful. This is provided by the text-input assembly.",
+    "disabled (all variants)": "WCAG 1.4.3 exempts inactive UI components. Low contrast of disabled state is intentional and compliant.",
+    "subtle-style (default state)": "Subtle Default has transparent background. WCAG 1.4.11 does not apply (no background or border). WCAG 1.4.3 still requires text to contrast at 4.5:1 against the actual background behind the affix.",
+    "focus-ring": "Figma specifies border: 4px solid. Implementation uses outline: 4px solid to avoid layout shift. Visual result is identical; layout behavior differs."
+  }
+}

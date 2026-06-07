@@ -1,0 +1,2551 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Button — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css"/>
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../button.css"/>
+    <!-- 3. Page layout -->
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--gray-50);
+        font-family: var(--font-sans);
+        color: var(--gray-900);
+        min-height: 100dvh;
+        padding: var(--space-48) var(--space-32);
+      }
+
+      .page {
+        max-width: 1240px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-48);
+      }
+
+      /* ── Header ───────────────────────────────────────── */
+      .page__header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .page__meta {
+        font-size: var(--fs-text-sm);
+        color: var(--gray-500);
+        line-height: var(--lh-text-sm);
+      }
+
+      .page__title {
+        font-size: var(--fs-display-xs);
+        font-weight: var(--font-weight-heading);
+        line-height: var(--lh-display-xs);
+        color: var(--gray-900);
+      }
+
+      /* ── Variant section ──────────────────────────────── */
+      .variant {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+      }
+
+      .variant__title {
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: var(--lh-text-sm);
+      }
+
+      /* ── Showcase table ───────────────────────────────── */
+      .showcase {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--white);
+      }
+
+      .showcase__row {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-32);
+        padding: var(--space-20) var(--space-24);
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .showcase__row:last-child {
+        border-bottom: none;
+      }
+
+      .showcase__label {
+        font-size: var(--fs-text-sm);
+        color: var(--gray-500);
+        line-height: var(--lh-text-sm);
+        min-width: 72px;
+        flex-shrink: 0;
+      }
+
+      .showcase__item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+        min-width: 0;
+      }
+
+      .showcase__props {
+        font-size: 11px;
+        font-family: 'ui-monospace', Menlo, Consolas, monospace;
+        color: var(--gray-400);
+        direction: ltr;
+        text-align: left;
+        letter-spacing: 0.01em;
+        line-height: 1.5;
+      }
+
+      /* ── On-Color context (dark background) ──────────── */
+      .showcase--on-color {
+        background: var(--sa-800);
+      }
+
+      .showcase--on-color .showcase__row {
+        border-bottom-color: rgba(255, 255, 255, 0.10);
+      }
+
+      .showcase--on-color .showcase__label {
+        color: rgba(255, 255, 255, 0.60);
+      }
+
+      .interactive--on-color {
+        background: var(--sa-800);
+      }
+
+      .interactive--on-color .interactive__title {
+        color: rgba(255, 255, 255, 0.60);
+      }
+
+      /* ── Interactive ──────────────────────────────────── */
+      .interactive {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+        padding: var(--space-24);
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        background: var(--white);
+      }
+
+      .interactive__title {
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: var(--lh-text-sm);
+      }
+
+      /* ── Preview / Code Tabs ──────────────────────────────── */
+      .preview-block {
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+      }
+
+      .preview-tabs {
+        display: flex;
+        align-items: flex-end;
+        gap: 4px;
+        padding: 8px 12px 0;
+        background: var(--gray-50);
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      .preview-tab {
+        padding: 6px 14px;
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-medium);
+        color: var(--gray-400);
+        background: transparent;
+        border: 1px solid transparent;
+        border-bottom: none;
+        border-radius: 6px 6px 0 0;
+        cursor: pointer;
+        line-height: var(--lh-text-sm);
+        margin-bottom: -1px;
+        transition: color 0.15s;
+      }
+
+      .preview-tab:hover {
+        color: var(--gray-600);
+      }
+
+      .preview-tab.is-active {
+        color: var(--gray-900);
+        background: var(--white);
+        border-color: var(--gray-200);
+      }
+
+      .preview-pane .interactive,
+      .preview-pane .showcase {
+        border: none;
+        border-radius: 0;
+      }
+
+      .code-pane {
+        background: #16181d;
+        overflow-x: auto;
+      }
+
+      .code-pane__toolbar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 8px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .code-copy-btn {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.45);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 4px;
+        padding: 3px 10px;
+        cursor: pointer;
+        transition: color 0.15s, background 0.15s;
+      }
+
+      .code-copy-btn:hover {
+        color: rgba(255, 255, 255, 0.85);
+        background: rgba(255, 255, 255, 0.10);
+      }
+
+      .code-pane pre {
+        margin: 0;
+        padding: 20px 24px;
+        font-family: 'ui-monospace', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+        font-size: 12.5px;
+        line-height: 1.65;
+        color: #cdd6f4;
+        white-space: pre;
+        tab-size: 2;
+      }
+
+      /* ── Figma Props ─────────────────────────────────── */
+      .prop-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        direction: ltr;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px dashed var(--gray-150, #eaecf0);
+      }
+      .prop-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 7px;
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
+        border-radius: 3px;
+        font-size: 11px;
+        font-family: "ui-monospace", Menlo, Consolas, monospace;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
+      .prop-tag__key { color: var(--gray-400); }
+      .prop-tag__eq  { color: var(--gray-300); margin: 0 2px; }
+      .prop-tag__val { color: var(--gray-700); font-weight: 500; }
+
+      .showcase__item {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+
+      <!-- ── Page header ──────────────────────────────────── -->
+      <header class="page__header">
+        <p class="page__meta">Design System / Components / Button</p>
+        <h1 class="page__title">Button Showcase</h1>
+      </header>
+
+      <!-- ════════════════════════════════════════════════════ Primary ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Primary</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Primary, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--primary" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Primary, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--primary" type="button" style="background: var(--button-primary-bg-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Primary, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--primary is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Primary, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--primary is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Primary, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--primary" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Primary, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--primary" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Primary, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--primary btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Primary, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--primary btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Primary, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--primary" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--primary" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Primary On-Color (on dark/colored background) ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Primary On-Color</h2>
+
+        <div class="showcase showcase--on-color">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Primary, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--primary-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Primary, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--primary-on-color" type="button" style="background: var(--button-primary-on-color-bg-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Primary, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--primary-on-color is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Primary, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--primary-on-color is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Primary, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--primary-on-color" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Primary, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--primary-on-color" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase showcase--on-color">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Primary, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--primary-on-color btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Primary, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--primary-on-color btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Primary, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--primary-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive interactive--on-color">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--primary-on-color" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Neutral ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Neutral</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Neutral, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--neutral" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Neutral, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--neutral" type="button" style="background: var(--button-neutral-bg-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Neutral, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--neutral is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Neutral, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--neutral is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Neutral, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--neutral" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Neutral, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--neutral" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Neutral, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--neutral btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Neutral, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--neutral btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Neutral, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--neutral" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--neutral" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Neutral On-Color (on dark/colored background) ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Neutral On-Color</h2>
+
+        <div class="showcase showcase--on-color">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Neutral, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--neutral-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Neutral, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--neutral-on-color" type="button" style="background: var(--button-neutral-on-color-bg-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Neutral, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--neutral-on-color is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Neutral, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--neutral-on-color is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Neutral, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--neutral-on-color" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Neutral, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--neutral-on-color" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase showcase--on-color">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Neutral, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--neutral-on-color btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Neutral, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--neutral-on-color btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Neutral, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--neutral-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive interactive--on-color">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--neutral-on-color" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Secondary-Solid ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Secondary Solid</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--secondary-solid" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Secondary-Solid, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--secondary-solid" type="button" style="background: var(--button-secondary-solid-bg-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Secondary-Solid, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--secondary-solid is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Secondary-Solid, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--secondary-solid is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Secondary-Solid, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--secondary-solid" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Secondary-Solid, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--secondary-solid" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--secondary-solid btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--secondary-solid btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--secondary-solid" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--secondary-solid" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Secondary-Solid On-Color ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Secondary Solid — On Color</h2>
+
+        <div class="showcase showcase--on-color">
+
+          <!-- Default -->
+          <div class="showcase__row">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--secondary-solid-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--secondary-solid-on-color" type="button" style="background: var(--button-secondary-solid-on-color-bg-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--secondary-solid-on-color is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--secondary-solid-on-color is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--secondary-solid-on-color" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--secondary-solid-on-color" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase showcase--on-color">
+
+          <div class="showcase__row">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--secondary-solid-on-color btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--secondary-solid-on-color btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--secondary-solid-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive interactive--on-color">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--secondary-solid-on-color" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Secondary-Outline ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Secondary Outline</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--secondary-outline" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Secondary-Outline, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--secondary-outline" type="button" style="background: var(--button-secondary-outline-bg-hover); border-color: var(--button-secondary-outline-border-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Secondary-Outline, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--secondary-outline is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Secondary-Outline, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--secondary-outline is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Secondary-Outline, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--secondary-outline" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Secondary-Outline, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--secondary-outline" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--secondary-outline btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--secondary-outline btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--secondary-outline" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--secondary-outline" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Secondary-Outline On-Color ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Secondary Outline — On Color</h2>
+
+        <div class="showcase showcase--on-color">
+
+          <!-- Default -->
+          <div class="showcase__row">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--secondary-outline-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--secondary-outline-on-color" type="button" style="background: var(--button-secondary-outline-on-color-bg-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--secondary-outline-on-color is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--secondary-outline-on-color is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--secondary-outline-on-color" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--secondary-outline-on-color" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase showcase--on-color">
+
+          <div class="showcase__row">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--secondary-outline-on-color btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--secondary-outline-on-color btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--secondary-outline-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive interactive--on-color">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--secondary-outline-on-color" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Subtle ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Subtle</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Subtle, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--subtle" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Subtle, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--subtle" type="button" style="background: var(--button-subtle-bg-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Subtle, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--subtle is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Subtle, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--subtle is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Subtle, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--subtle" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Subtle, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--subtle" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Subtle, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--subtle btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Subtle, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--subtle btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Subtle, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--subtle" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--subtle" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Subtle On-Color (on dark/colored background) ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Subtle On-Color</h2>
+
+        <div class="showcase showcase--on-color">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Subtle, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--subtle-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Subtle, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--subtle-on-color" type="button" style="background: var(--button-subtle-on-color-bg-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Subtle, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--subtle-on-color is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Subtle, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--subtle-on-color is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Subtle, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--subtle-on-color" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Subtle, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--subtle-on-color" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase showcase--on-color">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Subtle, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--subtle-on-color btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Subtle, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--subtle-on-color btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Subtle, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--subtle-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive interactive--on-color">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--subtle-on-color" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Transparent ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Transparent</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Transparent, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--transparent" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Transparent, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--transparent" type="button" style="color: var(--button-transparent-text-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Transparent, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--transparent is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Transparent, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--transparent is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Transparent, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--transparent" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Transparent, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--transparent" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Transparent, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--transparent btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Transparent, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--transparent btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Transparent, Destructive=no, Icon only=False, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--transparent" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--transparent" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Transparent On-Color (on dark/colored background) ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Transparent On-Color</h2>
+
+        <div class="showcase showcase--on-color">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Transparent, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Default</span>
+            <button class="btn btn--transparent-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Hovered -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Hovered, Style=Transparent, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Hovered</span>
+            <button class="btn btn--transparent-on-color" type="button" style="color: var(--button-transparent-on-color-text-hover);">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Focused -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Focused, Style=Transparent, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Focused</span>
+            <button class="btn btn--transparent-on-color is-focused" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Pressed -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Pressed, Style=Transparent, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Pressed</span>
+            <button class="btn btn--transparent-on-color is-pressed" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Disabled, Style=Transparent, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Disabled</span>
+            <button class="btn btn--transparent-on-color" type="button" disabled="disabled">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <!-- Selected -->
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Selected, Style=Transparent, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Selected</span>
+            <button class="btn btn--transparent-on-color" type="button" aria-pressed="true">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Sizes -->
+        <div class="showcase showcase--on-color">
+
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Transparent, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--transparent-on-color btn--sm" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Transparent, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--transparent-on-color btn--md" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Transparent, Destructive=no, Icon only=False, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--transparent-on-color" type="button">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span class="btn__text">Button</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive interactive--on-color">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--transparent-on-color" type="button">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span class="btn__text">Button</span>
+          </button>
+        </section>
+
+      </section>
+
+      <!-- ════════════════════════════════════════════════════ Icon Only · square button, no text ════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Icon Only</h2>
+
+        <!-- ── Primary ─────────────────────────────────────── -->
+        <h3 class="variant__title">Primary</h3>
+        <div class="showcase">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Primary, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--primary btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Primary, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--primary btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Primary, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--primary btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Neutral ─────────────────────────────────────── -->
+        <h3 class="variant__title">Neutral</h3>
+        <div class="showcase">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Neutral, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--neutral btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Neutral, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--neutral btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Neutral, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--neutral btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Secondary Solid ─────────────────────────────── -->
+        <h3 class="variant__title">Secondary Solid</h3>
+        <div class="showcase">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--secondary-solid btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--secondary-solid btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--secondary-solid btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Secondary Outline ───────────────────────────── -->
+        <h3 class="variant__title">Secondary Outline</h3>
+        <div class="showcase">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--secondary-outline btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--secondary-outline btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--secondary-outline btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Subtle ──────────────────────────────────────── -->
+        <h3 class="variant__title">Subtle</h3>
+        <div class="showcase">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Subtle, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--subtle btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Subtle, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--subtle btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Subtle, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--subtle btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Transparent ────────────────────────────────── -->
+        <h3 class="variant__title">Transparent</h3>
+        <div class="showcase">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Transparent, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--transparent btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Transparent, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--transparent btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Transparent, Destructive=no, Icon only=True, On-color=False">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--transparent btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Primary On-Color ───────────────────────────── -->
+        <h3 class="variant__title">Primary On-Color</h3>
+        <div class="showcase showcase--on-color">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Primary, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--primary-on-color btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Primary, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--primary-on-color btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Primary, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--primary-on-color btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Neutral On-Color ───────────────────────────── -->
+        <h3 class="variant__title">Neutral On-Color</h3>
+        <div class="showcase showcase--on-color">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Neutral, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--neutral-on-color btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Neutral, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--neutral-on-color btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Neutral, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--neutral-on-color btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Secondary Solid On-Color ───────────────────── -->
+        <h3 class="variant__title">Secondary Solid On-Color</h3>
+        <div class="showcase showcase--on-color">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--secondary-solid-on-color btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--secondary-solid-on-color btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Secondary-Solid, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--secondary-solid-on-color btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Secondary Outline On-Color ─────────────────── -->
+        <h3 class="variant__title">Secondary Outline On-Color</h3>
+        <div class="showcase showcase--on-color">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--secondary-outline-on-color btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--secondary-outline-on-color btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Secondary-Outline, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--secondary-outline-on-color btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Subtle On-Color ────────────────────────────── -->
+        <h3 class="variant__title">Subtle On-Color</h3>
+        <div class="showcase showcase--on-color">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Subtle, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--subtle-on-color btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Subtle, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--subtle-on-color btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Subtle, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--subtle-on-color btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Transparent On-Color ───────────────────────── -->
+        <h3 class="variant__title">Transparent On-Color</h3>
+        <div class="showcase showcase--on-color">
+          <div class="showcase__row" data-props="RTL=False, Size=Small, State=Default, Style=Transparent, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Small</span>
+            <button class="btn btn--transparent-on-color btn--icon-only btn--sm" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Medium, State=Default, Style=Transparent, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Medium</span>
+            <button class="btn btn--transparent-on-color btn--icon-only btn--md" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+          <div class="showcase__row" data-props="RTL=False, Size=Large, State=Default, Style=Transparent, Destructive=no, Icon only=True, On-color=True">
+            <span class="showcase__label">Large</span>
+            <button class="btn btn--transparent-on-color btn--icon-only" type="button" aria-label="Arrow">
+              <span class="btn__icon" aria-hidden="true">
+                <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive -->
+        <section class="interactive">
+          <h3 class="interactive__title">Interactive</h3>
+          <button class="btn btn--primary btn--icon-only" type="button" aria-label="Arrow">
+            <span class="btn__icon" aria-hidden="true">
+              <svg viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+        </section>
+
+      </section>
+
+    </main>
+
+    <script>
+      /* ── Preview / Code Tabs ── */
+      function extractComponentCode(el) {
+        if (el.classList.contains('showcase')) {
+          var parts = [];
+          el
+            .querySelectorAll('.showcase__row')
+            .forEach(function (row) {
+              var label = row.querySelector('.showcase__label');
+              var labelText = label
+                ? label
+                  .textContent
+                  .trim()
+                : '';
+              var item = row.querySelector('.showcase__item');
+              var code;
+              if (item) {
+                code = item
+                  .innerHTML
+                  .trim();
+              } else {
+                var siblings = Array
+                  .from(row.children)
+                  .filter(function (c) {
+                    return !c
+                      .classList
+                      .contains('showcase__label');
+                  });
+                code = siblings
+                  .map(function (c) {
+                    return c.outerHTML;
+                  })
+                  .join('\n')
+                  .trim();
+              }
+              if (labelText) 
+                parts.push('<!-- ' + labelText + ' -->');
+              if (code) 
+                parts.push(code);
+              parts.push('');
+            });
+          return parts
+            .join('\n')
+            .trim();
+        }
+        if (el.classList.contains('interactive')) {
+          var items = Array
+            .from(el.children)
+            .filter(function (c) {
+              return !c
+                .classList
+                .contains('interactive__title');
+            });
+          return items
+            .map(function (c) {
+              return c.outerHTML;
+            })
+            .join('\n\n')
+            .trim();
+        }
+        return el
+          .innerHTML
+          .trim();
+      }
+
+      document
+        .querySelectorAll('.showcase, .interactive')
+        .forEach(function (el) {
+          var sourceHTML = extractComponentCode(el);
+
+          var block = document.createElement('div');
+          block.className = 'preview-block';
+
+          var tabs = document.createElement('div');
+          tabs.className = 'preview-tabs';
+
+          var btnPreview = document.createElement('button');
+          btnPreview.className = 'preview-tab is-active';
+          btnPreview.textContent = 'Preview';
+
+          var btnCode = document.createElement('button');
+          btnCode.className = 'preview-tab';
+          btnCode.textContent = 'Code';
+
+          tabs.appendChild(btnPreview);
+          tabs.appendChild(btnCode);
+
+          var previewPane = document.createElement('div');
+          previewPane.className = 'preview-pane';
+
+          var codePane = document.createElement('div');
+          codePane.className = 'code-pane';
+          codePane.hidden = true;
+
+          var toolbar = document.createElement('div');
+          toolbar.className = 'code-pane__toolbar';
+          var copyBtn = document.createElement('button');
+          copyBtn.className = 'code-copy-btn';
+          copyBtn.textContent = 'Copy';
+          toolbar.appendChild(copyBtn);
+
+          var pre = document.createElement('pre');
+          var code = document.createElement('code');
+          code.textContent = sourceHTML;
+          pre.appendChild(code);
+
+          codePane.appendChild(toolbar);
+          codePane.appendChild(pre);
+
+          el
+            .parentNode
+            .insertBefore(block, el);
+          previewPane.appendChild(el);
+          block.appendChild(tabs);
+          block.appendChild(previewPane);
+          block.appendChild(codePane);
+
+          function activate(showCode) {
+            btnPreview
+              .classList
+              .toggle('is-active', !showCode);
+            btnCode
+              .classList
+              .toggle('is-active', showCode);
+            previewPane.hidden = showCode;
+            codePane.hidden = !showCode;
+          }
+
+          btnPreview.addEventListener('click', function () {
+            activate(false);
+          });
+          btnCode.addEventListener('click', function () {
+            activate(true);
+          });
+
+          copyBtn.addEventListener('click', function () {
+            navigator
+              .clipboard
+              .writeText(sourceHTML)
+              .then(function () {
+                copyBtn.textContent = 'Copied!';
+                setTimeout(function () {
+                  copyBtn.textContent = 'Copy';
+                }, 2000);
+              });
+          });
+        });
+    </script>
+    <script>
+      /* ── Figma Props renderer ─────────────────────────────────── */
+      (function () {
+        document.querySelectorAll('.showcase__row[data-props]').forEach(function(row) {
+          var label = row.querySelector('.showcase__label');
+          var others = Array.from(row.children).filter(function(c){ return c !== label; });
+          if (!others.length) return;
+          var first = others[0];
+          var item;
+          if (first.classList.contains('showcase__item')) {
+            item = first;
+          } else {
+            item = document.createElement('div');
+            item.className = 'showcase__item';
+            first.replaceWith(item);
+            item.appendChild(first);
+          }
+          row.style.alignItems = 'flex-start';
+          var tags = document.createElement('div');
+          tags.className = 'prop-tags';
+          row.getAttribute('data-props').split(',').forEach(function(part) {
+            part = part.trim();
+            var eq = part.indexOf('=');
+            if (eq < 0) return;
+            var k = part.slice(0, eq).trim();
+            var v = part.slice(eq + 1).trim();
+            var t = document.createElement('span');
+            t.className = 'prop-tag';
+            t.innerHTML = '<span class="prop-tag__key">' + k + '</span>'
+                        + '<span class="prop-tag__eq">=</span>'
+                        + '<span class="prop-tag__val">' + v + '</span>';
+            tags.appendChild(t);
+          });
+          item.appendChild(tags);
+        });
+      }());
+    </script>
+  </body>
+</html>

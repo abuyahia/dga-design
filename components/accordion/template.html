@@ -1,0 +1,106 @@
+<!--
+  Accordion — Component Template
+  ════════════════════════════════════════════════════════════════════
+  هذا الملف مرجع هيكلي فقط. الـ {{ }} تمثّل متغيرات قابلة للتغيير
+  عند بناء أي تطبيق (React, Vue, Jinja, Handlebars …).
+  لا يُفتح هذا الملف في المتصفح — للعرض الحي انظر: showcases/index.html
+  ════════════════════════════════════════════════════════════════════
+
+  ── المتغيرات ────────────────────────────────────────────────────
+
+  {{ variant }}   string   الشكل البصري  →  normal
+
+  {{ title }}     string   نص العنوان (مطلوب)
+
+  {{ content }}   HTML     محتوى لوح التوسّع (مطلوب)
+
+  {{ expanded }}  boolean  is-expanded  +  aria-expanded="true"
+                           أو تُحذف الكلاس والقيمة (collapsed افتراضي)
+
+  {{ disabled }}  boolean  accordion--disabled  +  disabled attr
+                           أو تُحذف (enabled افتراضي)
+
+  ── قواعد CSS الخاصة بالحالات ────────────────────────────────────
+  :hover    →  .accordion__header.is-hovered  (أو CSS :hover الطبيعي)
+  :focus    →  .accordion__header.is-focused
+  :active   →  .accordion__header.is-pressed
+  expanded  →  .accordion.is-expanded  +  aria-expanded="true"
+  disabled  →  .accordion--disabled  +  disabled attr
+-->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     الهيكل الأساسي — Collapsed (default)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="accordion accordion--{{ variant }}">
+  <button class="accordion__header" type="button" aria-expanded="false" aria-controls="{{ panel-id }}">
+    <span class="accordion__title">{{ title }}</span>
+    <span class="accordion__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </button>
+  <div class="accordion__content" id="{{ panel-id }}" role="region">
+    <p class="accordion__body">{{ content }}</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     مفتوح — Expanded
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="accordion accordion--{{ variant }} is-expanded">
+  <button class="accordion__header" type="button" aria-expanded="true" aria-controls="{{ panel-id }}">
+    <span class="accordion__title">{{ title }}</span>
+    <span class="accordion__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </button>
+  <div class="accordion__content" id="{{ panel-id }}" role="region">
+    <p class="accordion__body">{{ content }}</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     معطَّل — Disabled
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="accordion accordion--{{ variant }} accordion--disabled">
+  <button class="accordion__header" type="button" aria-expanded="false" aria-disabled="true" disabled>
+    <span class="accordion__title">{{ title }}</span>
+    <span class="accordion__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </button>
+  <div class="accordion__content" role="region">
+    <p class="accordion__body">{{ content }}</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     مثال حقيقي (قيم ثابتة للتوضيح)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- normal / collapsed / default -->
+<div class="accordion accordion--normal">
+  <button class="accordion__header" type="button" aria-expanded="false" aria-controls="faq-1">
+    <span class="accordion__title">ما هو مكوّن الأكورديون؟</span>
+    <span class="accordion__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 5.5L8 10L12.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </button>
+  <div class="accordion__content" id="faq-1" role="region">
+    <p class="accordion__body">يتيح مكوّن الأكورديون عرض كميات كبيرة من المحتوى في مساحة محدودة عبر الإفصاح التدريجي.</p>
+  </div>
+</div>

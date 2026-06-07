@@ -1,0 +1,285 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "button",
+  "selector_root": ".btn",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "BTN-A11Y-001",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Button must have an accessible label",
+      "description": "Every button must have a non-empty accessible name computable by the accessibility tree. Satisfied by: visible text inside .btn__text, an aria-label attribute on the root, or aria-labelledby pointing to an existing element.",
+      "target": ".btn",
+      "expected": "element has accessible name via text content OR aria-label OR aria-labelledby",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "any_of",
+        "conditions": [
+          "element has non-empty trimmed text content",
+          "element has non-empty aria-label attribute",
+          "element has aria-labelledby whose target has non-empty text content"
+        ]
+      },
+      "message": "Button has no accessible label. Add visible text inside .btn__text or set aria-label on the button element.",
+      "fix": "Add <span class=\"btn__text\">Label</span> as a child, or set aria-label=\"Action description\" on the root element.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-BTN-004"]
+    },
+
+    {
+      "id": "BTN-A11Y-002",
+      "standard_id": "PLATFORM-CODE-A11Y-006",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Icon-only button must have aria-label",
+      "description": "A button carrying .btn--icon-only has no visible text. The accessible name must be provided via aria-label on the root element. The SVG inside .btn__icon must carry aria-hidden='true'.",
+      "target": ".btn.btn--icon-only",
+      "expected": "element has non-empty aria-label AND .btn__icon has aria-hidden='true'",
+      "check": {
+        "type": "aria_attribute_required",
+        "condition": "element has class btn--icon-only",
+        "logic": "all_of",
+        "conditions": [
+          "element has non-empty aria-label attribute",
+          "element contains .btn__icon with aria-hidden='true'"
+        ]
+      },
+      "message": "Icon-only button is missing aria-label. Screen reader users cannot determine the button's purpose.",
+      "fix": "Add aria-label=\"Describe the action\" to the root button element. Ensure the SVG wrapper has aria-hidden=\"true\".",
+      "standard_refs": ["WCAG-2.1-1.1.1", "WCAG-2.1-4.1.2", "PLATFORM-CODE-A11Y-006"]
+    },
+
+    {
+      "id": "BTN-A11Y-003",
+      "standard_id": "PLATFORM-CODE-STATE-001",
+      "rule_type": "state_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Toggle button must declare aria-pressed",
+      "description": "A button that toggles a persistent on/off state must communicate that state via aria-pressed. Value must be 'true' or 'false' — never omitted or 'undefined'.",
+      "target": ".btn[data-toggle]",
+      "expected": "element has aria-pressed='true' or aria-pressed='false'",
+      "check": {
+        "type": "state_required",
+        "trigger": "element has data-toggle attribute or is annotated as toggle in audit configuration",
+        "attribute": "aria-pressed",
+        "valid_values": ["true", "false"]
+      },
+      "message": "Toggle button is missing aria-pressed. Set aria-pressed='false' on default and toggle to 'true' when active.",
+      "fix": "Add aria-pressed=\"false\" to the button element. Update it to \"true\" via JavaScript when the toggle is active.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-A11Y-007", "PLATFORM-CODE-STATE-001"]
+    },
+
+    {
+      "id": "BTN-A11Y-004",
+      "standard_id": "PLATFORM-CODE-FOCUS-001",
+      "rule_type": "focus_indicator_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Focus ring must not be suppressed",
+      "description": "The button stylesheet defines a visible two-layer focus ring via :focus-visible. Any override that sets outline:none without an equivalent border or box-shadow replacement violates WCAG 2.4.7.",
+      "target": ".btn:focus-visible",
+      "expected": "computed styles include a visible border or outline — outline:none not present without replacement",
+      "check": {
+        "type": "focus_indicator_required",
+        "selector": ".btn:focus, .btn:focus-visible",
+        "forbidden_css": { "outline": "none" },
+        "acceptable_alternatives": ["border", "box-shadow"]
+      },
+      "message": "Focus ring is suppressed on .btn:focus-visible. Keyboard users cannot see which button is focused.",
+      "fix": "Remove the outline:none override. If a custom focus style is needed, preserve the border/box-shadow focus indicator defined in button.css.",
+      "standard_refs": ["WCAG-2.1-2.4.7", "PLATFORM-CODE-A11Y-003", "PLATFORM-CODE-FOCUS-001"]
+    },
+
+    {
+      "id": "BTN-A11Y-005",
+      "standard_id": "PLATFORM-CODE-A11Y-005",
+      "rule_type": "disabled_behavior_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Disabled button must use correct mechanism for its intent",
+      "description": "HTML disabled removes the element from tab order. aria-disabled='true' keeps it in tab order. Using aria-disabled without HTML disabled, combined with tabindex='-1', contradicts the intended behavior and should be flagged.",
+      "target": ".btn[aria-disabled='true']",
+      "expected": "if aria-disabled='true' without HTML disabled: tabindex is not '-1'",
+      "check": {
+        "type": "disabled_behavior_required",
+        "allowed_patterns": [
+          { "attributes": ["disabled"], "note": "Removes from tab order — standard disabled" },
+          { "attributes": ["aria-disabled=true"], "note": "Stays in tab order — use for discoverable disabled with tooltip" },
+          { "attributes": ["disabled", "aria-disabled=true"], "note": "Belt-and-suspenders — both attributes, removes from tab order" }
+        ],
+        "invalid_combinations": [
+          { "attributes": ["aria-disabled=true", "tabindex=-1"], "reason": "Contradictory — aria-disabled without HTML disabled is intended to keep element in tab order" }
+        ]
+      },
+      "message": "Button uses aria-disabled='true' but also has tabindex='-1', preventing keyboard access to a button that should be discoverable.",
+      "fix": "Remove tabindex='-1'. aria-disabled without HTML disabled is intentionally kept in tab order so screen reader users can discover the unavailable action.",
+      "standard_refs": ["WCAG-2.1-2.1.1", "PLATFORM-CODE-A11Y-005"]
+    },
+
+    {
+      "id": "BTN-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-BTN-004",
+      "rule_type": "semantic_element_required",
+      "category": "html-structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Must use semantic interactive element",
+      "description": "The .btn class must be applied only to <button>, <a>, or <input type='submit|button|reset'>. Non-interactive elements require explicit role='button' and tabindex='0'.",
+      "target": ".btn",
+      "expected": "element tag is 'button', 'a', or 'input' — OR has role='button' and tabindex",
+      "check": {
+        "type": "semantic_element_required",
+        "selector": ".btn",
+        "allowed_tags": ["button", "a", "input"],
+        "fallback_requirements": { "role": "button", "tabindex": "any" }
+      },
+      "message": "Button is rendered as a <{tag}> element without role='button'. Use <button> instead or add role='button' tabindex='0'.",
+      "fix": "Replace <div class=\"btn\"> with <button class=\"btn\" type=\"button\">.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-BTN-004", "PLATFORM-CODE-A11Y-004"]
+    },
+
+    {
+      "id": "BTN-STRUCT-002",
+      "standard_id": "PLATFORM-CODE-BTN-004",
+      "rule_type": "element_nesting_forbidden",
+      "category": "html-structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Interactive elements must not be nested inside buttons",
+      "description": "HTML forbids interactive content inside a button. Nesting causes undefined browser behavior and breaks keyboard navigation.",
+      "target": ".btn",
+      "expected": "no descendant elements that are button, a, input, select, textarea, or details",
+      "check": {
+        "type": "element_nesting_forbidden",
+        "selector": ".btn",
+        "forbidden_descendants": ["button", "a", "input", "select", "textarea", "details"]
+      },
+      "message": "Button contains a nested interactive element <{tag}>. Remove the nested element.",
+      "fix": "Extract the nested interactive element outside the button. Restructure the layout to avoid nesting.",
+      "standard_refs": ["PLATFORM-CODE-BTN-004"]
+    },
+
+    {
+      "id": "BTN-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-BTN-001",
+      "rule_type": "no_hardcoded_values",
+      "category": "token-usage",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Colors must reference design tokens, not hardcoded values",
+      "description": "All color values applied to .btn elements must reference CSS custom properties (var(--token-name)). Hardcoded hex, rgb(), or hsl() values bypass the token system and break theme compliance.",
+      "target": ".btn, .btn *, .btn::before, .btn::after",
+      "expected": "background, color, border-color, outline-color all use var(--) — or are transparent, none, inherit, currentColor",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".btn, .btn *, .btn::before, .btn::after",
+        "properties": ["background", "background-color", "color", "border-color", "outline-color"],
+        "allowed_literal_values": ["transparent", "none", "inherit", "currentColor"]
+      },
+      "message": "Hardcoded color '{value}' found on '{property}'. Replace with the corresponding design token.",
+      "fix": "Replace e.g. background: #1B8354 with var(--button-primary-bg-default). See token surface in button.contract.md §14.",
+      "standard_refs": ["PLATFORM-CODE-BTN-001", "PLATFORM-CODE-TOKEN-001"]
+    },
+
+    {
+      "id": "BTN-USAGE-001",
+      "standard_id": "PLATFORM-CODE-BTN-003",
+      "rule_type": "sibling_count_limit",
+      "category": "usage",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Multiple primary buttons in the same visual group",
+      "description": "More than one .btn--primary in the same section or dialog dilutes visual hierarchy. Government standards require a single clear primary action per context.",
+      "target": ".btn--primary",
+      "expected": "max 1 occurrence within the nearest role=group, role=dialog, role=main, or form ancestor",
+      "check": {
+        "type": "sibling_count_limit",
+        "selector": ".btn--primary",
+        "scope": "nearest ancestor matching: [role='group'], [role='dialog'], [role='main'], form",
+        "max_count": 1
+      },
+      "message": "{count} primary buttons found in the same context. Reduce to one primary and demote others to secondary or subtle.",
+      "fix": "Change the second .btn--primary to .btn--secondary-outline or .btn--subtle to restore clear action hierarchy.",
+      "standard_refs": ["PLATFORM-CODE-BTN-003"]
+    },
+
+    {
+      "id": "BTN-RTL-001",
+      "standard_id": "PLATFORM-CODE-BTN-002",
+      "rule_type": "no_hardcoded_values",
+      "category": "rtl",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Button must not use physical CSS properties that break RTL",
+      "description": "Physical directional properties on .btn or its children cause visual defects under dir='rtl'. Use logical properties (padding-inline, margin-inline, border-inline) instead.",
+      "target": ".btn, .btn__icon, .btn__text",
+      "expected": "padding-left, padding-right, margin-left, margin-right, border-left, border-right are absent",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".btn, .btn__icon, .btn__text",
+        "forbidden_properties": [
+          "padding-left", "padding-right",
+          "margin-left", "margin-right",
+          "border-left", "border-right"
+        ]
+      },
+      "message": "Physical CSS property '{property}' found. Replace with the logical equivalent to preserve RTL layout.",
+      "fix": "Replace padding-left/right with padding-inline-start/end. Replace margin-left/right with margin-inline-start/end.",
+      "standard_refs": ["PLATFORM-CODE-BTN-002"]
+    },
+
+    {
+      "id": "BTN-CONTENT-001",
+      "standard_id": "PLATFORM-CODE-BTN-005",
+      "rule_type": "content_length_check",
+      "category": "content",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Button label exceeds recommended length",
+      "description": "Labels longer than 40 characters cause unpredictable text wrapping within the fixed-height container defined by size tokens.",
+      "target": ".btn__text",
+      "expected": "text content length is between 2 and 40 characters inclusive",
+      "check": {
+        "type": "content_length_check",
+        "selector": ".btn__text",
+        "min_length": 2,
+        "max_length": 40
+      },
+      "message": "Button label has {count} characters (max 40). Shorten the label or restructure the UI.",
+      "fix": "Reduce the label to 40 characters or fewer. If the action requires more context, use a tooltip or helper text outside the button.",
+      "standard_refs": ["PLATFORM-CODE-BTN-005"]
+    }
+
+  ],
+
+  "severity_legend": {
+    "error": "Blocks release. Must be resolved before component ships to production.",
+    "warning": "Must be reviewed. Should be resolved; requires documented justification to waive.",
+    "info": "Advisory. No action required but noted in audit report."
+  },
+
+  "validation_status_legend": {
+    "not_run": "Rule has been defined but not yet executed against this component.",
+    "pass": "Rule was executed and the component passed.",
+    "fail": "Rule was executed and the component failed. See audit report for details.",
+    "skipped": "Rule was intentionally skipped with documented justification.",
+    "manual_required": "Rule cannot be validated automatically and requires human review."
+  },
+
+  "run_context": {
+    "static_analysis": ["BTN-TOKEN-001", "BTN-STRUCT-001", "BTN-STRUCT-002", "BTN-RTL-001", "BTN-A11Y-004"],
+    "dom_inspection": ["BTN-A11Y-001", "BTN-A11Y-002", "BTN-A11Y-003", "BTN-A11Y-005", "BTN-USAGE-001", "BTN-CONTENT-001"],
+    "manual_review": []
+  }
+}

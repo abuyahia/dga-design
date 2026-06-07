@@ -1,0 +1,42 @@
+[
+  {
+    "cssProps": {
+      "display": "inline-flex",
+      "padding": "var(--Global-spacing-none, 0)",
+      "align-items": "center",
+      "gap": "var(--Link-link-sm-gap, 4px)",
+      "itemSpacing-variable": "--spacing-linklink-sm-gap",
+      "itemSpacing-collection": "Spacing",
+      "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+      "paddingLeft-variable": "--spacing-globalspacing-none",
+      "paddingLeft-collection": "Spacing",
+      "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+      "paddingTop-variable": "--spacing-globalspacing-none",
+      "paddingTop-collection": "Spacing",
+      "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+      "paddingRight-variable": "--spacing-globalspacing-none",
+      "paddingRight-collection": "Spacing",
+      "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+      "paddingBottom-variable": "--spacing-globalspacing-none",
+      "paddingBottom-collection": "Spacing",
+      "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+    },
+    "type": "COMPONENT",
+    "name": "RTL=False, State=Default, Style=Primary, Size=Small, Inline=False",
+    "children": [
+      {
+        "cssProps": {
+          "color": "var(--Link-link-primary, #1B8354)",
+          "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+          "font-style": "normal",
+          "font-weight": "500",
+          "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+        },
+        "characters": "Link",
+        "type": "TEXT",
+        "name": "Link Text"
+      }
+    ]
+  }
+]

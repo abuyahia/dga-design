@@ -1,0 +1,2732 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "button",
+    "description": "Button component with multiple shapes, sizes, and interactive states."
+  },
+  "axes": ["shape", "size", "state"],
+  "axis_values": {
+    "shape": ["primary", "primary-on-color", "neutral", "neutral-on-color", "secondary-solid", "secondary-solid-on-color", "secondary-outline", "secondary-outline-on-color", "subtle", "subtle-on-color", "transparent", "transparent-on-color"],
+    "size": ["small", "medium", "large"],
+    "state": ["default", "hovered", "focused", "pressed", "disabled", "selected"]
+  },
+  "size_source_files": {
+    "small":  "_figma/sizes/small.json",
+    "medium": "_figma/sizes/medium.json",
+    "large":  "_figma/sizes/large.json"
+  },
+  "size_tokens": {
+    "small": {
+      "height":      "var(--button-sm-height, 24px)",
+      "padding-inline": "var(--button-sm-padding-inline, 8px)",
+      "gap":         "var(--button-sm-gap, 4px)",
+      "icon-size":   "var(--button-sm-icon-size, 16px)",
+      "font-size":   "var(--button-sm-label-font-size, 12px)",
+      "line-height": "var(--button-sm-label-line-height, 18px)",
+      "css-modifier": ".btn--sm"
+    },
+    "medium": {
+      "height":      "var(--button-md-height, 32px)",
+      "padding-inline": "var(--button-md-padding-inline, 12px)",
+      "gap":         "var(--button-md-gap, 4px)",
+      "icon-size":   "var(--button-md-icon-size, 20px)",
+      "font-size":   "var(--button-md-label-font-size, 14px)",
+      "line-height": "var(--button-md-label-line-height, 20px)",
+      "css-modifier": ".btn--md"
+    },
+    "large": {
+      "height":      "var(--button-lg-height, 40px)",
+      "padding-inline": "var(--button-lg-padding-inline, 16px)",
+      "gap":         "var(--button-lg-gap, 4px)",
+      "icon-size":   "var(--button-icon-size, 24px)",
+      "font-size":   "var(--button-label-font-size, 16px)",
+      "line-height": "var(--button-label-line-height, 24px)",
+      "css-modifier": null
+    }
+  },
+  "only_icon_source_files": {
+    "small":  "_figma/only-icon/small.json",
+    "medium": "_figma/only-icon/medium.json",
+    "large":  "_figma/only-icon/large.json"
+  },
+  "only_icon_tokens": {
+    "small": {
+      "width":        "var(--button-sm-height, 24px)",
+      "height":       "var(--button-sm-height, 24px)",
+      "icon-size":    "var(--button-sm-icon-size, 16px)",
+      "css-modifier": ".btn--icon-only.btn--sm"
+    },
+    "medium": {
+      "width":        "var(--button-md-height, 32px)",
+      "height":       "var(--button-md-height, 32px)",
+      "icon-size":    "var(--button-md-icon-size, 20px)",
+      "css-modifier": ".btn--icon-only.btn--md"
+    },
+    "large": {
+      "width":        "var(--button-lg-height, 40px)",
+      "height":       "var(--button-lg-height, 40px)",
+      "icon-size":    "var(--button-icon-size, 24px)",
+      "css-modifier": ".btn--icon-only"
+    }
+  },
+  "variants": [
+    {
+      "id": "primary-large-default",
+      "axes": { "shape": "primary", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/btn-primary--default-details.json",
+        "state_image": "_figma/btn-primary/states/default.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-bg-default, #1B8354)"
+        },
+        "text_css": {
+          "color": "var(--button-primary-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "primary-large-hovered",
+      "axes": { "shape": "primary", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/btn-primary--hover-details.json",
+        "state_image": "_figma/btn-primary/states/hovered.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-bg-hover, #25935F)"
+        },
+        "text_css": {
+          "color": "var(--button-primary-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "primary-large-focused",
+      "axes": { "shape": "primary", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/btn-primary--focused-details.json",
+        "state_image": "_figma/btn-primary/states/focused.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "border": "var(--button-focus-border-width, 2px) solid var(--button-focus-ring-outer-color, #000000)",
+          "background": "var(--button-primary-bg-default, #1B8354)"
+        },
+        "text_css": {
+          "color": "var(--button-primary-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": {
+          "position": "absolute",
+          "inset": "0",
+          "border-radius": "var(--button-radius, 4px)",
+          "border": "2px solid var(--button-focus-ring-inner-color, #FFF)"
+        }
+      }
+    },
+    {
+      "id": "primary-large-pressed",
+      "axes": { "shape": "primary", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/btn-primary--pressed-details.json",
+        "state_image": "_figma/btn-primary/states/pressed.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-bg-pressed, #104631)"
+        },
+        "text_css": {
+          "color": "var(--button-primary-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "primary-large-disabled",
+      "axes": { "shape": "primary", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/btn-primary--disabled-details.json",
+        "state_image": "_figma/btn-primary/states/disabled.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-disabled-bg, #E5E7EB)",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-disabled-text, #9DA4AE)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "primary-large-selected",
+      "axes": { "shape": "primary", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/btn-primary--selected-details.json",
+        "state_image": "_figma/btn-primary/states/selected.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-bg-selected, #14573A)"
+        },
+        "text_css": {
+          "color": "var(--button-primary-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "primary-on-color-large-default",
+      "axes": { "shape": "primary-on-color", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/on-color/default.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-on-color-bg-default, #FFF)"
+        },
+        "text_css": {
+          "color": "var(--button-primary-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "primary-on-color-large-hovered",
+      "axes": { "shape": "primary-on-color", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/on-color/hover.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-on-color-bg-hover, rgba(255,255,255,0.80))"
+        },
+        "text_css": {
+          "color": "var(--button-primary-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "primary-on-color-large-focused",
+      "axes": { "shape": "primary-on-color", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/on-color/focused.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-on-color-bg-default, #FFF)",
+          "border": "2px solid var(--white, #FFF)"
+        },
+        "text_css": {
+          "color": "var(--button-primary-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": {
+          "position": "absolute",
+          "inset": "0",
+          "border-radius": "var(--button-radius, 4px)",
+          "border": "2px solid var(--black, #000000)"
+        }
+      }
+    },
+    {
+      "id": "primary-on-color-large-pressed",
+      "axes": { "shape": "primary-on-color", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/on-color/pressed.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-on-color-bg-pressed, rgba(255,255,255,0.60))"
+        },
+        "text_css": {
+          "color": "var(--button-primary-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "primary-on-color-large-disabled",
+      "axes": { "shape": "primary-on-color", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/on-color/disabled.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-on-color-disabled-bg, rgba(255,255,255,0.20))",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-primary-on-color-disabled-text, rgba(255,255,255,0.40))",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "primary-on-color-large-selected",
+      "axes": { "shape": "primary-on-color", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-primary/on-color/selected.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-primary-on-color-bg-selected, rgba(255,255,255,0.60))"
+        },
+        "text_css": {
+          "color": "var(--button-primary-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-large-default",
+      "axes": { "shape": "neutral", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/btn-neutral--default-details.json",
+        "state_image": "_figma/btn-neutral/states/default.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-bg-default, #0D121C)"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-large-hovered",
+      "axes": { "shape": "neutral", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/btn-neutral--hover-details.json",
+        "state_image": "_figma/btn-neutral/states/hovered.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-bg-hover, #1F2A37)"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-large-focused",
+      "axes": { "shape": "neutral", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/btn-neutral--focused-details.json",
+        "state_image": "_figma/btn-neutral/states/focused.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "border": "var(--button-focus-border-width, 2px) solid var(--button-focus-ring-outer-color, #161616)",
+          "background": "var(--button-neutral-bg-default, #0D121C)"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": {
+          "position": "absolute",
+          "inset": "0",
+          "border-radius": "var(--button-radius, 4px)",
+          "border": "2px solid var(--button-focus-ring-inner-color, #FFF)"
+        }
+      }
+    },
+    {
+      "id": "neutral-large-pressed",
+      "axes": { "shape": "neutral", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/btn-neutral--pressed-details.json",
+        "state_image": "_figma/btn-neutral/states/pressed.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-bg-pressed, #4D5761)"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-large-disabled",
+      "axes": { "shape": "neutral", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/btn-neutral--disabled-details.json",
+        "state_image": "_figma/btn-neutral/states/disabled.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-disabled-bg, #E5E7EB)",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-disabled-text, #9DA4AE)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-large-selected",
+      "axes": { "shape": "neutral", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/btn-neutral--selected-details.json",
+        "state_image": "_figma/btn-neutral/states/selected.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-bg-selected, #384250)"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-on-color-large-default",
+      "axes": { "shape": "neutral-on-color", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/on-color/default.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-on-color-bg-default, #FFF)"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-on-color-large-hovered",
+      "axes": { "shape": "neutral-on-color", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/on-color/hover.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-on-color-bg-hover, rgba(255,255,255,0.80))"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-on-color-large-focused",
+      "axes": { "shape": "neutral-on-color", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/on-color/focused.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-on-color-bg-default, #FFF)",
+          "border": "2px solid var(--white, #FFF)"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": {
+          "position": "absolute",
+          "inset": "0",
+          "border-radius": "var(--button-radius, 4px)",
+          "border": "2px solid var(--black, #000000)"
+        }
+      }
+    },
+    {
+      "id": "neutral-on-color-large-pressed",
+      "axes": { "shape": "neutral-on-color", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/on-color/pressed.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-on-color-bg-pressed, rgba(255,255,255,0.60))"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-on-color-large-disabled",
+      "axes": { "shape": "neutral-on-color", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/on-color/disabled.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-on-color-disabled-bg, rgba(255,255,255,0.20))",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-on-color-disabled-text, rgba(255,255,255,0.40))",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "neutral-on-color-large-selected",
+      "axes": { "shape": "neutral-on-color", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-neutral/on-color/selected.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-neutral-on-color-bg-selected, rgba(255,255,255,0.70))"
+        },
+        "text_css": {
+          "color": "var(--button-neutral-on-color-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-large-default",
+      "axes": { "shape": "secondary-solid", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/btn-secondary-solid--default-details.json",
+        "state_image": "_figma/btn-secondary-solid/states/default.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-bg-default, #F3F4F6)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-large-hovered",
+      "axes": { "shape": "secondary-solid", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/btn-secondary-solid--hover-details.json",
+        "state_image": "_figma/btn-secondary-solid/states/hovered.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-bg-hover, #E5E7EB)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-large-focused",
+      "axes": { "shape": "secondary-solid", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/btn-secondary-solid--focused-details.json",
+        "state_image": "_figma/btn-secondary-solid/states/focused.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "border": "var(--button-focus-border-width, 2px) solid var(--button-focus-ring-outer-color, #000000)",
+          "background": "var(--button-secondary-solid-bg-default, #F3F4F6)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-large-pressed",
+      "axes": { "shape": "secondary-solid", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/btn-secondary-solid--pressed-details.json",
+        "state_image": "_figma/btn-secondary-solid/states/pressed.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-bg-pressed, #E5E7EB)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-large-disabled",
+      "axes": { "shape": "secondary-solid", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/btn-secondary-solid--disabled-details.json",
+        "state_image": "_figma/btn-secondary-solid/states/disabled.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-disabled-bg, #E5E7EB)",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-disabled-text, #9DA4AE)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-large-selected",
+      "axes": { "shape": "secondary-solid", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/btn-secondary-solid--selected-details.json",
+        "state_image": "_figma/btn-secondary-solid/states/selected.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-bg-selected, #E5E7EB)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-large-default",
+      "axes": { "shape": "secondary-outline", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/btn-secondary-outline--default-details.json",
+        "state_image": "_figma/btn-secondary-outline/states/default.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "1px solid var(--button-secondary-outline-border, #D2D6DB)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-large-hovered",
+      "axes": { "shape": "secondary-outline", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/btn-secondary-outline--hover-details.json",
+        "state_image": "_figma/btn-secondary-outline/states/hovered.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-outline-bg-hover, #F3F4F6)",
+          "border": "1px solid var(--button-secondary-outline-border-hover, #E5E7EB)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-large-focused",
+      "axes": { "shape": "secondary-outline", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/btn-secondary-outline--focused-details.json",
+        "state_image": "_figma/btn-secondary-outline/states/focused.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "var(--button-focus-border-width, 2px) solid var(--button-focus-ring-outer-color, #000000)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-large-pressed",
+      "axes": { "shape": "secondary-outline", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/btn-secondary-outline--pressed-details.json",
+        "state_image": "_figma/btn-secondary-outline/states/pressed.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-outline-bg-pressed, #E5E7EB)",
+          "border": "1px solid var(--button-secondary-outline-border, #D2D6DB)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-large-disabled",
+      "axes": { "shape": "secondary-outline", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/btn-secondary-outline--disabled-details.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "1px solid var(--button-secondary-outline-border-hover, #E5E7EB)",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-disabled-text, #9DA4AE)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-large-selected",
+      "axes": { "shape": "secondary-outline", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/btn-secondary-outline--selected-details.json",
+        "state_image": "_figma/btn-secondary-outline/states/selected.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-outline-bg-selected, #E5E7EB)",
+          "border": "1px solid var(--button-secondary-outline-border, #D2D6DB)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-text, #0D121C)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-large-default",
+      "axes": { "shape": "subtle", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/btn-subtle--default-details.json",
+        "state_image": "_figma/btn-subtle/states/default.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-large-hovered",
+      "axes": { "shape": "subtle", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/btn-subtle--hover-details.json",
+        "state_image": "_figma/btn-subtle/states/hovered.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-subtle-bg-hover, #F3F4F6)"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-large-focused",
+      "axes": { "shape": "subtle", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/btn-subtle--focused-details.json",
+        "state_image": "_figma/btn-subtle/states/focused.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "var(--button-focus-border-width, 2px) solid var(--button-focus-ring-outer-color, #000000)"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-large-pressed",
+      "axes": { "shape": "subtle", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/btn-subtle--pressed-details.json",
+        "state_image": "_figma/btn-subtle/states/pressed.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-subtle-bg-pressed, #E5E7EB)"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-large-disabled",
+      "axes": { "shape": "subtle", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/btn-subtle--disabled-details.json",
+        "state_image": "_figma/btn-subtle/states/disabled.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-disabled-text, #9DA4AE)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-large-selected",
+      "axes": { "shape": "subtle", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/btn-subtle--selected-details.json",
+        "state_image": "_figma/btn-subtle/states/selected.png"
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-subtle-bg-selected, #E5E7EB)"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-large-default",
+      "axes": { "shape": "transparent", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/btn-transparent--default-details.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-large-hovered",
+      "axes": { "shape": "transparent", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/btn-transparent--hover-details.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-text-hover, #166A45)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-large-focused",
+      "axes": { "shape": "transparent", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/btn-transparent--focused-details.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "var(--button-focus-border-width, 2px) solid var(--button-focus-ring-outer-color, #000000)"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-text, #161616)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-large-pressed",
+      "axes": { "shape": "transparent", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/btn-transparent--pressed-details.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-text-pressed, #104631)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-large-disabled",
+      "axes": { "shape": "transparent", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/btn-transparent--disabled-details.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-disabled-text, #9DA4AE)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-large-selected",
+      "axes": { "shape": "transparent", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/btn-transparent--selected-details.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-text-selected, #14573A)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-on-color-large-default",
+      "axes": { "shape": "secondary-solid-on-color", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/on-color/default.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-on-color-bg-default, rgba(255, 255, 255, 0.20))"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-on-color-large-hovered",
+      "axes": { "shape": "secondary-solid-on-color", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/on-color/hover.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-on-color-bg-hover, rgba(255, 255, 255, 0.20))"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-on-color-large-focused",
+      "axes": { "shape": "secondary-solid-on-color", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/on-color/focused.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-on-color-bg-default, rgba(255, 255, 255, 0.20))",
+          "border": "2px solid var(--white, #FFF)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-on-color-large-pressed",
+      "axes": { "shape": "secondary-solid-on-color", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/on-color/pressed.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-on-color-bg-pressed, rgba(255, 255, 255, 0.40))"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-on-color-large-disabled",
+      "axes": { "shape": "secondary-solid-on-color", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/on-color/disabled.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-on-color-disabled-bg, rgba(255, 255, 255, 0.20))",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-on-color-disabled-text, rgba(255, 255, 255, 0.40))",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-solid-on-color-large-selected",
+      "axes": { "shape": "secondary-solid-on-color", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-solid/on-color/selected.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-solid-on-color-bg-selected, rgba(255, 255, 255, 0.30))"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-solid-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-on-color-large-default",
+      "axes": { "shape": "secondary-outline-on-color", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/on-color/default.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "1px solid var(--button-secondary-outline-on-color-border, rgba(255, 255, 255, 0.40))"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-on-color-large-hovered",
+      "axes": { "shape": "secondary-outline-on-color", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/on-color/hover.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-outline-on-color-bg-hover, rgba(255, 255, 255, 0.20))",
+          "border": "1px solid var(--button-secondary-outline-on-color-border, rgba(255, 255, 255, 0.40))"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-on-color-large-focused",
+      "axes": { "shape": "secondary-outline-on-color", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/on-color/focused.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "2px solid var(--white, #FFF)"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-on-color-large-pressed",
+      "axes": { "shape": "secondary-outline-on-color", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/on-color/pressed.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-outline-on-color-bg-pressed, rgba(255, 255, 255, 0.20))",
+          "border": "1px solid var(--button-secondary-outline-on-color-border, rgba(255, 255, 255, 0.40))"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-on-color-large-disabled",
+      "axes": { "shape": "secondary-outline-on-color", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/on-color/disabled.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "1px solid var(--button-secondary-outline-on-color-border, rgba(255, 255, 255, 0.40))",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-on-color-disabled-text, rgba(255, 255, 255, 0.40))",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "secondary-outline-on-color-large-selected",
+      "axes": { "shape": "secondary-outline-on-color", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-secondary-outline/on-color/selected.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-secondary-outline-on-color-bg-selected, rgba(255, 255, 255, 0.30))",
+          "border": "1px solid var(--button-secondary-outline-on-color-border, rgba(255, 255, 255, 0.40))"
+        },
+        "text_css": {
+          "color": "var(--button-secondary-outline-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-on-color-large-default",
+      "axes": { "shape": "subtle-on-color", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/on-color/default.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-on-color-large-hovered",
+      "axes": { "shape": "subtle-on-color", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/on-color/hover.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-subtle-on-color-bg-hover, rgba(255, 255, 255, 0.20))"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-on-color-large-focused",
+      "axes": { "shape": "subtle-on-color", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/on-color/focused.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "2px solid var(--white, #FFF)"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-on-color-large-pressed",
+      "axes": { "shape": "subtle-on-color", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/on-color/pressed.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-subtle-on-color-bg-pressed, rgba(255, 255, 255, 0.40))"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-on-color-large-disabled",
+      "axes": { "shape": "subtle-on-color", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/on-color/disabled.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-on-color-disabled-text, rgba(255, 255, 255, 0.40))",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "subtle-on-color-large-selected",
+      "axes": { "shape": "subtle-on-color", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-subtle/on-color/selected.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "var(--button-subtle-on-color-bg-selected, rgba(255, 255, 255, 0.30))"
+        },
+        "text_css": {
+          "color": "var(--button-subtle-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-on-color-large-default",
+      "axes": { "shape": "transparent-on-color", "size": "large", "state": "default" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/on-color/default.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-on-color-large-hovered",
+      "axes": { "shape": "transparent-on-color", "size": "large", "state": "hovered" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/on-color/hover.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-on-color-text-hover, #54C08A)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-on-color-large-focused",
+      "axes": { "shape": "transparent-on-color", "size": "large", "state": "focused" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/on-color/focused.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "border": "2px solid var(--white, #FFF)"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-on-color-text, #FFF)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-on-color-large-pressed",
+      "axes": { "shape": "transparent-on-color", "size": "large", "state": "pressed" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/on-color/pressed.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-on-color-text-pressed, #88D8AD)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-on-color-large-disabled",
+      "axes": { "shape": "transparent-on-color", "size": "large", "state": "disabled" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/on-color/disabled.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-on-color-disabled-text, rgba(255, 255, 255, 0.40))",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    },
+    {
+      "id": "transparent-on-color-large-selected",
+      "axes": { "shape": "transparent-on-color", "size": "large", "state": "selected" },
+      "status": "available",
+      "files": {
+        "details_json": "_figma/btn-transparent/on-color/selected.json",
+        "state_image": null
+      },
+      "properties": {
+        "root_css_props": {
+          "display": "inline-flex",
+          "height": "var(--button-lg-height, 40px)",
+          "min-height": "var(--button-lg-height, 40px)",
+          "max-height": "var(--button-lg-height, 40px)",
+          "padding": "calc(var(--button-lg-padding-inline, 16px) / 2) var(--button-lg-padding-inline, 16px)",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--button-lg-gap, 4px)",
+          "border-radius": "var(--button-radius, 4px)",
+          "background": "transparent"
+        },
+        "text_css": {
+          "color": "var(--button-transparent-on-color-text-selected, #54C08A)",
+          "font-family": "var(--button-label-font-family, \"IBM Plex Sans Arabic\")",
+          "font-size": "var(--button-label-font-size, 16px)",
+          "font-style": "normal",
+          "font-weight": "var(--button-label-font-weight, 500)",
+          "line-height": "var(--button-label-line-height, 24px)"
+        },
+        "icon_css": {
+          "width": "var(--button-icon-size, 24px)",
+          "height": "var(--button-icon-size, 24px)"
+        },
+        "focus_outline_css": null
+      }
+    }
+  ]
+}

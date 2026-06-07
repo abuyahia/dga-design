@@ -1,0 +1,172 @@
+<!--
+  Chip — Component Template
+  ════════════════════════════════════════════════════════════════════
+  هذا الملف مرجع هيكلي فقط. الـ {{ }} تمثّل متغيرات قابلة للتغيير
+  عند بناء أي تطبيق (React, Vue, Jinja, Handlebars …).
+  لا يُفتح هذا الملف في المتصفح — للعرض الحي انظر: showcases/index.html
+  ════════════════════════════════════════════════════════════════════
+
+  ── المتغيرات ────────────────────────────────────────────────────
+
+  {{ style }}     string   النمط البصري
+                           primary | neutral
+
+  {{ size }}      string   الحجم  →  "" (large/افتراضي) | "chip--md" | "chip--sm"
+
+  {{ rounded }}   boolean  chip--rounded  (اختياري)
+
+  {{ on_color }}  boolean  chip--on-color  (اختياري — عند الاستخدام على خلفية ملونة)
+
+  {{ label }}     string   نص الشريحة  (مطلوب دائماً)
+
+  {{ disabled }}  boolean  disabled="disabled" أو تُحذف الخاصية
+
+  ── قواعد CSS الخاصة بالحالات ────────────────────────────────────
+  :hover    →  CSS :hover الطبيعي
+  :focus    →  chip--focused  أو :focus-visible
+  :active   →  chip--pressed
+  disabled  →  chip--disabled  +  disabled attr أو aria-disabled
+  selected  →  chip--selected  +  aria-pressed="true" أو aria-selected="true"
+-->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط أساسي — chip قابل للنقر  (interactive chip)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<button class="chip chip--{{ style }} {{ size }}" type="button" {{ disabled }}>
+  <span class="chip__label">{{ label }}</span>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     chip للعرض فقط  (display-only / non-interactive)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<span class="chip chip--{{ style }} {{ size }}" aria-label="{{ label }}">
+  <span class="chip__label">{{ label }}</span>
+</span>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     chip محدد  (selected — toggle mode)
+     استخدم aria-pressed للتبديل المستقل
+     ═══════════════════════════════════════════════════════════════ -->
+
+<button class="chip chip--{{ style }} chip--selected {{ size }}" type="button"
+        aria-pressed="true">
+  <span class="chip__label">{{ label }}</span>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     chip معطّل
+     ═══════════════════════════════════════════════════════════════ -->
+
+<button class="chip chip--{{ style }} {{ size }}" type="button" disabled>
+  <span class="chip__label">{{ label }}</span>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     chip مستدير  (rounded)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<button class="chip chip--{{ style }} chip--rounded {{ size }}" type="button">
+  <span class="chip__label">{{ label }}</span>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     chip على خلفية ملونة  (on-color)
+     يُستخدم مع خلفية داكنة أو ملونة على مستوى الصفحة أو الحاوية
+     ═══════════════════════════════════════════════════════════════ -->
+
+<button class="chip chip--{{ style }} chip--on-color {{ size }}" type="button">
+  <span class="chip__label">{{ label }}</span>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     أمثلة حقيقية (قيم ثابتة للتوضيح)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- primary / large / default -->
+<button class="chip chip--primary" type="button">
+  <span class="chip__label">تقنية</span>
+</button>
+
+<!-- primary / medium / default -->
+<button class="chip chip--primary chip--md" type="button">
+  <span class="chip__label">تصميم</span>
+</button>
+
+<!-- primary / small / default -->
+<button class="chip chip--primary chip--sm" type="button">
+  <span class="chip__label">جديد</span>
+</button>
+
+<!-- neutral / large / default -->
+<button class="chip chip--neutral" type="button">
+  <span class="chip__label">الكل</span>
+</button>
+
+<!-- neutral / large / selected -->
+<button class="chip chip--neutral chip--selected" type="button" aria-pressed="true">
+  <span class="chip__label">محدد</span>
+</button>
+
+<!-- primary / large / rounded -->
+<button class="chip chip--primary chip--rounded" type="button">
+  <span class="chip__label">بيانات</span>
+</button>
+
+<!-- neutral / large / disabled -->
+<button class="chip chip--neutral" type="button" disabled>
+  <span class="chip__label">غير متاح</span>
+</button>
+
+<!-- primary / large / on-color -->
+<button class="chip chip--primary chip--on-color" type="button">
+  <span class="chip__label">خدمات</span>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط المجموعة — الفلترة  (filter chip group)
+
+     استخدم role="group" + aria-label للمجموعة الواحدة.
+     كل chip يحمل aria-pressed للتبديل المستقل.
+     ملاحظة: لا يوجد تنقل بلوحة المفاتيح داخل المجموعة بشكل تلقائي —
+     يجب إضافة منطق JavaScript مناسب عند الحاجة.
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div role="group" aria-label="تصفية حسب الفئة">
+  <button class="chip chip--neutral" type="button" aria-pressed="true">
+    <span class="chip__label">الكل</span>
+  </button>
+  <button class="chip chip--neutral" type="button" aria-pressed="false">
+    <span class="chip__label">تقنية</span>
+  </button>
+  <button class="chip chip--neutral" type="button" aria-pressed="false">
+    <span class="chip__label">تصميم</span>
+  </button>
+  <button class="chip chip--neutral" type="button" aria-pressed="false">
+    <span class="chip__label">بيانات</span>
+  </button>
+  <button class="chip chip--neutral" type="button" disabled>
+    <span class="chip__label">غير متاح</span>
+  </button>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط RTL — يُطبَّق عبر [dir="rtl"] على الحاوية
+     لا توجد فئة RTL خاصة بالـ chip — الاتجاه مُكتسَب من المستند
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div dir="rtl">
+  <button class="chip chip--primary" type="button">
+    <span class="chip__label">تقنية</span>
+  </button>
+</div>

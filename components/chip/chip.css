@@ -1,0 +1,347 @@
+/* ================================================================
+   chip.css — Platform Code Design System
+   Component: Chip
+   Reference: components/chip/reference.json
+   Contract:  components/chip/chip.contract.md
+
+   TOKEN STATUS: All --chip-* tokens below are PENDING.
+   They must be added to token.css before this component renders
+   correctly. Each TODO comment specifies the recommended primitive
+   mapping. See analysis.md §Token Findings for the full list.
+
+   CSS RULE: This file references component-scoped semantic tokens
+   only (var(--chip-*)). No primitive tokens are referenced directly
+   in component selectors.
+   ================================================================ */
+
+
+/* ── Base ──────────────────────────────────────────────────────── */
+.chip {
+  position: relative;
+  display: inline-flex;
+  /* TODO: --chip-lg-height not in token.css — add: --chip-lg-height: var(--space-32) */
+  height: var(--chip-lg-height);
+  min-height: var(--chip-lg-height);
+  max-height: var(--chip-lg-height);
+  /* TODO: --chip-padding-inline not in token.css — add: --chip-padding-inline: var(--spacing-md) */
+  padding-inline: var(--chip-padding-inline);
+  padding-block: 0;
+  /* TODO: --chip-gap not in token.css — add: --chip-gap: var(--spacing-xs) */
+  gap: var(--chip-gap);
+  justify-content: center;
+  align-items: center;
+  /* TODO: --chip-radius-default not in token.css — add: --chip-radius-default: var(--radius-sm) */
+  border-radius: var(--chip-radius-default);
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  /* TODO: --chip-font-family not in token.css — add: --chip-font-family: var(--font-sans) */
+  font-family: var(--chip-font-family);
+  font-style: normal;
+  /* TODO: --chip-lg-font-size not in token.css — add: --chip-lg-font-size: var(--fs-text-md) */
+  font-size: var(--chip-lg-font-size);
+  /* TODO: --chip-lg-line-height not in token.css — add: --chip-lg-line-height: var(--lh-text-md) */
+  line-height: var(--chip-lg-line-height);
+  /* TODO: --chip-lg-font-weight not in token.css — add: --chip-lg-font-weight: var(--font-weight-medium) */
+  font-weight: var(--chip-lg-font-weight);
+  text-decoration: none;
+  box-sizing: border-box;
+  /* TODO: --chip-transition-duration not in token.css — add: --chip-transition-duration: var(--transition-fast) */
+  /* TODO: --chip-transition-easing not in token.css — add: --chip-transition-easing: var(--ease-in-out) */
+  transition: background var(--chip-transition-duration) var(--chip-transition-easing);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+/* ── Label ─────────────────────────────────────────────────────── */
+.chip__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+}
+
+
+/* =============================================================
+   Size modifiers  ·  Default (no modifier) = Large
+   ============================================================= */
+
+.chip--sm {
+  /* TODO: --chip-sm-height not in token.css — add: --chip-sm-height: var(--space-20)
+     NOTE: 20px is below the 24px touch target minimum. See CHIP-A11Y-004. */
+  height: var(--chip-sm-height);
+  min-height: var(--chip-sm-height);
+  max-height: var(--chip-sm-height);
+  /* TODO: --chip-sm-font-size not in token.css — 10px has no matching primitive.
+     Nearest: --fs-text-xs (12px). A --fs-text-2xs primitive must be added to token.css. */
+  font-size: var(--chip-sm-font-size);
+  /* TODO: --chip-sm-line-height not in token.css — 14px has no matching primitive.
+     A --lh-text-2xs primitive must be added to token.css. */
+  line-height: var(--chip-sm-line-height);
+  /* TODO: --chip-sm-font-weight not in token.css — add: --chip-sm-font-weight: var(--font-weight-semibold)
+     NOTE: Small uses 600 (semibold), which is heavier than Medium/Large (500). Design team to confirm. */
+  font-weight: var(--chip-sm-font-weight);
+}
+
+.chip--md {
+  /* TODO: --chip-md-height not in token.css — add: --chip-md-height: var(--space-24) */
+  height: var(--chip-md-height);
+  min-height: var(--chip-md-height);
+  max-height: var(--chip-md-height);
+  /* TODO: --chip-md-font-size not in token.css — add: --chip-md-font-size: var(--fs-text-xs) */
+  font-size: var(--chip-md-font-size);
+  /* TODO: --chip-md-line-height not in token.css — add: --chip-md-line-height: var(--lh-text-xs) */
+  line-height: var(--chip-md-line-height);
+  /* TODO: --chip-md-font-weight not in token.css — add: --chip-md-font-weight: var(--font-weight-medium) */
+  font-weight: var(--chip-md-font-weight);
+}
+
+
+/* =============================================================
+   Rounded modifier
+   ============================================================= */
+
+.chip--rounded {
+  /* TODO: --chip-radius-rounded not in token.css — add: --chip-radius-rounded: var(--radius-full) */
+  border-radius: var(--chip-radius-rounded);
+}
+
+.chip--rounded:focus::after,
+.chip--rounded:focus-visible::after,
+.chip--rounded.is-focused::after {
+  border-radius: var(--chip-radius-rounded);
+}
+
+
+/* =============================================================
+   PRIMARY variant
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.chip--primary {
+  /* TODO: --chip-primary-bg-default not in token.css — add: --chip-primary-bg-default: var(--sa-50) */
+  background: var(--chip-primary-bg-default);
+  /* TODO: --chip-text-primary not in token.css — add: --chip-text-primary: var(--sa-800) */
+  color: var(--chip-text-primary);
+}
+
+/* Hovered ---------------------------------------------------- */
+.chip--primary:hover:not(:disabled):not([aria-disabled="true"]) {
+  /* TODO: --chip-primary-bg-hovered not in token.css — add: --chip-primary-bg-hovered: var(--sa-200) */
+  background: var(--chip-primary-bg-hovered);
+}
+
+/* Focused ---------------------------------------------------- */
+.chip--primary:focus,
+.chip--primary:focus-visible,
+.chip--primary.is-focused {
+  background: var(--chip-primary-bg-default);
+}
+
+.chip--primary:focus::after,
+.chip--primary:focus-visible::after,
+.chip--primary.is-focused::after {
+  content: "";
+  position: absolute;
+  /* TODO: --chip-focus-inset not in token.css — add: --chip-focus-inset: -4px (intentional negative clearance for focus ring) */
+  inset: var(--chip-focus-inset);
+  /* DEVIATION: var(--chip-focus-inset) used instead of Figma fixed pixel widths (55/59/68px).
+     Reason: supports dynamic label length and responsive content.
+     See chip.contract.md §Focus Behavior. */
+  border-radius: var(--chip-radius-default);
+  /* TODO: --chip-focus-outline-width not in token.css — 3px has no primitive; nearest --border-width-thick (2px) */
+  /* TODO: --chip-focus-outline-color not in token.css — #161616 has no primitive in token.css */
+  border: var(--chip-focus-outline-width) solid var(--chip-focus-outline-color);
+  pointer-events: none;
+}
+
+/* Pressed ---------------------------------------------------- */
+.chip--primary:active:not(:disabled):not([aria-disabled="true"]),
+.chip--primary.is-pressed {
+  /* TODO: --chip-primary-bg-pressed not in token.css — add: --chip-primary-bg-pressed: var(--sa-400) */
+  background: var(--chip-primary-bg-pressed);
+  /* TODO: --chip-text-primary-pressed not in token.css — add: --chip-text-primary-pressed: var(--sa-900)
+     NOTE: Figma source borrows --Button-button-background-primary-pressed (cross-component token leak).
+     --chip-text-primary-pressed is the correct chip-scoped replacement. */
+  color: var(--chip-text-primary-pressed);
+}
+
+.chip--primary:active::after,
+.chip--primary.is-pressed::after {
+  display: none;
+}
+
+/* Selected --------------------------------------------------- */
+.chip--primary[aria-pressed="true"],
+.chip--primary[aria-selected="true"],
+.chip--primary.is-selected,
+.chip--primary.chip--selected {
+  /* TODO: --chip-primary-bg-selected not in token.css — add: --chip-primary-bg-selected: var(--sa-600) */
+  background: var(--chip-primary-bg-selected);
+  /* TODO: --chip-text-on-selected not in token.css — add: --chip-text-on-selected: var(--white) */
+  color: var(--chip-text-on-selected);
+}
+
+/* Disabled --------------------------------------------------- */
+.chip--primary:disabled,
+.chip--primary[aria-disabled="true"],
+.chip--primary.chip--disabled {
+  /* TODO: --chip-bg-disabled not in token.css — add: --chip-bg-disabled: var(--gray-200) */
+  background: var(--chip-bg-disabled);
+  /* TODO: --chip-text-disabled not in token.css — add: --chip-text-disabled: var(--gray-400) */
+  color: var(--chip-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* =============================================================
+   NEUTRAL variant
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.chip--neutral {
+  /* TODO: --chip-neutral-bg-default not in token.css — add: --chip-neutral-bg-default: var(--gray-100) */
+  background: var(--chip-neutral-bg-default);
+  /* TODO: --chip-text-neutral not in token.css — #161616 has no primitive in token.css.
+     A --near-black or --gray-925 primitive must be added. See analysis.md §KI-2. */
+  color: var(--chip-text-neutral);
+}
+
+/* Hovered ---------------------------------------------------- */
+.chip--neutral:hover:not(:disabled):not([aria-disabled="true"]) {
+  /* TODO: --chip-neutral-bg-hovered not in token.css — add: --chip-neutral-bg-hovered: var(--gray-200) */
+  background: var(--chip-neutral-bg-hovered);
+}
+
+/* Focused ---------------------------------------------------- */
+.chip--neutral:focus,
+.chip--neutral:focus-visible,
+.chip--neutral.is-focused {
+  background: var(--chip-neutral-bg-default);
+}
+
+.chip--neutral:focus::after,
+.chip--neutral:focus-visible::after,
+.chip--neutral.is-focused::after {
+  content: "";
+  position: absolute;
+  /* TODO: --chip-focus-inset not in token.css — add: --chip-focus-inset: -4px (intentional negative clearance for focus ring) */
+  inset: var(--chip-focus-inset);
+  border-radius: var(--chip-radius-default);
+  border: var(--chip-focus-outline-width) solid var(--chip-focus-outline-color);
+  pointer-events: none;
+}
+
+/* Pressed ---------------------------------------------------- */
+.chip--neutral:active:not(:disabled):not([aria-disabled="true"]),
+.chip--neutral.is-pressed {
+  /* TODO: --chip-neutral-bg-pressed not in token.css — add: --chip-neutral-bg-pressed: var(--gray-300) */
+  background: var(--chip-neutral-bg-pressed);
+}
+
+.chip--neutral:active::after,
+.chip--neutral.is-pressed::after {
+  display: none;
+}
+
+/* Selected --------------------------------------------------- */
+.chip--neutral[aria-pressed="true"],
+.chip--neutral[aria-selected="true"],
+.chip--neutral.is-selected,
+.chip--neutral.chip--selected {
+  /* TODO: --chip-neutral-bg-selected not in token.css — add: --chip-neutral-bg-selected: var(--gray-700) */
+  background: var(--chip-neutral-bg-selected);
+  color: var(--chip-text-on-selected);
+}
+
+/* Disabled --------------------------------------------------- */
+.chip--neutral:disabled,
+.chip--neutral[aria-disabled="true"],
+.chip--neutral.chip--disabled {
+  background: var(--chip-bg-disabled);
+  color: var(--chip-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* =============================================================
+   ON-COLOR modifier  ·  .chip--on-color
+   Applies to both Primary and Neutral when placed on colored/dark
+   backgrounds. Combine: .chip.chip--primary.chip--on-color
+                      or .chip.chip--neutral.chip--on-color
+   Overrides the style-specific surface with the on-color token set.
+   ============================================================= */
+
+/* Default ---------------------------------------------------- */
+.chip--on-color {
+  /* TODO: --chip-on-color-bg-default not in token.css — add: --chip-on-color-bg-default: var(--white) */
+  background: var(--chip-on-color-bg-default);
+  /* TODO: --chip-on-color-text not in token.css — #161616 has no primitive in token.css.
+     Shares the same missing primitive gap as --chip-text-neutral. See analysis.md §KI-2. */
+  color: var(--chip-on-color-text);
+}
+
+/* Hovered ---------------------------------------------------- */
+.chip--on-color:hover:not(:disabled):not([aria-disabled="true"]) {
+  /* TODO: --chip-on-color-bg-hovered not in token.css — rgba(255,255,255,0.80) has no primitive */
+  background: var(--chip-on-color-bg-hovered);
+}
+
+/* Focused ---------------------------------------------------- */
+.chip--on-color:focus,
+.chip--on-color:focus-visible,
+.chip--on-color.is-focused {
+  /* TODO: --chip-on-color-bg-focused not in token.css — same value as default (#FFF) */
+  background: var(--chip-on-color-bg-focused);
+}
+
+.chip--on-color:focus::after,
+.chip--on-color:focus-visible::after,
+.chip--on-color.is-focused::after {
+  content: "";
+  position: absolute;
+  /* TODO: --chip-focus-inset not in token.css — add: --chip-focus-inset: -4px (intentional negative clearance for focus ring) */
+  inset: var(--chip-focus-inset);
+  border-radius: var(--chip-radius-default);
+  border: var(--chip-focus-outline-width) solid var(--chip-focus-outline-color);
+  pointer-events: none;
+}
+
+/* Pressed ---------------------------------------------------- */
+.chip--on-color:active:not(:disabled):not([aria-disabled="true"]),
+.chip--on-color.is-pressed {
+  /* TODO: --chip-on-color-bg-pressed not in token.css — rgba(255,255,255,0.60) has no primitive */
+  background: var(--chip-on-color-bg-pressed);
+}
+
+.chip--on-color:active::after,
+.chip--on-color.is-pressed::after {
+  display: none;
+}
+
+/* Selected --------------------------------------------------- */
+.chip--on-color[aria-pressed="true"],
+.chip--on-color[aria-selected="true"],
+.chip--on-color.is-selected,
+.chip--on-color.chip--selected {
+  /* TODO: --chip-on-color-bg-selected not in token.css — rgba(255,255,255,0.70) has no primitive */
+  background: var(--chip-on-color-bg-selected);
+  color: var(--chip-on-color-text);
+}
+
+/* Disabled --------------------------------------------------- */
+.chip--on-color:disabled,
+.chip--on-color[aria-disabled="true"],
+.chip--on-color.chip--disabled {
+  /* TODO: --chip-on-color-bg-disabled not in token.css — rgba(255,255,255,0.20) has no primitive.
+     NOTE: Figma source contains typo "diabled" — corrected to "disabled" in proposed token name. */
+  background: var(--chip-on-color-bg-disabled);
+  /* TODO: --chip-on-color-text-disabled not in token.css — rgba(255,255,255,0.40) has no primitive */
+  color: var(--chip-on-color-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}

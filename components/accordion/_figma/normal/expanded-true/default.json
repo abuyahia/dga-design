@@ -1,0 +1,117 @@
+[
+  {
+    "cssProps": {
+      "display": "flex",
+      "width": "366px",
+      "flex-direction": "column",
+      "align-items": "flex-start",
+      "border-top": "1px solid var(--Border-border-neutral-primary, #D2D6DB)"
+    },
+    "type": "COMPONENT",
+    "name": "RTL=False, Size=Large, Icon alignment=Trailing, State=Default, Expanded=True, Flush=False",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "padding": "var(--Global-spacing-xl, 16px)",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-xl, 16px)",
+          "align-self": "stretch",
+          "itemSpacing-variable": "--spacing-globalspacing-xl",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:8534907d24428a594b11bf204c4a21d6eb2b6193/405:116",
+          "paddingLeft-variable": "--spacing-globalspacing-xl",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:8534907d24428a594b11bf204c4a21d6eb2b6193/405:116",
+          "paddingTop-variable": "--spacing-globalspacing-xl",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:8534907d24428a594b11bf204c4a21d6eb2b6193/405:116",
+          "paddingRight-variable": "--spacing-globalspacing-xl",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:8534907d24428a594b11bf204c4a21d6eb2b6193/405:116",
+          "paddingBottom-variable": "--spacing-globalspacing-xl",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:8534907d24428a594b11bf204c4a21d6eb2b6193/405:116"
+        },
+        "type": "FRAME",
+        "name": "Accordion header",
+        "children": [
+          {
+            "cssProps": {
+              "flex": "1 0 0",
+              "color": "var(--Text-text-default, #161616)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "Accordion Title",
+            "type": "TEXT",
+            "name": "Accordion Title"
+          },
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px"
+            },
+            "type": "INSTANCE",
+            "name": "arrow-up-01",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "9px",
+                  "height": "5px"
+                },
+                "type": "GROUP",
+                "name": "elements"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "flex",
+          "padding": "var(--Global-spacing-md, 8px) var(--Global-spacing-6xl, 48px) var(--Global-spacing-3xl, 24px) var(--Global-spacing-xl, 16px)",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-md, 8px)",
+          "align-self": "stretch",
+          "itemSpacing-variable": "--spacing-globalspacing-md",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:447ef74ce5792a8513c0d13dea24f16420b7f459/405:114",
+          "paddingLeft-variable": "--spacing-globalspacing-xl",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:8534907d24428a594b11bf204c4a21d6eb2b6193/405:116",
+          "paddingTop-variable": "--spacing-globalspacing-md",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:447ef74ce5792a8513c0d13dea24f16420b7f459/405:114",
+          "paddingRight-variable": "--spacing-globalspacing-6xl",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:300afd545f69c3c4592493f095761b3822efb38c/405:92",
+          "paddingBottom-variable": "--spacing-globalspacing-3xl",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:73473aecaa515ffb2a50edba4d632b49ab51f82b/405:119"
+        },
+        "type": "FRAME",
+        "name": "Accordion content",
+        "children": [
+          {
+            "cssProps": {
+              "flex": "1 0 0",
+              "color": "var(--Text-text-primary-paragraph, #384250)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "500",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content within the constraints of the accordion.",
+            "type": "TEXT",
+            "name": "Content"
+          }
+        ]
+      }
+    ]
+  }
+]

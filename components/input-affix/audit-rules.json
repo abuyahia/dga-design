@@ -1,0 +1,193 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "input-affix",
+  "selector_root": ".input-affix",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "AFFIX-A11Y-001",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Dropdown affix must have an accessible label",
+      "description": "A .input-affix--dropdown button must have a non-empty accessible name via visible text in .input-affix__text, aria-label, or aria-labelledby.",
+      "target": ".input-affix.input-affix--dropdown",
+      "expected": "element has accessible name via text content OR aria-label OR aria-labelledby",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "any_of",
+        "conditions": [
+          "element has non-empty trimmed text content in .input-affix__text",
+          "element has non-empty aria-label attribute",
+          "element has aria-labelledby whose target has non-empty text content"
+        ]
+      },
+      "message": "Dropdown affix has no accessible label. Add visible text in .input-affix__text or set aria-label on the button.",
+      "fix": "Ensure .input-affix__text contains visible text, or add aria-label=\"Currency selector\" to the root button.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-AFFIX-003"]
+    },
+
+    {
+      "id": "AFFIX-A11Y-002",
+      "standard_id": "WCAG-2.1-1.1.1",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Icon and arrow slots must be aria-hidden",
+      "description": "The .input-affix__icon and .input-affix__arrow SVG elements are decorative. They must carry aria-hidden='true' and focusable='false' to suppress redundant announcements.",
+      "target": ".input-affix .input-affix__icon, .input-affix .input-affix__arrow",
+      "expected": "element has aria-hidden='true' AND focusable='false'",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "all_of",
+        "conditions": [
+          "element has aria-hidden='true'",
+          "element has focusable='false' OR element has no tabindex"
+        ]
+      },
+      "message": "Affix icon or arrow is missing aria-hidden='true'. Screen readers will announce decorative SVG content.",
+      "fix": "Add aria-hidden=\"true\" focusable=\"false\" to the SVG element.",
+      "standard_refs": ["WCAG-2.1-1.1.1"]
+    },
+
+    {
+      "id": "AFFIX-A11Y-003",
+      "standard_id": "WCAG-2.1-2.4.7",
+      "rule_type": "css_property_forbidden",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Focus ring must not be suppressed",
+      "description": "Dropdown affix must display a visible focus indicator on :focus-visible. outline: none without a replacement focus style is forbidden.",
+      "target": ".input-affix.input-affix--dropdown:focus-visible",
+      "expected": "element has visible outline or box-shadow focus indicator",
+      "check": {
+        "type": "css_property_forbidden",
+        "forbidden": "outline: none without replacement focus style"
+      },
+      "message": "Focus ring is suppressed on dropdown affix. Keyboard users cannot determine which element has focus.",
+      "fix": "Remove outline: none, or add a visible replacement: outline: var(--input-affix-focus-ring-width) solid var(--input-affix-focus-ring-color).",
+      "standard_refs": ["WCAG-2.1-2.4.7"]
+    },
+
+    {
+      "id": "AFFIX-A11Y-004",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Dropdown affix must declare aria-expanded when controlling a panel",
+      "description": "If the dropdown affix triggers a select or dropdown panel, it must communicate the expanded state via aria-expanded. Value must be 'true' or 'false'.",
+      "target": ".input-affix.input-affix--dropdown[data-controls-panel]",
+      "expected": "element has aria-expanded='true' or aria-expanded='false'",
+      "check": {
+        "type": "aria_attribute_required",
+        "trigger": "element controls a dropdown panel",
+        "attribute": "aria-expanded",
+        "valid_values": ["true", "false"]
+      },
+      "message": "Dropdown affix is missing aria-expanded. Add aria-expanded='false' by default and toggle to 'true' when the panel opens.",
+      "fix": "Add aria-expanded=\"false\" to the button. Update to \"true\" via JavaScript when the dropdown panel is open.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-STATE-001"]
+    },
+
+    {
+      "id": "AFFIX-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-AFFIX-003",
+      "rule_type": "element_type_required",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Correct root element must be used per type",
+      "description": "Dropdown affix (.input-affix--dropdown) must use <button> as root. Text affix (.input-affix--text) must use <div> as root. No other elements are valid.",
+      "target": ".input-affix",
+      "expected": "(.input-affix--dropdown → tagName=BUTTON) OR (.input-affix--text → tagName=DIV)",
+      "check": {
+        "type": "element_type_required",
+        "conditions": [
+          { "class": "input-affix--dropdown", "required_tag": "BUTTON" },
+          { "class": "input-affix--text", "required_tag": "DIV" }
+        ]
+      },
+      "message": "input-affix uses an incorrect root element. Dropdown type requires <button>. Text type requires <div>.",
+      "fix": "Change the root element to <button type=\"button\"> for Dropdown, or <div> for Text type.",
+      "standard_refs": ["PLATFORM-CODE-AFFIX-003", "WCAG-2.1-4.1.2"]
+    },
+
+    {
+      "id": "AFFIX-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-AFFIX-001",
+      "rule_type": "css_property_forbidden",
+      "category": "tokens",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "No hardcoded visual values in component CSS",
+      "description": "All color, spacing, radius, and font values in input-affix.css must use --input-affix-* CSS custom properties. Hardcoded hex, rgba, px values for visual properties are forbidden.",
+      "target": ".input-affix, .input-affix *",
+      "expected": "no hardcoded color, spacing, radius, or font values on component selectors",
+      "check": {
+        "type": "css_property_forbidden",
+        "patterns": [
+          "#[0-9a-fA-F]{3,8}(?!.*var\\()",
+          "rgba?\\([^)]+\\)(?!.*var\\()",
+          "font-size:\\s*[0-9]+px(?!.*var\\()",
+          "border-radius:\\s*[0-9]+px(?!.*var\\()"
+        ]
+      },
+      "message": "Hardcoded visual value found in input-affix component selector. Replace with --input-affix-* token.",
+      "fix": "Replace the hardcoded value with a var(--input-affix-*) token. Add the token to token.css if missing.",
+      "standard_refs": ["PLATFORM-CODE-AFFIX-001", "PLATFORM-CODE-TOKEN-001"]
+    },
+
+    {
+      "id": "AFFIX-RTL-001",
+      "standard_id": "PLATFORM-CODE-AFFIX-002",
+      "rule_type": "css_property_forbidden",
+      "category": "rtl",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "No physical horizontal padding on root element",
+      "description": "input-affix.css must not use padding-left or padding-right on the root selector. Use padding-inline instead. Physical properties break RTL layout.",
+      "target": ".input-affix",
+      "expected": "padding-left and padding-right are not used on root or modifier selectors",
+      "check": {
+        "type": "css_property_forbidden",
+        "properties": ["padding-left", "padding-right"]
+      },
+      "message": "Physical padding property (padding-left or padding-right) found on input-affix. Use padding-inline instead.",
+      "fix": "Replace padding-left/padding-right with padding-inline: var(--input-affix-*-padding-inline).",
+      "standard_refs": ["PLATFORM-CODE-AFFIX-002", "PLATFORM-CODE-RTL-001"]
+    },
+
+    {
+      "id": "AFFIX-USAGE-001",
+      "standard_id": "PLATFORM-CODE-AFFIX-004",
+      "rule_type": "dom_structure_required",
+      "category": "usage",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Affix must be used within a text-input context",
+      "description": "input-affix is a subcomponent. It must appear as a sibling or child of an <input> or .text-input element. An isolated affix without an associated input is a usage violation.",
+      "target": ".input-affix",
+      "expected": "element is a sibling or descendant of an <input> or .text-input element",
+      "check": {
+        "type": "dom_structure_required",
+        "logic": "any_of",
+        "conditions": [
+          "element has sibling that is an <input>",
+          "element has ancestor with class text-input"
+        ]
+      },
+      "message": "input-affix appears in isolation without an associated text-input. This is a usage violation.",
+      "fix": "Wrap the affix and its associated input inside a .text-input container.",
+      "standard_refs": ["PLATFORM-CODE-AFFIX-004"]
+    }
+
+  ]
+}

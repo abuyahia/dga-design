@@ -1,0 +1,468 @@
+:root {
+  /* Typography */
+  --font-sans: "IBM Plex Sans Arabic", "Noto Sans Arabic", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-weight-light: 300;
+  --font-weight-body: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-heading: 700;
+
+  --fs-display-2xl: 72px;
+  --lh-display-2xl: 90px;
+  --trk-display-2xl: -0.02em;
+  --fs-display-xl: 60px;
+  --lh-display-xl: 72px;
+  --trk-display-xl: -0.02em;
+  --fs-display-lg: 48px;
+  --lh-display-lg: 60px;
+  --trk-display-lg: -0.02em;
+  --fs-display-md: 36px;
+  --lh-display-md: 44px;
+  --trk-display-md: -0.02em;
+  --fs-display-sm: 30px;
+  --lh-display-sm: 38px;
+  --trk-display-sm: 0;
+  --fs-display-xs: 24px;
+  --lh-display-xs: 32px;
+  --trk-display-xs: 0;
+
+  --fs-text-xl: 20px;
+  --lh-text-xl: 30px;
+  --trk-text-xl: 0;
+  --fs-text-lg: 18px;
+  --lh-text-lg: 28px;
+  --trk-text-lg: 0;
+  --fs-text-md: 16px;
+  --lh-text-md: 24px;
+  --trk-text-md: 0;
+  --fs-text-sm: 14px;
+  --lh-text-sm: 20px;
+  --trk-text-sm: 0;
+  --fs-text-xs: 12px;
+  --lh-text-xs: 18px;
+  --trk-text-xs: 0;
+
+  --font-size-xs: var(--fs-text-xs);
+  --font-size-sm: var(--fs-text-sm);
+  --font-size-md: var(--fs-text-md);
+  --font-size-lg: var(--fs-text-lg);
+  --font-size-xl: var(--fs-text-xl);
+  --font-size-2xl: var(--fs-display-xs);
+  --font-size-3xl: 28px;
+  --font-size-4xl: 32px;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.8;
+
+  --font-heading-1: var(--font-weight-heading) var(--fs-display-md) / var(--lh-display-md) var(--font-sans);
+  --font-heading-2: var(--font-weight-heading) var(--fs-display-xs) / var(--lh-display-xs) var(--font-sans);
+  --font-heading-3: var(--font-weight-semibold) var(--fs-text-xl) / var(--lh-text-xl) var(--font-sans);
+  --font-body: var(--font-weight-body) var(--fs-text-md) / var(--lh-text-md) var(--font-sans);
+  --font-body-bold: var(--font-weight-heading) var(--fs-text-md) / var(--lh-text-md) var(--font-sans);
+  --font-body-small: var(--font-weight-body) var(--fs-text-sm) / var(--lh-text-sm) var(--font-sans);
+  --font-caption: var(--font-weight-body) var(--fs-text-xs) / var(--lh-text-xs) var(--font-sans);
+  --font-caption-bold: var(--font-weight-heading) var(--fs-text-xs) / var(--lh-text-xs) var(--font-sans);
+
+  /* Spacing */
+  --space-0: 0px;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-128: 128px;
+  --space-160: 160px;
+  --space-192: 192px;
+  --space-224: 224px;
+  --space-256: 256px;
+
+  --spacing-none: var(--space-0);
+  --spacing-xxs: var(--space-2);
+  --spacing-xs: var(--space-4);
+  --spacing-sm: var(--space-8);
+  --spacing-md: var(--space-12);
+  --spacing-lg: var(--space-16);
+  --spacing-xl: var(--space-20);
+  --spacing-2xl: var(--space-24);
+  --spacing-3xl: var(--space-32);
+  --spacing-4xl: var(--space-40);
+  --spacing-5xl: var(--space-48);
+  --spacing-6xl: var(--space-64);
+  --spacing-7xl: var(--space-80);
+  --spacing-8xl: var(--space-96);
+  --spacing-9xl: var(--space-128);
+  --spacing-10xl: var(--space-160);
+  --spacing-11xl: var(--space-192);
+
+  /* Sizing */
+  --width-xxs: 320px;
+  --width-xs: 384px;
+  --width-sm: 480px;
+  --width-md: 560px;
+  --width-lg: 640px;
+  --width-xl: 768px;
+  --width-2xl: 1024px;
+  --width-3xl: 1280px;
+  --width-4xl: 1440px;
+  --width-5xl: 1600px;
+  --width-6xl: 1920px;
+
+  --container-padding-mobile: var(--space-16);
+  --container-padding-desktop: var(--space-32);
+  --container-max-width: 1280px;
+  --paragraph-max-width: 720px;
+
+  --icon-size-xs: var(--space-16);
+  --icon-size-sm: var(--space-20);
+  --icon-size-md: var(--space-24);
+  --icon-size-lg: var(--space-32);
+  --icon-size-xl: var(--space-48);
+
+  /* Radius */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Breakpoints */
+  --bp-mobile: 375px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1280px;
+  --breakpoint-mobile: var(--bp-mobile);
+  --breakpoint-tablet: var(--bp-tablet);
+  --breakpoint-desktop: var(--bp-desktop);
+  --breakpoint-wide: 1440px;
+  --breakpoint-4k: 2560px;
+
+  /* Grid */
+  --grid-desktop-container: 1216px;
+  --grid-desktop-margin: 32px;
+  --grid-desktop-cols: 12;
+  --grid-desktop-gutter: 32px;
+
+  --grid-tablet-container: 704px;
+  --grid-tablet-margin: 32px;
+  --grid-tablet-cols: 8;
+  --grid-tablet-gutter: 32px;
+
+  --grid-mobile-container: 343px;
+  --grid-mobile-margin: 16px;
+  --grid-mobile-cols: 4;
+  --grid-mobile-gutter: 16px;
+
+  /* Neutral colors */
+  --gray-25: #fcfcfd;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d2d6db;
+  --gray-400: #9da4ae;
+  --gray-500: #6c737f;
+  --gray-600: #4d5761;
+  --gray-700: #384250;
+  --gray-800: #1f2a37;
+  --gray-900: #111927;
+  --gray-950: #0d121c;
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Brand colors */
+  --sa-25: #f7fdf9;
+  --sa-50: #f3fcf6;
+  --sa-100: #dff6e7;
+  --sa-200: #b8eacb;
+  --sa-300: #88d8ad;
+  --sa-400: #54c08a;
+  --sa-500: #25935f;
+  --sa-600: #1b8354;
+  --sa-700: #166a45;
+  --sa-800: #14573a;
+  --sa-900: #104631;
+  --sa-950: #092a1e;
+
+  --gold-25: #fffef7;
+  --gold-50: #fffef2;
+  --gold-100: #fffce6;
+  --gold-200: #fcf3bd;
+  --gold-300: #fae996;
+  --gold-400: #f7d54d;
+  --gold-500: #f5bd02;
+  --gold-600: #dba102;
+  --gold-700: #b87b02;
+  --gold-800: #945c01;
+  --gold-900: #6e3c00;
+  --gold-950: #472400;
+
+  --lavender-25: #fefcff;
+  --lavender-50: #f9f5fa;
+  --lavender-100: #f2e9f5;
+  --lavender-200: #e1cce8;
+  --lavender-300: #ccadd9;
+  --lavender-400: #a57bba;
+  --lavender-500: #80519f;
+  --lavender-600: #6d428f;
+  --lavender-700: #532d75;
+  --lavender-800: #3d1d5e;
+  --lavender-900: #281047;
+  --lavender-950: #16072e;
+
+  /* Semantic scales */
+  --error-25: #fffbfa;
+  --error-50: #fef3f2;
+  --error-100: #fee4e2;
+  --error-200: #fecdca;
+  --error-300: #fda29b;
+  --error-400: #f97066;
+  --error-500: #f04438;
+  --error-600: #d92d20;
+  --error-700: #b42318;
+  --error-800: #912018;
+  --error-900: #7a271a;
+  --error-950: #55160c;
+
+  --warning-25: #fffcf5;
+  --warning-50: #fffaeb;
+  --warning-100: #fef0c7;
+  --warning-200: #fedf89;
+  --warning-300: #fec84b;
+  --warning-400: #fdb022;
+  --warning-500: #f79009;
+  --warning-600: #dc6803;
+  --warning-700: #b54708;
+  --warning-800: #93370d;
+  --warning-900: #7a2e0e;
+  --warning-950: #4e1d09;
+
+  --info-25: #f5faff;
+  --info-50: #eff8ff;
+  --info-100: #d1e9ff;
+  --info-200: #b2ddff;
+  --info-300: #84caff;
+  --info-400: #53b1fd;
+  --info-500: #2e90fa;
+  --info-600: #1570ef;
+  --info-700: #175cd3;
+  --info-800: #1849a9;
+  --info-900: #194185;
+  --info-950: #102a56;
+
+  --success-25: #f6fef9;
+  --success-50: #ecfdf3;
+  --success-100: #dcfae6;
+  --success-200: #abefc6;
+  --success-300: #75e0a7;
+  --success-400: #47cd89;
+  --success-500: #17b26a;
+  --success-600: #079455;
+  --success-700: #067647;
+  --success-800: #085d3a;
+  --success-900: #074d31;
+  --success-950: #053321;
+
+  /* Semantic aliases */
+  --color-primary: var(--sa-600);
+  --color-primary-light: var(--sa-400);
+  --color-primary-dark: var(--sa-800);
+  --color-secondary: var(--gold-600);
+  --color-secondary-light: var(--gold-400);
+  --color-secondary-dark: var(--gold-800);
+  --color-tertiary: var(--lavender-600);
+
+  --color-text: var(--gray-900);
+  --color-text-light: var(--gray-500);
+  --color-text-lighter: var(--gray-400);
+  --color-text-lightest: var(--gray-300);
+  --color-surface: var(--white);
+  --color-surface-alt: var(--gray-50);
+  --color-surface-alt-2: var(--gray-100);
+  --color-border: var(--gray-200);
+  --color-border-dark: var(--gray-300);
+  --color-success: var(--success-600);
+  --color-error: var(--error-600);
+  --color-warning: var(--warning-600);
+  --color-info: var(--info-600);
+  --color-disabled: var(--gray-400);
+  --color-disabled-bg: var(--gray-100);
+
+  /* Gradients */
+  --grad-sa-600-500-90: linear-gradient(90deg, var(--sa-600) 0%, var(--sa-500) 100%);
+  --grad-sa-700-600-45: linear-gradient(45deg, var(--sa-700) 0%, var(--sa-600) 100%);
+  --grad-sa-950-600-45: linear-gradient(45deg, var(--sa-950) 0%, var(--sa-600) 100%);
+  --grad-sa-800-600-90: linear-gradient(90deg, var(--sa-800) 0%, var(--sa-600) 100%);
+  --grad-sa-800-700-26-5: linear-gradient(26.5deg, var(--sa-800) 0%, var(--sa-700) 100%);
+  --grad-sa-900-600-45: linear-gradient(45deg, var(--sa-900) 0%, var(--sa-600) 100%);
+
+  /* Opacity */
+  --opacity-full: 1;
+  --opacity-high: 0.87;
+  --opacity-default: 0.8;
+  --opacity-medium: 0.6;
+  --opacity-low: 0.38;
+  --opacity-lighter: 0.12;
+
+  /* Borders */
+  --border-width-thin: 1px;
+  --border-width-default: 1px;
+  --border-width-thick: 2px;
+  --border-width-heavy: 4px;
+  --border-default: 1px solid var(--color-border);
+  --border-dark: 1px solid var(--color-border-dark);
+  --border-primary: 1px solid var(--color-primary);
+  --border-success: 1px solid var(--color-success);
+  --border-error: 1px solid var(--color-error);
+  --border-warning: 1px solid var(--color-warning);
+  --border-info: 1px solid var(--color-info);
+  --outline-primary: 2px solid var(--color-primary);
+  --outline-error: 2px solid var(--color-error);
+
+  /* Shadows */
+  --shadow-none: none;
+  --shadow-rgb: 16, 24, 40;
+  --shadow-xs: 0px 1px 2px 0px rgba(var(--shadow-rgb), 0.05), 0px 1px 3px 0px rgba(var(--shadow-rgb), 0.1);
+  --shadow-sm: 0px 1px 2px 0px rgba(var(--shadow-rgb), 0.06), 0px 4px 8px -2px rgba(var(--shadow-rgb), 0.1);
+  --shadow-md: 0px 2px 4px -2px rgba(var(--shadow-rgb), 0.06), 0px 12px 16px -6px rgba(var(--shadow-rgb), 0.08);
+  --shadow-lg: 0px 4px 6px -2px rgba(var(--shadow-rgb), 0.03), 0px 20px 24px -4px rgba(var(--shadow-rgb), 0.08);
+  --shadow-xl: 0px 8px 8px -4px rgba(var(--shadow-rgb), 0.03);
+  --shadow-2xl: 0px 24px 48px -12px rgba(var(--shadow-rgb), 0.18);
+  --shadow-3xl: 0px 32px 64px -12px rgba(var(--shadow-rgb), 0.14);
+  --bd-blur-sm: 8px;
+  --bd-blur-md: 16px;
+  --bd-blur-lg: 24px;
+  --bd-blur-xl: 40px;
+  --overlay-bg: rgba(0, 0, 0, 0.3);
+
+  /* Motion */
+  --transition-fast: 100ms;
+  --transition-normal: 200ms;
+  --transition-slow: 300ms;
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-default: all var(--transition-normal) var(--ease-in-out);
+  --transition-color: color var(--transition-fast) var(--ease-in-out);
+  --transition-background: background-color var(--transition-fast) var(--ease-in-out);
+
+  /* Button state tokens */
+  --button-sm-height:            var(--space-24);
+  --button-sm-padding-inline:    var(--space-8);
+  --button-sm-gap:               var(--space-4);
+  --button-sm-icon-size:         var(--icon-size-xs);
+  --button-sm-label-font-size:   var(--fs-text-xs);
+  --button-sm-label-line-height: var(--lh-text-xs);
+  --button-md-height:            var(--space-32);
+  --button-md-padding-inline:    var(--space-12);
+  --button-md-gap:               var(--space-4);
+  --button-md-icon-size:         var(--icon-size-sm);
+  --button-md-label-font-size:   var(--fs-text-sm);
+  --button-md-label-line-height: var(--lh-text-sm);
+  --button-lg-height: var(--space-40);
+  --button-lg-padding-inline: var(--space-16);
+  --button-lg-gap: var(--space-4);
+  --button-radius: var(--radius-sm);
+  --button-label-font-family: var(--font-sans);
+  --button-label-font-size: var(--fs-text-md);
+  --button-label-font-weight: var(--font-weight-medium);
+  --button-label-line-height: var(--lh-text-md);
+  --button-icon-size: var(--icon-size-md);
+  --button-primary-bg-default: var(--sa-600);
+  --button-primary-bg-hover: var(--sa-500);
+  --button-primary-bg-selected: var(--sa-800);
+  --button-primary-bg-pressed: var(--sa-900);
+  --button-primary-text: var(--white);
+  --button-neutral-bg-default: var(--gray-950);
+  --button-neutral-bg-hover: var(--gray-800);
+  --button-neutral-bg-pressed: var(--gray-600);
+  --button-neutral-bg-selected: var(--gray-700);
+  --button-neutral-text: var(--white);
+  --button-disabled-bg: var(--gray-200);
+  --button-disabled-text: var(--gray-400);
+  --button-focus-border-width: var(--space-2);
+  --button-focus-ring-inner: var(--space-2);
+  --button-focus-ring-inner-color: var(--white);
+  --button-focus-ring-outer-color: var(--black);
+  --button-secondary-solid-bg-default:  var(--gray-100);
+  --button-secondary-solid-bg-hover:    var(--gray-200);
+  --button-secondary-solid-bg-pressed:  var(--gray-200);
+  --button-secondary-solid-bg-selected: var(--gray-200);
+  --button-secondary-solid-text:        var(--gray-950);
+  --button-secondary-outline-border:         var(--gray-300);
+  --button-secondary-outline-border-hover:   var(--gray-200);
+  --button-secondary-outline-bg-hover:       var(--gray-100);
+  --button-secondary-outline-bg-pressed:     var(--gray-200);
+  --button-secondary-outline-bg-selected:    var(--gray-200);
+  --button-secondary-outline-text:           var(--gray-950);
+  --button-subtle-bg-hover:    var(--gray-100);
+  --button-subtle-bg-pressed:  var(--gray-200);
+  --button-subtle-bg-selected: var(--gray-200);
+  --button-subtle-text:        var(--gray-950);
+  --button-transparent-text:          var(--gray-950);
+  --button-transparent-text-hover:    var(--sa-700);
+  --button-transparent-text-pressed:  var(--sa-900);
+  --button-transparent-text-selected: var(--sa-800);
+  --button-neutral-on-color-bg-default:    var(--white);
+  --button-neutral-on-color-bg-hover:      rgba(255, 255, 255, 0.80);
+  --button-neutral-on-color-bg-pressed:    rgba(255, 255, 255, 0.60);
+  --button-neutral-on-color-bg-selected:   rgba(255, 255, 255, 0.70);
+  --button-neutral-on-color-text:          #161616;
+  --button-neutral-on-color-disabled-bg:   rgba(255, 255, 255, 0.20);
+  --button-neutral-on-color-disabled-text: rgba(255, 255, 255, 0.40);
+  --button-primary-on-color-bg-default:    var(--white);
+  --button-primary-on-color-bg-hover:      rgba(255, 255, 255, 0.80);
+  --button-primary-on-color-bg-pressed:    rgba(255, 255, 255, 0.60);
+  --button-primary-on-color-bg-selected:   rgba(255, 255, 255, 0.60);
+  --button-primary-on-color-text:          #161616;
+  --button-primary-on-color-disabled-bg:   rgba(255, 255, 255, 0.20);
+  --button-primary-on-color-disabled-text: rgba(255, 255, 255, 0.40);
+  --button-secondary-solid-on-color-bg-default:    rgba(255, 255, 255, 0.20);
+  --button-secondary-solid-on-color-bg-hover:      rgba(255, 255, 255, 0.20);
+  --button-secondary-solid-on-color-bg-pressed:    rgba(255, 255, 255, 0.40);
+  --button-secondary-solid-on-color-bg-selected:   rgba(255, 255, 255, 0.30);
+  --button-secondary-solid-on-color-text:          var(--white);
+  --button-secondary-solid-on-color-disabled-bg:   rgba(255, 255, 255, 0.20);
+  --button-secondary-solid-on-color-disabled-text: rgba(255, 255, 255, 0.40);
+  --button-secondary-outline-on-color-border:          rgba(255, 255, 255, 0.40);
+  --button-secondary-outline-on-color-bg-hover:        rgba(255, 255, 255, 0.20);
+  --button-secondary-outline-on-color-bg-pressed:      rgba(255, 255, 255, 0.20);
+  --button-secondary-outline-on-color-bg-selected:     rgba(255, 255, 255, 0.30);
+  --button-secondary-outline-on-color-text:            var(--white);
+  --button-secondary-outline-on-color-disabled-text:   rgba(255, 255, 255, 0.40);
+  --button-subtle-on-color-text:          var(--white);
+  --button-subtle-on-color-bg-hover:      rgba(255, 255, 255, 0.20);
+  --button-subtle-on-color-bg-pressed:    rgba(255, 255, 255, 0.40);
+  --button-subtle-on-color-bg-selected:   rgba(255, 255, 255, 0.30);
+  --button-subtle-on-color-disabled-text: rgba(255, 255, 255, 0.40);
+  --button-transparent-on-color-text:          var(--white);
+  --button-transparent-on-color-text-hover:    #54C08A;
+  --button-transparent-on-color-text-pressed:  #88D8AD;
+  --button-transparent-on-color-text-selected: #54C08A;
+  --button-transparent-on-color-disabled-text: rgba(255, 255, 255, 0.40);
+
+  /* Accordion state tokens */
+  --accordion-normal-border-color:  var(--gray-300);
+  --accordion-normal-title-color:   #161616;
+  --accordion-normal-content-color: var(--gray-700);
+  --accordion-normal-bg-hover:      var(--gray-100);
+  --accordion-normal-bg-pressed:    var(--gray-200);
+  --accordion-normal-focus-ring:    #161616;
+  --accordion-normal-disabled-text: var(--gray-400);
+}
+
+@supports (direction: rtl) {
+  [dir="rtl"] {
+    direction: rtl;
+  }
+}

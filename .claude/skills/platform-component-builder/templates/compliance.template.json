@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "{{component_id}}",
+  "generated": "{{generated_date}}",
+  "overall_status": "pending_audit",
+  "_note": "Status 'mapped' means the component has been mapped to this criterion. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
+  "standards": [
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "official",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "4.1.2",
+          "title": "Name, Role, Value",
+          "status": "mapped",
+          "evidence": "{{component_name}} exposes the correct role, accessible name, and state attributes as documented in {{component_id}}.contract.md.",
+          "audit_rule_ids": ["{{rule_prefix}}-A11Y-001"]
+        }
+      ]
+    },
+    {
+      "id": "PLATFORM-CODE-DS",
+      "name": "Platform Design System Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "These are internal platform rules. IDs are stable across components. See standards/platform-code.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-{{rule_prefix}}-001",
+          "title": "Component must use design tokens for all visual values",
+          "status": "mapped",
+          "evidence": "{{component_id}} styles reference CSS custom properties instead of hardcoded visual values.",
+          "audit_rule_ids": ["{{rule_prefix}}-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-{{rule_prefix}}-002",
+          "title": "RTL layout support is mandatory",
+          "status": "mapped",
+          "evidence": "{{component_id}} uses logical CSS properties and supports right-to-left layout.",
+          "audit_rule_ids": ["{{rule_prefix}}-RTL-001"]
+        }
+      ]
+    }
+  ],
+  "variant_compliance_notes": {}
+}

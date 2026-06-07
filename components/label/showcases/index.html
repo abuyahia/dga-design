@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Label — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css" />
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../label.css" />
+    <!-- 3. Page layout -->
+    <style>
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--gray-50);
+        font-family: var(--font-sans);
+        color: var(--gray-900);
+        min-height: 100dvh;
+        padding: var(--space-48) var(--space-32);
+      }
+
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-48);
+      }
+
+      /* ── Header ───────────────────────────────────────── */
+      .page__header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+      }
+
+      .page__meta {
+        font-size: var(--fs-text-sm);
+        color: var(--gray-500);
+        line-height: var(--lh-text-sm);
+      }
+
+      .page__title {
+        font-size: var(--fs-display-xs);
+        font-weight: var(--font-weight-heading);
+        line-height: var(--lh-display-xs);
+        color: var(--gray-900);
+      }
+
+      /* ── Variant section ──────────────────────────────── */
+      .variant {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16);
+      }
+
+      .variant__title {
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-500);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: var(--lh-text-sm);
+      }
+
+      /* ── Showcase table ───────────────────────────────── */
+      .showcase {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--gray-200);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        background: var(--white);
+      }
+
+      .showcase__row {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-32);
+        padding: var(--space-20) var(--space-24);
+        border-bottom: 1px solid var(--gray-100);
+      }
+
+      .showcase__row:last-child {
+        border-bottom: none;
+      }
+
+      .showcase__label {
+        font-size: var(--fs-text-sm);
+        color: var(--gray-500);
+        line-height: var(--lh-text-sm);
+        min-width: 80px;
+        flex-shrink: 0;
+        padding-top: 1px;
+      }
+
+      .showcase__item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        flex: 1;
+        min-width: 0;
+      }
+
+      /* ── RTL showcase context ─────────────────────────── */
+      .showcase--rtl {
+        background: var(--gray-50);
+        border-color: var(--gray-200);
+      }
+
+      .showcase--rtl .showcase__row {
+        border-bottom-color: var(--gray-100);
+      }
+
+      /* ── Dummy input (for label association only) ─────── */
+      .demo-input {
+        display: block;
+        height: 36px;
+        padding: 0 var(--space-12);
+        border: 1px solid var(--gray-300);
+        border-radius: var(--radius-sm);
+        font-family: var(--font-sans);
+        font-size: var(--fs-text-sm);
+        color: var(--gray-900);
+        background: var(--white);
+        outline: none;
+        width: 220px;
+        margin-top: var(--space-4);
+      }
+
+      .demo-input:focus {
+        border-color: var(--sa-600);
+        box-shadow: 0 0 0 2px rgba(27, 131, 84, 0.2);
+      }
+
+      .demo-input[disabled] {
+        background: var(--gray-100);
+        border-color: var(--gray-200);
+        color: var(--gray-400);
+        cursor: not-allowed;
+      }
+
+      /* ── Prop tags ────────────────────────────────────── */
+      .prop-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        direction: ltr;
+        margin-top: 8px;
+        padding-top: 8px;
+        border-top: 1px dashed var(--gray-150, #eaecf0);
+      }
+
+      .prop-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 7px;
+        background: var(--gray-50);
+        border: 1px solid var(--gray-200);
+        border-radius: 3px;
+        font-size: 11px;
+        font-family: "ui-monospace", Menlo, Consolas, monospace;
+        line-height: 1.5;
+        white-space: nowrap;
+      }
+
+      .prop-tag__key { color: var(--gray-400); }
+      .prop-tag__eq  { color: var(--gray-300); margin: 0 2px; }
+      .prop-tag__val { color: var(--gray-700); font-weight: 500; }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+
+      <!-- ── Page header ─────────────────────────────────────── -->
+      <header class="page__header">
+        <p class="page__meta">Design System / Components / Label</p>
+        <h1 class="page__title">Label Showcase</h1>
+      </header>
+
+      <!-- ══════════════════════════════════════════════════════
+           MEDIUM / REGULAR
+           ══════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Medium — Regular</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Type=Regular (Default), Size=Medium, Disabled=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <label class="label" for="sc-md-reg-default">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">Full Name</span>
+              </label>
+              <input class="demo-input" id="sc-md-reg-default" type="text" aria-required="true" placeholder="e.g. Ahmad Al-Hassan" />
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Type=Regular (Default), Size=Medium, Disabled=True">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <label class="label label--disabled" aria-disabled="true" for="sc-md-reg-disabled">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">Full Name</span>
+              </label>
+              <input class="demo-input" id="sc-md-reg-disabled" type="text" disabled placeholder="e.g. Ahmad Al-Hassan" />
+            </div>
+          </div>
+
+          <!-- Optional (no required asterisk) — implementation usage pattern -->
+          <div class="showcase__row">
+            <span class="showcase__label">Optional</span>
+            <div class="showcase__item">
+              <label class="label" for="sc-md-reg-optional">
+                <span class="label__text">Middle Name</span>
+              </label>
+              <input class="demo-input" id="sc-md-reg-optional" type="text" placeholder="Optional field" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           MEDIUM / SEMIBOLD
+           ══════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Medium — Semibold</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Type=Semibold, Size=Medium, Disabled=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <label class="label label--semibold" for="sc-md-semi-default">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">National ID</span>
+              </label>
+              <input class="demo-input" id="sc-md-semi-default" type="text" aria-required="true" placeholder="e.g. 1234567890" />
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Type=Semibold, Size=Medium, Disabled=True">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <label class="label label--semibold label--disabled" aria-disabled="true" for="sc-md-semi-disabled">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">National ID</span>
+              </label>
+              <input class="demo-input" id="sc-md-semi-disabled" type="text" disabled placeholder="e.g. 1234567890" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           LARGE / REGULAR
+           ══════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Large — Regular</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Type=Regular (Default), Size=Large, Disabled=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <label class="label label--large" for="sc-lg-reg-default">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">Email Address</span>
+              </label>
+              <input class="demo-input" id="sc-lg-reg-default" type="email" aria-required="true" placeholder="e.g. name@example.com" />
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Type=Regular (Default), Size=Large, Disabled=True">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <label class="label label--large label--disabled" aria-disabled="true" for="sc-lg-reg-disabled">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">Email Address</span>
+              </label>
+              <input class="demo-input" id="sc-lg-reg-disabled" type="email" disabled placeholder="e.g. name@example.com" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           LARGE / SEMIBOLD
+           ══════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Large — Semibold</h2>
+
+        <div class="showcase">
+
+          <!-- Default -->
+          <div class="showcase__row" data-props="RTL=False, Type=Semibold, Size=Large, Disabled=False">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__item">
+              <label class="label label--large label--semibold" for="sc-lg-semi-default">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">Phone Number</span>
+              </label>
+              <input class="demo-input" id="sc-lg-semi-default" type="tel" aria-required="true" placeholder="e.g. +966 5X XXX XXXX" />
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase__row" data-props="RTL=False, Type=Semibold, Size=Large, Disabled=True">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <label class="label label--large label--semibold label--disabled" aria-disabled="true" for="sc-lg-semi-disabled">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">Phone Number</span>
+              </label>
+              <input class="demo-input" id="sc-lg-semi-disabled" type="tel" disabled placeholder="e.g. +966 5X XXX XXXX" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════
+           RTL — ARABIC
+           dir="rtl" set per-label; in production it inherits from
+           <html dir="rtl"> or the nearest ancestor.
+           ══════════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">RTL — Arabic</h2>
+
+        <div class="showcase showcase--rtl">
+
+          <!-- Medium / Regular / Default / RTL -->
+          <div class="showcase__row" data-props="RTL=True, Type=Regular (Default), Size=Medium, Disabled=False">
+            <span class="showcase__label">Medium</span>
+            <div class="showcase__item">
+              <label class="label" dir="rtl" for="sc-rtl-md-reg">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">الاسم الكامل</span>
+              </label>
+              <input class="demo-input" id="sc-rtl-md-reg" type="text" dir="rtl" aria-required="true" placeholder="مثال: أحمد الحسن" />
+            </div>
+          </div>
+
+          <!-- Medium / Semibold / Default / RTL -->
+          <div class="showcase__row" data-props="RTL=True, Type=Semibold, Size=Medium, Disabled=False">
+            <span class="showcase__label">Medium Semibold</span>
+            <div class="showcase__item">
+              <label class="label label--semibold" dir="rtl" for="sc-rtl-md-semi">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">رقم الهوية</span>
+              </label>
+              <input class="demo-input" id="sc-rtl-md-semi" type="text" dir="rtl" aria-required="true" placeholder="مثال: ١٢٣٤٥٦٧٨٩٠" />
+            </div>
+          </div>
+
+          <!-- Large / Regular / Default / RTL -->
+          <div class="showcase__row" data-props="RTL=True, Type=Regular (Default), Size=Large, Disabled=False">
+            <span class="showcase__label">Large</span>
+            <div class="showcase__item">
+              <label class="label label--large" dir="rtl" for="sc-rtl-lg-reg">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">البريد الإلكتروني</span>
+              </label>
+              <input class="demo-input" id="sc-rtl-lg-reg" type="email" dir="rtl" aria-required="true" placeholder="مثال: name@example.com" />
+            </div>
+          </div>
+
+          <!-- Large / Semibold / Default / RTL -->
+          <div class="showcase__row" data-props="RTL=True, Type=Semibold, Size=Large, Disabled=False">
+            <span class="showcase__label">Large Semibold</span>
+            <div class="showcase__item">
+              <label class="label label--large label--semibold" dir="rtl" for="sc-rtl-lg-semi">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">رقم الجوال</span>
+              </label>
+              <input class="demo-input" id="sc-rtl-lg-semi" type="tel" dir="rtl" aria-required="true" placeholder="مثال: ٩٦٦٥XXXXXXXXX+" />
+            </div>
+          </div>
+
+          <!-- Medium / Regular / Disabled / RTL -->
+          <div class="showcase__row" data-props="RTL=True, Type=Regular (Default), Size=Medium, Disabled=True">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__item">
+              <label class="label label--disabled" aria-disabled="true" dir="rtl" for="sc-rtl-md-disabled">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">الاسم الكامل</span>
+              </label>
+              <input class="demo-input" id="sc-rtl-md-disabled" type="text" dir="rtl" disabled placeholder="مثال: أحمد الحسن" />
+            </div>
+          </div>
+
+          <!-- Large / Semibold / Disabled / RTL -->
+          <div class="showcase__row" data-props="RTL=True, Type=Semibold, Size=Large, Disabled=True">
+            <span class="showcase__label">Large Semibold Disabled</span>
+            <div class="showcase__item">
+              <label class="label label--large label--semibold label--disabled" aria-disabled="true" dir="rtl" for="sc-rtl-lg-semi-dis">
+                <span class="label__required" aria-hidden="true">*</span>
+                <span class="label__text">رقم الجوال</span>
+              </label>
+              <input class="demo-input" id="sc-rtl-lg-semi-dis" type="tel" dir="rtl" disabled placeholder="مثال: ٩٦٦٥XXXXXXXXX+" />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Prop-tags renderer — reads data-props and builds tag chips -->
+    <script>
+      (function () {
+        document.querySelectorAll('.showcase__row[data-props]').forEach(function (row) {
+          var stateLabel = row.querySelector('.showcase__label');
+          var others = Array.from(row.children).filter(function (c) { return c !== stateLabel; });
+          if (!others.length) return;
+          var first = others[0];
+          var item = first.classList.contains('showcase__item') ? first : (function () {
+            var w = document.createElement('div');
+            w.className = 'showcase__item';
+            first.replaceWith(w);
+            w.appendChild(first);
+            return w;
+          }());
+          row.style.alignItems = 'flex-start';
+          var tags = document.createElement('div');
+          tags.className = 'prop-tags';
+          row.getAttribute('data-props').split(',').forEach(function (part) {
+            part = part.trim();
+            var eq = part.indexOf('=');
+            if (eq < 0) return;
+            var t = document.createElement('span');
+            t.className = 'prop-tag';
+            t.innerHTML =
+              '<span class="prop-tag__key">'  + part.slice(0, eq).trim()  + '</span>' +
+              '<span class="prop-tag__eq">=</span>'                                    +
+              '<span class="prop-tag__val">'  + part.slice(eq + 1).trim() + '</span>';
+            tags.appendChild(t);
+          });
+          item.appendChild(tags);
+        });
+      }());
+    </script>
+
+  </body>
+</html>

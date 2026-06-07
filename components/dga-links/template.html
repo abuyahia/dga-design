@@ -1,0 +1,98 @@
+<!--
+  Link — Component Template
+  ════════════════════════════════════════════════════════════════════
+  هذا الملف مرجع هيكلي فقط. الـ {{ }} تمثّل متغيرات قابلة للتغيير
+  عند بناء أي تطبيق (React, Vue, Jinja, Handlebars …).
+  لا يُفتح هذا الملف في المتصفح — للعرض الحي انظر: showcases/index.html
+  ════════════════════════════════════════════════════════════════════
+
+  ── المتغيرات ────────────────────────────────────────────────────
+
+  {{ variant }}   string   نمط اللون
+                           primary | neutral | on-color
+
+  {{ size }}      string   الحجم  →  "" (medium/افتراضي) | "link--sm"
+
+  {{ inline }}    boolean  "link--inline" أو تُحذف الخاصية
+                           الـ inline يجعل الخط السفلي دائماً ظاهراً
+
+  {{ label }}     string   نص الرابط  (مطلوب)
+
+  {{ icon }}      SVG      أيقونة SVG خام  (اختياري)
+
+  {{ href }}      string   وجهة الرابط  (مطلوب)
+
+  {{ disabled }}  boolean  aria-disabled="true" أو تُحذف الخاصية
+
+  ── قواعد CSS الخاصة بالحالات ────────────────────────────────────
+  :hover    →  CSS :hover الطبيعي
+  :focus    →  CSS :focus / .is-focused
+  :active   →  CSS :active / .is-pressed
+  :visited  →  CSS :visited / .is-visited
+  disabled  →  aria-disabled="true" + .is-disabled
+-->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 1 — نص فقط  (label only)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<a href="{{ href }}" class="link link--{{ variant }} {{ size }} {{ inline }}" {{ disabled }}>
+  <span class="link__text">{{ label }}</span>
+</a>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 2 — أيقونة + نص  (icon + label)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<a href="{{ href }}" class="link link--{{ variant }} {{ size }} {{ inline }}" {{ disabled }}>
+  <span class="link__icon" aria-hidden="true">
+    {{ icon }}
+  </span>
+  <span class="link__text">{{ label }}</span>
+</a>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     نمط 3 — نص + أيقونة (نهاية)  (label + trailing icon)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<a href="{{ href }}" class="link link--{{ variant }} {{ size }} {{ inline }}" {{ disabled }}>
+  <span class="link__text">{{ label }}</span>
+  <span class="link__icon" aria-hidden="true">
+    {{ icon }}
+  </span>
+</a>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     أمثلة حقيقية (قيم ثابتة للتوضيح)
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- primary / medium / default -->
+<a href="#" class="link link--primary">
+  <span class="link__text">رابط أساسي</span>
+</a>
+
+<!-- primary / medium / inline (دائماً مسطّر) -->
+<a href="#" class="link link--primary link--inline">
+  <span class="link__text">رابط مضمّن في النص</span>
+</a>
+
+<!-- neutral / small / with trailing icon -->
+<a href="#" class="link link--neutral link--sm">
+  <span class="link__text">تفاصيل أكثر</span>
+  <span class="link__icon" aria-hidden="true">
+    <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.167 10h11.666M10 4.167 15.833 10 10 15.833"
+            stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</a>
+
+<!-- on-color / medium / disabled (على خلفية داكنة) -->
+<a href="#" class="link link--on-color" aria-disabled="true">
+  <span class="link__text">رابط معطّل</span>
+</a>

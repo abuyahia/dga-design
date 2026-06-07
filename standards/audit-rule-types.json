@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "AUDIT-RULE-TYPES",
+  "description": "Shared registry of check types used by all component audit-rules.json files. Each rule in a component file must reference a type defined here. This ensures the audit engine has a consistent, extensible vocabulary across all components.",
+
+  "rule_types": [
+
+    {
+      "type": "aria_attribute_required",
+      "description": "Checks that a required ARIA attribute is present on a target element, with an acceptable value. Fails if the attribute is missing or empty.",
+      "expected_input": {
+        "selector": "CSS selector string targeting the element to check",
+        "attribute": "ARIA attribute name (e.g. aria-label, aria-pressed)",
+        "valid_values": "Array of acceptable string values, or null if any non-empty value is acceptable",
+        "condition": "Optional — check applies only when this secondary selector also matches the element"
+      },
+      "validation_level": "dom_inspection"
+    },
+
+    {
+      "type": "state_required",
+      "description": "Checks that a state-communicating attribute (aria-pressed, aria-expanded, aria-selected, aria-checked) is present on elements that implement a stateful interaction pattern. Value must be 'true' or 'false' — not undefined.",
+      "expected_input": {
+        "selector": "CSS selector for the interactive element",
+        "attribute": "State attribute name",
+        "trigger": "What makes this check apply (e.g. data-toggle attribute, class name, or explicit annotation)"
+      },
+      "validation_level": "dom_inspection"
+    },
+
+    {
+      "type": "focus_indicator_required",
+      "description": "Checks that a visible focus ring is present when the element receives keyboard focus. Fails if :focus-visible has outline:none without an equivalent replacement (border, box-shadow). This is a CSS-computed check, not just a source-file check.",
+      "expected_input": {
+        "selector": "CSS selector for the focusable element",
+        "forbidden_css": "CSS property-value pairs that suppress focus visibility",
+        "acceptable_alternatives": "List of CSS properties that constitute a valid replacement focus indicator"
+      },
+      "validation_level": "static_analysis"
+    },
+
+    {
+      "type": "disabled_behavior_required",
+      "description": "Checks that the correct disabled state implementation is used. Distinguishes between HTML disabled (removes from tab order) and aria-disabled (keeps in tab order). Fails on contradictory combinations such as aria-disabled='true' + tabindex='-1'.",
+      "expected_input": {
+        "selector": "CSS selector for the button element",
+        "allowed_patterns": "List of valid attribute combinations for the disabled state"
+      },
+      "validation_level": "dom_inspection"
+    },
+
+    {
+      "type": "semantic_element_required",
+      "description": "Checks that a specific CSS class is applied only to semantically appropriate HTML elements. Non-interactive elements (div, span) may only carry the class if they also have role and tabindex attributes that restore interactivity.",
+      "expected_input": {
+        "selector": "CSS class selector to audit",
+        "allowed_tags": "Array of allowed HTML tag names",
+        "fallback_requirements": "Attributes required when tag is not in allowed_tags (e.g. role=button, tabindex)"
+      },
+      "validation_level": "dom_inspection"
+    },
+
+    {
+      "type": "element_nesting_forbidden",
+      "description": "Checks that certain HTML elements do not appear as descendants of a target element. Used to enforce HTML content model rules (e.g. no interactive content inside button) and design system structural rules.",
+      "expected_input": {
+        "selector": "CSS selector for the parent element",
+        "forbidden_descendants": "Array of tag names or CSS selectors that must not appear within the parent"
+      },
+      "validation_level": "dom_inspection"
+    },
+
+    {
+      "type": "no_hardcoded_values",
+      "description": "Checks that CSS properties on a selector do not use hardcoded values. For color properties, values must reference a CSS custom property (var(--token-name)). For directional properties, physical values (padding-left, margin-right) must not be present at all when logical equivalents should be used.",
+      "expected_input": {
+        "selector": "CSS selector to audit",
+        "properties": "Array of CSS property names to check",
+        "allowed_literal_values": "Values exempt from the check (e.g. transparent, none, inherit, currentColor)",
+        "forbidden_properties": "Optional — property names that must not appear at all (for RTL checks)"
+      },
+      "validation_level": "static_analysis"
+    },
+
+    {
+      "type": "forbidden_css_properties",
+      "description": "Checks that specific CSS property names are absent from a target selector. Used to prohibit physical-direction properties (padding-left, margin-right, border-left) in favour of their logical equivalents (padding-inline-start, margin-inline-end, border-inline-start). Distinct from no_hardcoded_values: this type checks that a property name does not appear at all, regardless of its value.",
+      "expected_input": {
+        "selector": "CSS selector to audit",
+        "forbidden_properties": "Array of CSS property names that must not be present on the selector",
+        "logical_alternatives": "Optional — array of recommended logical-property replacements, for use in error messages and auto-fix tooling"
+      },
+      "validation_level": "static_analysis"
+    },
+
+    {
+      "type": "content_length_check",
+      "description": "Checks that the text content of a target element falls within defined minimum and maximum character bounds. Used to enforce label length rules that prevent text from overflowing fixed-height containers.",
+      "expected_input": {
+        "selector": "CSS selector for the text-bearing element",
+        "min_length": "Minimum character count (inclusive)",
+        "max_length": "Maximum character count (inclusive)"
+      },
+      "validation_level": "dom_inspection"
+    },
+
+    {
+      "type": "token_exists",
+      "description": "Checks that a named CSS custom property is defined in the token stylesheet. Used to verify that the token surface documented in the component contract is actually declared in token.css.",
+      "expected_input": {
+        "token_name": "Full CSS custom property name (e.g. --button-primary-bg-default)",
+        "source_file": "Path to the token file relative to design-system root"
+      },
+      "validation_level": "static_analysis"
+    },
+
+    {
+      "type": "token_used",
+      "description": "Checks that a specific CSS custom property is referenced (via var()) in the component's stylesheet. Confirms that the component is actually consuming a token from the token surface, not a hardcoded fallback.",
+      "expected_input": {
+        "token_name": "Full CSS custom property name",
+        "source_file": "Path to component CSS file"
+      },
+      "validation_level": "static_analysis"
+    },
+
+    {
+      "type": "sibling_count_limit",
+      "description": "Checks that no more than N elements matching a selector appear within the same ancestor scope. Used to enforce visual hierarchy rules such as 'at most one primary button per visual group'.",
+      "expected_input": {
+        "selector": "CSS selector for the elements to count",
+        "scope": "Ancestor selector that defines the boundary of the count",
+        "max_count": "Maximum allowed occurrences within the scope"
+      },
+      "validation_level": "dom_inspection"
+    },
+
+    {
+      "type": "keyboard_support_required",
+      "description": "Checks that an interactive element is operable via keyboard without a mouse. For native elements (button, a) this is implicit. For custom elements (div[role=button]), verifies tabindex and that a keydown/keyup handler is attached for Enter and Space.",
+      "expected_input": {
+        "selector": "CSS selector for the interactive element",
+        "required_keys": "Array of key names that must trigger the primary action",
+        "native_elements_exempt": "Boolean — if true, native button/a elements pass without JS check"
+      },
+      "validation_level": "dom_inspection"
+    }
+
+  ]
+}

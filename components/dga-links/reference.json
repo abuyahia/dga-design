@@ -1,0 +1,52 @@
+[
+  {
+    "component": "Link",
+    "cssClass": "link",
+    "element": "a",
+    "variants": ["primary", "neutral", "on-color"],
+    "sizes": ["medium", "small"],
+    "states": ["default", "hover", "focused", "pressed", "visited", "disabled"],
+    "modifiers": ["inline"],
+    "tokens": {
+      "gap-md": "var(--Link-link-md-gap, 8px)",
+      "gap-sm": "var(--Link-link-sm-gap, 4px)",
+      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+      "font-size-md": "var(--Size-Text-typo-size-text-md, 16px)",
+      "font-size-sm": "var(--Size-Text-typo-size-text-sm, 14px)",
+      "line-height-md": "var(--Line-Height-Text-line-heights-text-md, 24px)",
+      "line-height-sm": "var(--Line-Height-Text-line-heights-text-sm, 20px)",
+      "font-weight": "500"
+    },
+    "colorTokens": {
+      "primary": {
+        "default":  "var(--Link-link-primary, #1B8354)",
+        "hovered":  "var(--Link-link-primary-hovered, #54C08A)",
+        "focused":  "var(--Link-link-primary-focused, #1B8354)",
+        "pressed":  "var(--Link-link-primary-pressed, #88D8AD)",
+        "visited":  "var(--Link-link-primary-visited, #14573A)",
+        "disabled": "var(--Global-text-default-disabled, #9DA4AE)"
+      },
+      "neutral": {
+        "default":  "var(--Link-link-neutral, #384250)",
+        "hovered":  "var(--Link-link-neutral-hovered, #6C737F)",
+        "focused":  "var(--Link-link-neutral-focused, #384250)",
+        "pressed":  "var(--Link-link-neutral-pressed, #9DA4AE)",
+        "visited":  "var(--Link-link-primary-visited, #14573A)",
+        "disabled": "var(--Global-text-default-disabled, #9DA4AE)"
+      },
+      "on-color": {
+        "default":  "var(--Link-link-oncolor, #FFF)",
+        "hovered":  "var(--Link-link-oncolor-hovered, rgba(255, 255, 255, 0.80))",
+        "focused":  "var(--Link-link-oncolor-focused, #FFF)",
+        "pressed":  "var(--Link-link-oncolor-pressed, rgba(255, 255, 255, 0.60))",
+        "visited":  "var(--Link-link-oncolor-visited, rgba(255, 255, 255, 0.90))",
+        "disabled": "var(--Link-link-oncolor-disabled, rgba(255, 255, 255, 0.30))"
+      }
+    },
+    "focusBorder": {
+      "primary":  "2px solid var(--Border-border-black, #161616)",
+      "neutral":  "2px solid var(--Border-border-black, #161616)",
+      "on-color": "2px solid var(--Border-border-white, #FFF)"
+    }
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "cssProps": {
+      "display": "flex",
+      "width": "366px",
+      "flex-direction": "column",
+      "align-items": "flex-start",
+      "border-top": "1px solid var(--Border-border-neutral-primary, #D2D6DB)"
+    },
+    "type": "COMPONENT",
+    "name": "RTL=False, Size=Small, Icon alignment=Trailing, State=Hovered, Expanded=False, Flush=False",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "padding": "var(--Global-spacing-md, 8px) var(--Global-spacing-xl, 16px)",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-xl, 16px)",
+          "align-self": "stretch",
+          "itemSpacing-variable": "--spacing-globalspacing-xl",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:8534907d24428a594b11bf204c4a21d6eb2b6193/405:116",
+          "paddingLeft-variable": "--spacing-globalspacing-xl",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:8534907d24428a594b11bf204c4a21d6eb2b6193/405:116",
+          "paddingTop-variable": "--spacing-globalspacing-md",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:447ef74ce5792a8513c0d13dea24f16420b7f459/405:114",
+          "paddingRight-variable": "--spacing-globalspacing-xl",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:8534907d24428a594b11bf204c4a21d6eb2b6193/405:116",
+          "paddingBottom-variable": "--spacing-globalspacing-md",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:447ef74ce5792a8513c0d13dea24f16420b7f459/405:114"
+        },
+        "type": "FRAME",
+        "name": "Accordion header",
+        "children": [
+          {
+            "cssProps": {
+              "width": "366px",
+              "height": "40px",
+              "position": "absolute",
+              "background": "var(--Button-button-background-neutral-hovered, #F3F4F6)",
+              "mix-blend-mode": "multiply"
+            },
+            "type": "RECTANGLE",
+            "name": "Background"
+          },
+          {
+            "cssProps": {
+              "flex": "1 0 0",
+              "color": "var(--Text-text-default, #161616)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "Accordion Title",
+            "type": "TEXT",
+            "name": "Accordion Title"
+          },
+          {
+            "cssProps": {
+              "width": "16px",
+              "height": "16px"
+            },
+            "type": "INSTANCE",
+            "name": "arrow-down-01",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "9px",
+                  "height": "5px"
+                },
+                "type": "GROUP",
+                "name": "elements"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

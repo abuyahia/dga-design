@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Input — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css" />
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../text-input.css" />
+    <!-- 3. Page layout -->
+    <style>
+      *, *::after, *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: var(--gray-50);
+        font-family: var(--font-sans, "IBM Plex Sans Arabic", sans-serif);
+        color: var(--gray-900);
+        min-height: 100dvh;
+        padding: var(--space-48, 48px) var(--space-32, 32px);
+      }
+
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-48, 48px);
+      }
+
+      /* Header */
+      .page__header {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4, 4px);
+      }
+
+      .page__meta {
+        font-size: var(--fs-text-sm, 14px);
+        color: var(--gray-500, #6C737F);
+        line-height: var(--lh-text-sm, 20px);
+      }
+
+      .page__title {
+        font-size: var(--fs-display-xs, 24px);
+        font-weight: var(--font-weight-heading, 600);
+        line-height: var(--lh-display-xs, 32px);
+        color: var(--gray-900, #0D121C);
+      }
+
+      /* Variant sections */
+      .variant {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-16, 16px);
+      }
+
+      .variant__title {
+        font-size: var(--fs-text-sm, 14px);
+        font-weight: var(--font-weight-semibold, 600);
+        color: var(--gray-500, #6C737F);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: var(--lh-text-sm, 20px);
+      }
+
+      /* Showcase grid */
+      .showcase {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--gray-200, #E5E7EB);
+        border-radius: var(--radius-md, 8px);
+        overflow: hidden;
+        background: var(--white, #FFF);
+      }
+
+      .showcase__row {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-32, 32px);
+        padding: var(--space-20, 20px) var(--space-24, 24px);
+        border-bottom: 1px solid var(--gray-100, #F3F4F6);
+      }
+
+      .showcase__row:last-child {
+        border-bottom: none;
+      }
+
+      .showcase__label {
+        font-size: var(--fs-text-sm, 14px);
+        color: var(--gray-500, #6C737F);
+        line-height: var(--lh-text-sm, 20px);
+        min-width: 120px;
+        flex-shrink: 0;
+        padding-top: 2px;
+      }
+
+      .showcase__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-24, 24px);
+        flex: 1;
+        min-width: 0;
+        align-items: flex-start;
+      }
+
+      .showcase__item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: 240px;
+      }
+
+      .showcase__item-label {
+        font-size: 11px;
+        color: var(--gray-400, #9DA4AE);
+        letter-spacing: 0.04em;
+      }
+
+      /* RTL context */
+      .showcase--rtl {
+        background: var(--gray-50, #F9FAFB);
+      }
+
+      /* Comparison row — two side by side */
+      .showcase__row--grid {
+        flex-wrap: wrap;
+      }
+
+      /* Forced state helpers */
+      .state-hovered .text-input__field {
+        border-color: var(--text-input-border-hovered, #384250) !important;
+      }
+
+      .state-focused .text-input__field {
+        border-color: transparent !important;
+      }
+
+      .state-focused .text-input__field::after {
+        transform: scaleX(1) !important;
+      }
+
+      .state-focused .text-input__input {
+        color: var(--text-input-text-focused, #384250) !important;
+      }
+
+      .state-pressed .text-input__field {
+        background: var(--text-input-bg-pressed, #F3F4F6) !important;
+        border-color: var(--text-input-border-default, #9DA4AE) !important;
+      }
+
+      .state-pressed .text-input__field::after {
+        transform: scaleX(0.5) !important;
+        transform-origin: left !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+
+      <!-- ── Header ─────────────────────────────────────────────────── -->
+      <header class="page__header">
+        <p class="page__meta">components / text-input</p>
+        <h1 class="page__title">Text Input</h1>
+      </header>
+
+
+      <!-- ── Section: States (Large, Default style) ─────────────────── -->
+      <section class="variant">
+        <h2 class="variant__title">States — Large / Default style</h2>
+        <div class="showcase">
+
+          <div class="showcase__row">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input">
+                  <label class="text-input__label" for="sc-lg-default">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-lg-default" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Unfilled</span>
+              </div>
+              <div class="showcase__item">
+                <div class="text-input">
+                  <label class="text-input__label" for="sc-lg-default-filled">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-lg-default-filled" value="Entered text" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Filled</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Hovered</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input state-hovered">
+                  <label class="text-input__label" for="sc-lg-hov">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-lg-hov" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Simulated hover</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Focused</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input state-focused">
+                  <label class="text-input__label" for="sc-lg-foc">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-lg-foc" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Simulated focus (click to trigger native)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Pressed</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input state-pressed">
+                  <label class="text-input__label" for="sc-lg-press">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-lg-press" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Simulated press</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--disabled">
+                  <label class="text-input__label" for="sc-lg-dis">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-lg-dis" placeholder="Placeholder text" disabled />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Unfilled</span>
+              </div>
+              <div class="showcase__item">
+                <div class="text-input text-input--disabled">
+                  <label class="text-input__label" for="sc-lg-dis-f">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-lg-dis-f" value="Entered text" disabled />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Filled</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Read-only</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--readonly">
+                  <label class="text-input__label" for="sc-lg-ro">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-lg-ro" value="Read-only value" readonly />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">With value</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ── Section: Error States ───────────────────────────────────── -->
+      <section class="variant">
+        <h2 class="variant__title">Error States</h2>
+        <div class="showcase">
+
+          <div class="showcase__row">
+            <span class="showcase__label">Error / Default</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--error">
+                  <label class="text-input__label" for="sc-err-def">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-err-def" placeholder="Placeholder text" aria-invalid="true" aria-describedby="sc-err-def-msg" />
+                    </div>
+                  </div>
+                </div>
+                <span id="sc-err-def-msg" class="showcase__item-label" style="color: var(--text-input-border-error, #B42318);">Error message text</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Error / Focused</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--error state-focused" style="--text-input-underline-default: var(--text-input-underline-error, #B42318);">
+                  <label class="text-input__label" for="sc-err-foc">Label</label>
+                  <div class="text-input__field" style="--after-bg: var(--text-input-underline-error, #B42318);">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-err-foc" placeholder="Placeholder text" aria-invalid="true" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Error underline color (focus native to see)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Error / Disabled</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--error text-input--disabled">
+                  <label class="text-input__label" for="sc-err-dis">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-err-dis" placeholder="Placeholder text" disabled />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Disabled takes visual priority</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ── Section: Sizes ──────────────────────────────────────────── -->
+      <section class="variant">
+        <h2 class="variant__title">Sizes</h2>
+        <div class="showcase">
+
+          <div class="showcase__row">
+            <span class="showcase__label">Large (40px)</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input">
+                  <label class="text-input__label" for="sc-sz-lg">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-sz-lg" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Medium (32px)</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--md">
+                  <label class="text-input__label" for="sc-sz-md">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-sz-md" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ── Section: Background Styles ─────────────────────────────── -->
+      <section class="variant">
+        <h2 class="variant__title">Background Styles</h2>
+        <div class="showcase">
+
+          <div class="showcase__row">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input">
+                  <label class="text-input__label" for="sc-st-def">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-st-def" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">White bg, grey border</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Filled Darker</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--filled-darker">
+                  <label class="text-input__label" for="sc-st-dk">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-st-dk" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">#F3F4F6 bg, no border</span>
+              </div>
+              <div class="showcase__item">
+                <div class="text-input text-input--filled-darker text-input--error">
+                  <label class="text-input__label" for="sc-st-dk-err">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-st-dk-err" placeholder="Placeholder text" aria-invalid="true" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">+ Error border override</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Filled Lighter</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--filled-lighter">
+                  <label class="text-input__label" for="sc-st-lt">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-st-lt" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">#FCFCFD bg, no border</span>
+              </div>
+              <div class="showcase__item">
+                <div class="text-input text-input--filled-lighter text-input--error">
+                  <label class="text-input__label" for="sc-st-lt-err">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-st-lt-err" placeholder="Placeholder text" aria-invalid="true" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">+ Error border override</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ── Section: Required Field ─────────────────────────────────── -->
+      <section class="variant">
+        <h2 class="variant__title">Required Field</h2>
+        <div class="showcase">
+
+          <div class="showcase__row">
+            <span class="showcase__label">With asterisk</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input">
+                  <label class="text-input__label" for="sc-req">
+                    Label <span aria-hidden="true" style="color: var(--text-input-border-error, #B42318);">*</span>
+                  </label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-req" placeholder="Required field" required aria-required="true" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">aria-required="true", asterisk aria-hidden</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ── Section: RTL ────────────────────────────────────────────── -->
+      <section class="variant">
+        <h2 class="variant__title">RTL</h2>
+        <div class="showcase showcase--rtl">
+
+          <div class="showcase__row" dir="rtl">
+            <span class="showcase__label" style="text-align: right;">الافتراضي</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input" dir="rtl">
+                  <label class="text-input__label" for="sc-rtl-def">التسمية</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-rtl-def" placeholder="نص توضيحي" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Default (RTL)</span>
+              </div>
+              <div class="showcase__item">
+                <div class="text-input text-input--error" dir="rtl">
+                  <label class="text-input__label" for="sc-rtl-err">التسمية</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-rtl-err" placeholder="نص توضيحي" aria-invalid="true" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Error (RTL)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row" dir="rtl">
+            <span class="showcase__label" style="text-align: right;">متوسط</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--md" dir="rtl">
+                  <label class="text-input__label" for="sc-rtl-md">التسمية</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-rtl-md" placeholder="نص توضيحي" />
+                    </div>
+                  </div>
+                </div>
+                <span class="showcase__item-label">Medium (RTL)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ── Section: Medium / All States ──────────────────────────────── -->
+      <section class="variant">
+        <h2 class="variant__title">Medium — All States</h2>
+        <div class="showcase">
+
+          <div class="showcase__row">
+            <span class="showcase__label">Default</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--md">
+                  <label class="text-input__label" for="sc-md-def">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-md-def" placeholder="Placeholder text" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Error</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--md text-input--error">
+                  <label class="text-input__label" for="sc-md-err">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-md-err" placeholder="Placeholder text" aria-invalid="true" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Disabled</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--md text-input--disabled">
+                  <label class="text-input__label" for="sc-md-dis">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-md-dis" placeholder="Placeholder text" disabled />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__row">
+            <span class="showcase__label">Read-only</span>
+            <div class="showcase__items">
+              <div class="showcase__item">
+                <div class="text-input text-input--md text-input--readonly">
+                  <label class="text-input__label" for="sc-md-reg-default">Label</label>
+                  <div class="text-input__field">
+                    <div class="text-input__inner">
+                      <input class="text-input__input" type="text" id="sc-md-reg-default" value="Read-only value" readonly />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+    </main>
+
+    <!-- Focus state interaction note -->
+    <script>
+      // Highlight focused inputs for visual QA
+      document.querySelectorAll('.text-input__input').forEach(input => {
+        input.addEventListener('focus', () => {
+          input.closest('.text-input__field').setAttribute('data-focused', 'true');
+        });
+        input.addEventListener('blur', () => {
+          input.closest('.text-input__field').removeAttribute('data-focused');
+        });
+      });
+    </script>
+  </body>
+</html>

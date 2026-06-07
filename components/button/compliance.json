@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "button",
+  "generated": "2026-06-05",
+  "overall_status": "pending_audit",
+  "_note": "Status 'mapped' means the component has been mapped to this criterion. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "official",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.1.1",
+          "title": "Non-text Content",
+          "status": "mapped",
+          "evidence": "Icon-only buttons carry aria-label on the root element. Buttons with visible text satisfy this unconditionally. The SVG inside .btn__icon carries aria-hidden='true' to suppress redundant announcements.",
+          "audit_rule_ids": ["BTN-A11Y-001", "BTN-A11Y-002"]
+        },
+        {
+          "id": "1.4.3",
+          "title": "Contrast (Minimum)",
+          "status": "mapped",
+          "evidence": "Primary variant: #FFF on #1B8354 = ~5.27:1 (threshold 4.5:1). Disabled state: #9DA4AE on #E5E7EB = ~2.1:1 — exempt per WCAG 1.4.3 exception for inactive UI components. Other variants require per-deployment verification against actual background.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "1.4.11",
+          "title": "Non-text Contrast",
+          "status": "mapped",
+          "evidence": "Solid-background variants (primary, neutral, secondary-solid) pass via sufficient background-to-page contrast. secondary-outline border (#D2D6DB on #FFF) = ~1.6:1 — below 3:1 threshold. See variant_compliance_notes for remediation path.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "Native <button> element is keyboard operable by default (Enter and Space). When rendered as <a role='button'>, Space key handling must be added via JavaScript. BTN-STRUCT-001 enforces native element usage to minimise this risk.",
+          "audit_rule_ids": ["BTN-STRUCT-001"]
+        },
+        {
+          "id": "2.4.7",
+          "title": "Focus Visible",
+          "status": "mapped",
+          "evidence": "Two-layer focus ring: outer border on root element + inner border via ::after pseudo-element. Focus styles are defined in button.css. Suppression via outline:none is caught by BTN-A11Y-004.",
+          "audit_rule_ids": ["BTN-A11Y-004"]
+        },
+        {
+          "id": "4.1.2",
+          "title": "Name, Role, Value",
+          "status": "mapped",
+          "evidence": "Role: implicit from <button> element. Name: enforced by BTN-A11Y-001. Toggle state: enforced by BTN-A11Y-003 (aria-pressed). Expandable trigger: requires aria-expanded + aria-controls, not yet audited automatically.",
+          "audit_rule_ids": ["BTN-A11Y-001", "BTN-A11Y-003"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-DS",
+      "name": "Platform Design System Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "These are internal platform rules. IDs are stable across components. See standards/platform-code.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-BTN-001",
+          "title": "Component must use design tokens for all visual values",
+          "status": "mapped",
+          "evidence": "All color, spacing, radius, and font values in button.css reference CSS custom properties from token.css. Hardcoded value detection is enforced by BTN-TOKEN-001 (error severity).",
+          "audit_rule_ids": ["BTN-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-BTN-002",
+          "title": "RTL layout support is mandatory",
+          "status": "mapped",
+          "evidence": "button.css uses padding-inline, gap, and [dir='rtl'] selectors. Physical properties (padding-left/right) are forbidden and caught by BTN-RTL-001.",
+          "audit_rule_ids": ["BTN-RTL-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-BTN-003",
+          "title": "One primary action per visual group",
+          "status": "mapped",
+          "evidence": "Hierarchy rule is documented in button.contract.md §5. BTN-USAGE-001 warns when multiple .btn--primary elements appear in the same ancestor scope.",
+          "audit_rule_ids": ["BTN-USAGE-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-BTN-004",
+          "title": "Semantic HTML element required",
+          "status": "mapped",
+          "evidence": "button.contract.md §4 specifies <button> and <a> as the only valid root elements. BTN-STRUCT-001 enforces this at the DOM level.",
+          "audit_rule_ids": ["BTN-STRUCT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-BTN-005",
+          "title": "Minimum touch target 24×24px",
+          "status": "mapped",
+          "evidence": "Small size (--sm) height token is --button-sm-height (24px). Icon-only small uses the same token for both width and height. No automated audit rule yet — pending touch target checker implementation.",
+          "audit_rule_ids": []
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y",
+      "name": "Platform Accessibility Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Accessibility-specific internal standards. See standards/accessibility.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-A11Y-001",
+          "title": "Arabic language font support required",
+          "status": "mapped",
+          "evidence": "IBM Plex Sans Arabic is applied via --button-label-font-family token. All text slots inherit this token. No override to a Latin-only font is present in button.css.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "PLATFORM-CODE-A11Y-002",
+          "title": "Label language must match document language context",
+          "status": "mapped",
+          "evidence": "Cannot be verified automatically. Marked for manual review in audit report. Documented in button.contract.md §7 (Content Rules).",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        }
+      ]
+    }
+
+  ],
+
+  "variant_compliance_notes": {
+    "secondary-outline": "WCAG 1.4.11: border #D2D6DB on white = ~1.6:1, below the 3:1 threshold. Remediation: increase border token to --gray-400 (#9DA4AE) or darker. Do not use on white backgrounds until resolved.",
+    "primary-on-color": "WCAG 1.4.11: white button (#FFF) on colored background must achieve 3:1 contrast against the background. Verify contrast ratio per deployment context.",
+    "transparent": "WCAG 1.4.11 does not apply (no background or border). WCAG 1.4.3 still applies: text color must contrast at 4.5:1 against actual background behind the button.",
+    "disabled (all variants)": "WCAG 1.4.3 exempts inactive UI components. Low contrast of disabled state is intentional and compliant per the WCAG exemption."
+  }
+}

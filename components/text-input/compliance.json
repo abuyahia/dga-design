@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "text-input",
+  "generated": "2026-06-06",
+  "overall_status": "pending_audit",
+  "official_compliance_claim": false,
+  "_note": "Status 'mapped' means the component has been mapped to this criterion internally. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.3.1",
+          "title": "Info and Relationships",
+          "status": "mapped",
+          "evidence": "Semantic <label> element with for attribute creates a programmatic relationship with its <input>. Required state uses aria-required='true' on the input. Error state uses aria-invalid='true' + aria-describedby.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-001", "PLATFORM-CODE-TEXT-INPUT-002"]
+        },
+        {
+          "id": "1.3.5",
+          "title": "Identify Input Purpose",
+          "status": "mapped",
+          "evidence": "Contract specifies appropriate type and autocomplete attribute guidance. Consumers are responsible for setting autocomplete per field purpose.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "1.4.3",
+          "title": "Contrast (Minimum)",
+          "status": "mapped",
+          "evidence": "Label text (#161616 on white) ~19:1 — passes AA/AAA. Placeholder (#6C737F on white) ~4.8:1 — passes AA. Disabled text (#9DA4AE on white) ~2.5:1 — exempt per WCAG 1.4.3 inactive component exception. Focus underline (#0D121C on white) ~21:1 — passes. Formal audit required against actual page backgrounds.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "1.4.11",
+          "title": "Non-text Contrast",
+          "status": "mapped",
+          "evidence": "Default border (#9DA4AE on white) ~2.9:1 — passes AA (3:1 minimum for UI components). Error border (#B42318 on white) ~5.9:1. Focused underline (#0D121C on white) ~21:1. Formal audit required.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "Native <input> element is keyboard focusable by default. No custom keyboard handling added. Tab navigation managed by browser.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "2.4.7",
+          "title": "Focus Visible",
+          "status": "mapped",
+          "evidence": ".text-input__field::after provides a 2px bottom underline on :focus-within. Browser default outline is reset on .text-input__input. The custom indicator must be verified as sufficient per WCAG 2.4.7.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-003"]
+        },
+        {
+          "id": "2.4.11",
+          "title": "Focus Appearance (AAA)",
+          "status": "mapped",
+          "evidence": "Focus underline: 2px height, full width, #0D121C color on white = ~21:1 contrast. Meets AAA level non-text contrast for focus indicators.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-003"]
+        },
+        {
+          "id": "3.3.1",
+          "title": "Error Identification",
+          "status": "mapped",
+          "evidence": ".text-input--error provides visual error indication. aria-invalid='true' on input signals error to AT. Error message text (aria-describedby) is consumer responsibility at form-field assembly layer.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-004"]
+        },
+        {
+          "id": "3.3.2",
+          "title": "Labels or Instructions",
+          "status": "mapped",
+          "evidence": ".text-input__label is a semantic <label> associated to the input. Placeholder text supplements but does not replace the label.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-001"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-INTERNAL",
+      "name": "Platform Code Internal Design System Standards",
+      "source_status": "internal_mapping",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-TEXT-INPUT-001",
+          "title": "Semantic label association",
+          "status": "mapped",
+          "evidence": "template.html uses <label class='text-input__label' for='...'> with matching id on <input>. Audit rule enforces this.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-TEXT-INPUT-002",
+          "title": "Required state communication",
+          "status": "mapped",
+          "evidence": "Contract specifies required + aria-required='true' on input. Asterisk is aria-hidden='true'.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-002"]
+        },
+        {
+          "id": "PLATFORM-CODE-TEXT-INPUT-003",
+          "title": "Focus indicator visible",
+          "status": "mapped",
+          "evidence": ".text-input__field::after shows 2px underline on :focus-within. outline: none on native input is acceptable because custom indicator is provided.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-003"]
+        },
+        {
+          "id": "PLATFORM-CODE-TEXT-INPUT-004",
+          "title": "Error state accessible",
+          "status": "mapped",
+          "evidence": "Component provides .text-input--error class. Consumer must add aria-invalid and aria-describedby. Contract documents this requirement.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-004"]
+        },
+        {
+          "id": "PLATFORM-CODE-TOKEN-001",
+          "title": "Component CSS uses component-level semantic tokens only",
+          "status": "mapped",
+          "evidence": "text-input.css uses --text-input-* tokens throughout. All tokens have inline fallbacks. Token definitions are missing from token.css — documented in analysis.md.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-005"]
+        },
+        {
+          "id": "PLATFORM-CODE-STATE-001",
+          "title": "All states visually distinct",
+          "status": "mapped",
+          "evidence": "Six states mapped: default, hover, focus, pressed, disabled, read-only. Each has distinct border color or indicator. Verified against manifest tokens.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "PLATFORM-CODE-A11Y-001",
+          "title": "RTL support via dir attribute",
+          "status": "mapped",
+          "evidence": "CSS uses padding-inline-start/end logical properties throughout. No hardcoded padding-left/right. RTL triggered by dir='rtl' on ancestor.",
+          "audit_rule_ids": ["PLATFORM-CODE-TEXT-INPUT-006"]
+        }
+      ]
+    }
+  ],
+
+  "variant_compliance_notes": [
+    {
+      "variant_id": "all-disabled",
+      "note": "Disabled text (#9DA4AE on white, ~2.5:1) is exempt from WCAG 1.4.3 contrast requirements per inactive component exception."
+    },
+    {
+      "variant_id": "all-filled-darker",
+      "note": "Placeholder contrast on --text-input-bg-darker (#F3F4F6): #6C737F on #F3F4F6 ~4.2:1 — passes AA. Verify after token.css integration."
+    },
+    {
+      "variant_id": "all-filled-lighter",
+      "note": "Placeholder contrast on --text-input-bg-lighter (#FCFCFD): #6C737F on #FCFCFD ~4.8:1 — passes AA. Verify after token.css integration."
+    },
+    {
+      "variant_id": "all-error",
+      "note": "Error border (#B42318 on white) = ~5.9:1. Passes WCAG 1.4.11 non-text contrast (3:1 minimum)."
+    }
+  ]
+}

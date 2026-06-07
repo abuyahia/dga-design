@@ -1,0 +1,657 @@
+[
+  {
+    "cssProps": {},
+    "type": "COMPONENT_SET",
+    "name": "Label",
+    "children": [
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Type=Regular (Default), Size=Medium, Disabled=False",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Form-field-border-error, #B42318)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Form-field-text-label, #161616)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "Label",
+            "type": "TEXT",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Type=Regular (Default), Size=Medium, Disabled=False",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Form-field-text-label, #161616)",
+              "text-align": "right",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "عنوان",
+            "type": "TEXT",
+            "name": "Text"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Form-field-border-error, #B42318)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Type=Regular (Default), Size=Medium, Disabled=True",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "Label",
+            "type": "TEXT",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Type=Regular (Default), Size=Medium, Disabled=True",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "text-align": "right",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "عنوان",
+            "type": "TEXT",
+            "name": "Text"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Type=Semibold, Size=Medium, Disabled=False",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Form-field-border-error, #B42318)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Form-field-text-label, #161616)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "Label",
+            "type": "TEXT",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Type=Semibold, Size=Medium, Disabled=False",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Form-field-text-label, #161616)",
+              "text-align": "right",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "عنوان",
+            "type": "TEXT",
+            "name": "Text"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Form-field-border-error, #B42318)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Type=Semibold, Size=Medium, Disabled=True",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "Label",
+            "type": "TEXT",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Type=Semibold, Size=Medium, Disabled=True",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "text-align": "right",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "عنوان",
+            "type": "TEXT",
+            "name": "Text"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Type=Regular (Default), Size=Large, Disabled=False",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Form-field-border-error, #B42318)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Form-field-text-label, #161616)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "Label",
+            "type": "TEXT",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Type=Regular (Default), Size=Large, Disabled=False",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Form-field-text-label, #161616)",
+              "text-align": "right",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "عنوان",
+            "type": "TEXT",
+            "name": "Text"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Form-field-border-error, #B42318)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Type=Regular (Default), Size=Large, Disabled=True",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "Label",
+            "type": "TEXT",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Type=Regular (Default), Size=Large, Disabled=True",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "text-align": "right",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "عنوان",
+            "type": "TEXT",
+            "name": "Text"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "400",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Type=Semibold, Size=Large, Disabled=False",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Form-field-border-error, #B42318)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Form-field-text-label, #161616)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "Label",
+            "type": "TEXT",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Type=Semibold, Size=Large, Disabled=False",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Form-field-text-label, #161616)",
+              "text-align": "right",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "عنوان",
+            "type": "TEXT",
+            "name": "Text"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Form-field-border-error, #B42318)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Type=Semibold, Size=Large, Disabled=True",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "Label",
+            "type": "TEXT",
+            "name": "Text"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-end",
+          "gap": "var(--Form-label-gap, 4px)",
+          "itemSpacing-variable": "--spacing-formlabel-gap",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:3c1bc39b8359fbee3efa674ecbc7ed3a92efa862/405:132"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Type=Semibold, Size=Large, Disabled=True",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "text-align": "right",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "عنوان",
+            "type": "TEXT",
+            "name": "Text"
+          },
+          {
+            "cssProps": {
+              "color": "var(--Global-input-text-disabled, #9DA4AE)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "600",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "*",
+            "type": "TEXT",
+            "name": "Required asterisk"
+          }
+        ]
+      }
+    ]
+  }
+]

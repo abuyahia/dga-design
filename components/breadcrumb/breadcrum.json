@@ -1,0 +1,2890 @@
+[
+  {
+    "cssProps": {},
+    "type": "COMPONENT_SET",
+    "name": "Breadcrumb",
+    "children": [
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Levels=2",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Global-spacing-xs, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-globalspacing-xs",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:7512bbb4b2237921fd8ebbcddc583b2816855a60/405:112"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Levels=3",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Levels=4",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Levels=5",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, Levels=>5",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "...",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-right": "var(--Link-link-sm-gap, 4px)",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingRight-variable": "--spacing-linklink-sm-gap",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-right-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "9.062px",
+                      "height": "5.112px",
+                      "transform": "rotate(-90.716deg)"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Link",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "justify-content": "flex-end",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Levels=2",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "justify-content": "flex-end",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Levels=3",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "justify-content": "flex-end",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Levels=4",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "justify-content": "flex-end",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Levels=5",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "justify-content": "flex-end",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, Levels=>5",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "...",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              },
+              {
+                "cssProps": {
+                  "width": "16px",
+                  "height": "16px"
+                },
+                "type": "INSTANCE",
+                "name": "arrow-left-01",
+                "children": [
+                  {
+                    "cssProps": {
+                      "width": "5px",
+                      "height": "9px"
+                    },
+                    "type": "GROUP",
+                    "name": "elements"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "padding-left": "var(--Link-link-sm-gap, 4px)",
+              "justify-content": "flex-end",
+              "align-items": "center",
+              "gap": "var(--Link-link-sm-gap, 4px)",
+              "itemSpacing-variable": "--spacing-linklink-sm-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+              "paddingLeft-variable": "--spacing-linklink-sm-gap",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9"
+            },
+            "type": "INSTANCE",
+            "name": "_Breadcrumb Item",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "padding": "var(--Global-spacing-none, 0)",
+                  "justify-content": "flex-end",
+                  "align-items": "center",
+                  "gap": "var(--Link-link-sm-gap, 4px)",
+                  "itemSpacing-variable": "--spacing-linklink-sm-gap",
+                  "itemSpacing-collection": "Spacing",
+                  "itemSpacing-variable-id": "VariableID:50f2f997d66be0664d0251c2366fca0e24c5601e/437:9",
+                  "paddingLeft-variable": "--spacing-globalspacing-none",
+                  "paddingLeft-collection": "Spacing",
+                  "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingTop-variable": "--spacing-globalspacing-none",
+                  "paddingTop-collection": "Spacing",
+                  "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingRight-variable": "--spacing-globalspacing-none",
+                  "paddingRight-collection": "Spacing",
+                  "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+                  "paddingBottom-variable": "--spacing-globalspacing-none",
+                  "paddingBottom-collection": "Spacing",
+                  "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+                },
+                "type": "INSTANCE",
+                "name": "Link",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Link-link-neutral, #384250)",
+                      "text-align": "right",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "رابط",
+                    "type": "TEXT",
+                    "name": "Link Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

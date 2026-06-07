@@ -1,0 +1,454 @@
+/* ============================================================
+   checkbox-2.css  v2
+   Component: Checkbox (checkbox-2)
+   Source:    components/checkbox-2/manifest.json
+
+   Token policy:
+     Component CSS speaks --checkbox-* semantic tokens only.
+     The bridge layer below maps --checkbox-* to token.css primitives.
+     Never reference --gray-*, --sa-*, or raw hex in component selectors.
+
+   Pseudo-element architecture (updated from v1):
+     .checkbox::before       — Interaction Circle (ripple, z-index: 0)
+     .checkbox__input        — Native control (z-index: 3, opacity: 0)
+     .checkbox__box          — Visual box (z-index: 1)
+     .checkbox__box::after   — Focus Ring (z-index: 2)
+   ============================================================ */
+
+
+/* ============================================================
+   TOKEN BRIDGE LAYER
+   Maps --checkbox-* semantic tokens to token.css primitives.
+   TODO: Move all --checkbox-* definitions into token.css and
+         remove this block from the component CSS.
+   ============================================================ */
+
+.checkbox {
+  /* Border */
+  --checkbox-border-default:       var(--gray-500);
+
+  /* Primary (green) checked / hovered / pressed backgrounds */
+  --checkbox-bg-primary-checked:   var(--sa-600);
+  --checkbox-bg-primary-hovered:   var(--sa-800);
+  --checkbox-bg-primary-pressed:   var(--sa-900);
+
+  /* Neutral (dark slate) checked / hovered / pressed backgrounds */
+  --checkbox-bg-neutral-checked:   var(--gray-950);
+  --checkbox-bg-neutral-hovered:   var(--gray-600);
+  --checkbox-bg-neutral-pressed:   var(--gray-500);
+
+  /* Unchecked pressed background */
+  --checkbox-bg-unchecked-pressed: var(--gray-300);
+
+  /* Ripple */
+  --checkbox-ripple-bg:            var(--gray-100);
+
+  /* Disabled / read-only */
+  --checkbox-border-disabled:      var(--gray-400);
+  --checkbox-bg-disabled:          var(--gray-200);
+
+  /* Focus ring
+     TODO: --checkbox-focus-ring-color has no primitive alias in token.css.
+     #161616 appears in --button-neutral-on-color-text and --accordion-normal-focus-ring.
+     Proposed global token: add --ink-black: #161616 to token.css. */
+  --checkbox-focus-ring-color:     #161616;
+
+  /* Radii */
+  --checkbox-radius:               var(--radius-xs);
+  --checkbox-ripple-radius:        var(--radius-full);
+  --checkbox-focus-ring-radius:    var(--radius-xs);
+
+  /* Mark icon colors */
+  --checkbox-mark-color:           var(--white);
+  --checkbox-mark-color-disabled:  var(--gray-400);
+  --checkbox-mark-color-readonly:  var(--gray-400);
+
+  /* Transitions */
+  --checkbox-transition-duration:  var(--transition-fast);
+  --checkbox-transition-easing:    var(--ease-in-out);
+
+  /* Size default (Medium — overridden by size modifiers) */
+  --checkbox-size:                 24px;
+  --checkbox-ripple-size:          40px;
+}
+
+
+/* ============================================================
+   SIZE MODIFIERS
+   ============================================================ */
+
+.checkbox--xs {
+  --checkbox-size:       16px;
+  --checkbox-ripple-size: 32px;
+}
+
+.checkbox--sm {
+  --checkbox-size:       20px;
+  --checkbox-ripple-size: 36px;
+}
+
+.checkbox--md {
+  --checkbox-size:       24px;
+  --checkbox-ripple-size: 40px;
+}
+
+
+/* ============================================================
+   ROOT ELEMENT
+   position: relative creates the stacking context for ::before.
+   ============================================================ */
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  flex-shrink: 0;
+}
+
+
+/* ============================================================
+   INTERACTION CIRCLE (ripple) — .checkbox::before   z-index: 0
+   Attached to root (not to box) per Interaction Layer rule.
+   Overflows the layout box by design — parent must allow
+   overflow: visible (default).
+   ============================================================ */
+
+.checkbox::before {
+  content: '';
+  position: absolute;
+  width: var(--checkbox-ripple-size);
+  height: var(--checkbox-ripple-size);
+  border-radius: var(--checkbox-ripple-radius);
+  background: var(--checkbox-ripple-bg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--checkbox-transition-duration) var(--checkbox-transition-easing);
+  z-index: 0;
+}
+
+
+/* ============================================================
+   NATIVE INPUT — z-index: 3 (above box, receives pointer events)
+   Visually hidden via opacity; remains in accessibility tree.
+   ============================================================ */
+
+.checkbox__input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  cursor: inherit;
+  z-index: 3;
+}
+
+
+/* ============================================================
+   VISUAL BOX — z-index: 1 (above ripple)
+   ============================================================ */
+
+.checkbox__box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  flex-shrink: 0;
+  border-radius: var(--checkbox-radius);
+  border: 1px solid var(--checkbox-border-default);
+  background: transparent;
+  box-sizing: border-box;
+  z-index: 1;
+  transition:
+    background-color var(--checkbox-transition-duration) var(--checkbox-transition-easing),
+    border-color     var(--checkbox-transition-duration) var(--checkbox-transition-easing);
+}
+
+
+/* ============================================================
+   FOCUS RING — .checkbox__box::after   z-index: 2
+   Visible on keyboard :focus-visible only.
+   mix-blend-mode: multiply matches Figma design intent.
+   Focus ring size: box + 8px — matches Figma for xs (24px)
+   and md (32px); 1.33px deviation for sm (28px vs 26.67px).
+   ============================================================ */
+
+.checkbox__box::after {
+  content: '';
+  position: absolute;
+  width: calc(var(--checkbox-size) + 8px);
+  height: calc(var(--checkbox-size) + 8px);
+  border-radius: var(--checkbox-focus-ring-radius);
+  border: 2px solid var(--checkbox-focus-ring-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 2;
+}
+
+
+/* ============================================================
+   MARK ICONS
+   Hidden by default; shown by state selectors below.
+   SVG uses currentColor — mark color controlled via `color:`.
+   ============================================================ */
+
+.checkbox__checkmark,
+.checkbox__indeterminate {
+  display: none;
+  width: 100%;
+  height: 100%;
+  color: var(--checkbox-mark-color);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ============================================================
+   STATE: DEFAULT — CHECKED (Primary / default style)
+   ============================================================ */
+
+.checkbox:not(.checkbox--neutral) .checkbox__input:checked:not(:indeterminate) ~ .checkbox__box {
+  background-color: var(--checkbox-bg-primary-checked);
+  border-color: var(--checkbox-bg-primary-checked);
+}
+
+.checkbox:not(.checkbox--neutral) .checkbox__input:checked:not(:indeterminate) ~ .checkbox__box .checkbox__checkmark {
+  display: block;
+}
+
+
+/* ============================================================
+   STATE: DEFAULT — INDETERMINATE (Primary / default style)
+   ============================================================ */
+
+.checkbox:not(.checkbox--neutral) .checkbox__input:indeterminate ~ .checkbox__box {
+  background-color: var(--checkbox-bg-primary-checked);
+  border-color: var(--checkbox-bg-primary-checked);
+}
+
+.checkbox:not(.checkbox--neutral) .checkbox__input:indeterminate ~ .checkbox__box .checkbox__indeterminate {
+  display: block;
+}
+
+
+/* ============================================================
+   STATE: DEFAULT — CHECKED (Neutral style)
+   ============================================================ */
+
+.checkbox--neutral .checkbox__input:checked:not(:indeterminate) ~ .checkbox__box {
+  background-color: var(--checkbox-bg-neutral-checked);
+  border-color: var(--checkbox-bg-neutral-checked);
+}
+
+.checkbox--neutral .checkbox__input:checked:not(:indeterminate) ~ .checkbox__box .checkbox__checkmark {
+  display: block;
+}
+
+
+/* ============================================================
+   STATE: DEFAULT — INDETERMINATE (Neutral style)
+   ============================================================ */
+
+.checkbox--neutral .checkbox__input:indeterminate ~ .checkbox__box {
+  background-color: var(--checkbox-bg-neutral-checked);
+  border-color: var(--checkbox-bg-neutral-checked);
+}
+
+.checkbox--neutral .checkbox__input:indeterminate ~ .checkbox__box .checkbox__indeterminate {
+  display: block;
+}
+
+
+/* ============================================================
+   STATE: HOVERED
+   Ripple appears. Checked/indeterminate box darkens.
+   Unchecked box: no background change on hover.
+   ============================================================ */
+
+.checkbox:not(.checkbox--disabled):not(.checkbox--readonly):hover::before {
+  opacity: 1;
+}
+
+/* Primary: darken checked + border on hover */
+.checkbox:not(.checkbox--neutral):not(.checkbox--disabled):not(.checkbox--readonly):hover
+  .checkbox__input:checked:not(:indeterminate) ~ .checkbox__box {
+  background-color: var(--checkbox-bg-primary-hovered);
+  border-color: var(--checkbox-bg-primary-hovered);
+}
+
+/* Primary: darken indeterminate + border on hover */
+.checkbox:not(.checkbox--neutral):not(.checkbox--disabled):not(.checkbox--readonly):hover
+  .checkbox__input:indeterminate ~ .checkbox__box {
+  background-color: var(--checkbox-bg-primary-hovered);
+  border-color: var(--checkbox-bg-primary-hovered);
+}
+
+/* Neutral: darken checked + border on hover */
+.checkbox--neutral:not(.checkbox--disabled):not(.checkbox--readonly):hover
+  .checkbox__input:checked:not(:indeterminate) ~ .checkbox__box {
+  background-color: var(--checkbox-bg-neutral-hovered);
+  border-color: var(--checkbox-bg-neutral-hovered);
+}
+
+/* Neutral: darken indeterminate + border on hover */
+.checkbox--neutral:not(.checkbox--disabled):not(.checkbox--readonly):hover
+  .checkbox__input:indeterminate ~ .checkbox__box {
+  background-color: var(--checkbox-bg-neutral-hovered);
+  border-color: var(--checkbox-bg-neutral-hovered);
+}
+
+
+/* ============================================================
+   STATE: PRESSED / ACTIVE
+   Ripple stays visible. Unchecked gets pressed background.
+   Checked/indeterminate boxes darken further.
+   ============================================================ */
+
+.checkbox:not(.checkbox--disabled):not(.checkbox--readonly):active::before {
+  opacity: 1;
+}
+
+/* Unchecked pressed */
+.checkbox:not(.checkbox--disabled):not(.checkbox--readonly):active
+  .checkbox__input:not(:checked):not(:indeterminate) ~ .checkbox__box {
+  background-color: var(--checkbox-bg-unchecked-pressed);
+}
+
+/* Primary: darken checked on press */
+.checkbox:not(.checkbox--neutral):not(.checkbox--disabled):not(.checkbox--readonly):active
+  .checkbox__input:checked:not(:indeterminate) ~ .checkbox__box {
+  background-color: var(--checkbox-bg-primary-pressed);
+  border-color: var(--checkbox-bg-primary-pressed);
+}
+
+/* Primary: darken indeterminate on press */
+.checkbox:not(.checkbox--neutral):not(.checkbox--disabled):not(.checkbox--readonly):active
+  .checkbox__input:indeterminate ~ .checkbox__box {
+  background-color: var(--checkbox-bg-primary-pressed);
+  border-color: var(--checkbox-bg-primary-pressed);
+}
+
+/* Neutral: darken checked on press */
+.checkbox--neutral:not(.checkbox--disabled):not(.checkbox--readonly):active
+  .checkbox__input:checked:not(:indeterminate) ~ .checkbox__box {
+  background-color: var(--checkbox-bg-neutral-pressed);
+  border-color: var(--checkbox-bg-neutral-pressed);
+}
+
+/* Neutral: darken indeterminate on press */
+.checkbox--neutral:not(.checkbox--disabled):not(.checkbox--readonly):active
+  .checkbox__input:indeterminate ~ .checkbox__box {
+  background-color: var(--checkbox-bg-neutral-pressed);
+  border-color: var(--checkbox-bg-neutral-pressed);
+}
+
+
+/* ============================================================
+   STATE: FOCUSED (keyboard)
+   Focus ring appears on .checkbox__box::after.
+   Ripple is suppressed when focused — ripple and focus ring
+   are mutually exclusive in the Figma specification.
+
+   :has() support required: Chrome 105+, Firefox 121+, Safari 15.4+.
+   Fallback (no :has()): ripple and focus ring may co-exist on
+   keyboard-focus + hover. Visual-only degradation. Acceptable.
+   ============================================================ */
+
+.checkbox__input:focus-visible ~ .checkbox__box::after {
+  opacity: 1;
+}
+
+.checkbox:has(.checkbox__input:focus-visible)::before {
+  opacity: 0;
+}
+
+
+/* ============================================================
+   STATE: READ-ONLY
+   No interaction. Border uses disabled color. No fill on checked.
+   Pointer-events: none. Stays in tab order (no disabled attr).
+   ============================================================ */
+
+.checkbox--readonly {
+  cursor: default;
+  pointer-events: none;
+}
+
+.checkbox--readonly .checkbox__box {
+  border-color: var(--checkbox-border-disabled);
+  background-color: transparent;
+}
+
+.checkbox--readonly .checkbox__input:checked ~ .checkbox__box,
+.checkbox--readonly .checkbox__input:indeterminate ~ .checkbox__box {
+  background-color: transparent;
+  border-color: var(--checkbox-border-disabled);
+}
+
+/* Read-only mark: visible on transparent background */
+.checkbox--readonly .checkbox__checkmark,
+.checkbox--readonly .checkbox__indeterminate {
+  color: var(--checkbox-mark-color-readonly);
+}
+
+/* Suppress ripple and focus ring in read-only */
+.checkbox--readonly::before {
+  display: none;
+}
+
+.checkbox--readonly .checkbox__box::after {
+  display: none;
+}
+
+
+/* ============================================================
+   STATE: DISABLED
+   No interaction. Border uses disabled color.
+   Checked/indeterminate: light gray fill.
+   ============================================================ */
+
+.checkbox--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.checkbox--disabled .checkbox__box {
+  border-color: var(--checkbox-border-disabled);
+  background-color: transparent;
+}
+
+.checkbox--disabled .checkbox__input:checked ~ .checkbox__box,
+.checkbox--disabled .checkbox__input:indeterminate ~ .checkbox__box {
+  background-color: var(--checkbox-bg-disabled);
+  border-color: var(--checkbox-border-disabled);
+}
+
+/* Disabled mark: visible on light gray disabled background */
+.checkbox--disabled .checkbox__checkmark,
+.checkbox--disabled .checkbox__indeterminate {
+  color: var(--checkbox-mark-color-disabled);
+}
+
+/* Suppress ripple and focus ring when disabled */
+.checkbox--disabled::before {
+  display: none;
+}
+
+.checkbox--disabled .checkbox__box::after {
+  display: none;
+}

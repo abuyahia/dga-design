@@ -1,0 +1,128 @@
+{
+  "component": "text-input",
+  "schema_version": "1.0.0",
+  "generated": "2026-06-06",
+  "rules": [
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-001",
+      "type": "structural",
+      "severity": "high",
+      "title": "Label must be a semantic <label> associated to the input",
+      "description": "The .text-input__label element must be a <label> with a for attribute that matches the id of the .text-input__input element.",
+      "check": "label.text-input__label[for] and input#[matching-id]",
+      "remediation": "Add for='field-id' to <label class='text-input__label'>. Add id='field-id' to <input class='text-input__input'>. The values must match."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-002",
+      "type": "accessibility",
+      "severity": "high",
+      "title": "Required field must have aria-required on the input",
+      "description": "When a field is required, the <input> must carry aria-required='true'. Any visual asterisk (*) must have aria-hidden='true'.",
+      "check": "input[required][aria-required='true'] and span[aria-hidden='true'] for asterisk",
+      "remediation": "Add aria-required='true' to the <input> when required. Wrap any asterisk in a <span aria-hidden='true'>."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-003",
+      "type": "accessibility",
+      "severity": "high",
+      "title": "Focus indicator must not be suppressed",
+      "description": "The .text-input__field::after underline provides the focus indicator. Overriding it with display:none, visibility:hidden, or transform:scaleX(0) permanently in CSS removes the focus indicator and violates WCAG 2.4.7.",
+      "check": ".text-input__field:focus-within::after is visible (transform not permanently scaleX(0))",
+      "remediation": "Do not override .text-input__field::after to hide the focus indicator. The native <input> outline is intentionally removed and replaced by the ::after underline."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-004",
+      "type": "accessibility",
+      "severity": "high",
+      "title": "Error state must have aria-invalid and aria-describedby on input",
+      "description": "When .text-input--error is applied, the <input> must have aria-invalid='true'. If an error message is present, the input must have aria-describedby pointing to the error message element's id.",
+      "check": ".text-input--error input[aria-invalid='true'] and input[aria-describedby] when error message present",
+      "remediation": "Add aria-invalid='true' to the input when error state is active. Add aria-describedby='error-id' when an error message element exists. The error message element must have the matching id."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-005",
+      "type": "token",
+      "severity": "medium",
+      "title": "No hardcoded visual values in component CSS",
+      "description": "Component CSS must not use hardcoded hex, rgba, pixel sizes, or font values outside of token fallbacks in var().",
+      "check": "No raw color, size, or typography values outside var(--text-input-*, fallback) patterns",
+      "remediation": "Replace hardcoded values with component-level tokens (--text-input-*). Fallbacks inside var() are acceptable pending token.css update."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-006",
+      "type": "i18n",
+      "severity": "medium",
+      "title": "RTL must use dir attribute, not hardcoded CSS direction",
+      "description": "RTL layout must be triggered by dir='rtl' on the .text-input element or an ancestor. Do not add padding-left/padding-right overrides in component CSS for RTL.",
+      "check": "No hardcoded padding-left or padding-right in .text-input* selectors for RTL. CSS uses padding-inline-start/end.",
+      "remediation": "Set dir='rtl' on the .text-input element or an ancestor. The browser and logical CSS properties handle inline direction automatically."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-007",
+      "type": "structural",
+      "severity": "medium",
+      "title": "Disabled state must use class and native disabled attribute",
+      "description": "Disabled text input must have both .text-input--disabled on the root (for CSS) and disabled attribute on the <input> (for AT and browser behavior).",
+      "check": ".text-input--disabled and input[disabled]",
+      "remediation": "Add .text-input--disabled to the root .text-input div AND add disabled attribute to the <input> element."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-008",
+      "type": "structural",
+      "severity": "medium",
+      "title": "Read-only state must use class and native readonly attribute",
+      "description": "Read-only text input must have both .text-input--readonly on the root (for CSS) and readonly attribute on the <input> (for AT and browser behavior).",
+      "check": ".text-input--readonly and input[readonly]",
+      "remediation": "Add .text-input--readonly to the root .text-input div AND add readonly attribute to the <input> element."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-009",
+      "type": "structural",
+      "severity": "low",
+      "title": "Input element must have type attribute",
+      "description": "The <input> element should have an explicit type attribute appropriate for the field's purpose. Omitting type defaults to 'text' but explicit declaration is recommended for clarity.",
+      "check": "input.text-input__input[type]",
+      "remediation": "Add type='text' (or appropriate type: email, tel, search, url, number, password) to the <input> element."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-010",
+      "type": "structural",
+      "severity": "low",
+      "title": "Input element should have name attribute",
+      "description": "The <input> element should have a name attribute for form submission. Missing name prevents the field value from being included in form data.",
+      "check": "input.text-input__input[name]",
+      "remediation": "Add a name attribute to the <input> element."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-011",
+      "type": "token",
+      "severity": "low",
+      "title": "Component tokens should be defined in token.css",
+      "description": "The --text-input-* token definitions are currently only used as fallbacks in text-input.css. They should be formally defined in the global token.css under a Text Input tokens section.",
+      "check": "token.css contains all --text-input-* token definitions listed in analysis.md",
+      "remediation": "Add a '/* Text Input tokens */' section to token.css with all tokens listed in analysis.md Missing Tokens."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TEXT-INPUT-012",
+      "type": "structural",
+      "severity": "low",
+      "title": "Error message element must not be inside .text-input__field",
+      "description": "Error message text must be placed outside .text-input__field. It belongs at the form-field assembly layer. Placing it inside the field creates layout and AT issues.",
+      "check": "No error message element inside .text-input__field",
+      "remediation": "Move error message element to after .text-input__field as a sibling, or delegate to the form-field assembly component."
+    }
+
+  ]
+}

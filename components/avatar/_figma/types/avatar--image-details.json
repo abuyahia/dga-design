@@ -1,0 +1,58 @@
+[
+  {
+    "cssProps": {
+      "width": "32px",
+      "height": "32px"
+    },
+    "type": "COMPONENT",
+    "name": "Type=Image, Square=False, Size=32px",
+    "children": [
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px",
+          "border-radius": "var(--radius-round, 9999px)",
+          "border": "2px solid var(--Border-border-white, #FFF)",
+          "background": "var(--Background-background-white, #FFF)",
+          "topLeftRadius-variable": "--global-radiusround",
+          "topLeftRadius-collection": "global",
+          "topLeftRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030",
+          "topRightRadius-variable": "--global-radiusround",
+          "topRightRadius-collection": "global",
+          "topRightRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030",
+          "bottomLeftRadius-variable": "--global-radiusround",
+          "bottomLeftRadius-collection": "global",
+          "bottomLeftRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030",
+          "bottomRightRadius-variable": "--global-radiusround",
+          "bottomRightRadius-collection": "global",
+          "bottomRightRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030"
+        },
+        "type": "RECTANGLE",
+        "name": "bg"
+      },
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px",
+          "border-radius": "var(--radius-round, 9999px)",
+          "border": "2px solid var(--Border-border-white, #FFF)",
+          "background": "url(<path-to-image>) lightgray 50% / cover no-repeat",
+          "topLeftRadius-variable": "--global-radiusround",
+          "topLeftRadius-collection": "global",
+          "topLeftRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030",
+          "topRightRadius-variable": "--global-radiusround",
+          "topRightRadius-collection": "global",
+          "topRightRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030",
+          "bottomLeftRadius-variable": "--global-radiusround",
+          "bottomLeftRadius-collection": "global",
+          "bottomLeftRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030",
+          "bottomRightRadius-variable": "--global-radiusround",
+          "bottomRightRadius-collection": "global",
+          "bottomRightRadius-variable-id": "VariableID:4ff2a4fe61da9b79c3a098ea011b5bf3fed3c696/31:3030"
+        },
+        "type": "RECTANGLE",
+        "name": "Image"
+      }
+    ]
+  }
+]

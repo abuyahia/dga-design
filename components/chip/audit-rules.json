@@ -1,0 +1,217 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "chip",
+  "selector_root": ".chip",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "CHIP-A11Y-001",
+      "standard_id": "PLATFORM-CODE-A11Y-001",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Chip must have an accessible label",
+      "description": "Every chip must have a non-empty accessible name. Satisfied by: visible text inside .chip__label, an aria-label attribute on the root, or aria-labelledby pointing to an existing element.",
+      "target": ".chip",
+      "expected": "element has accessible name via text content OR aria-label OR aria-labelledby",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "any_of",
+        "conditions": [
+          "element has non-empty trimmed text content",
+          "element has non-empty aria-label attribute",
+          "element has aria-labelledby whose target has non-empty text content"
+        ]
+      },
+      "message": "Chip has no accessible label. Add visible text inside .chip__label or set aria-label on the chip element.",
+      "fix": "Add <span class=\"chip__label\">Label text</span> as a child, or set aria-label=\"Label\" on the root element.",
+      "standard_refs": ["PLATFORM-CODE-A11Y-001", "PLATFORM-CODE-CHIP-003"]
+    },
+
+    {
+      "id": "CHIP-A11Y-002",
+      "standard_id": "PLATFORM-CODE-FOCUS-001",
+      "rule_type": "focus_indicator_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Focus ring must not be suppressed",
+      "description": "chip.css defines a visible focus outline via ::after on :focus-visible. Any override that sets outline:none without an equivalent ::after or box-shadow replacement violates PLATFORM-CODE-FOCUS-001.",
+      "target": ".chip:focus-visible",
+      "expected": "computed styles include a visible ::after outline — outline:none not present without a ::after replacement",
+      "check": {
+        "type": "focus_indicator_required",
+        "selector": ".chip:focus, .chip:focus-visible",
+        "forbidden_css": { "outline": "none" },
+        "acceptable_alternatives": ["::after with border", "box-shadow"]
+      },
+      "message": "Focus ring is suppressed on .chip:focus-visible. Keyboard users cannot see which chip is focused.",
+      "fix": "Remove the outline:none override or ensure the ::after focus ring defined in chip.css is not overridden.",
+      "standard_refs": ["PLATFORM-CODE-FOCUS-001"]
+    },
+
+    {
+      "id": "CHIP-A11Y-003",
+      "standard_id": "PLATFORM-CODE-STATE-001",
+      "rule_type": "state_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Toggle/selectable chip must declare aria-pressed or aria-selected",
+      "description": "A chip that represents a persistent on/off or selected state must communicate that state via aria-pressed (standalone toggle) or aria-selected (within a group). The attribute must be 'true' or 'false' — never omitted once the chip is interactive.",
+      "target": ".chip.is-selected, .chip[data-toggle]",
+      "expected": "element has aria-pressed='true'|'false' OR aria-selected='true'|'false'",
+      "check": {
+        "type": "state_required",
+        "trigger": "element has class is-selected OR has data-toggle attribute",
+        "logic": "any_of",
+        "conditions": [
+          { "attribute": "aria-pressed", "valid_values": ["true", "false"] },
+          { "attribute": "aria-selected", "valid_values": ["true", "false"] }
+        ]
+      },
+      "message": "Selectable chip is missing aria-pressed or aria-selected. State is not communicated to assistive technology.",
+      "fix": "Add aria-pressed=\"false\" (standalone toggle) or aria-selected=\"false\" (within role=\"group\") on default. Update to \"true\" when active.",
+      "standard_refs": ["PLATFORM-CODE-STATE-001"]
+    },
+
+    {
+      "id": "CHIP-A11Y-004",
+      "standard_id": "PLATFORM-CODE-CHIP-004",
+      "rule_type": "dimension_minimum",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Small chip touch target is below 24px minimum",
+      "description": "The Small chip size (--chip-sm-height) resolves to 20px, below the 24px internal minimum touch target. Medium (24px) and Large (32px) pass. Small size chips require documented design team exception to ship.",
+      "target": ".chip.chip--sm",
+      "expected": "rendered height >= 24px",
+      "check": {
+        "type": "dimension_minimum",
+        "selector": ".chip.chip--sm",
+        "property": "height",
+        "minimum_px": 24
+      },
+      "message": "Small chip height is 20px, below the 24px minimum. Flagged for design review.",
+      "fix": "Raise --chip-sm-height to 24px in token.css, or obtain documented design exception acknowledging the 20px value.",
+      "standard_refs": ["PLATFORM-CODE-CHIP-004"]
+    },
+
+    {
+      "id": "CHIP-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-CHIP-003",
+      "rule_type": "semantic_element_required",
+      "category": "html-structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Interactive chip must use a semantic interactive element",
+      "description": "The .chip class must be applied only to <button> for interactive chips, or <span>/<div> only when the chip is purely decorative with no click/toggle behavior. Non-interactive elements carrying click handlers require role='button' and tabindex='0'.",
+      "target": ".chip",
+      "expected": "element tag is 'button' OR (has no click behavior AND is non-interactive) OR has role='button' and tabindex",
+      "check": {
+        "type": "semantic_element_required",
+        "selector": ".chip",
+        "allowed_tags": ["button"],
+        "display_only_tags": ["span", "div"],
+        "fallback_requirements": { "role": "button", "tabindex": "any" }
+      },
+      "message": "Interactive chip is rendered as a <{tag}> element without role='button'. Use <button class=\"chip\"> instead.",
+      "fix": "Replace <div class=\"chip\"> with <button class=\"chip\" type=\"button\">.",
+      "standard_refs": ["PLATFORM-CODE-CHIP-003"]
+    },
+
+    {
+      "id": "CHIP-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-TOKEN-001",
+      "rule_type": "no_hardcoded_values",
+      "category": "token-usage",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Colors must reference design tokens, not hardcoded values",
+      "description": "All color values applied to .chip elements must reference CSS custom properties (var(--token-name)). Hardcoded hex, rgb(), or hsl() values bypass the token system and break theme compliance. Note: all chip-scoped tokens are currently pending in token.css — this rule will fail until token.css is updated.",
+      "target": ".chip, .chip *, .chip::before, .chip::after",
+      "expected": "background, color, border-color, outline-color all use var(--) — or are transparent, none, inherit, currentColor",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".chip, .chip *, .chip::before, .chip::after",
+        "properties": ["background", "background-color", "color", "border-color", "outline-color"],
+        "allowed_literal_values": ["transparent", "none", "inherit", "currentColor"]
+      },
+      "message": "Hardcoded color '{value}' found on '{property}'. Replace with the corresponding chip design token.",
+      "fix": "Replace hardcoded value with the appropriate var(--chip-*) token. See analysis.md §Token Findings for the full token map.",
+      "standard_refs": ["PLATFORM-CODE-TOKEN-001", "PLATFORM-CODE-CHIP-001"]
+    },
+
+    {
+      "id": "CHIP-RTL-001",
+      "standard_id": "PLATFORM-CODE-CHIP-002",
+      "rule_type": "no_hardcoded_values",
+      "category": "rtl",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Chip must not use physical CSS properties that break RTL",
+      "description": "Physical directional properties on .chip or its children cause visual defects under dir='rtl'. Use logical properties (padding-inline, margin-inline) instead. The RTL axis in the Figma manifest produces zero CSS differences — RTL is a container-level concern handled by [dir='rtl'].",
+      "target": ".chip, .chip__label",
+      "expected": "padding-left, padding-right, margin-left, margin-right, border-left, border-right are absent",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".chip, .chip__label",
+        "forbidden_properties": [
+          "padding-left", "padding-right",
+          "margin-left", "margin-right",
+          "border-left", "border-right"
+        ]
+      },
+      "message": "Physical CSS property '{property}' found on chip. Replace with the logical equivalent.",
+      "fix": "Replace padding-left/right with padding-inline-start/end. Replace margin-left/right with margin-inline-start/end.",
+      "standard_refs": ["PLATFORM-CODE-CHIP-002"]
+    },
+
+    {
+      "id": "CHIP-CONTENT-001",
+      "standard_id": "PLATFORM-CODE-CHIP-003",
+      "rule_type": "content_length_check",
+      "category": "content",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Chip label exceeds recommended length",
+      "description": "Labels longer than 30 characters cause unpredictable text wrapping within the fixed-height container. Chips are compact display elements — labels should be short keywords or phrases. The 30-character limit is a recommendation pending design team confirmation.",
+      "target": ".chip__label",
+      "expected": "text content length is between 1 and 30 characters inclusive",
+      "check": {
+        "type": "content_length_check",
+        "selector": ".chip__label",
+        "min_length": 1,
+        "max_length": 30
+      },
+      "message": "Chip label has {count} characters (recommended max 30). Shorten the label.",
+      "fix": "Reduce the chip label to 30 characters or fewer. If more context is needed, use a tooltip.",
+      "standard_refs": ["PLATFORM-CODE-CHIP-003"],
+      "_note": "30-character limit is a proposal. Pending design team confirmation before this rule is enforced."
+    }
+
+  ],
+
+  "severity_legend": {
+    "error": "Blocks release. Must be resolved before component ships to production.",
+    "warning": "Must be reviewed. Should be resolved; requires documented justification to waive.",
+    "info": "Advisory. No action required but noted in audit report."
+  },
+
+  "validation_status_legend": {
+    "not_run": "Rule has been defined but not yet executed against this component.",
+    "pass": "Rule was executed and the component passed.",
+    "fail": "Rule was executed and the component failed. See audit report for details.",
+    "skipped": "Rule was intentionally skipped with documented justification.",
+    "manual_required": "Rule cannot be validated automatically and requires human review."
+  },
+
+  "run_context": {
+    "static_analysis": ["CHIP-TOKEN-001", "CHIP-STRUCT-001", "CHIP-RTL-001", "CHIP-A11Y-002"],
+    "dom_inspection": ["CHIP-A11Y-001", "CHIP-A11Y-003", "CHIP-A11Y-004", "CHIP-CONTENT-001"],
+    "manual_review": []
+  }
+}

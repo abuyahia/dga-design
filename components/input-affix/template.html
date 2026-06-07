@@ -1,0 +1,151 @@
+<!--
+  input-affix · Template Reference
+  Component contract: input-affix.contract.md
+  Reference:          reference.json
+
+  USAGE NOTES
+  ─────────────────────────────────────────────────────────────
+  1. input-affix is a SUBCOMPONENT. Always use inside a text-input wrapper.
+  2. Type=Dropdown → use <button type="button">
+  3. Type=Text     → use <div>
+  4. Size Large = default (no size modifier)
+  5. Size Medium  → add .input-affix--md
+  6. Style Solid  → add .input-affix--solid
+  7. Style Subtle → add .input-affix--subtle
+  8. RTL          → set [dir="rtl"] on <html> or a page ancestor
+  ─────────────────────────────────────────────────────────────
+-->
+
+<!-- ═══════════════════════════════════════════════════════════
+     TYPE: TEXT  ·  Large  ·  Solid
+     Non-interactive label affix. Renders as <div>.
+     ═══════════════════════════════════════════════════════════ -->
+
+<div class="input-affix input-affix--text input-affix--solid" aria-hidden="true">
+  <span class="input-affix__text">USD</span>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TYPE: TEXT  ·  Large  ·  Subtle
+     ═══════════════════════════════════════════════════════════ -->
+
+<div class="input-affix input-affix--text input-affix--subtle" aria-hidden="true">
+  <span class="input-affix__text">kg</span>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TYPE: TEXT  ·  Medium  ·  Solid
+     ═══════════════════════════════════════════════════════════ -->
+
+<div class="input-affix input-affix--text input-affix--solid input-affix--md" aria-hidden="true">
+  <span class="input-affix__text">USD</span>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TYPE: TEXT  ·  Disabled  ·  Large  ·  Solid
+     ═══════════════════════════════════════════════════════════ -->
+
+<div class="input-affix input-affix--text input-affix--solid" aria-disabled="true" aria-hidden="true">
+  <span class="input-affix__text">USD</span>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TYPE: DROPDOWN  ·  Large  ·  Solid  ·  Default
+     Interactive trigger. Renders as <button type="button">.
+     ═══════════════════════════════════════════════════════════ -->
+
+<button class="input-affix input-affix--dropdown input-affix--solid" type="button" aria-expanded="false">
+  <svg class="input-affix__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+    <!-- icon SVG path here -->
+    <rect width="24" height="24" fill="none"/>
+  </svg>
+  <span class="input-affix__text">USD</span>
+  <svg class="input-affix__arrow" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+    <!-- chevron-down SVG path here -->
+    <rect width="20" height="20" fill="none"/>
+  </svg>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TYPE: DROPDOWN  ·  Large  ·  Subtle  ·  Default
+     ═══════════════════════════════════════════════════════════ -->
+
+<button class="input-affix input-affix--dropdown input-affix--subtle" type="button" aria-expanded="false">
+  <svg class="input-affix__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+    <rect width="24" height="24" fill="none"/>
+  </svg>
+  <span class="input-affix__text">USD</span>
+  <svg class="input-affix__arrow" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+    <rect width="20" height="20" fill="none"/>
+  </svg>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TYPE: DROPDOWN  ·  Medium  ·  Solid  ·  Default
+     ═══════════════════════════════════════════════════════════ -->
+
+<button class="input-affix input-affix--dropdown input-affix--solid input-affix--md" type="button" aria-expanded="false">
+  <svg class="input-affix__icon" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+    <rect width="20" height="20" fill="none"/>
+  </svg>
+  <span class="input-affix__text">USD</span>
+  <svg class="input-affix__arrow" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 16 16">
+    <rect width="16" height="16" fill="none"/>
+  </svg>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TYPE: DROPDOWN  ·  Large  ·  Solid  ·  Selected
+     aria-selected="true" communicates selection state.
+     Requires parent role="listbox" context (text-input assembly).
+     ═══════════════════════════════════════════════════════════ -->
+
+<button class="input-affix input-affix--dropdown input-affix--solid" type="button" aria-expanded="false" aria-selected="true">
+  <svg class="input-affix__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+    <rect width="24" height="24" fill="none"/>
+  </svg>
+  <span class="input-affix__text">USD</span>
+  <svg class="input-affix__arrow" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+    <rect width="20" height="20" fill="none"/>
+  </svg>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     TYPE: DROPDOWN  ·  Large  ·  Solid  ·  Disabled
+     ═══════════════════════════════════════════════════════════ -->
+
+<button class="input-affix input-affix--dropdown input-affix--solid" type="button" disabled>
+  <svg class="input-affix__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+    <rect width="24" height="24" fill="none"/>
+  </svg>
+  <span class="input-affix__text">USD</span>
+  <svg class="input-affix__arrow" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+    <rect width="20" height="20" fill="none"/>
+  </svg>
+</button>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     RTL EXAMPLE  ·  Set [dir="rtl"] on page ancestor
+     No additional class modifier needed.
+     ═══════════════════════════════════════════════════════════ -->
+
+<div dir="rtl">
+  <button class="input-affix input-affix--dropdown input-affix--solid" type="button" aria-expanded="false">
+    <svg class="input-affix__icon" aria-hidden="true" focusable="false" width="24" height="24" viewBox="0 0 24 24">
+      <rect width="24" height="24" fill="none"/>
+    </svg>
+    <span class="input-affix__text">ر.س</span>
+    <svg class="input-affix__arrow" aria-hidden="true" focusable="false" width="20" height="20" viewBox="0 0 20 20">
+      <rect width="20" height="20" fill="none"/>
+    </svg>
+  </button>
+</div>

@@ -1,0 +1,90 @@
+[
+  {
+    "cssProps": {
+      "display": "inline-flex",
+      "height": "40px",
+      "min-height": "40px",
+      "max-height": "40px",
+      "padding": "var(--Global-spacing-none, 0) var(--Button-buttons-lg-padding, 16px)",
+      "justify-content": "center",
+      "align-items": "center",
+      "gap": "var(--Button-buttons-lg-gap, 4px)",
+      "border-radius": "var(--Radius-radius-sm, 4px)",
+      "background": "var(--Button-button-background-oncolor-pressed, rgba(255, 255, 255, 0.60))",
+      "itemSpacing-variable": "--spacing-buttonbuttons-lg-gap",
+      "itemSpacing-collection": "Spacing",
+      "itemSpacing-variable-id": "VariableID:e5543a4f8a7117f916f6712824a5cd21e5a88644/434:59",
+      "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+      "paddingLeft-collection": "Spacing",
+      "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+      "paddingTop-variable": "--spacing-globalspacing-none",
+      "paddingTop-collection": "Spacing",
+      "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+      "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+      "paddingRight-collection": "Spacing",
+      "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+      "paddingBottom-variable": "--spacing-globalspacing-none",
+      "paddingBottom-collection": "Spacing",
+      "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+      "topLeftRadius-variable": "--radius-radiusradius-sm",
+      "topLeftRadius-collection": "Radius",
+      "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+      "topRightRadius-variable": "--radius-radiusradius-sm",
+      "topRightRadius-collection": "Radius",
+      "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+      "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+      "bottomLeftRadius-collection": "Radius",
+      "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+      "bottomRightRadius-variable": "--radius-radiusradius-sm",
+      "bottomRightRadius-collection": "Radius",
+      "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+    },
+    "type": "COMPONENT",
+    "name": "RTL=False, Size=Large, State=Pressed, Style=Neutral, Destructive=no, Icon only=False, On-color=True",
+    "children": [
+      {
+        "cssProps": {
+          "width": "24px",
+          "height": "24px"
+        },
+        "type": "INSTANCE",
+        "name": "Leading Icon",
+        "children": [
+          {
+            "cssProps": {
+              "width": "11.501px",
+              "height": "17.5px",
+              "transform": "rotate(-90deg)"
+            },
+            "type": "GROUP",
+            "name": "elements"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "flex",
+          "justify-content": "center",
+          "align-items": "center"
+        },
+        "type": "FRAME",
+        "name": "Text wrapper",
+        "children": [
+          {
+            "cssProps": {
+              "color": "var(--Text-text-default, #161616)",
+              "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+              "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+              "font-style": "normal",
+              "font-weight": "500",
+              "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+            },
+            "characters": "Button",
+            "type": "TEXT",
+            "name": "Text"
+          }
+        ]
+      }
+    ]
+  }
+]

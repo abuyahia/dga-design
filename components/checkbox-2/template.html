@@ -1,0 +1,193 @@
+<!--
+  template.html — Checkbox (checkbox-2)
+  Standalone visual checkbox control.
+  Include checkbox-2.css to use.
+
+  USAGE NOTES:
+  - Always provide an accessible name via aria-label or a wrapping label in form-field.
+  - For indeterminate state: JS must set input.indeterminate = true AND aria-checked="mixed".
+  - For read-only: use .checkbox--readonly + aria-readonly="true" on input. Do NOT use disabled.
+  - For disabled: use .checkbox--disabled + disabled attribute on input.
+  - Size modifiers: --xs (16px), --sm (20px), --md (24px).
+  - Style modifiers: --primary (default, green), --neutral (dark slate).
+-->
+
+<!-- ============================================================
+     UNCHECKED — Default state
+     ============================================================ -->
+
+<!-- Unchecked / Primary / Medium (default) -->
+<label class="checkbox checkbox--md checkbox--primary">
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 12H18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- ============================================================
+     CHECKED — Default state
+     ============================================================ -->
+
+<!-- Checked / Primary / Medium -->
+<label class="checkbox checkbox--md checkbox--primary">
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" checked />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 12H18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- Checked / Neutral / Medium -->
+<label class="checkbox checkbox--md checkbox--neutral">
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" checked />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 12H18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- ============================================================
+     INDETERMINATE — Requires JS
+     ============================================================ -->
+
+<!--
+  Indeterminate / Primary / Medium
+  Required JS:
+    const input = document.querySelector('.js-indeterminate');
+    input.indeterminate = true;
+    input.setAttribute('aria-checked', 'mixed');
+-->
+<label class="checkbox checkbox--md checkbox--primary">
+  <input type="checkbox" class="checkbox__input js-indeterminate" aria-label="Select all" aria-checked="mixed" />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 12H18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- ============================================================
+     SIZES
+     ============================================================ -->
+
+<!-- x Small (16px) / Primary / Unchecked -->
+<label class="checkbox checkbox--xs checkbox--primary">
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M4 8H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- Small (20px) / Primary / Unchecked -->
+<label class="checkbox checkbox--sm checkbox--primary">
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M4 10L8.5 14.5L16 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 10H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- ============================================================
+     READ-ONLY
+     ============================================================ -->
+
+<!-- Read-only / Unchecked / Primary / Medium -->
+<label class="checkbox checkbox--md checkbox--primary checkbox--readonly">
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" aria-readonly="true" tabindex="0" />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 12H18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- Read-only / Checked / Primary / Medium -->
+<label class="checkbox checkbox--md checkbox--primary checkbox--readonly">
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" aria-readonly="true" checked tabindex="0" />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 12H18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- ============================================================
+     DISABLED
+     ============================================================ -->
+
+<!-- Disabled / Unchecked / Primary / Medium -->
+<label class="checkbox checkbox--md checkbox--primary checkbox--disabled">
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" disabled />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 12H18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- Disabled / Checked / Primary / Medium -->
+<label class="checkbox checkbox--md checkbox--primary checkbox--disabled">
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" disabled checked />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 12H18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<!-- Disabled / Indeterminate / Primary / Medium -->
+<label class="checkbox checkbox--md checkbox--primary checkbox--disabled">
+  <input type="checkbox" class="checkbox__input js-indeterminate-disabled" aria-label="Option label" disabled aria-checked="mixed" />
+  <span class="checkbox__box" aria-hidden="true">
+    <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <svg class="checkbox__indeterminate" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6 12H18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</label>
+
+<script>
+  /* Set indeterminate state via JS — required for :indeterminate CSS pseudo-class */
+  document.querySelectorAll('.js-indeterminate, .js-indeterminate-disabled').forEach(function(input) {
+    input.indeterminate = true;
+  });
+</script>
