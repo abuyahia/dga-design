@@ -50,6 +50,7 @@
     { id: 'list', label: 'List' },
     { id: 'pagination', label: 'Pagination' },
     { id: 'rating', label: 'Rating' },
+    { id: 'slider', label: 'Slider' },
     { id: 'tab', label: 'Tab' },
     { id: 'tag', label: 'Tag' },
     { id: 'text-input', label: 'Text Input' },

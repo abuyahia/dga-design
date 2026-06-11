@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider — Component Showcase | Platform Code Design System</title>
+    <!-- 1. Global tokens -->
+    <link rel="stylesheet" href="../../../token.css" />
+    <!-- 2. Component CSS -->
+    <link rel="stylesheet" href="../slider.css" />
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css" />
+    <script src="../../_showcase/showcase.js" defer></script>
+
+    <style>
+      /* ════════════════════════════════════════════════
+         SLIDER SHOWCASE — Page-level styles only
+         All --slider-* tokens pending in token.css.
+         Shared shell (layout, sidebar, tabs, copy) lives
+         in showcase.css. This block is slider-specific.
+         ════════════════════════════════════════════════ */
+
+      /* Showcase layout helpers */
+      .showcase-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        align-items: flex-start;
+      }
+
+      /* Give sliders a minimum display width in showcase */
+      .showcase .slider,
+      .showcase .slider--md {
+        min-width: 340px;
+        max-width: 480px;
+        width: 100%;
+      }
+
+      /* Slider JS: live fill update for showcase demos */
+    </style>
+  </head>
+
+  <body
+    data-showcase
+    data-current-component="slider"
+    data-showcase-title="Slider Showcase"
+  >
+    <div data-showcase-shell>
+      <main data-showcase-content>
+
+        <!-- ─────────────────────────────────────────────
+             Section 1: Single Slider — Small
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">Single Slider — Small</h2>
+          <p class="showcase-section__desc">
+            Default size. Track height 4px, thumb 12px. Shows percentage at 0%, 20%, and 100%.
+          </p>
+
+          <!-- 0% -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, Range=No, Value=0">
+              <span class="showcase__label">Value: 0</span>
+              <div class="showcase__item">
+                <div class="slider js-slider" data-component="slider">
+                  <label class="slider__label-text" for="demo-sm-0">Label</label>
+                  <div class="slider__track-row">
+                    <div class="slider__control-wrap">
+                      <div class="slider__track" aria-hidden="true">
+                        <div class="slider__fill"></div>
+                      </div>
+                      <input type="range" class="slider__input" id="demo-sm-0"
+                             min="0" max="100" value="0"
+                             aria-describedby="demo-sm-0-helper">
+                    </div>
+                    <output class="slider__value" for="demo-sm-0" aria-hidden="true">0</output>
+                  </div>
+                  <div class="slider__helper" id="demo-sm-0-helper">
+                    <span class="slider__helper-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+                    </span>
+                    <span class="slider__helper-text">Help Text</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 20% -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, Range=No, Value=20">
+              <span class="showcase__label">Value: 20</span>
+              <div class="showcase__item">
+                <div class="slider js-slider" data-component="slider">
+                  <label class="slider__label-text" for="demo-sm-20">Label</label>
+                  <div class="slider__track-row">
+                    <div class="slider__control-wrap">
+                      <div class="slider__track" aria-hidden="true">
+                        <div class="slider__fill"></div>
+                      </div>
+                      <input type="range" class="slider__input" id="demo-sm-20"
+                             min="0" max="100" value="20"
+                             aria-describedby="demo-sm-20-helper">
+                    </div>
+                    <output class="slider__value" for="demo-sm-20" aria-hidden="true">20</output>
+                  </div>
+                  <div class="slider__helper" id="demo-sm-20-helper">
+                    <span class="slider__helper-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+                    </span>
+                    <span class="slider__helper-text">Help Text</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 100% -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, Range=No, Value=100">
+              <span class="showcase__label">Value: 100</span>
+              <div class="showcase__item">
+                <div class="slider js-slider" data-component="slider">
+                  <label class="slider__label-text" for="demo-sm-100">Label</label>
+                  <div class="slider__track-row">
+                    <div class="slider__control-wrap">
+                      <div class="slider__track" aria-hidden="true">
+                        <div class="slider__fill"></div>
+                      </div>
+                      <input type="range" class="slider__input" id="demo-sm-100"
+                             min="0" max="100" value="100"
+                             aria-describedby="demo-sm-100-helper">
+                    </div>
+                    <output class="slider__value" for="demo-sm-100" aria-hidden="true">100</output>
+                  </div>
+                  <div class="slider__helper" id="demo-sm-100-helper">
+                    <span class="slider__helper-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+                    </span>
+                    <span class="slider__helper-text">Help Text</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ─────────────────────────────────────────────
+             Section 2: Single Slider — Medium
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">Single Slider — Medium</h2>
+          <p class="showcase-section__desc">
+            Add <code>.slider--md</code> modifier. Track height 8px, thumb 16px.
+          </p>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Range=No, Value=20">
+              <span class="showcase__label">Value: 20</span>
+              <div class="showcase__item">
+                <div class="slider slider--md js-slider" data-component="slider">
+                  <label class="slider__label-text" for="demo-md-20">Label</label>
+                  <div class="slider__track-row">
+                    <div class="slider__control-wrap">
+                      <div class="slider__track" aria-hidden="true">
+                        <div class="slider__fill"></div>
+                      </div>
+                      <input type="range" class="slider__input" id="demo-md-20"
+                             min="0" max="100" value="20"
+                             aria-describedby="demo-md-20-helper">
+                    </div>
+                    <output class="slider__value" for="demo-md-20" aria-hidden="true">20</output>
+                  </div>
+                  <div class="slider__helper" id="demo-md-20-helper">
+                    <span class="slider__helper-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+                    </span>
+                    <span class="slider__helper-text">Help Text</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ─────────────────────────────────────────────
+             Section 3: Range Slider
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">Range Slider</h2>
+          <p class="showcase-section__desc">
+            Add <code>.slider--range</code> modifier. Two thumbs define a min–max range.
+            Requires JavaScript for fill positioning — see <code>slider.contract.md §JavaScript Contract</code>.
+          </p>
+
+          <!-- Small Range: 0–50 -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, Range=Yes, Value=0–50">
+              <span class="showcase__label">Range: 0–50</span>
+              <div class="showcase__item">
+                <div class="slider slider--range js-slider-range" data-component="slider">
+                  <label class="slider__label-text" id="range-lbl-1">Label</label>
+                  <div class="slider__track-row">
+                    <output class="slider__value" aria-hidden="true">0</output>
+                    <div class="slider__control-wrap">
+                      <div class="slider__track" aria-hidden="true">
+                        <div class="slider__fill" style="--fill-start: 0%; --fill-end: 50%"></div>
+                      </div>
+                      <input type="range" class="slider__input" min="0" max="100" value="0"
+                             aria-label="Minimum value" aria-labelledby="range-lbl-1"
+                             aria-describedby="range-helper-1">
+                      <input type="range" class="slider__input slider__input--end"
+                             min="0" max="100" value="50"
+                             aria-label="Maximum value" aria-labelledby="range-lbl-1"
+                             aria-describedby="range-helper-1">
+                    </div>
+                    <output class="slider__value slider__value--end" aria-hidden="true">50</output>
+                  </div>
+                  <div class="slider__helper" id="range-helper-1">
+                    <span class="slider__helper-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+                    </span>
+                    <span class="slider__helper-text">Help Text</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Small Range: 20–70 -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, Range=Yes, Value=20–70">
+              <span class="showcase__label">Range: 20–70</span>
+              <div class="showcase__item">
+                <div class="slider slider--range js-slider-range" data-component="slider">
+                  <label class="slider__label-text" id="range-lbl-2">Label</label>
+                  <div class="slider__track-row">
+                    <output class="slider__value" aria-hidden="true">20</output>
+                    <div class="slider__control-wrap">
+                      <div class="slider__track" aria-hidden="true">
+                        <div class="slider__fill" style="--fill-start: 20%; --fill-end: 70%"></div>
+                      </div>
+                      <input type="range" class="slider__input" min="0" max="100" value="20"
+                             aria-label="Minimum value" aria-labelledby="range-lbl-2"
+                             aria-describedby="range-helper-2">
+                      <input type="range" class="slider__input slider__input--end"
+                             min="0" max="100" value="70"
+                             aria-label="Maximum value" aria-labelledby="range-lbl-2"
+                             aria-describedby="range-helper-2">
+                    </div>
+                    <output class="slider__value slider__value--end" aria-hidden="true">70</output>
+                  </div>
+                  <div class="slider__helper" id="range-helper-2">
+                    <span class="slider__helper-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+                    </span>
+                    <span class="slider__helper-text">Help Text</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ─────────────────────────────────────────────
+             Section 4: RTL
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">RTL — Right-to-Left</h2>
+          <p class="showcase-section__desc">
+            Set <code>dir="rtl"</code> on the slider root or a parent element.
+            Fill grows from right to left. Text aligns right.
+          </p>
+
+          <!-- RTL Single Small -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, Range=No, RTL=Yes, Value=20">
+              <span class="showcase__label">Single — RTL</span>
+              <div class="showcase__item">
+                <div class="slider js-slider" data-component="slider" dir="rtl">
+                  <label class="slider__label-text" for="demo-rtl-sm">عنوان</label>
+                  <div class="slider__track-row">
+                    <div class="slider__control-wrap">
+                      <div class="slider__track" aria-hidden="true">
+                        <div class="slider__fill"></div>
+                      </div>
+                      <input type="range" class="slider__input" id="demo-rtl-sm"
+                             min="0" max="100" value="20"
+                             aria-describedby="demo-rtl-sm-helper">
+                    </div>
+                    <output class="slider__value" for="demo-rtl-sm" aria-hidden="true">20</output>
+                  </div>
+                  <div class="slider__helper" id="demo-rtl-sm-helper">
+                    <span class="slider__helper-text">نص مساعد</span>
+                    <span class="slider__helper-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RTL Range Small -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, Range=Yes, RTL=Yes, Value=20–70">
+              <span class="showcase__label">Range — RTL</span>
+              <div class="showcase__item">
+                <div class="slider slider--range js-slider-range" data-component="slider" dir="rtl">
+                  <label class="slider__label-text" id="range-rtl-lbl">عنوان</label>
+                  <div class="slider__track-row">
+                    <output class="slider__value" aria-hidden="true">20</output>
+                    <div class="slider__control-wrap">
+                      <div class="slider__track" aria-hidden="true">
+                        <div class="slider__fill" style="--fill-start: 20%; --fill-end: 70%"></div>
+                      </div>
+                      <input type="range" class="slider__input" min="0" max="100" value="20"
+                             aria-label="القيمة الدنيا" aria-labelledby="range-rtl-lbl"
+                             aria-describedby="range-rtl-helper">
+                      <input type="range" class="slider__input slider__input--end"
+                             min="0" max="100" value="70"
+                             aria-label="القيمة القصوى" aria-labelledby="range-rtl-lbl"
+                             aria-describedby="range-rtl-helper">
+                    </div>
+                    <output class="slider__value slider__value--end" aria-hidden="true">70</output>
+                  </div>
+                  <div class="slider__helper" id="range-rtl-helper">
+                    <span class="slider__helper-text">نص مساعد</span>
+                    <span class="slider__helper-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ─────────────────────────────────────────────
+             Section 5: Disabled
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">Disabled State</h2>
+          <p class="showcase-section__desc">
+            Add <code>aria-disabled="true"</code> to the root and <code>disabled</code>
+            to the input. Opacity 0.4, non-interactive.
+          </p>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, Range=No, State=Disabled, Value=40">
+              <span class="showcase__label">Disabled</span>
+              <div class="showcase__item">
+                <div class="slider" data-component="slider" aria-disabled="true">
+                  <label class="slider__label-text" for="demo-disabled">Label</label>
+                  <div class="slider__track-row">
+                    <div class="slider__control-wrap">
+                      <div class="slider__track" aria-hidden="true">
+                        <div class="slider__fill" style="--fill: 40%"></div>
+                      </div>
+                      <input type="range" class="slider__input" id="demo-disabled"
+                             min="0" max="100" value="40" disabled
+                             aria-describedby="demo-disabled-helper">
+                    </div>
+                    <output class="slider__value" for="demo-disabled" aria-hidden="true">40</output>
+                  </div>
+                  <div class="slider__helper" id="demo-disabled-helper">
+                    <span class="slider__helper-icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.5" r="0.75" fill="currentColor"/></svg>
+                    </span>
+                    <span class="slider__helper-text">Help Text</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- ── Showcase JavaScript: live fill update ─────────────────────────── -->
+    <script>
+    (function () {
+      /* Single slider: update fill and output on input */
+      document.querySelectorAll('.js-slider').forEach(function (slider) {
+        var input  = slider.querySelector('.slider__input');
+        var fill   = slider.querySelector('.slider__fill');
+        var output = slider.querySelector('.slider__value');
+        if (!input || !fill) return;
+
+        function update() {
+          var pct = ((input.value - input.min) / (input.max - input.min)) * 100;
+          fill.style.setProperty('--fill', pct + '%');
+          if (output) output.textContent = input.value;
+        }
+        input.addEventListener('input', update);
+        update();
+      });
+
+      /* Range slider: update fill start/end and outputs on input */
+      document.querySelectorAll('.js-slider-range').forEach(function (slider) {
+        var startInput  = slider.querySelector('.slider__input:not(.slider__input--end)');
+        var endInput    = slider.querySelector('.slider__input--end');
+        var fill        = slider.querySelector('.slider__fill');
+        var startOutput = slider.querySelector('.slider__value:not(.slider__value--end)');
+        var endOutput   = slider.querySelector('.slider__value--end');
+        if (!startInput || !endInput || !fill) return;
+
+        function clampRange() {
+          var s = +startInput.value;
+          var e = +endInput.value;
+          if (s > e) { startInput.value = e; s = e; }
+          if (e < s) { endInput.value   = s; e = s; }
+        }
+
+        function updateRange() {
+          clampRange();
+          var min  = +startInput.min;
+          var max  = +startInput.max;
+          var s    = ((startInput.value - min) / (max - min)) * 100;
+          var e    = ((endInput.value   - min) / (max - min)) * 100;
+          fill.style.setProperty('--fill-start', Math.min(s, e) + '%');
+          fill.style.setProperty('--fill-end',   Math.max(s, e) + '%');
+          endInput.style.zIndex = (s >= e - 1) ? '4' : '';
+          if (startOutput) startOutput.textContent = startInput.value;
+          if (endOutput)   endOutput.textContent   = endInput.value;
+        }
+
+        [startInput, endInput].forEach(function (i) {
+          i.addEventListener('input', updateRange);
+        });
+        updateRange();
+      });
+    })();
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!--
+  Slider — Platform Code Design System
+  Template: template.html
+  Contract: slider.contract.md
+  Analysis: analysis.md
+
+  USAGE:
+    Include token.css and slider.css before this template.
+
+  NOTE:
+    .slider__fill requires JavaScript to update --fill (single)
+    or --fill-start / --fill-end (range) CSS custom properties.
+    See slider.contract.md §JavaScript Contract for the required JS.
+-->
+
+<!-- ═══════════════════════════════════════════════════
+     Single Slider — Small (default)
+     ═══════════════════════════════════════════════════ -->
+<div class="slider" data-component="slider">
+  <label class="slider__label-text" for="slider-sm">Label</label>
+  <div class="slider__track-row">
+    <div class="slider__control-wrap">
+      <div class="slider__track" aria-hidden="true">
+        <div class="slider__fill" style="--fill: 20%"></div>
+      </div>
+      <input
+        type="range"
+        class="slider__input"
+        id="slider-sm"
+        min="0"
+        max="100"
+        value="20"
+        aria-describedby="slider-sm-helper"
+      >
+    </div>
+    <output class="slider__value" for="slider-sm" aria-hidden="true">20</output>
+  </div>
+  <div class="slider__helper" id="slider-sm-helper">
+    <span class="slider__helper-icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="8" cy="4.5" r="0.75" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="slider__helper-text">Help Text</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     Single Slider — Medium
+     ═══════════════════════════════════════════════════ -->
+<div class="slider slider--md" data-component="slider">
+  <label class="slider__label-text" for="slider-md">Label</label>
+  <div class="slider__track-row">
+    <div class="slider__control-wrap">
+      <div class="slider__track" aria-hidden="true">
+        <div class="slider__fill" style="--fill: 20%"></div>
+      </div>
+      <input
+        type="range"
+        class="slider__input"
+        id="slider-md"
+        min="0"
+        max="100"
+        value="20"
+        aria-describedby="slider-md-helper"
+      >
+    </div>
+    <output class="slider__value" for="slider-md" aria-hidden="true">20</output>
+  </div>
+  <div class="slider__helper" id="slider-md-helper">
+    <span class="slider__helper-icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="8" cy="4.5" r="0.75" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="slider__helper-text">Help Text</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     Range Slider — Small
+     ═══════════════════════════════════════════════════ -->
+<div class="slider slider--range" data-component="slider">
+  <label class="slider__label-text" id="range-lbl-sm">Label</label>
+  <div class="slider__track-row">
+    <output class="slider__value" aria-hidden="true">20</output>
+    <div class="slider__control-wrap">
+      <div class="slider__track" aria-hidden="true">
+        <div class="slider__fill" style="--fill-start: 20%; --fill-end: 70%"></div>
+      </div>
+      <input
+        type="range"
+        class="slider__input"
+        min="0"
+        max="100"
+        value="20"
+        aria-label="Minimum value"
+        aria-labelledby="range-lbl-sm"
+        aria-describedby="range-helper-sm"
+      >
+      <input
+        type="range"
+        class="slider__input slider__input--end"
+        min="0"
+        max="100"
+        value="70"
+        aria-label="Maximum value"
+        aria-labelledby="range-lbl-sm"
+        aria-describedby="range-helper-sm"
+      >
+    </div>
+    <output class="slider__value slider__value--end" aria-hidden="true">70</output>
+  </div>
+  <div class="slider__helper" id="range-helper-sm">
+    <span class="slider__helper-icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="8" cy="4.5" r="0.75" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="slider__helper-text">Help Text</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     Single Slider — RTL (Small)
+     ═══════════════════════════════════════════════════ -->
+<div class="slider" data-component="slider" dir="rtl">
+  <label class="slider__label-text" for="slider-rtl">عنوان</label>
+  <div class="slider__track-row">
+    <div class="slider__control-wrap">
+      <div class="slider__track" aria-hidden="true">
+        <div class="slider__fill" style="--fill: 20%"></div>
+      </div>
+      <input
+        type="range"
+        class="slider__input"
+        id="slider-rtl"
+        min="0"
+        max="100"
+        value="20"
+        aria-describedby="slider-rtl-helper"
+      >
+    </div>
+    <output class="slider__value" for="slider-rtl" aria-hidden="true">20</output>
+  </div>
+  <div class="slider__helper" id="slider-rtl-helper">
+    <span class="slider__helper-text">نص مساعد</span>
+    <span class="slider__helper-icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="8" cy="4.5" r="0.75" fill="currentColor"/>
+      </svg>
+    </span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════
+     Disabled Slider
+     ═══════════════════════════════════════════════════ -->
+<div class="slider" data-component="slider" aria-disabled="true">
+  <label class="slider__label-text" for="slider-disabled">Label</label>
+  <div class="slider__track-row">
+    <div class="slider__control-wrap">
+      <div class="slider__track" aria-hidden="true">
+        <div class="slider__fill" style="--fill: 40%"></div>
+      </div>
+      <input
+        type="range"
+        class="slider__input"
+        id="slider-disabled"
+        min="0"
+        max="100"
+        value="40"
+        disabled
+        aria-describedby="slider-disabled-helper"
+      >
+    </div>
+    <output class="slider__value" for="slider-disabled" aria-hidden="true">40</output>
+  </div>
+  <div class="slider__helper" id="slider-disabled-helper">
+    <span class="slider__helper-icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M8 7v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="8" cy="4.5" r="0.75" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="slider__helper-text">Help Text</span>
+  </div>
+</div>

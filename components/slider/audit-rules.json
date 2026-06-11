@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "slider",
+  "_note": "Audit rules for the Slider component. Severity levels: high = blocking, medium = warning, low = advisory. These rules are checked against the rendered DOM and computed CSS. See compliance.json for mapping to platform standards.",
+
+  "rules": [
+
+    {
+      "id": "SLIDER-STRUCT-001",
+      "severity": "high",
+      "title": "Slider control must use input[type='range']",
+      "description": "The interactive slider control must be implemented as a native HTML input element with type='range'. Custom div/span elements with role='slider' are not permitted.",
+      "check": "Every .slider[data-component='slider'] must contain at least one input[type='range'].slider__input.",
+      "standard_ids": ["PLATFORM-CODE-SLIDER-003"]
+    },
+
+    {
+      "id": "SLIDER-STRUCT-002",
+      "severity": "high",
+      "title": "Fill element must be present",
+      "description": "The .slider__fill element must be present and must be a child of .slider__track. It receives the --fill CSS custom property for visual fill width.",
+      "check": "Every .slider must contain .slider__track > .slider__fill.",
+      "standard_ids": ["PLATFORM-CODE-SLIDER-001"]
+    },
+
+    {
+      "id": "SLIDER-STRUCT-003",
+      "severity": "medium",
+      "title": "Range slider must contain exactly two range inputs",
+      "description": "A .slider.slider--range must contain exactly two input[type='range'] elements: one .slider__input (start) and one .slider__input.slider__input--end (end).",
+      "check": ".slider.slider--range must contain input[type='range'].slider__input and input[type='range'].slider__input--end.",
+      "standard_ids": ["PLATFORM-CODE-SLIDER-003"]
+    },
+
+    {
+      "id": "SLIDER-STRUCT-004",
+      "severity": "medium",
+      "title": "Track and fill must be aria-hidden",
+      "description": "The .slider__track and .slider__fill elements are visual-only. They must carry aria-hidden='true' to prevent duplicate announcements by assistive technology.",
+      "check": ".slider__track[aria-hidden='true'] and .slider__fill[aria-hidden='true'] must be present.",
+      "standard_ids": ["PLATFORM-CODE-A11Y-001"]
+    },
+
+    {
+      "id": "SLIDER-A11Y-001",
+      "severity": "high",
+      "title": "Input must have an accessible label",
+      "description": "The input[type='range'] must be associated with a visible label via for= attribute, or have an aria-label, or aria-labelledby attribute.",
+      "check": "input[type='range'].slider__input must have one of: aria-label, aria-labelledby, or an associated <label> element via id/for.",
+      "standard_ids": ["PLATFORM-CODE-A11Y-001"]
+    },
+
+    {
+      "id": "SLIDER-A11Y-002",
+      "severity": "high",
+      "title": "Range slider thumbs must have distinct aria-labels",
+      "description": "In Range mode, each input[type='range'] must have a unique aria-label or aria-labelledby that clearly identifies its role (e.g., 'Minimum value' / 'Maximum value'). Arabic labels must be provided when the page language is Arabic.",
+      "check": ".slider.slider--range: each input[type='range'] must have distinct aria-label or aria-labelledby values.",
+      "standard_ids": ["PLATFORM-CODE-A11Y-002"]
+    },
+
+    {
+      "id": "SLIDER-A11Y-003",
+      "severity": "high",
+      "title": "Focus ring must be visible on keyboard focus",
+      "description": "When a slider thumb receives keyboard focus, a visible focus indicator must appear. The outline must not be suppressed without replacement.",
+      "check": "Computed style of input[type='range'].slider__input:focus-visible must have a non-none outline or equivalent border/box-shadow ring.",
+      "standard_ids": ["PLATFORM-CODE-FOCUS-001"]
+    },
+
+    {
+      "id": "SLIDER-A11Y-004",
+      "severity": "medium",
+      "title": "Thumb touch target should meet 24×24px minimum",
+      "description": "The clickable/touchable area of the slider thumb must meet the internal minimum of 24×24px. The visual thumb circle may be smaller if the input element itself provides an adequate touch area.",
+      "check": "The bounding box of input[type='range'].slider__input must be at least 24px in height. Visual thumb size flagged if below 24px.",
+      "standard_ids": ["PLATFORM-CODE-SLIDER-005"]
+    },
+
+    {
+      "id": "SLIDER-A11Y-005",
+      "severity": "high",
+      "title": "Disabled slider must be non-interactive",
+      "description": "When .slider[aria-disabled='true'] is present, the slider input must also have the native disabled attribute, and pointer-events must be none.",
+      "check": ".slider[aria-disabled='true'] input[type='range'] must have disabled attribute. Computed pointer-events on .slider[aria-disabled='true'] must be 'none'.",
+      "standard_ids": ["PLATFORM-CODE-STATE-001"]
+    },
+
+    {
+      "id": "SLIDER-TOKEN-001",
+      "severity": "high",
+      "title": "Component CSS must not contain hardcoded visual values",
+      "description": "No hardcoded hex, rgb(), hsl(), or pixel values for color, spacing, or radius may appear in slider.css production selectors. All values must reference var(--slider-*) semantic tokens.",
+      "check": "slider.css must not contain hex color literals, rgb(), hsl() in non-fallback positions. Spacing and radius values must use var(--slider-*) or var(--radius-*/--spacing-*).",
+      "standard_ids": ["PLATFORM-CODE-TOKEN-001", "PLATFORM-CODE-SLIDER-001"]
+    },
+
+    {
+      "id": "SLIDER-RTL-001",
+      "severity": "medium",
+      "title": "RTL layout must be implemented via [dir='rtl'] selector",
+      "description": "RTL support must use the [dir='rtl'] CSS attribute selector. Physical directional properties (left, right, margin-left, margin-right) must be replaced with logical properties or scoped under [dir='rtl']. Fill direction, value position, and label alignment must all reverse in RTL.",
+      "check": "slider.css must contain [dir='rtl'] selectors covering: fill direction, label text-align, helper text direction, and value element order.",
+      "standard_ids": ["PLATFORM-CODE-SLIDER-002"]
+    },
+
+    {
+      "id": "SLIDER-TOKEN-002",
+      "severity": "medium",
+      "title": "All slider-scoped tokens must be defined in token.css",
+      "description": "Once the component is promoted from draft to stable, all --slider-* tokens referenced in slider.css must be defined in token.css. This rule is advisory until overall_status changes from pending_audit.",
+      "check": "token.css must define all --slider-* tokens listed in reference.json §tokens. Currently failing — all tokens are pending.",
+      "standard_ids": ["PLATFORM-CODE-SLIDER-001", "PLATFORM-CODE-TOKEN-001"]
+    },
+
+    {
+      "id": "SLIDER-TEMPLATE-001",
+      "severity": "medium",
+      "title": "All classes in template.html must exist in slider.css",
+      "description": "Every CSS class used in template.html must have a corresponding selector defined in slider.css. No orphan template classes permitted.",
+      "check": "Extract all class names from template.html. Verify each class exists in slider.css as a selector.",
+      "standard_ids": ["PLATFORM-CODE-SLIDER-001"]
+    },
+
+    {
+      "id": "SLIDER-TEMPLATE-002",
+      "severity": "medium",
+      "title": "All documented states in contract.md must have a CSS selector",
+      "description": "Every state listed in slider.contract.md §State Reference must have a corresponding CSS selector in slider.css.",
+      "check": "Verify selectors exist for: .slider (default), .slider__input:hover, .slider__input:focus-visible, .slider[aria-disabled='true'], [dir='rtl'] .slider.",
+      "standard_ids": ["PLATFORM-CODE-SLIDER-001"]
+    },
+
+    {
+      "id": "SLIDER-SHOWCASE-001",
+      "severity": "low",
+      "title": "Showcase Code tab must contain only reusable component markup",
+      "description": "The Code tab in each showcase example must expose only the component's root element and its children. Showcase wrappers, headings, labels, and JavaScript must not appear in copied code.",
+      "check": "Manual review: copy a code block from showcases/index.html and verify it can be used directly in an external page without modification.",
+      "standard_ids": []
+    }
+
+  ]
+}

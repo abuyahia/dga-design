@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "slider",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "_note": "Status 'mapped' means the component has been mapped to this criterion against internal platform standards only. No WCAG or external compliance claim is made. Run audit-rules.json checks and update validation_status before changing overall_status. See analysis.md for full risk and token finding details.",
+
+  "standards": [
+
+    {
+      "id": "PLATFORM-CODE-SLIDER",
+      "name": "Platform Design System — Slider Component Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Internal platform rules for the Slider component. IDs are stable. See standards/platform-code.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-SLIDER-001",
+          "title": "Component must use design tokens for all visual values",
+          "status": "fail",
+          "evidence": "slider.css references var(--slider-*) component-scoped tokens exclusively. However, no slider-scoped tokens exist in token.css at this time. All token references use Figma manifest values as fallbacks. The CSS architecture is correct; the token definitions are missing. See analysis.md §Token Findings.",
+          "audit_rule_ids": ["SLIDER-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-SLIDER-002",
+          "title": "RTL layout support is mandatory",
+          "status": "mapped",
+          "evidence": "slider.css implements [dir='rtl'] selectors that reverse fill direction, value position, label alignment, and helper text alignment. RTL was confirmed as a meaningful implementation axis from the manifest (produces real CSS differences). Native input[type='range'] direction is set via CSS direction property in RTL context.",
+          "audit_rule_ids": ["SLIDER-RTL-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-SLIDER-003",
+          "title": "Semantic HTML element required",
+          "status": "mapped",
+          "evidence": "input[type='range'] is the required element for the slider control. It provides keyboard navigation (arrow keys), screen reader role 'slider', and aria-valuemin/max/now automatically. slider.contract.md §HTML Contract documents the anatomy. SLIDER-STRUCT-001 enforces this at the DOM level.",
+          "audit_rule_ids": ["SLIDER-STRUCT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-SLIDER-004",
+          "title": "Arabic language font support required",
+          "status": "mapped",
+          "evidence": "slider.css applies font-family via var(--slider-label-font-family) which falls back to 'IBM Plex Sans Arabic' as specified in the Figma manifest. All text elements (label, value, helper) inherit this font.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "PLATFORM-CODE-SLIDER-005",
+          "title": "Minimum touch target 24×24px for interactive elements",
+          "status": "mapped",
+          "evidence": "Small thumb is 12px, Medium thumb is 16px. Both are below 24px visual size. However, input[type='range'] touch target is expanded via padding and the input element itself spans the full track width, providing an adequate click/touch area. The visual thumb size differs from the interactive area. Flagged for design review.",
+          "audit_rule_ids": ["SLIDER-A11Y-004"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y",
+      "name": "Platform Accessibility Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Accessibility-specific internal standards. See standards/accessibility.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-A11Y-001",
+          "title": "Keyboard interaction must be fully supported",
+          "status": "mapped",
+          "evidence": "input[type='range'] provides native keyboard interaction: Arrow Left/Right/Up/Down adjust value, Home/End jump to min/max. No custom keyboard handling required. Documented in slider.contract.md §ARIA Contract.",
+          "audit_rule_ids": ["SLIDER-A11Y-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-A11Y-002",
+          "title": "Range slider must provide distinct labels for each thumb",
+          "status": "mapped",
+          "evidence": "Range mode requires aria-label='Minimum value' and aria-label='Maximum value' (or Arabic equivalents) on each input. Documented in slider.contract.md §ARIA Contract and §HTML Contract. SLIDER-A11Y-002 enforces at audit time.",
+          "audit_rule_ids": ["SLIDER-A11Y-002"]
+        },
+        {
+          "id": "PLATFORM-CODE-FOCUS-001",
+          "title": "Focus ring must not be suppressed",
+          "status": "mapped",
+          "evidence": "slider.css defines a focus ring via input:focus-visible outline. Native browser outline is overridden and replaced with a custom platform-branded focus indicator using --slider-focus-ring-color. :focus-visible is used (keyboard-only) per platform convention. No Focus Ring layer exists in the Figma manifest — this is an implementation addition from platform accessibility standards.",
+          "audit_rule_ids": ["SLIDER-A11Y-003"]
+        },
+        {
+          "id": "PLATFORM-CODE-TOKEN-001",
+          "title": "No hardcoded color, spacing, or radius values in component CSS",
+          "status": "fail",
+          "evidence": "slider.css contains no hardcoded hex, rgb(), or hsl() values in production selectors. All visual properties reference var(--slider-*) semantic tokens. However, those tokens are not yet defined in token.css — fallback values in the var() calls reference Figma manifest values. The CSS structure is compliant; the token definitions are the blocking gap. SLIDER-TOKEN-001 will pass once token.css is updated.",
+          "audit_rule_ids": ["SLIDER-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-STATE-001",
+          "title": "Disabled state must be visually distinct and non-interactive",
+          "status": "mapped",
+          "evidence": "slider.css applies opacity var(--slider-disabled-opacity, 0.4) and pointer-events: none to .slider[aria-disabled='true']. The input[type='range'] also receives the native disabled attribute. SLIDER-A11Y-005 enforces both conditions at audit.",
+          "audit_rule_ids": ["SLIDER-A11Y-005"]
+        }
+      ]
+    }
+
+  ],
+
+  "variant_compliance_notes": {
+    "slider--sm (small)": "Thumb visual diameter is 12px, below 24px. Native input click/drag area spans full track width. Design team must confirm whether 12px thumb is acceptable or should be raised to minimum 24px.",
+    "slider--md (medium)": "Thumb visual diameter is 16px, below 24px. Same caveat as small. Click/drag area spans full track width.",
+    "slider--range": "Range mode requires JavaScript for fill positioning and z-index management. Static showcase uses inline style placeholders. JavaScript contract documented in slider.contract.md §JavaScript Contract.",
+    "rtl": "RTL fill direction requires JavaScript calculation adjustment (inverted percentage). Documented in slider.contract.md §RTL Behavior.",
+    "disabled (all variants)": "Low contrast of the disabled state is intentional. Inactive UI components are exempt from active-state contrast requirements per internal accessibility standards."
+  }
+}

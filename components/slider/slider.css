@@ -1,0 +1,382 @@
+/* ==========================================================================
+   slider.css — Platform Code Design System
+   Component: Slider
+   Classification: Primitive
+   Contract: slider.contract.md
+   Analysis: analysis.md
+   --------------------------------------------------------------------------
+   All visual values use --slider-* component-scoped tokens.
+   Fallback values sourced from Figma manifest (mainifest.json).
+   TODO: Add all --slider-* tokens to token.css. See analysis.md §Missing Tokens.
+   ========================================================================== */
+
+/* ── Token declarations (fallbacks until token.css is updated) ────────────── */
+:root {
+  /* Structure */
+  /* TODO: --slider-gap missing in token.css. Proposed: var(--Global-spacing-xs, 4px) */
+  --slider-gap:                var(--Global-spacing-xs, 4px);
+  /* TODO: --slider-track-row-gap missing in token.css. Proposed: var(--Global-spacing-sm, 6px) */
+  --slider-track-row-gap:      var(--Global-spacing-sm, 6px);
+  /* TODO: --slider-label-gap missing in token.css. Proposed: var(--Form-label-gap, 4px) */
+  --slider-label-gap:          var(--Form-label-gap, 4px);
+  /* TODO: --slider-helper-gap missing in token.css. Proposed: var(--Form-icon-helpertext, 8px) */
+  --slider-helper-gap:         var(--Form-icon-helpertext, 8px);
+
+  /* Track */
+  /* TODO: --slider-track-radius missing in token.css. Proposed: var(--Radius-radius-sm, 4px) */
+  --slider-track-radius:       var(--Radius-radius-sm, 4px);
+  /* TODO: --slider-track-bg missing in token.css. Proposed: var(--Background-background-neutral-100) */
+  --slider-track-bg:           var(--Background-background-neutral-100, #F3F4F6);
+  /* TODO: --slider-fill-bg missing in token.css. Proposed: var(--Background-background-primary) */
+  --slider-fill-bg:            var(--Background-background-primary, #1B8354);
+  /* TODO: --slider-thumb-fill missing in token.css. Proposed: var(--Background-background-primary) */
+  --slider-thumb-fill:         var(--Background-background-primary, #1B8354);
+  /* TODO: --slider-thumb-stroke missing in token.css. Proposed: var(--Border-border-success) */
+  --slider-thumb-stroke:       var(--Border-border-success, #067647);
+
+  /* Typography */
+  /* TODO: --slider-label-color missing in token.css. Proposed: var(--Form-field-text-label) */
+  --slider-label-color:        var(--Form-field-text-label, #161616);
+  /* TODO: --slider-value-color missing in token.css. Proposed: var(--Text-text-primary-paragraph) */
+  --slider-value-color:        var(--Text-text-primary-paragraph, #384250);
+  /* TODO: --slider-helper-color missing in token.css. Proposed: var(--Text-text-primary-paragraph) */
+  --slider-helper-color:       var(--Text-text-primary-paragraph, #384250);
+  /* TODO: --slider-label-font-family missing in token.css. Proposed: var(--Font-Family-font-family-text) */
+  --slider-label-font-family:  var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+
+  /* Sizes — Small (default) */
+  /* TODO: --slider-sm-track-height missing in token.css. Value from manifest: 4px */
+  --slider-sm-track-height:       4px;
+  /* TODO: --slider-sm-thumb-size missing in token.css. Value from manifest: 12px */
+  --slider-sm-thumb-size:         12px;
+  /* TODO: --slider-sm-label-font-size missing in token.css. Value from manifest: 14px */
+  --slider-sm-label-font-size:    14px;
+  /* TODO: --slider-sm-label-line-height missing in token.css. Value from manifest: 20px */
+  --slider-sm-label-line-height:  20px;
+  /* TODO: --slider-sm-helper-font-size missing in token.css. Proposed: var(--Size-Text-typo-size-text-xs) */
+  --slider-sm-helper-font-size:   var(--Size-Text-typo-size-text-xs, 12px);
+  /* TODO: --slider-sm-helper-line-height missing in token.css. Proposed: var(--Line-Height-Text-line-heights-text-xs) */
+  --slider-sm-helper-line-height: var(--Line-Height-Text-line-heights-text-xs, 18px);
+
+  /* Sizes — Medium */
+  /* TODO: --slider-md-track-height missing in token.css. Value from manifest: 8px */
+  --slider-md-track-height:       8px;
+  /* TODO: --slider-md-thumb-size missing in token.css. Value from manifest: 16px */
+  --slider-md-thumb-size:         16px;
+  /* TODO: --slider-md-label-font-size missing in token.css. Value from manifest: 16px */
+  --slider-md-label-font-size:    16px;
+  /* TODO: --slider-md-label-line-height missing in token.css. Value from manifest: 24px */
+  --slider-md-label-line-height:  24px;
+  /* TODO: --slider-md-helper-font-size missing in token.css. Proposed: var(--Size-Text-typo-size-text-sm) */
+  --slider-md-helper-font-size:   var(--Size-Text-typo-size-text-sm, 14px);
+  /* TODO: --slider-md-helper-line-height missing in token.css. Proposed: var(--Line-Height-Text-line-heights-text-sm) */
+  --slider-md-helper-line-height: var(--Line-Height-Text-line-heights-text-sm, 20px);
+
+  /* States */
+  /* TODO: --slider-disabled-opacity missing in token.css. Assumed platform convention: 0.4 */
+  --slider-disabled-opacity:   0.4;
+  /* TODO: --slider-focus-ring-color missing in token.css. Proposed: var(--Background-background-primary) */
+  --slider-focus-ring-color:   var(--Background-background-primary, #1B8354);
+  /* TODO: --slider-focus-ring-width missing in token.css. Assumed: 2px */
+  --slider-focus-ring-width:   2px;
+  /* TODO: --slider-focus-ring-offset missing in token.css. Assumed: 2px */
+  --slider-focus-ring-offset:  2px;
+}
+
+
+/* ── Root ─────────────────────────────────────────────────────────────────── */
+
+.slider {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--slider-gap);
+  font-family: var(--slider-label-font-family);
+  box-sizing: border-box;
+}
+
+
+/* ── Label ────────────────────────────────────────────────────────────────── */
+
+.slider__label-text {
+  display: block;
+  color: var(--slider-label-color);
+  font-family: var(--slider-label-font-family);
+  font-size: var(--slider-sm-label-font-size);
+  font-weight: 400;
+  line-height: var(--slider-sm-label-line-height);
+}
+
+
+/* ── Track row ────────────────────────────────────────────────────────────── */
+
+.slider__track-row {
+  display: flex;
+  align-items: center;
+  gap: var(--slider-track-row-gap);
+  width: 100%;
+}
+
+
+/* ── Value / Percentage text ──────────────────────────────────────────────── */
+
+.slider__value {
+  color: var(--slider-value-color);
+  font-family: var(--slider-label-font-family);
+  font-size: var(--Size-Text-typo-size-text-xs, 12px);
+  font-weight: 400;
+  line-height: var(--Line-Height-Text-line-heights-text-xs, 18px);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+
+/* ── Control wrapper ──────────────────────────────────────────────────────── */
+
+.slider__control-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+
+/* ── Track background ─────────────────────────────────────────────────────── */
+
+.slider__track {
+  position: absolute;
+  inset-inline: 0;
+  height: var(--slider-sm-track-height);
+  border-radius: var(--slider-track-radius);
+  background: var(--slider-track-bg);
+  pointer-events: none;
+  overflow: hidden;
+}
+
+
+/* ── Fill ─────────────────────────────────────────────────────────────────── */
+
+.slider__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--fill, 0%);
+  background: var(--slider-fill-bg);
+  border-radius: var(--slider-track-radius);
+  pointer-events: none;
+  transition: width 0.1s ease;
+}
+
+/* Range fill: positioned between start and end thumbs */
+.slider--range .slider__fill {
+  left:  var(--fill-start, 0%);
+  width: calc(var(--fill-end, 100%) - var(--fill-start, 0%));
+}
+
+
+/* ── Native range input (transparent, full-width) ─────────────────────────── */
+
+.slider__input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: var(--slider-sm-track-height);
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* Range mode: end input sits above start input */
+.slider__input--end {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/* ── Thumb — WebKit/Blink ─────────────────────────────────────────────────── */
+
+.slider__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--slider-sm-thumb-size);
+  height: var(--slider-sm-thumb-size);
+  border-radius: 50%;
+  background: var(--slider-thumb-fill);
+  border: 1px solid var(--slider-thumb-stroke);
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.15s ease;
+  box-sizing: border-box;
+}
+
+.slider__input::-webkit-slider-runnable-track {
+  background: transparent;
+  border: none;
+}
+
+
+/* ── Thumb — Firefox ──────────────────────────────────────────────────────── */
+
+.slider__input::-moz-range-thumb {
+  width: var(--slider-sm-thumb-size);
+  height: var(--slider-sm-thumb-size);
+  border-radius: 50%;
+  background: var(--slider-thumb-fill);
+  border: 1px solid var(--slider-thumb-stroke);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  box-sizing: border-box;
+}
+
+.slider__input::-moz-range-track {
+  background: transparent;
+  border: none;
+}
+
+
+/* ── Hover state ──────────────────────────────────────────────────────────── */
+
+.slider__input:hover::-webkit-slider-thumb {
+  transform: scale(1.1);
+}
+
+.slider__input:hover::-moz-range-thumb {
+  transform: scale(1.1);
+}
+
+
+/* ── Focus visible state ──────────────────────────────────────────────────── */
+
+.slider__input:focus-visible {
+  outline: var(--slider-focus-ring-width) solid var(--slider-focus-ring-color);
+  outline-offset: var(--slider-focus-ring-offset);
+  border-radius: 2px;
+}
+
+
+/* ── Helper text ──────────────────────────────────────────────────────────── */
+
+.slider__helper {
+  display: flex;
+  align-items: center;
+  gap: var(--slider-helper-gap);
+  padding: 0;
+}
+
+.slider__helper-icon {
+  display: flex;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slider__helper-text {
+  color: var(--slider-helper-color);
+  font-family: var(--slider-label-font-family);
+  font-size: var(--slider-sm-helper-font-size);
+  font-weight: 400;
+  line-height: var(--slider-sm-helper-line-height);
+}
+
+
+/* ── Size modifier: Medium ────────────────────────────────────────────────── */
+
+.slider--md .slider__label-text {
+  font-size: var(--slider-md-label-font-size);
+  line-height: var(--slider-md-label-line-height);
+}
+
+.slider--md .slider__track {
+  height: var(--slider-md-track-height);
+}
+
+.slider--md .slider__input {
+  height: var(--slider-md-track-height);
+}
+
+.slider--md .slider__input::-webkit-slider-thumb {
+  width: var(--slider-md-thumb-size);
+  height: var(--slider-md-thumb-size);
+}
+
+.slider--md .slider__input::-moz-range-thumb {
+  width: var(--slider-md-thumb-size);
+  height: var(--slider-md-thumb-size);
+}
+
+.slider--md .slider__helper-text {
+  font-size: var(--slider-md-helper-font-size);
+  line-height: var(--slider-md-helper-line-height);
+}
+
+
+/* ── Disabled state ───────────────────────────────────────────────────────── */
+
+.slider[aria-disabled="true"] {
+  opacity: var(--slider-disabled-opacity);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.slider[aria-disabled="true"] .slider__input {
+  cursor: not-allowed;
+}
+
+
+/* ── RTL ──────────────────────────────────────────────────────────────────── */
+
+[dir="rtl"] .slider {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .slider__label-text {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .slider__track-row {
+  direction: rtl;
+}
+
+[dir="rtl"] .slider__helper {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .slider__helper-text {
+  text-align: right;
+}
+
+/* RTL fill grows from the right */
+[dir="rtl"] .slider__fill {
+  left: auto;
+  right: 0;
+  border-radius: var(--slider-track-radius);
+}
+
+/* RTL native input direction */
+[dir="rtl"] .slider__input {
+  direction: rtl;
+}
+
+/* RTL value text on the right (start side in RTL) */
+[dir="rtl"] .slider__value:not(.slider__value--end) {
+  order: 2;
+}
+
+[dir="rtl"] .slider__control-wrap {
+  order: 1;
+}

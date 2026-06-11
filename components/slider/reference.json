@@ -1,0 +1,105 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "slider",
+    "description": "A form input control that allows users to select a value or range of values by dragging a thumb along a track. Supports single-value and range (dual-thumb) modes with LTR and RTL layout.",
+    "classification": "Primitive",
+    "source_manifest": "components/slider/mainifest.json"
+  },
+  "axes": ["size", "range", "direction"],
+  "axis_values": {
+    "size": ["small", "medium"],
+    "range": ["single", "range"],
+    "direction": ["ltr", "rtl"]
+  },
+  "discarded_axes": {
+    "percentage": {
+      "reason": "Figma Persentage axis represents static preview states (0, 20, 50, 70, 100) — runtime data driven by the input value, not a structural component variant. A single template using --slider-fill-pct CSS custom property covers all positions.",
+      "css_delta": "none — identical anatomy across all percentage values"
+    }
+  },
+  "meaningful_variant_count": 8,
+  "size_tokens": {
+    "small": {
+      "track-height":        "var(--slider-sm-track-height, 4px)",
+      "thumb-size":          "var(--slider-sm-thumb-size, 12px)",
+      "label-font-size":     "var(--slider-sm-label-font-size, 14px)",
+      "label-line-height":   "var(--slider-sm-label-line-height, 20px)",
+      "helper-font-size":    "var(--slider-sm-helper-font-size, var(--Size-Text-typo-size-text-xs, 12px))",
+      "helper-line-height":  "var(--slider-sm-helper-line-height, var(--Line-Height-Text-line-heights-text-xs, 18px))",
+      "css-modifier":        null
+    },
+    "medium": {
+      "track-height":        "var(--slider-md-track-height, 8px)",
+      "thumb-size":          "var(--slider-md-thumb-size, 16px)",
+      "label-font-size":     "var(--slider-md-label-font-size, 16px)",
+      "label-line-height":   "var(--slider-md-label-line-height, 24px)",
+      "helper-font-size":    "var(--slider-md-helper-font-size, var(--Size-Text-typo-size-text-sm, 14px))",
+      "helper-line-height":  "var(--slider-md-helper-line-height, var(--Line-Height-Text-line-heights-text-sm, 20px))",
+      "css-modifier":        ".slider--md"
+    }
+  },
+  "mode_tokens": {
+    "single": {
+      "description": "One thumb, single value output",
+      "css-modifier": null
+    },
+    "range": {
+      "description": "Two thumbs, start and end value outputs",
+      "css-modifier": ".slider--range"
+    }
+  },
+  "variants": [
+    { "size": "small", "range": "single", "direction": "ltr", "css_classes": "slider" },
+    { "size": "small", "range": "single", "direction": "rtl", "css_classes": "slider", "dir_attr": "rtl" },
+    { "size": "small", "range": "range",  "direction": "ltr", "css_classes": "slider slider--range" },
+    { "size": "small", "range": "range",  "direction": "rtl", "css_classes": "slider slider--range", "dir_attr": "rtl" },
+    { "size": "medium","range": "single", "direction": "ltr", "css_classes": "slider slider--md" },
+    { "size": "medium","range": "single", "direction": "rtl", "css_classes": "slider slider--md", "dir_attr": "rtl" },
+    { "size": "medium","range": "range",  "direction": "ltr", "css_classes": "slider slider--md slider--range" },
+    { "size": "medium","range": "range",  "direction": "rtl", "css_classes": "slider slider--md slider--range", "dir_attr": "rtl" }
+  ],
+  "anatomy": {
+    "root":            { "element": "div",    "class": "slider",                "required": true },
+    "label":           { "element": "label",  "class": "slider__label-text",    "required": false },
+    "track-row":       { "element": "div",    "class": "slider__track-row",     "required": true },
+    "value":           { "element": "output", "class": "slider__value",         "required": false },
+    "control-wrap":    { "element": "div",    "class": "slider__control-wrap",  "required": true },
+    "track":           { "element": "div",    "class": "slider__track",         "required": true },
+    "fill":            { "element": "div",    "class": "slider__fill",          "required": true },
+    "input":           { "element": "input",  "class": "slider__input",         "required": true, "type": "range" },
+    "input-end":       { "element": "input",  "class": "slider__input slider__input--end", "required": false, "type": "range", "note": "Range mode only" },
+    "value-end":       { "element": "output", "class": "slider__value slider__value--end", "required": false, "note": "Range mode only — placed after control-wrap in DOM, visually on the opposite side of value" },
+    "helper":          { "element": "div",    "class": "slider__helper",        "required": false },
+    "helper-icon":     { "element": "span",   "class": "slider__helper-icon",   "required": false },
+    "helper-text":     { "element": "span",   "class": "slider__helper-text",   "required": false }
+  },
+  "tokens": {
+    "track_bg":            "var(--slider-track-bg, var(--Background-background-neutral-100, #F3F4F6))",
+    "fill_bg":             "var(--slider-fill-bg, var(--Background-background-primary, #1B8354))",
+    "thumb_fill":          "var(--slider-thumb-fill, var(--Background-background-primary, #1B8354))",
+    "thumb_stroke":        "var(--slider-thumb-stroke, var(--Border-border-success, #067647))",
+    "label_color":         "var(--slider-label-color, var(--Form-field-text-label, #161616))",
+    "value_color":         "var(--slider-value-color, var(--Text-text-primary-paragraph, #384250))",
+    "helper_color":        "var(--slider-helper-color, var(--Text-text-primary-paragraph, #384250))",
+    "track_radius":        "var(--slider-track-radius, var(--Radius-radius-sm, 4px))",
+    "gap":                 "var(--slider-gap, var(--Global-spacing-xs, 4px))",
+    "track_row_gap":       "var(--slider-track-row-gap, var(--Global-spacing-sm, 6px))",
+    "helper_gap":          "var(--slider-helper-gap, var(--Form-icon-helpertext, 8px))",
+    "disabled_opacity":    "var(--slider-disabled-opacity, 0.4)",
+    "focus_ring_color":    "var(--slider-focus-ring-color, var(--Background-background-primary, #1B8354))",
+    "focus_ring_width":    "var(--slider-focus-ring-width, 2px)",
+    "focus_ring_offset":   "var(--slider-focus-ring-offset, 2px)"
+  },
+  "implementation_notes": [
+    "Use <input type='range'> as the semantic slider element. The Control (ELLIPSE) in Figma maps to the native thumb pseudo-element.",
+    "The Figma fill frame wraps the Control (ELLIPSE). In HTML the fill (.slider__fill) is a sibling of the input, not a wrapper. Both are children of .slider__control-wrap.",
+    "Fill width is set via CSS custom property: style='--fill: 20%' on .slider__fill, updated by JavaScript as the input changes.",
+    "For Range mode, use two <input type='range'> elements. The fill position spans from start-thumb to end-thumb (left + width calculated by JS).",
+    "RTL: set dir='rtl' on the slider root or a parent element. The fill grows from right to left in RTL. JS must account for inverted fill calculation in RTL.",
+    "Track width in Figma is 320px (canvas constraint). Use width: 100% on .slider__control-wrap for responsive behavior.",
+    "The negative gap (-46px) in the Figma Progress Bar is a Figma layout artifact for visual overlap. Not reproduced in HTML — absolute positioning handles this.",
+    "Helper text icon uses a generic SVG placeholder. Integrate the actual icon component (help-circle) when available.",
+    "No Hover, Focus, or Disabled states are present in the Figma manifest. These are implemented from platform accessibility standards."
+  ]
+}
