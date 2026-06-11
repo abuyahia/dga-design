@@ -43,6 +43,7 @@
     { id: 'checkbox', label: 'Checkbox' },
     { id: 'chip', label: 'Chip' },
     { id: 'content-switcher', label: 'Content Switcher' },
+    { id: 'dga-links', label: 'DGA Links' },
     { id: 'input-affix', label: 'Input Affix' },
     { id: 'label', label: 'Label' },
     { id: 'link', label: 'Link' },

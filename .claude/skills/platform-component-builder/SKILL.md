@@ -234,18 +234,38 @@ Rules:
 When generating a component, always follow this order:
 
 1. Read manifest.json.
-2. Analyze axes, states, variants, sizes, anatomy, semantic layer roles, state deltas, and pseudo-element candidates.
-3. Create or update analysis.md.
-4. Create or update reference.json.
-5. Create or update [component-name].contract.md.
-6. Create or update compliance.json.
-7. Create or update audit-rules.json.
-8. Create or update [component-name].css.
-9. Create or update template.html.
-10. Review generated files.
-11. Return remaining issues and TODOs.
+2. Analyze axes, states, variants, sizes, anatomy, semantic layer roles, state deltas, pseudo-element candidates, and component classification.
+3. Classify the component as:
+   - Primitive
+   - Composite
+   - Pattern
+   - Assembly
+4. Output classification confirmation.
+5. If the component is Composite, Pattern, or Assembly:
+   - Detect dependencies.
+   - Detect optional dependencies.
+   - Request dependency confirmation from the user.
+6. If confirmation is received (or explicitly skipped):
+   - Create or update analysis.md.
+7. Create or update reference.json.
+8. Create or update [component-name].contract.md.
+9. Create or update compliance.json.
+10. Create or update audit-rules.json.
+11. Create or update [component-name].css.
+12. Create or update template.html.
+13. Create or update showcases/index.html.
+14. Review generated files.
+15. Return remaining issues and TODOs.
 
----
+Exception:
+
+If the user explicitly writes:
+
+```text
+Generate without confirmation
+```
+
+the skill may proceed using detected dependencies and must document all assumptions in analysis.md.
 
 ## Semantic Layer Analysis
 
@@ -410,6 +430,149 @@ If reusable boundaries exist, recommend generation order:
 3. composite components
 4. assemblies
 
+## Component Classification Gate
+
+Before generating any component, the skill must classify the component into one of four types:
+
+1. Primitive Component
+2. Composite Component
+3. Pattern Component
+4. Assembly
+
+This classification is mandatory before generation.
+
+### Classification Types
+
+#### 1. Primitive Component
+
+A self-contained component with no required child component dependencies.
+
+Examples:
+
+- button
+- label
+- link
+- avatar
+- badge
+- checkbox
+- radio
+- textarea
+
+Rules:
+
+- Generate as a standalone component.
+- Dependencies must be `None`.
+- Do not ask for child components unless the manifest clearly references reusable children.
+
+#### 2. Composite Component
+
+A component with its own identity that may contain other reusable components as optional slots.
+
+Examples:
+
+- card
+- news-card
+- profile-card
+- event-card
+- service-card
+
+Rules:
+
+- The parent component owns layout, spacing, surface, slots, and parent-specific states.
+- Child components remain independent.
+- Do not merge child CSS into parent CSS.
+- Do not duplicate child tokens.
+- Ask the user to confirm expected child components.
+
+#### 3. Pattern Component
+
+A reusable structure that standardizes a fixed relationship between multiple components.
+
+Examples:
+
+- form-field
+- search-field
+- filter-group
+- input-group
+
+Rules:
+
+- Pattern structure is usually stable.
+- Pattern must document required and optional child components.
+- Pattern CSS controls composition only.
+- Child components keep their own contracts and CSS.
+
+#### 4. Assembly
+
+A larger feature or experience composed of multiple components, patterns, and interactions.
+
+Examples:
+
+- site-seal
+- header
+- footer
+- hero
+- mega-menu
+- login-panel
+
+Rules:
+
+- Assembly may include multiple components and interaction behavior.
+- Assembly must document dependencies and interaction responsibilities.
+- Assembly must not redefine child component behavior.
+- Assembly showcase may include full composed examples.
+
+## Classification Confirmation Step
+
+After reading and analyzing manifest.json, but before generating files, the skill must output a confirmation summary.
+
+The summary must include:
+
+```text
+Component classification:
+- Primitive / Composite / Pattern / Assembly
+
+Detected reason:
+- ...
+
+Expected dependencies:
+- ...
+
+Optional dependencies:
+- ...
+
+Generation intent:
+- You are about to generate a [classification] component.
+```
+
+Primitive:
+
+- Continue automatically unless ambiguity exists.
+
+Composite:
+
+- Ask the user to confirm detected child components.
+
+Pattern:
+
+- Ask the user to confirm required and optional child components.
+
+Assembly:
+
+- Ask the user to confirm assembled parts and interaction scope.
+
+Do not generate Composite, Pattern, or Assembly components until dependency confirmation is received.
+
+Exception:
+
+If the user explicitly writes:
+
+```text
+Generate without confirmation
+```
+
+the skill may proceed and must document assumptions in analysis.md.
+
 ## reference.json Requirements
 
 reference.json is mandatory.
@@ -427,6 +590,63 @@ It must contain:
 The variant count must match the meaningful variant count derived from manifest.json.
 
 Discarded axes must be documented.
+
+## component.contract.md Requirements
+
+component.contract.md is mandatory.
+
+It must contain:
+
+# [Component Name] Contract
+
+## Component Type
+
+- Primitive / Composite / Pattern / Assembly
+
+## Dependencies
+
+For Primitive components:
+
+```md
+## Dependencies
+
+- None
+```
+
+For Composite, Pattern, or Assembly components:
+
+```md
+## Dependencies
+
+Required:
+
+- ...
+
+Optional:
+
+- ...
+```
+
+Rules:
+
+- Dependencies must list child components used by the component.
+- Do not list showcase-only items as dependencies.
+- Do not list layout wrappers as dependencies.
+- If dependencies are unknown, write:
+
+```md
+## Dependencies
+
+Required:
+
+- TODO: confirm
+
+Optional:
+
+- TODO: confirm
+```
+
+- Dependency assumptions must also be documented in `analysis.md`.
 
 ## CSS Template Validation
 
@@ -504,11 +724,17 @@ Suppress interaction ripple when keyboard focus is active if the Figma variants 
 
 ---
 
-## 4. داخل `analysis.md Requirements`
+## Extended analysis.md Requirements
 
 تحت القائمة الحالية أضف هذه العناوين:
 
 ````md
+## Component Classification
+
+## Component Dependencies
+
+## Dependency Confirmation
+
 ## Layer Classification
 
 ## State Delta Matrix
@@ -817,13 +1043,9 @@ with: ```text Done. Mode: - Analyze / Plan / Generate / Review Files created: - 
 issues: - ... Medium severity issues: - ... Low severity issues: - ... Advisory: - ... Missing tokens: - ... Missing
 standards: - ... Recommended next step: - ...
 
-```
-
 ## Autonomous Generation
 
 When generation is requested:
-
-The skill must automatically execute:
 
 1. Analyze
 2. Plan
@@ -832,26 +1054,21 @@ The skill must automatically execute:
 
 without requiring separate user prompts.
 
-If High severity issues are found:
+Exception:
 
-- Stop.
-- Report the issues.
-- Do not continue.
+If the component is classified as:
 
-If only Medium, Low, or Advisory issues exist:
+- Composite
+- Pattern
+- Assembly
 
-- Apply safe fixes automatically.
-- Re-run review.
-- Produce final output.
+and dependency confirmation is required,
 
-The user should not need to manually request:
+pause after the classification step and request confirmation unless the user explicitly writes:
 
-- analysis
-- plan
-- review
-- fixes
-
-unless explicitly desired.
+```text
+Generate without confirmation
+```
 
 ## Default Behavior
 
@@ -869,6 +1086,7 @@ The skill should automatically:
 - return final report
 
 without additional instructions.
+
 ```
 
 ## Reference Component Policy
@@ -923,3 +1141,4 @@ Document the chosen strategy in analysis.md.
 
 If the source does not explicitly require keyboard-only focus behavior,
 do not automatically prefer :focus-visible.
+```

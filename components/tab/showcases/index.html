@@ -1,920 +1,836 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tab Component — Showcase</title>
-  <link rel="stylesheet" href="../../../token.css">
-  <link rel="stylesheet" href="../tab.css">
-  <style>
-    /* Showcase layout — sidebar + main */
-    .showcase-layout {
-      display: flex;
-      min-height: 100dvh;
-    }
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tab — Showcase</title>
 
-    .showcase-sidebar {
-      width: 200px;
-      flex-shrink: 0;
-      background: #ffffff;
-      border-right: 1px solid var(--gray-200, #e5e7eb);
-      padding: 24px 16px;
-      align-self: flex-start;
-      position: sticky;
-      top: 0;
-    }
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css"/>
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../tab.css"/>
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css"/>
+    <script src="../../_showcase/showcase.js" defer></script>
 
-    .showcase-sidebar__nav {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      position: sticky;
-      top: 24px;
-    }
+    <style>
+      /* ── Tab-showcase QA helpers — not component styles ──────────────── */
 
-    .showcase-sidebar__link {
-      display: block;
-      padding: 6px 10px;
-      border-radius: 4px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--gray-600, #4b5563);
-      text-decoration: none;
-      white-space: nowrap;
-      transition: background .15s, color .15s;
-    }
-
-    .showcase-sidebar__link:hover {
-      background: var(--gray-100, #f3f4f6);
-      color: var(--gray-900, #111827);
-    }
-
-    .showcase-sidebar__link.is-active {
-      background: var(--gray-900, #111827);
-      color: #ffffff;
-      pointer-events: none;
-    }
-
-    .showcase-main {
-      flex: 1;
-      min-width: 0;
-      padding: 48px 32px;
-    }
-
-    @media (max-width: 768px) {
-      .showcase-layout {
-        flex-direction: column;
+      /* Vertical tab demo layout */
+      .v-layout { display: flex; gap: 0; }
+      .v-panel-area {
+        flex: 1;
+        padding: 16px;
+        border-left: 1px solid #e5e7eb;
+        font-size: 14px;
+        color: #384250;
       }
-      .showcase-sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid var(--gray-200, #e5e7eb);
+
+      /* Tab panel demo content */
+      .panel-content { font-size: 14px; color: #384250; margin: 0; padding: 12px 0; }
+
+      /* States matrix table */
+      .states-matrix { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 12px; }
+      .states-matrix th,
+      .states-matrix td { padding: 12px 16px; text-align: left; border: 1px solid #e5e7eb; vertical-align: middle; }
+      .states-matrix th {
+        background: #f9fafb;
+        font-weight: 600;
+        color: #111827;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+      }
+      .states-matrix td { color: #384250; }
+
+      /* State simulation badges */
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 8px;
+        background: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        border-radius: 9999px;
+        font-size: 11px;
+        color: #6b7280;
+        font-weight: 500;
+      }
+      .chip-design {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 8px;
+        background: #fef3c7;
+        border: 1px solid #f59e0b;
+        border-radius: 9999px;
+        font-size: 11px;
+        color: #92400e;
+        font-weight: 500;
+      }
+
+      /* Design note callout */
+      .matrix-note {
+        font-size: 13px;
+        color: #384250;
+        margin: 0 0 12px;
         padding: 12px 16px;
-        position: static;
+        background: #fffbeb;
+        border-left: 3px solid #f59e0b;
+        border-radius: 2px;
       }
-      .showcase-sidebar__nav {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        position: static;
-        overflow-x: auto;
-        gap: 4px;
-      }
-      .showcase-sidebar__link {
-        flex-shrink: 0;
-      }
-    }
-  </style>
-  <div class="showcase-layout">
-    <aside class="showcase-sidebar">
-      <nav class="showcase-sidebar__nav" aria-label="Component showcases">
-        <a href="../../accordion/showcases/index.html" class="showcase-sidebar__link">Accordion</a>
-        <a href="../../avatar/showcases/index.html" class="showcase-sidebar__link">Avatar</a>
-        <a href="../../breadcrumb/showcases/index.html" class="showcase-sidebar__link">Breadcrumb</a>
-        <a href="../../button/showcases/index.html" class="showcase-sidebar__link">Button</a>
-        <a href="../../checkbox/showcases/index.html" class="showcase-sidebar__link">Checkbox</a>
-        <a href="../../checkbox-2/showcases/index.html" class="showcase-sidebar__link">Checkbox 2</a>
-        <a href="../../chip/showcases/index.html" class="showcase-sidebar__link">Chip</a>
-        <a href="../../content-switcher/showcases/index.html" class="showcase-sidebar__link">Content Switcher</a>
-        <a href="../../dga-links/showcases/index.html" class="showcase-sidebar__link">DGA Links</a>
-        <a href="../../input-affix/showcases/index.html" class="showcase-sidebar__link">Input Affix</a>
-        <a href="../../label/showcases/index.html" class="showcase-sidebar__link">Label</a>
-        <a href="../../link/showcases/index.html" class="showcase-sidebar__link">Link</a>
-        <a href="../../list/showcases/index.html" class="showcase-sidebar__link">List</a>
-        <a href="../../pagination/showcases/index.html" class="showcase-sidebar__link">Pagination</a>
-        <a href="../../rating/showcases/index.html" class="showcase-sidebar__link">Rating</a>
-        <a href="../../tab/showcases/index.html" class="showcase-sidebar__link is-active" aria-current="page">Tab</a>
-        <a href="../../tag/showcases/index.html" class="showcase-sidebar__link">Tag</a>
-        <a href="../../text-input/showcases/index.html" class="showcase-sidebar__link">Text Input</a>
-      </nav>
-    </aside>
-    <div class="showcase-main">
+    </style>
+  </head>
 
-<h1>Tab — Component Showcase</h1>
-<p class="meta">
-  component_id: <strong>tab</strong> &nbsp;·&nbsp;
-  contract: <strong>1.0.0</strong> &nbsp;·&nbsp;
-  status: <strong>stable</strong> &nbsp;·&nbsp;
-  generated: <strong>2026-06-09</strong>
-</p>
+  <body data-showcase data-current-component="tab" data-showcase-title="Tab Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
 
+        <!-- ═══════════════════════════════════ Horizontal Tab — Sizes ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Horizontal Tab — Sizes</h2>
 
-<!-- ============================================================
-     HORIZONTAL TABS
-     ============================================================ -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Orientation=Horizontal, Size=Small">
+              <span class="showcase__label">Small</span>
+              <div class="showcase__item">
+                <div id="demo-h-sm" data-tabs>
+                  <div class="tab-list tab-list--h" role="tablist" aria-label="Small horizontal tabs">
+                    <button class="tab tab--h tab--sm" role="tab" aria-selected="true" aria-controls="h-sm-p1" id="h-sm-t1" type="button">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Overview</span>
+                    </button>
+                    <button class="tab tab--h tab--sm" role="tab" aria-selected="false" aria-controls="h-sm-p2" id="h-sm-t2" type="button" tabindex="-1">
+                      <span class="tab__text">Details</span>
+                    </button>
+                    <button class="tab tab--h tab--sm" role="tab" aria-selected="false" aria-controls="h-sm-p3" id="h-sm-t3" type="button" tabindex="-1">
+                      <span class="tab__text">History</span>
+                    </button>
+                    <button class="tab tab--h tab--sm" role="tab" aria-selected="false" aria-controls="h-sm-p4" id="h-sm-t4" type="button" tabindex="-1" aria-disabled="true">
+                      <span class="tab__text">Archived</span>
+                    </button>
+                  </div>
+                  <div class="tab-panel" role="tabpanel" id="h-sm-p1" aria-labelledby="h-sm-t1"><p class="panel-content">Overview content.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="h-sm-p2" aria-labelledby="h-sm-t2" hidden><p class="panel-content">Details content.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="h-sm-p3" aria-labelledby="h-sm-t3" hidden><p class="panel-content">History content.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="h-sm-p4" aria-labelledby="h-sm-t4" hidden><p class="panel-content">Archived content.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Orientation=Horizontal, Size=Medium">
+              <span class="showcase__label">Medium (default)</span>
+              <div class="showcase__item">
+                <div id="demo-h-md" data-tabs>
+                  <div class="tab-list tab-list--h" role="tablist" aria-label="Medium horizontal tabs">
+                    <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="h-md-p1" id="h-md-t1" type="button">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Overview</span>
+                    </button>
+                    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="h-md-p2" id="h-md-t2" type="button" tabindex="-1">
+                      <span class="tab__text">Details</span>
+                    </button>
+                    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="h-md-p3" id="h-md-t3" type="button" tabindex="-1">
+                      <span class="tab__text">History</span>
+                    </button>
+                    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="h-md-p4" id="h-md-t4" type="button" tabindex="-1" aria-disabled="true">
+                      <span class="tab__text">Archived</span>
+                    </button>
+                  </div>
+                  <div class="tab-panel" role="tabpanel" id="h-md-p1" aria-labelledby="h-md-t1"><p class="panel-content">Overview content.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="h-md-p2" aria-labelledby="h-md-t2" hidden><p class="panel-content">Details content.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="h-md-p3" aria-labelledby="h-md-t3" hidden><p class="panel-content">History content.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="h-md-p4" aria-labelledby="h-md-t4" hidden><p class="panel-content">Archived content.</p></div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Orientation=Horizontal, Size=Large">
+              <span class="showcase__label">Large</span>
+              <div class="showcase__item">
+                <div id="demo-h-lg" data-tabs>
+                  <div class="tab-list tab-list--h" role="tablist" aria-label="Large horizontal tabs">
+                    <button class="tab tab--h tab--lg" role="tab" aria-selected="true" aria-controls="h-lg-p1" id="h-lg-t1" type="button">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Overview</span>
+                    </button>
+                    <button class="tab tab--h tab--lg" role="tab" aria-selected="false" aria-controls="h-lg-p2" id="h-lg-t2" type="button" tabindex="-1">
+                      <span class="tab__text">Details</span>
+                    </button>
+                    <button class="tab tab--h tab--lg" role="tab" aria-selected="false" aria-controls="h-lg-p3" id="h-lg-t3" type="button" tabindex="-1">
+                      <span class="tab__text">History</span>
+                    </button>
+                    <button class="tab tab--h tab--lg" role="tab" aria-selected="false" aria-controls="h-lg-p4" id="h-lg-t4" type="button" tabindex="-1" aria-disabled="true">
+                      <span class="tab__text">Archived</span>
+                    </button>
+                  </div>
+                  <div class="tab-panel" role="tabpanel" id="h-lg-p1" aria-labelledby="h-lg-t1"><p class="panel-content">Overview content.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="h-lg-p2" aria-labelledby="h-lg-t2" hidden><p class="panel-content">Details content.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="h-lg-p3" aria-labelledby="h-lg-t3" hidden><p class="panel-content">History content.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="h-lg-p4" aria-labelledby="h-lg-t4" hidden><p class="panel-content">Archived content.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-<h2>Horizontal Tab — Sizes</h2>
+        <!-- ═══════════════════════════════════ Horizontal Tab — States Matrix ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Horizontal Tab — States Matrix (Medium)</h2>
 
-<div class="section">
-  <div class="label">Small</div>
-  <div id="demo-h-sm" data-tabs>
-    <div class="tab-list tab-list--h" role="tablist" aria-label="Small horizontal tabs">
-      <button class="tab tab--h tab--sm" role="tab" aria-selected="true" aria-controls="h-sm-p1" id="h-sm-t1" type="button">
-        <span class="tab__icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/></svg>
-        </span>
-        <span class="tab__text">Overview</span>
-      </button>
-      <button class="tab tab--h tab--sm" role="tab" aria-selected="false" aria-controls="h-sm-p2" id="h-sm-t2" type="button" tabindex="-1">
-        <span class="tab__text">Details</span>
-      </button>
-      <button class="tab tab--h tab--sm" role="tab" aria-selected="false" aria-controls="h-sm-p3" id="h-sm-t3" type="button" tabindex="-1">
-        <span class="tab__text">History</span>
-      </button>
-      <button class="tab tab--h tab--sm" role="tab" aria-selected="false" aria-controls="h-sm-p4" id="h-sm-t4" type="button" tabindex="-1" aria-disabled="true">
-        <span class="tab__text">Archived</span>
-      </button>
+          <p class="matrix-note">
+            <strong>Design note:</strong> Hover and pressed backgrounds apply to <strong>unselected</strong> tabs only.
+            When a tab is already selected, there is <strong>intentionally no background change</strong> on hover or press — Figma spec.
+            The focus ring applies to both unselected and selected tabs.
+          </p>
+
+          <table class="states-matrix">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Unselected</th>
+                <th>Selected</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Default</td>
+                <td>
+                  <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1">
+                    <span class="tab__text">Tab Label</span>
+                  </button>
+                </td>
+                <td>
+                  <div style="position:relative;display:inline-flex">
+                    <button class="tab tab--h" role="tab" aria-selected="true" type="button" style="pointer-events:none">
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Hover</td>
+                <td>
+                  <div style="position:relative;display:inline-flex">
+                    <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1"
+                            style="background:var(--tab-bg-hover);color:var(--tab-text-active);">
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                    <span style="position:absolute;bottom:0;left:16px;right:16px;height:3px;border-radius:9999px;background:var(--tab-indicator-color-dark,#161616);pointer-events:none"></span>
+                  </div>
+                  <span class="chip" style="margin-left:8px">simulated</span>
+                </td>
+                <td>
+                  <div style="position:relative;display:inline-flex">
+                    <button class="tab tab--h" role="tab" aria-selected="true" type="button" style="pointer-events:none">
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                  </div>
+                  <span class="chip-design" style="margin-left:8px">no bg — by design</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Pressed</td>
+                <td>
+                  <div style="position:relative;display:inline-flex">
+                    <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1"
+                            style="background:var(--tab-bg-pressed);color:var(--tab-text-active);">
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                    <span style="position:absolute;bottom:0;left:16px;right:16px;height:3px;border-radius:9999px;background:var(--tab-indicator-color-dark,#161616);pointer-events:none"></span>
+                  </div>
+                  <span class="chip" style="margin-left:8px">simulated</span>
+                </td>
+                <td>
+                  <div style="position:relative;display:inline-flex">
+                    <button class="tab tab--h" role="tab" aria-selected="true" type="button" style="pointer-events:none">
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                  </div>
+                  <span class="chip-design" style="margin-left:8px">no bg — by design</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Focused</td>
+                <td>
+                  <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1"
+                          style="color:var(--tab-text-active);border-radius:var(--radius-xs,2px);
+                                 box-shadow:inset 0 0 0 1px #fff,0 0 0 3px #161616;">
+                    <span class="tab__text">Tab Label</span>
+                  </button>
+                  <span class="chip" style="margin-left:8px">simulated</span>
+                </td>
+                <td>
+                  <div style="position:relative;display:inline-flex">
+                    <button class="tab tab--h" role="tab" aria-selected="true" type="button"
+                            style="pointer-events:none;border-radius:var(--radius-xs,2px);
+                                   box-shadow:inset 0 0 0 1px #fff,0 0 0 3px #161616;">
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                  </div>
+                  <span class="chip" style="margin-left:8px">simulated</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Disabled</td>
+                <td>
+                  <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1" aria-disabled="true">
+                    <span class="tab__text">Tab Label</span>
+                  </button>
+                </td>
+                <td>
+                  <button class="tab tab--h" role="tab" aria-selected="true" type="button" aria-disabled="true">
+                    <span class="tab__text">Tab Label</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ═══════════════════════════════════ Horizontal Tab — Flush ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Horizontal Tab — Flush Modifier</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Orientation=Horizontal, Modifier=Flush">
+              <span class="showcase__label">Flush (removes container horizontal padding)</span>
+              <div class="showcase__item">
+                <div style="background:#fff;border:1px solid #e5e7eb;border-radius:4px;padding:0 16px">
+                  <div id="demo-flush" data-tabs>
+                    <div class="tab-list tab-list--h tab-list--flush" role="tablist" aria-label="Flush tabs">
+                      <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="flush-p1" id="flush-t1" type="button">
+                        <span class="tab__text">Reports</span>
+                      </button>
+                      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="flush-p2" id="flush-t2" type="button" tabindex="-1">
+                        <span class="tab__text">Analytics</span>
+                      </button>
+                      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="flush-p3" id="flush-t3" type="button" tabindex="-1">
+                        <span class="tab__text">Exports</span>
+                      </button>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="flush-p1" aria-labelledby="flush-t1"><p style="padding:16px;font-size:14px;color:#384250;margin:0">Reports panel content.</p></div>
+                    <div class="tab-panel" role="tabpanel" id="flush-p2" aria-labelledby="flush-t2" hidden><p style="padding:16px;font-size:14px;color:#384250;margin:0">Analytics panel content.</p></div>
+                    <div class="tab-panel" role="tabpanel" id="flush-p3" aria-labelledby="flush-t3" hidden><p style="padding:16px;font-size:14px;color:#384250;margin:0">Exports panel content.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ Horizontal Tab — RTL ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Horizontal Tab — RTL (Arabic)</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Orientation=Horizontal, Direction=RTL">
+              <span class="showcase__label">اتجاه: يمين إلى يسار</span>
+              <div class="showcase__item" dir="rtl">
+                <div id="demo-h-rtl" data-tabs>
+                  <div class="tab-list tab-list--h" role="tablist" aria-label="التبويبات الرئيسية">
+                    <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="hrtl-p1" id="hrtl-t1" type="button">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">نظرة عامة</span>
+                    </button>
+                    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="hrtl-p2" id="hrtl-t2" type="button" tabindex="-1">
+                      <span class="tab__text">التفاصيل</span>
+                    </button>
+                    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="hrtl-p3" id="hrtl-t3" type="button" tabindex="-1">
+                      <span class="tab__text">السجل</span>
+                    </button>
+                    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="hrtl-p4" id="hrtl-t4" type="button" tabindex="-1" aria-disabled="true">
+                      <span class="tab__text">مؤرشف</span>
+                    </button>
+                  </div>
+                  <div class="tab-panel" role="tabpanel" id="hrtl-p1" aria-labelledby="hrtl-t1"><p class="panel-content">محتوى النظرة العامة.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="hrtl-p2" aria-labelledby="hrtl-t2" hidden><p class="panel-content">محتوى التفاصيل.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="hrtl-p3" aria-labelledby="hrtl-t3" hidden><p class="panel-content">محتوى السجل.</p></div>
+                  <div class="tab-panel" role="tabpanel" id="hrtl-p4" aria-labelledby="hrtl-t4" hidden><p class="panel-content">المحتوى المؤرشف.</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ Vertical Tab — Sizes ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Vertical Tab — Sizes</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Orientation=Vertical, Size=Small">
+              <span class="showcase__label">Small</span>
+              <div class="showcase__item">
+                <div id="demo-v-sm" data-tabs>
+                  <div class="v-layout">
+                    <div class="tab-list tab-list--v" role="tablist" aria-label="Small vertical tabs" aria-orientation="vertical">
+                      <button class="tab tab--v tab--sm" role="tab" aria-selected="true" aria-controls="vsm-p1" id="vsm-t1" type="button">
+                        <span class="tab__icon" aria-hidden="true">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
+                        </span>
+                        <span class="tab__text">General</span>
+                      </button>
+                      <button class="tab tab--v tab--sm" role="tab" aria-selected="false" aria-controls="vsm-p2" id="vsm-t2" type="button" tabindex="-1">
+                        <span class="tab__text">Security</span>
+                      </button>
+                      <button class="tab tab--v tab--sm" role="tab" aria-selected="false" aria-controls="vsm-p3" id="vsm-t3" type="button" tabindex="-1">
+                        <span class="tab__text">Billing</span>
+                      </button>
+                      <button class="tab tab--v tab--sm" role="tab" aria-selected="false" aria-controls="vsm-p4" id="vsm-t4" type="button" tabindex="-1" aria-disabled="true">
+                        <span class="tab__text">Advanced</span>
+                      </button>
+                    </div>
+                    <div class="v-panel-area">
+                      <div class="tab-panel" role="tabpanel" id="vsm-p1" aria-labelledby="vsm-t1">General settings.</div>
+                      <div class="tab-panel" role="tabpanel" id="vsm-p2" aria-labelledby="vsm-t2" hidden>Security settings.</div>
+                      <div class="tab-panel" role="tabpanel" id="vsm-p3" aria-labelledby="vsm-t3" hidden>Billing settings.</div>
+                      <div class="tab-panel" role="tabpanel" id="vsm-p4" aria-labelledby="vsm-t4" hidden>Advanced settings.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Orientation=Vertical, Size=Medium">
+              <span class="showcase__label">Medium (default)</span>
+              <div class="showcase__item">
+                <div id="demo-v-md" data-tabs>
+                  <div class="v-layout">
+                    <div class="tab-list tab-list--v" role="tablist" aria-label="Medium vertical tabs" aria-orientation="vertical">
+                      <button class="tab tab--v" role="tab" aria-selected="true" aria-controls="vmd-p1" id="vmd-t1" type="button">
+                        <span class="tab__icon" aria-hidden="true">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
+                        </span>
+                        <span class="tab__text">General</span>
+                      </button>
+                      <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vmd-p2" id="vmd-t2" type="button" tabindex="-1">
+                        <span class="tab__text">Security</span>
+                      </button>
+                      <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vmd-p3" id="vmd-t3" type="button" tabindex="-1">
+                        <span class="tab__text">Billing</span>
+                      </button>
+                      <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vmd-p4" id="vmd-t4" type="button" tabindex="-1" aria-disabled="true">
+                        <span class="tab__text">Advanced</span>
+                      </button>
+                    </div>
+                    <div class="v-panel-area">
+                      <div class="tab-panel" role="tabpanel" id="vmd-p1" aria-labelledby="vmd-t1">General settings.</div>
+                      <div class="tab-panel" role="tabpanel" id="vmd-p2" aria-labelledby="vmd-t2" hidden>Security settings.</div>
+                      <div class="tab-panel" role="tabpanel" id="vmd-p3" aria-labelledby="vmd-t3" hidden>Billing settings.</div>
+                      <div class="tab-panel" role="tabpanel" id="vmd-p4" aria-labelledby="vmd-t4" hidden>Advanced settings.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Orientation=Vertical, Size=Large">
+              <span class="showcase__label">Large</span>
+              <div class="showcase__item">
+                <div id="demo-v-lg" data-tabs>
+                  <div class="v-layout">
+                    <div class="tab-list tab-list--v" role="tablist" aria-label="Large vertical tabs" aria-orientation="vertical">
+                      <button class="tab tab--v tab--lg" role="tab" aria-selected="true" aria-controls="vlg-p1" id="vlg-t1" type="button">
+                        <span class="tab__icon" aria-hidden="true">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
+                        </span>
+                        <span class="tab__text">General</span>
+                      </button>
+                      <button class="tab tab--v tab--lg" role="tab" aria-selected="false" aria-controls="vlg-p2" id="vlg-t2" type="button" tabindex="-1">
+                        <span class="tab__text">Security</span>
+                      </button>
+                      <button class="tab tab--v tab--lg" role="tab" aria-selected="false" aria-controls="vlg-p3" id="vlg-t3" type="button" tabindex="-1">
+                        <span class="tab__text">Billing</span>
+                      </button>
+                      <button class="tab tab--v tab--lg" role="tab" aria-selected="false" aria-controls="vlg-p4" id="vlg-t4" type="button" tabindex="-1" aria-disabled="true">
+                        <span class="tab__text">Advanced</span>
+                      </button>
+                    </div>
+                    <div class="v-panel-area">
+                      <div class="tab-panel" role="tabpanel" id="vlg-p1" aria-labelledby="vlg-t1">General settings.</div>
+                      <div class="tab-panel" role="tabpanel" id="vlg-p2" aria-labelledby="vlg-t2" hidden>Security settings.</div>
+                      <div class="tab-panel" role="tabpanel" id="vlg-p3" aria-labelledby="vlg-t3" hidden>Billing settings.</div>
+                      <div class="tab-panel" role="tabpanel" id="vlg-p4" aria-labelledby="vlg-t4" hidden>Advanced settings.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ Vertical Tab — States Matrix ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Vertical Tab — States Matrix (Medium)</h2>
+
+          <p class="matrix-note">
+            <strong>Design note:</strong> Hover and pressed backgrounds apply to <strong>unselected</strong> tabs only.
+            When a tab is already selected, there is <strong>intentionally no background change</strong> on hover or press — Figma spec.
+            The focus ring and the green left indicator are both visible together when focused + selected.
+          </p>
+
+          <table class="states-matrix">
+            <thead>
+              <tr>
+                <th>State</th>
+                <th>Unselected</th>
+                <th>Selected</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Default</td>
+                <td>
+                  <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1" style="width:160px">
+                    <span class="tab__icon" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
+                    </span>
+                    <span class="tab__text">Tab Label</span>
+                  </button>
+                </td>
+                <td>
+                  <div style="position:relative;display:inline-flex;width:160px">
+                    <button class="tab tab--v" role="tab" aria-selected="true" type="button" style="pointer-events:none;width:160px">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Hover</td>
+                <td>
+                  <div style="position:relative;display:inline-flex;width:160px">
+                    <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1"
+                            style="background:var(--tab-bg-hover);color:var(--tab-text-active);width:160px">
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                    <span style="position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:9999px;background:var(--tab-indicator-color-dark,#161616);pointer-events:none"></span>
+                  </div>
+                  <span class="chip" style="margin-left:8px">simulated</span>
+                </td>
+                <td>
+                  <div style="position:relative;display:inline-flex;width:160px">
+                    <button class="tab tab--v" role="tab" aria-selected="true" type="button" style="pointer-events:none;width:160px">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                  </div>
+                  <span class="chip-design" style="margin-left:8px">no bg — by design</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Pressed</td>
+                <td>
+                  <div style="position:relative;display:inline-flex;width:160px">
+                    <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1"
+                            style="background:var(--tab-bg-pressed);color:var(--tab-text-active);width:160px">
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                    <span style="position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:9999px;background:var(--tab-indicator-color-dark,#161616);pointer-events:none"></span>
+                  </div>
+                  <span class="chip" style="margin-left:8px">simulated</span>
+                </td>
+                <td>
+                  <div style="position:relative;display:inline-flex;width:160px">
+                    <button class="tab tab--v" role="tab" aria-selected="true" type="button" style="pointer-events:none;width:160px">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                  </div>
+                  <span class="chip-design" style="margin-left:8px">no bg — by design</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Focused</td>
+                <td>
+                  <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1"
+                          style="color:var(--tab-text-active);width:160px;border-radius:var(--radius-xs,2px);
+                                 box-shadow:inset 0 0 0 1px #fff,0 0 0 3px #161616;">
+                    <span class="tab__text">Tab Label</span>
+                  </button>
+                  <span class="chip" style="margin-left:8px">simulated</span>
+                </td>
+                <td>
+                  <div style="position:relative;display:inline-flex;width:160px">
+                    <button class="tab tab--v" role="tab" aria-selected="true" type="button"
+                            style="pointer-events:none;width:160px;border-radius:var(--radius-xs,2px);
+                                   box-shadow:inset 0 0 0 1px #fff,0 0 0 3px #161616;">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Tab Label</span>
+                    </button>
+                  </div>
+                  <span class="chip" style="margin-left:8px">simulated</span>
+                </td>
+              </tr>
+              <tr>
+                <td>Disabled</td>
+                <td>
+                  <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1" aria-disabled="true" style="width:160px">
+                    <span class="tab__text">Tab Label</span>
+                  </button>
+                </td>
+                <td>
+                  <button class="tab tab--v" role="tab" aria-selected="true" type="button" aria-disabled="true" style="width:160px">
+                    <span class="tab__text">Tab Label</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ═══════════════════════════════════ Vertical Tab — RTL ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Vertical Tab — RTL (Arabic)</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Orientation=Vertical, Direction=RTL">
+              <span class="showcase__label">المؤشر ينتقل من اليسار إلى اليمين</span>
+              <div class="showcase__item" dir="rtl">
+                <div id="demo-v-rtl" data-tabs>
+                  <div class="v-layout" style="direction:rtl">
+                    <div class="tab-list tab-list--v" role="tablist" aria-label="الإعدادات" aria-orientation="vertical">
+                      <button class="tab tab--v" role="tab" aria-selected="true" aria-controls="vrtl-p1" id="vrtl-t1" type="button">
+                        <span class="tab__icon" aria-hidden="true">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
+                        </span>
+                        <span class="tab__text">عام</span>
+                      </button>
+                      <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vrtl-p2" id="vrtl-t2" type="button" tabindex="-1">
+                        <span class="tab__text">الأمان</span>
+                      </button>
+                      <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vrtl-p3" id="vrtl-t3" type="button" tabindex="-1">
+                        <span class="tab__text">الفواتير</span>
+                      </button>
+                      <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vrtl-p4" id="vrtl-t4" type="button" tabindex="-1" aria-disabled="true">
+                        <span class="tab__text">متقدم</span>
+                      </button>
+                    </div>
+                    <div class="v-panel-area" style="border-left:none;border-right:1px solid #e5e7eb">
+                      <div class="tab-panel" role="tabpanel" id="vrtl-p1" aria-labelledby="vrtl-t1">محتوى الإعدادات العامة.</div>
+                      <div class="tab-panel" role="tabpanel" id="vrtl-p2" aria-labelledby="vrtl-t2" hidden>محتوى إعدادات الأمان.</div>
+                      <div class="tab-panel" role="tabpanel" id="vrtl-p3" aria-labelledby="vrtl-t3" hidden>محتوى إعدادات الفواتير.</div>
+                      <div class="tab-panel" role="tabpanel" id="vrtl-p4" aria-labelledby="vrtl-t4" hidden>محتوى الإعدادات المتقدمة.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ Realistic Pattern — Settings Page ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Realistic Pattern — Settings Page</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Orientation=Vertical, Pattern=Settings Page">
+              <span class="showcase__label">Vertical tabs with page content area</span>
+              <div class="showcase__item">
+                <div style="display:flex;gap:0;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;background:#fff;min-height:240px" id="demo-settings" data-tabs>
+                  <div class="tab-list tab-list--v" role="tablist" aria-label="Account settings" aria-orientation="vertical" style="width:200px;background:#f9fafb;border-right:1px solid #e5e7eb;padding:12px 0">
+                    <button class="tab tab--v" role="tab" aria-selected="true" aria-controls="set-p1" id="set-t1" type="button">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5 6a5 5 0 0 1 10 0H3Z" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Profile</span>
+                    </button>
+                    <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="set-p2" id="set-t2" type="button" tabindex="-1">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1Zm0 2a5 5 0 1 1 0 10A5 5 0 0 1 8 3Zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm0 4c-1.65 0-3 .672-3 1.5v.5h6v-.5c0-.828-1.35-1.5-3-1.5Z" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Security</span>
+                    </button>
+                    <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="set-p3" id="set-t3" type="button" tabindex="-1">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.25C4.27 1.25 1.25 4.27 1.25 8S4.27 14.75 8 14.75 14.75 11.73 14.75 8 11.73 1.25 8 1.25ZM8 6a.75.75 0 1 1 0-1.5A.75.75 0 0 1 8 6Zm1 5.5H7v-5h2v5Z" fill="currentColor"/></svg>
+                      </span>
+                      <span class="tab__text">Notifications</span>
+                    </button>
+                    <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="set-p4" id="set-t4" type="button" tabindex="-1">
+                      <span class="tab__icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="2" y="9" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="9" width="5" height="5" rx="1" fill="currentColor" opacity=".4"/></svg>
+                      </span>
+                      <span class="tab__text">Integrations</span>
+                    </button>
+                    <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="set-p5" id="set-t5" type="button" tabindex="-1" aria-disabled="true">
+                      <span class="tab__text">Enterprise</span>
+                    </button>
+                  </div>
+                  <div style="flex:1;padding:24px">
+                    <div class="tab-panel" role="tabpanel" id="set-p1" aria-labelledby="set-t1">
+                      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Profile Settings</h3>
+                      <p style="margin:0;font-size:14px;color:#384250">Manage your personal information and preferences.</p>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="set-p2" aria-labelledby="set-t2" hidden>
+                      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Security Settings</h3>
+                      <p style="margin:0;font-size:14px;color:#384250">Change your password and two-factor authentication settings.</p>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="set-p3" aria-labelledby="set-t3" hidden>
+                      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Notifications</h3>
+                      <p style="margin:0;font-size:14px;color:#384250">Configure when and how you receive notifications.</p>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="set-p4" aria-labelledby="set-t4" hidden>
+                      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Integrations</h3>
+                      <p style="margin:0;font-size:14px;color:#384250">Connect third-party services to your account.</p>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="set-p5" aria-labelledby="set-t5" hidden>
+                      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Enterprise</h3>
+                      <p style="margin:0;font-size:14px;color:#384250">Enterprise features are not available on your plan.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ Realistic Pattern — Dashboard ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Realistic Pattern — Dashboard</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Orientation=Horizontal, Pattern=Dashboard">
+              <span class="showcase__label">Horizontal tabs with icon + realistic panel content</span>
+              <div class="showcase__item">
+                <div style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden" id="demo-dashboard" data-tabs>
+                  <div style="padding:0 24px">
+                    <div class="tab-list tab-list--h" role="tablist" aria-label="Dashboard sections">
+                      <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="dash-p1" id="dash-t1" type="button">
+                        <span class="tab__icon" aria-hidden="true">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 9h5v5H2V9ZM9 2h5v5H9V2ZM2 2h5v5H2V2ZM9 9h5v5H9V9Z" fill="currentColor"/></svg>
+                        </span>
+                        <span class="tab__text">Overview</span>
+                      </button>
+                      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="dash-p2" id="dash-t2" type="button" tabindex="-1">
+                        <span class="tab__icon" aria-hidden="true">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.75v4.25a.75.75 0 0 1-1.5 0V8.5H3a.75.75 0 0 1 0-1.5h4.25V2.75A.75.75 0 0 1 8 2Z" fill="currentColor"/></svg>
+                        </span>
+                        <span class="tab__text">Analytics</span>
+                      </button>
+                      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="dash-p3" id="dash-t3" type="button" tabindex="-1">
+                        <span class="tab__text">Reports</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div style="padding:24px;border-top:none">
+                    <div class="tab-panel" role="tabpanel" id="dash-p1" aria-labelledby="dash-t1">
+                      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+                        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:16px">
+                          <div style="font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Total Cases</div>
+                          <div style="font-size:24px;font-weight:700;color:#161616">1,284</div>
+                          <div style="font-size:12px;color:#1b8354;margin-top:4px">↑ 12% vs last month</div>
+                        </div>
+                        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:16px">
+                          <div style="font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Open</div>
+                          <div style="font-size:24px;font-weight:700;color:#161616">342</div>
+                          <div style="font-size:12px;color:#dc2626;margin-top:4px">↑ 4% vs last month</div>
+                        </div>
+                        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:16px">
+                          <div style="font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Resolved</div>
+                          <div style="font-size:24px;font-weight:700;color:#161616">942</div>
+                          <div style="font-size:12px;color:#1b8354;margin-top:4px">↑ 18% vs last month</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="dash-p2" aria-labelledby="dash-t2" hidden>
+                      <p style="margin:0;font-size:14px;color:#384250">Analytics charts would appear here.</p>
+                    </div>
+                    <div class="tab-panel" role="tabpanel" id="dash-p3" aria-labelledby="dash-t3" hidden>
+                      <p style="margin:0;font-size:14px;color:#384250">Reports table would appear here.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
     </div>
-    <div class="tab-panel" role="tabpanel" id="h-sm-p1" aria-labelledby="h-sm-t1"><p class="panel-content">Overview content.</p></div>
-    <div class="tab-panel" role="tabpanel" id="h-sm-p2" aria-labelledby="h-sm-t2" hidden><p class="panel-content">Details content.</p></div>
-    <div class="tab-panel" role="tabpanel" id="h-sm-p3" aria-labelledby="h-sm-t3" hidden><p class="panel-content">History content.</p></div>
-    <div class="tab-panel" role="tabpanel" id="h-sm-p4" aria-labelledby="h-sm-t4" hidden><p class="panel-content">Archived content.</p></div>
-  </div>
-</div>
 
-<div class="section" style="margin-top:32px">
-  <div class="label">Medium (default)</div>
-  <div id="demo-h-md" data-tabs>
-    <div class="tab-list tab-list--h" role="tablist" aria-label="Medium horizontal tabs">
-      <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="h-md-p1" id="h-md-t1" type="button">
-        <span class="tab__icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/></svg>
-        </span>
-        <span class="tab__text">Overview</span>
-      </button>
-      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="h-md-p2" id="h-md-t2" type="button" tabindex="-1">
-        <span class="tab__text">Details</span>
-      </button>
-      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="h-md-p3" id="h-md-t3" type="button" tabindex="-1">
-        <span class="tab__text">History</span>
-      </button>
-      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="h-md-p4" id="h-md-t4" type="button" tabindex="-1" aria-disabled="true">
-        <span class="tab__text">Archived</span>
-      </button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="h-md-p1" aria-labelledby="h-md-t1"><p class="panel-content">Overview content.</p></div>
-    <div class="tab-panel" role="tabpanel" id="h-md-p2" aria-labelledby="h-md-t2" hidden><p class="panel-content">Details content.</p></div>
-    <div class="tab-panel" role="tabpanel" id="h-md-p3" aria-labelledby="h-md-t3" hidden><p class="panel-content">History content.</p></div>
-    <div class="tab-panel" role="tabpanel" id="h-md-p4" aria-labelledby="h-md-t4" hidden><p class="panel-content">Archived content.</p></div>
-  </div>
-</div>
+    <!-- Tab component keyboard navigation — component behavior, not showcase infrastructure -->
+    <script>
+    (function () {
+      'use strict';
 
-<div class="section" style="margin-top:32px">
-  <div class="label">Large</div>
-  <div id="demo-h-lg" data-tabs>
-    <div class="tab-list tab-list--h" role="tablist" aria-label="Large horizontal tabs">
-      <button class="tab tab--h tab--lg" role="tab" aria-selected="true" aria-controls="h-lg-p1" id="h-lg-t1" type="button">
-        <span class="tab__icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/></svg>
-        </span>
-        <span class="tab__text">Overview</span>
-      </button>
-      <button class="tab tab--h tab--lg" role="tab" aria-selected="false" aria-controls="h-lg-p2" id="h-lg-t2" type="button" tabindex="-1">
-        <span class="tab__text">Details</span>
-      </button>
-      <button class="tab tab--h tab--lg" role="tab" aria-selected="false" aria-controls="h-lg-p3" id="h-lg-t3" type="button" tabindex="-1">
-        <span class="tab__text">History</span>
-      </button>
-      <button class="tab tab--h tab--lg" role="tab" aria-selected="false" aria-controls="h-lg-p4" id="h-lg-t4" type="button" tabindex="-1" aria-disabled="true">
-        <span class="tab__text">Archived</span>
-      </button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="h-lg-p1" aria-labelledby="h-lg-t1"><p class="panel-content">Overview content.</p></div>
-    <div class="tab-panel" role="tabpanel" id="h-lg-p2" aria-labelledby="h-lg-t2" hidden><p class="panel-content">Details content.</p></div>
-    <div class="tab-panel" role="tabpanel" id="h-lg-p3" aria-labelledby="h-lg-t3" hidden><p class="panel-content">History content.</p></div>
-    <div class="tab-panel" role="tabpanel" id="h-lg-p4" aria-labelledby="h-lg-t4" hidden><p class="panel-content">Archived content.</p></div>
-  </div>
-</div>
+      function initTabGroup(container) {
+        var tablist = container.querySelector('[role="tablist"]');
+        if (!tablist) return;
 
+        var isVertical = tablist.getAttribute('aria-orientation') === 'vertical';
 
-<!-- ============================================================
-     HORIZONTAL TABS — STATES MATRIX
-     ============================================================ -->
+        function getTabs() {
+          return Array.from(tablist.querySelectorAll('[role="tab"]'));
+        }
 
-<h2>Horizontal Tab — States Matrix (Medium)</h2>
+        function activate(tab) {
+          var tabs = getTabs();
+          var panels = container.querySelectorAll('[role="tabpanel"]');
 
-<p class="matrix-note">
-  <strong>Design note:</strong> Hover and pressed backgrounds apply to <strong>unselected</strong> tabs only.
-  When a tab is already selected, there is <strong>intentionally no background change</strong> on hover or press — Figma spec.
-  The focus ring applies to both unselected and selected tabs.
-</p>
+          tabs.forEach(function (t) {
+            t.setAttribute('aria-selected', 'false');
+            t.setAttribute('tabindex', '-1');
+          });
 
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>Unselected</th>
-      <th>Selected</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Default</td>
-      <td>
-        <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1">
-          <span class="tab__text">Tab Label</span>
-        </button>
-      </td>
-      <td>
-        <!-- Green bottom indicator via [aria-selected="true"]::before -->
-        <div style="position:relative;display:inline-flex">
-          <button class="tab tab--h" role="tab" aria-selected="true" type="button" style="pointer-events:none">
-            <span class="tab__text">Tab Label</span>
-          </button>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>Hover</td>
-      <td>
-        <!-- gray bg + dark indicator at bottom -->
-        <div style="position:relative;display:inline-flex">
-          <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1"
-                  style="background:var(--tab-bg-hover);color:var(--tab-text-active);">
-            <span class="tab__text">Tab Label</span>
-          </button>
-          <span style="position:absolute;bottom:0;left:16px;right:16px;height:3px;border-radius:9999px;background:var(--tab-indicator-color-dark,#161616);pointer-events:none"></span>
-        </div>
-        <span class="chip" style="margin-left:8px">simulated</span>
-      </td>
-      <td>
-        <!-- No bg change. Green indicator unchanged. Intentional per Figma. -->
-        <div style="position:relative;display:inline-flex">
-          <button class="tab tab--h" role="tab" aria-selected="true" type="button" style="pointer-events:none">
-            <span class="tab__text">Tab Label</span>
-          </button>
-        </div>
-        <span class="chip-design" style="margin-left:8px">no bg — by design</span>
-      </td>
-    </tr>
-    <tr>
-      <td>Pressed</td>
-      <td>
-        <!-- darker bg + dark indicator at bottom -->
-        <div style="position:relative;display:inline-flex">
-          <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1"
-                  style="background:var(--tab-bg-pressed);color:var(--tab-text-active);">
-            <span class="tab__text">Tab Label</span>
-          </button>
-          <span style="position:absolute;bottom:0;left:16px;right:16px;height:3px;border-radius:9999px;background:var(--tab-indicator-color-dark,#161616);pointer-events:none"></span>
-        </div>
-        <span class="chip" style="margin-left:8px">simulated</span>
-      </td>
-      <td>
-        <!-- No bg change. Green indicator unchanged. Intentional per Figma. -->
-        <div style="position:relative;display:inline-flex">
-          <button class="tab tab--h" role="tab" aria-selected="true" type="button" style="pointer-events:none">
-            <span class="tab__text">Tab Label</span>
-          </button>
-        </div>
-        <span class="chip-design" style="margin-left:8px">no bg — by design</span>
-      </td>
-    </tr>
-    <tr>
-      <td>Focused</td>
-      <td>
-        <!-- 3px black outer ring + 1px white inset. No indicator on unselected. -->
-        <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1"
-                style="color:var(--tab-text-active);border-radius:var(--radius-xs,2px);
-                       box-shadow:inset 0 0 0 1px #fff,0 0 0 3px #161616;">
-          <span class="tab__text">Tab Label</span>
-        </button>
-        <span class="chip" style="margin-left:8px">simulated</span>
-      </td>
-      <td>
-        <!-- Focus ring + green indicator still visible -->
-        <div style="position:relative;display:inline-flex">
-          <button class="tab tab--h" role="tab" aria-selected="true" type="button"
-                  style="pointer-events:none;border-radius:var(--radius-xs,2px);
-                         box-shadow:inset 0 0 0 1px #fff,0 0 0 3px #161616;">
-            <span class="tab__text">Tab Label</span>
-          </button>
-        </div>
-        <span class="chip" style="margin-left:8px">simulated</span>
-      </td>
-    </tr>
-    <tr>
-      <td>Disabled</td>
-      <td>
-        <button class="tab tab--h" role="tab" aria-selected="false" type="button" tabindex="-1" aria-disabled="true">
-          <span class="tab__text">Tab Label</span>
-        </button>
-      </td>
-      <td>
-        <!-- gray text (weight 700 unchanged) + gray indicator replaces green -->
-        <button class="tab tab--h" role="tab" aria-selected="true" type="button" aria-disabled="true">
-          <span class="tab__text">Tab Label</span>
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+          panels.forEach(function (p) { p.hidden = true; });
 
+          tab.setAttribute('aria-selected', 'true');
+          tab.removeAttribute('tabindex');
 
-<!-- ============================================================
-     HORIZONTAL TABS — FLUSH
-     ============================================================ -->
+          var panelId = tab.getAttribute('aria-controls');
+          if (panelId) {
+            var panel = container.querySelector('#' + panelId);
+            if (panel) panel.hidden = false;
+          }
+        }
 
-<h2>Horizontal Tab — Flush Modifier</h2>
-<div class="label">Flush (removes container horizontal padding)</div>
+        tablist.addEventListener('keydown', function (e) {
+          var tabs = getTabs().filter(function (t) {
+            return !t.hasAttribute('disabled') && t.getAttribute('aria-disabled') !== 'true';
+          });
+          var current = document.activeElement;
+          var idx = tabs.indexOf(current);
+          if (idx === -1) return;
 
-<div id="demo-flush" data-tabs style="background:#fff;border:1px solid #e5e7eb;border-radius:4px;padding:0 16px">
-  <div class="tab-list tab-list--h tab-list--flush" role="tablist" aria-label="Flush tabs">
-    <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="flush-p1" id="flush-t1" type="button">
-      <span class="tab__text">Reports</span>
-    </button>
-    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="flush-p2" id="flush-t2" type="button" tabindex="-1">
-      <span class="tab__text">Analytics</span>
-    </button>
-    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="flush-p3" id="flush-t3" type="button" tabindex="-1">
-      <span class="tab__text">Exports</span>
-    </button>
-  </div>
-  <div class="tab-panel" role="tabpanel" id="flush-p1" aria-labelledby="flush-t1"><p style="padding:16px;font-size:14px;color:#384250;margin:0">Reports panel content.</p></div>
-  <div class="tab-panel" role="tabpanel" id="flush-p2" aria-labelledby="flush-t2" hidden><p style="padding:16px;font-size:14px;color:#384250;margin:0">Analytics panel content.</p></div>
-  <div class="tab-panel" role="tabpanel" id="flush-p3" aria-labelledby="flush-t3" hidden><p style="padding:16px;font-size:14px;color:#384250;margin:0">Exports panel content.</p></div>
-</div>
+          var prev = isVertical ? 'ArrowUp' : 'ArrowLeft';
+          var next = isVertical ? 'ArrowDown' : 'ArrowRight';
 
+          var target = null;
+          if (e.key === next) target = tabs[(idx + 1) % tabs.length];
+          if (e.key === prev) target = tabs[(idx - 1 + tabs.length) % tabs.length];
+          if (e.key === 'Home') target = tabs[0];
+          if (e.key === 'End') target = tabs[tabs.length - 1];
 
-<!-- ============================================================
-     HORIZONTAL TABS — RTL
-     ============================================================ -->
-
-<h2>Horizontal Tab — RTL (Arabic)</h2>
-
-<div class="rtl-section" dir="rtl">
-  <div class="label">اتجاه: يمين إلى يسار</div>
-  <div id="demo-h-rtl" data-tabs>
-    <div class="tab-list tab-list--h" role="tablist" aria-label="التبويبات الرئيسية">
-      <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="hrtl-p1" id="hrtl-t1" type="button">
-        <span class="tab__icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" fill="currentColor"/></svg>
-        </span>
-        <span class="tab__text">نظرة عامة</span>
-      </button>
-      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="hrtl-p2" id="hrtl-t2" type="button" tabindex="-1">
-        <span class="tab__text">التفاصيل</span>
-      </button>
-      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="hrtl-p3" id="hrtl-t3" type="button" tabindex="-1">
-        <span class="tab__text">السجل</span>
-      </button>
-      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="hrtl-p4" id="hrtl-t4" type="button" tabindex="-1" aria-disabled="true">
-        <span class="tab__text">مؤرشف</span>
-      </button>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="hrtl-p1" aria-labelledby="hrtl-t1"><p class="panel-content">محتوى النظرة العامة.</p></div>
-    <div class="tab-panel" role="tabpanel" id="hrtl-p2" aria-labelledby="hrtl-t2" hidden><p class="panel-content">محتوى التفاصيل.</p></div>
-    <div class="tab-panel" role="tabpanel" id="hrtl-p3" aria-labelledby="hrtl-t3" hidden><p class="panel-content">محتوى السجل.</p></div>
-    <div class="tab-panel" role="tabpanel" id="hrtl-p4" aria-labelledby="hrtl-t4" hidden><p class="panel-content">المحتوى المؤرشف.</p></div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-     VERTICAL TABS
-     ============================================================ -->
-
-<h2>Vertical Tab — Sizes</h2>
-
-<div class="row">
-
-  <div class="block">
-    <div class="label">Small</div>
-    <div id="demo-v-sm" data-tabs>
-      <div class="v-layout">
-        <div class="tab-list tab-list--v" role="tablist" aria-label="Small vertical tabs" aria-orientation="vertical">
-          <button class="tab tab--v tab--sm" role="tab" aria-selected="true" aria-controls="vsm-p1" id="vsm-t1" type="button">
-            <span class="tab__icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
-            </span>
-            <span class="tab__text">General</span>
-          </button>
-          <button class="tab tab--v tab--sm" role="tab" aria-selected="false" aria-controls="vsm-p2" id="vsm-t2" type="button" tabindex="-1">
-            <span class="tab__text">Security</span>
-          </button>
-          <button class="tab tab--v tab--sm" role="tab" aria-selected="false" aria-controls="vsm-p3" id="vsm-t3" type="button" tabindex="-1">
-            <span class="tab__text">Billing</span>
-          </button>
-          <button class="tab tab--v tab--sm" role="tab" aria-selected="false" aria-controls="vsm-p4" id="vsm-t4" type="button" tabindex="-1" aria-disabled="true">
-            <span class="tab__text">Advanced</span>
-          </button>
-        </div>
-        <div class="v-panel-area">
-          <div class="tab-panel" role="tabpanel" id="vsm-p1" aria-labelledby="vsm-t1">General settings.</div>
-          <div class="tab-panel" role="tabpanel" id="vsm-p2" aria-labelledby="vsm-t2" hidden>Security settings.</div>
-          <div class="tab-panel" role="tabpanel" id="vsm-p3" aria-labelledby="vsm-t3" hidden>Billing settings.</div>
-          <div class="tab-panel" role="tabpanel" id="vsm-p4" aria-labelledby="vsm-t4" hidden>Advanced settings.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="label">Medium (default)</div>
-    <div id="demo-v-md" data-tabs>
-      <div class="v-layout">
-        <div class="tab-list tab-list--v" role="tablist" aria-label="Medium vertical tabs" aria-orientation="vertical">
-          <button class="tab tab--v" role="tab" aria-selected="true" aria-controls="vmd-p1" id="vmd-t1" type="button">
-            <span class="tab__icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
-            </span>
-            <span class="tab__text">General</span>
-          </button>
-          <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vmd-p2" id="vmd-t2" type="button" tabindex="-1">
-            <span class="tab__text">Security</span>
-          </button>
-          <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vmd-p3" id="vmd-t3" type="button" tabindex="-1">
-            <span class="tab__text">Billing</span>
-          </button>
-          <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vmd-p4" id="vmd-t4" type="button" tabindex="-1" aria-disabled="true">
-            <span class="tab__text">Advanced</span>
-          </button>
-        </div>
-        <div class="v-panel-area">
-          <div class="tab-panel" role="tabpanel" id="vmd-p1" aria-labelledby="vmd-t1">General settings.</div>
-          <div class="tab-panel" role="tabpanel" id="vmd-p2" aria-labelledby="vmd-t2" hidden>Security settings.</div>
-          <div class="tab-panel" role="tabpanel" id="vmd-p3" aria-labelledby="vmd-t3" hidden>Billing settings.</div>
-          <div class="tab-panel" role="tabpanel" id="vmd-p4" aria-labelledby="vmd-t4" hidden>Advanced settings.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="block">
-    <div class="label">Large</div>
-    <div id="demo-v-lg" data-tabs>
-      <div class="v-layout">
-        <div class="tab-list tab-list--v" role="tablist" aria-label="Large vertical tabs" aria-orientation="vertical">
-          <button class="tab tab--v tab--lg" role="tab" aria-selected="true" aria-controls="vlg-p1" id="vlg-t1" type="button">
-            <span class="tab__icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
-            </span>
-            <span class="tab__text">General</span>
-          </button>
-          <button class="tab tab--v tab--lg" role="tab" aria-selected="false" aria-controls="vlg-p2" id="vlg-t2" type="button" tabindex="-1">
-            <span class="tab__text">Security</span>
-          </button>
-          <button class="tab tab--v tab--lg" role="tab" aria-selected="false" aria-controls="vlg-p3" id="vlg-t3" type="button" tabindex="-1">
-            <span class="tab__text">Billing</span>
-          </button>
-          <button class="tab tab--v tab--lg" role="tab" aria-selected="false" aria-controls="vlg-p4" id="vlg-t4" type="button" tabindex="-1" aria-disabled="true">
-            <span class="tab__text">Advanced</span>
-          </button>
-        </div>
-        <div class="v-panel-area">
-          <div class="tab-panel" role="tabpanel" id="vlg-p1" aria-labelledby="vlg-t1">General settings.</div>
-          <div class="tab-panel" role="tabpanel" id="vlg-p2" aria-labelledby="vlg-t2" hidden>Security settings.</div>
-          <div class="tab-panel" role="tabpanel" id="vlg-p3" aria-labelledby="vlg-t3" hidden>Billing settings.</div>
-          <div class="tab-panel" role="tabpanel" id="vlg-p4" aria-labelledby="vlg-t4" hidden>Advanced settings.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-
-<!-- ============================================================
-     VERTICAL TABS — STATES MATRIX
-     ============================================================ -->
-
-<h2>Vertical Tab — States Matrix (Medium)</h2>
-
-<p class="matrix-note">
-  <strong>Design note:</strong> Hover and pressed backgrounds apply to <strong>unselected</strong> tabs only.
-  When a tab is already selected, there is <strong>intentionally no background change</strong> on hover or press — Figma spec.
-  The focus ring and the green left indicator are both visible together when focused + selected.
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-      <th>Unselected</th>
-      <th>Selected</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Default</td>
-      <td>
-        <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1" style="width:160px">
-          <span class="tab__icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
-          </span>
-          <span class="tab__text">Tab Label</span>
-        </button>
-      </td>
-      <td>
-        <!-- Green left indicator via [aria-selected="true"]::before -->
-        <div style="position:relative;display:inline-flex;width:160px">
-          <button class="tab tab--v" role="tab" aria-selected="true" type="button" style="pointer-events:none;width:160px">
-            <span class="tab__icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
-            </span>
-            <span class="tab__text">Tab Label</span>
-          </button>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>Hover</td>
-      <td>
-        <!-- gray bg + dark indicator on left edge -->
-        <div style="position:relative;display:inline-flex;width:160px">
-          <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1"
-                  style="background:var(--tab-bg-hover);color:var(--tab-text-active);width:160px">
-            <span class="tab__text">Tab Label</span>
-          </button>
-          <span style="position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:9999px;background:var(--tab-indicator-color-dark,#161616);pointer-events:none"></span>
-        </div>
-        <span class="chip" style="margin-left:8px">simulated</span>
-      </td>
-      <td>
-        <!-- No bg change. Green indicator unchanged. Intentional per Figma. -->
-        <div style="position:relative;display:inline-flex;width:160px">
-          <button class="tab tab--v" role="tab" aria-selected="true" type="button" style="pointer-events:none;width:160px">
-            <span class="tab__icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
-            </span>
-            <span class="tab__text">Tab Label</span>
-          </button>
-        </div>
-        <span class="chip-design" style="margin-left:8px">no bg — by design</span>
-      </td>
-    </tr>
-    <tr>
-      <td>Pressed</td>
-      <td>
-        <!-- darker bg + dark indicator on left edge -->
-        <div style="position:relative;display:inline-flex;width:160px">
-          <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1"
-                  style="background:var(--tab-bg-pressed);color:var(--tab-text-active);width:160px">
-            <span class="tab__text">Tab Label</span>
-          </button>
-          <span style="position:absolute;left:0;top:6px;bottom:6px;width:3px;border-radius:9999px;background:var(--tab-indicator-color-dark,#161616);pointer-events:none"></span>
-        </div>
-        <span class="chip" style="margin-left:8px">simulated</span>
-      </td>
-      <td>
-        <!-- No bg change. Green indicator unchanged. Intentional per Figma. -->
-        <div style="position:relative;display:inline-flex;width:160px">
-          <button class="tab tab--v" role="tab" aria-selected="true" type="button" style="pointer-events:none;width:160px">
-            <span class="tab__icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
-            </span>
-            <span class="tab__text">Tab Label</span>
-          </button>
-        </div>
-        <span class="chip-design" style="margin-left:8px">no bg — by design</span>
-      </td>
-    </tr>
-    <tr>
-      <td>Focused</td>
-      <td>
-        <!-- 3px black ring + 1px white inset. No indicator on unselected. -->
-        <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1"
-                style="color:var(--tab-text-active);width:160px;border-radius:var(--radius-xs,2px);
-                       box-shadow:inset 0 0 0 1px #fff,0 0 0 3px #161616;">
-          <span class="tab__text">Tab Label</span>
-        </button>
-        <span class="chip" style="margin-left:8px">simulated</span>
-      </td>
-      <td>
-        <!-- Focus ring + green left indicator both visible simultaneously -->
-        <div style="position:relative;display:inline-flex;width:160px">
-          <button class="tab tab--v" role="tab" aria-selected="true" type="button"
-                  style="pointer-events:none;width:160px;border-radius:var(--radius-xs,2px);
-                         box-shadow:inset 0 0 0 1px #fff,0 0 0 3px #161616;">
-            <span class="tab__icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
-            </span>
-            <span class="tab__text">Tab Label</span>
-          </button>
-        </div>
-        <span class="chip" style="margin-left:8px">simulated</span>
-      </td>
-    </tr>
-    <tr>
-      <td>Disabled</td>
-      <td>
-        <button class="tab tab--v" role="tab" aria-selected="false" type="button" tabindex="-1" aria-disabled="true" style="width:160px">
-          <span class="tab__text">Tab Label</span>
-        </button>
-      </td>
-      <td>
-        <!-- gray text (weight 500 vertical, drops from 600) + gray indicator replaces green -->
-        <button class="tab tab--v" role="tab" aria-selected="true" type="button" aria-disabled="true" style="width:160px">
-          <span class="tab__text">Tab Label</span>
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-<!-- ============================================================
-     VERTICAL TABS — RTL
-     ============================================================ -->
-
-<h2>Vertical Tab — RTL (Arabic)</h2>
-
-<div class="rtl-section" dir="rtl">
-  <div class="label">المؤشر ينتقل من اليسار إلى اليمين</div>
-  <div id="demo-v-rtl" data-tabs>
-    <div class="v-layout" style="direction:rtl">
-      <div class="tab-list tab-list--v" role="tablist" aria-label="الإعدادات" aria-orientation="vertical">
-        <button class="tab tab--v" role="tab" aria-selected="true" aria-controls="vrtl-p1" id="vrtl-t1" type="button">
-          <span class="tab__icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5" fill="currentColor"/></svg>
-          </span>
-          <span class="tab__text">عام</span>
-        </button>
-        <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vrtl-p2" id="vrtl-t2" type="button" tabindex="-1">
-          <span class="tab__text">الأمان</span>
-        </button>
-        <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vrtl-p3" id="vrtl-t3" type="button" tabindex="-1">
-          <span class="tab__text">الفواتير</span>
-        </button>
-        <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vrtl-p4" id="vrtl-t4" type="button" tabindex="-1" aria-disabled="true">
-          <span class="tab__text">متقدم</span>
-        </button>
-      </div>
-      <div class="v-panel-area" style="border-left:none;border-right:1px solid #e5e7eb">
-        <div class="tab-panel" role="tabpanel" id="vrtl-p1" aria-labelledby="vrtl-t1">محتوى الإعدادات العامة.</div>
-        <div class="tab-panel" role="tabpanel" id="vrtl-p2" aria-labelledby="vrtl-t2" hidden>محتوى إعدادات الأمان.</div>
-        <div class="tab-panel" role="tabpanel" id="vrtl-p3" aria-labelledby="vrtl-t3" hidden>محتوى إعدادات الفواتير.</div>
-        <div class="tab-panel" role="tabpanel" id="vrtl-p4" aria-labelledby="vrtl-t4" hidden>محتوى الإعدادات المتقدمة.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-     REALISTIC PATTERN — Settings Page
-     ============================================================ -->
-
-<h2>Realistic Pattern — Settings Page</h2>
-<div class="label">Vertical tabs with page content area</div>
-
-<div style="display:flex;gap:0;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;background:#fff;min-height:240px" id="demo-settings" data-tabs>
-  <div class="tab-list tab-list--v" role="tablist" aria-label="Account settings" aria-orientation="vertical" style="width:200px;background:#f9fafb;border-right:1px solid #e5e7eb;padding:12px 0">
-    <button class="tab tab--v" role="tab" aria-selected="true" aria-controls="set-p1" id="set-t1" type="button">
-      <span class="tab__icon" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5 6a5 5 0 0 1 10 0H3Z" fill="currentColor"/></svg>
-      </span>
-      <span class="tab__text">Profile</span>
-    </button>
-    <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="set-p2" id="set-t2" type="button" tabindex="-1">
-      <span class="tab__icon" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1Zm0 2a5 5 0 1 1 0 10A5 5 0 0 1 8 3Zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm0 4c-1.65 0-3 .672-3 1.5v.5h6v-.5c0-.828-1.35-1.5-3-1.5Z" fill="currentColor"/></svg>
-      </span>
-      <span class="tab__text">Security</span>
-    </button>
-    <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="set-p3" id="set-t3" type="button" tabindex="-1">
-      <span class="tab__icon" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1.25C4.27 1.25 1.25 4.27 1.25 8S4.27 14.75 8 14.75 14.75 11.73 14.75 8 11.73 1.25 8 1.25ZM8 6a.75.75 0 1 1 0-1.5A.75.75 0 0 1 8 6Zm1 5.5H7v-5h2v5Z" fill="currentColor"/></svg>
-      </span>
-      <span class="tab__text">Notifications</span>
-    </button>
-    <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="set-p4" id="set-t4" type="button" tabindex="-1">
-      <span class="tab__icon" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="2" width="5" height="5" rx="1" fill="currentColor"/><rect x="2" y="9" width="5" height="5" rx="1" fill="currentColor"/><rect x="9" y="9" width="5" height="5" rx="1" fill="currentColor" opacity=".4"/></svg>
-      </span>
-      <span class="tab__text">Integrations</span>
-    </button>
-    <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="set-p5" id="set-t5" type="button" tabindex="-1" aria-disabled="true">
-      <span class="tab__text">Enterprise</span>
-    </button>
-  </div>
-  <div style="flex:1;padding:24px">
-    <div class="tab-panel" role="tabpanel" id="set-p1" aria-labelledby="set-t1">
-      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Profile Settings</h3>
-      <p style="margin:0;font-size:14px;color:#384250">Manage your personal information and preferences.</p>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="set-p2" aria-labelledby="set-t2" hidden>
-      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Security Settings</h3>
-      <p style="margin:0;font-size:14px;color:#384250">Change your password and two-factor authentication settings.</p>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="set-p3" aria-labelledby="set-t3" hidden>
-      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Notifications</h3>
-      <p style="margin:0;font-size:14px;color:#384250">Configure when and how you receive notifications.</p>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="set-p4" aria-labelledby="set-t4" hidden>
-      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Integrations</h3>
-      <p style="margin:0;font-size:14px;color:#384250">Connect third-party services to your account.</p>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="set-p5" aria-labelledby="set-t5" hidden>
-      <h3 style="margin:0 0 8px;font-size:16px;font-weight:600">Enterprise</h3>
-      <p style="margin:0;font-size:14px;color:#384250">Enterprise features are not available on your plan.</p>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-     REALISTIC PATTERN — Dashboard with horizontal tabs
-     ============================================================ -->
-
-<h2>Realistic Pattern — Dashboard</h2>
-<div class="label">Horizontal tabs with icon + realistic panel content</div>
-
-<div style="background:#fff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden" id="demo-dashboard" data-tabs>
-  <div style="padding:0 24px">
-    <div class="tab-list tab-list--h" role="tablist" aria-label="Dashboard sections">
-      <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="dash-p1" id="dash-t1" type="button">
-        <span class="tab__icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 9h5v5H2V9ZM9 2h5v5H9V2ZM2 2h5v5H2V2ZM9 9h5v5H9V9Z" fill="currentColor"/></svg>
-        </span>
-        <span class="tab__text">Overview</span>
-      </button>
-      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="dash-p2" id="dash-t2" type="button" tabindex="-1">
-        <span class="tab__icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.75v4.25a.75.75 0 0 1-1.5 0V8.5H3a.75.75 0 0 1 0-1.5h4.25V2.75A.75.75 0 0 1 8 2Z" fill="currentColor"/></svg>
-        </span>
-        <span class="tab__text">Analytics</span>
-      </button>
-      <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="dash-p3" id="dash-t3" type="button" tabindex="-1">
-        <span class="tab__text">Reports</span>
-      </button>
-    </div>
-  </div>
-  <div style="padding:24px;border-top:none">
-    <div class="tab-panel" role="tabpanel" id="dash-p1" aria-labelledby="dash-t1">
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:16px">
-          <div style="font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Total Cases</div>
-          <div style="font-size:24px;font-weight:700;color:#161616">1,284</div>
-          <div style="font-size:12px;color:#1b8354;margin-top:4px">↑ 12% vs last month</div>
-        </div>
-        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:16px">
-          <div style="font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Open</div>
-          <div style="font-size:24px;font-weight:700;color:#161616">342</div>
-          <div style="font-size:12px;color:#dc2626;margin-top:4px">↑ 4% vs last month</div>
-        </div>
-        <div style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:16px">
-          <div style="font-size:11px;color:#6b7280;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">Resolved</div>
-          <div style="font-size:24px;font-weight:700;color:#161616">942</div>
-          <div style="font-size:12px;color:#1b8354;margin-top:4px">↑ 18% vs last month</div>
-        </div>
-      </div>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="dash-p2" aria-labelledby="dash-t2" hidden>
-      <p style="margin:0;font-size:14px;color:#384250">Analytics charts would appear here.</p>
-    </div>
-    <div class="tab-panel" role="tabpanel" id="dash-p3" aria-labelledby="dash-t3" hidden>
-      <p style="margin:0;font-size:14px;color:#384250">Reports table would appear here.</p>
-    </div>
-  </div>
-</div>
-
-
-<!-- ============================================================
-     JavaScript — Minimal ARIA Tabs keyboard navigation
-     ============================================================ -->
-
-<script>
-(function () {
-  'use strict';
-
-  function initTabGroup(container) {
-    const tablist = container.querySelector('[role="tablist"]');
-    if (!tablist) return;
-
-    const isVertical = tablist.getAttribute('aria-orientation') === 'vertical';
-
-    function getTabs() {
-      return Array.from(tablist.querySelectorAll('[role="tab"]'));
-    }
-
-    function activate(tab) {
-      const tabs = getTabs();
-      const panels = container.querySelectorAll('[role="tabpanel"]');
-
-      tabs.forEach(t => {
-        t.setAttribute('aria-selected', 'false');
-        t.setAttribute('tabindex', '-1');
-      });
-
-      panels.forEach(p => { p.hidden = true; });
-
-      tab.setAttribute('aria-selected', 'true');
-      tab.removeAttribute('tabindex');
-
-      const panelId = tab.getAttribute('aria-controls');
-      if (panelId) {
-        const panel = container.querySelector('#' + panelId);
-        if (panel) panel.hidden = false;
-      }
-    }
-
-    tablist.addEventListener('keydown', function (e) {
-      const tabs = getTabs().filter(t => !t.hasAttribute('disabled') && t.getAttribute('aria-disabled') !== 'true');
-      const current = document.activeElement;
-      const idx = tabs.indexOf(current);
-      if (idx === -1) return;
-
-      const prev = isVertical ? 'ArrowUp' : 'ArrowLeft';
-      const next = isVertical ? 'ArrowDown' : 'ArrowRight';
-
-      let target = null;
-      if (e.key === next) target = tabs[(idx + 1) % tabs.length];
-      if (e.key === prev) target = tabs[(idx - 1 + tabs.length) % tabs.length];
-      if (e.key === 'Home') target = tabs[0];
-      if (e.key === 'End') target = tabs[tabs.length - 1];
-
-      if (target) {
-        e.preventDefault();
-        target.focus();
-        activate(target);
-      }
-    });
-
-    tablist.addEventListener('click', function (e) {
-      const tab = e.target.closest('[role="tab"]');
-      if (!tab) return;
-      if (tab.hasAttribute('disabled') || tab.getAttribute('aria-disabled') === 'true') return;
-      activate(tab);
-      tab.focus();
-    });
-  }
-
-  document.querySelectorAll('[data-tabs]').forEach(initTabGroup);
-})();
-</script>
-
-<script>
-  /* ── Preview / Code tab wiring ──────────────────────────── */
-  (function () {
-    function extractCode(el) {
-      var clone = el.cloneNode(true);
-      clone.removeAttribute('id');
-      return clone.outerHTML;
-    }
-
-    function attachTabs(el, code) {
-      var block = document.createElement('div');
-      block.className = 'preview-block';
-      var tabsBar = document.createElement('div'); tabsBar.className = 'preview-tabs';
-      var btnP = document.createElement('button');
-      btnP.type = 'button'; btnP.className = 'preview-tab is-active'; btnP.textContent = 'Preview';
-      var btnC = document.createElement('button');
-      btnC.type = 'button'; btnC.className = 'preview-tab'; btnC.textContent = 'Code';
-      tabsBar.appendChild(btnP); tabsBar.appendChild(btnC);
-      var pPane = document.createElement('div'); pPane.className = 'preview-pane';
-      var cPane = document.createElement('div'); cPane.className = 'code-pane'; cPane.hidden = true;
-      var toolbar = document.createElement('div'); toolbar.className = 'code-pane__toolbar';
-      var cp = document.createElement('button');
-      cp.type = 'button'; cp.className = 'code-copy-btn'; cp.textContent = 'Copy';
-      toolbar.appendChild(cp);
-      var pre = document.createElement('pre');
-      var codeEl = document.createElement('code'); codeEl.textContent = code; pre.appendChild(codeEl);
-      cPane.appendChild(toolbar); cPane.appendChild(pre);
-      el.parentNode.insertBefore(block, el);
-      pPane.appendChild(el);
-      block.appendChild(tabsBar); block.appendChild(pPane); block.appendChild(cPane);
-      function go(showCode) {
-        btnP.classList.toggle('is-active', !showCode);
-        btnC.classList.toggle('is-active', showCode);
-        pPane.hidden = showCode; cPane.hidden = !showCode;
-      }
-      btnP.addEventListener('click', function () { go(false); });
-      btnC.addEventListener('click', function () { go(true); });
-      cp.addEventListener('click', function () {
-        navigator.clipboard.writeText(code).then(function () {
-          cp.textContent = 'Copied!';
-          setTimeout(function () { cp.textContent = 'Copy'; }, 2000);
+          if (target) {
+            e.preventDefault();
+            target.focus();
+            activate(target);
+          }
         });
-      });
-    }
 
-    document.querySelectorAll('[data-tabs]').forEach(function (el) {
-      attachTabs(el, extractCode(el));
-    });
-  }());
-</script>
+        tablist.addEventListener('click', function (e) {
+          var tab = e.target.closest('[role="tab"]');
+          if (!tab) return;
+          if (tab.hasAttribute('disabled') || tab.getAttribute('aria-disabled') === 'true') return;
+          activate(tab);
+          tab.focus();
+        });
+      }
 
-    </div>
-  </div>
-</body>
+      document.querySelectorAll('[data-tabs]').forEach(initTabGroup);
+    }());
+    </script>
+  </body>
 </html>

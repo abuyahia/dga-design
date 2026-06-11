@@ -3,534 +3,394 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Rating — Component Showcase</title>
+    <title>Rating — Showcase</title>
+
+    <!-- 1. Design tokens -->
     <link rel="stylesheet" href="../../../token.css"/>
+    <!-- 2. Component styles -->
     <link rel="stylesheet" href="../rating.css"/>
-    <style>
-      /* Showcase layout — sidebar + main */
-      .showcase-layout {
-        display: flex;
-        min-height: 100dvh;
-      }
-
-      .showcase-sidebar {
-        width: 200px;
-        flex-shrink: 0;
-        background: #ffffff;
-        border-right: 1px solid var(--gray-200, #e5e7eb);
-        padding: 24px 16px;
-        align-self: flex-start;
-        position: sticky;
-        top: 0;
-      }
-
-      .showcase-sidebar__nav {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        position: sticky;
-        top: 24px;
-      }
-
-      .showcase-sidebar__link {
-        display: block;
-        padding: 6px 10px;
-        border-radius: 4px;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--gray-600, #4b5563);
-        text-decoration: none;
-        white-space: nowrap;
-        transition: background 0.15s, color 0.15s;
-      }
-
-      .showcase-sidebar__link:hover {
-        background: var(--gray-100, #f3f4f6);
-        color: var(--gray-900, #111827);
-      }
-
-      .showcase-sidebar__link.is-active {
-        background: var(--gray-900, #111827);
-        color: #ffffff;
-        pointer-events: none;
-      }
-
-      .showcase-main {
-        flex: 1;
-        min-width: 0;
-        padding: 48px 32px;
-      }
-
-      @media (max-width: 768px) {
-        .showcase-layout {
-          flex-direction: column;
-        }
-        .showcase-sidebar {
-          width: 100%;
-          border-right: none;
-          border-bottom: 1px solid var(--gray-200, #e5e7eb);
-          padding: 12px 16px;
-          position: static;
-        }
-        .showcase-sidebar__nav {
-          flex-direction: row;
-          flex-wrap: nowrap;
-          position: static;
-          overflow-x: auto;
-          gap: 4px;
-        }
-        .showcase-sidebar__link {
-          flex-shrink: 0;
-        }
-      }
-
-      /* ── Page layout ────────────────────────────────────────── */
-      body {
-        background: var(--gray-50, #f9fafb);
-        font-family: var(--font-sans, system-ui, sans-serif);
-        color: var(--gray-900, #111827);
-        margin: 0;
-      }
-
-      .showcase-header {
-        margin-bottom: 32px;
-      }
-
-      .showcase-header h1 {
-        font-size: 22px;
-        font-weight: 700;
-        color: var(--gray-900, #111827);
-        margin: 0 0 4px;
-      }
-
-      .showcase-header p {
-        font-size: 13px;
-        color: var(--gray-500, #6b7280);
-        margin: 0;
-      }
-
-      .showcase-section {
-        margin-bottom: 40px;
-      }
-
-      .showcase-section h2 {
-        font-size: 11px;
-        font-weight: 600;
-        color: var(--gray-500, #6b7280);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        margin: 0 0 12px;
-      }
-
-      .showcase-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 24px;
-        align-items: flex-start;
-        padding: 24px;
-        background: var(--white, #fff);
-        border: 1px solid var(--gray-200, #e5e7eb);
-        border-radius: 8px;
-      }
-
-      .showcase-item {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .showcase-label {
-        font-size: 11px;
-        color: var(--gray-400, #9ca3af);
-        font-family: ui-monospace, Menlo, Consolas, monospace;
-      }
-    </style>
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css"/>
+    <script src="../../_showcase/showcase.js" defer></script>
   </head>
-  <body>
-    <div class="showcase-layout">
-      <aside class="showcase-sidebar">
-        <nav class="showcase-sidebar__nav" aria-label="Component showcases">
-          <a href="../../accordion/showcases/index.html" class="showcase-sidebar__link">Accordion</a>
-          <a href="../../avatar/showcases/index.html" class="showcase-sidebar__link">Avatar</a>
-          <a href="../../breadcrumb/showcases/index.html" class="showcase-sidebar__link">Breadcrumb</a>
-          <a href="../../button/showcases/index.html" class="showcase-sidebar__link">Button</a>
-          <a href="../../checkbox/showcases/index.html" class="showcase-sidebar__link">Checkbox</a>
-          <a href="../../checkbox-2/showcases/index.html" class="showcase-sidebar__link">Checkbox 2</a>
-          <a href="../../chip/showcases/index.html" class="showcase-sidebar__link">Chip</a>
-          <a href="../../content-switcher/showcases/index.html" class="showcase-sidebar__link">Content Switcher</a>
-          <a href="../../dga-links/showcases/index.html" class="showcase-sidebar__link">DGA Links</a>
-          <a href="../../input-affix/showcases/index.html" class="showcase-sidebar__link">Input Affix</a>
-          <a href="../../label/showcases/index.html" class="showcase-sidebar__link">Label</a>
-          <a href="../../link/showcases/index.html" class="showcase-sidebar__link">Link</a>
-          <a href="../../list/showcases/index.html" class="showcase-sidebar__link">List</a>
-          <a href="../../pagination/showcases/index.html" class="showcase-sidebar__link">Pagination</a>
-          <a href="../../rating/showcases/index.html" class="showcase-sidebar__link is-active" aria-current="page">Rating</a>
-          <a href="../../tab/showcases/index.html" class="showcase-sidebar__link">Tab</a>
-          <a href="../../tag/showcases/index.html" class="showcase-sidebar__link">Tag</a>
-          <a href="../../text-input/showcases/index.html" class="showcase-sidebar__link">Text Input</a>
-        </nav>
-      </aside>
-      <div class="showcase-main">
 
-        <div class="showcase-header">
-          <h1>Rating</h1>
-          <p>Source: components/rating/mainifest.json · Sub-component: _RatingStar</p>
-        </div>
+  <body data-showcase data-current-component="rating" data-showcase-title="Rating Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
 
-        <!-- ============================================================ SECTION 1: Size variants — Default (gold) ============================================================ -->
-        <div class="showcase-section">
-          <h2>Size / Default (Gold)</h2>
-          <div class="showcase-row">
+        <!-- ═══════════════════════════════════ Size / Default (Gold) ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Size / Default (Gold)</h2>
 
-            <div class="showcase-item">
-              <span class="showcase-label">Large · 3.5/5</span>
-              <div class="rating rating--lg" role="img" aria-label="3.5 out of 5 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Large, Color=Default, Value=3.5/5">
+              <span class="showcase__label">Large · 3.5/5</span>
+              <div class="showcase__item">
+                <div class="rating rating--lg" role="img" aria-label="3.5 out of 5 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
               </div>
             </div>
-
-            <div class="showcase-item">
-              <span class="showcase-label">Medium · 3.5/5</span>
-              <div class="rating rating--md" role="img" aria-label="3.5 out of 5 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
+            <div class="showcase__row" data-props="Size=Medium, Color=Default, Value=3.5/5">
+              <span class="showcase__label">Medium · 3.5/5</span>
+              <div class="showcase__item">
+                <div class="rating rating--md" role="img" aria-label="3.5 out of 5 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
               </div>
             </div>
-
-            <div class="showcase-item">
-              <span class="showcase-label">Small · 3.5/5</span>
-              <div class="rating rating--sm" role="img" aria-label="3.5 out of 5 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ============================================================ SECTION 2: Size variants — Brand (green) ============================================================ -->
-        <div class="showcase-section">
-          <h2>Size / Brand (Green)</h2>
-          <div class="showcase-row">
-
-            <div class="showcase-item">
-              <span class="showcase-label">Large · 3.5/5</span>
-              <div class="rating rating--lg rating--brand" role="img" aria-label="3.5 out of 5 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <div class="showcase-item">
-              <span class="showcase-label">Medium · 3.5/5</span>
-              <div class="rating rating--md rating--brand" role="img" aria-label="3.5 out of 5 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <div class="showcase-item">
-              <span class="showcase-label">Small · 3.5/5</span>
-              <div class="rating rating--sm rating--brand" role="img" aria-label="3.5 out of 5 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ============================================================ SECTION 3: Star states (individual star validation) ============================================================ -->
-        <div class="showcase-section">
-          <h2>Star States (Large)</h2>
-          <div class="showcase-row">
-
-            <div class="showcase-item">
-              <span class="showcase-label">Filled (default)</span>
-              <div class="rating rating--lg" role="img" aria-label="1 out of 1 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <div class="showcase-item">
-              <span class="showcase-label">Filled (brand)</span>
-              <div class="rating rating--lg rating--brand" role="img" aria-label="1 out of 1 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <div class="showcase-item">
-              <span class="showcase-label">Half (default)</span>
-              <div class="rating rating--lg" role="img" aria-label="0.5 out of 1 stars">
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <div class="showcase-item">
-              <span class="showcase-label">Half (brand)</span>
-              <div class="rating rating--lg rating--brand" role="img" aria-label="0.5 out of 1 stars">
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <div class="showcase-item">
-              <span class="showcase-label">Empty</span>
-              <div class="rating rating--lg" role="img" aria-label="0 out of 1 stars">
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ============================================================ SECTION 4: Rating values (all integer and half steps) ============================================================ -->
-        <div class="showcase-section">
-          <h2>Rating Values — Medium / Default</h2>
-          <div class="showcase-row" style="flex-direction: column; align-items: flex-start; gap: 12px;">
-
-            <div style="display:flex;align-items:center;gap:16px;">
-              <span class="showcase-label" style="width:40px;text-align:right;">0/5</span>
-              <div class="rating rating--md" role="img" aria-label="0 out of 5 stars">
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <div style="display:flex;align-items:center;gap:16px;">
-              <span class="showcase-label" style="width:40px;text-align:right;">1/5</span>
-              <div class="rating rating--md" role="img" aria-label="1 out of 5 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <div style="display:flex;align-items:center;gap:16px;">
-              <span class="showcase-label" style="width:40px;text-align:right;">2.5/5</span>
-              <div class="rating rating--md" role="img" aria-label="2.5 out of 5 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-            <div style="display:flex;align-items:center;gap:16px;">
-              <span class="showcase-label" style="width:40px;text-align:right;">5/5</span>
-              <div class="rating rating--md" role="img" aria-label="5 out of 5 stars">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- ============================================================ SECTION 5: Disabled state ============================================================ -->
-        <div class="showcase-section">
-          <h2>Disabled</h2>
-          <div class="showcase-row">
-            <div class="showcase-item">
-              <span class="showcase-label">Large · Default · Disabled</span>
-              <div class="rating rating--lg rating--disabled" role="img" aria-label="3.5 out of 5 stars" aria-disabled="true">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-              </div>
-            </div>
-            <div class="showcase-item">
-              <span class="showcase-label">Large · Brand · Disabled</span>
-              <div class="rating rating--lg rating--brand rating--disabled" role="img" aria-label="3.5 out of 5 stars" aria-disabled="true">
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--filled" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--half" aria-hidden="true">
-                  <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                  <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
-                <span class="rating__star rating__star--empty" aria-hidden="true">
-                  <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
-                </span>
+            <div class="showcase__row" data-props="Size=Small, Color=Default, Value=3.5/5">
+              <span class="showcase__label">Small · 3.5/5</span>
+              <div class="showcase__item">
+                <div class="rating rating--sm" role="img" aria-label="3.5 out of 5 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        <!-- ============================================================ SECTION 6: RTL ============================================================ -->
-        <div class="showcase-section">
-          <h2>RTL — Arabic Context</h2>
-          <div class="showcase-rtl-section">
-            <div dir="rtl" style="display:flex;flex-direction:column;gap:16px;">
+        <!-- ═══════════════════════════════════ Size / Brand (Green) ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Size / Brand (Green)</h2>
 
-              <div class="showcase-item">
-                <span class="showcase-label">Large · Brand · Arabic label</span>
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Large, Color=Brand, Value=3.5/5">
+              <span class="showcase__label">Large · 3.5/5</span>
+              <div class="showcase__item">
+                <div class="rating rating--lg rating--brand" role="img" aria-label="3.5 out of 5 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, Color=Brand, Value=3.5/5">
+              <span class="showcase__label">Medium · 3.5/5</span>
+              <div class="showcase__item">
+                <div class="rating rating--md rating--brand" role="img" aria-label="3.5 out of 5 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Small, Color=Brand, Value=3.5/5">
+              <span class="showcase__label">Small · 3.5/5</span>
+              <div class="showcase__item">
+                <div class="rating rating--sm rating--brand" role="img" aria-label="3.5 out of 5 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ Star States ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Star States (Large)</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="StarState=Filled, Color=Default, Size=Large">
+              <span class="showcase__label">Filled (default)</span>
+              <div class="showcase__item">
+                <div class="rating rating--lg" role="img" aria-label="1 out of 1 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="StarState=Filled, Color=Brand, Size=Large">
+              <span class="showcase__label">Filled (brand)</span>
+              <div class="showcase__item">
+                <div class="rating rating--lg rating--brand" role="img" aria-label="1 out of 1 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="StarState=Half, Color=Default, Size=Large">
+              <span class="showcase__label">Half (default)</span>
+              <div class="showcase__item">
+                <div class="rating rating--lg" role="img" aria-label="0.5 out of 1 stars">
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="StarState=Half, Color=Brand, Size=Large">
+              <span class="showcase__label">Half (brand)</span>
+              <div class="showcase__item">
+                <div class="rating rating--lg rating--brand" role="img" aria-label="0.5 out of 1 stars">
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="StarState=Empty, Color=Default, Size=Large">
+              <span class="showcase__label">Empty</span>
+              <div class="showcase__item">
+                <div class="rating rating--lg" role="img" aria-label="0 out of 1 stars">
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ Rating Values ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Rating Values — Medium / Default</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Color=Default, Value=0/5">
+              <span class="showcase__label">0 / 5</span>
+              <div class="showcase__item">
+                <div class="rating rating--md" role="img" aria-label="0 out of 5 stars">
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, Color=Default, Value=1/5">
+              <span class="showcase__label">1 / 5</span>
+              <div class="showcase__item">
+                <div class="rating rating--md" role="img" aria-label="1 out of 5 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, Color=Default, Value=2.5/5">
+              <span class="showcase__label">2.5 / 5</span>
+              <div class="showcase__item">
+                <div class="rating rating--md" role="img" aria-label="2.5 out of 5 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, Color=Default, Value=5/5">
+              <span class="showcase__label">5 / 5</span>
+              <div class="showcase__item">
+                <div class="rating rating--md" role="img" aria-label="5 out of 5 stars">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ Disabled ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Disabled</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Large, Color=Default, State=Disabled, Value=3.5/5">
+              <span class="showcase__label">Large · Default · Disabled</span>
+              <div class="showcase__item">
+                <div class="rating rating--lg rating--disabled" role="img" aria-label="3.5 out of 5 stars" aria-disabled="true">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Large, Color=Brand, State=Disabled, Value=3.5/5">
+              <span class="showcase__label">Large · Brand · Disabled</span>
+              <div class="showcase__item">
+                <div class="rating rating--lg rating--brand rating--disabled" role="img" aria-label="3.5 out of 5 stars" aria-disabled="true">
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--filled" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--half" aria-hidden="true">
+                    <svg class="rating__star-icon rating__star-base" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                    <svg class="rating__star-fill" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                  <span class="rating__star rating__star--empty" aria-hidden="true">
+                    <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════ RTL ═══════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">RTL — Arabic Context</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Large, Color=Brand, Direction=RTL, Value=3.5/5">
+              <span class="showcase__label">Large · Brand · Arabic label</span>
+              <div class="showcase__item" dir="rtl">
                 <div class="rating rating--lg rating--brand" role="img" aria-label="التقييم: 3.5 من 5 نجوم">
                   <span class="rating__star rating__star--filled" aria-hidden="true">
                     <svg class="rating__star-icon" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/></svg>
@@ -550,115 +410,11 @@
                   </span>
                 </div>
               </div>
-
             </div>
           </div>
-        </div>
+        </section>
 
-        <script>
-          /* ── Preview / Code tab wiring ──────────────────────────── */
-          (function () {
-            function extractCode(section) {
-              var parts = [];
-              section
-                .querySelectorAll('.rating')
-                .forEach(function (el) {
-                  var parent = el.closest('.showcase-item') || el.parentElement;
-                  var labelEl = parent
-                    ? parent.querySelector('.showcase-label')
-                    : null;
-                  var labelText = labelEl
-                    ? labelEl
-                      .textContent
-                      .trim()
-                    : '';
-                  if (labelText) 
-                    parts.push('<!-- ' + labelText + ' -->');
-                  parts.push(el.outerHTML);
-                  parts.push('');
-                });
-              return parts
-                .join('\n')
-                .trim();
-            }
-
-            function attachTabs(el, code) {
-              var block = document.createElement('div');
-              block.className = 'preview-block';
-              var tabsBar = document.createElement('div');
-              tabsBar.className = 'preview-tabs';
-              var btnP = document.createElement('button');
-              btnP.type = 'button';
-              btnP.className = 'preview-tab is-active';
-              btnP.textContent = 'Preview';
-              var btnC = document.createElement('button');
-              btnC.type = 'button';
-              btnC.className = 'preview-tab';
-              btnC.textContent = 'Code';
-              tabsBar.appendChild(btnP);
-              tabsBar.appendChild(btnC);
-              var pPane = document.createElement('div');
-              pPane.className = 'preview-pane';
-              var cPane = document.createElement('div');
-              cPane.className = 'code-pane';
-              cPane.hidden = true;
-              var toolbar = document.createElement('div');
-              toolbar.className = 'code-pane__toolbar';
-              var cp = document.createElement('button');
-              cp.type = 'button';
-              cp.className = 'code-copy-btn';
-              cp.textContent = 'Copy';
-              toolbar.appendChild(cp);
-              var pre = document.createElement('pre');
-              var codeEl = document.createElement('code');
-              codeEl.textContent = code;
-              pre.appendChild(codeEl);
-              cPane.appendChild(toolbar);
-              cPane.appendChild(pre);
-              el
-                .parentNode
-                .insertBefore(block, el);
-              pPane.appendChild(el);
-              block.appendChild(tabsBar);
-              block.appendChild(pPane);
-              block.appendChild(cPane);
-              function go(showCode) {
-                btnP
-                  .classList
-                  .toggle('is-active', !showCode);
-                btnC
-                  .classList
-                  .toggle('is-active', showCode);
-                pPane.hidden = showCode;
-                cPane.hidden = !showCode;
-              }
-              btnP.addEventListener('click', function () {
-                go(false);
-              });
-              btnC.addEventListener('click', function () {
-                go(true);
-              });
-              cp.addEventListener('click', function () {
-                navigator
-                  .clipboard
-                  .writeText(code)
-                  .then(function () {
-                    cp.textContent = 'Copied!';
-                    setTimeout(function () {
-                      cp.textContent = 'Copy';
-                    }, 2000);
-                  });
-              });
-            }
-
-            document
-              .querySelectorAll('.showcase-section')
-              .forEach(function (section) {
-                attachTabs(section, extractCode(section));
-              });
-          }());
-        </script>
-      </div>
+      </main>
     </div>
   </body>
 </html>

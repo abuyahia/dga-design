@@ -3,725 +3,510 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Tag + Status Tag — Component Showcase</title>
+    <title>Tag — Component Showcase | Platform Code Design System</title>
     <link rel="stylesheet" href="../../../token.css"/>
     <link rel="stylesheet" href="../tag.css"/>
+    <link rel="stylesheet" href="../../_showcase/showcase.css"/>
+    <script src="../../_showcase/showcase.js" defer></script>
     <style>
-      body {
-        font-family: var(--font-sans);
-        background: var(--gray-50);
-        color: var(--gray-900);
-        margin: 0;
-        
-        box-sizing: border-box;
-      }
-
-      h1 {
-        font-size: var(--fs-text-xl);
-        font-weight: var(--font-weight-heading);
-        color: var(--gray-950);
-        margin: 0 0 var(--space-8);
-      }
-
-      h2 {
-        font-size: var(--fs-text-md);
-        font-weight: var(--font-weight-semibold);
-        color: var(--gray-700);
-        margin: var(--space-40) 0 var(--space-16);
-        padding-bottom: var(--space-8);
-        border-bottom: 1px solid var(--gray-200);
-      }
-
-      h3 {
-        font-size: var(--fs-text-sm);
-        font-weight: var(--font-weight-semibold);
-        color: var(--gray-600);
-        margin: var(--space-24) 0 var(--space-12);
-      }
-
-      .meta {
-        font-size: var(--fs-text-xs);
-        color: var(--gray-500);
-        margin-bottom: var(--space-32);
-      }
-
-      .row {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: var(--space-8);
-        margin-bottom: var(--space-12);
-      }
-
-      .row--dark {
-        background: var(--gray-800);
-        padding: var(--space-16);
-        border-radius: var(--radius-md);
-      }
-
-      .row--colored {
-        background: var(--sa-700);
-        padding: var(--space-16);
-        border-radius: var(--radius-md);
-      }
-
-      .label {
-        font-size: var(--fs-text-xs);
-        color: var(--gray-400);
-        font-family: var(--font-sans);
-        min-width: 100px;
-      }
-
-      .section {
-        margin-bottom: var(--space-40);
-      }
-
-      table {
-        border-collapse: collapse;
-        font-size: var(--fs-text-xs);
-        color: var(--gray-700);
-      }
-
-      td,
-      th {
-        padding: var(--space-8) var(--space-12);
-        border: 1px solid var(--gray-200);
-        text-align: left;
-      }
-
-      th {
-        background: var(--gray-100);
-        font-weight: var(--font-weight-semibold);
-        color: var(--gray-600);
-      }
+      /* ── Tag showcase-specific styles only ─────────────────────────────── */
 
       code {
-        font-family: "Fira Code", "Cascadia Code", monospace;
+        font-family: ui-monospace, Menlo, Consolas, monospace;
         font-size: 11px;
         background: var(--gray-100);
         padding: 1px 4px;
-        border-radius: var(--radius-xs);
+        border-radius: var(--radius-xs, 2px);
         color: var(--gray-700);
       }
 
-      /* ── Preview / Code Tabs ──────────────────────────────── */
-      .preview-block {
-        border: 1px solid var(--gray-200, #e5e7eb);
-        border-radius: var(--radius-md, 8px);
-        overflow: hidden;
-        margin-bottom: var(--space-40, 40px);
-      }
-      .preview-tabs {
+      .tag-row {
         display: flex;
-        align-items: flex-end;
-        gap: 4px;
-        padding: 8px 12px 0;
-        background: var(--gray-50, #f9fafb);
-        border-bottom: 1px solid var(--gray-200, #e5e7eb);
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-8, 8px);
       }
-      .preview-tab {
-        padding: 6px 14px;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--gray-400, #9da4ae);
-        background: transparent;
-        border: 1px solid transparent;
-        border-bottom: none;
-        border-radius: 6px 6px 0 0;
-        cursor: pointer;
-        margin-bottom: -1px;
-        transition: color 0.15s;
+
+      /* On-color showcase modifiers — tag-specific backgrounds */
+      .showcase--tag-dark {
+        background: var(--gray-800);
       }
-      .preview-tab:hover { color: var(--gray-600, #4b5563); }
-      .preview-tab.is-active { color: var(--gray-900, #111827); background: var(--white, #fff); border-color: var(--gray-200, #e5e7eb); }
-      .preview-pane .section { margin-bottom: 0; }
-      .code-pane { background: #16181d; overflow-x: auto; }
-      .code-pane__toolbar {
+      .showcase--tag-dark .showcase__row {
+        border-bottom-color: rgba(255, 255, 255, 0.10);
+      }
+      .showcase--tag-dark .showcase__label {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .showcase--tag-colored {
+        background: var(--sa-700);
+      }
+      .showcase--tag-colored .showcase__row {
+        border-bottom-color: rgba(255, 255, 255, 0.10);
+      }
+      .showcase--tag-colored .showcase__label {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      /* Realistic context cards */
+      .entity-cards {
         display: flex;
-        justify-content: flex-end;
-        padding: 8px 16px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        flex-direction: column;
+        gap: var(--space-12, 12px);
       }
-      .code-copy-btn {
-        font-size: 12px;
-        color: rgba(255,255,255,0.45);
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 4px;
-        padding: 3px 10px;
-        cursor: pointer;
-        transition: color 0.15s, background 0.15s;
+      .entity-card {
+        display: flex;
+        align-items: center;
+        gap: var(--space-12, 12px);
+        padding: var(--space-16, 16px);
+        background: var(--white, #ffffff);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--gray-200);
       }
-      .code-copy-btn:hover { color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.10); }
-      .code-pane pre {
-        margin: 0;
-        padding: 20px 24px;
-        font-family: 'ui-monospace', Menlo, Consolas, monospace;
-        font-size: 12.5px;
-        line-height: 1.65;
-        color: #cdd6f4;
-        white-space: pre;
-        tab-size: 2;
+      .entity-card__title {
+        flex: 1;
+        font-size: var(--fs-text-sm);
+        font-weight: var(--font-weight-semibold);
+        color: var(--gray-800);
       }
     </style>
   </head>
-  <body>
-    <style>
-      /* Showcase layout — sidebar + main */
-      .showcase-layout {
-        display: flex;
-        min-height: 100dvh;
-      }
+  <body data-showcase data-current-component="tag" data-showcase-title="Tag + Status Tag Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
 
-      .showcase-sidebar {
-        width: 200px;
-        flex-shrink: 0;
-        background: #ffffff;
-        border-right: 1px solid var(--gray-200, #e5e7eb);
-        padding: 24px 16px;
-        align-self: flex-start;
-        position: sticky;
-        top: 0;
-      }
+        <!-- ═══════════════════════════════════════ TAG — SIZES ═══════════════════════════════════════ -->
 
-      .showcase-sidebar__nav {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        position: sticky;
-        top: 24px;
-      }
+        <section class="variant">
+          <h2 class="variant__title">Tag — Sizes</h2>
+          <div class="showcase">
 
-      .showcase-sidebar__link {
-        display: block;
-        padding: 6px 10px;
-        border-radius: 4px;
-        font-size: 13px;
-        font-weight: 500;
-        color: var(--gray-600, #4b5563);
-        text-decoration: none;
-        white-space: nowrap;
-        transition: background .15s, color .15s;
-      }
+            <div class="showcase__row">
+              <span class="showcase__label">x Small (20px)</span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs"><span class="tag__text">Label</span></span>
+                  <span class="tag tag--xs">
+                    <span class="tag__icon" aria-hidden="true">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" fill="currentColor"/></svg>
+                    </span><span class="tag__text">Label</span>
+                  </span>
+                  <span class="tag tag--xs tag--icon-only" aria-label="Icon only xs">
+                    <span class="tag__icon" aria-hidden="true">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" fill="currentColor"/></svg>
+                    </span>
+                  </span>
+                  <span class="tag tag--xs tag--rounded"><span class="tag__text">Rounded</span></span>
+                </div>
+              </div>
+            </div>
 
-      .showcase-sidebar__link:hover {
-        background: var(--gray-100, #f3f4f6);
-        color: var(--gray-900, #111827);
-      }
+            <div class="showcase__row">
+              <span class="showcase__label">Small (24px)</span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--sm"><span class="tag__text">Label</span></span>
+                  <span class="tag tag--sm">
+                    <span class="tag__icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4.5" fill="currentColor"/></svg>
+                    </span><span class="tag__text">Label</span>
+                  </span>
+                  <span class="tag tag--sm tag--icon-only" aria-label="Icon only sm">
+                    <span class="tag__icon" aria-hidden="true">
+                      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4.5" fill="currentColor"/></svg>
+                    </span>
+                  </span>
+                  <span class="tag tag--sm tag--rounded"><span class="tag__text">Rounded</span></span>
+                </div>
+              </div>
+            </div>
 
-      .showcase-sidebar__link.is-active {
-        background: var(--gray-900, #111827);
-        color: #ffffff;
-        pointer-events: none;
-      }
+            <div class="showcase__row">
+              <span class="showcase__label">Medium / Default (32px)</span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag"><span class="tag__text">Label</span></span>
+                  <span class="tag">
+                    <span class="tag__icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="5.5" fill="currentColor"/></svg>
+                    </span><span class="tag__text">Label</span>
+                  </span>
+                  <span class="tag tag--icon-only" aria-label="Icon only md">
+                    <span class="tag__icon" aria-hidden="true">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="5.5" fill="currentColor"/></svg>
+                    </span>
+                  </span>
+                  <span class="tag tag--rounded"><span class="tag__text">Rounded</span></span>
+                </div>
+              </div>
+            </div>
 
-      .showcase-main {
-        flex: 1;
-        min-width: 0;
-        padding: 48px 32px;
-      }
+          </div>
+        </section>
 
-      @media (max-width: 768px) {
-        .showcase-layout {
-          flex-direction: column;
-        }
-        .showcase-sidebar {
-          width: 100%;
-          border-right: none;
-          border-bottom: 1px solid var(--gray-200, #e5e7eb);
-          padding: 12px 16px;
-          position: static;
-        }
-        .showcase-sidebar__nav {
-          flex-direction: row;
-          flex-wrap: nowrap;
-          position: static;
-          overflow-x: auto;
-          gap: 4px;
-        }
-        .showcase-sidebar__link {
-          flex-shrink: 0;
-        }
-      }
-    </style>
-    <div class="showcase-layout">
-      <aside class="showcase-sidebar">
-        <nav class="showcase-sidebar__nav" aria-label="Component showcases">
-          <a href="../../accordion/showcases/index.html" class="showcase-sidebar__link">Accordion</a>
-          <a href="../../avatar/showcases/index.html" class="showcase-sidebar__link">Avatar</a>
-          <a href="../../breadcrumb/showcases/index.html" class="showcase-sidebar__link">Breadcrumb</a>
-          <a href="../../button/showcases/index.html" class="showcase-sidebar__link">Button</a>
-          <a href="../../checkbox/showcases/index.html" class="showcase-sidebar__link">Checkbox</a>
-          <a href="../../checkbox-2/showcases/index.html" class="showcase-sidebar__link">Checkbox 2</a>
-          <a href="../../chip/showcases/index.html" class="showcase-sidebar__link">Chip</a>
-          <a href="../../content-switcher/showcases/index.html" class="showcase-sidebar__link">Content Switcher</a>
-          <a href="../../dga-links/showcases/index.html" class="showcase-sidebar__link">DGA Links</a>
-          <a href="../../input-affix/showcases/index.html" class="showcase-sidebar__link">Input Affix</a>
-          <a href="../../label/showcases/index.html" class="showcase-sidebar__link">Label</a>
-          <a href="../../link/showcases/index.html" class="showcase-sidebar__link">Link</a>
-          <a href="../../list/showcases/index.html" class="showcase-sidebar__link">List</a>
-          <a href="../../pagination/showcases/index.html" class="showcase-sidebar__link">Pagination</a>
-          <a href="../../rating/showcases/index.html" class="showcase-sidebar__link">Rating</a>
-          <a href="../../tab/showcases/index.html" class="showcase-sidebar__link">Tab</a>
-          <a href="../../tag/showcases/index.html" class="showcase-sidebar__link is-active" aria-current="page">Tag</a>
-          <a href="../../text-input/showcases/index.html" class="showcase-sidebar__link">Text Input</a>
-        </nav>
-      </aside>
-      <div class="showcase-main">
+        <!-- ═══════════════════════════════════════ TAG — STYLES (FILLED) ═══════════════════════════════════════ -->
 
-    <h1>Tag + Status Tag</h1>
-    <p class="meta">
-      Source:
-      <code>components/tag/manifest.json</code>
-      ·
-      <code>status-tag.json</code>
-      &nbsp;|&nbsp; CSS:
-      <code>tag.css</code>
-      &nbsp;|&nbsp; Contract:
-      <code>tag.contract.md</code>
-      &nbsp;|&nbsp; Generated: 2026-06-09
-    </p>
+        <section class="variant">
+          <h2 class="variant__title">Tag — Styles (Filled)</h2>
 
-    <!-- ══════════════════════════════════════════════════════════ TAG — Sizes ══════════════════════════════════════════════════════════ -->
+          <div class="showcase">
 
-    <h2>Tag — Sizes</h2>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag</code> neutral</span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs"><span class="tag__text">Neutral</span></span>
+                  <span class="tag tag--sm"><span class="tag__text">Neutral</span></span>
+                  <span class="tag"><span class="tag__text">Neutral</span></span>
+                  <span class="tag tag--rounded"><span class="tag__text">Neutral</span></span>
+                </div>
+              </div>
+            </div>
 
-    <div class="section">
-      <h3>x Small (20px)</h3>
-      <div class="row">
-        <span class="tag tag--xs"><span class="tag__text">Label</span></span>
-        <span class="tag tag--xs">
-          <span class="tag__icon" aria-hidden="true">
-            <svg width="10" height="10" viewbox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" fill="currentColor"/></svg>
-          </span><span class="tag__text">Label</span>
-        </span>
-        <span class="tag tag--xs tag--icon-only" aria-label="Icon only xs">
-          <span class="tag__icon" aria-hidden="true">
-            <svg width="10" height="10" viewbox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3.5" fill="currentColor"/></svg></span></span>
-        <span class="tag tag--xs tag--rounded"><span class="tag__text">Rounded</span></span>
-      </div>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--error</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--error"><span class="tag__text">Error</span></span>
+                  <span class="tag tag--sm tag--error"><span class="tag__text">Error</span></span>
+                  <span class="tag tag--error"><span class="tag__text">Error</span></span>
+                  <span class="tag tag--error tag--rounded"><span class="tag__text">Error</span></span>
+                </div>
+              </div>
+            </div>
 
-      <h3>Small (24px)</h3>
-      <div class="row">
-        <span class="tag tag--sm"><span class="tag__text">Label</span></span>
-        <span class="tag tag--sm">
-          <span class="tag__icon" aria-hidden="true">
-            <svg width="14" height="14" viewbox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4.5" fill="currentColor"/></svg>
-          </span><span class="tag__text">Label</span>
-        </span>
-        <span class="tag tag--sm tag--icon-only" aria-label="Icon only sm">
-          <span class="tag__icon" aria-hidden="true">
-            <svg width="14" height="14" viewbox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4.5" fill="currentColor"/></svg></span></span>
-        <span class="tag tag--sm tag--rounded"><span class="tag__text">Rounded</span></span>
-      </div>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--info</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--info"><span class="tag__text">Info</span></span>
+                  <span class="tag tag--sm tag--info"><span class="tag__text">Info</span></span>
+                  <span class="tag tag--info"><span class="tag__text">Info</span></span>
+                  <span class="tag tag--info tag--rounded"><span class="tag__text">Info</span></span>
+                </div>
+              </div>
+            </div>
 
-      <h3>Medium / Default (32px)</h3>
-      <div class="row">
-        <span class="tag"><span class="tag__text">Label</span></span>
-        <span class="tag">
-          <span class="tag__icon" aria-hidden="true">
-            <svg width="18" height="18" viewbox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="5.5" fill="currentColor"/></svg>
-          </span><span class="tag__text">Label</span>
-        </span>
-        <span class="tag tag--icon-only" aria-label="Icon only md">
-          <span class="tag__icon" aria-hidden="true">
-            <svg width="18" height="18" viewbox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="5.5" fill="currentColor"/></svg></span></span>
-        <span class="tag tag--rounded"><span class="tag__text">Rounded</span></span>
-      </div>
-    </div>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--success</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--success"><span class="tag__text">Success</span></span>
+                  <span class="tag tag--sm tag--success"><span class="tag__text">Success</span></span>
+                  <span class="tag tag--success"><span class="tag__text">Success</span></span>
+                  <span class="tag tag--success tag--rounded"><span class="tag__text">Success</span></span>
+                </div>
+              </div>
+            </div>
 
-    <!-- ══════════════════════════════════════════════════════════ TAG — Style (filled) ══════════════════════════════════════════════════════════ -->
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--warning</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--warning"><span class="tag__text">Warning</span></span>
+                  <span class="tag tag--sm tag--warning"><span class="tag__text">Warning</span></span>
+                  <span class="tag tag--warning"><span class="tag__text">Warning</span></span>
+                  <span class="tag tag--warning tag--rounded"><span class="tag__text">Warning</span></span>
+                </div>
+              </div>
+            </div>
 
-    <h2>Tag — Styles (Filled)</h2>
+          </div>
 
-    <div class="section">
-      <table>
-        <thead>
-          <tr>
-            <th>Style</th>
-            <th>x Small</th>
-            <th>Small</th>
-            <th>Medium</th>
-            <th>Medium + Rounded</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <code>.tag</code>
-              (neutral)</td>
-            <td><span class="tag tag--xs"><span class="tag__text">Neutral</span></span></td>
-            <td><span class="tag tag--sm"><span class="tag__text">Neutral</span></span></td>
-            <td><span class="tag"><span class="tag__text">Neutral</span></span></td>
-            <td><span class="tag tag--rounded"><span class="tag__text">Neutral</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>.tag--error</code>
-            </td>
-            <td><span class="tag tag--xs tag--error"><span class="tag__text">Error</span></span></td>
-            <td><span class="tag tag--sm tag--error"><span class="tag__text">Error</span></span></td>
-            <td><span class="tag tag--error"><span class="tag__text">Error</span></span></td>
-            <td><span class="tag tag--error tag--rounded"><span class="tag__text">Error</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>.tag--info</code>
-            </td>
-            <td><span class="tag tag--xs tag--info"><span class="tag__text">Info</span></span></td>
-            <td><span class="tag tag--sm tag--info"><span class="tag__text">Info</span></span></td>
-            <td><span class="tag tag--info"><span class="tag__text">Info</span></span></td>
-            <td><span class="tag tag--info tag--rounded"><span class="tag__text">Info</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>.tag--success</code>
-            </td>
-            <td><span class="tag tag--xs tag--success"><span class="tag__text">Success</span></span></td>
-            <td><span class="tag tag--sm tag--success"><span class="tag__text">Success</span></span></td>
-            <td><span class="tag tag--success"><span class="tag__text">Success</span></span></td>
-            <td><span class="tag tag--success tag--rounded"><span class="tag__text">Success</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>.tag--warning</code>
-            </td>
-            <td><span class="tag tag--xs tag--warning"><span class="tag__text">Warning</span></span></td>
-            <td><span class="tag tag--sm tag--warning"><span class="tag__text">Warning</span></span></td>
-            <td><span class="tag tag--warning"><span class="tag__text">Warning</span></span></td>
-            <td><span class="tag tag--warning tag--rounded"><span class="tag__text">Warning</span></span></td>
-          </tr>
-        </tbody>
-      </table>
+          <h3 class="variant__sub">On-Color (on dark background)</h3>
+          <div class="showcase showcase--tag-dark">
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--on-color</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--on-color"><span class="tag__text">On Color</span></span>
+                  <span class="tag tag--sm tag--on-color"><span class="tag__text">On Color</span></span>
+                  <span class="tag tag--on-color"><span class="tag__text">On Color</span></span>
+                  <span class="tag tag--on-color tag--rounded"><span class="tag__text">On Color</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <h3>On-Color (on dark background)</h3>
-      <div class="row row--dark">
-        <span class="tag tag--xs tag--on-color"><span class="tag__text">On Color</span></span>
-        <span class="tag tag--sm tag--on-color"><span class="tag__text">On Color</span></span>
-        <span class="tag tag--on-color"><span class="tag__text">On Color</span></span>
-        <span class="tag tag--on-color tag--rounded"><span class="tag__text">On Color</span></span>
-      </div>
-    </div>
+        <!-- ═══════════════════════════════════════ TAG — OUTLINE ═══════════════════════════════════════ -->
 
-    <!-- ══════════════════════════════════════════════════════════ TAG — Outline ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Tag — Outline Modifier</h2>
 
-    <h2>Tag — Outline Modifier</h2>
+          <div class="showcase">
 
-    <div class="section">
-      <table>
-        <thead>
-          <tr>
-            <th>Style</th>
-            <th>x Small</th>
-            <th>Small</th>
-            <th>Medium</th>
-            <th>Medium + Rounded</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <code>.tag--outline</code>
-              (neutral)</td>
-            <td><span class="tag tag--xs tag--outline"><span class="tag__text">Neutral</span></span></td>
-            <td><span class="tag tag--sm tag--outline"><span class="tag__text">Neutral</span></span></td>
-            <td><span class="tag tag--outline"><span class="tag__text">Neutral</span></span></td>
-            <td><span class="tag tag--outline tag--rounded"><span class="tag__text">Neutral</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>.tag--outline.tag--error</code>
-            </td>
-            <td><span class="tag tag--xs tag--outline tag--error"><span class="tag__text">Error</span></span></td>
-            <td><span class="tag tag--sm tag--outline tag--error"><span class="tag__text">Error</span></span></td>
-            <td><span class="tag tag--outline tag--error"><span class="tag__text">Error</span></span></td>
-            <td><span class="tag tag--outline tag--error tag--rounded"><span class="tag__text">Error</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>.tag--outline.tag--info</code>
-            </td>
-            <td><span class="tag tag--xs tag--outline tag--info"><span class="tag__text">Info</span></span></td>
-            <td><span class="tag tag--sm tag--outline tag--info"><span class="tag__text">Info</span></span></td>
-            <td><span class="tag tag--outline tag--info"><span class="tag__text">Info</span></span></td>
-            <td><span class="tag tag--outline tag--info tag--rounded"><span class="tag__text">Info</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>.tag--outline.tag--success</code>
-            </td>
-            <td><span class="tag tag--xs tag--outline tag--success"><span class="tag__text">Success</span></span></td>
-            <td><span class="tag tag--sm tag--outline tag--success"><span class="tag__text">Success</span></span></td>
-            <td><span class="tag tag--outline tag--success"><span class="tag__text">Success</span></span></td>
-            <td><span class="tag tag--outline tag--success tag--rounded"><span class="tag__text">Success</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>.tag--outline.tag--warning</code>
-            </td>
-            <td><span class="tag tag--xs tag--outline tag--warning"><span class="tag__text">Warning</span></span></td>
-            <td><span class="tag tag--sm tag--outline tag--warning"><span class="tag__text">Warning</span></span></td>
-            <td><span class="tag tag--outline tag--warning"><span class="tag__text">Warning</span></span></td>
-            <td><span class="tag tag--outline tag--warning tag--rounded"><span class="tag__text">Warning</span></span></td>
-          </tr>
-        </tbody>
-      </table>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--outline</code> neutral</span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--outline"><span class="tag__text">Neutral</span></span>
+                  <span class="tag tag--sm tag--outline"><span class="tag__text">Neutral</span></span>
+                  <span class="tag tag--outline"><span class="tag__text">Neutral</span></span>
+                  <span class="tag tag--outline tag--rounded"><span class="tag__text">Neutral</span></span>
+                </div>
+              </div>
+            </div>
 
-      <h3>On-Color Outline (on dark / colored backgrounds)</h3>
-      <div class="row row--colored">
-        <span class="tag tag--xs tag--outline tag--on-color"><span class="tag__text">On Color</span></span>
-        <span class="tag tag--sm tag--outline tag--on-color"><span class="tag__text">On Color</span></span>
-        <span class="tag tag--outline tag--on-color"><span class="tag__text">On Color</span></span>
-        <span class="tag tag--outline tag--on-color tag--rounded"><span class="tag__text">On Color</span></span>
-      </div>
-    </div>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--outline .tag--error</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--outline tag--error"><span class="tag__text">Error</span></span>
+                  <span class="tag tag--sm tag--outline tag--error"><span class="tag__text">Error</span></span>
+                  <span class="tag tag--outline tag--error"><span class="tag__text">Error</span></span>
+                  <span class="tag tag--outline tag--error tag--rounded"><span class="tag__text">Error</span></span>
+                </div>
+              </div>
+            </div>
 
-    <!-- ══════════════════════════════════════════════════════════ TAG — RTL ══════════════════════════════════════════════════════════ -->
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--outline .tag--info</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--outline tag--info"><span class="tag__text">Info</span></span>
+                  <span class="tag tag--sm tag--outline tag--info"><span class="tag__text">Info</span></span>
+                  <span class="tag tag--outline tag--info"><span class="tag__text">Info</span></span>
+                  <span class="tag tag--outline tag--info tag--rounded"><span class="tag__text">Info</span></span>
+                </div>
+              </div>
+            </div>
 
-    <h2>Tag — RTL Direction</h2>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--outline .tag--success</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--outline tag--success"><span class="tag__text">Success</span></span>
+                  <span class="tag tag--sm tag--outline tag--success"><span class="tag__text">Success</span></span>
+                  <span class="tag tag--outline tag--success"><span class="tag__text">Success</span></span>
+                  <span class="tag tag--outline tag--success tag--rounded"><span class="tag__text">Success</span></span>
+                </div>
+              </div>
+            </div>
 
-    <div class="section" dir="rtl">
-      <div class="row">
-        <span class="tag"><span class="tag__text">تسمية</span></span>
-        <span class="tag">
-          <span class="tag__icon" aria-hidden="true">
-            <svg width="18" height="18" viewbox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="5.5" fill="currentColor"/></svg>
-          </span><span class="tag__text">تسمية</span>
-        </span>
-        <span class="tag tag--error tag--rounded"><span class="tag__text">خطأ</span></span>
-        <span class="tag tag--success tag--outline"><span class="tag__text">ناجح</span></span>
-        <span class="tag tag--warning tag--rounded tag--sm"><span class="tag__text">تحذير</span></span>
-      </div>
-    </div>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--outline .tag--warning</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--outline tag--warning"><span class="tag__text">Warning</span></span>
+                  <span class="tag tag--sm tag--outline tag--warning"><span class="tag__text">Warning</span></span>
+                  <span class="tag tag--outline tag--warning"><span class="tag__text">Warning</span></span>
+                  <span class="tag tag--outline tag--warning tag--rounded"><span class="tag__text">Warning</span></span>
+                </div>
+              </div>
+            </div>
 
-    <!-- ══════════════════════════════════════════════════════════ STATUS TAG — Sizes ══════════════════════════════════════════════════════════ -->
+          </div>
 
-    <h2>Status Tag — Sizes</h2>
+          <h3 class="variant__sub">On-Color Outline (on dark / colored backgrounds)</h3>
+          <div class="showcase showcase--tag-colored">
+            <div class="showcase__row">
+              <span class="showcase__label"><code>.tag--outline .tag--on-color</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="tag tag--xs tag--outline tag--on-color"><span class="tag__text">On Color</span></span>
+                  <span class="tag tag--sm tag--outline tag--on-color"><span class="tag__text">On Color</span></span>
+                  <span class="tag tag--outline tag--on-color"><span class="tag__text">On Color</span></span>
+                  <span class="tag tag--outline tag--on-color tag--rounded"><span class="tag__text">On Color</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <div class="section">
-      <div class="row">
-        <span class="label">x Small</span>
-        <span class="status-tag status-tag--xs">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Status</span></span>
-        <span class="status-tag status-tag--xs status-tag--green">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span></span>
-        <span class="status-tag status-tag--xs status-tag--red">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span></span>
-      </div>
-      <div class="row">
-        <span class="label">Small</span>
-        <span class="status-tag status-tag--sm">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Status</span></span>
-        <span class="status-tag status-tag--sm status-tag--blue">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">In Progress</span></span>
-        <span class="status-tag status-tag--sm status-tag--yellow">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span></span>
-      </div>
-      <div class="row">
-        <span class="label">Medium</span>
-        <span class="status-tag">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Status</span></span>
-        <span class="status-tag status-tag--green">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span></span>
-        <span class="status-tag status-tag--red">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span></span>
-      </div>
-    </div>
+        <!-- ═══════════════════════════════════════ TAG — RTL ═══════════════════════════════════════ -->
 
-    <!-- ══════════════════════════════════════════════════════════ STATUS TAG — Styles × Status Matrix ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Tag — RTL Direction</h2>
+          <div class="interactive">
+            <div class="tag-row" dir="rtl">
+              <span class="tag"><span class="tag__text">تسمية</span></span>
+              <span class="tag">
+                <span class="tag__icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="5.5" fill="currentColor"/></svg>
+                </span><span class="tag__text">تسمية</span>
+              </span>
+              <span class="tag tag--error tag--rounded"><span class="tag__text">خطأ</span></span>
+              <span class="tag tag--success tag--outline"><span class="tag__text">ناجح</span></span>
+              <span class="tag tag--warning tag--rounded tag--sm"><span class="tag__text">تحذير</span></span>
+            </div>
+          </div>
+        </section>
 
-    <h2>Status Tag — Style × Status Matrix</h2>
+        <!-- ═══════════════════════════════════════ STATUS TAG — SIZES ═══════════════════════════════════════ -->
 
-    <div class="section">
-      <table>
-        <thead>
-          <tr>
-            <th>Style</th>
-            <th>Subtle (default)</th>
-            <th>Ghost</th>
-            <th>Inverted</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <code>neutral</code>
-            </td>
-            <td>
-              <span class="status-tag">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Neutral</span></span></td>
-            <td>
-              <span class="status-tag status-tag--ghost">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Neutral</span></span></td>
-            <td>
-              <span class="status-tag status-tag--inverted">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Neutral</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>--blue</code>
-            </td>
-            <td>
-              <span class="status-tag status-tag--blue">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">In Progress</span></span></td>
-            <td>
-              <span class="status-tag status-tag--blue status-tag--ghost">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">In Progress</span></span></td>
-            <td>
-              <span class="status-tag status-tag--blue status-tag--inverted">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">In Progress</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>--green</code>
-            </td>
-            <td>
-              <span class="status-tag status-tag--green">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span></span></td>
-            <td>
-              <span class="status-tag status-tag--green status-tag--ghost">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span></span></td>
-            <td>
-              <span class="status-tag status-tag--green status-tag--inverted">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>--red</code>
-            </td>
-            <td>
-              <span class="status-tag status-tag--red">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span></span></td>
-            <td>
-              <span class="status-tag status-tag--red status-tag--ghost">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span></span></td>
-            <td>
-              <span class="status-tag status-tag--red status-tag--inverted">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span></span></td>
-          </tr>
-          <tr>
-            <td>
-              <code>--yellow</code>
-            </td>
-            <td>
-              <span class="status-tag status-tag--yellow">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span></span></td>
-            <td>
-              <span class="status-tag status-tag--yellow status-tag--ghost">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span></span></td>
-            <td>
-              <span class="status-tag status-tag--yellow status-tag--inverted">
-                <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span></span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <section class="variant">
+          <h2 class="variant__title">Status Tag — Sizes</h2>
+          <div class="showcase">
 
-    <!-- ══════════════════════════════════════════════════════════ STATUS TAG — RTL ══════════════════════════════════════════════════════════ -->
+            <div class="showcase__row">
+              <span class="showcase__label">x Small</span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="status-tag status-tag--xs">
+                    <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Status</span>
+                  </span>
+                  <span class="status-tag status-tag--xs status-tag--green">
+                    <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span>
+                  </span>
+                  <span class="status-tag status-tag--xs status-tag--red">
+                    <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span>
+                  </span>
+                </div>
+              </div>
+            </div>
 
-    <h2>Status Tag — RTL Direction</h2>
+            <div class="showcase__row">
+              <span class="showcase__label">Small</span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="status-tag status-tag--sm">
+                    <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Status</span>
+                  </span>
+                  <span class="status-tag status-tag--sm status-tag--blue">
+                    <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">In Progress</span>
+                  </span>
+                  <span class="status-tag status-tag--sm status-tag--yellow">
+                    <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span>
+                  </span>
+                </div>
+              </div>
+            </div>
 
-    <div class="section" dir="rtl">
-      <div class="row">
-        <span class="status-tag">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">حالة</span></span>
-        <span class="status-tag status-tag--green">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">نشط</span></span>
-        <span class="status-tag status-tag--red status-tag--inverted">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">فشل</span></span>
-        <span class="status-tag status-tag--blue status-tag--ghost">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">قيد المراجعة</span></span>
-        <span class="status-tag status-tag--yellow status-tag--sm">
-          <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">معلق</span></span>
-      </div>
-    </div>
+            <div class="showcase__row">
+              <span class="showcase__label">Medium</span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="status-tag">
+                    <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Status</span>
+                  </span>
+                  <span class="status-tag status-tag--green">
+                    <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span>
+                  </span>
+                  <span class="status-tag status-tag--red">
+                    <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span>
+                  </span>
+                </div>
+              </div>
+            </div>
 
-    <!-- ══════════════════════════════════════════════════════════ COMBINED — Tag + Status Tag in a realistic context ══════════════════════════════════════════════════════════ -->
+          </div>
+        </section>
 
-    <h2>Realistic Context — Entity Card Row</h2>
+        <!-- ═══════════════════════════════════════ STATUS TAG — STYLE × STATUS MATRIX ═══════════════════════════════════════ -->
 
-    <div class="section">
-      <div style="display: flex; flex-direction: column; gap: var(--space-12);">
+        <section class="variant">
+          <h2 class="variant__title">Status Tag — Style × Status Matrix</h2>
+          <p class="variant__sub" style="text-transform: none; letter-spacing: 0; margin-top: 0;">Columns: Subtle (default) · Ghost · Inverted</p>
+          <div class="showcase">
 
-        <div style="display: flex; align-items: center; gap: var(--space-12); padding: var(--space-16); background: white; border-radius: var(--radius-md); border: 1px solid var(--gray-200);">
-          <div style="flex: 1; font-size: var(--fs-text-sm); font-weight: var(--font-weight-semibold); color: var(--gray-800);">Application #10234</div>
-          <span class="tag tag--sm tag--info"><span class="tag__text">Document</span></span>
-          <span class="tag tag--sm tag--warning tag--rounded"><span class="tag__text">Review Required</span></span>
-          <span class="status-tag status-tag--sm status-tag--yellow">
-            <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span></span>
-        </div>
+            <div class="showcase__row">
+              <span class="showcase__label">neutral</span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="status-tag"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Neutral</span></span>
+                  <span class="status-tag status-tag--ghost"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Neutral</span></span>
+                  <span class="status-tag status-tag--inverted"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Neutral</span></span>
+                </div>
+              </div>
+            </div>
 
-        <div style="display: flex; align-items: center; gap: var(--space-12); padding: var(--space-16); background: white; border-radius: var(--radius-md); border: 1px solid var(--gray-200);">
-          <div style="flex: 1; font-size: var(--fs-text-sm); font-weight: var(--font-weight-semibold); color: var(--gray-800);">Permit #98712</div>
-          <span class="tag tag--sm tag--success tag--rounded"><span class="tag__text">Approved</span></span>
-          <span class="status-tag status-tag--sm status-tag--green">
-            <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span></span>
-        </div>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>--blue</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="status-tag status-tag--blue"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">In Progress</span></span>
+                  <span class="status-tag status-tag--blue status-tag--ghost"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">In Progress</span></span>
+                  <span class="status-tag status-tag--blue status-tag--inverted"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">In Progress</span></span>
+                </div>
+              </div>
+            </div>
 
-        <div style="display: flex; align-items: center; gap: var(--space-12); padding: var(--space-16); background: white; border-radius: var(--radius-md); border: 1px solid var(--gray-200);">
-          <div style="flex: 1; font-size: var(--fs-text-sm); font-weight: var(--font-weight-semibold); color: var(--gray-800);">Report #00571</div>
-          <span class="tag tag--sm tag--error"><span class="tag__text">Rejected</span></span>
-          <span class="tag tag--sm tag--outline tag--error"><span class="tag__text">Needs Update</span></span>
-          <span class="status-tag status-tag--sm status-tag--red status-tag--inverted">
-            <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span></span>
-        </div>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>--green</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="status-tag status-tag--green"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span></span>
+                  <span class="status-tag status-tag--green status-tag--ghost"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span></span>
+                  <span class="status-tag status-tag--green status-tag--inverted"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span></span>
+                </div>
+              </div>
+            </div>
 
-      </div>
-    </div>
+            <div class="showcase__row">
+              <span class="showcase__label"><code>--red</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="status-tag status-tag--red"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span></span>
+                  <span class="status-tag status-tag--red status-tag--ghost"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span></span>
+                  <span class="status-tag status-tag--red status-tag--inverted"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span></span>
+                </div>
+              </div>
+            </div>
 
-    <script>
-      /* ── Preview / Code tab wiring ──────────────────────────── */
-      (function () {
-        function extractCode(section) {
-          var parts = [];
-          section.querySelectorAll('.tag, .status-tag').forEach(function (el) {
-            parts.push(el.outerHTML);
-          });
-          return parts.join('\n');
-        }
+            <div class="showcase__row">
+              <span class="showcase__label"><code>--yellow</code></span>
+              <div class="showcase__item">
+                <div class="tag-row">
+                  <span class="status-tag status-tag--yellow"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span></span>
+                  <span class="status-tag status-tag--yellow status-tag--ghost"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span></span>
+                  <span class="status-tag status-tag--yellow status-tag--inverted"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span></span>
+                </div>
+              </div>
+            </div>
 
-        function attachTabs(el, code) {
-          var block = document.createElement('div');
-          block.className = 'preview-block';
-          var tabsBar = document.createElement('div'); tabsBar.className = 'preview-tabs';
-          var btnP = document.createElement('button');
-          btnP.type = 'button'; btnP.className = 'preview-tab is-active'; btnP.textContent = 'Preview';
-          var btnC = document.createElement('button');
-          btnC.type = 'button'; btnC.className = 'preview-tab'; btnC.textContent = 'Code';
-          tabsBar.appendChild(btnP); tabsBar.appendChild(btnC);
-          var pPane = document.createElement('div'); pPane.className = 'preview-pane';
-          var cPane = document.createElement('div'); cPane.className = 'code-pane'; cPane.hidden = true;
-          var toolbar = document.createElement('div'); toolbar.className = 'code-pane__toolbar';
-          var cp = document.createElement('button');
-          cp.type = 'button'; cp.className = 'code-copy-btn'; cp.textContent = 'Copy';
-          toolbar.appendChild(cp);
-          var pre = document.createElement('pre');
-          var codeEl = document.createElement('code'); codeEl.textContent = code; pre.appendChild(codeEl);
-          cPane.appendChild(toolbar); cPane.appendChild(pre);
-          el.parentNode.insertBefore(block, el);
-          pPane.appendChild(el);
-          block.appendChild(tabsBar); block.appendChild(pPane); block.appendChild(cPane);
-          function go(showCode) {
-            btnP.classList.toggle('is-active', !showCode);
-            btnC.classList.toggle('is-active', showCode);
-            pPane.hidden = showCode; cPane.hidden = !showCode;
-          }
-          btnP.addEventListener('click', function () { go(false); });
-          btnC.addEventListener('click', function () { go(true); });
-          cp.addEventListener('click', function () {
-            navigator.clipboard.writeText(code).then(function () {
-              cp.textContent = 'Copied!';
-              setTimeout(function () { cp.textContent = 'Copy'; }, 2000);
-            });
-          });
-        }
+          </div>
+        </section>
 
-        document.querySelectorAll('.section').forEach(function (section) {
-          attachTabs(section, extractCode(section));
-        });
-      }());
-    </script>
-      </div>
+        <!-- ═══════════════════════════════════════ STATUS TAG — RTL ═══════════════════════════════════════ -->
+
+        <section class="variant">
+          <h2 class="variant__title">Status Tag — RTL Direction</h2>
+          <div class="interactive">
+            <div class="tag-row" dir="rtl">
+              <span class="status-tag"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">حالة</span></span>
+              <span class="status-tag status-tag--green"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">نشط</span></span>
+              <span class="status-tag status-tag--red status-tag--inverted"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">فشل</span></span>
+              <span class="status-tag status-tag--blue status-tag--ghost"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">قيد المراجعة</span></span>
+              <span class="status-tag status-tag--yellow status-tag--sm"><span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">معلق</span></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════ REALISTIC CONTEXT ═══════════════════════════════════════ -->
+
+        <section class="variant">
+          <h2 class="variant__title">Realistic Context — Entity Card Row</h2>
+          <div class="interactive">
+            <div class="entity-cards">
+              <div class="entity-card">
+                <span class="entity-card__title">Application #10234</span>
+                <span class="tag tag--sm tag--info"><span class="tag__text">Document</span></span>
+                <span class="tag tag--sm tag--warning tag--rounded"><span class="tag__text">Review Required</span></span>
+                <span class="status-tag status-tag--sm status-tag--yellow">
+                  <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Pending</span>
+                </span>
+              </div>
+              <div class="entity-card">
+                <span class="entity-card__title">Permit #98712</span>
+                <span class="tag tag--sm tag--success tag--rounded"><span class="tag__text">Approved</span></span>
+                <span class="status-tag status-tag--sm status-tag--green">
+                  <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Active</span>
+                </span>
+              </div>
+              <div class="entity-card">
+                <span class="entity-card__title">Report #00571</span>
+                <span class="tag tag--sm tag--error"><span class="tag__text">Rejected</span></span>
+                <span class="tag tag--sm tag--outline tag--error"><span class="tag__text">Needs Update</span></span>
+                <span class="status-tag status-tag--sm status-tag--red status-tag--inverted">
+                  <span class="status-tag__dot" aria-hidden="true"></span><span class="status-tag__text">Failed</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
     </div>
   </body>
 </html>
