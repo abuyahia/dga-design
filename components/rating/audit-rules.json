@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "rating",
+  "selector_root": ".rating",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "RATING-A11Y-001",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Display rating must have an accessible label",
+      "description": "A .rating element used as a display component must have role='img' and a non-empty aria-label that conveys the rating value (e.g. '3.5 out of 5 stars'). Without this, screen reader users receive no information about the rating.",
+      "target": ".rating[role='img']",
+      "expected": "element has role='img' AND non-empty aria-label",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "all_of",
+        "conditions": [
+          "element has role='img'",
+          "element has non-empty aria-label attribute"
+        ]
+      },
+      "message": "Display rating is missing accessible label. Add role='img' and aria-label='X out of 5 stars' to the .rating element.",
+      "fix": "Add role=\"img\" aria-label=\"3.5 out of 5 stars\" to the root .rating element. Adjust the label to match the actual rating value.",
+      "standard_refs": ["WCAG-2.1-1.1.1", "WCAG-2.1-4.1.2", "PLATFORM-CODE-RATING-003"]
+    },
+
+    {
+      "id": "RATING-A11Y-002",
+      "standard_id": "WCAG-2.1-1.1.1",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Star items must be hidden from assistive technology",
+      "description": "Individual .rating__star elements are visual representations of the rating value already communicated by the parent aria-label. Each star must carry aria-hidden='true' to prevent screen readers from iterating over them and announcing redundant information. All child SVGs must also carry aria-hidden='true' and focusable='false'.",
+      "target": ".rating__star",
+      "expected": "element has aria-hidden='true' AND child SVGs have aria-hidden='true' focusable='false'",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "all_of",
+        "conditions": [
+          "element has aria-hidden='true'",
+          "all descendant svg elements have aria-hidden='true'",
+          "all descendant svg elements have focusable='false'"
+        ]
+      },
+      "message": "Star item .rating__star is visible to assistive technology. Add aria-hidden='true' to each .rating__star and aria-hidden='true' focusable='false' to child SVGs.",
+      "fix": "Add aria-hidden=\"true\" to every .rating__star span. Add aria-hidden=\"true\" focusable=\"false\" to all SVG elements.",
+      "standard_refs": ["WCAG-2.1-1.1.1", "WCAG-2.1-4.1.2"]
+    },
+
+    {
+      "id": "RATING-A11Y-003",
+      "standard_id": "PLATFORM-CODE-FOCUS-001",
+      "rule_type": "focus_indicator_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Interactive rating must not suppress focus indicator",
+      "description": "When .rating--interactive is applied and .rating__star elements are keyboard focusable, the focus ring must be visible. outline:none on :focus-visible without a replacement violates WCAG 2.4.7.",
+      "target": ".rating--interactive .rating__star:focus-visible",
+      "expected": "computed styles include a visible outline or border — outline:none not present without replacement",
+      "check": {
+        "type": "focus_indicator_required",
+        "selector": ".rating--interactive .rating__star:focus, .rating--interactive .rating__star:focus-visible",
+        "forbidden_css": { "outline": "none" },
+        "acceptable_alternatives": ["border", "box-shadow", "outline"]
+      },
+      "message": "Interactive rating star has suppressed focus ring. Keyboard users cannot identify the focused star.",
+      "fix": "Remove any outline:none override on .rating--interactive .rating__star:focus-visible. Add a visible focus indicator via outline or box-shadow.",
+      "standard_refs": ["WCAG-2.1-2.4.7", "PLATFORM-CODE-A11Y-003", "PLATFORM-CODE-FOCUS-001"]
+    },
+
+    {
+      "id": "RATING-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-RATING-001",
+      "rule_type": "no_hardcoded_values",
+      "category": "token-usage",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Colors and sizes must reference design tokens",
+      "description": "All color and size values applied to .rating elements must reference CSS custom properties (var(--token-name)). Hardcoded hex, rgb(), px size values bypass the token system.",
+      "target": ".rating, .rating *, .rating::before, .rating::after",
+      "expected": "color, background, fill, width, height (when star-sized) all use var(--) — or are currentColor, transparent, none, inherit",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".rating, .rating *, .rating::before, .rating::after",
+        "properties": ["color", "background", "background-color", "fill"],
+        "allowed_literal_values": ["currentColor", "transparent", "none", "inherit"]
+      },
+      "message": "Hardcoded color '{value}' found on '{property}'. Replace with the corresponding --rating-* design token.",
+      "fix": "Replace e.g. color: #DBA102 with var(--rating-star-fill-default). See token surface in rating.contract.md §8.",
+      "standard_refs": ["PLATFORM-CODE-RATING-001", "PLATFORM-CODE-TOKEN-001"]
+    },
+
+    {
+      "id": "RATING-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-RATING-003",
+      "rule_type": "semantic_element_required",
+      "category": "html-structure",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Interactive rating must use semantic form elements",
+      "description": "When the rating component is used as an input (user can select a rating), it must use a <fieldset> with <legend> and <input type='radio'> elements. Using div/span-based interaction without ARIA radiogroup pattern creates keyboard and screen reader failures.",
+      "target": ".rating--interactive",
+      "expected": "element is a fieldset OR has role='radiogroup' with child role='radio' elements",
+      "check": {
+        "type": "semantic_element_required",
+        "selector": ".rating--interactive",
+        "allowed_tags": ["fieldset"],
+        "fallback_requirements": { "role": "radiogroup" }
+      },
+      "message": "Interactive rating is not using a semantic form element. Use <fieldset> with radio inputs or add role='radiogroup'.",
+      "fix": "Replace <div class=\"rating rating--interactive\"> with <fieldset class=\"rating rating--interactive\"> and use radio inputs. See rating.contract.md §10.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "WCAG-2.1-2.1.1", "PLATFORM-CODE-RATING-003"]
+    },
+
+    {
+      "id": "RATING-RTL-001",
+      "standard_id": "PLATFORM-CODE-RATING-002",
+      "rule_type": "no_hardcoded_values",
+      "category": "rtl",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Rating must not use physical CSS properties that break RTL",
+      "description": "Physical directional properties on .rating or its children cause visual defects under dir='rtl'. The gap property is direction-agnostic. The half-star clip-path has a [dir='rtl'] override. Physical margin/padding must not be introduced.",
+      "target": ".rating, .rating__star, .rating__star-icon, .rating__star-base, .rating__star-fill",
+      "expected": "padding-left, padding-right, margin-left, margin-right are absent on rating elements",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".rating, .rating__star, .rating__star-icon, .rating__star-base, .rating__star-fill",
+        "forbidden_properties": [
+          "padding-left", "padding-right",
+          "margin-left", "margin-right",
+          "border-left", "border-right"
+        ]
+      },
+      "message": "Physical CSS property '{property}' found on rating element. Replace with logical equivalent or use gap/flex for spacing.",
+      "fix": "Remove padding-left/right from rating elements. Use gap on the .rating container for star spacing.",
+      "standard_refs": ["PLATFORM-CODE-RATING-002"]
+    },
+
+    {
+      "id": "RATING-CONTRAST-001",
+      "standard_id": "WCAG-2.1-1.4.11",
+      "rule_type": "contrast_check",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Default (gold) star fill color does not meet 1.4.11 non-text contrast",
+      "description": "The default gold color #DBA102 on white #FFF produces approximately 2.0:1 contrast. WCAG 1.4.11 requires 3:1 for non-text UI components. Brand green (#1B8354) passes at ~4.58:1. This rule flags usage of the default variant for review.",
+      "target": ".rating:not(.rating--brand) .rating__star--filled .rating__star-icon",
+      "expected": "star fill color achieves at least 3:1 contrast against the component background",
+      "check": {
+        "type": "contrast_check",
+        "selector": ".rating:not(.rating--brand)",
+        "color": "#DBA102",
+        "background": "#FFFFFF",
+        "required_ratio": 3.0,
+        "actual_ratio": 2.0
+      },
+      "message": "Default (gold) star color #DBA102 on white = ~2.0:1 contrast. Does not meet WCAG 1.4.11 (3:1 required). Consider using the brand variant or raising the gold token.",
+      "fix": "Use .rating--brand for contexts requiring WCAG compliance, or raise the --rating-star-fill-default token to a darker gold value that meets 3:1 against the deployment background.",
+      "standard_refs": ["WCAG-2.1-1.4.11"]
+    }
+
+  ],
+
+  "severity_legend": {
+    "error": "Blocks release. Must be resolved before component ships to production.",
+    "warning": "Must be reviewed. Should be resolved; requires documented justification to waive.",
+    "info": "Advisory. No action required but noted in audit report."
+  },
+
+  "validation_status_legend": {
+    "not_run": "Rule has been defined but not yet executed against this component.",
+    "pass": "Rule was executed and the component passed.",
+    "fail": "Rule was executed and the component failed. See audit report for details.",
+    "skipped": "Rule was intentionally skipped with documented justification.",
+    "manual_required": "Rule cannot be validated automatically and requires human review."
+  },
+
+  "run_context": {
+    "static_analysis": ["RATING-TOKEN-001", "RATING-RTL-001"],
+    "dom_inspection": ["RATING-A11Y-001", "RATING-A11Y-002", "RATING-A11Y-003", "RATING-STRUCT-001"],
+    "visual_contrast": ["RATING-CONTRAST-001"],
+    "manual_review": ["RATING-CONTRAST-001"]
+  }
+}

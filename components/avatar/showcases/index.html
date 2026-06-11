@@ -9,151 +9,12 @@
     <link rel="stylesheet" href="../../../token.css"/>
     <!-- 2. Component styles -->
     <link rel="stylesheet" href="../avatar.css"/>
-    <!-- 3. Page layout -->
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css"/>
+    <script src="../../_showcase/showcase.js" defer></script>
+
     <style>
-      *,
-      *::after,
-      *::before {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        background: var(--gray-50);
-        font-family: var(--font-sans);
-        color: var(--gray-900);
-        min-height: 100dvh;
-        padding: var(--space-48) var(--space-32);
-      }
-
-      .page {
-        max-width: 1240px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-48);
-      }
-
-      /* ── Header ───────────────────────────────────────── */
-      .page__header {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-4);
-      }
-
-      .page__meta {
-        font-size: var(--fs-text-sm);
-        color: var(--gray-500);
-        line-height: var(--lh-text-sm);
-      }
-
-      .page__title {
-        font-size: var(--fs-display-xs);
-        font-weight: var(--font-weight-heading);
-        line-height: var(--lh-display-xs);
-        color: var(--gray-900);
-      }
-
-      /* ── Variant section ──────────────────────────────── */
-      .variant {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-16);
-      }
-
-      .variant__title {
-        font-size: var(--fs-text-sm);
-        font-weight: var(--font-weight-semibold);
-        color: var(--gray-500);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        line-height: var(--lh-text-sm);
-      }
-
-      /* ── Showcase table ───────────────────────────────── */
-      .showcase {
-        display: flex;
-        flex-direction: column;
-        border: 1px solid var(--gray-200);
-        border-radius: var(--radius-md);
-        overflow: hidden;
-        background: var(--white);
-      }
-
-      .showcase__row {
-        display: flex;
-        align-items: center;
-        gap: var(--space-32);
-        padding: var(--space-20) var(--space-24);
-        border-bottom: 1px solid var(--gray-100);
-      }
-
-      .showcase__row:last-child {
-        border-bottom: none;
-      }
-
-      .showcase__label {
-        font-size: var(--fs-text-sm);
-        color: var(--gray-500);
-        line-height: var(--lh-text-sm);
-        min-width: 88px;
-        flex-shrink: 0;
-      }
-
-      .showcase__item {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        flex: 1;
-        min-width: 0;
-      }
-
-      .showcase__props {
-        font-size: 11px;
-        font-family: 'ui-monospace', Menlo, Consolas, monospace;
-        color: var(--gray-400);
-        direction: ltr;
-        text-align: left;
-        letter-spacing: 0.01em;
-        line-height: 1.5;
-      }
-
-      /* ── Figma Props ──────────────────────────────────── */
-      .prop-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
-        direction: ltr;
-        margin-top: 8px;
-        padding-top: 8px;
-        border-top: 1px dashed var(--gray-150, #eaecf0);
-      }
-      .prop-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 2px 7px;
-        background: var(--gray-50);
-        border: 1px solid var(--gray-200);
-        border-radius: 3px;
-        font-size: 11px;
-        font-family: "ui-monospace", Menlo, Consolas, monospace;
-        line-height: 1.5;
-        white-space: nowrap;
-      }
-      .prop-tag__key {
-        color: var(--gray-400);
-      }
-      .prop-tag__eq {
-        color: var(--gray-300);
-        margin: 0 2px;
-      }
-      .prop-tag__val {
-        color: var(--gray-700);
-        font-weight: 500;
-      }
-
-      /* ── Sizes row — items side by side ───────────────── */
+      /* ── Avatar-specific showcase modifiers ────────────────────────────── */
       .showcase__row--sizes .showcase__item {
         flex-direction: row;
         align-items: flex-end;
@@ -161,99 +22,12 @@
         flex-wrap: wrap;
       }
 
-      /* ── Inline group (for avatar-group showcase) ──────── */
       .showcase__row--group .showcase__item {
         flex-direction: row;
         align-items: center;
         gap: var(--space-16);
       }
 
-      /* ── Preview / Code Tabs ──────────────────────────── */
-      .preview-block {
-        border: 1px solid var(--gray-200);
-        border-radius: var(--radius-md);
-        overflow: hidden;
-      }
-
-      .preview-tabs {
-        display: flex;
-        align-items: flex-end;
-        gap: 4px;
-        padding: 8px 12px 0;
-        background: var(--gray-50);
-        border-bottom: 1px solid var(--gray-200);
-      }
-
-      .preview-tab {
-        padding: 6px 14px;
-        font-size: var(--fs-text-sm);
-        font-weight: var(--font-weight-medium);
-        color: var(--gray-400);
-        background: transparent;
-        border: 1px solid transparent;
-        border-bottom: none;
-        border-radius: 6px 6px 0 0;
-        cursor: pointer;
-        line-height: var(--lh-text-sm);
-        margin-bottom: -1px;
-        transition: color 0.15s;
-      }
-
-      .preview-tab:hover {
-        color: var(--gray-600);
-      }
-
-      .preview-tab.is-active {
-        color: var(--gray-900);
-        background: var(--white);
-        border-color: var(--gray-200);
-      }
-
-      .preview-pane .showcase {
-        border: none;
-        border-radius: 0;
-      }
-
-      .code-pane {
-        background: #16181d;
-        overflow-x: auto;
-      }
-
-      .code-pane__toolbar {
-        display: flex;
-        justify-content: flex-end;
-        padding: 8px 16px;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-      }
-
-      .code-copy-btn {
-        font-size: 12px;
-        color: rgba(255,255,255,0.45);
-        background: rgba(255,255,255,0.06);
-        border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 4px;
-        padding: 3px 10px;
-        cursor: pointer;
-        transition: color 0.15s, background 0.15s;
-      }
-
-      .code-copy-btn:hover {
-        color: rgba(255,255,255,0.85);
-        background: rgba(255,255,255,0.10);
-      }
-
-      .code-pane pre {
-        margin: 0;
-        padding: 20px 24px;
-        font-family: 'ui-monospace','Cascadia Code','Source Code Pro',Menlo,Consolas,monospace;
-        font-size: 12.5px;
-        line-height: 1.65;
-        color: #cdd6f4;
-        white-space: pre;
-        tab-size: 2;
-      }
-
-      /* ── Inline avatar demo ────────────────────────────── */
       .demo-icon {
         display: flex;
         align-items: center;
@@ -262,20 +36,16 @@
         height: 100%;
         color: var(--Text-text-default, #161616);
       }
+
       .demo-icon svg {
         display: block;
       }
     </style>
   </head>
 
-  <body>
-    <main class="page">
-
-      <!-- ── Page header ──────────────────────────────────── -->
-      <header class="page__header">
-        <p class="page__meta">Design System / Components / Avatar</p>
-        <h1 class="page__title">Avatar Showcase</h1>
-      </header>
+  <body data-showcase data-current-component="avatar" data-showcase-title="Avatar Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
 
       <!-- ══════════════════════════════════════════════════ 1. Types ══════════════════════════════════════════════════ -->
       <section class="variant">
@@ -425,391 +195,264 @@
             <span class="showcase__label">Initials</span>
             <div class="showcase__item">
 
-              <span style="font-size:11px;color:var(--gray-400)">24</span>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--24">
+                  <span class="avatar__initials">AB</span>
+                </div>
+                <span style="font-size:11px;color:var(--gray-400)">24</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--32">
+                  <span class="avatar__initials">AB</span>
+                </div>
+                <span style="font-size:11px;color:var(--gray-400)">32</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--40">
+                  <span class="avatar__initials">AB</span>
+                </div>
+                <span style="font-size:11px;color:var(--gray-400)">40</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--48">
+                  <span class="avatar__initials">AB</span>
+                </div>
+                <span style="font-size:11px;color:var(--gray-400)">48</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--64">
+                  <span class="avatar__initials">AB</span>
+                </div>
+                <span style="font-size:11px;color:var(--gray-400)">64</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--80">
+                  <span class="avatar__initials">AB</span>
+                </div>
+                <span style="font-size:11px;color:var(--gray-400)">80</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--120">
+                  <span class="avatar__initials">AB</span>
+                </div>
+                <span style="font-size:11px;color:var(--gray-400)">120</span>
+              </div>
+
             </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--32">
-                <span class="avatar__initials">AB</span></div>
-              <span style="font-size:11px;color:var(--gray-400)">32</span>
+          </div>
+        </div>
+
+        <!-- Image — all sizes in one row -->
+        <div class="showcase">
+          <div class="showcase__row showcase__row--sizes" data-props="Type=Image, Square=False">
+            <span class="showcase__label">Image</span>
+            <div class="showcase__item">
+
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--24 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
+                <span style="font-size:11px;color:var(--gray-400)">24</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--32 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
+                <span style="font-size:11px;color:var(--gray-400)">32</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--40 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
+                <span style="font-size:11px;color:var(--gray-400)">40</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--48 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
+                <span style="font-size:11px;color:var(--gray-400)">48</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--64 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
+                <span style="font-size:11px;color:var(--gray-400)">64</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--80 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
+                <span style="font-size:11px;color:var(--gray-400)">80</span>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+                <div class="avatar avatar--120 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
+                <span style="font-size:11px;color:var(--gray-400)">120</span>
+              </div>
+
             </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════ 3. Shape — Circle vs Square ══════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Shape</h2>
+
+        <!-- Circle -->
+        <div class="showcase">
+
+          <div class="showcase__row" data-props="Type=Icon, Square=False, Size=40px">
+            <span class="showcase__label">Circle — Icon</span>
+            <div class="showcase__item">
               <div class="avatar avatar--40">
-                <span class="avatar__initials">AB</span></div>
-              <span style="font-size:11px;color:var(--gray-400)">40</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--48">
-                <span class="avatar__initials">AB</span></div>
-              <span style="font-size:11px;color:var(--gray-400)">48</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--64">
-                <span class="avatar__initials">AB</span></div>
-              <span style="font-size:11px;color:var(--gray-400)">64</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--80">
-                <span class="avatar__initials">AB</span></div>
-              <span style="font-size:11px;color:var(--gray-400)">80</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--120">
-                <span class="avatar__initials">AB</span></div>
-              <span style="font-size:11px;color:var(--gray-400)">120</span>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <!-- Image — all sizes in one row -->
-      <div class="showcase">
-        <div class="showcase__row showcase__row--sizes" data-props="Type=Image, Square=False">
-          <span class="showcase__label">Image</span>
-          <div class="showcase__item">
-
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--24 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
-              <span style="font-size:11px;color:var(--gray-400)">24</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--32 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
-              <span style="font-size:11px;color:var(--gray-400)">32</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--40 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
-              <span style="font-size:11px;color:var(--gray-400)">40</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--48 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
-              <span style="font-size:11px;color:var(--gray-400)">48</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--64 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
-              <span style="font-size:11px;color:var(--gray-400)">64</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--80 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
-              <span style="font-size:11px;color:var(--gray-400)">80</span>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
-              <div class="avatar avatar--120 avatar--image"><img class="avatar__image" src="https://i.pravatar.cc/120?img=1" alt="User"/></div>
-              <span style="font-size:11px;color:var(--gray-400)">120</span>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════ 3. Shape — Circle vs Square ══════════════════════════════════════════════════ -->
-    <section class="variant">
-      <h2 class="variant__title">Shape</h2>
-
-      <!-- Circle -->
-      <div class="showcase">
-
-        <div class="showcase__row" data-props="Type=Icon, Square=False, Size=40px">
-          <span class="showcase__label">Circle — Icon</span>
-          <div class="showcase__item">
-            <div class="avatar avatar--40">
-              <span class="avatar__icon" aria-hidden="true">
-                <svg width="32" height="32" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="showcase__row" data-props="Type=Initials, Square=False, Size=40px">
-          <span class="showcase__label">Circle — Initials</span>
-          <div class="showcase__item">
-            <div class="avatar avatar--40">
-              <span class="avatar__initials">AB</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="showcase__row" data-props="Type=Image, Square=False, Size=40px">
-          <span class="showcase__label">Circle — Image</span>
-          <div class="showcase__item">
-            <div class="avatar avatar--40 avatar--image">
-              <img class="avatar__image" src="https://i.pravatar.cc/120?img=3" alt="User avatar"/>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Square -->
-      <div class="showcase">
-
-        <div class="showcase__row" data-props="Type=Icon, Square=True, Size=40px">
-          <span class="showcase__label">Square — Icon</span>
-          <div class="showcase__item">
-            <div class="avatar avatar--40 avatar--square">
-              <span class="avatar__icon" aria-hidden="true">
-                <svg width="32" height="32" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="showcase__row" data-props="Type=Initials, Square=True, Size=40px">
-          <span class="showcase__label">Square — Initials</span>
-          <div class="showcase__item">
-            <div class="avatar avatar--40 avatar--square">
-              <span class="avatar__initials">AB</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="showcase__row" data-props="Type=Image, Square=True, Size=40px">
-          <span class="showcase__label">Square — Image</span>
-          <div class="showcase__item">
-            <div class="avatar avatar--40 avatar--square avatar--image">
-              <img class="avatar__image" src="https://i.pravatar.cc/120?img=3" alt="User avatar"/>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Square 120px — larger radius -->
-      <div class="showcase">
-
-        <div class="showcase__row" data-props="Type=Icon, Square=True, Size=120px">
-          <span class="showcase__label">Square 120 — Icon</span>
-          <div class="showcase__item">
-            <div class="avatar avatar--120 avatar--square">
-              <span class="avatar__icon" aria-hidden="true">
-                <svg width="80" height="80" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="showcase__row" data-props="Type=Image, Square=True, Size=120px">
-          <span class="showcase__label">Square 120 — Image</span>
-          <div class="showcase__item">
-            <div class="avatar avatar--120 avatar--square avatar--image">
-              <img class="avatar__image" src="https://i.pravatar.cc/200?img=5" alt="User avatar"/>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════════════ 4. Avatar Group ══════════════════════════════════════════════════ -->
-    <section class="variant">
-      <h2 class="variant__title">Avatar Group</h2>
-
-      <div class="showcase">
-
-        <!-- Stacked -->
-        <div class="showcase__row showcase__row--group" data-props="Stacked=True">
-          <span class="showcase__label">Stacked</span>
-          <div class="showcase__item">
-            <div class="avatar-group avatar-group--stacked" role="group" aria-label="5 users and 99 more">
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=1" alt="User 1"/>
-              </div>
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=2" alt="User 2"/>
-              </div>
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=3" alt="User 3"/>
-              </div>
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=4" alt="User 4"/>
-              </div>
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=5" alt="User 5"/>
-              </div>
-              <div class="avatar avatar--32 avatar--overflow" aria-hidden="true">
-                <span class="avatar__initials">+99</span>
+                <span class="avatar__icon" aria-hidden="true">
+                  <svg width="32" height="32" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Non-stacked / Flat -->
-        <div class="showcase__row showcase__row--group" data-props="Stacked=False">
-          <span class="showcase__label">Non-stacked</span>
-          <div class="showcase__item">
-            <div class="avatar-group avatar-group--flat" role="group" aria-label="5 users and 99 more">
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=1" alt="User 1"/>
-              </div>
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=2" alt="User 2"/>
-              </div>
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=3" alt="User 3"/>
-              </div>
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=4" alt="User 4"/>
-              </div>
-              <div class="avatar avatar--32 avatar--image">
-                <img class="avatar__image" src="https://i.pravatar.cc/64?img=5" alt="User 5"/>
-              </div>
-              <div class="avatar avatar--32 avatar--overflow" aria-hidden="true">
-                <span class="avatar__initials">+99</span>
+          <div class="showcase__row" data-props="Type=Initials, Square=False, Size=40px">
+            <span class="showcase__label">Circle — Initials</span>
+            <div class="showcase__item">
+              <div class="avatar avatar--40">
+                <span class="avatar__initials">AB</span>
               </div>
             </div>
           </div>
+
+          <div class="showcase__row" data-props="Type=Image, Square=False, Size=40px">
+            <span class="showcase__label">Circle — Image</span>
+            <div class="showcase__item">
+              <div class="avatar avatar--40 avatar--image">
+                <img class="avatar__image" src="https://i.pravatar.cc/120?img=3" alt="User avatar"/>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-      </div>
-    </section>
+        <!-- Square -->
+        <div class="showcase">
 
-  </main>
+          <div class="showcase__row" data-props="Type=Icon, Square=True, Size=40px">
+            <span class="showcase__label">Square — Icon</span>
+            <div class="showcase__item">
+              <div class="avatar avatar--40 avatar--square">
+                <span class="avatar__icon" aria-hidden="true">
+                  <svg width="32" height="32" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
 
-  <!-- ── Code preview tabs ─────────────────────────────────── -->
-  <script>
-    (function () {
-      function extractComponentCode(el) {
-        if (el.classList.contains('showcase')) {
-          var parts = [];
-          el.querySelectorAll('.showcase__row').forEach(function (row) {
-            var label = row.querySelector('.showcase__label');
-            var labelText = label ? label.textContent.trim() : '';
-            var item = row.querySelector('.showcase__item');
-            var code;
-            if (item) {
-              /* strip out the prop-tags div before capturing */
-              var clone = item.cloneNode(true);
-              var pt = clone.querySelector('.prop-tags');
-              if (pt) pt.remove();
-              code = clone.innerHTML.trim();
-            } else {
-              var siblings = Array.from(row.children).filter(function (c) {
-                return !c.classList.contains('showcase__label');
-              });
-              code = siblings.map(function (c) { return c.outerHTML; }).join('\n').trim();
-            }
-            if (labelText) parts.push('<!-- ' + labelText + ' -->');
-            if (code)      parts.push(code);
-            parts.push('');
-          });
-          return parts.join('\n').trim();
-        }
-        return el.innerHTML.trim();
-      }
+          <div class="showcase__row" data-props="Type=Initials, Square=True, Size=40px">
+            <span class="showcase__label">Square — Initials</span>
+            <div class="showcase__item">
+              <div class="avatar avatar--40 avatar--square">
+                <span class="avatar__initials">AB</span>
+              </div>
+            </div>
+          </div>
 
-      document.querySelectorAll('.showcase').forEach(function (el) {
-        var sourceHTML = extractComponentCode(el);
+          <div class="showcase__row" data-props="Type=Image, Square=True, Size=40px">
+            <span class="showcase__label">Square — Image</span>
+            <div class="showcase__item">
+              <div class="avatar avatar--40 avatar--square avatar--image">
+                <img class="avatar__image" src="https://i.pravatar.cc/120?img=3" alt="User avatar"/>
+              </div>
+            </div>
+          </div>
 
-        var block = document.createElement('div');
-        block.className = 'preview-block';
+        </div>
 
-        var tabs = document.createElement('div');
-        tabs.className = 'preview-tabs';
+        <!-- Square 120px — larger radius -->
+        <div class="showcase">
 
-        var btnPreview = document.createElement('button');
-        btnPreview.className = 'preview-tab is-active';
-        btnPreview.textContent = 'Preview';
+          <div class="showcase__row" data-props="Type=Icon, Square=True, Size=120px">
+            <span class="showcase__label">Square 120 — Icon</span>
+            <div class="showcase__item">
+              <div class="avatar avatar--120 avatar--square">
+                <span class="avatar__icon" aria-hidden="true">
+                  <svg width="80" height="80" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12C14.7614 12 17 9.76142 17 7C17 4.23858 14.7614 2 12 2C9.23858 2 7 4.23858 7 7C7 9.76142 9.23858 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
 
-        var btnCode = document.createElement('button');
-        btnCode.className = 'preview-tab';
-        btnCode.textContent = 'Code';
+          <div class="showcase__row" data-props="Type=Image, Square=True, Size=120px">
+            <span class="showcase__label">Square 120 — Image</span>
+            <div class="showcase__item">
+              <div class="avatar avatar--120 avatar--square avatar--image">
+                <img class="avatar__image" src="https://i.pravatar.cc/200?img=5" alt="User avatar"/>
+              </div>
+            </div>
+          </div>
 
-        tabs.appendChild(btnPreview);
-        tabs.appendChild(btnCode);
+        </div>
+      </section>
 
-        var previewPane = document.createElement('div');
-        previewPane.className = 'preview-pane';
+      <!-- ══════════════════════════════════════════════════ 4. Avatar Group ══════════════════════════════════════════════════ -->
+      <section class="variant">
+        <h2 class="variant__title">Avatar Group</h2>
 
-        var codePane = document.createElement('div');
-        codePane.className = 'code-pane';
-        codePane.hidden = true;
+        <div class="showcase">
 
-        var toolbar = document.createElement('div');
-        toolbar.className = 'code-pane__toolbar';
-        var copyBtn = document.createElement('button');
-        copyBtn.className = 'code-copy-btn';
-        copyBtn.textContent = 'Copy';
-        toolbar.appendChild(copyBtn);
+          <!-- Stacked -->
+          <div class="showcase__row showcase__row--group" data-props="Stacked=True">
+            <span class="showcase__label">Stacked</span>
+            <div class="showcase__item">
+              <div class="avatar-group avatar-group--stacked" role="group" aria-label="5 users and 99 more">
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=1" alt="User 1"/>
+                </div>
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=2" alt="User 2"/>
+                </div>
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=3" alt="User 3"/>
+                </div>
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=4" alt="User 4"/>
+                </div>
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=5" alt="User 5"/>
+                </div>
+                <div class="avatar avatar--32 avatar--overflow" aria-hidden="true">
+                  <span class="avatar__initials">+99</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        var pre = document.createElement('pre');
-        var code = document.createElement('code');
-        code.textContent = sourceHTML;
-        pre.appendChild(code);
+          <!-- Non-stacked / Flat -->
+          <div class="showcase__row showcase__row--group" data-props="Stacked=False">
+            <span class="showcase__label">Non-stacked</span>
+            <div class="showcase__item">
+              <div class="avatar-group avatar-group--flat" role="group" aria-label="5 users and 99 more">
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=1" alt="User 1"/>
+                </div>
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=2" alt="User 2"/>
+                </div>
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=3" alt="User 3"/>
+                </div>
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=4" alt="User 4"/>
+                </div>
+                <div class="avatar avatar--32 avatar--image">
+                  <img class="avatar__image" src="https://i.pravatar.cc/64?img=5" alt="User 5"/>
+                </div>
+                <div class="avatar avatar--32 avatar--overflow" aria-hidden="true">
+                  <span class="avatar__initials">+99</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        codePane.appendChild(toolbar);
-        codePane.appendChild(pre);
+        </div>
+      </section>
 
-        el.parentNode.insertBefore(block, el);
-        previewPane.appendChild(el);
-        block.appendChild(tabs);
-        block.appendChild(previewPane);
-        block.appendChild(codePane);
-
-        function activate(showCode) {
-          btnPreview.classList.toggle('is-active', !showCode);
-          btnCode.classList.toggle('is-active', showCode);
-          previewPane.hidden = showCode;
-          codePane.hidden = !showCode;
-        }
-
-        btnPreview.addEventListener('click', function () { activate(false); });
-        btnCode.addEventListener('click',    function () { activate(true);  });
-
-        copyBtn.addEventListener('click', function () {
-          navigator.clipboard.writeText(sourceHTML).then(function () {
-            copyBtn.textContent = 'Copied!';
-            setTimeout(function () { copyBtn.textContent = 'Copy'; }, 2000);
-          });
-        });
-      });
-    }());
-  </script>
-
-  <!-- ── Props reader (same pattern as other components) ── -->
-  <script>
-    document
-      .querySelectorAll('.showcase__row[data-props]')
-      .forEach(row => {
-        const raw = row.getAttribute('data-props');
-        if (!raw) 
-          return;
-        
-        const pairs = raw
-          .split(',')
-          .map(s => s.trim())
-          .filter(Boolean);
-        const tags = pairs
-          .map(pair => {
-            const eqIdx = pair.indexOf('=');
-            if (eqIdx === -1) 
-              return `<span class="prop-tag"><span class="prop-tag__val">${pair}</span></span>`;
-            const key = pair
-              .slice(0, eqIdx)
-              .trim();
-            const val = pair
-              .slice(eqIdx + 1)
-              .trim();
-            return `<span class="prop-tag"><span class="prop-tag__key">${key}</span><span class="prop-tag__eq">=</span><span class="prop-tag__val">${val}</span></span>`;
-          })
-          .join('');
-
-        const item = row.querySelector('.showcase__item');
-        if (item) {
-          const div = document.createElement('div');
-          div.className = 'prop-tags';
-          div.innerHTML = tags;
-          item.appendChild(div);
-        }
-      });
-  </script>
-</body>
+      </main>
+    </div>
+  </body>
 </html>

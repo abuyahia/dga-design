@@ -1,0 +1,209 @@
+/* ============================================================
+   Content Switcher
+   Source: components/content-switcher/mainifest.json
+   ============================================================ */
+
+/* TODO: All --content-switcher-* tokens below are missing from token.css.
+   See analysis.md for full proposed mappings to Figma-sourced primitives. */
+
+/* ===================================================
+   Container
+   =================================================== */
+
+.content-switcher {
+  display: inline-flex;
+  align-items: stretch;
+}
+
+/* ===================================================
+   Item — Base
+   =================================================== */
+
+.content-switcher__item {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 76px;
+  cursor: pointer;
+  font-family: var(--content-switcher-font-family);
+  /* TODO: --content-switcher-font-family missing. Proposed: var(--Font-Family-font-family-text) */
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  background: var(--content-switcher-item-bg-default);
+  /* TODO: --content-switcher-item-bg-default missing. Proposed: var(--Button-button-background-neutral-default) */
+  color: var(--content-switcher-item-text-default);
+  /* TODO: --content-switcher-item-text-default missing. Proposed: var(--Text-text-default) */
+  border-block: none;
+  border-inline: 0.5px solid var(--content-switcher-item-border);
+  /* TODO: --content-switcher-item-border missing. Proposed: var(--Border-border-neutral-primary) */
+}
+
+/* First item: left-cap rounding, no inline-start border */
+.content-switcher__item:first-child {
+  border-start-start-radius: var(--content-switcher-radius);
+  /* TODO: --content-switcher-radius missing. Proposed: var(--radius-md) */
+  border-end-start-radius: var(--content-switcher-radius);
+  border-inline-start: none;
+}
+
+/* Last item: right-cap rounding, no inline-end border */
+.content-switcher__item:last-child {
+  border-start-end-radius: var(--content-switcher-radius);
+  border-end-end-radius: var(--content-switcher-radius);
+  border-inline-end: none;
+}
+
+/* ===================================================
+   Selected State
+   =================================================== */
+
+.content-switcher__item[aria-selected="true"] {
+  background: var(--content-switcher-item-bg-selected);
+  /* TODO: --content-switcher-item-bg-selected missing. Proposed: var(--Button-button-background-black-default) */
+  color: var(--content-switcher-item-text-selected);
+  /* TODO: --content-switcher-item-text-selected missing. Proposed: var(--Text-text-oncolor-primary) */
+  border-inline: none;
+}
+
+/* ===================================================
+   Hover State
+   =================================================== */
+
+/* Delta: background token changes to -hovered variant.
+   Current fallback values are identical to default (#F3F4F6).
+   Visible delta requires --content-switcher-item-bg-hovered to be defined. */
+.content-switcher__item:not([aria-selected="true"]):not([aria-disabled="true"]):hover {
+  background: var(--content-switcher-item-bg-hovered);
+  /* TODO: --content-switcher-item-bg-hovered missing. Proposed: var(--Button-button-background-neutral-hovered) */
+}
+
+/* ===================================================
+   Focus State
+   =================================================== */
+
+/* Remove default browser focus outline */
+.content-switcher__item:focus {
+  outline: none;
+}
+
+/* Outer focus ring: 2px dark border (sourced from items manifest Focus state) */
+.content-switcher__item:focus-visible {
+  outline: 2px solid var(--content-switcher-focus-ring);
+  /* TODO: --content-switcher-focus-ring missing. Proposed: var(--Border-border-black) */
+  outline-offset: 0;
+  z-index: 1;
+}
+
+/* Inner focus ring: absolute white 1px inset ring (Focus outline layer from items manifest) */
+.content-switcher__item:focus-visible::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border: 1px solid var(--content-switcher-focus-ring-inner);
+  /* TODO: --content-switcher-focus-ring-inner missing. Proposed: var(--Border-border-white) */
+  border-radius: 0;
+  pointer-events: none;
+}
+
+/* Preserve cap rounding on ::after for first/last focused items */
+.content-switcher__item:first-child:focus-visible::after {
+  border-start-start-radius: calc(var(--content-switcher-radius) - 2px);
+  border-end-start-radius: calc(var(--content-switcher-radius) - 2px);
+}
+
+.content-switcher__item:last-child:focus-visible::after {
+  border-start-end-radius: calc(var(--content-switcher-radius) - 2px);
+  border-end-end-radius: calc(var(--content-switcher-radius) - 2px);
+}
+
+/* ===================================================
+   Disabled State
+   =================================================== */
+
+/* TODO: Disabled state not in manifest. Conservative opacity applied. Needs design review. */
+.content-switcher__item[aria-disabled="true"] {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ===================================================
+   Size: Small
+   =================================================== */
+
+.content-switcher--sm .content-switcher__item {
+  height: var(--content-switcher-sm-height);
+  /* TODO: --content-switcher-sm-height missing. Proposed: 32px */
+  padding-inline: var(--content-switcher-sm-padding-x);
+  /* TODO: --content-switcher-sm-padding-x missing. Proposed: var(--spacing-buttonbuttons-sm-padding) */
+  font-size: var(--content-switcher-sm-font-size);
+  /* TODO: --content-switcher-sm-font-size missing. Proposed: var(--Size-Text-typo-size-text-md) */
+  line-height: var(--content-switcher-sm-line-height);
+  /* TODO: --content-switcher-sm-line-height missing. Proposed: var(--Line-Height-Text-line-heights-text-md) */
+}
+
+/* ===================================================
+   Size: Medium
+   =================================================== */
+
+.content-switcher--md .content-switcher__item {
+  height: var(--content-switcher-md-height);
+  /* TODO: --content-switcher-md-height missing. Proposed: 40px */
+  padding-inline: var(--content-switcher-md-padding-x);
+  /* TODO: --content-switcher-md-padding-x missing. Proposed: var(--spacing-buttonbuttons-md-padding) */
+  font-size: var(--content-switcher-md-font-size);
+  /* TODO: --content-switcher-md-font-size missing. Proposed: var(--Size-Text-typo-size-text-Ig) */
+  line-height: var(--content-switcher-md-line-height);
+  /* TODO: --content-switcher-md-line-height missing. Proposed: var(--Line-Height-Text-line-heights-text-Ig) */
+}
+
+/* ===================================================
+   Size: Large
+   =================================================== */
+
+.content-switcher--lg .content-switcher__item {
+  height: var(--content-switcher-lg-height);
+  /* TODO: --content-switcher-lg-height missing. Proposed: 48px */
+  padding-inline: var(--content-switcher-lg-padding-x);
+  /* TODO: --content-switcher-lg-padding-x missing. Proposed: var(--spacing-buttonbuttons-lg-padding) */
+  font-size: var(--content-switcher-lg-font-size);
+  /* TODO: --content-switcher-lg-font-size missing. Proposed: var(--Size-Text-typo-size-text-xl) */
+  line-height: var(--content-switcher-lg-line-height);
+  /* TODO: --content-switcher-lg-line-height missing. Proposed: var(--Line-Height-Text-line-heights-text-xl) */
+}
+
+/* ===================================================
+   OnColor Mode
+   =================================================== */
+
+.content-switcher--on-color .content-switcher__item {
+  background: var(--content-switcher-item-bg-default-oncolor);
+  /* TODO: --content-switcher-item-bg-default-oncolor missing. Proposed: var(--Button-button-background-transparent-hovered) */
+  color: var(--content-switcher-item-text-oncolor);
+  /* TODO: --content-switcher-item-text-oncolor missing. Proposed: var(--Text-text-oncolor-primary) */
+  border-inline: 0.5px solid var(--content-switcher-item-border-oncolor);
+  /* TODO: --content-switcher-item-border-oncolor missing. Proposed: var(--Border-border-transparent-10) */
+}
+
+.content-switcher--on-color .content-switcher__item:first-child {
+  border-inline-start: none;
+}
+
+.content-switcher--on-color .content-switcher__item:last-child {
+  border-inline-end: none;
+}
+
+.content-switcher--on-color .content-switcher__item[aria-selected="true"] {
+  background: var(--content-switcher-item-bg-selected-oncolor);
+  /* TODO: --content-switcher-item-bg-selected-oncolor missing. Proposed: var(--Button-button-background-primary-default) */
+  color: var(--content-switcher-item-text-oncolor);
+  border-inline: none;
+}
+
+/* OnColor hover: no token delta — both normal and hovered map to same token */
+.content-switcher--on-color .content-switcher__item:not([aria-selected="true"]):not([aria-disabled="true"]):hover {
+  background: var(--content-switcher-item-bg-default-oncolor);
+}

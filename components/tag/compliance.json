@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "tag",
+  "generated": "2026-06-09",
+  "overall_status": "pending_audit",
+  "official_compliance_claim": false,
+  "_note": "Status 'mapped' means the component has been mapped to this criterion. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.1.1",
+          "title": "Non-text Content",
+          "status": "mapped",
+          "evidence": "Icon-only tags require aria-label on the root span. tag.contract.md §7.2 and §7.3 document both patterns. .tag__icon carries aria-hidden='true'. TAGsonly with visible text inside .tag__text satisfy this unconditionally. TAG-A11Y-001 enforces accessible label presence.",
+          "audit_rule_ids": ["TAG-A11Y-001", "TAG-A11Y-002"]
+        },
+        {
+          "id": "1.4.1",
+          "title": "Use of Color",
+          "status": "mapped",
+          "evidence": "Status Tag dot uses color to convey state. The color meaning is always redundantly communicated via the adjacent .status-tag__text label. Status dot carries aria-hidden='true'. TAG-A11Y-003 validates text is always present alongside the dot.",
+          "audit_rule_ids": ["TAG-A11Y-003"]
+        },
+        {
+          "id": "1.4.3",
+          "title": "Contrast (Minimum)",
+          "status": "mapped",
+          "evidence": "Filled variant text contrast ratios: Neutral #1F2A37 on #F9FAFB ≈ 15:1 (pass). Error #912018 on #FEF3F2 ≈ 7.1:1 (pass). Info #1849A9 on #EFF8FF ≈ 7.2:1 (pass). Success #085D3A on #ECFDF3 ≈ 7.5:1 (pass). Warning #93370D on #FFFAEB ≈ 7.3:1 (pass). On-Color #FFF on rgba(255,255,255,0.20) — depends on page background; mark for manual review. Outline variants share same text colors but on transparent background — requires per-deployment review.",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        },
+        {
+          "id": "1.4.11",
+          "title": "Non-text Contrast",
+          "status": "mapped",
+          "evidence": "Filled variant borders are decorative (same-family color, not UI boundary). Outline variant borders are visible UI boundaries and must meet 3:1 against adjacent background. Outline border tokens are darker primitives (--error-700, --info-700 etc.) estimated to pass 3:1 against white. On-color outline border rgba(255,255,255,0.60) on dark bg requires manual verification.",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "Components are non-interactive <span> elements. No keyboard interaction required. If a consuming application wraps a tag in a <button> or adds tabindex for interactive tag patterns, keyboard operability is the consumer's responsibility.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "4.1.2",
+          "title": "Name, Role, Value",
+          "status": "mapped",
+          "evidence": "Non-interactive tags are <span> elements with no role override needed. Icon-only tags must have aria-label (enforced by TAG-A11Y-001). Status Tag dot carries aria-hidden='true' (enforced by TAG-A11Y-003). No state, value, or property attributes needed for display-only components.",
+          "audit_rule_ids": ["TAG-A11Y-001", "TAG-A11Y-003"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-DS",
+      "name": "Platform Design System Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Internal platform rules. See standards/platform-code.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-TAG-001",
+          "title": "Component must use design tokens for all visual values",
+          "status": "mapped",
+          "evidence": "All color, spacing, radius, and typography values in tag.css reference CSS custom properties (--tag-*, --status-tag-*). Hardcoded value detection is enforced by TAG-TOKEN-001 (error severity). A proposed :root block in tag.css defines all component tokens with primitive fallbacks — these must be moved to token.css before production.",
+          "audit_rule_ids": ["TAG-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-TAG-002",
+          "title": "RTL layout support is mandatory",
+          "status": "mapped",
+          "evidence": "tag.css uses [dir='rtl'] selectors for flex-direction: row-reverse on both .tag and .status-tag. text-align: right applied to text slots under RTL. TAG-RTL-001 enforces no physical left/right properties in component selectors.",
+          "audit_rule_ids": ["TAG-RTL-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-TAG-003",
+          "title": "Non-interactive display components must use <span> as root",
+          "status": "mapped",
+          "evidence": "Both .tag and .status-tag specify <span> as the root element in tag.contract.md §4 HTML Contract. TAG-STRUCT-001 enforces this at the DOM level.",
+          "audit_rule_ids": ["TAG-STRUCT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-TAG-004",
+          "title": "Status meaning must not be conveyed by color alone",
+          "status": "mapped",
+          "evidence": "Status Tag combines a colored dot (.status-tag__dot) with a visible text label (.status-tag__text). The dot carries aria-hidden='true'. The text label provides the primary accessible description. TAG-A11Y-003 enforces dot aria-hidden and text presence.",
+          "audit_rule_ids": ["TAG-A11Y-003"]
+        },
+        {
+          "id": "PLATFORM-CODE-TAG-005",
+          "title": "Minimum touch target 24×24px for interactive use",
+          "status": "pending_audit",
+          "evidence": "Tag xs (20×20) and status-tag xs (20×20) fall below 24×24px minimum for interactive use. These sizes should remain non-interactive. Medium (32×32) satisfies minimum interactive touch target. No automated audit rule yet — pending touch target checker implementation.",
+          "audit_rule_ids": []
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y",
+      "name": "Platform Accessibility Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Accessibility-specific internal standards. See standards/accessibility.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-A11Y-001",
+          "title": "Arabic language font support required",
+          "status": "mapped",
+          "evidence": "IBM Plex Sans Arabic is applied via --tag-font-family and --status-tag-font-family tokens. Both components inherit the font via the base class. Arabic text renders correctly under [dir='rtl'] ancestors.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "PLATFORM-CODE-A11Y-002",
+          "title": "Label language must match document language context",
+          "status": "mapped",
+          "evidence": "Cannot be verified automatically. Documented in tag.contract.md §9 Content Rules. Marked for manual review.",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        }
+      ]
+    }
+
+  ],
+
+  "variant_compliance_notes": {
+    "on-color (tag)": "WCAG 1.4.3: On-Color uses rgba(255,255,255,0.20) background. Text is white. Contrast ratio depends on the opaque background behind the component. Verify 4.5:1 for text before using on non-dark surfaces.",
+    "outline (all styles)": "WCAG 1.4.3: Outline variants use transparent background. Text contrast must be verified against actual page background. Outline border tokens are estimated to pass WCAG 1.4.11 but require per-deployment measurement.",
+    "status-tag ghost": "WCAG 1.4.3: Ghost status removes background. Text is always neutral (#1F2A37). Contrast against page background must be verified (white bg: #1F2A37 on white ≈ 15:1, passes).",
+    "status-tag inverted": "WCAG 1.4.3: Inverted uses dark style background. White text on dark bg estimated 7:1+ for all styles. Verify if used over non-white surfaces.",
+    "icon-only (tag)": "WCAG 1.1.1: Requires aria-label on root span. TAG-A11Y-001 enforces this at error severity.",
+    "xs size (tag and status-tag)": "WCAG 2.5.5 (AAA): 20×20px falls below the 44×44px AAA touch target. AA compliance does not require 44px touch targets for static components. Components at xs must remain non-interactive."
+  }
+}

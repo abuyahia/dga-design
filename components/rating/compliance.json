@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "rating",
+  "generated": "2026-06-10",
+  "overall_status": "pending_audit",
+  "official_compliance_claim": false,
+  "_note": "Status 'mapped' means the component has been mapped to this criterion. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.1.1",
+          "title": "Non-text Content",
+          "status": "mapped",
+          "evidence": "The .rating root carries role='img' and aria-label with a human-readable rating value (e.g. '3.5 out of 5 stars'). All .rating__star elements and SVGs carry aria-hidden='true' to suppress redundant announcements. Enforced by RATING-A11Y-001 and RATING-A11Y-002.",
+          "audit_rule_ids": ["RATING-A11Y-001", "RATING-A11Y-002"]
+        },
+        {
+          "id": "1.4.3",
+          "title": "Contrast (Minimum)",
+          "status": "mapped",
+          "evidence": "Stars are non-text content — WCAG 1.4.11 applies. See 1.4.11 entry. Disabled state (40% opacity) is exempt per WCAG 1.4.3 inactive component exception.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "1.4.11",
+          "title": "Non-text Contrast",
+          "status": "needs_review",
+          "evidence": "Default gold (#DBA102) on white (#FFF) = ~2.0:1 contrast. This is below the required 3:1 threshold for non-text UI components. Brand green (#1B8354) on white = ~4.58:1 — passes. Empty star (#E5E7EB) represents absent content, not a UI boundary — may be exempt. RISK: Default (gold) variant does not meet 1.4.11.",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "Display rating: not keyboard interactive — no keyboard requirement. Interactive rating (see contract §10): uses native radio inputs which are keyboard operable by default. RATING-STRUCT-001 warns if non-semantic elements are used for interactive mode.",
+          "audit_rule_ids": ["RATING-STRUCT-001"]
+        },
+        {
+          "id": "2.4.7",
+          "title": "Focus Visible",
+          "status": "needs_review",
+          "evidence": "No focus state is defined in the manifest. For display-only usage, no focus indicator is needed (component is not interactive). For interactive usage, focus styles must be added. RATING-A11Y-003 flags suppressed focus on interactive rating. Focus state not in manifest — see analysis.md Known Issues.",
+          "audit_rule_ids": ["RATING-A11Y-003"],
+          "manual_review_required": true
+        },
+        {
+          "id": "4.1.2",
+          "title": "Name, Role, Value",
+          "status": "mapped",
+          "evidence": "Display: role='img' on root + aria-label provides name and role. Value embedded in aria-label string. Interactive: native radio inputs provide name/role/value natively. Enforced by RATING-A11Y-001.",
+          "audit_rule_ids": ["RATING-A11Y-001"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-DS",
+      "name": "Platform Design System Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Internal platform rules. IDs are component-local. See standards/platform-code.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-RATING-001",
+          "title": "Component must use design tokens for all visual values",
+          "status": "mapped",
+          "evidence": "All color, spacing, and size values in rating.css reference --rating-* CSS custom properties with fallback values from the manifest. Hardcoded value detection enforced by RATING-TOKEN-001. Note: --rating-* tokens are proposed and must be added to token.css.",
+          "audit_rule_ids": ["RATING-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-RATING-002",
+          "title": "RTL layout support",
+          "status": "needs_review",
+          "evidence": "Container uses gap (direction-agnostic). Half-star clip direction pending RTL design confirmation. [dir='rtl'] override added in rating.css with a TODO. Physical directional properties are not used. Enforced by RATING-RTL-001.",
+          "audit_rule_ids": ["RATING-RTL-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-RATING-003",
+          "title": "Semantic HTML element for interactive usage",
+          "status": "mapped",
+          "evidence": "Display rating uses div with role='img'. Interactive rating must use fieldset + radio inputs per contract §10. RATING-STRUCT-001 warns on non-semantic interactive usage.",
+          "audit_rule_ids": ["RATING-STRUCT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-RATING-004",
+          "title": "Minimum touch target 24×24px",
+          "status": "mapped",
+          "evidence": "Small size (--sm) star token is 24px. Medium is 32px. Large is 48px. All meet the 24×24px minimum touch target. No automated rule implemented yet.",
+          "audit_rule_ids": []
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y",
+      "name": "Platform Accessibility Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "_note": "Accessibility-specific internal standards. See standards/accessibility.standards.json for full definitions.",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-A11Y-001",
+          "title": "Arabic language support",
+          "status": "mapped",
+          "evidence": "Rating component contains no text by default. The aria-label value is provided by the consuming application and must be in the appropriate language. Documented in contract §14.",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        },
+        {
+          "id": "PLATFORM-CODE-A11Y-002",
+          "title": "Screen reader announcement must be meaningful",
+          "status": "mapped",
+          "evidence": "role='img' with aria-label on root provides a single meaningful announcement. Individual stars are aria-hidden. Screen reader does not iterate over 5 stars individually.",
+          "audit_rule_ids": ["RATING-A11Y-001"]
+        }
+      ]
+    }
+
+  ],
+
+  "variant_compliance_notes": {
+    "default (gold)": "WCAG 1.4.11: #DBA102 on white = ~2.0:1, below the 3:1 non-text contrast threshold. Must be reviewed with design team before production deployment.",
+    "brand (green)": "WCAG 1.4.11: #1B8354 on white = ~4.58:1. Passes.",
+    "empty stars": "#E5E7EB represents absent rating content (no stars). Exempt from 1.4.11 as it is not a UI control boundary — it conveys absence of rating rather than a meaningful UI boundary.",
+    "half stars": "Half fill uses clip-path CSS technique. Visual output matches Figma design. Contrast of colored half applies same as filled variant.",
+    "disabled (all variants)": "WCAG 1.4.3 and 1.4.11 exempt inactive UI components. Low contrast of disabled state is intentional."
+  }
+}

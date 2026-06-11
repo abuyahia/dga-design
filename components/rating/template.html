@@ -1,0 +1,219 @@
+<!--
+  Rating Component — Template
+  Platform Code Design System
+  Source: components/rating/mainifest.json
+
+  Usage:
+  1. Copy the desired variant block below.
+  2. Update aria-label to reflect the actual rating value.
+  3. Set the correct --filled / --half / --empty modifier classes per star slot.
+  4. Apply a size modifier: rating--lg | rating--md | rating--sm
+  5. Apply .rating--brand for the brand green variant.
+
+  Star SVG path: 24×24 viewBox, fill="currentColor"
+  Path: M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z
+-->
+
+<!-- ============================================================
+     VARIANT: Large / Default (gold) / 3.5 out of 5
+     (matches composite manifest example)
+     ============================================================ -->
+<div class="rating rating--lg" role="img" aria-label="3.5 out of 5 stars">
+  <!-- Star 1: filled -->
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <!-- Star 2: filled -->
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <!-- Star 3: filled -->
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <!-- Star 4: half -->
+  <span class="rating__star rating__star--half" aria-hidden="true">
+    <svg class="rating__star-icon rating__star-base" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+    <svg class="rating__star-fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <!-- Star 5: empty -->
+  <span class="rating__star rating__star--empty" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+</div>
+
+<!-- ============================================================
+     VARIANT: Large / Brand (green) / 3.5 out of 5
+     ============================================================ -->
+<div class="rating rating--lg rating--brand" role="img" aria-label="3.5 out of 5 stars">
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--half" aria-hidden="true">
+    <svg class="rating__star-icon rating__star-base" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+    <svg class="rating__star-fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--empty" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+</div>
+
+<!-- ============================================================
+     VARIANT: Medium / Default (gold) / 4 out of 5
+     ============================================================ -->
+<div class="rating rating--md" role="img" aria-label="4 out of 5 stars">
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--empty" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+</div>
+
+<!-- ============================================================
+     VARIANT: Small / Brand (green) / 5 out of 5
+     ============================================================ -->
+<div class="rating rating--sm rating--brand" role="img" aria-label="5 out of 5 stars">
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+</div>
+
+<!-- ============================================================
+     VARIANT: Disabled
+     ============================================================ -->
+<div class="rating rating--lg rating--disabled" role="img" aria-label="3.5 out of 5 stars" aria-disabled="true">
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--half" aria-hidden="true">
+    <svg class="rating__star-icon rating__star-base" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+    <svg class="rating__star-fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--empty" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+</div>
+
+<!-- ============================================================
+     VARIANT: Arabic label / RTL context
+     ============================================================ -->
+<div dir="rtl" class="rating rating--lg rating--brand" role="img" aria-label="التقييم: 3.5 من 5 نجوم">
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--filled" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--half" aria-hidden="true">
+    <svg class="rating__star-icon rating__star-base" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+    <svg class="rating__star-fill" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+  <span class="rating__star rating__star--empty" aria-hidden="true">
+    <svg class="rating__star-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26Z"/>
+    </svg>
+  </span>
+</div>

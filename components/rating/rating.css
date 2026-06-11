@@ -1,0 +1,207 @@
+/* ============================================================
+   RATING
+   Platform Code Design System
+   Source: components/rating/mainifest.json
+   Sub-component: _RatingStar (components/rating/mainifest-items.json)
+   ============================================================ */
+
+/*
+ * TODO: All --rating-* tokens below are proposed.
+ * They must be added to token.css before production deployment.
+ * See components/rating/analysis.md — Missing Tokens section.
+ */
+
+/* --- Base container --- */
+
+.rating {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--rating-gap, var(--spacing-globalspacing-xs, 4px));
+}
+
+/* --- Size modifiers --- */
+
+.rating--lg .rating__star {
+  width: var(--rating-star-size-lg, 48px);
+  height: var(--rating-star-size-lg, 48px);
+}
+
+.rating--md .rating__star {
+  width: var(--rating-star-size-md, 32px);
+  height: var(--rating-star-size-md, 32px);
+}
+
+.rating--sm .rating__star {
+  width: var(--rating-star-size-sm, 24px);
+  height: var(--rating-star-size-sm, 24px);
+}
+
+/* --- Individual star item --- */
+
+.rating__star {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* --- Star icon (SVG) --- */
+
+.rating__star-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Star states --- */
+
+/* Empty star */
+.rating__star--empty .rating__star-icon {
+  color: var(--rating-star-empty-fill, var(--Background-background-neutral-200, #E5E7EB));
+  fill: currentColor;
+}
+
+/* Filled star — default (gold) */
+.rating__star--filled .rating__star-icon {
+  color: var(--rating-star-fill-default, var(--Background-background-secondary, #DBA102));
+  fill: currentColor;
+}
+
+/* --- Brand modifier (applies to root, cascades to all stars) --- */
+
+.rating--brand .rating__star--filled .rating__star-icon {
+  color: var(--rating-star-fill-brand, var(--Background-background-primary, #1B8354));
+}
+
+.rating--brand .rating__star--half .rating__star-fill {
+  color: var(--rating-star-fill-brand, var(--Background-background-primary, #1B8354));
+}
+
+/* --- Half star --- */
+
+/*
+ * Half-star uses two SVGs:
+ * .rating__star-base  — full gray star (visible in right half)
+ * .rating__star-fill  — full colored star, clipped to left 50%
+ *
+ * Deviation from Figma: Figma uses 3-layer rectangle masking.
+ * CSS uses clip-path on fill SVG. Output is visually equivalent.
+ */
+
+.rating__star--half .rating__star-base {
+  color: var(--rating-star-half-base-fill, var(--Colors-Gray-neutral-300, #D2D6DB));
+  fill: currentColor;
+  position: relative;
+  z-index: 1;
+}
+
+.rating__star--half .rating__star-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: var(--rating-star-fill-default, var(--Background-background-secondary, #DBA102));
+  fill: currentColor;
+  clip-path: inset(0 50% 0 0);
+  z-index: 2;
+}
+
+/* --- Pressed ring — interaction layer (::before pseudo-element) --- */
+
+/*
+ * Source: "ring" RECTANGLE layer in _RatingStar Pressed state variants.
+ * Converted to ::before pseudo-element per interaction layer policy.
+ * Never generates standalone HTML.
+ * Ring extends 3px on each side beyond the star (54px ring for 48px star, etc).
+ */
+
+.rating__star::before {
+  content: '';
+  position: absolute;
+  border-radius: var(--rating-star-ring-radius, 50%);
+  background: var(--rating-star-pressed-ring-bg, var(--Background-background-neutral-100, #F3F4F6));
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  /* TODO: --rating-star-ring-transition-duration missing in token.css. Proposed mapping: var(--transition-fast). */
+  /* TODO: --rating-star-ring-transition-easing missing in token.css. Proposed mapping: var(--ease-in-out). */
+  transition: opacity var(--rating-star-ring-transition-duration, 150ms) var(--rating-star-ring-transition-easing, ease-out);
+}
+
+/* Ring sizes — must match star size + 6px (3px overhang each side) */
+.rating--lg .rating__star::before {
+  width: var(--rating-star-ring-size-lg, 54px);
+  height: var(--rating-star-ring-size-lg, 54px);
+}
+
+.rating--md .rating__star::before {
+  width: var(--rating-star-ring-size-md, 46px);
+  height: var(--rating-star-ring-size-md, 46px);
+}
+
+.rating--sm .rating__star::before {
+  width: var(--rating-star-ring-size-sm, 38px);
+  height: var(--rating-star-ring-size-sm, 38px);
+}
+
+/* Show ring on press */
+.rating__star:active::before {
+  opacity: 1;
+}
+
+/* --- Interactive mode --- */
+
+/*
+ * .rating--interactive is not in the Figma manifest.
+ * Added as an advisory extension for consuming applications
+ * that use the rating as an input widget.
+ */
+
+.rating--interactive .rating__star {
+  cursor: pointer;
+}
+
+.rating--interactive .rating__star:hover .rating__star-icon {
+  color: var(--rating-star-fill-default, var(--Background-background-secondary, #DBA102));
+  fill: currentColor;
+}
+
+.rating--interactive.rating--brand .rating__star:hover .rating__star-icon {
+  color: var(--rating-star-fill-brand, var(--Background-background-primary, #1B8354));
+}
+
+/* Focus indicator for interactive usage */
+.rating--interactive .rating__star:focus-visible {
+  outline: 2px solid var(--rating-star-fill-brand, var(--Background-background-primary, #1B8354));
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* --- Disabled state --- */
+
+.rating--disabled {
+  /* TODO: --rating-disabled-opacity missing in token.css. Proposed value: 0.4 */
+  opacity: var(--rating-disabled-opacity, 0.4);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* --- RTL support --- */
+
+/*
+ * The gap property is direction-agnostic in flex.
+ * Half-star clip-path direction is reversed for RTL.
+ *
+ * TODO: RTL half-star fill direction pending design team confirmation.
+ * Current implementation: [dir='rtl'] clips right 50% (shows left half = end side in RTL).
+ * If Figma intent is to always fill from the writing-mode start side, this is correct.
+ */
+
+[dir="rtl"] .rating__star--half .rating__star-fill {
+  clip-path: inset(0 0 0 50%);
+}

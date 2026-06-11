@@ -1,0 +1,568 @@
+/* =============================================================
+   Tag + Status Tag  ·  Reference: tag/reference.json
+   Two display-only label components sharing the Tag token
+   namespace. Non-interactive. No state layer.
+   ============================================================= */
+
+/* ── Proposed component tokens ─────────────────────────────────
+   TODO: Move all --tag-* and --status-tag-* tokens to token.css
+   before production deployment. These are defined here with
+   primitive-token fallbacks so the showcase renders correctly.
+   ──────────────────────────────────────────────────────────── */
+:root {
+
+  /* === TAG SIZE TOKENS ======================================= */
+
+  --tag-xs-height:          var(--space-20, 20px);
+  --tag-xs-padding-inline:  var(--space-8, 8px);
+  --tag-xs-gap:             var(--space-4, 4px);
+  /* TODO: --tag-xs-icon-size — no 10px icon-size primitive in token.css */
+  --tag-xs-icon-size:       10px;
+  /* TODO: --tag-xs-font-size — --fs-text-2xs missing from token.css */
+  --tag-xs-font-size:       10px;
+  --tag-xs-font-weight:     var(--font-weight-semibold, 600);
+  /* TODO: --tag-xs-line-height — --lh-text-2xs missing from token.css */
+  --tag-xs-line-height:     14px;
+
+  --tag-sm-height:          var(--space-24, 24px);
+  --tag-sm-padding-inline:  var(--space-8, 8px);
+  --tag-sm-gap:             var(--space-4, 4px);
+  /* TODO: --tag-sm-icon-size — no 14px icon-size primitive in token.css */
+  --tag-sm-icon-size:       14px;
+  --tag-sm-font-size:       var(--fs-text-xs, 12px);
+  --tag-sm-font-weight:     var(--font-weight-medium, 500);
+  --tag-sm-line-height:     var(--lh-text-xs, 18px);
+
+  /* Default (Medium) */
+  --tag-height:             var(--space-32, 32px);
+  --tag-padding-inline:     var(--space-12, 12px);
+  --tag-gap:                var(--space-4, 4px);
+  /* TODO: --tag-icon-size — no 18px icon-size primitive in token.css */
+  --tag-icon-size:          18px;
+  --tag-font-size:          var(--fs-text-md, 16px);
+  --tag-font-weight:        var(--font-weight-medium, 500);
+  --tag-line-height:        var(--lh-text-md, 24px);
+  --tag-font-family:        var(--font-sans, "IBM Plex Sans Arabic", system-ui, sans-serif);
+  --tag-radius:             var(--radius-sm, 4px);
+  --tag-radius-rounded:     var(--radius-full, 9999px);
+  --tag-icon-only-padding:  var(--space-2, 2px);
+
+  /* === TAG COLOR TOKENS — NEUTRAL ============================ */
+
+  --tag-neutral-bg:             var(--gray-50, #F9FAFB);
+  --tag-neutral-border:         var(--gray-200, #E5E7EB);
+  --tag-neutral-text:           var(--gray-800, #1F2A37);
+  --tag-neutral-border-outline: var(--gray-600, #4D5761);
+
+  /* === TAG COLOR TOKENS — ERROR ============================== */
+
+  --tag-error-bg:             var(--error-50, #FEF3F2);
+  --tag-error-border:         var(--error-200, #FECDCA);
+  --tag-error-text:           var(--error-800, #912018);
+  --tag-error-border-outline: var(--error-700, #B42318);
+
+  /* === TAG COLOR TOKENS — INFO =============================== */
+
+  --tag-info-bg:              var(--info-50, #EFF8FF);
+  --tag-info-border:          var(--info-200, #B2DDFF);
+  --tag-info-text:            var(--info-800, #1849A9);
+  --tag-info-border-outline:  var(--info-700, #175CD3);
+
+  /* === TAG COLOR TOKENS — SUCCESS ============================ */
+
+  --tag-success-bg:              var(--success-50, #ECFDF3);
+  --tag-success-border:          var(--success-200, #ABEFC6);
+  --tag-success-text:            var(--success-800, #085D3A);
+  --tag-success-border-outline:  var(--success-700, #067647);
+
+  /* === TAG COLOR TOKENS — WARNING ============================ */
+
+  --tag-warning-bg:              var(--warning-50, #FFFAEB);
+  --tag-warning-border:          var(--warning-200, #FEDF89);
+  --tag-warning-text:            var(--warning-800, #93370D);
+  --tag-warning-border-outline:  var(--warning-700, #B54708);
+
+  /* === TAG COLOR TOKENS — ON-COLOR =========================== */
+
+  /* TODO: --tag-on-color-bg — no semi-transparent white primitive in token.css */
+  --tag-on-color-bg:             rgba(255, 255, 255, 0.20);
+  --tag-on-color-text:           var(--white, #FFFFFF);
+  /* TODO: --tag-on-color-border-outline — no semi-transparent white border primitive */
+  --tag-on-color-border-outline: rgba(255, 255, 255, 0.60);
+
+  /* === STATUS TAG SIZE TOKENS ================================ */
+
+  --status-tag-xs-height:          var(--space-20, 20px);
+  --status-tag-xs-padding-inline:  var(--space-8, 8px);
+  --status-tag-xs-gap:             var(--space-8, 8px);
+  --status-tag-xs-dot-size:        10px;
+  /* TODO: --status-tag-xs-font-size — --fs-text-2xs missing from token.css */
+  --status-tag-xs-font-size:       10px;
+  --status-tag-xs-font-weight:     var(--font-weight-medium, 500);
+  /* TODO: --status-tag-xs-line-height — --lh-text-2xs missing from token.css */
+  --status-tag-xs-line-height:     14px;
+
+  --status-tag-sm-height:          var(--space-24, 24px);
+  --status-tag-sm-padding-inline:  var(--space-8, 8px);
+  --status-tag-sm-gap:             var(--space-8, 8px);
+  --status-tag-sm-dot-size:        10px;
+  --status-tag-sm-font-size:       var(--fs-text-sm, 14px);
+  --status-tag-sm-font-weight:     var(--font-weight-medium, 500);
+  --status-tag-sm-line-height:     var(--lh-text-sm, 20px);
+
+  /* Default (Medium) */
+  --status-tag-height:             var(--space-32, 32px);
+  --status-tag-padding-inline:     var(--space-16, 16px);
+  --status-tag-gap:                var(--space-8, 8px);
+  --status-tag-dot-size:           10px;
+  --status-tag-font-size:          var(--fs-text-md, 16px);
+  --status-tag-font-weight:        var(--font-weight-medium, 500);
+  --status-tag-line-height:        var(--lh-text-md, 24px);
+  --status-tag-font-family:        var(--font-sans, "IBM Plex Sans Arabic", system-ui, sans-serif);
+  --status-tag-radius:             var(--radius-full, 9999px);
+
+  /* === STATUS TAG COLOR TOKENS — NEUTRAL ===================== */
+
+  --status-tag-neutral-subtle-bg:     var(--gray-50, #F9FAFB);
+  --status-tag-neutral-subtle-dot:    var(--gray-600, #4D5761);
+  --status-tag-neutral-subtle-text:   var(--gray-800, #1F2A37);
+  --status-tag-neutral-inverted-bg:   var(--gray-600, #4D5761);
+  /* TODO: --status-tag-neutral-inverted-dot — no semi-transparent white primitive */
+  --status-tag-neutral-inverted-dot:  rgba(255, 255, 255, 0.60);
+
+  /* === STATUS TAG COLOR TOKENS — BLUE (Info) ================= */
+
+  --status-tag-blue-subtle-bg:        var(--info-50, #EFF8FF);
+  --status-tag-blue-subtle-dot:       var(--info-800, #1849A9);
+  --status-tag-blue-subtle-text:      var(--info-800, #1849A9);
+  --status-tag-blue-inverted-bg:      var(--info-600, #1570EF);
+  /* TODO: --status-tag-blue-inverted-dot — no semi-transparent white primitive */
+  --status-tag-blue-inverted-dot:     rgba(255, 255, 255, 0.60);
+
+  /* === STATUS TAG COLOR TOKENS — GREEN (Success) ============= */
+
+  --status-tag-green-subtle-bg:       var(--success-50, #ECFDF3);
+  --status-tag-green-subtle-dot:      var(--success-800, #085D3A);
+  --status-tag-green-subtle-text:     var(--success-800, #085D3A);
+  --status-tag-green-inverted-bg:     var(--success-700, #067647);
+  /* TODO: --status-tag-green-inverted-dot — no semi-transparent white primitive */
+  --status-tag-green-inverted-dot:    rgba(255, 255, 255, 0.60);
+
+  /* === STATUS TAG COLOR TOKENS — RED (Error) ================= */
+
+  --status-tag-red-subtle-bg:         var(--error-50, #FEF3F2);
+  --status-tag-red-subtle-dot:        var(--error-800, #912018);
+  --status-tag-red-subtle-text:       var(--error-800, #912018);
+  --status-tag-red-inverted-bg:       var(--error-600, #D92D20);
+  /* TODO: --status-tag-red-inverted-dot — no semi-transparent white primitive */
+  --status-tag-red-inverted-dot:      rgba(255, 255, 255, 0.60);
+
+  /* === STATUS TAG COLOR TOKENS — YELLOW (Warning) ============ */
+
+  --status-tag-yellow-subtle-bg:      var(--warning-50, #FFFAEB);
+  --status-tag-yellow-subtle-dot:     var(--warning-800, #93370D);
+  --status-tag-yellow-subtle-text:    var(--warning-800, #93370D);
+  --status-tag-yellow-inverted-bg:    var(--warning-700, #B54708);
+  /* TODO: --status-tag-yellow-inverted-dot — no semi-transparent white primitive */
+  --status-tag-yellow-inverted-dot:   rgba(255, 255, 255, 0.60);
+
+  /* === STATUS TAG SHARED TOKENS ============================== */
+
+  --status-tag-ghost-text:    var(--gray-800, #1F2A37);
+  --status-tag-inverted-text: var(--white, #FFFFFF);
+}
+
+
+/* =============================================================
+   TAG
+   ============================================================= */
+
+/* ── Base ──────────────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  height: var(--tag-height);
+  padding: 0 var(--tag-padding-inline);
+  justify-content: center;
+  align-items: center;
+  gap: var(--tag-gap);
+  border-radius: var(--tag-radius);
+  border: 1px solid var(--tag-neutral-border);
+  background: var(--tag-neutral-bg);
+  font-family: var(--tag-font-family);
+  font-size: var(--tag-font-size);
+  font-weight: var(--tag-font-weight);
+  line-height: var(--tag-line-height);
+  font-style: normal;
+  color: var(--tag-neutral-text);
+  white-space: nowrap;
+  box-sizing: border-box;
+  vertical-align: middle;
+  user-select: none;
+}
+
+/* ── Icon slot ─────────────────────────────────────────────── */
+.tag__icon {
+  width: var(--tag-icon-size);
+  height: var(--tag-icon-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tag__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Text slot ─────────────────────────────────────────────── */
+.tag__text {
+  display: inline;
+}
+
+/* =============================================================
+   TAG — Size modifiers
+   Default (no modifier) = Medium
+   ============================================================= */
+
+.tag--xs {
+  height: var(--tag-xs-height);
+  padding: 0 var(--tag-xs-padding-inline);
+  gap: var(--tag-xs-gap);
+  font-size: var(--tag-xs-font-size);
+  font-weight: var(--tag-xs-font-weight);
+  line-height: var(--tag-xs-line-height);
+}
+
+.tag--xs .tag__icon {
+  width: var(--tag-xs-icon-size);
+  height: var(--tag-xs-icon-size);
+}
+
+.tag--sm {
+  height: var(--tag-sm-height);
+  padding: 0 var(--tag-sm-padding-inline);
+  gap: var(--tag-sm-gap);
+  font-size: var(--tag-sm-font-size);
+  font-weight: var(--tag-sm-font-weight);
+  line-height: var(--tag-sm-line-height);
+}
+
+.tag--sm .tag__icon {
+  width: var(--tag-sm-icon-size);
+  height: var(--tag-sm-icon-size);
+}
+
+/* =============================================================
+   TAG — Rounded modifier
+   ============================================================= */
+
+.tag--rounded {
+  border-radius: var(--tag-radius-rounded);
+}
+
+/* =============================================================
+   TAG — Icon-only modifier
+   Combine with size modifiers for smaller square tags.
+   ============================================================= */
+
+.tag--icon-only {
+  display: inline-flex;
+  width: var(--tag-height);
+  min-width: var(--tag-height);
+  padding: 0 var(--tag-icon-only-padding);
+}
+
+.tag--icon-only.tag--xs {
+  width: var(--tag-xs-height);
+  min-width: var(--tag-xs-height);
+}
+
+.tag--icon-only.tag--sm {
+  width: var(--tag-sm-height);
+  min-width: var(--tag-sm-height);
+}
+
+/* =============================================================
+   TAG — Style modifiers (color variants)
+   Default = neutral (defined on .tag base)
+   ============================================================= */
+
+/* Error */
+.tag--error {
+  background: var(--tag-error-bg);
+  border-color: var(--tag-error-border);
+  color: var(--tag-error-text);
+}
+
+/* Info */
+.tag--info {
+  background: var(--tag-info-bg);
+  border-color: var(--tag-info-border);
+  color: var(--tag-info-text);
+}
+
+/* Success */
+.tag--success {
+  background: var(--tag-success-bg);
+  border-color: var(--tag-success-border);
+  color: var(--tag-success-text);
+}
+
+/* Warning */
+.tag--warning {
+  background: var(--tag-warning-bg);
+  border-color: var(--tag-warning-border);
+  color: var(--tag-warning-text);
+}
+
+/* On-Color — no border in default state */
+.tag--on-color {
+  background: var(--tag-on-color-bg);
+  border: none;
+  color: var(--tag-on-color-text);
+}
+
+/* =============================================================
+   TAG — Outline modifier
+   Removes background, applies darker border per style.
+   Combine with style modifiers.
+   ============================================================= */
+
+.tag--outline {
+  background: none;
+  border-color: var(--tag-neutral-border-outline);
+}
+
+.tag--outline.tag--error {
+  background: none;
+  border-color: var(--tag-error-border-outline);
+}
+
+.tag--outline.tag--info {
+  background: none;
+  border-color: var(--tag-info-border-outline);
+}
+
+.tag--outline.tag--success {
+  background: none;
+  border-color: var(--tag-success-border-outline);
+}
+
+.tag--outline.tag--warning {
+  background: none;
+  border-color: var(--tag-warning-border-outline);
+}
+
+.tag--outline.tag--on-color {
+  background: none;
+  border: 1px solid var(--tag-on-color-border-outline);
+}
+
+/* =============================================================
+   TAG — RTL support
+   ============================================================= */
+
+[dir="rtl"] .tag {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .tag__text {
+  text-align: right;
+}
+
+
+/* =============================================================
+   STATUS TAG
+   ============================================================= */
+
+/* ── Base ──────────────────────────────────────────────────── */
+.status-tag {
+  display: inline-flex;
+  height: var(--status-tag-height);
+  padding: 0 var(--status-tag-padding-inline);
+  align-items: center;
+  gap: var(--status-tag-gap);
+  border-radius: var(--status-tag-radius);
+  background: var(--status-tag-neutral-subtle-bg);
+  font-family: var(--status-tag-font-family);
+  font-size: var(--status-tag-font-size);
+  font-weight: var(--status-tag-font-weight);
+  line-height: var(--status-tag-line-height);
+  font-style: normal;
+  color: var(--status-tag-neutral-subtle-text);
+  white-space: nowrap;
+  box-sizing: border-box;
+  vertical-align: middle;
+  user-select: none;
+}
+
+/* ── Dot slot ──────────────────────────────────────────────── */
+.status-tag__dot {
+  width: var(--status-tag-dot-size);
+  height: var(--status-tag-dot-size);
+  min-width: var(--status-tag-dot-size);
+  border-radius: 50%;
+  background: var(--status-tag-neutral-subtle-dot);
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+/* ── Text slot ─────────────────────────────────────────────── */
+.status-tag__text {
+  display: inline;
+}
+
+/* =============================================================
+   STATUS TAG — Size modifiers
+   Default (no modifier) = Medium
+   ============================================================= */
+
+.status-tag--xs {
+  height: var(--status-tag-xs-height);
+  padding: 0 var(--status-tag-xs-padding-inline);
+  gap: var(--status-tag-xs-gap);
+  font-size: var(--status-tag-xs-font-size);
+  font-weight: var(--status-tag-xs-font-weight);
+  line-height: var(--status-tag-xs-line-height);
+}
+
+.status-tag--xs .status-tag__dot {
+  width: var(--status-tag-xs-dot-size);
+  height: var(--status-tag-xs-dot-size);
+  min-width: var(--status-tag-xs-dot-size);
+}
+
+.status-tag--sm {
+  height: var(--status-tag-sm-height);
+  padding: 0 var(--status-tag-sm-padding-inline);
+  gap: var(--status-tag-sm-gap);
+  font-size: var(--status-tag-sm-font-size);
+  font-weight: var(--status-tag-sm-font-weight);
+  line-height: var(--status-tag-sm-line-height);
+}
+
+.status-tag--sm .status-tag__dot {
+  width: var(--status-tag-sm-dot-size);
+  height: var(--status-tag-sm-dot-size);
+  min-width: var(--status-tag-sm-dot-size);
+}
+
+/* =============================================================
+   STATUS TAG — Style modifiers
+   Default = neutral (defined on .status-tag base)
+   ============================================================= */
+
+/* Blue */
+.status-tag--blue {
+  background: var(--status-tag-blue-subtle-bg);
+  color: var(--status-tag-blue-subtle-text);
+}
+.status-tag--blue .status-tag__dot {
+  background: var(--status-tag-blue-subtle-dot);
+}
+
+/* Green */
+.status-tag--green {
+  background: var(--status-tag-green-subtle-bg);
+  color: var(--status-tag-green-subtle-text);
+}
+.status-tag--green .status-tag__dot {
+  background: var(--status-tag-green-subtle-dot);
+}
+
+/* Red */
+.status-tag--red {
+  background: var(--status-tag-red-subtle-bg);
+  color: var(--status-tag-red-subtle-text);
+}
+.status-tag--red .status-tag__dot {
+  background: var(--status-tag-red-subtle-dot);
+}
+
+/* Yellow */
+.status-tag--yellow {
+  background: var(--status-tag-yellow-subtle-bg);
+  color: var(--status-tag-yellow-subtle-text);
+}
+.status-tag--yellow .status-tag__dot {
+  background: var(--status-tag-yellow-subtle-dot);
+}
+
+/* =============================================================
+   STATUS TAG — Status modifiers
+   Default = subtle (defined on .status-tag base + style)
+   ============================================================= */
+
+/* Ghost — removes background, dot keeps style color, text → neutral */
+.status-tag--ghost {
+  background: none;
+  color: var(--status-tag-ghost-text);
+}
+
+/* Inverted — dark style bg, dot → semi-transparent white, text → white */
+.status-tag--inverted {
+  background: var(--status-tag-neutral-inverted-bg);
+  color: var(--status-tag-inverted-text);
+}
+.status-tag--inverted .status-tag__dot {
+  background: var(--status-tag-neutral-inverted-dot);
+}
+
+.status-tag--blue.status-tag--inverted {
+  background: var(--status-tag-blue-inverted-bg);
+}
+.status-tag--blue.status-tag--inverted .status-tag__dot {
+  background: var(--status-tag-blue-inverted-dot);
+}
+
+.status-tag--green.status-tag--inverted {
+  background: var(--status-tag-green-inverted-bg);
+}
+.status-tag--green.status-tag--inverted .status-tag__dot {
+  background: var(--status-tag-green-inverted-dot);
+}
+
+.status-tag--red.status-tag--inverted {
+  background: var(--status-tag-red-inverted-bg);
+}
+.status-tag--red.status-tag--inverted .status-tag__dot {
+  background: var(--status-tag-red-inverted-dot);
+}
+
+.status-tag--yellow.status-tag--inverted {
+  background: var(--status-tag-yellow-inverted-bg);
+}
+.status-tag--yellow.status-tag--inverted .status-tag__dot {
+  background: var(--status-tag-yellow-inverted-dot);
+}
+
+/* =============================================================
+   STATUS TAG — RTL support
+   ============================================================= */
+
+[dir="rtl"] .status-tag {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .status-tag__text {
+  text-align: right;
+}
+
+/* =============================================================
+   Utility: Screen-reader only text
+   Use inside icon-only tags for accessible label.
+   ============================================================= */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

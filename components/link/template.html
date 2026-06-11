@@ -1,0 +1,106 @@
+<!--
+  Link Component — Template
+  Reference: reference.json  |  Contract: link.contract.md
+  CSS: link.css
+
+  BEM root:       .link
+  Style:          .link--primary (default) | .link--neutral | .link--on-color
+  Size:           (none = small) | .link--md
+  Mode:           (none = standalone) | .link--inline
+  States via HTML: default | :visited (browser) | aria-disabled="true" + tabindex="-1" | :focus-visible (browser) | :hover (browser) | :active (browser)
+-->
+
+<!-- ─────────────────────────────────────────────
+     Standard link (Primary, Small)
+     ───────────────────────────────────────────── -->
+<a class="link link--primary" href="/destination">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     Primary — Medium size
+     ───────────────────────────────────────────── -->
+<a class="link link--primary link--md" href="/destination">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     Primary — Inline mode (use inside paragraph text)
+     ───────────────────────────────────────────── -->
+<a class="link link--primary link--inline" href="/destination">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     Primary — Disabled
+     • tabindex="-1" removes from tab order
+     • aria-disabled="true" announces state to screen readers
+     • Add JS click guard: event.preventDefault() when aria-disabled="true"
+     ───────────────────────────────────────────── -->
+<a class="link link--primary" href="/destination" aria-disabled="true" tabindex="-1">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     Neutral — Small
+     ───────────────────────────────────────────── -->
+<a class="link link--neutral" href="/destination">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     Neutral — Medium
+     ───────────────────────────────────────────── -->
+<a class="link link--neutral link--md" href="/destination">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     Neutral — Inline mode
+     ───────────────────────────────────────────── -->
+<a class="link link--neutral link--inline" href="/destination">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     Neutral — Disabled
+     ───────────────────────────────────────────── -->
+<a class="link link--neutral" href="/destination" aria-disabled="true" tabindex="-1">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     On-color — Small
+     • Use on dark or colored backgrounds only
+     ───────────────────────────────────────────── -->
+<a class="link link--on-color" href="/destination">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     On-color — Medium
+     ───────────────────────────────────────────── -->
+<a class="link link--on-color link--md" href="/destination">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     On-color — Inline mode
+     ───────────────────────────────────────────── -->
+<a class="link link--on-color link--inline" href="/destination">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     On-color — Disabled
+     ───────────────────────────────────────────── -->
+<a class="link link--on-color" href="/destination" aria-disabled="true" tabindex="-1">Link Text</a>
+
+<!-- ─────────────────────────────────────────────
+     External link (opens in new tab)
+     ───────────────────────────────────────────── -->
+<a class="link link--primary" href="https://example.com" target="_blank" rel="noopener noreferrer">
+  External Resource
+  <span class="sr-only">(opens in new tab)</span>
+</a>
+
+<!-- ─────────────────────────────────────────────
+     RTL (Arabic) — set dir on element or parent
+     ───────────────────────────────────────────── -->
+<a class="link link--primary" href="/destination" dir="rtl">رابط</a>
+
+<!-- ─────────────────────────────────────────────
+     RTL Inline in paragraph context
+     ───────────────────────────────────────────── -->
+<p dir="rtl">
+  اقرأ
+  <a class="link link--primary link--inline" href="/policy">سياسة الخصوصية</a>
+  للمزيد من التفاصيل.
+</p>
+
+<!-- ─────────────────────────────────────────────
+     Inline in paragraph context (LTR)
+     ───────────────────────────────────────────── -->
+<p>
+  Read the
+  <a class="link link--primary link--inline" href="/policy">Privacy Policy</a>
+  for details.
+</p>

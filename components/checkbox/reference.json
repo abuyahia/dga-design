@@ -1,237 +1,207 @@
 {
-  "schema_version": "2.0.0",
-  "component": {
-    "name": "checkbox",
-    "description": "Checkbox control with three check-states (unchecked, checked, indeterminate), three sizes, two styles, and six interaction states."
-  },
-  "axes": ["check_state", "style", "size", "state"],
+  "schema_version": "1.1.0",
+  "component": "checkbox-2",
+  "display_name": "Checkbox",
+  "source": "components/checkbox-2/manifest.json",
+  "figma_type": "COMPONENT_SET",
+  "generation": "v2",
+
+  "axes": [
+    {
+      "name": "Checked",
+      "values": ["True", "False"],
+      "css_mechanism": "CSS :checked pseudo-class on .checkbox__input",
+      "note": "JS must set input.indeterminate = true for indeterminate pseudo-class"
+    },
+    {
+      "name": "Indeterminate",
+      "values": ["True", "False"],
+      "css_mechanism": "CSS :indeterminate pseudo-class on .checkbox__input",
+      "note": "Requires JS. Checked=False+Indeterminate=True is absent from manifest (semantically invalid — not implemented)"
+    },
+    {
+      "name": "State",
+      "values": ["Default", "Hovered", "Pressed", "Focused", "Read-only", "Disabled"],
+      "css_mechanism": ":hover, :active, :focus-visible (pseudo-classes); .checkbox--readonly, .checkbox--disabled (BEM modifiers)"
+    },
+    {
+      "name": "Size",
+      "values": ["x Small", "Small", "Medium"],
+      "css_mechanism": ".checkbox--xs, .checkbox--sm, .checkbox--md BEM modifiers; CSS custom property --checkbox-size"
+    },
+    {
+      "name": "Style",
+      "values": ["Primary", "Neutral"],
+      "css_mechanism": "Implicit default = Primary; .checkbox--neutral BEM modifier for Neutral"
+    }
+  ],
+
+  "discarded_axes": [
+    {
+      "name": "RTL",
+      "reason": "Component is geometrically symmetric. RTL produces no visual difference. Discarded."
+    },
+    {
+      "name": "Checked=False+Indeterminate=True",
+      "reason": "Absent from manifest. Semantically invalid combination. Not implemented."
+    }
+  ],
+
   "axis_values": {
-    "check_state": ["unchecked", "checked", "indeterminate"],
-    "style": ["primary", "neutral"],
-    "size": ["md", "sm", "xs"],
-    "state": ["default", "hovered", "pressed", "focused", "readonly", "disabled"]
+    "Checked": ["True", "False"],
+    "Indeterminate": ["True", "False"],
+    "State": ["Default", "Hovered", "Pressed", "Focused", "Read-only", "Disabled"],
+    "Size": ["x Small", "Small", "Medium"],
+    "Style": ["Primary", "Neutral"]
   },
 
-  "size_tokens": {
-    "md": {
-      "dimension": "var(--checkbox-size-md, 24px)",
-      "focus_ring_outer": "32px",
-      "focus_ring_offset": "var(--checkbox-focus-ring-offset, 4px)",
-      "checkmark_icon_width": "12px",
-      "checkmark_icon_height": "9.116px",
-      "indeterminate_icon_width": "12px",
-      "indeterminate_icon_height": "3px",
-      "css_modifier": ".checkbox--md"
+  "variants": {
+    "total_figma_components": 108,
+    "calculation": "3 effective checked states × 6 interaction states × 3 sizes × 2 styles = 108",
+    "effective_checked_states": [
+      "Unchecked (Checked=False, Indeterminate=False)",
+      "Checked (Checked=True, Indeterminate=False)",
+      "Indeterminate (Checked=True, Indeterminate=True)"
+    ],
+    "discarded": [
+      "Checked=False + Indeterminate=True — absent from manifest, semantically invalid"
+    ]
+  },
+
+  "anatomy": {
+    "root": {
+      "element": "label",
+      "class": ".checkbox",
+      "role": "structural",
+      "notes": "Root is <label> for native click-to-toggle. position: relative creates stacking context for ripple ::before."
     },
-    "sm": {
-      "dimension": "var(--checkbox-size-sm, 20px)",
-      "focus_ring_outer": "28px",
-      "focus_ring_offset": "var(--checkbox-focus-ring-offset, 4px)",
-      "checkmark_icon_width": "10px",
-      "checkmark_icon_height": "7.596px",
-      "indeterminate_icon_width": "10px",
-      "indeterminate_icon_height": "2.5px",
-      "css_modifier": ".checkbox--sm"
+    "input": {
+      "element": "input[type='checkbox']",
+      "class": ".checkbox__input",
+      "role": "structural",
+      "z_index": 3,
+      "notes": "Visually hidden via opacity: 0. Remains in accessibility tree. z-index: 3 — sits above box to receive pointer events and keyboard focus."
     },
-    "xs": {
-      "dimension": "var(--checkbox-size-xs, 16px)",
-      "focus_ring_outer": "24px",
-      "focus_ring_offset": "var(--checkbox-focus-ring-offset, 4px)",
-      "checkmark_icon_width": "8px",
-      "checkmark_icon_height": "6.077px",
-      "indeterminate_icon_width": "8px",
-      "indeterminate_icon_height": "2px",
-      "css_modifier": ".checkbox--xs"
+    "box": {
+      "element": "span",
+      "class": ".checkbox__box",
+      "role": "structural",
+      "figma_layer": "_CheckboxBase1",
+      "figma_type": "INSTANCE",
+      "z_index": 1,
+      "notes": "Visual box. position: relative creates stacking context for focus ring ::after."
+    },
+    "checkmark": {
+      "element": "svg",
+      "class": ".checkbox__checkmark",
+      "role": "icon",
+      "figma_layer": "checkmark",
+      "figma_type": "FRAME",
+      "notes": "Hidden by default. Shown on :checked:not(:indeterminate). Uses currentColor for stroke."
+    },
+    "indeterminate_mark": {
+      "element": "svg",
+      "class": ".checkbox__indeterminate",
+      "role": "icon",
+      "figma_layer": "Indeterminate mark",
+      "figma_type": "FRAME",
+      "notes": "Hidden by default. Shown on :indeterminate. Uses currentColor for stroke."
+    },
+    "ripple": {
+      "element": null,
+      "css_selector": ".checkbox::before",
+      "role": "interaction",
+      "figma_layer": "Interaction Circle",
+      "figma_type": "RECTANGLE",
+      "z_index": 0,
+      "notes": "Pseudo-element on root (not on box). Interaction Layer rule: attach to root component. Ripple overflows layout box."
+    },
+    "focus_ring": {
+      "element": null,
+      "css_selector": ".checkbox__box::after",
+      "role": "focus",
+      "figma_layer": "Focus Ring",
+      "figma_type": "RECTANGLE",
+      "z_index": 2,
+      "notes": "Pseudo-element on box. Geometry is box-relative (box + 8px). mix-blend-mode: multiply."
     }
   },
 
-  "tokens": {
-    "border_unselected":          "var(--checkbox-border-unselected, #161616)",
-    "bg_selected_primary":        "var(--checkbox-bg-selected-primary, #1B8354)",
-    "bg_selected_neutral":        "var(--checkbox-bg-selected-neutral, #161616)",
-    "icon_oncolor":               "var(--checkbox-icon-oncolor, #FFF)",
-    "focus_ring_color":           "var(--checkbox-focus-ring-color, #161616)",
-    "border_radius":              "var(--checkbox-border-radius, var(--Radius-radius-xs, 2px))",
-    "opacity_readonly":           "var(--checkbox-opacity-readonly, 0.7)",
-    "opacity_disabled":           "var(--checkbox-opacity-disabled, 0.5)",
-    "focus_ring_width":           "var(--checkbox-focus-ring-width, 2px)",
-    "bg_hover":                   "var(--checkbox-bg-hover)",
-    "bg_pressed":                 "var(--checkbox-bg-pressed)",
-    "transition_duration":        "var(--checkbox-transition-duration, 0.15s)",
-    "transition_easing":          "var(--checkbox-transition-easing, ease)"
+  "layer_classification": {
+    "structural": [
+      "_CheckboxBase1 (INSTANCE) → .checkbox__box"
+    ],
+    "icon": [
+      "checkmark (FRAME) → .checkbox__checkmark (inline SVG)",
+      "Indeterminate mark (FRAME) → .checkbox__indeterminate (inline SVG)"
+    ],
+    "interaction": [
+      "Interaction Circle (RECTANGLE) → .checkbox::before (pseudo-element on root)"
+    ],
+    "focus": [
+      "Focus Ring (RECTANGLE) → .checkbox__box::after (pseudo-element on box)"
+    ]
   },
 
-  "missing_tokens": [
-    "--checkbox-bg-hover",
-    "--checkbox-bg-pressed",
-    "--checkbox-opacity-readonly",
-    "--checkbox-opacity-disabled",
-    "--checkbox-focus-ring-offset",
-    "--checkbox-focus-ring-width",
-    "--checkbox-transition-duration",
-    "--checkbox-transition-easing"
-  ],
-
-  "variants": [
-    {
-      "id": "unchecked-primary-md-default",
-      "axes": { "check_state": "unchecked", "style": "primary", "size": "md", "state": "default" },
-      "status": "available",
-      "properties": {
-        "root_css": {
-          "position": "relative",
-          "display": "inline-flex",
-          "width": "var(--checkbox-size-md, 24px)",
-          "height": "var(--checkbox-size-md, 24px)",
-          "justify-content": "center",
-          "align-items": "center"
-        },
-        "control_css": {
-          "border-radius": "var(--checkbox-border-radius, 2px)",
-          "box-shadow": "inset 0 0 0 1px var(--checkbox-border-unselected, #161616)",
-          "background": "transparent"
-        },
-        "focus_ring_css": null
-      }
+  "pseudo_element_decisions": {
+    "ripple": {
+      "attached_to": ".checkbox",
+      "pseudo": "::before",
+      "reason": "Interaction Layer rule: attach to root component. Ripple is a sibling of box in Figma, not inside box."
     },
-    {
-      "id": "checked-primary-md-default",
-      "axes": { "check_state": "checked", "style": "primary", "size": "md", "state": "default" },
-      "status": "available",
-      "properties": {
-        "root_css": {
-          "position": "relative",
-          "display": "inline-flex",
-          "width": "var(--checkbox-size-md, 24px)",
-          "height": "var(--checkbox-size-md, 24px)",
-          "justify-content": "center",
-          "align-items": "center"
-        },
-        "control_css": {
-          "border-radius": "var(--checkbox-border-radius, 2px)",
-          "background": "var(--checkbox-bg-selected-primary, #1B8354)"
-        },
-        "icon_css": {
-          "width": "12px",
-          "height": "9.116px",
-          "fill": "var(--checkbox-icon-oncolor, #FFF)"
-        },
-        "focus_ring_css": null
-      }
-    },
-    {
-      "id": "checked-neutral-md-default",
-      "axes": { "check_state": "checked", "style": "neutral", "size": "md", "state": "default" },
-      "status": "available",
-      "properties": {
-        "root_css": {
-          "position": "relative",
-          "display": "inline-flex",
-          "width": "var(--checkbox-size-md, 24px)",
-          "height": "var(--checkbox-size-md, 24px)",
-          "justify-content": "center",
-          "align-items": "center"
-        },
-        "control_css": {
-          "border-radius": "var(--checkbox-border-radius, 2px)",
-          "background": "var(--checkbox-bg-selected-neutral, #161616)"
-        },
-        "icon_css": {
-          "width": "12px",
-          "height": "9.116px",
-          "fill": "var(--checkbox-icon-oncolor, #FFF)"
-        },
-        "focus_ring_css": null
-      }
-    },
-    {
-      "id": "indeterminate-primary-md-default",
-      "axes": { "check_state": "indeterminate", "style": "primary", "size": "md", "state": "default" },
-      "status": "available",
-      "properties": {
-        "root_css": {
-          "position": "relative",
-          "display": "inline-flex",
-          "width": "var(--checkbox-size-md, 24px)",
-          "height": "var(--checkbox-size-md, 24px)",
-          "justify-content": "center",
-          "align-items": "center"
-        },
-        "control_css": {
-          "border-radius": "var(--checkbox-border-radius, 2px)",
-          "background": "var(--checkbox-bg-selected-primary, #1B8354)"
-        },
-        "icon_css": {
-          "width": "12px",
-          "height": "3px",
-          "fill": "var(--checkbox-icon-oncolor, #FFF)"
-        },
-        "focus_ring_css": null
-      }
-    },
-    {
-      "id": "unchecked-primary-md-focused",
-      "axes": { "check_state": "unchecked", "style": "primary", "size": "md", "state": "focused" },
-      "status": "available",
-      "properties": {
-        "root_css": {
-          "position": "relative",
-          "display": "inline-flex",
-          "width": "var(--checkbox-size-md, 24px)",
-          "height": "var(--checkbox-size-md, 24px)",
-          "justify-content": "center",
-          "align-items": "center"
-        },
-        "control_css": {
-          "border-radius": "var(--checkbox-border-radius, 2px)",
-          "box-shadow": "inset 0 0 0 1px var(--checkbox-border-unselected, #161616)",
-          "background": "transparent"
-        },
-        "focus_ring_css": {
-          "position": "absolute",
-          "left": "-4px",
-          "top": "-4px",
-          "width": "32px",
-          "height": "32px",
-          "border-radius": "var(--checkbox-border-radius, 2px)",
-          "mix-blend-mode": "multiply",
-          "box-shadow": "inset 0 0 0 2px var(--checkbox-focus-ring-color, #161616)"
-        }
-      }
-    },
-    {
-      "id": "unchecked-primary-md-readonly",
-      "axes": { "check_state": "unchecked", "style": "primary", "size": "md", "state": "readonly" },
-      "status": "available",
-      "properties": {
-        "root_css": {
-          "opacity": "var(--checkbox-opacity-readonly, 0.7)",
-          "pointer-events": "none"
-        }
-      }
-    },
-    {
-      "id": "unchecked-primary-md-disabled",
-      "axes": { "check_state": "unchecked", "style": "primary", "size": "md", "state": "disabled" },
-      "status": "available",
-      "properties": {
-        "root_css": {
-          "opacity": "var(--checkbox-opacity-disabled, 0.5)",
-          "pointer-events": "none",
-          "cursor": "not-allowed"
-        }
-      }
+    "focus_ring": {
+      "attached_to": ".checkbox__box",
+      "pseudo": "::after",
+      "reason": "Focus ring geometry is relative to box dimensions. Attaching to box keeps geometry self-contained."
     }
-  ],
+  },
 
-  "discarded_axes": [],
+  "z_index_layering": {
+    ".checkbox::before (ripple)": 0,
+    ".checkbox__box": 1,
+    ".checkbox__box::after (focus ring)": 2,
+    ".checkbox__input": 3
+  },
+
+  "sizes": {
+    "xs": { "box": "16px", "ripple": "32px", "focus_ring": "24px", "figma_name": "x Small" },
+    "sm": { "box": "20px", "ripple": "36px", "focus_ring": "28px (computed) / 26.67px (Figma — 1.33px deviation)", "figma_name": "Small" },
+    "md": { "box": "24px", "ripple": "40px", "focus_ring": "32px", "figma_name": "Medium" }
+  },
+
+  "token_bridge": {
+    "note": "All --checkbox-* tokens bridge to token.css primitives. --Controls-* and --Global-* are Figma variable names only — they do not exist in token.css.",
+    "mappings": {
+      "--checkbox-border-default":       "var(--gray-500)   /* Figma: --Controls-control-border, #6C737F */",
+      "--checkbox-bg-primary-checked":   "var(--sa-600)     /* Figma: --Controls-control-primary-checked, #1B8354 */",
+      "--checkbox-bg-primary-hovered":   "var(--sa-800)     /* Figma: --Controls-control-primary-hovered, #14573A */",
+      "--checkbox-bg-primary-pressed":   "var(--sa-900)     /* Figma: --Controls-control-primary-pressed, #104631 */",
+      "--checkbox-bg-neutral-checked":   "var(--gray-950)   /* Figma: --Controls-control-neutral-checked, #0D121C */",
+      "--checkbox-bg-neutral-hovered":   "var(--gray-600)   /* Figma: --Controls-control-neutral-hovered, #4D5761 */",
+      "--checkbox-bg-neutral-pressed":   "var(--gray-500)   /* Figma: --Controls-control-neutral-pressed, #6C737F */",
+      "--checkbox-bg-unchecked-pressed": "var(--gray-300)   /* Figma: --Controls-control-pressed, #D2D6DB */",
+      "--checkbox-ripple-bg":            "var(--gray-100)   /* Figma: --Controls-control-ripple-effect, #F3F4F6 */",
+      "--checkbox-border-disabled":      "var(--gray-400)   /* Figma: --Global-border-disabled, #9DA4AE */",
+      "--checkbox-bg-disabled":          "var(--gray-200)   /* Figma: --Global-background-disabled, #E5E7EB */",
+      "--checkbox-focus-ring-color":     "#161616           /* Figma: --Border-border-black — NO primitive in token.css */",
+      "--checkbox-radius":               "var(--radius-xs)",
+      "--checkbox-ripple-radius":        "var(--radius-full)",
+      "--checkbox-focus-ring-radius":    "var(--radius-xs)",
+      "--checkbox-mark-color":           "var(--white)",
+      "--checkbox-mark-color-disabled":  "var(--gray-400)",
+      "--checkbox-mark-color-readonly":  "var(--gray-400)",
+      "--checkbox-transition-duration":  "var(--transition-fast)",
+      "--checkbox-transition-easing":    "var(--ease-in-out)"
+    }
+  },
 
   "implementation_notes": [
-    "Checked=False + Indeterminate=True is architecturally invalid and not in manifest. Do not render this combination.",
-    "Hovered and Pressed states have identical Figma CSS to Default. Interaction feedback must be added via CSS :hover/:active and missing hover/pressed tokens.",
-    "Focus ring uses mix-blend-mode: multiply and is positioned absolutely at -4px offset from all edges.",
-    "The indeterminate property must be set via JavaScript (input.indeterminate = true) — it cannot be set in HTML.",
-    "Style axis only affects the selected/indeterminate background color. All other tokens are shared.",
-    "Variant count in this reference is representative. Full matrix = 3 check-states × 6 states × 3 sizes × 2 styles = 108."
+    "Ripple (.checkbox::before) overflows the layout box — parent must not clip (overflow: visible is the default).",
+    "Ripple is suppressed on keyboard focus using :has(.checkbox__input:focus-visible). Requires Chrome 105+, Firefox 121+, Safari 15.4+.",
+    "Indeterminate state requires JS: input.indeterminate = true AND input.setAttribute('aria-checked', 'mixed').",
+    "Read-only: pointer-events: none on root. aria-readonly='true' on input. Input is NOT disabled — stays in tab order.",
+    "Disabled: pointer-events: none on root. Native 'disabled' attribute on input. Removed from tab order.",
+    "Focus ring uses mix-blend-mode: multiply — matches Figma design intent.",
+    "#161616 (focus ring color) has no named primitive in token.css. Used as literal. Add --ink-black: #161616 to token.css globally."
   ]
 }

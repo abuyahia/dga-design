@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "link",
+  "generated": "2026-06-09",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "_note": "Status 'mapped' means the component has been mapped to this criterion based on internal review. It does not constitute a formal accessibility audit. All statuses must be verified by an independent auditor before overall_status can be changed.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.1.1",
+          "title": "Non-text Content",
+          "status": "mapped",
+          "evidence": "The Link component contains visible text content as its accessible name. No non-text content (images, icons) exists in the current manifest. When icons are added in future, aria-hidden='true' on the icon wrapper will be required.",
+          "audit_rule_ids": ["LNK-A11Y-001"]
+        },
+        {
+          "id": "1.4.1",
+          "title": "Use of Color",
+          "status": "mapped",
+          "evidence": "Inline mode (.link--inline) adds text-decoration underline to ensure links are distinguishable from surrounding text by more than color alone. For standalone (non-inline) links, context and placement must provide sufficient distinction. Hovered state adds underline, providing non-color change on hover.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "1.4.3",
+          "title": "Contrast (Minimum)",
+          "status": "mapped",
+          "evidence": "Primary default: #1B8354 on white = ~5.27:1 (passes 4.5:1). Primary visited: #14573A on white = ~8.5:1 (passes). Primary hovered: #54C08A on white = ~2.7:1 — note this is below 4.5:1. Primary pressed: #88D8AD on white = ~1.9:1 — below threshold (transient state, brief interaction). Neutral default: #384250 on white = ~9.1:1. Disabled: #9DA4AE exempt per WCAG 1.4.3 inactive UI exception. On-color: contrast depends on background — context-dependent.",
+          "audit_rule_ids": [],
+          "notes": "Primary hovered and pressed colors may not meet contrast requirements. These are transient interaction states. Flag for design review."
+        },
+        {
+          "id": "1.4.11",
+          "title": "Non-text Contrast",
+          "status": "mapped",
+          "evidence": "Focus ring: --Border-border-black (#161616) provides ~19.6:1 contrast on white. On-color focus ring --Border-border-white is context-dependent.",
+          "audit_rule_ids": ["LNK-A11Y-006"]
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "Native <a href> is keyboard operable by default (Enter key activates, Tab for focus). Disabled links use tabindex='-1' to remove from tab order. External link pattern uses standard anchor behavior.",
+          "audit_rule_ids": ["LNK-A11Y-001", "LNK-A11Y-003"]
+        },
+        {
+          "id": "2.4.4",
+          "title": "Link Purpose (In Context)",
+          "status": "pending_audit",
+          "evidence": "The component renders whatever text content is provided. Meaningful link text is a deployment concern. The audit rule LNK-A11Y-007 checks for generic link text patterns ('click here', 'read more') but cannot enforce meaningful context.",
+          "audit_rule_ids": ["LNK-A11Y-007"]
+        },
+        {
+          "id": "2.4.7",
+          "title": "Focus Visible",
+          "status": "mapped",
+          "evidence": "Focus ring is implemented via outline: 2px solid on :focus-visible. Suppression via outline:none or visibility:hidden is caught by LNK-A11Y-006.",
+          "audit_rule_ids": ["LNK-A11Y-006"]
+        },
+        {
+          "id": "4.1.2",
+          "title": "Name, Role, Value",
+          "status": "mapped",
+          "evidence": "Native <a> element provides role='link' by default. Text content provides the accessible name. aria-disabled='true' communicates disabled state. External links should add aria-label or visually hidden text to communicate target behavior.",
+          "audit_rule_ids": ["LNK-A11Y-001", "LNK-A11Y-002", "LNK-A11Y-005"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-LINK",
+      "name": "Platform Code Link Component Standards",
+      "source_status": "internal_mapping",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-LINK-001",
+          "title": "Link must render as native anchor element",
+          "status": "mapped",
+          "evidence": "Component contract requires <a> element. No role overrides permitted.",
+          "audit_rule_ids": ["LNK-STRUCT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-LINK-002",
+          "title": "Link styles must use component token variables",
+          "status": "mapped",
+          "evidence": "link.css uses --Link-link-* component-level tokens. No hardcoded hex or rgba values in base selectors.",
+          "audit_rule_ids": ["LNK-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-LINK-003",
+          "title": "Disabled links must not receive keyboard focus",
+          "status": "mapped",
+          "evidence": "Template requires tabindex='-1' on aria-disabled links. LNK-A11Y-003 audits this.",
+          "audit_rule_ids": ["LNK-A11Y-003"]
+        },
+        {
+          "id": "PLATFORM-CODE-LINK-004",
+          "title": "External links must communicate new-tab behavior",
+          "status": "pending_audit",
+          "evidence": "Contract documents the external link pattern. Cannot be enforced at component CSS level — deployment responsibility.",
+          "audit_rule_ids": ["LNK-A11Y-005"]
+        }
+      ]
+    }
+  ],
+
+  "variant_compliance_notes": [
+    {
+      "variant": "Primary Hovered",
+      "concern": "Color #54C08A on white = ~2.7:1. Below WCAG 1.4.3 threshold of 4.5:1 for normal text. Transient state — brief user interaction.",
+      "severity": "medium",
+      "recommendation": "Flag for design review. Consider darkening hovered token or accepting as transient state exception."
+    },
+    {
+      "variant": "Primary Pressed",
+      "concern": "Color #88D8AD on white = ~1.9:1. Below threshold. Very transient (while mouse/touch held).",
+      "severity": "low",
+      "recommendation": "Accept as transient pressed state. Document for design awareness."
+    },
+    {
+      "variant": "On-color Focus Ring",
+      "concern": "--Border-border-white (#FFF) focus ring contrast depends on the color of the background behind the link. Cannot be guaranteed at component level.",
+      "severity": "medium",
+      "recommendation": "Document as deployment responsibility. On-color links should only be used on backgrounds with sufficient contrast against white."
+    }
+  ]
+}

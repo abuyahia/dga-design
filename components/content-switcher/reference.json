@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0",
+  "component": "content-switcher",
+  "source": {
+    "file": "components/content-switcher/mainifest.json",
+    "items_file": "components/content-switcher/mainifest-items.json",
+    "figma_type": "COMPONENT_SET",
+    "figma_name": "Content Switcher",
+    "note": "Source filename contains typo ('mainifest' not 'manifest'), preserved as exported."
+  },
+  "axes": {
+    "Size": {
+      "values": ["Small", "Medium", "Large"],
+      "css_modifiers": ["content-switcher--sm", "content-switcher--md", "content-switcher--lg"],
+      "discarded": false
+    },
+    "OnColor": {
+      "values": ["False", "True"],
+      "css_modifiers": [null, "content-switcher--on-color"],
+      "discarded": false
+    },
+    "RTL": {
+      "values": ["False", "True"],
+      "css_modifiers": null,
+      "discarded": true,
+      "reason": "RTL produces no structural CSS difference. Browser handles visual flip via dir=rtl on ancestor. CSS logical properties ensure correct directional borders and radii."
+    }
+  },
+  "axis_values": {
+    "height": {
+      "Small": "32px",
+      "Medium": "40px",
+      "Large": "48px"
+    },
+    "padding_x": {
+      "Small": "8px (var(--spacing-buttonbuttons-sm-padding))",
+      "Medium": "12px (var(--spacing-buttonbuttons-md-padding))",
+      "Large": "16px (var(--spacing-buttonbuttons-lg-padding))"
+    },
+    "font_size": {
+      "Small": "16px (var(--Size-Text-typo-size-text-md))",
+      "Medium": "18px (var(--Size-Text-typo-size-text-Ig))",
+      "Large": "20px (var(--Size-Text-typo-size-text-xl))"
+    },
+    "line_height": {
+      "Small": "24px (var(--Line-Height-Text-line-heights-text-md))",
+      "Medium": "28px (var(--Line-Height-Text-line-heights-text-Ig))",
+      "Large": "30px (var(--Line-Height-Text-line-heights-text-xl))"
+    },
+    "radius": "8px (var(--radius-md))",
+    "min_item_width": "76px"
+  },
+  "variants": [
+    {
+      "name": "RTL=False, OnColor=False, Size=Small",
+      "css_classes": ["content-switcher", "content-switcher--sm"]
+    },
+    {
+      "name": "RTL=True, OnColor=False, Size=Small",
+      "css_classes": ["content-switcher", "content-switcher--sm"],
+      "html_attr": { "dir": "rtl" }
+    },
+    {
+      "name": "RTL=False, OnColor=False, Size=Medium",
+      "css_classes": ["content-switcher", "content-switcher--md"]
+    },
+    {
+      "name": "RTL=True, OnColor=False, Size=Medium",
+      "css_classes": ["content-switcher", "content-switcher--md"],
+      "html_attr": { "dir": "rtl" }
+    },
+    {
+      "name": "RTL=False, OnColor=False, Size=Large",
+      "css_classes": ["content-switcher", "content-switcher--lg"]
+    },
+    {
+      "name": "RTL=True, OnColor=False, Size=Large",
+      "css_classes": ["content-switcher", "content-switcher--lg"],
+      "html_attr": { "dir": "rtl" }
+    },
+    {
+      "name": "RTL=False, OnColor=True, Size=Small",
+      "css_classes": ["content-switcher", "content-switcher--sm", "content-switcher--on-color"]
+    },
+    {
+      "name": "RTL=True, OnColor=True, Size=Small",
+      "css_classes": ["content-switcher", "content-switcher--sm", "content-switcher--on-color"],
+      "html_attr": { "dir": "rtl" }
+    },
+    {
+      "name": "RTL=False, OnColor=True, Size=Medium",
+      "css_classes": ["content-switcher", "content-switcher--md", "content-switcher--on-color"]
+    },
+    {
+      "name": "RTL=True, OnColor=True, Size=Medium",
+      "css_classes": ["content-switcher", "content-switcher--md", "content-switcher--on-color"],
+      "html_attr": { "dir": "rtl" }
+    },
+    {
+      "name": "RTL=False, OnColor=True, Size=Large",
+      "css_classes": ["content-switcher", "content-switcher--lg", "content-switcher--on-color"]
+    },
+    {
+      "name": "RTL=True, OnColor=True, Size=Large",
+      "css_classes": ["content-switcher", "content-switcher--lg", "content-switcher--on-color"],
+      "html_attr": { "dir": "rtl" }
+    }
+  ],
+  "item_states": {
+    "Normal": {
+      "selector": ".content-switcher__item",
+      "source": "mainifest-items.json"
+    },
+    "Hovered": {
+      "selector": ".content-switcher__item:not([aria-selected='true']):hover",
+      "source": "mainifest-items.json",
+      "note": "Token delta exists but fallback primitives are identical — visually inactive until tokens are defined"
+    },
+    "Selected": {
+      "selector": ".content-switcher__item[aria-selected='true']",
+      "source": "mainifest-items.json"
+    },
+    "Focused": {
+      "selector": ".content-switcher__item:focus-visible",
+      "source": "mainifest-items.json",
+      "implementation": "outline + ::after inner ring"
+    }
+  },
+  "item_positions": {
+    "First": ":first-child",
+    "Mid": ":not(:first-child):not(:last-child)",
+    "Last": ":last-child"
+  },
+  "implementation_notes": [
+    "RTL axis discarded — handled by dir=rtl attribute and CSS logical properties.",
+    "Selection state driven by aria-selected=true on role=tab items.",
+    "Item position (cap rounding, border sides) driven by :first-child / :last-child.",
+    "Focus ring uses two layers: outline (outer dark) + ::after (inner white inset ring).",
+    "Hover delta is token-dependent; current fallback values produce no visible change.",
+    "All --content-switcher-* tokens are missing from token.css. See analysis.md for full proposed mappings.",
+    "Disabled state not in manifest — not implemented."
+  ]
+}

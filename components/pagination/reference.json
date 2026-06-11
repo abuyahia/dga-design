@@ -1,0 +1,78 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "pagination",
+    "description": "Navigation bar for paginated content. Composite assembly of nav buttons and page-number items. Supports LTR/RTL, three sizes, and current-page indication."
+  },
+  "source": {
+    "assembly_manifest": "manifest.json",
+    "subcomponent_manifest": "manifest-complete.json",
+    "figma_component_set": "Pagination",
+    "figma_subcomponent_set": "_PaginationItem"
+  },
+  "axes": ["size", "rtl"],
+  "axis_values": {
+    "size": ["small", "medium", "large"],
+    "rtl": ["false", "true"]
+  },
+  "subcomponent": {
+    "name": "_pagination-item",
+    "description": "Internal page-number item. Prefixed with _ — not for standalone use.",
+    "axes": ["state", "size", "overflow"],
+    "axis_values": {
+      "state": ["default", "hovered", "focused", "current-page"],
+      "size": ["small", "medium", "large"],
+      "overflow": ["no", "yes"]
+    }
+  },
+  "variants": [
+    { "name": "RTL=False, Size=Large",   "css": ".pagination.pagination--lg" },
+    { "name": "RTL=True,  Size=Large",   "css": ".pagination.pagination--lg[dir='rtl']" },
+    { "name": "RTL=False, Size=Medium",  "css": ".pagination.pagination--md" },
+    { "name": "RTL=True,  Size=Medium",  "css": ".pagination.pagination--md[dir='rtl']" },
+    { "name": "RTL=False, Size=Small",   "css": ".pagination.pagination--sm" },
+    { "name": "RTL=True,  Size=Small",   "css": ".pagination.pagination--sm[dir='rtl']" }
+  ],
+  "size_tokens": {
+    "small": {
+      "item-height":      "var(--pagination-item-sm-size, 24px)",
+      "item-min-width":   "var(--pagination-item-sm-size, 24px)",
+      "item-padding":     "var(--pagination-item-sm-padding, 4px)",
+      "nav-size":         "var(--pagination-nav-sm-size, 24px)",
+      "font-size":        "var(--pagination-item-sm-font-size, 14px)",
+      "line-height":      "var(--pagination-item-sm-line-height, 20px)",
+      "css-modifier":     ".pagination--sm"
+    },
+    "medium": {
+      "item-width":       "var(--pagination-item-md-size, 32px)",
+      "item-height":      "var(--pagination-item-md-size, 32px)",
+      "item-padding":     "var(--pagination-item-md-padding, 6px)",
+      "nav-size":         "var(--pagination-nav-md-size, 32px)",
+      "font-size":        "var(--pagination-item-md-font-size, 16px)",
+      "line-height":      "var(--pagination-item-md-line-height, 24px)",
+      "css-modifier":     ".pagination--md"
+    },
+    "large": {
+      "item-height":      "var(--pagination-item-lg-size, 40px)",
+      "item-min-width":   "var(--pagination-item-lg-size, 40px)",
+      "item-padding":     "var(--pagination-item-lg-padding, 8px)",
+      "nav-size":         "var(--pagination-nav-lg-size, 40px)",
+      "font-size":        "var(--pagination-item-lg-font-size, 16px)",
+      "line-height":      "var(--pagination-item-lg-line-height, 24px)",
+      "css-modifier":     ".pagination--lg"
+    }
+  },
+  "implementation_notes": [
+    "RTL axis implemented via [dir='rtl'] on the <nav> element. Flexbox order reverses automatically. Arrow icons flip via transform: scaleX(-1).",
+    "Selector layer (Current Page bottom indicator) is a 3px bar converted to ::after pseudo-element on .pagination__item[aria-current='page'].",
+    "Focus ring uses CSS outline (not border) to prevent layout shift. outline-offset: 0 matches Figma inset appearance.",
+    "Overflow/ellipsis items render as <span class='pagination__item pagination__item--overflow'> — non-interactive, aria-hidden='true'.",
+    "Navigation buttons are minimal wrappers. Full interactive states (hover, focus, pressed) defer to Button component.",
+    "Figma typo 'Focsed' corrected to 'focused' in all CSS and documentation.",
+    "Figma typo 'Meduim' corrected to 'medium' in all CSS modifiers and documentation.",
+    "Pressed and Disabled states are not defined in Figma. Added as best-practice CSS with TODO tokens.",
+    "Medium item indicator bottom is set to 0 instead of Figma's 2.5px (sub-pixel rendering inconsistency — see analysis.md Intentional Deviations).",
+    "All component-level --pagination-* tokens are missing from token.css. Fallback values are used. See analysis.md Missing Tokens."
+  ],
+  "discarded_axes": []
+}

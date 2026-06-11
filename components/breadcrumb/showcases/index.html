@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,662 +9,194 @@
     <link rel="stylesheet" href="../../../token.css"/>
     <!-- 2. Component styles -->
     <link rel="stylesheet" href="../breadcrumb.css"/>
-    <!-- 3. Page layout -->
-    <style>
-      *,
-      *::after,
-      *::before {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        background: var(--gray-50);
-        font-family: var(--font-sans);
-        color: var(--gray-900);
-        min-height: 100dvh;
-        padding: var(--space-48) var(--space-32);
-      }
-
-      .page {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-48);
-      }
-
-      .page__header {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-4);
-      }
-      .page__meta {
-        font-size: var(--fs-text-sm);
-        color: var(--gray-500);
-        line-height: var(--lh-text-sm);
-      }
-      .page__title {
-        font-size: var(--fs-display-xs);
-        font-weight: var(--font-weight-heading);
-        line-height: var(--lh-display-xs);
-        color: var(--gray-900);
-      }
-
-      .variant {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-16);
-      }
-      .variant__title {
-        font-size: var(--fs-text-sm);
-        font-weight: var(--font-weight-semibold);
-        color: var(--gray-500);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        line-height: var(--lh-text-sm);
-      }
-      .variant__sub {
-        font-size: var(--fs-text-xs);
-        font-weight: var(--font-weight-semibold);
-        color: var(--gray-400);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        line-height: var(--lh-text-xs);
-        margin-top: var(--space-8);
-      }
-
-      /* ── Showcase rows ─────────────────────────────────── */
-      .showcase {
-        display: flex;
-        flex-direction: column;
-        background: var(--white);
-      }
-      .showcase__row {
-        display: flex;
-        align-items: center;
-        gap: var(--space-24);
-        padding: var(--space-20) var(--space-24);
-        border-bottom: 1px solid var(--gray-100);
-      }
-      .showcase__row:last-child {
-        border-bottom: none;
-      }
-      .showcase__label {
-        font-size: var(--fs-text-sm);
-        color: var(--gray-500);
-        line-height: var(--lh-text-sm);
-        min-width: 80px;
-        flex-shrink: 0;
-      }
-      .showcase__item {
-        flex: 1;
-        min-width: 0;
-      }
-
-      .interactive {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-16);
-        padding: var(--space-24);
-        background: var(--white);
-      }
-      .interactive__title {
-        font-size: var(--fs-text-sm);
-        font-weight: var(--font-weight-semibold);
-        color: var(--gray-500);
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        line-height: var(--lh-text-sm);
-      }
-
-      /* ── Preview Tabs ──────────────────────────────────── */
-      .preview-tabs {
-        border: 1px solid var(--gray-200);
-        border-radius: var(--radius-md);
-        background: var(--white);
-      }
-
-      .preview-tabs__bar {
-        display: flex;
-        align-items: stretch;
-        background: var(--gray-50);
-        border-bottom: 1px solid var(--gray-200);
-        border-radius: var(--radius-md) var(--radius-md) 0 0;
-        padding: 0 var(--space-4);
-        gap: 0;
-        direction: ltr;
-      }
-
-      .preview-tabs__btn {
-        padding: var(--space-8) var(--space-12);
-        font-family: var(--font-sans);
-        font-size: var(--fs-text-sm);
-        font-weight: var(--font-weight-medium);
-        color: var(--gray-400);
-        background: none;
-        border: none;
-        border-bottom: 2px solid transparent;
-        margin-bottom: -1px;
-        cursor: pointer;
-        line-height: var(--lh-text-sm);
-        transition: color 0.15s, border-color 0.15s;
-      }
-
-      .preview-tabs__btn:hover {
-        color: var(--gray-600);
-      }
-
-      .preview-tabs__btn.is-active {
-        color: var(--gray-900);
-        border-bottom-color: var(--gray-900);
-      }
-
-      .preview-tabs__panel {
-        display: none;
-      }
-      .preview-tabs__panel.is-active {
-        display: block;
-      }
-
-      .preview-tabs__panel--preview {
-        overflow: visible;
-      }
-
-      /* Code panel */
-      .preview-tabs__panel--code {
-        background: #1b1f27;
-        border-radius: 0 0 var(--radius-md) var(--radius-md);
-        overflow: auto;
-        max-height: 420px;
-      }
-
-      .preview-tabs__code {
-        display: block;
-        padding: var(--space-20) var(--space-24);
-        font-family: 'IBM Plex Mono', 'Fira Code', ui-monospace, monospace;
-        font-size: 12px;
-        line-height: 1.75;
-        color: #cdd5e0;
-        white-space: pre;
-        tab-size: 2;
-        direction: ltr;
-        text-align: left;
-      }
-
-      /* ── Figma Props ─────────────────────────────────── */
-      .prop-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4px;
-        direction: ltr;
-        margin-top: 8px;
-        padding-top: 8px;
-        border-top: 1px dashed var(--gray-150, #eaecf0);
-      }
-      .prop-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 2px 7px;
-        background: var(--gray-50);
-        border: 1px solid var(--gray-200);
-        border-radius: 3px;
-        font-size: 11px;
-        font-family: "ui-monospace", Menlo, Consolas, monospace;
-        line-height: 1.5;
-        white-space: nowrap;
-      }
-      .prop-tag__key {
-        color: var(--gray-400);
-      }
-      .prop-tag__eq {
-        color: var(--gray-300);
-        margin: 0 2px;
-      }
-      .prop-tag__val {
-        color: var(--gray-700);
-        font-weight: 500;
-      }
-    </style>
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css"/>
+    <script src="../../_showcase/showcase.js" defer></script>
   </head>
 
-  <body>
-    <main class="page">
+  <body data-showcase data-current-component="breadcrumb" data-showcase-title="Breadcrumb Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
 
-      <!-- ── Page header ─────────────────────────────────── -->
-      <header class="page__header">
-        <p class="page__meta">Design System / Components / Breadcrumb</p>
-        <h1 class="page__title">Breadcrumb Showcase</h1>
-      </header>
+        <!-- ══════════════════════════════════════════════════════════ RTL — المستويات ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">RTL — المستويات</h2>
 
-      <!-- ════════════════════════════════════════════════════ RTL — مستويات ════════════════════════════════════════════════════ -->
-      <section class="variant">
-        <h2 class="variant__title">RTL — المستويات</h2>
+          <div class="showcase">
 
-        <div class="preview-tabs">
-          <div class="preview-tabs__bar">
-            <button class="preview-tabs__btn is-active" data-panel="preview">Preview</button>
-            <button class="preview-tabs__btn" data-panel="code">Code</button>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--preview is-active">
-            <div class="showcase">
-
-              <!-- 2 levels -->
-              <div class="showcase__row" data-props="RTL=True,  Levels=2, Overflow=False, State=Default">
-                <span class="showcase__label">مستويان</span>
-                <div class="showcase__item">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">الرئيسية</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">الصفحة الحالية</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
+            <!-- 2 levels -->
+            <div class="showcase__row" data-props="RTL=True, Levels=2, Overflow=False, State=Default">
+              <span class="showcase__label">مستويان</span>
+              <div class="showcase__item">
+                <nav aria-label="Breadcrumb" class="breadcrumb" dir="rtl">
+                  <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--root">
+                      <a href="#" class="breadcrumb__link">الرئيسية</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span class="breadcrumb__link">الصفحة الحالية</span>
+                    </li>
+                  </ol>
+                </nav>
               </div>
-
-              <!-- 3 levels -->
-              <div class="showcase__row" data-props="RTL=True,  Levels=3, Overflow=False, State=Default">
-                <span class="showcase__label">ثلاثة مستويات</span>
-                <div class="showcase__item">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">الرئيسية</a>
-                      </li>
-                      <li class="breadcrumb__item">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <a href="#" class="breadcrumb__link">القسم</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">الصفحة الحالية</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-
-              <!-- 4 levels -->
-              <div class="showcase__row" data-props="RTL=True,  Levels=4, Overflow=False, State=Default">
-                <span class="showcase__label">أربعة مستويات</span>
-                <div class="showcase__item">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">الرئيسية</a>
-                      </li>
-                      <li class="breadcrumb__item">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <a href="#" class="breadcrumb__link">القسم</a>
-                      </li>
-                      <li class="breadcrumb__item">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <a href="#" class="breadcrumb__link">الفئة الفرعية</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">الصفحة الحالية</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-
             </div>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--code">
-            <pre><code class="preview-tabs__code"></code></pre>
-          </div>
-        </div>
 
-        <!-- Overflow -->
-        <p class="variant__sub">Overflow — مطوي ومفتوح</p>
-
-        <div class="preview-tabs">
-          <div class="preview-tabs__bar">
-            <button class="preview-tabs__btn is-active" data-panel="preview">Preview</button>
-            <button class="preview-tabs__btn" data-panel="code">Code</button>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--preview is-active">
-            <div class="showcase">
-
-              <!-- Overflow collapsed -->
-              <div class="showcase__row" data-props="RTL=True,  Levels=4, Overflow=True,  State=Collapsed">
-                <span class="showcase__label">مطوي</span>
-                <div class="showcase__item">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">الرئيسية</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--overflow">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <button class="breadcrumb__overflow-btn" type="button" aria-label="عرض المسارات المخفية" aria-expanded="false">...</button>
-                        <div class="breadcrumb__dropdown" role="menu">
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
-                        </div>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">الصفحة الحالية</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
+            <!-- 3 levels -->
+            <div class="showcase__row" data-props="RTL=True, Levels=3, Overflow=False, State=Default">
+              <span class="showcase__label">ثلاثة مستويات</span>
+              <div class="showcase__item">
+                <nav aria-label="Breadcrumb" class="breadcrumb" dir="rtl">
+                  <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--root">
+                      <a href="#" class="breadcrumb__link">الرئيسية</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <a href="#" class="breadcrumb__link">القسم</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span class="breadcrumb__link">الصفحة الحالية</span>
+                    </li>
+                  </ol>
+                </nav>
               </div>
-
-              <!-- Overflow open (static) -->
-              <div class="showcase__row" data-props="RTL=True,  Levels=4, Overflow=True,  State=Open">
-                <span class="showcase__label">مفتوح</span>
-                <div class="showcase__item" style="padding-bottom: 100px;">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">الرئيسية</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--overflow is-open">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <button class="breadcrumb__overflow-btn" type="button" aria-label="عرض المسارات المخفية" aria-expanded="true">...</button>
-                        <div class="breadcrumb__dropdown" role="menu">
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
-                        </div>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">الصفحة الحالية</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-
             </div>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--code">
-            <pre><code class="preview-tabs__code"></code></pre>
-          </div>
-        </div>
 
-      </section>
-
-      <!-- ════════════════════════════════════════════════════ LTR — Levels ════════════════════════════════════════════════════ -->
-      <section class="variant">
-        <h2 class="variant__title">LTR — Levels</h2>
-
-        <div class="preview-tabs">
-          <div class="preview-tabs__bar">
-            <button class="preview-tabs__btn is-active" data-panel="preview">Preview</button>
-            <button class="preview-tabs__btn" data-panel="code">Code</button>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--preview is-active">
-            <div class="showcase">
-
-              <!-- 2 levels -->
-              <div class="showcase__row" data-props="RTL=False, Levels=2, Overflow=False, State=Default">
-                <span class="showcase__label">2 Levels</span>
-                <div class="showcase__item" dir="ltr">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">Home</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">Current Page</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
+            <!-- 4 levels -->
+            <div class="showcase__row" data-props="RTL=True, Levels=4, Overflow=False, State=Default">
+              <span class="showcase__label">أربعة مستويات</span>
+              <div class="showcase__item">
+                <nav aria-label="Breadcrumb" class="breadcrumb" dir="rtl">
+                  <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--root">
+                      <a href="#" class="breadcrumb__link">الرئيسية</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <a href="#" class="breadcrumb__link">القسم</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <a href="#" class="breadcrumb__link">الفئة الفرعية</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span class="breadcrumb__link">الصفحة الحالية</span>
+                    </li>
+                  </ol>
+                </nav>
               </div>
-
-              <!-- 3 levels -->
-              <div class="showcase__row" data-props="RTL=False, Levels=3, Overflow=False, State=Default">
-                <span class="showcase__label">3 Levels</span>
-                <div class="showcase__item" dir="ltr">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">Home</a>
-                      </li>
-                      <li class="breadcrumb__item">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <a href="#" class="breadcrumb__link">Section</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">Current Page</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-
-              <!-- 4 levels -->
-              <div class="showcase__row" data-props="RTL=False, Levels=4, Overflow=False, State=Default">
-                <span class="showcase__label">4 Levels</span>
-                <div class="showcase__item" dir="ltr">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">Home</a>
-                      </li>
-                      <li class="breadcrumb__item">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <a href="#" class="breadcrumb__link">Section</a>
-                      </li>
-                      <li class="breadcrumb__item">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <a href="#" class="breadcrumb__link">Subcategory</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">Current Page</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-              </div>
-
             </div>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--code">
-            <pre><code class="preview-tabs__code"></code></pre>
-          </div>
-        </div>
 
-        <!-- LTR Overflow -->
-        <p class="variant__sub">Overflow — collapsed &amp; open</p>
-
-        <div class="preview-tabs">
-          <div class="preview-tabs__bar">
-            <button class="preview-tabs__btn is-active" data-panel="preview">Preview</button>
-            <button class="preview-tabs__btn" data-panel="code">Code</button>
           </div>
-          <div class="preview-tabs__panel preview-tabs__panel--preview is-active">
-            <div class="showcase">
 
-              <div class="showcase__row" data-props="RTL=False, Levels=4, Overflow=True,  State=Collapsed">
-                <span class="showcase__label">Collapsed</span>
-                <div class="showcase__item" dir="ltr">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">Home</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--overflow">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <button class="breadcrumb__overflow-btn" type="button" aria-label="Show hidden pages" aria-expanded="false">...</button>
-                        <div class="breadcrumb__dropdown" role="menu">
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
-                        </div>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">Current Page</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
+          <p class="variant__sub">Overflow — مطوي ومفتوح</p>
+
+          <!--
+            overflow: hidden on .showcase does not clip absolutely-positioned dropdowns
+            (spec: overflow clips in-flow content only on non-positioned elements).
+            padding-bottom on .showcase__item gives the row enough height so the open
+            dropdown renders within the row area rather than overlapping the next section.
+          -->
+          <div class="showcase">
+
+            <!-- Overflow collapsed -->
+            <div class="showcase__row" data-props="RTL=True, Levels=4, Overflow=True, State=Collapsed">
+              <span class="showcase__label">مطوي</span>
+              <div class="showcase__item">
+                <nav aria-label="Breadcrumb" class="breadcrumb" dir="rtl">
+                  <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--root">
+                      <a href="#" class="breadcrumb__link">الرئيسية</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--overflow">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <button class="breadcrumb__overflow-btn" type="button" aria-label="عرض المسارات المخفية" aria-expanded="false">...</button>
+                      <div class="breadcrumb__dropdown" role="menu">
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
+                      </div>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span class="breadcrumb__link">الصفحة الحالية</span>
+                    </li>
+                  </ol>
+                </nav>
               </div>
+            </div>
 
-              <div class="showcase__row" data-props="RTL=False, Levels=4, Overflow=True,  State=Open">
-                <span class="showcase__label">Open</span>
-                <div class="showcase__item" dir="ltr" style="padding-bottom: 100px;">
-                  <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <ol class="breadcrumb__list">
-                      <li class="breadcrumb__item breadcrumb__item--root">
-                        <a href="#" class="breadcrumb__link">Home</a>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--overflow is-open">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <button class="breadcrumb__overflow-btn" type="button" aria-label="Show hidden pages" aria-expanded="true">...</button>
-                        <div class="breadcrumb__dropdown" role="menu">
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
-                          <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
-                        </div>
-                      </li>
-                      <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                        <span class="breadcrumb__separator" aria-hidden="true">
-                          <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </span>
-                        <span class="breadcrumb__link">Current Page</span>
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
+            <!-- Overflow open (static) — padding-bottom gives room for the dropdown -->
+            <div class="showcase__row" data-props="RTL=True, Levels=4, Overflow=True, State=Open">
+              <span class="showcase__label">مفتوح</span>
+              <div class="showcase__item" style="padding-bottom: 100px;">
+                <nav aria-label="Breadcrumb" class="breadcrumb" dir="rtl">
+                  <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--root">
+                      <a href="#" class="breadcrumb__link">الرئيسية</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--overflow is-open">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <button class="breadcrumb__overflow-btn" type="button" aria-label="عرض المسارات المخفية" aria-expanded="true">...</button>
+                      <div class="breadcrumb__dropdown" role="menu">
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">رابط تنقل</a>
+                      </div>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span class="breadcrumb__link">الصفحة الحالية</span>
+                    </li>
+                  </ol>
+                </nav>
               </div>
-
             </div>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--code">
-            <pre><code class="preview-tabs__code"></code></pre>
-          </div>
-        </div>
 
-      </section>
+          </div>
+        </section>
 
-      <!-- ════════════════════════════════════════════════════ Interactive — Toggle ════════════════════════════════════════════════════ -->
-      <section class="variant">
-        <h2 class="variant__title">Interactive — Toggle</h2>
+        <!-- ══════════════════════════════════════════════════════════ LTR — Levels ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">LTR — Levels</h2>
 
-        <div class="preview-tabs">
-          <div class="preview-tabs__bar">
-            <button class="preview-tabs__btn is-active" data-panel="preview">Preview</button>
-            <button class="preview-tabs__btn" data-panel="code">Code</button>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--preview is-active">
-            <div class="interactive">
-              <p class="interactive__title">RTL — Overflow</p>
-              <nav aria-label="Breadcrumb" class="breadcrumb">
-                <ol class="breadcrumb__list">
-                  <li class="breadcrumb__item breadcrumb__item--root">
-                    <a href="#" class="breadcrumb__link">الرئيسية</a>
-                  </li>
-                  <li class="breadcrumb__item breadcrumb__item--overflow" id="overflow-rtl">
-                    <span class="breadcrumb__separator" aria-hidden="true">
-                      <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                    <button class="breadcrumb__overflow-btn" type="button" aria-label="عرض المسارات المخفية" aria-expanded="false" aria-controls="dropdown-rtl">...</button>
-                    <div class="breadcrumb__dropdown" id="dropdown-rtl" role="menu">
-                      <a href="#" class="breadcrumb__dropdown-link" role="menuitem">القسم الأول</a>
-                      <a href="#" class="breadcrumb__dropdown-link" role="menuitem">القسم الثاني</a>
-                      <a href="#" class="breadcrumb__dropdown-link" role="menuitem">القسم الثالث</a>
-                    </div>
-                  </li>
-                  <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
-                    <span class="breadcrumb__separator" aria-hidden="true">
-                      <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </span>
-                    <span class="breadcrumb__link">الصفحة الحالية</span>
-                  </li>
-                </ol>
-              </nav>
-            </div>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--code">
-            <pre><code class="preview-tabs__code"></code></pre>
-          </div>
-        </div>
+          <div class="showcase">
 
-        <div class="preview-tabs">
-          <div class="preview-tabs__bar">
-            <button class="preview-tabs__btn is-active" data-panel="preview">Preview</button>
-            <button class="preview-tabs__btn" data-panel="code">Code</button>
-          </div>
-          <div class="preview-tabs__panel preview-tabs__panel--preview is-active">
-            <div class="interactive">
-              <p class="interactive__title">LTR — Overflow</p>
-              <div dir="ltr">
+            <!-- 2 levels -->
+            <div class="showcase__row" data-props="RTL=False, Levels=2, Overflow=False, State=Default">
+              <span class="showcase__label">2 Levels</span>
+              <div class="showcase__item" dir="ltr">
                 <nav aria-label="Breadcrumb" class="breadcrumb">
                   <ol class="breadcrumb__list">
                     <li class="breadcrumb__item breadcrumb__item--root">
                       <a href="#" class="breadcrumb__link">Home</a>
                     </li>
-                    <li class="breadcrumb__item breadcrumb__item--overflow" id="overflow-ltr">
-                      <span class="breadcrumb__separator" aria-hidden="true">
-                        <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                      </span>
-                      <button class="breadcrumb__overflow-btn" type="button" aria-label="Show hidden pages" aria-expanded="false" aria-controls="dropdown-ltr">...</button>
-                      <div class="breadcrumb__dropdown" id="dropdown-ltr" role="menu">
-                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
-                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
-                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
-                      </div>
-                    </li>
                     <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
                       <span class="breadcrumb__separator" aria-hidden="true">
-                        <svg width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                       </span>
                       <span class="breadcrumb__link">Current Page</span>
                     </li>
@@ -672,155 +204,218 @@
                 </nav>
               </div>
             </div>
+
+            <!-- 3 levels -->
+            <div class="showcase__row" data-props="RTL=False, Levels=3, Overflow=False, State=Default">
+              <span class="showcase__label">3 Levels</span>
+              <div class="showcase__item" dir="ltr">
+                <nav aria-label="Breadcrumb" class="breadcrumb">
+                  <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--root">
+                      <a href="#" class="breadcrumb__link">Home</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <a href="#" class="breadcrumb__link">Section</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span class="breadcrumb__link">Current Page</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+
+            <!-- 4 levels -->
+            <div class="showcase__row" data-props="RTL=False, Levels=4, Overflow=False, State=Default">
+              <span class="showcase__label">4 Levels</span>
+              <div class="showcase__item" dir="ltr">
+                <nav aria-label="Breadcrumb" class="breadcrumb">
+                  <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--root">
+                      <a href="#" class="breadcrumb__link">Home</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <a href="#" class="breadcrumb__link">Section</a>
+                    </li>
+                    <li class="breadcrumb__item">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <a href="#" class="breadcrumb__link">Subcategory</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span class="breadcrumb__link">Current Page</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+
           </div>
-          <div class="preview-tabs__panel preview-tabs__panel--code">
-            <pre><code class="preview-tabs__code"></code></pre>
+
+          <p class="variant__sub">Overflow — collapsed &amp; open</p>
+
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="RTL=False, Levels=4, Overflow=True, State=Collapsed">
+              <span class="showcase__label">Collapsed</span>
+              <div class="showcase__item" dir="ltr">
+                <nav aria-label="Breadcrumb" class="breadcrumb">
+                  <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--root">
+                      <a href="#" class="breadcrumb__link">Home</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--overflow">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <button class="breadcrumb__overflow-btn" type="button" aria-label="Show hidden pages" aria-expanded="false">...</button>
+                      <div class="breadcrumb__dropdown" role="menu">
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
+                      </div>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span class="breadcrumb__link">Current Page</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+
+            <!-- Open (static) — padding-bottom gives room for the dropdown -->
+            <div class="showcase__row" data-props="RTL=False, Levels=4, Overflow=True, State=Open">
+              <span class="showcase__label">Open</span>
+              <div class="showcase__item" dir="ltr" style="padding-bottom: 100px;">
+                <nav aria-label="Breadcrumb" class="breadcrumb">
+                  <ol class="breadcrumb__list">
+                    <li class="breadcrumb__item breadcrumb__item--root">
+                      <a href="#" class="breadcrumb__link">Home</a>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--overflow is-open">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <button class="breadcrumb__overflow-btn" type="button" aria-label="Show hidden pages" aria-expanded="true">...</button>
+                      <div class="breadcrumb__dropdown" role="menu">
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
+                        <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
+                      </div>
+                    </li>
+                    <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                      <span class="breadcrumb__separator" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                      </span>
+                      <span class="breadcrumb__link">Current Page</span>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+
           </div>
-        </div>
+        </section>
 
-      </section>
+        <!-- ══════════════════════════════════════════════════════════ Interactive — Toggle ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Interactive — Toggle</h2>
 
-    </main>
+          <div class="interactive">
+            <p class="interactive__title">RTL — Overflow</p>
+            <nav aria-label="Breadcrumb" class="breadcrumb" dir="rtl">
+              <ol class="breadcrumb__list">
+                <li class="breadcrumb__item breadcrumb__item--root">
+                  <a href="#" class="breadcrumb__link">الرئيسية</a>
+                </li>
+                <li class="breadcrumb__item breadcrumb__item--overflow" id="overflow-rtl">
+                  <span class="breadcrumb__separator" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <button class="breadcrumb__overflow-btn" type="button" aria-label="عرض المسارات المخفية" aria-expanded="false" aria-controls="dropdown-rtl">...</button>
+                  <div class="breadcrumb__dropdown" id="dropdown-rtl" role="menu">
+                    <a href="#" class="breadcrumb__dropdown-link" role="menuitem">القسم الأول</a>
+                    <a href="#" class="breadcrumb__dropdown-link" role="menuitem">القسم الثاني</a>
+                    <a href="#" class="breadcrumb__dropdown-link" role="menuitem">القسم الثالث</a>
+                  </div>
+                </li>
+                <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                  <span class="breadcrumb__separator" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
+                  <span class="breadcrumb__link">الصفحة الحالية</span>
+                </li>
+              </ol>
+            </nav>
+          </div>
 
+          <div class="interactive">
+            <p class="interactive__title">LTR — Overflow</p>
+            <div dir="ltr">
+              <nav aria-label="Breadcrumb" class="breadcrumb">
+                <ol class="breadcrumb__list">
+                  <li class="breadcrumb__item breadcrumb__item--root">
+                    <a href="#" class="breadcrumb__link">Home</a>
+                  </li>
+                  <li class="breadcrumb__item breadcrumb__item--overflow" id="overflow-ltr">
+                    <span class="breadcrumb__separator" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <button class="breadcrumb__overflow-btn" type="button" aria-label="Show hidden pages" aria-expanded="false" aria-controls="dropdown-ltr">...</button>
+                    <div class="breadcrumb__dropdown" id="dropdown-ltr" role="menu">
+                      <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
+                      <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
+                      <a href="#" class="breadcrumb__dropdown-link" role="menuitem">Breadcrumb Link</a>
+                    </div>
+                  </li>
+                  <li class="breadcrumb__item breadcrumb__item--current" aria-current="page">
+                    <span class="breadcrumb__separator" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="breadcrumb__link">Current Page</span>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+
+    <!-- ── Overflow toggle (showcase only — component has no bundled JS) ── -->
     <script>
-      /* ── Figma Props renderer ─────────────────────────────────── */
-      (function () {
-        document
-          .querySelectorAll('.showcase__row[data-props]')
-          .forEach(function (row) {
-            var label = row.querySelector('.showcase__label');
-            var others = Array
-              .from(row.children)
-              .filter(function (c) {
-                return c !== label;
-              });
-            if (!others.length) 
-              return;
-            var first = others[0];
-            var item;
-            if (first.classList.contains('showcase__item')) {
-              item = first;
-            } else {
-              item = document.createElement('div');
-              item.className = 'showcase__item';
-              first.replaceWith(item);
-              item.appendChild(first);
-            }
-            row.style.alignItems = 'flex-start';
-            var tags = document.createElement('div');
-            tags.className = 'prop-tags';
-            row
-              .getAttribute('data-props')
-              .split(',')
-              .forEach(function (part) {
-                part = part.trim();
-                var eq = part.indexOf('=');
-                if (eq < 0) 
-                  return;
-                var k = part
-                  .slice(0, eq)
-                  .trim();
-                var v = part
-                  .slice(eq + 1)
-                  .trim();
-                var t = document.createElement('span');
-                t.className = 'prop-tag';
-                t.innerHTML = '<span class="prop-tag__key">' + k + '</span>' + '<span class="prop-tag__eq">=</span>' + '<span class="prop-tag__val">' + v + '</span>';
-                tags.appendChild(t);
-              });
-            item.appendChild(tags);
-          });
-      }());
-    </script>
-    <script>
-      /* ── Code extraction ────────────────────────────────── */
-      function dedent(html) {
-        var lines = html.split('\n');
-        var min = Infinity;
-        lines.forEach(function (line) {
-          if (line.trim().length === 0) 
-            return;
-          var m = line.match(/^(\s*)/);
-          if (m) 
-            min = Math.min(min, m[1].length);
-          }
-        );
-        if (!isFinite(min)) 
-          min = 0;
-        return lines
-          .map(function (line) {
-            return line.slice(min);
-          })
-          .join('\n')
-          .trim();
-      }
-
-      document
-        .querySelectorAll('.preview-tabs')
-        .forEach(function (tabs) {
-          var codeEl = tabs.querySelector('.preview-tabs__code');
-          if (!codeEl) 
-            return;
-          var navs = tabs.querySelectorAll('.preview-tabs__panel--preview nav.breadcrumb');
-          var parts = [];
-          navs.forEach(function (nav) {
-            parts.push(dedent(nav.outerHTML));
-          });
-          codeEl.textContent = parts.join('\n\n');
+      document.querySelectorAll('.breadcrumb__overflow-btn').forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var item = btn.closest('.breadcrumb__item--overflow');
+          var open = item.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', String(open));
         });
-
-      /* ── Tab switching ──────────────────────────────────── */
-      document
-        .querySelectorAll('.preview-tabs')
-        .forEach(function (tabs) {
-          tabs
-            .querySelectorAll('.preview-tabs__btn')
-            .forEach(function (btn) {
-              btn.addEventListener('click', function () {
-                var panel = btn.dataset.panel;
-                tabs
-                  .querySelectorAll('.preview-tabs__btn')
-                  .forEach(function (b) {
-                    b
-                      .classList
-                      .toggle('is-active', b === btn);
-                  });
-                tabs
-                  .querySelectorAll('.preview-tabs__panel')
-                  .forEach(function (p) {
-                    p
-                      .classList
-                      .toggle('is-active', p.classList.contains('preview-tabs__panel--' + panel));
-                  });
-              });
-            });
-        });
-
-      /* ── Overflow toggle ────────────────────────────────── */
-      document
-        .querySelectorAll('.breadcrumb__overflow-btn')
-        .forEach(function (btn) {
-          btn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            var item = btn.closest('.breadcrumb__item--overflow');
-            var open = item
-              .classList
-              .toggle('is-open');
-            btn.setAttribute('aria-expanded', String(open));
-          });
-        });
+      });
 
       document.addEventListener('click', function () {
-        document
-          .querySelectorAll('.breadcrumb__item--overflow.is-open')
-          .forEach(function (item) {
-            item
-              .classList
-              .remove('is-open');
-            item
-              .querySelector('.breadcrumb__overflow-btn')
-              .setAttribute('aria-expanded', 'false');
-          });
+        document.querySelectorAll('.breadcrumb__item--overflow.is-open').forEach(function (item) {
+          item.classList.remove('is-open');
+          item.querySelector('.breadcrumb__overflow-btn').setAttribute('aria-expanded', 'false');
+        });
       });
     </script>
   </body>

@@ -1,0 +1,291 @@
+<!--
+  Tag + Status Tag — HTML Templates
+  Reference: tag/tag.contract.md
+  All valid compositions for .tag and .status-tag
+-->
+
+<!-- ============================================================
+     TAG — Default (Medium, Neutral, Filled, Square corners)
+     ============================================================ -->
+
+<!-- Text only -->
+<span class="tag">
+  <span class="tag__text">Label</span>
+</span>
+
+<!-- With leading icon -->
+<span class="tag">
+  <span class="tag__icon" aria-hidden="true">
+    <svg viewBox="0 0 18 18" fill="none"><path d="M9 2a7 7 0 1 1 0 14A7 7 0 0 1 9 2Z" stroke="currentColor" stroke-width="1.5"/></svg>
+  </span>
+  <span class="tag__text">Label</span>
+</span>
+
+<!-- Icon only (requires aria-label) -->
+<span class="tag tag--icon-only" aria-label="Category label">
+  <span class="tag__icon" aria-hidden="true">
+    <svg viewBox="0 0 18 18" fill="none"><path d="M9 2a7 7 0 1 1 0 14A7 7 0 0 1 9 2Z" stroke="currentColor" stroke-width="1.5"/></svg>
+  </span>
+</span>
+
+<!-- ============================================================
+     TAG — Rounded corners
+     ============================================================ -->
+
+<span class="tag tag--rounded">
+  <span class="tag__text">Label</span>
+</span>
+
+<span class="tag tag--rounded">
+  <span class="tag__icon" aria-hidden="true">
+    <svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="4" fill="currentColor"/></svg>
+  </span>
+  <span class="tag__text">Label</span>
+</span>
+
+<!-- ============================================================
+     TAG — Size modifiers
+     ============================================================ -->
+
+<!-- x Small -->
+<span class="tag tag--xs">
+  <span class="tag__text">Label</span>
+</span>
+
+<span class="tag tag--xs">
+  <span class="tag__icon" aria-hidden="true">
+    <svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3" fill="currentColor"/></svg>
+  </span>
+  <span class="tag__text">Label</span>
+</span>
+
+<!-- x Small icon only -->
+<span class="tag tag--xs tag--icon-only" aria-label="Category label">
+  <span class="tag__icon" aria-hidden="true">
+    <svg viewBox="0 0 10 10" fill="none"><circle cx="5" cy="5" r="3" fill="currentColor"/></svg>
+  </span>
+</span>
+
+<!-- Small -->
+<span class="tag tag--sm">
+  <span class="tag__text">Label</span>
+</span>
+
+<span class="tag tag--sm">
+  <span class="tag__icon" aria-hidden="true">
+    <svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4" fill="currentColor"/></svg>
+  </span>
+  <span class="tag__text">Label</span>
+</span>
+
+<!-- Small icon only -->
+<span class="tag tag--sm tag--icon-only" aria-label="Category label">
+  <span class="tag__icon" aria-hidden="true">
+    <svg viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="4" fill="currentColor"/></svg>
+  </span>
+</span>
+
+<!-- ============================================================
+     TAG — Style modifiers (color)
+     ============================================================ -->
+
+<!-- Neutral (default) -->
+<span class="tag">
+  <span class="tag__text">Neutral</span>
+</span>
+
+<!-- Error -->
+<span class="tag tag--error">
+  <span class="tag__text">Error</span>
+</span>
+
+<!-- Info -->
+<span class="tag tag--info">
+  <span class="tag__text">Info</span>
+</span>
+
+<!-- Success -->
+<span class="tag tag--success">
+  <span class="tag__text">Success</span>
+</span>
+
+<!-- Warning -->
+<span class="tag tag--warning">
+  <span class="tag__text">Warning</span>
+</span>
+
+<!-- On-Color (use on dark/colored backgrounds) -->
+<span class="tag tag--on-color">
+  <span class="tag__text">On Color</span>
+</span>
+
+<!-- ============================================================
+     TAG — Outline modifier (combine with style)
+     ============================================================ -->
+
+<!-- Neutral outline -->
+<span class="tag tag--outline">
+  <span class="tag__text">Neutral</span>
+</span>
+
+<!-- Error outline -->
+<span class="tag tag--outline tag--error">
+  <span class="tag__text">Error</span>
+</span>
+
+<!-- Info outline -->
+<span class="tag tag--outline tag--info">
+  <span class="tag__text">Info</span>
+</span>
+
+<!-- Success outline -->
+<span class="tag tag--outline tag--success">
+  <span class="tag__text">Success</span>
+</span>
+
+<!-- Warning outline -->
+<span class="tag tag--outline tag--warning">
+  <span class="tag__text">Warning</span>
+</span>
+
+<!-- On-Color outline -->
+<span class="tag tag--outline tag--on-color">
+  <span class="tag__text">On Color</span>
+</span>
+
+<!-- ============================================================
+     TAG — Combined modifiers examples
+     ============================================================ -->
+
+<!-- Rounded + error + icon -->
+<span class="tag tag--rounded tag--error">
+  <span class="tag__icon" aria-hidden="true">
+    <svg viewBox="0 0 18 18" fill="none"><path d="M9 6v3M9 12v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </span>
+  <span class="tag__text">High Priority</span>
+</span>
+
+<!-- Small + success + outline + rounded -->
+<span class="tag tag--sm tag--success tag--outline tag--rounded">
+  <span class="tag__text">Verified</span>
+</span>
+
+<!-- xSmall + warning + rounded -->
+<span class="tag tag--xs tag--warning tag--rounded">
+  <span class="tag__text">Review</span>
+</span>
+
+<!-- ============================================================
+     TAG — RTL (place on [dir="rtl"] ancestor)
+     ============================================================ -->
+
+<div dir="rtl">
+  <span class="tag">
+    <span class="tag__icon" aria-hidden="true">
+      <svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="4" fill="currentColor"/></svg>
+    </span>
+    <span class="tag__text">تسمية</span>
+  </span>
+</div>
+
+<!-- ============================================================
+     STATUS TAG — Default (Medium, Neutral, Subtle)
+     ============================================================ -->
+
+<span class="status-tag">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Status</span>
+</span>
+
+<!-- ============================================================
+     STATUS TAG — Size modifiers
+     ============================================================ -->
+
+<!-- x Small -->
+<span class="status-tag status-tag--xs">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Status</span>
+</span>
+
+<!-- Small -->
+<span class="status-tag status-tag--sm">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Status</span>
+</span>
+
+<!-- ============================================================
+     STATUS TAG — Style modifiers
+     ============================================================ -->
+
+<!-- Neutral (default) -->
+<span class="status-tag">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Neutral</span>
+</span>
+
+<!-- Blue -->
+<span class="status-tag status-tag--blue">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">In Progress</span>
+</span>
+
+<!-- Green -->
+<span class="status-tag status-tag--green">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Active</span>
+</span>
+
+<!-- Red -->
+<span class="status-tag status-tag--red">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Failed</span>
+</span>
+
+<!-- Yellow -->
+<span class="status-tag status-tag--yellow">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Pending</span>
+</span>
+
+<!-- ============================================================
+     STATUS TAG — Status modifiers
+     ============================================================ -->
+
+<!-- Ghost (no background) -->
+<span class="status-tag status-tag--green status-tag--ghost">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Active</span>
+</span>
+
+<!-- Inverted (dark background) -->
+<span class="status-tag status-tag--green status-tag--inverted">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Active</span>
+</span>
+
+<!-- ============================================================
+     STATUS TAG — Combined examples
+     ============================================================ -->
+
+<!-- Small + Blue + Inverted -->
+<span class="status-tag status-tag--sm status-tag--blue status-tag--inverted">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">In Review</span>
+</span>
+
+<!-- xSmall + Red + Ghost -->
+<span class="status-tag status-tag--xs status-tag--red status-tag--ghost">
+  <span class="status-tag__dot" aria-hidden="true"></span>
+  <span class="status-tag__text">Error</span>
+</span>
+
+<!-- ============================================================
+     STATUS TAG — RTL
+     ============================================================ -->
+
+<div dir="rtl">
+  <span class="status-tag status-tag--green">
+    <span class="status-tag__dot" aria-hidden="true"></span>
+    <span class="status-tag__text">نشط</span>
+  </span>
+</div>

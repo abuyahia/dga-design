@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "link",
+  "selector_root": ".link",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "LNK-A11Y-001",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "element_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Link must use native anchor element with href",
+      "description": "The .link class must be applied to an <a> element with a non-empty href attribute. An <a> without href is not keyboard-focusable and does not have the link role.",
+      "target": ".link",
+      "expected": "element is <a> AND has non-empty href attribute",
+      "check": {
+        "type": "element_required",
+        "logic": "all_of",
+        "conditions": [
+          "element tag is 'a'",
+          "element has non-empty href attribute"
+        ]
+      },
+      "message": "Link is missing href attribute or is not an <a> element. Add href to make the link keyboard operable.",
+      "fix": "Ensure the element is <a href=\"/destination\" class=\"link ...\">. If no destination exists yet, use href=\"#\" with aria-current or a placeholder.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "WCAG-2.1-2.1.1", "PLATFORM-CODE-LINK-001"]
+    },
+
+    {
+      "id": "LNK-A11Y-002",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Disabled link must have aria-disabled='true'",
+      "description": "When a link is visually disabled (.link with pointer-events:none or cursor:not-allowed applied), it must also carry aria-disabled='true' so screen readers can communicate the disabled state.",
+      "target": ".link[aria-disabled]",
+      "expected": "aria-disabled value is 'true'",
+      "check": {
+        "type": "attribute_value",
+        "attribute": "aria-disabled",
+        "expected_value": "true"
+      },
+      "message": "Disabled link has aria-disabled but the value is not 'true'. Use aria-disabled=\"true\".",
+      "fix": "Set aria-disabled=\"true\" on the <a> element. Pair with tabindex=\"-1\" and a JavaScript click guard.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-LINK-003"]
+    },
+
+    {
+      "id": "LNK-A11Y-003",
+      "standard_id": "WCAG-2.1-2.1.1",
+      "rule_type": "attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Disabled link must have tabindex='-1'",
+      "description": "A link with aria-disabled='true' must also have tabindex='-1' to remove it from the keyboard tab order. Without this, screen reader users can still tab to the link and may attempt to activate it.",
+      "target": ".link[aria-disabled='true']",
+      "expected": "element has tabindex='-1'",
+      "check": {
+        "type": "attribute_value",
+        "attribute": "tabindex",
+        "expected_value": "-1"
+      },
+      "message": "Disabled link (.link[aria-disabled='true']) is missing tabindex='-1'. Keyboard users can still reach and activate this link.",
+      "fix": "Add tabindex=\"-1\" to the disabled <a> element.",
+      "standard_refs": ["WCAG-2.1-2.1.1", "PLATFORM-CODE-LINK-003"]
+    },
+
+    {
+      "id": "LNK-A11Y-004",
+      "standard_id": "PLATFORM-CODE-A11Y-LINK-001",
+      "rule_type": "advisory",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Disabled link should have JavaScript click guard",
+      "description": "CSS pointer-events:none prevents mouse clicks on a disabled link but does not prevent keyboard Enter activation. A JavaScript event listener that calls event.preventDefault() when aria-disabled='true' is set is required to fully disable keyboard interaction.",
+      "target": ".link[aria-disabled='true']",
+      "expected": "element has data-js-guarded attribute OR surrounding implementation provides click prevention",
+      "check": {
+        "type": "advisory",
+        "note": "Cannot be validated via static analysis. Verify in runtime testing."
+      },
+      "message": "Disabled link may still be activatable via keyboard. Verify that a JavaScript click guard (event.preventDefault() when aria-disabled='true') is applied.",
+      "fix": "Add: element.addEventListener('click', e => { if (e.currentTarget.getAttribute('aria-disabled') === 'true') e.preventDefault(); });",
+      "standard_refs": ["PLATFORM-CODE-LINK-003"]
+    },
+
+    {
+      "id": "LNK-A11Y-005",
+      "standard_id": "WCAG-2.1-2.4.4",
+      "rule_type": "attribute_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "External link (target=_blank) must communicate new-tab behavior",
+      "description": "A link that opens in a new tab (target='_blank') must inform screen reader users. This can be done via a visually hidden <span class='sr-only'>(opens in new tab)</span> or via aria-label that includes the destination description.",
+      "target": ".link[target='_blank']",
+      "expected": "element has aria-label containing 'new tab' OR contains .sr-only with 'new tab' text",
+      "check": {
+        "type": "content_check",
+        "logic": "any_of",
+        "conditions": [
+          "element aria-label contains 'new tab' or 'opens in'",
+          "element contains child with sr-only class containing 'new tab' or 'opens in'"
+        ]
+      },
+      "message": "Link with target='_blank' does not communicate that it opens in a new tab. Screen reader users will not be warned.",
+      "fix": "Add <span class=\"sr-only\">(opens in new tab)</span> inside the link, or add an aria-label that includes the destination and '(opens in new tab)'.",
+      "standard_refs": ["WCAG-2.1-2.4.4", "PLATFORM-CODE-LINK-004"]
+    },
+
+    {
+      "id": "LNK-A11Y-006",
+      "standard_id": "WCAG-2.1-2.4.7",
+      "rule_type": "css_property_forbidden",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Focus ring must not be suppressed",
+      "description": "The link component defines a visible focus ring via outline on :focus-visible. Applying outline:none or outline:0 on the .link element or any :focus selector will remove the visible focus indicator and fail WCAG 2.4.7.",
+      "target": ".link",
+      "expected": "no inline style or selector sets outline:none or outline:0 on the element",
+      "check": {
+        "type": "css_property_forbidden",
+        "property": "outline",
+        "forbidden_values": ["none", "0", "0px"]
+      },
+      "message": "Focus ring is suppressed on this link. Remove outline:none to restore keyboard focus visibility.",
+      "fix": "Remove any outline:none or outline:0 rule from .link, .link:focus, .link:focus-visible, or inline styles.",
+      "standard_refs": ["WCAG-2.1-2.4.7", "WCAG-2.1-1.4.11"]
+    },
+
+    {
+      "id": "LNK-A11Y-007",
+      "standard_id": "WCAG-2.1-2.4.4",
+      "rule_type": "content_check",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Link text must not be generic",
+      "description": "Generic link text like 'click here', 'read more', 'here', or 'link' does not describe the destination when read out of context by a screen reader (e.g. in a links list).",
+      "target": ".link",
+      "expected": "text content is not a generic navigation phrase",
+      "check": {
+        "type": "content_check",
+        "logic": "none_of",
+        "patterns": [
+          "^click here$",
+          "^read more$",
+          "^here$",
+          "^link$",
+          "^more$",
+          "^learn more$"
+        ],
+        "case_insensitive": true
+      },
+      "message": "Link text is generic and does not describe the destination. Screen reader users navigating by links list cannot determine the link purpose.",
+      "fix": "Replace generic text with a descriptive label, e.g. 'Read the Privacy Policy' instead of 'Read more'.",
+      "standard_refs": ["WCAG-2.1-2.4.4"]
+    },
+
+    {
+      "id": "LNK-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-LINK-001",
+      "rule_type": "element_required",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Link root element must be <a>",
+      "description": "The .link class must only be applied to <a> elements. Applying it to <div>, <span>, or <button> elements creates accessibility and semantic issues.",
+      "target": ".link",
+      "expected": "element tag is 'a'",
+      "check": {
+        "type": "element_required",
+        "expected_tag": "a"
+      },
+      "message": "The .link class is applied to a non-anchor element. Only <a> elements should receive this class.",
+      "fix": "Change the element to <a class=\"link ...\"> and add a valid href attribute.",
+      "standard_refs": ["PLATFORM-CODE-LINK-001", "WCAG-2.1-4.1.2"]
+    },
+
+    {
+      "id": "LNK-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-LINK-002",
+      "rule_type": "css_property_forbidden",
+      "category": "tokens",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Link color must use design tokens, not hardcoded values",
+      "description": "Link color must be sourced from --Link-link-* or --Global-* CSS custom properties. Hardcoded hex, rgb, or rgba values bypass the token system and will not update with theme changes.",
+      "target": ".link",
+      "expected": "color property uses var(--Link-*) or var(--Global-*) or inherits from component internal variables",
+      "check": {
+        "type": "css_property_check",
+        "property": "color",
+        "must_be_variable": true,
+        "forbidden_pattern": "^#|^rgb|^rgba"
+      },
+      "message": "Link has hardcoded color value. Replace with the appropriate --Link-link-* token.",
+      "fix": "Replace hardcoded color with the correct token from reference.json style_tokens.",
+      "standard_refs": ["PLATFORM-CODE-LINK-002"]
+    }
+
+  ]
+}

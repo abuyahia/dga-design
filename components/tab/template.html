@@ -1,0 +1,223 @@
+<!--
+  Tab (Horizontal + Vertical) — HTML Templates
+  Reference: tab/tab.contract.md
+  Requires JavaScript for Arrow key navigation.
+  All patterns use WAI-ARIA Tabs design pattern.
+-->
+
+<!-- ============================================================
+     HORIZONTAL TAB LIST — Standard (Medium)
+     ============================================================ -->
+
+<div class="tab-list tab-list--h" role="tablist" aria-label="Main sections">
+  <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="panel-1" id="tab-1" type="button">
+    <span class="tab__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+    </span>
+    <span class="tab__text">First Tab</span>
+  </button>
+  <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" type="button" tabindex="-1">
+    <span class="tab__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+    </span>
+    <span class="tab__text">Second Tab</span>
+  </button>
+  <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="panel-3" id="tab-3" type="button" tabindex="-1">
+    <span class="tab__text">Third Tab</span>
+  </button>
+  <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="panel-4" id="tab-4" type="button" tabindex="-1" disabled aria-disabled="true">
+    <span class="tab__text">Disabled</span>
+  </button>
+</div>
+
+<div class="tab-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+  Panel 1 content
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+  Panel 2 content
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+  Panel 3 content
+</div>
+<div class="tab-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
+  Panel 4 content
+</div>
+
+<!-- ============================================================
+     HORIZONTAL TAB LIST — Small size
+     ============================================================ -->
+
+<div class="tab-list tab-list--h" role="tablist" aria-label="Small tabs">
+  <button class="tab tab--h tab--sm" role="tab" aria-selected="true" aria-controls="sm-panel-1" id="sm-tab-1" type="button">
+    <span class="tab__text">First</span>
+  </button>
+  <button class="tab tab--h tab--sm" role="tab" aria-selected="false" aria-controls="sm-panel-2" id="sm-tab-2" type="button" tabindex="-1">
+    <span class="tab__text">Second</span>
+  </button>
+  <button class="tab tab--h tab--sm" role="tab" aria-selected="false" aria-controls="sm-panel-3" id="sm-tab-3" type="button" tabindex="-1">
+    <span class="tab__text">Third</span>
+  </button>
+</div>
+
+<!-- ============================================================
+     HORIZONTAL TAB LIST — Large size
+     ============================================================ -->
+
+<div class="tab-list tab-list--h" role="tablist" aria-label="Large tabs">
+  <button class="tab tab--h tab--lg" role="tab" aria-selected="true" aria-controls="lg-panel-1" id="lg-tab-1" type="button">
+    <span class="tab__text">First</span>
+  </button>
+  <button class="tab tab--h tab--lg" role="tab" aria-selected="false" aria-controls="lg-panel-2" id="lg-tab-2" type="button" tabindex="-1">
+    <span class="tab__text">Second</span>
+  </button>
+</div>
+
+<!-- ============================================================
+     HORIZONTAL TAB LIST — Flush
+     ============================================================ -->
+
+<div class="tab-list tab-list--h tab-list--flush" role="tablist" aria-label="Flush tabs">
+  <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="flush-panel-1" id="flush-tab-1" type="button">
+    <span class="tab__text">First</span>
+  </button>
+  <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="flush-panel-2" id="flush-tab-2" type="button" tabindex="-1">
+    <span class="tab__text">Second</span>
+  </button>
+  <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="flush-panel-3" id="flush-tab-3" type="button" tabindex="-1">
+    <span class="tab__text">Third</span>
+  </button>
+</div>
+
+<!-- ============================================================
+     HORIZONTAL TAB LIST — RTL
+     ============================================================ -->
+
+<div dir="rtl">
+  <div class="tab-list tab-list--h" role="tablist" aria-label="تبويبات">
+    <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="rtl-panel-1" id="rtl-tab-1" type="button">
+      <span class="tab__icon" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+      </span>
+      <span class="tab__text">التبويب الأول</span>
+    </button>
+    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="rtl-panel-2" id="rtl-tab-2" type="button" tabindex="-1">
+      <span class="tab__text">التبويب الثاني</span>
+    </button>
+    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="rtl-panel-3" id="rtl-tab-3" type="button" tabindex="-1">
+      <span class="tab__text">التبويب الثالث</span>
+    </button>
+  </div>
+</div>
+
+<!-- ============================================================
+     VERTICAL TAB LIST — Standard (Medium)
+     ============================================================ -->
+
+<div class="tab-list tab-list--v" role="tablist" aria-label="Settings" aria-orientation="vertical">
+  <button class="tab tab--v" role="tab" aria-selected="true" aria-controls="v-panel-1" id="v-tab-1" type="button">
+    <span class="tab__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+    </span>
+    <span class="tab__text">General</span>
+  </button>
+  <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="v-panel-2" id="v-tab-2" type="button" tabindex="-1">
+    <span class="tab__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+    </span>
+    <span class="tab__text">Security</span>
+  </button>
+  <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="v-panel-3" id="v-tab-3" type="button" tabindex="-1">
+    <span class="tab__text">Notifications</span>
+  </button>
+  <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="v-panel-4" id="v-tab-4" type="button" tabindex="-1" aria-disabled="true">
+    <span class="tab__text">Advanced</span>
+  </button>
+</div>
+
+<!-- ============================================================
+     VERTICAL TAB LIST — Small size
+     ============================================================ -->
+
+<div class="tab-list tab-list--v" role="tablist" aria-label="Small vertical" aria-orientation="vertical">
+  <button class="tab tab--v tab--sm" role="tab" aria-selected="true" aria-controls="vsm-panel-1" id="vsm-tab-1" type="button">
+    <span class="tab__text">Item 1</span>
+  </button>
+  <button class="tab tab--v tab--sm" role="tab" aria-selected="false" aria-controls="vsm-panel-2" id="vsm-tab-2" type="button" tabindex="-1">
+    <span class="tab__text">Item 2</span>
+  </button>
+</div>
+
+<!-- ============================================================
+     VERTICAL TAB LIST — Large size
+     ============================================================ -->
+
+<div class="tab-list tab-list--v" role="tablist" aria-label="Large vertical" aria-orientation="vertical">
+  <button class="tab tab--v tab--lg" role="tab" aria-selected="true" aria-controls="vlg-panel-1" id="vlg-tab-1" type="button">
+    <span class="tab__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+    </span>
+    <span class="tab__text">Overview</span>
+  </button>
+  <button class="tab tab--v tab--lg" role="tab" aria-selected="false" aria-controls="vlg-panel-2" id="vlg-tab-2" type="button" tabindex="-1">
+    <span class="tab__icon" aria-hidden="true">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+    </span>
+    <span class="tab__text">Analytics</span>
+  </button>
+</div>
+
+<!-- ============================================================
+     VERTICAL TAB LIST — RTL
+     ============================================================ -->
+
+<div dir="rtl">
+  <div class="tab-list tab-list--v" role="tablist" aria-label="الإعدادات" aria-orientation="vertical">
+    <button class="tab tab--v" role="tab" aria-selected="true" aria-controls="vrtl-panel-1" id="vrtl-tab-1" type="button">
+      <span class="tab__icon" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+      </span>
+      <span class="tab__text">عام</span>
+    </button>
+    <button class="tab tab--v" role="tab" aria-selected="false" aria-controls="vrtl-panel-2" id="vrtl-tab-2" type="button" tabindex="-1">
+      <span class="tab__text">الأمان</span>
+    </button>
+  </div>
+</div>
+
+<!-- ============================================================
+     COMPLETE HORIZONTAL TABS ASSEMBLY
+     Shows full ARIA Tabs pattern with JavaScript hook
+     ============================================================ -->
+
+<div id="tabs-example" data-tabs>
+  <div class="tab-list tab-list--h" role="tablist" aria-label="Account settings">
+    <button class="tab tab--h" role="tab" aria-selected="true" aria-controls="account-panel-1" id="account-tab-1" type="button">
+      <span class="tab__icon" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="4" fill="currentColor"/></svg>
+      </span>
+      <span class="tab__text">Profile</span>
+    </button>
+    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="account-panel-2" id="account-tab-2" type="button" tabindex="-1">
+      <span class="tab__text">Billing</span>
+    </button>
+    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="account-panel-3" id="account-tab-3" type="button" tabindex="-1">
+      <span class="tab__text">Notifications</span>
+    </button>
+    <button class="tab tab--h" role="tab" aria-selected="false" aria-controls="account-panel-4" id="account-tab-4" type="button" tabindex="-1" aria-disabled="true">
+      <span class="tab__text">Enterprise</span>
+    </button>
+  </div>
+
+  <div class="tab-panel" role="tabpanel" id="account-panel-1" aria-labelledby="account-tab-1">
+    <p>Profile settings content.</p>
+  </div>
+  <div class="tab-panel" role="tabpanel" id="account-panel-2" aria-labelledby="account-tab-2" hidden>
+    <p>Billing settings content.</p>
+  </div>
+  <div class="tab-panel" role="tabpanel" id="account-panel-3" aria-labelledby="account-tab-3" hidden>
+    <p>Notification settings content.</p>
+  </div>
+  <div class="tab-panel" role="tabpanel" id="account-panel-4" aria-labelledby="account-tab-4" hidden>
+    <p>Enterprise settings content.</p>
+  </div>
+</div>

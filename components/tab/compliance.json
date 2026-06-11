@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "tab",
+  "generated": "2026-06-09",
+  "overall_status": "pending_audit",
+  "official_compliance_claim": false,
+  "_note": "Status 'mapped' means the component has been mapped to this criterion. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks before changing overall_status.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.3.1",
+          "title": "Info and Relationships",
+          "status": "mapped",
+          "evidence": "ARIA Tabs pattern conveys tab role/state via role='tab', aria-selected, role='tablist', and role='tabpanel'. Relationships expressed through aria-controls and aria-labelledby. TAB-A11Y-001 and TAB-A11Y-002 enforce required ARIA attributes.",
+          "audit_rule_ids": ["TAB-A11Y-001", "TAB-A11Y-002", "TAB-A11Y-003"]
+        },
+        {
+          "id": "1.4.3",
+          "title": "Contrast (Minimum)",
+          "status": "mapped",
+          "evidence": "Default text (#161616 on white) ≈ 18:1 (pass). Idle text (#384250 on white) ≈ 8.5:1 (pass). Disabled text (#9DA4AE on white) ≈ 2.9:1 — exempt per WCAG inactive component exception. All text/bg combinations estimated to pass.",
+          "audit_rule_ids": [],
+          "manual_review_required": false
+        },
+        {
+          "id": "1.4.11",
+          "title": "Non-text Contrast",
+          "status": "mapped",
+          "evidence": "Selection indicator color (#1B8354 on white) ≈ 4.8:1 (passes 3:1 threshold). Divider (#D2D6DB on white) ≈ 1.6:1 — decorative separator, no informational boundary role, may be exempt. Focus ring (white inner + dark outer) provides sufficient contrast on all backgrounds.",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "<button> elements are keyboard operable by default. Tab key enters the tablist. Arrow key navigation between tabs requires JavaScript (documented in tab.contract.md §7). TAB-A11Y-005 flags missing JavaScript wiring if no keyboard-nav script is detected.",
+          "audit_rule_ids": ["TAB-STRUCT-001", "TAB-A11Y-005"]
+        },
+        {
+          "id": "2.4.3",
+          "title": "Focus Order",
+          "status": "mapped",
+          "evidence": "Selected tab receives tabindex='0'; all other tabs have tabindex='-1'. Only the active tab is in the natural tab order. Arrow keys move focus between tabs. TAB-A11Y-006 validates tabindex assignment.",
+          "audit_rule_ids": ["TAB-A11Y-006"]
+        },
+        {
+          "id": "2.4.7",
+          "title": "Focus Visible",
+          "status": "mapped",
+          "evidence": "Focus ring implemented via ::after pseudo-element on :focus-visible. Two-layer ring: white inner border + dark outer box-shadow ensures visibility on any background color.",
+          "audit_rule_ids": ["TAB-A11Y-004"]
+        },
+        {
+          "id": "4.1.2",
+          "title": "Name, Role, Value",
+          "status": "mapped",
+          "evidence": "role='tab', aria-selected, aria-controls, id on tabs. role='tablist', aria-label on list. role='tabpanel', aria-labelledby, id on panels. TAB-A11Y-001 through TAB-A11Y-003 enforce all required ARIA attributes.",
+          "audit_rule_ids": ["TAB-A11Y-001", "TAB-A11Y-002", "TAB-A11Y-003"]
+        }
+      ]
+    },
+
+    {
+      "id": "WAI-ARIA-APG",
+      "name": "WAI-ARIA Authoring Practices Guide — Tabs Pattern",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "criteria": [
+        {
+          "id": "APG-TABS-01",
+          "title": "Tab panel labeling via aria-labelledby",
+          "status": "mapped",
+          "evidence": "Each panel has aria-labelledby matching the id of its corresponding tab. TAB-A11Y-003 enforces this relationship.",
+          "audit_rule_ids": ["TAB-A11Y-003"]
+        },
+        {
+          "id": "APG-TABS-02",
+          "title": "Focus management — roving tabindex",
+          "status": "mapped",
+          "evidence": "Template.html implements roving tabindex: selected tab has tabindex='0', others have tabindex='-1'. JavaScript must update tabindex on focus change. TAB-A11Y-006 validates static tabindex assignment.",
+          "audit_rule_ids": ["TAB-A11Y-006"]
+        },
+        {
+          "id": "APG-TABS-03",
+          "title": "Vertical tablist must declare aria-orientation",
+          "status": "mapped",
+          "evidence": "Vertical tab list must include aria-orientation='vertical'. TAB-A11Y-007 flags its absence.",
+          "audit_rule_ids": ["TAB-A11Y-007"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-DS",
+      "name": "Platform Design System Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-TAB-001",
+          "title": "Component must use design tokens for all visual values",
+          "status": "mapped",
+          "evidence": "All visual values in tab.css reference CSS custom properties (--tab-*). Hardcoded values allowed only in the proposed :root token block. TAB-TOKEN-001 enforces no hardcoded values in component selectors.",
+          "audit_rule_ids": ["TAB-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-TAB-002",
+          "title": "RTL layout support is mandatory",
+          "status": "mapped",
+          "evidence": "tab.css uses [dir='rtl'] selectors. Vertical indicator flips left→right. Horizontal icon/text order reverses. TAB-RTL-001 enforces no physical left/right properties in base selectors.",
+          "audit_rule_ids": ["TAB-RTL-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-TAB-003",
+          "title": "Tab button must use <button> element",
+          "status": "mapped",
+          "evidence": "tab.contract.md §4 and §9 specify <button> as the only valid tab root. TAB-STRUCT-001 enforces this at the DOM level.",
+          "audit_rule_ids": ["TAB-STRUCT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-TAB-004",
+          "title": "Selected state driven by aria-selected, not class",
+          "status": "mapped",
+          "evidence": "tab.css uses [aria-selected='true'] as the CSS hook for selected appearance. No .is-selected class exists. TAB-STRUCT-002 flags any class-based selected state.",
+          "audit_rule_ids": ["TAB-STRUCT-002"]
+        },
+        {
+          "id": "PLATFORM-CODE-TAB-005",
+          "title": "Arrow key keyboard navigation must be implemented by consuming JS",
+          "status": "pending_audit",
+          "evidence": "CSS cannot implement keyboard navigation. The contract documents requirements in §7. No automated rule exists to verify JS implementation. Manual review required.",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y",
+      "name": "Platform Accessibility Internal Standards",
+      "source_status": "internal_mapping",
+      "official_reference": null,
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-A11Y-001",
+          "title": "Arabic language font support required",
+          "status": "mapped",
+          "evidence": "IBM Plex Sans Arabic via --tab-font-family. Both .tab and .tab-list inherit this token.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "PLATFORM-CODE-A11Y-002",
+          "title": "Label language must match document language context",
+          "status": "mapped",
+          "evidence": "Cannot be verified automatically. Documented in tab.contract.md §10. Manual review required.",
+          "audit_rule_ids": [],
+          "manual_review_required": true
+        }
+      ]
+    }
+
+  ],
+
+  "variant_compliance_notes": {
+    "disabled tabs": "WCAG 1.4.3: Disabled text (#9DA4AE on white) ≈ 2.9:1 — below 4.5:1 but exempt per WCAG 1.4.3 inactive UI component exception. Using aria-disabled='true' keeps tabs in tab order for screen reader discoverability.",
+    "horizontal large size": "WCAG 2.5.5: Large tab padding (16px all) gives a generous touch target. AA does not mandate a specific minimum for non-interactive resizing — satisfactory.",
+    "vertical small size": "WCAG 2.5.5: Vertical small has 2px vertical padding. Touch height may be very compact. Use cautiously in touch interfaces.",
+    "focus ring": "Enhanced beyond Figma specification: added outer dark box-shadow to white inner ring for visibility on white/light backgrounds. This improves WCAG 2.4.7 compliance over the Figma-specified white-only ring.",
+    "divider (non-text contrast)": "WCAG 1.4.11: Divider #D2D6DB on white ≈ 1.6:1. If divider is treated as decorative separator (not a UI boundary), it may be exempt. Flag for manual review."
+  }
+}

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Link — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css"/>
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../link.css"/>
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css"/>
+    <script src="../../_showcase/showcase.js" defer></script>
+
+    <style>
+      /* .sr-only is not provided by link.css or showcase.css */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    </style>
+  </head>
+
+  <body data-showcase data-current-component="link" data-showcase-title="Link Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
+
+        <!-- ══════════════════════════════════════════════════════════ PRIMARY — ALL STATES ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Primary — All States (Small)</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Default, Inline=False, RTL=False">
+              <span class="showcase__label">Default</span>
+              <div class="showcase__item">
+                <a class="link link--primary" href="#default">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Visited, Inline=False, RTL=False">
+              <span class="showcase__label">Visited</span>
+              <div class="showcase__item">
+                <a class="link link--primary" href="#" style="color: var(--Link-link-primary-visited, #14573A);">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Hovered, Inline=False, RTL=False">
+              <span class="showcase__label">Hovered</span>
+              <div class="showcase__item">
+                <a class="link link--primary" href="#" style="color: var(--Link-link-primary-hovered, #54C08A); text-decoration: underline; text-decoration-skip-ink: none; text-underline-position: from-font;">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Pressed, Inline=False, RTL=False">
+              <span class="showcase__label">Pressed</span>
+              <div class="showcase__item">
+                <a class="link link--primary" href="#" style="color: var(--Link-link-primary-pressed, #88D8AD); text-decoration: underline; text-decoration-skip-ink: none; text-underline-position: from-font;">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Focused, Inline=False, RTL=False">
+              <span class="showcase__label">Focused</span>
+              <div class="showcase__item">
+                <a class="link link--primary" href="#focused">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Disabled, Inline=False, RTL=False">
+              <span class="showcase__label">Disabled</span>
+              <div class="showcase__item">
+                <a class="link link--primary" href="#" aria-disabled="true" tabindex="-1">Link Text</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ NEUTRAL — ALL STATES ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Neutral — All States (Small)</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Default, Inline=False, RTL=False">
+              <span class="showcase__label">Default</span>
+              <div class="showcase__item">
+                <a class="link link--neutral" href="#default-n">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Visited, Inline=False, RTL=False">
+              <span class="showcase__label">Visited</span>
+              <div class="showcase__item">
+                <!-- Intentional: Neutral reuses the primary-visited token (no separate neutral-visited token) -->
+                <a class="link link--neutral" href="#" style="color: var(--Link-link-primary-visited, #14573A);">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Hovered, Inline=False, RTL=False">
+              <span class="showcase__label">Hovered</span>
+              <div class="showcase__item">
+                <a class="link link--neutral" href="#" style="color: var(--Link-link-neutral-hovered, #6C737F); text-decoration: underline; text-decoration-skip-ink: none; text-underline-position: from-font;">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Pressed, Inline=False, RTL=False">
+              <span class="showcase__label">Pressed</span>
+              <div class="showcase__item">
+                <a class="link link--neutral" href="#" style="color: var(--Link-link-neutral-pressed, #9DA4AE); text-decoration: underline; text-decoration-skip-ink: none; text-underline-position: from-font;">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Focused, Inline=False, RTL=False">
+              <span class="showcase__label">Focused</span>
+              <div class="showcase__item">
+                <a class="link link--neutral" href="#focused-n">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Disabled, Inline=False, RTL=False">
+              <span class="showcase__label">Disabled</span>
+              <div class="showcase__item">
+                <a class="link link--neutral" href="#" aria-disabled="true" tabindex="-1">Link Text</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ ON-COLOR — ALL STATES ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">On-color — All States (Small)</h2>
+
+          <div class="showcase showcase--on-color">
+            <div class="showcase__row" data-props="Style=On-color, Size=Small, State=Default, Inline=False, RTL=False">
+              <span class="showcase__label">Default</span>
+              <div class="showcase__item">
+                <a class="link link--on-color" href="#default-oc">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=On-color, Size=Small, State=Visited, Inline=False, RTL=False">
+              <span class="showcase__label">Visited</span>
+              <div class="showcase__item">
+                <a class="link link--on-color" href="#" style="color: var(--Link-link-oncolor-visited, rgba(255,255,255,0.90));">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=On-color, Size=Small, State=Hovered, Inline=False, RTL=False">
+              <span class="showcase__label">Hovered</span>
+              <div class="showcase__item">
+                <a class="link link--on-color" href="#" style="color: var(--Link-link-oncolor-hovered, rgba(255,255,255,0.80)); text-decoration: underline; text-decoration-skip-ink: none; text-underline-position: from-font;">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=On-color, Size=Small, State=Pressed, Inline=False, RTL=False">
+              <span class="showcase__label">Pressed</span>
+              <div class="showcase__item">
+                <a class="link link--on-color" href="#" style="color: var(--Link-link-oncolor-pressed, rgba(255,255,255,0.60)); text-decoration: underline; text-decoration-skip-ink: none; text-underline-position: from-font;">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=On-color, Size=Small, State=Focused, Inline=False, RTL=False">
+              <span class="showcase__label">Focused</span>
+              <div class="showcase__item">
+                <a class="link link--on-color" href="#focused-oc">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=On-color, Size=Small, State=Disabled, Inline=False, RTL=False">
+              <span class="showcase__label">Disabled</span>
+              <div class="showcase__item">
+                <a class="link link--on-color" href="#" aria-disabled="true" tabindex="-1">Link Text</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ SIZES ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Sizes</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Default, Inline=False, RTL=False">
+              <span class="showcase__label">Small — Primary</span>
+              <div class="showcase__item">
+                <a class="link link--primary" href="#sm">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Primary, Size=Medium, State=Default, Inline=False, RTL=False">
+              <span class="showcase__label">Medium — Primary</span>
+              <div class="showcase__item">
+                <a class="link link--primary link--md" href="#md">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Default, Inline=False, RTL=False">
+              <span class="showcase__label">Small — Neutral</span>
+              <div class="showcase__item">
+                <a class="link link--neutral" href="#sm-n">Link Text</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Medium, State=Default, Inline=False, RTL=False">
+              <span class="showcase__label">Medium — Neutral</span>
+              <div class="showcase__item">
+                <a class="link link--neutral link--md" href="#md-n">Link Text</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ INLINE MODE ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Inline Mode — Embedded in paragraph text</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Default, Inline=True, RTL=False">
+              <span class="showcase__label">Primary</span>
+              <div class="showcase__item">
+                <p>This is a standard paragraph with an inline
+                  <a class="link link--primary link--inline" href="#inline-p">Primary link</a>
+                  embedded within the text flow.
+                </p>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Default, Inline=True, RTL=False">
+              <span class="showcase__label">Neutral</span>
+              <div class="showcase__item">
+                <p>For reference, here is an inline
+                  <a class="link link--neutral link--inline" href="#inline-n">Neutral link</a>
+                  in body copy.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase showcase--on-color">
+            <div class="showcase__row" data-props="Style=On-color, Size=Small, State=Default, Inline=True, RTL=False">
+              <span class="showcase__label">On-color</span>
+              <div class="showcase__item">
+                <p style="color: rgba(255,255,255,0.9);">On a dark background, use the
+                  <a class="link link--on-color link--inline" href="#inline-oc">On-color inline link</a>
+                  inside body text.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ RTL — ARABIC ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">RTL — Arabic</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Default, Inline=False, RTL=True">
+              <span class="showcase__label">Primary Small</span>
+              <div class="showcase__item">
+                <a class="link link--primary" href="#rtl-p" dir="rtl">رابط</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Primary, Size=Medium, State=Default, Inline=False, RTL=True">
+              <span class="showcase__label">Primary Medium</span>
+              <div class="showcase__item">
+                <a class="link link--primary link--md" href="#rtl-pm" dir="rtl">رابط</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Default, Inline=False, RTL=True">
+              <span class="showcase__label">Neutral</span>
+              <div class="showcase__item">
+                <a class="link link--neutral" href="#rtl-n" dir="rtl">رابط</a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Default, Inline=True, RTL=True">
+              <span class="showcase__label">Inline (Arabic)</span>
+              <div class="showcase__item">
+                <p dir="rtl">اقرأ
+                  <a class="link link--primary link--inline" href="#rtl-inline" dir="rtl">سياسة الخصوصية</a>
+                  للمزيد.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase showcase--on-color">
+            <div class="showcase__row" data-props="Style=On-color, Size=Small, State=Default, Inline=False, RTL=True">
+              <span class="showcase__label">On-color</span>
+              <div class="showcase__item">
+                <a class="link link--on-color" href="#rtl-oc" dir="rtl">رابط</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ EXTERNAL LINK ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">External Link (target=_blank)</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Style=Primary, Size=Small, State=Default, Inline=False, RTL=False">
+              <span class="showcase__label">Primary</span>
+              <div class="showcase__item">
+                <a class="link link--primary" href="https://example.com" target="_blank" rel="noopener noreferrer">
+                  External Resource
+                  <span class="sr-only">(opens in new tab)</span>
+                </a>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Style=Neutral, Size=Small, State=Default, Inline=True, RTL=False">
+              <span class="showcase__label">Neutral Inline</span>
+              <div class="showcase__item">
+                <a class="link link--neutral link--inline" href="https://example.com" target="_blank" rel="noopener noreferrer">
+                  Terms of Service
+                  <span class="sr-only">(opens in new tab)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ FOCUS RING ══════════════════════════════════════════════════════════ -->
+        <!--
+          .interactive is used here (not .showcase) because .showcase has overflow:hidden
+          which clips focus outlines that extend outside the element bounds.
+        -->
+        <section class="variant">
+          <h2 class="variant__title">Focus Ring — Tab through to validate</h2>
+
+          <div class="interactive">
+            <p class="interactive__title">Tab through each link to test the focus ring</p>
+            <a class="link link--primary" href="#f1">Primary focus test</a>
+            <a class="link link--neutral" href="#f2">Neutral focus test</a>
+          </div>
+
+          <div class="interactive interactive--on-color">
+            <a class="link link--on-color" href="#f3">On-color focus test</a>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </body>
+</html>

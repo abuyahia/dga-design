@@ -1,0 +1,2472 @@
+[
+  {
+    "cssProps": {},
+    "type": "COMPONENT_SET",
+    "name": "Content Switcher",
+    "children": [
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, OnColor=False, Size=Small",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "background": "var(--Button-button-background-black-default, #0D121C)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "0 var(--Global-spacing-none, 0)",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, OnColor=False, Size=Small",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "background": "var(--Button-button-background-black-default, #0D121C)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, OnColor=False, Size=Medium",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "background": "var(--Button-button-background-black-default, #0D121C)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-Ig, 18px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-Ig, 28px) /* 155.556% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-Ig, 18px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-Ig, 28px) /* 155.556% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-Ig, 18px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-Ig, 28px) /* 155.556% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-Ig, 18px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-Ig, 28px) /* 155.556% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, OnColor=False, Size=Medium",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-Ig, 18px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-Ig, 28px) /* 155.556% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-Ig, 18px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-Ig, 28px) /* 155.556% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-Ig, 18px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-Ig, 28px) /* 155.556% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "background": "var(--Button-button-background-black-default, #0D121C)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-Ig, 18px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-Ig, 28px) /* 155.556% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, OnColor=False, Size=Large",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "background": "var(--Button-button-background-black-default, #0D121C)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, OnColor=False, Size=Large",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "border-left": "0.5px solid var(--Border-border-neutral-primary, #D2D6DB)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-default, #161616)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "background": "var(--Button-button-background-black-default, #0D121C)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "padding": "var(--Global-spacing-none, 0)",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-none, 0)",
+          "itemSpacing-variable": "--spacing-globalspacing-none",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingLeft-variable": "--spacing-globalspacing-none",
+          "paddingLeft-collection": "Spacing",
+          "paddingLeft-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingTop-variable": "--spacing-globalspacing-none",
+          "paddingTop-collection": "Spacing",
+          "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingRight-variable": "--spacing-globalspacing-none",
+          "paddingRight-collection": "Spacing",
+          "paddingRight-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+          "paddingBottom-variable": "--spacing-globalspacing-none",
+          "paddingBottom-collection": "Spacing",
+          "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, OnColor=True, Size=Small",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-primary-default, #1B8354)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, OnColor=True, Size=Small",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-sm-padding, 8px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-primary-default, #1B8354)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "paddingRight-variable": "--spacing-buttonbuttons-sm-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:bc83a2865a20ac32f3923979c6dc59d0c54e5fc5/434:68",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, OnColor=True, Size=Medium",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-primary-default, #1B8354)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, OnColor=True, Size=Medium",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "40px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-primary-default, #1B8354)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=False, OnColor=True, Size=Large",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-primary-default, #1B8354)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "Item",
+                "type": "TEXT",
+                "name": "Item"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start"
+        },
+        "type": "COMPONENT",
+        "name": "RTL=True, OnColor=True, Size=Large",
+        "children": [
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-md, 8px) 0 0 var(--radius-md, 8px)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-md",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-md",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0)",
+              "border-right": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-transparent-hovered, rgba(255, 255, 255, 0.20))",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-none",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-none",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "48px",
+              "min-width": "76px",
+              "padding": "0 var(--Button-buttons-lg-padding, 16px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "border-radius": "var(--radius-none, 0) var(--radius-md, 8px) var(--radius-md, 8px) var(--radius-none, 0)",
+              "border-left": "0.5px solid var(--Border-border-transparent-10, rgba(255, 255, 255, 0.10))",
+              "background": "var(--Button-button-background-primary-default, #1B8354)",
+              "paddingLeft-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "paddingRight-variable": "--spacing-buttonbuttons-lg-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:78815d3aec2fb79eb9d481b1824d174fc41e715f/434:56",
+              "topLeftRadius-variable": "--2-radius-radius-none",
+              "topLeftRadius-collection": "2. Radius",
+              "topLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "topRightRadius-variable": "--2-radius-radius-md",
+              "topRightRadius-collection": "2. Radius",
+              "topRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28",
+              "bottomLeftRadius-variable": "--2-radius-radius-none",
+              "bottomLeftRadius-collection": "2. Radius",
+              "bottomLeftRadius-variable-id": "VariableID:9a045cea158409735c7414cd4ea5d7ef50c9da04/6343:22",
+              "bottomRightRadius-variable": "--2-radius-radius-md",
+              "bottomRightRadius-collection": "2. Radius",
+              "bottomRightRadius-variable-id": "VariableID:44924d10a2555ef5fcf08461266a2cb0be6ca3a3/6343:28"
+            },
+            "type": "INSTANCE",
+            "name": "_Content Switcher Item",
+            "children": [
+              {
+                "cssProps": {
+                  "color": "var(--Text-text-oncolor-primary, #FFF)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xl, 20px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xl, 30px) /* 150% */"
+                },
+                "characters": "عنصر",
+                "type": "TEXT",
+                "name": "عنصر"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

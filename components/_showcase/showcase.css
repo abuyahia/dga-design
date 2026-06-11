@@ -1,0 +1,420 @@
+/* ==========================================================================
+   showcase.css — Shared Showcase Infrastructure
+   Platform Code Design System
+   --------------------------------------------------------------------------
+   Owns: page shell, sidebar, header, variant sections, showcase table,
+         on-color modifiers, interactive block, preview/code tabs, code pane,
+         copy button, prop tags, responsive layout.
+   Does NOT contain: component styles, design tokens, token bridges.
+   ========================================================================== */
+
+/* ── 1. Reset ──────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 2. Body ───────────────────────────────────────────────────────────── */
+
+body {
+  background: var(--gray-50, #f9fafb);
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  color: var(--gray-900, #111827);
+  min-height: 100dvh;
+}
+
+/* ── 3. Shell layout ───────────────────────────────────────────────────── */
+/*
+   New showcases use data attributes for the shell structure:
+     <body data-showcase data-current-component="button" data-showcase-title="Button Showcase">
+       <div data-showcase-shell>
+         <main data-showcase-content>…</main>
+       </div>
+     </body>
+   showcase.js injects the sidebar into [data-showcase-shell] and the
+   page header into [data-showcase-content].
+*/
+
+[data-showcase-shell] {
+  display: flex;
+  min-height: 100dvh;
+}
+
+/* ── 4. Sidebar ────────────────────────────────────────────────────────── */
+
+[data-showcase-sidebar] {
+  width: 200px;
+  flex-shrink: 0;
+  background: var(--white, #ffffff);
+  border-right: 1px solid var(--gray-200, #e5e7eb);
+  padding: 24px 16px;
+  align-self: flex-start;
+  position: sticky;
+  top: 0;
+  min-height: 100dvh;
+}
+
+.showcase-sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: sticky;
+  top: 24px;
+}
+
+.showcase-sidebar__link {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gray-600, #4b5563);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.showcase-sidebar__link:hover {
+  background: var(--gray-100, #f3f4f6);
+  color: var(--gray-900, #111827);
+}
+
+.showcase-sidebar__link.is-active {
+  background: var(--gray-900, #111827);
+  color: #ffffff;
+  pointer-events: none;
+}
+
+/* ── 5. Main content ───────────────────────────────────────────────────── */
+
+[data-showcase-content] {
+  flex: 1;
+  min-width: 0;
+  padding: 48px 32px;
+}
+
+/* ── 6. Page container ─────────────────────────────────────────────────── */
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-48, 48px);
+}
+
+/* ── 7. Page header ────────────────────────────────────────────────────── */
+
+.page__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 4px);
+}
+
+.page__meta {
+  font-size: var(--fs-text-sm, 14px);
+  color: var(--gray-500, #6b7280);
+  line-height: var(--lh-text-sm, 1.43);
+}
+
+.page__title {
+  font-size: var(--fs-display-xs, 24px);
+  font-weight: var(--font-weight-heading, 700);
+  line-height: var(--lh-display-xs, 1.2);
+  color: var(--gray-900, #111827);
+}
+
+/* ── 8. Variant section ────────────────────────────────────────────────── */
+
+.variant {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16, 16px);
+}
+
+.variant__title {
+  font-size: var(--fs-text-sm, 14px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--gray-500, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: var(--lh-text-sm, 1.43);
+}
+
+.variant__sub {
+  font-size: var(--fs-text-xs, 12px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--gray-400, #9ca3af);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: var(--lh-text-xs, 1.5);
+  margin-top: var(--space-8, 8px);
+}
+
+/* ── 9. Showcase table ─────────────────────────────────────────────────── */
+
+.showcase {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gray-200, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  background: var(--white, #ffffff);
+}
+
+.showcase__row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-32, 32px);
+  padding: var(--space-20, 20px) var(--space-24, 24px);
+  border-bottom: 1px solid var(--gray-100, #f3f4f6);
+}
+
+.showcase__row:last-child {
+  border-bottom: none;
+}
+
+.showcase__label {
+  font-size: var(--fs-text-sm, 14px);
+  color: var(--gray-500, #6b7280);
+  line-height: var(--lh-text-sm, 1.43);
+  min-width: 72px;
+  flex-shrink: 0;
+}
+
+.showcase__item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+}
+
+.showcase__props {
+  font-size: 11px;
+  font-family: 'ui-monospace', Menlo, Consolas, monospace;
+  color: var(--gray-400, #9ca3af);
+  direction: ltr;
+  text-align: left;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+/* ── 10. On-color modifier ─────────────────────────────────────────────── */
+
+.showcase--on-color {
+  background: var(--sa-800, #14573a);
+}
+
+.showcase--on-color .showcase__row {
+  border-bottom-color: rgba(255, 255, 255, 0.10);
+}
+
+.showcase--on-color .showcase__label {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+/* ── 11. Interactive block ─────────────────────────────────────────────── */
+
+.interactive {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16, 16px);
+  padding: var(--space-24, 24px);
+  border: 1px solid var(--gray-200, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  background: var(--white, #ffffff);
+}
+
+.interactive__title {
+  font-size: var(--fs-text-sm, 14px);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--gray-500, #6b7280);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: var(--lh-text-sm, 1.43);
+}
+
+.interactive--on-color {
+  background: var(--sa-800, #14573a);
+}
+
+.interactive--on-color .interactive__title {
+  color: rgba(255, 255, 255, 0.60);
+}
+
+/* ── 12. Preview / Code tabs ───────────────────────────────────────────── */
+
+.preview-block {
+  border: 1px solid var(--gray-200, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+}
+
+.preview-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 8px 12px 0;
+  background: var(--gray-50, #f9fafb);
+  border-bottom: 1px solid var(--gray-200, #e5e7eb);
+}
+
+.preview-tab {
+  padding: 6px 14px;
+  font-size: var(--fs-text-sm, 14px);
+  font-weight: var(--font-weight-medium, 500);
+  color: var(--gray-400, #9ca3af);
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  line-height: var(--lh-text-sm, 1.43);
+  margin-bottom: -1px;
+  transition: color 0.15s;
+}
+
+.preview-tab:hover {
+  color: var(--gray-600, #4b5563);
+}
+
+.preview-tab.is-active {
+  color: var(--gray-900, #111827);
+  background: var(--white, #ffffff);
+  border-color: var(--gray-200, #e5e7eb);
+}
+
+.preview-pane .showcase,
+.preview-pane .interactive {
+  border: none;
+  border-radius: 0;
+}
+
+/* ── 13. Code pane ─────────────────────────────────────────────────────── */
+
+.code-pane {
+  background: #16181d;
+  overflow-x: auto;
+}
+
+.code-pane__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.code-copy-btn {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.code-copy-btn:hover {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.code-pane pre {
+  margin: 0;
+  padding: 20px 24px;
+  font-family: 'ui-monospace', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: #cdd6f4;
+  white-space: pre;
+  tab-size: 2;
+}
+
+/* ── 14. Prop tags (Figma property inspector) ──────────────────────────── */
+
+.prop-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  direction: ltr;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--gray-150, #eaecf0);
+}
+
+.prop-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  background: var(--gray-50, #f9fafb);
+  border: 1px solid var(--gray-200, #e5e7eb);
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: 'ui-monospace', Menlo, Consolas, monospace;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.prop-tag__key {
+  color: var(--gray-400, #9ca3af);
+}
+
+.prop-tag__eq {
+  color: var(--gray-300, #d1d5db);
+  margin: 0 2px;
+}
+
+.prop-tag__val {
+  color: var(--gray-700, #374151);
+  font-weight: 500;
+}
+
+/* ── 15. Overflow safety (ripple / focus ring containment) ─────────────── */
+
+.overflow-safe {
+  padding: 20px;
+  overflow: visible;
+}
+
+/* ── 16. Responsive ────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  [data-showcase-shell] {
+    flex-direction: column;
+  }
+
+  [data-showcase-sidebar] {
+    width: 100%;
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-200, #e5e7eb);
+    padding: 12px 16px;
+    position: static;
+  }
+
+  .showcase-sidebar__nav {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: static;
+    overflow-x: auto;
+    gap: 4px;
+  }
+
+  .showcase-sidebar__link {
+    flex-shrink: 0;
+  }
+
+  [data-showcase-content] {
+    padding: 24px 16px;
+  }
+
+  .showcase__row {
+    gap: var(--space-16, 16px);
+  }
+}

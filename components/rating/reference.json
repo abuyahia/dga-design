@@ -1,0 +1,162 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "rating",
+    "description": "Star rating display component with size and brand color axes. Renders a 5-star row with filled, half, and empty star states. Sub-component _RatingStar provides individual star states: Normal (empty), Half, Selected (filled), Pressed.",
+    "boundary": "composite",
+    "sub_components": ["_RatingStar"]
+  },
+  "source": {
+    "composite_manifest": "components/rating/mainifest.json",
+    "items_manifest": "components/rating/mainifest-items.json"
+  },
+  "axes": ["size", "brand"],
+  "axis_values": {
+    "size": ["large", "medium", "small"],
+    "brand": ["no", "yes"]
+  },
+  "size_tokens": {
+    "large": {
+      "star-size": "var(--rating-star-size-lg, 48px)",
+      "ring-size": "var(--rating-star-ring-size-lg, 54px)",
+      "css-modifier": ".rating--lg"
+    },
+    "medium": {
+      "star-size": "var(--rating-star-size-md, 32px)",
+      "ring-size": "var(--rating-star-ring-size-md, 46px)",
+      "css-modifier": ".rating--md"
+    },
+    "small": {
+      "star-size": "var(--rating-star-size-sm, 24px)",
+      "ring-size": "var(--rating-star-ring-size-sm, 38px)",
+      "css-modifier": ".rating--sm"
+    }
+  },
+  "star_states": {
+    "filled": {
+      "description": "Full star colored with default (gold) or brand (green) fill",
+      "css-modifier": ".rating__star--filled",
+      "fill_token_default": "var(--rating-star-fill-default, var(--Background-background-secondary, #DBA102))",
+      "fill_token_brand": "var(--rating-star-fill-brand, var(--Background-background-primary, #1B8354))"
+    },
+    "half": {
+      "description": "Left 50% colored, right 50% empty. Implemented via clip-path on fill SVG.",
+      "css-modifier": ".rating__star--half",
+      "base_fill_token": "var(--rating-star-half-base-fill, var(--Colors-Gray-neutral-300, #D2D6DB))",
+      "fill_token_default": "var(--rating-star-fill-default, var(--Background-background-secondary, #DBA102))",
+      "fill_token_brand": "var(--rating-star-fill-brand, var(--Background-background-primary, #1B8354))"
+    },
+    "empty": {
+      "description": "Unselected star with neutral fill",
+      "css-modifier": ".rating__star--empty",
+      "fill_token": "var(--rating-star-empty-fill, var(--Background-background-neutral-200, #E5E7EB))"
+    }
+  },
+  "interaction_layers": {
+    "pressed_ring": {
+      "description": "Circular ring behind star on press. Pseudo-element ::before on .rating__star.",
+      "fill_token": "var(--rating-star-pressed-ring-bg, var(--Background-background-neutral-100, #F3F4F6))",
+      "radius_token": "var(--rating-star-ring-radius, 50%)",
+      "figma_layer": "ring (RECTANGLE)",
+      "sizes": {
+        "large":  "54px",
+        "medium": "46px",
+        "small":  "38px"
+      }
+    }
+  },
+  "gap_token": "var(--rating-gap, var(--spacing-globalspacing-xs, 4px))",
+  "variants": [
+    {
+      "id": "rating-large-default",
+      "axes": { "size": "large", "brand": "no" },
+      "status": "available",
+      "css": ".rating.rating--lg",
+      "properties": {
+        "display": "inline-flex",
+        "align-items": "flex-start",
+        "gap": "var(--rating-gap, 4px)",
+        "star_size": "48px"
+      }
+    },
+    {
+      "id": "rating-large-brand",
+      "axes": { "size": "large", "brand": "yes" },
+      "status": "available",
+      "css": ".rating.rating--lg.rating--brand",
+      "properties": {
+        "display": "inline-flex",
+        "align-items": "flex-start",
+        "gap": "var(--rating-gap, 4px)",
+        "star_size": "48px",
+        "star_fill": "var(--rating-star-fill-brand, #1B8354)"
+      }
+    },
+    {
+      "id": "rating-medium-default",
+      "axes": { "size": "medium", "brand": "no" },
+      "status": "available",
+      "css": ".rating.rating--md",
+      "properties": {
+        "display": "inline-flex",
+        "align-items": "flex-start",
+        "gap": "var(--rating-gap, 4px)",
+        "star_size": "32px"
+      },
+      "manifest_note": "Figma manifest uses 'Meduim' (typo). CSS uses corrected spelling 'md'."
+    },
+    {
+      "id": "rating-medium-brand",
+      "axes": { "size": "medium", "brand": "yes" },
+      "status": "available",
+      "css": ".rating.rating--md.rating--brand",
+      "properties": {
+        "display": "inline-flex",
+        "align-items": "flex-start",
+        "gap": "var(--rating-gap, 4px)",
+        "star_size": "32px",
+        "star_fill": "var(--rating-star-fill-brand, #1B8354)"
+      }
+    },
+    {
+      "id": "rating-small-default",
+      "axes": { "size": "small", "brand": "no" },
+      "status": "available",
+      "css": ".rating.rating--sm",
+      "properties": {
+        "display": "inline-flex",
+        "align-items": "flex-start",
+        "gap": "var(--rating-gap, 4px)",
+        "star_size": "24px"
+      }
+    },
+    {
+      "id": "rating-small-brand",
+      "axes": { "size": "small", "brand": "yes" },
+      "status": "available",
+      "css": ".rating.rating--sm.rating--brand",
+      "properties": {
+        "display": "inline-flex",
+        "align-items": "flex-start",
+        "gap": "var(--rating-gap, 4px)",
+        "star_size": "24px",
+        "star_fill": "var(--rating-star-fill-brand, #1B8354)"
+      }
+    }
+  ],
+  "implementation_notes": [
+    "Variant count: 6 (3 sizes × 2 brand values). Matches mainifest.json.",
+    "Half-star: Figma uses 3-layer rectangle masking. CSS uses 2-layer SVG + clip-path. Equivalent output, deviation documented in analysis.md.",
+    "Pressed ring: Figma RECTANGLE layer 'ring' → CSS ::before pseudo-element. Never generates standalone HTML.",
+    "Star corner radius (--radius-radius-xs on Figma STAR type) not reproduced. SVG path uses sharp inner concave points. Low-severity visual deviation.",
+    "fill: currentColor on all SVG paths. Color controlled via CSS color property.",
+    "Manifest typo: 'Meduim' → corrected to 'medium' in all generated files.",
+    "No RTL axis detected. Half-star clip-path direction pending RTL design confirmation. See analysis.md TODO."
+  ],
+  "discarded_axes": [
+    {
+      "axis": "rtl",
+      "reason": "No explicit RTL variant in manifest. clip-path inset direction for half-star pending design team confirmation. Added as TODO."
+    }
+  ]
+}

@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pagination — Component Showcase</title>
+    <link rel="stylesheet" href="../../../token.css"/>
+    <link rel="stylesheet" href="../pagination.css"/>
+    <style>
+      /* ── Showcase chrome ─────────────────────────────── */
+      *,
+      *::after,
+      *::before {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+        background: #ffffff;
+        color: #161616;
+        margin: 0;
+        
+      }
+
+      .showcase-page {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 0 0 8px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: #6B7280;
+        margin: 0 0 48px;
+      }
+
+      h2 {
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #6B7280;
+        margin: 48px 0 16px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #E5E7EB;
+      }
+
+      .label {
+        font-size: 12px;
+        color: #9CA3AF;
+        margin: 0 0 8px;
+      }
+
+      .demo-block {
+        padding: 24px;
+        background: #FAFAFA;
+      }
+
+      .rtl-block {
+        direction: rtl;
+        padding: 24px;
+        background: #FAFAFA;
+        font-family: "IBM Plex Sans Arabic", system-ui, sans-serif;
+      }
+
+      /* ── Force-state helpers (showcase QA only) ─────── */
+      .showcase-hovered {
+        background: var(--pagination-item-hover-bg, var(--Background-background-neutral-100, #F3F4F6)) !important;
+      }
+
+      .showcase-focused {
+        outline: var(--pagination-item-focus-border-width, 2px) solid var(--pagination-item-focus-border-color, var(--Border-border-black, #161616)) !important;
+        outline-offset: 0 !important;
+      }
+
+      /* ── Preview / Code Tabs ── */
+      .preview-block {
+        border: 1px solid #E5E7EB;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .preview-tabs {
+        display: flex;
+        align-items: flex-end;
+        gap: 4px;
+        padding: 8px 12px 0;
+        background: #F9FAFB;
+        border-bottom: 1px solid #E5E7EB;
+      }
+
+      .preview-tab {
+        padding: 6px 14px;
+        font-size: 13px;
+        font-weight: 500;
+        font-family: inherit;
+        color: #9CA3AF;
+        background: transparent;
+        border: 1px solid transparent;
+        border-bottom: none;
+        border-radius: 6px 6px 0 0;
+        cursor: pointer;
+        margin-bottom: -1px;
+        transition: color 0.15s;
+      }
+
+      .preview-tab:hover { color: #4B5563; }
+
+      .preview-tab.is-active {
+        color: #111827;
+        background: #fff;
+        border-color: #E5E7EB;
+      }
+
+      .code-pane {
+        background: #16181d;
+        overflow-x: auto;
+      }
+
+      .code-pane__toolbar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 8px 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .code-copy-btn {
+        font-size: 12px;
+        font-family: inherit;
+        color: rgba(255,255,255,0.45);
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 4px;
+        padding: 3px 10px;
+        cursor: pointer;
+        transition: color 0.15s, background 0.15s;
+      }
+
+      .code-copy-btn:hover {
+        color: rgba(255,255,255,0.85);
+        background: rgba(255,255,255,0.10);
+      }
+
+      .code-pane pre {
+        margin: 0;
+        padding: 20px 24px;
+        font-family: 'ui-monospace', 'Cascadia Code', Menlo, Consolas, monospace;
+        font-size: 12.5px;
+        line-height: 1.65;
+        color: #cdd6f4;
+        white-space: pre;
+        tab-size: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <style>
+      /* Showcase layout — sidebar + main */
+      .showcase-layout {
+        display: flex;
+        min-height: 100dvh;
+      }
+
+      .showcase-sidebar {
+        width: 200px;
+        flex-shrink: 0;
+        background: #ffffff;
+        border-right: 1px solid var(--gray-200, #e5e7eb);
+        padding: 24px 16px;
+        align-self: flex-start;
+        position: sticky;
+        top: 0;
+      }
+
+      .showcase-sidebar__nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        position: sticky;
+        top: 24px;
+      }
+
+      .showcase-sidebar__link {
+        display: block;
+        padding: 6px 10px;
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--gray-600, #4b5563);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background .15s, color .15s;
+      }
+
+      .showcase-sidebar__link:hover {
+        background: var(--gray-100, #f3f4f6);
+        color: var(--gray-900, #111827);
+      }
+
+      .showcase-sidebar__link.is-active {
+        background: var(--gray-900, #111827);
+        color: #ffffff;
+        pointer-events: none;
+      }
+
+      .showcase-main {
+        flex: 1;
+        min-width: 0;
+        padding: 48px 32px;
+      }
+
+      @media (max-width: 768px) {
+        .showcase-layout {
+          flex-direction: column;
+        }
+        .showcase-sidebar {
+          width: 100%;
+          border-right: none;
+          border-bottom: 1px solid var(--gray-200, #e5e7eb);
+          padding: 12px 16px;
+          position: static;
+        }
+        .showcase-sidebar__nav {
+          flex-direction: row;
+          flex-wrap: nowrap;
+          position: static;
+          overflow-x: auto;
+          gap: 4px;
+        }
+        .showcase-sidebar__link {
+          flex-shrink: 0;
+        }
+      }
+    </style>
+    <div class="showcase-layout">
+      <aside class="showcase-sidebar">
+        <nav class="showcase-sidebar__nav" aria-label="Component showcases">
+          <a href="../../accordion/showcases/index.html" class="showcase-sidebar__link">Accordion</a>
+          <a href="../../avatar/showcases/index.html" class="showcase-sidebar__link">Avatar</a>
+          <a href="../../breadcrumb/showcases/index.html" class="showcase-sidebar__link">Breadcrumb</a>
+          <a href="../../button/showcases/index.html" class="showcase-sidebar__link">Button</a>
+          <a href="../../checkbox/showcases/index.html" class="showcase-sidebar__link">Checkbox</a>
+          <a href="../../checkbox-2/showcases/index.html" class="showcase-sidebar__link">Checkbox 2</a>
+          <a href="../../chip/showcases/index.html" class="showcase-sidebar__link">Chip</a>
+          <a href="../../content-switcher/showcases/index.html" class="showcase-sidebar__link">Content Switcher</a>
+          <a href="../../dga-links/showcases/index.html" class="showcase-sidebar__link">DGA Links</a>
+          <a href="../../input-affix/showcases/index.html" class="showcase-sidebar__link">Input Affix</a>
+          <a href="../../label/showcases/index.html" class="showcase-sidebar__link">Label</a>
+          <a href="../../link/showcases/index.html" class="showcase-sidebar__link">Link</a>
+          <a href="../../list/showcases/index.html" class="showcase-sidebar__link">List</a>
+          <a href="../../pagination/showcases/index.html" class="showcase-sidebar__link is-active" aria-current="page">Pagination</a>
+          <a href="../../rating/showcases/index.html" class="showcase-sidebar__link">Rating</a>
+          <a href="../../tab/showcases/index.html" class="showcase-sidebar__link">Tab</a>
+          <a href="../../tag/showcases/index.html" class="showcase-sidebar__link">Tag</a>
+          <a href="../../text-input/showcases/index.html" class="showcase-sidebar__link">Text Input</a>
+        </nav>
+      </aside>
+      <div class="showcase-main">
+
+    <div class="showcase-page">
+      <h1>Pagination</h1>
+      <p class="subtitle">Platform Code Design System — component showcase · Generated 2026-06-09</p>
+
+      <!-- ══════════════════════════════ SIZES — LTR ══════════════════════════════ -->
+      <h2>Sizes — LTR</h2>
+
+      <!-- Large -->
+      <p class="label">Large — 40px</p>
+      <div class="preview-block" id="pb-size-lg">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-size-lg">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-size-lg">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <nav class="pagination pagination--lg" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1" aria-current="page">1</button>
+              <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+              <button class="pagination__item" type="button" aria-label="Page 3">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 999">999</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-size-lg">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--lg" aria-label="Pagination"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 1" aria-current="page"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 3"&gt;3&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 999"&gt;999&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- Medium -->
+      <p class="label">Medium — 32px</p>
+      <div class="preview-block" id="pb-size-md">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-size-md">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-size-md">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <nav class="pagination pagination--md" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+                <svg width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1" aria-current="page">1</button>
+              <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+              <button class="pagination__item" type="button" aria-label="Page 3">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 999">999</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+                <svg width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-size-md">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--md" aria-label="Pagination"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page"&gt;
+    &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 1" aria-current="page"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 3"&gt;3&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 999"&gt;999&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page"&gt;
+    &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- Small -->
+      <p class="label">Small — 24px</p>
+      <div class="preview-block" id="pb-size-sm">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-size-sm">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-size-sm">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <nav class="pagination pagination--sm" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+                <svg width="16" height="16" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1" aria-current="page">1</button>
+              <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+              <button class="pagination__item" type="button" aria-label="Page 3">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 999">999</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+                <svg width="16" height="16" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-size-sm">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--sm" aria-label="Pagination"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page"&gt;
+    &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 1" aria-current="page"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 3"&gt;3&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 999"&gt;999&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page"&gt;
+    &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════ CURRENT PAGE POSITIONS ══════════════════════════════ -->
+      <h2>Current Page Positions — Large</h2>
+
+      <!-- First page -->
+      <p class="label">Page 1 current (first) — prev disabled</p>
+      <div class="preview-block" id="pb-pos-first">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-pos-first">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-pos-first">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <nav class="pagination pagination--lg" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page" aria-disabled="true" disabled="disabled">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1" aria-current="page">1</button>
+              <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+              <button class="pagination__item" type="button" aria-label="Page 3">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 20">20</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-pos-first">Copy</button></div>
+          <pre><code>&lt;!-- Page 1 is current — disable the prev nav button --&gt;
+&lt;nav class="pagination pagination--lg" aria-label="Pagination"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button"
+          aria-label="Previous page" aria-disabled="true" disabled&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 1" aria-current="page"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 3"&gt;3&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 20"&gt;20&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- Middle page -->
+      <p class="label">Page 10 current (middle — overflow both sides)</p>
+      <div class="preview-block" id="pb-pos-mid">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-pos-mid">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-pos-mid">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <nav class="pagination pagination--lg" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1">1</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 9">9</button>
+              <button class="pagination__item" type="button" aria-label="Page 10" aria-current="page">10</button>
+              <button class="pagination__item" type="button" aria-label="Page 11">11</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">12</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">13</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">14</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 20">20</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-pos-mid">Copy</button></div>
+          <pre><code>&lt;!-- Middle page — overflow on both sides of the current page --&gt;
+&lt;nav class="pagination pagination--lg" aria-label="Pagination"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 1"&gt;1&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 9"&gt;9&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 10" aria-current="page"&gt;10&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 11"&gt;11&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;12&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 20"&gt;20&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- Last page -->
+      <p class="label">Last page current — next disabled</p>
+      <div class="preview-block" id="pb-pos-last">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-pos-last">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-pos-last">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <nav class="pagination pagination--lg" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1">1</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 18">18</button>
+              <button class="pagination__item" type="button" aria-label="Page 19">19</button>
+              <button class="pagination__item" type="button" aria-label="Page 20" aria-current="page">20</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page" aria-disabled="true" disabled="disabled">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-pos-last">Copy</button></div>
+          <pre><code>&lt;!-- Last page is current — disable the next nav button --&gt;
+&lt;nav class="pagination pagination--lg" aria-label="Pagination"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 1"&gt;1&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 18"&gt;18&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 19"&gt;19&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 20" aria-current="page"&gt;20&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button"
+          aria-label="Next page" aria-disabled="true" disabled&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════ ITEM STATES ══════════════════════════════ -->
+      <h2>_PaginationItem States — Large</h2>
+      <div class="preview-block" id="pb-states-lg">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-states-lg">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-states-lg">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <p class="label" style="margin-bottom:12px;">Default · Hovered (simulated) · Focused (simulated) · Current Page · Overflow</p>
+            <nav class="pagination pagination--lg" aria-label="Item states large">
+              <button class="pagination__item" type="button" aria-label="Default page 5">5</button>
+              <button class="pagination__item showcase-hovered" type="button" aria-label="Hovered page 5">5</button>
+              <button class="pagination__item showcase-focused" type="button" aria-label="Focused page 5">5</button>
+              <button class="pagination__item" type="button" aria-label="Current page 5" aria-current="page">5</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-states-lg">Copy</button></div>
+          <pre><code>&lt;!-- Wrap items in pagination--lg for correct current-indicator sizing --&gt;
+&lt;nav class="pagination pagination--lg" aria-label="Pagination"&gt;
+  &lt;!-- Default (hover / focus handled by CSS) --&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 5"&gt;5&lt;/button&gt;
+
+  &lt;!-- Current page --&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 5" aria-current="page"&gt;5&lt;/button&gt;
+
+  &lt;!-- Overflow trigger (closed) --&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <h2>_PaginationItem States — Medium</h2>
+      <div class="preview-block" id="pb-states-md">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-states-md">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-states-md">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <p class="label" style="margin-bottom:12px;">Default · Hovered (simulated) · Focused (simulated) · Current Page · Overflow</p>
+            <nav class="pagination pagination--md" aria-label="Item states medium">
+              <button class="pagination__item" type="button" aria-label="Default page 5">5</button>
+              <button class="pagination__item showcase-hovered" type="button" aria-label="Hovered page 5">5</button>
+              <button class="pagination__item showcase-focused" type="button" aria-label="Focused page 5">5</button>
+              <button class="pagination__item" type="button" aria-label="Current page 5" aria-current="page">5</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-states-md">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--md" aria-label="Pagination"&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 5"&gt;5&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 5" aria-current="page"&gt;5&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <h2>_PaginationItem States — Small</h2>
+      <div class="preview-block" id="pb-states-sm">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-states-sm">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-states-sm">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <p class="label" style="margin-bottom:12px;">Default · Hovered (simulated) · Focused (simulated) · Current Page · Overflow</p>
+            <nav class="pagination pagination--sm" aria-label="Item states small" style="overflow:visible;">
+              <button class="pagination__item" type="button" aria-label="Default page 5">5</button>
+              <button class="pagination__item showcase-hovered" type="button" aria-label="Hovered page 5">5</button>
+              <button class="pagination__item showcase-focused" type="button" aria-label="Focused page 5">5</button>
+              <button class="pagination__item" type="button" aria-label="Current page 5" aria-current="page">5</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-states-sm">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--sm" aria-label="Pagination"&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 5"&gt;5&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 5" aria-current="page"&gt;5&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════ RTL ══════════════════════════════ -->
+      <h2>RTL — Right-to-Left</h2>
+
+      <p class="label">Large — RTL (dir="rtl") — Page 1 current</p>
+      <div class="preview-block" id="pb-rtl-lg">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-rtl-lg">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-rtl-lg">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="rtl-block">
+            <nav class="pagination pagination--lg" dir="rtl" aria-label="ترقيم الصفحات">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="الصفحة السابقة">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="الصفحة 1" aria-current="page">1</button>
+              <button class="pagination__item" type="button" aria-label="الصفحة 2">2</button>
+              <button class="pagination__item" type="button" aria-label="الصفحة 3">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="الصفحة 999">999</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="الصفحة التالية">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-rtl-lg">Copy</button></div>
+          <pre><code>&lt;!-- RTL: set dir="rtl" on the nav or a parent element --&gt;
+&lt;nav class="pagination pagination--lg" dir="rtl" aria-label="ترقيم الصفحات"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="الصفحة السابقة"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 1" aria-current="page"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 3"&gt;3&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 999"&gt;999&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="الصفحة التالية"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <p class="label">Medium — RTL</p>
+      <div class="preview-block" id="pb-rtl-md">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-rtl-md">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-rtl-md">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="rtl-block">
+            <nav class="pagination pagination--md" dir="rtl" aria-label="ترقيم الصفحات">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="الصفحة السابقة">
+                <svg width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="الصفحة 1" aria-current="page">1</button>
+              <button class="pagination__item" type="button" aria-label="الصفحة 2">2</button>
+              <button class="pagination__item" type="button" aria-label="الصفحة 3">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="الصفحة 999">999</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="الصفحة التالية">
+                <svg width="20" height="20" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-rtl-md">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--md" dir="rtl" aria-label="ترقيم الصفحات"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="الصفحة السابقة"&gt;
+    &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 1" aria-current="page"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 3"&gt;3&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 999"&gt;999&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="الصفحة التالية"&gt;
+    &lt;svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <p class="label">Small — RTL</p>
+      <div class="preview-block" id="pb-rtl-sm">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-rtl-sm">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-rtl-sm">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="rtl-block">
+            <nav class="pagination pagination--sm" dir="rtl" aria-label="ترقيم الصفحات">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="الصفحة السابقة">
+                <svg width="16" height="16" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="الصفحة 1" aria-current="page">1</button>
+              <button class="pagination__item" type="button" aria-label="الصفحة 2">2</button>
+              <button class="pagination__item" type="button" aria-label="الصفحة 3">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="الصفحة 999">999</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="الصفحة التالية">
+                <svg width="16" height="16" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-rtl-sm">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--sm" dir="rtl" aria-label="ترقيم الصفحات"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="الصفحة السابقة"&gt;
+    &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 1" aria-current="page"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 3"&gt;3&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="الصفحة 999"&gt;999&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="الصفحة التالية"&gt;
+    &lt;svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════ DISABLED NAV BUTTONS ══════════════════════════════ -->
+      <h2>Disabled Nav Buttons</h2>
+
+      <p class="label">Large — Prev disabled (first page)</p>
+      <div class="preview-block" id="pb-disabled-prev">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-disabled-prev">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-disabled-prev">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <nav class="pagination pagination--lg" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page" disabled="disabled">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1" aria-current="page">1</button>
+              <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+              <button class="pagination__item" type="button" aria-label="Page 3">3</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-disabled-prev">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--lg" aria-label="Pagination"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button"
+          aria-label="Previous page" disabled&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 1" aria-current="page"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 3"&gt;3&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <p class="label">Large — Next disabled (last page)</p>
+      <div class="preview-block" id="pb-disabled-next">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-disabled-next">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-disabled-next">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <nav class="pagination pagination--lg" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1">1</button>
+              <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+              <button class="pagination__item" type="button" aria-label="Page 3" aria-current="page">3</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page" disabled="disabled">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-disabled-next">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--lg" aria-label="Pagination"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 1"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 3" aria-current="page"&gt;3&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button"
+          aria-label="Next page" disabled&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════ OVERFLOW DROPDOWN ══════════════════════════════ -->
+      <h2>Overflow Dropdown — Page Jump</h2>
+      <p class="label" style="margin-bottom:16px;">The "..." trigger opens an absolutely-positioned panel for page-jump. Set <code>aria-expanded="true"</code> via JS to show the panel.</p>
+
+      <p class="label">Large — overflow trigger open (aria-expanded="true") · page 4 selected</p>
+      <div class="preview-block" id="pb-overflow-open-lg">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-overflow-open-lg">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-overflow-open-lg">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block" style="padding-bottom: 360px; position: relative;">
+            <nav class="pagination pagination--lg" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1">1</button>
+              <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+              <button class="pagination__item" type="button" aria-label="Page 3" aria-current="page">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="true" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li>
+                    <button class="pagination__overflow-option pagination__overflow-option--selected" type="button" role="option" aria-selected="true">
+                      <svg class="pagination__overflow-check" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      4
+                    </button>
+                  </li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">7</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">8</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">9</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">10</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">11</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 12">12</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-overflow-open-lg">Copy</button></div>
+          <pre><code>&lt;!-- Overflow trigger open state — set aria-expanded="true" via JS when panel is visible --&gt;
+&lt;nav class="pagination pagination--lg" aria-label="Pagination"&gt;
+  &lt;!-- ... prev nav, page items ... --&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="true" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;
+        &lt;button class="pagination__overflow-option pagination__overflow-option--selected"
+                type="button" role="option" aria-selected="true"&gt;
+          &lt;svg class="pagination__overflow-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"&gt;
+            &lt;path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;
+          &lt;/svg&gt;
+          4
+        &lt;/button&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;7&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;8&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;!-- ... last page item, next nav ... --&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <p class="label">Small — overflow trigger open · page 4 selected</p>
+      <div class="preview-block" id="pb-overflow-open-sm">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-overflow-open-sm">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-overflow-open-sm">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block" style="padding-bottom: 340px; position: relative;">
+            <nav class="pagination pagination--sm" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+                <svg width="16" height="16" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1">1</button>
+              <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+              <button class="pagination__item" type="button" aria-label="Page 3" aria-current="page">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="true" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li>
+                    <button class="pagination__overflow-option pagination__overflow-option--selected" type="button" role="option" aria-selected="true">
+                      <svg class="pagination__overflow-check" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                      4
+                    </button>
+                  </li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">7</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">8</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 12">12</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+                <svg width="16" height="16" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-overflow-open-sm">Copy</button></div>
+          <pre><code>&lt;nav class="pagination pagination--sm" aria-label="Pagination"&gt;
+  &lt;!-- ... prev nav, page items ... --&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="true" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;
+        &lt;button class="pagination__overflow-option pagination__overflow-option--selected"
+                type="button" role="option" aria-selected="true"&gt;
+          &lt;svg class="pagination__overflow-check" viewBox="0 0 20 20" fill="none" aria-hidden="true"&gt;
+            &lt;path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/&gt;
+          &lt;/svg&gt;
+          4
+        &lt;/button&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;7&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;8&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;!-- ... last page item, next nav ... --&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <p class="label">Overflow trigger — closed state (default appearance)</p>
+      <div class="preview-block" id="pb-overflow-closed">
+        <div class="preview-tabs" role="tablist">
+          <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-tab="preview" data-target="pb-overflow-closed">Preview</button>
+          <button type="button" class="preview-tab" role="tab" aria-selected="false" data-tab="code" data-target="pb-overflow-closed">Code</button>
+        </div>
+        <div class="preview-pane">
+          <div class="demo-block">
+            <nav class="pagination pagination--lg" aria-label="Pagination">
+              <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <button class="pagination__item" type="button" aria-label="Page 1">1</button>
+              <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+              <button class="pagination__item" type="button" aria-label="Page 3" aria-current="page">3</button>
+              <span class="pagination__overflow-wrapper">
+                <button class="pagination__item pagination__item--overflow" type="button" aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+                <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+                  <li><button class="pagination__overflow-option" type="button" role="option">4</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+                  <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+                </ul>
+              </span>
+              <button class="pagination__item" type="button" aria-label="Page 12">12</button>
+              <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </nav>
+          </div>
+        </div>
+        <div class="code-pane" hidden>
+          <div class="code-pane__toolbar"><button type="button" class="code-copy-btn" data-copy-target="pb-overflow-closed">Copy</button></div>
+          <pre><code>&lt;!-- Overflow trigger closed — default state, panel hidden by CSS --&gt;
+&lt;nav class="pagination pagination--lg" aria-label="Pagination"&gt;
+  &lt;button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 1"&gt;1&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 2"&gt;2&lt;/button&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 3" aria-current="page"&gt;3&lt;/button&gt;
+  &lt;span class="pagination__overflow-wrapper"&gt;
+    &lt;button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox"&gt;...&lt;/button&gt;
+    &lt;ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page"&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;4&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;5&lt;/button&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;button class="pagination__overflow-option" type="button" role="option"&gt;6&lt;/button&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/span&gt;
+  &lt;button class="pagination__item" type="button" aria-label="Page 12"&gt;12&lt;/button&gt;
+  &lt;button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page"&gt;
+    &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;
+      &lt;path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+    </div><!-- /.showcase-page -->
+
+    <script>
+      (function () {
+        document.querySelectorAll('[role="tablist"]').forEach(function (tablist) {
+          tablist.querySelectorAll('.preview-tab').forEach(function (tab) {
+            tab.addEventListener('click', function () {
+              var blockId = tab.dataset.target;
+              var block = document.getElementById(blockId);
+              var isCode = tab.dataset.tab === 'code';
+
+              tablist.querySelectorAll('.preview-tab').forEach(function (t) {
+                t.classList.remove('is-active');
+                t.setAttribute('aria-selected', 'false');
+              });
+              tab.classList.add('is-active');
+              tab.setAttribute('aria-selected', 'true');
+
+              block.querySelector('.preview-pane').hidden = isCode;
+              block.querySelector('.code-pane').hidden = !isCode;
+            });
+          });
+        });
+
+        document.querySelectorAll('.code-copy-btn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var blockId = btn.dataset.copyTarget;
+            var block = document.getElementById(blockId);
+            var code = block.querySelector('.code-pane code').textContent;
+            navigator.clipboard.writeText(code).then(function () {
+              btn.textContent = 'Copied!';
+              setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+            });
+          });
+        });
+      })();
+    </script>
+      </div>
+    </div>
+  </body>
+</html>

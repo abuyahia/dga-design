@@ -1,147 +1,128 @@
 {
-  "schema_version": "1.0.0",
-  "component_id": "checkbox",
-  "generated": "2026-06-07",
-  "overall_status": "pending_audit",
+  "schema_version": "1.1.0",
+  "component": "checkbox-2",
+  "display_name": "Checkbox",
+  "generation": "v2",
   "official_compliance_claim": false,
-  "_note": "Status 'mapped' means the component has been mapped to this criterion internally. It does not mean the criterion has been verified by a formal external audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
-
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "audit_date": null,
+  "auditor": null,
   "standards": [
-
     {
-      "id": "WCAG-2.1",
-      "name": "Web Content Accessibility Guidelines 2.1",
-      "level": "AA",
-      "source_status": "internal_mapping",
-      "official_reference": "https://www.w3.org/TR/WCAG21/",
-      "criteria": [
-        {
-          "id": "1.1.1",
-          "title": "Non-text Content",
-          "status": "mapped",
-          "evidence": "Checkmark and indeterminate-mark SVGs carry aria-hidden='true'. State is communicated by the native <input type='checkbox'> element. Icon-only checkbox controls must carry an accessible label on the input or wrapping label.",
-          "audit_rule_ids": ["CHK-A11Y-001"]
-        },
-        {
-          "id": "1.3.1",
-          "title": "Info and Relationships",
-          "status": "mapped",
-          "evidence": "Native <input type='checkbox'> communicates role, name, and checked state to the accessibility tree without additional ARIA. Indeterminate state requires aria-checked='mixed' and input.indeterminate = true via JS.",
-          "audit_rule_ids": ["CHK-A11Y-002"]
-        },
-        {
-          "id": "1.4.3",
-          "title": "Contrast (Minimum)",
-          "status": "mapped",
-          "evidence": "Primary checked: white icon (#FFF) on green (#1B8354) = ~5.27:1 (pass). Neutral checked: white icon on dark (#161616) = ~19.5:1 (pass). Unchecked border (#161616 on white) = ~19.5:1 (pass). Disabled (opacity 0.5) is exempt per WCAG 1.4.3 inactive UI exception. Read-only (opacity 0.7) is NOT exempt — deployment contrast must be verified.",
-          "audit_rule_ids": []
-        },
-        {
-          "id": "1.4.11",
-          "title": "Non-text Contrast",
-          "status": "mapped",
-          "evidence": "Unchecked border: inset shadow 1px #161616 on white = ~19.5:1 (pass). Focus ring: 2px #161616 on white = ~19.5:1 (pass). Checked background area: green #1B8354 adjacent to white page = ~5.27:1 (pass).",
-          "audit_rule_ids": []
-        },
-        {
-          "id": "2.1.1",
-          "title": "Keyboard",
-          "status": "mapped",
-          "evidence": "Native <input type='checkbox'> is keyboard operable by default (Space to toggle). Disabled removes from tab order. Read-only preserves tab order with aria-readonly='true'.",
-          "audit_rule_ids": ["CHK-A11Y-003"]
-        },
-        {
-          "id": "2.4.7",
-          "title": "Focus Visible",
-          "status": "mapped",
-          "evidence": "Focus ring: absolute span, -4px offset, inset 2px box-shadow var(--checkbox-focus-ring-color). Activated by input:focus-visible. mix-blend-mode: multiply ensures ring visibility on various backgrounds.",
-          "audit_rule_ids": ["CHK-A11Y-004"]
-        },
-        {
-          "id": "3.3.1",
-          "title": "Error Identification",
-          "status": "not_mapped",
-          "evidence": "Error/invalid state is absent from the manifest. Government forms require error indication. This is a known compliance gap. See analysis.md Missing Standards.",
-          "audit_rule_ids": [],
-          "manual_review_required": true
-        },
-        {
-          "id": "4.1.2",
-          "title": "Name, Role, Value",
-          "status": "mapped",
-          "evidence": "Role: implicit from <input type='checkbox'>. Name: enforced by CHK-A11Y-001 (label required). Value: checked via input.checked; indeterminate via input.indeterminate + aria-checked='mixed'; disabled via input.disabled.",
-          "audit_rule_ids": ["CHK-A11Y-001", "CHK-A11Y-002"]
-        }
-      ]
+      "id": "PLATFORM-CODE-CHECKBOX-001",
+      "standard": "WCAG 2.1",
+      "criterion": "1.3.1 Info and Relationships (Level A)",
+      "requirement": "Checkbox semantic role conveyed via native input[type=checkbox] element.",
+      "status": "pending_audit",
+      "implementation": "Uses native <input type='checkbox'>. Role 'checkbox' is implicit.",
+      "notes": "Screen reader announces checkbox role natively. No additional ARIA role required."
     },
-
     {
-      "id": "PLATFORM-CODE-DS",
-      "name": "Platform Design System Internal Standards",
-      "source_status": "internal_mapping",
-      "official_reference": null,
-      "_note": "Internal platform rules. See standards/platform-code.standards.json.",
-      "criteria": [
-        {
-          "id": "PLATFORM-CODE-CHECKBOX-001",
-          "title": "Component must use design tokens for all visual values",
-          "status": "mapped",
-          "evidence": "All color, radius, size, and opacity values in checkbox.css reference CSS custom properties. Hardcoded value detection enforced by CHK-TOKEN-001.",
-          "audit_rule_ids": ["CHK-TOKEN-001"]
-        },
-        {
-          "id": "PLATFORM-CODE-CHECKBOX-002",
-          "title": "Native <input type='checkbox'> required for accessibility",
-          "status": "mapped",
-          "evidence": "The template pattern uses a visually hidden native input as the interactive element. The custom visual span is aria-hidden='true'. Enforced by CHK-STRUCT-001.",
-          "audit_rule_ids": ["CHK-STRUCT-001"]
-        },
-        {
-          "id": "PLATFORM-CODE-CHECKBOX-003",
-          "title": "Minimum touch target 24×24px",
-          "status": "mapped",
-          "evidence": "Medium size (--md) is 24×24px. Small (--sm) is 20×20px. x-Small (--xs) is 16×16px. Touch target for small/xs must be handled by the form-field wrapper providing adequate spacing.",
-          "audit_rule_ids": []
-        },
-        {
-          "id": "PLATFORM-CODE-CHECKBOX-004",
-          "title": "Indeterminate state must be set via JavaScript",
-          "status": "mapped",
-          "evidence": "HTML has no indeterminate attribute. Contract §4 documents the JS requirement (input.indeterminate = true) and the required aria-checked='mixed' companion attribute.",
-          "audit_rule_ids": ["CHK-A11Y-002"]
-        }
-      ]
+      "id": "PLATFORM-CODE-CHECKBOX-002",
+      "standard": "WCAG 2.1",
+      "criterion": "1.4.3 Contrast (Minimum) (Level AA)",
+      "requirement": "Visual elements must meet 3:1 contrast ratio against adjacent colors.",
+      "status": "pending_audit",
+      "implementation": "Token values from design system. Formal contrast verification pending.",
+      "notes": "Checked state: #1B8354 (Primary) on white — needs verification. Focus ring #161616 on white — passes. Disabled: #9DA4AE border on white — may be below 3:1 (decorative/non-interactive, exempt)."
     },
-
     {
-      "id": "PLATFORM-CODE-A11Y",
-      "name": "Platform Accessibility Internal Standards",
-      "source_status": "internal_mapping",
-      "official_reference": null,
-      "criteria": [
-        {
-          "id": "PLATFORM-CODE-A11Y-001",
-          "title": "Arabic language font support",
-          "status": "not_applicable",
-          "evidence": "Checkbox has no text content. Typography is out of scope for this component. Font requirements apply at the form-field label level.",
-          "audit_rule_ids": []
-        },
-        {
-          "id": "PLATFORM-CODE-A11Y-002",
-          "title": "Focus indicator must not be suppressed",
-          "status": "mapped",
-          "evidence": "Focus ring implemented as .checkbox__focus-ring span activated by input:focus-visible. CHK-A11Y-004 checks for outline:none without replacement.",
-          "audit_rule_ids": ["CHK-A11Y-004"]
-        }
-      ]
+      "id": "PLATFORM-CODE-CHECKBOX-003",
+      "standard": "WCAG 2.1",
+      "criterion": "1.4.11 Non-text Contrast (Level AA)",
+      "requirement": "UI component boundaries (borders) must meet 3:1 contrast ratio against adjacent background.",
+      "status": "pending_audit",
+      "implementation": "Default border: #6C737F on white = ~4.5:1 — expected to pass. Formal verification pending.",
+      "notes": "Disabled border exempt from non-text contrast requirements as component is non-interactive."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-001",
+      "standard": "WCAG 2.1",
+      "criterion": "2.1.1 Keyboard (Level A)",
+      "requirement": "All functionality operable via keyboard.",
+      "status": "pending_audit",
+      "implementation": "Native <input type='checkbox'> provides Space key toggle natively. No custom JS keyboard handling required.",
+      "notes": "Tab navigation and Space activation handled by browser. Read-only uses pointer-events:none + aria-readonly — remains in tab order."
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-001",
+      "standard": "WCAG 2.1",
+      "criterion": "2.4.7 Focus Visible (Level AA)",
+      "requirement": "Keyboard focus indicator must be visible.",
+      "status": "pending_audit",
+      "implementation": "Focus ring via ::after pseudo on .checkbox__box, triggered by :focus-visible. 2px solid #161616 border. Appears on keyboard focus, suppressed on mouse click.",
+      "notes": "mix-blend-mode: multiply applied to match Figma design intent. Focus ring size: box + 8px offset."
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-002",
+      "standard": "WCAG 2.1",
+      "criterion": "2.4.11 Focus Appearance (Level AA Enhanced)",
+      "requirement": "Focus indicator must have minimum 2px width and sufficient contrast.",
+      "status": "pending_audit",
+      "implementation": "Focus ring: 2px solid var(--checkbox-focus-ring-color, #161616). Enclosure area exceeds box by 8px.",
+      "notes": "Formal verification of contrast and enclosure area pending external audit."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-002",
+      "standard": "WCAG 2.1",
+      "criterion": "4.1.2 Name, Role, Value (Level A)",
+      "requirement": "UI components must have accessible name, role, and current state.",
+      "status": "pending_audit",
+      "implementation": "Role: implicit 'checkbox' via input[type=checkbox]. State: :checked maps to aria-checked=true. Indeterminate: requires JS to set aria-checked='mixed'. Read-only: requires aria-readonly=true. Disabled: disabled attribute maps to aria-disabled=true.",
+      "notes": "Accessible name (Name) is NOT provided by this component. Consumer or form-field assembly must provide aria-label or associated label element."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-001",
+      "standard": "GOV-DS-1.0",
+      "criterion": "Control States — Required states for interactive controls",
+      "requirement": "Interactive controls must implement: default, hover, focus, active/pressed, disabled.",
+      "status": "pending_audit",
+      "implementation": "Default, Hovered, Pressed, Focused, Disabled implemented. Read-only also implemented.",
+      "notes": "Error state not implemented at component level. Form-field is responsible for error state visual treatment."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-002",
+      "standard": "GOV-DS-1.0",
+      "criterion": "Control States — Indeterminate state",
+      "requirement": "Checkbox must support indeterminate (mixed) state for hierarchical selection patterns.",
+      "status": "pending_audit",
+      "implementation": "CSS :indeterminate pseudo-class with indeterminate mark SVG. JS must set input.indeterminate = true and aria-checked='mixed'.",
+      "notes": "Template.html demonstrates the HTML structure. JS wiring not included — consumer responsibility."
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-001",
+      "standard": "GOV-DS-1.0",
+      "criterion": "Token Policy — Component-level semantic tokens",
+      "requirement": "Component CSS must reference component-level tokens (--checkbox-*), not raw primitives.",
+      "status": "pending_audit",
+      "implementation": "Component CSS defines --checkbox-* tokens as wrappers over Controls-* and Global-* tokens. No hex values or primitives used directly in component selectors.",
+      "notes": "--checkbox-* tokens not yet defined in token.css. CSS uses var(--checkbox-*, fallback) pattern. Requires token.css update."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-003",
+      "standard": "DGA-ACC-1.0",
+      "criterion": "DGA-ACC-LNG-01 — Arabic/RTL Language Support",
+      "requirement": "Components must render correctly in Arabic (RTL) layouts.",
+      "status": "met",
+      "implementation": "Component is geometrically symmetric. No directional CSS properties used. No RTL-specific overrides required.",
+      "notes": "Verified: no left/right, padding-left/right, margin-left/right, border-left/right properties that would break RTL. Uses flexbox centering."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-004",
+      "standard": "WCAG 2.1",
+      "criterion": "2.5.5 Target Size (Level AAA)",
+      "requirement": "Touch targets should be at least 44×44 CSS pixels.",
+      "status": "advisory",
+      "implementation": "Component box sizes: 16px, 20px, 24px. Ripple provides visual affordance but not structural hit target. Consumer must ensure adequate label or wrapper size.",
+      "notes": "AAA level — advisory only. Form-field wrapper is responsible for ensuring adequate touch target."
     }
-
   ],
-
-  "variant_compliance_notes": {
-    "readonly": "WCAG 1.4.3: opacity 0.7 reduces effective contrast. Read-only elements are NOT exempt from contrast requirements. Verify in deployment context.",
-    "disabled": "WCAG 1.4.3: opacity 0.5 is intentionally low contrast. Inactive UI components are exempt per WCAG 1.4.3.",
-    "indeterminate": "WCAG 4.1.2: aria-checked='mixed' must be set on the native input alongside input.indeterminate = true. The visual state alone is insufficient.",
-    "xs_size (16px)": "WCAG 2.5.5 Target Size (Enhanced, AAA): 16px is below the 44×44px AAA threshold. Meets AA minimum (24×24px) only if wrapped with adequate spacing in the form-field."
+  "summary": {
+    "total_criteria": 12,
+    "met": 1,
+    "pending_audit": 10,
+    "advisory": 1,
+    "failed": 0
   }
 }

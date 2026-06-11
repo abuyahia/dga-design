@@ -1,0 +1,274 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "tab",
+    "display_name": "Tab",
+    "description": "ARIA Tabs pattern implementation. Includes horizontal and vertical orientations, tab button and tab list container components. Requires JavaScript for keyboard navigation (Arrow keys).",
+    "category": "navigation",
+    "status": "stable"
+  },
+  "source": {
+    "manifest_horizontal_tab":      "components/tab/horizontal-tabs.json",
+    "manifest_horizontal_tab_list": "components/tab/horizontal-tabs-list.json",
+    "manifest_vertical_tab":        "components/tab/vertical-tabs.json",
+    "manifest_vertical_tab_list":   "components/tab/vertical-tabs-list.json",
+    "total_variants_horizontal_tab":      64,
+    "total_variants_horizontal_tab_list": 10,
+    "total_variants_vertical_tab":        60,
+    "total_variants_vertical_tab_list":   12
+  },
+
+  "components": {
+
+    "tab": {
+      "selector_root": ".tab",
+      "description": "Individual tab button. Use inside a .tab-list container.",
+      "html_element": "button",
+      "aria_role": "tab",
+      "axes": ["orientation", "size", "state", "selected"],
+      "axis_values": {
+        "orientation": ["horizontal", "vertical"],
+        "size": ["sm", "md", "lg"],
+        "state": ["default", "hovered", "pressed", "focused", "disabled"],
+        "selected": [true, false]
+      },
+      "discarded_axes": {
+        "RTL": "Layout-only. Handled via [dir='rtl'] ancestor. Vertical indicator flips left→right. No visual token differences.",
+        "Tab Icons": "Presence/absence of .tab__icon child. No CSS delta on the container.",
+        "More Tab": "Overflow trigger variant (Closed/Open states). Out of scope — requires separate JS/dropdown component."
+      },
+      "default_variant": {
+        "orientation": "horizontal",
+        "size": "md",
+        "state": "default",
+        "selected": false
+      },
+
+      "size_tokens": {
+        "horizontal": {
+          "sm": {
+            "v-padding":   "var(--tab-h-sm-v-padding, 8px)",
+            "h-padding":   "var(--tab-h-sm-h-padding, 12px)",
+            "gap":         "var(--tab-button-gap, 4px)",
+            "icon-size":   "var(--tab-icon-size, 16px)",
+            "font-size":   "var(--tab-h-font-size, 14px)",
+            "font-weight-unselected": "var(--tab-h-font-weight-idle, 500)",
+            "font-weight-selected":   "var(--tab-h-font-weight-selected, 700)",
+            "line-height": "var(--tab-h-line-height, 20px)",
+            "css-modifier": ".tab--sm"
+          },
+          "md": {
+            "v-padding":   "var(--tab-h-md-v-padding, 12px)",
+            "h-padding":   "var(--tab-h-md-h-padding, 16px)",
+            "gap":         "var(--tab-button-gap, 4px)",
+            "icon-size":   "var(--tab-icon-size, 16px)",
+            "font-size":   "var(--tab-h-font-size, 14px)",
+            "font-weight-unselected": "var(--tab-h-font-weight-idle, 500)",
+            "font-weight-selected":   "var(--tab-h-font-weight-selected, 700)",
+            "line-height": "var(--tab-h-line-height, 20px)",
+            "css-modifier": null
+          },
+          "lg": {
+            "v-padding":   "var(--tab-h-lg-v-padding, 16px)",
+            "h-padding":   "var(--tab-h-lg-h-padding, 16px)",
+            "gap":         "var(--tab-button-gap, 4px)",
+            "icon-size":   "var(--tab-icon-size, 16px)",
+            "font-size":   "var(--tab-h-font-size, 14px)",
+            "font-weight-unselected": "var(--tab-h-font-weight-idle, 500)",
+            "font-weight-selected":   "var(--tab-h-font-weight-selected, 700)",
+            "line-height": "var(--tab-h-line-height, 20px)",
+            "css-modifier": ".tab--lg"
+          }
+        },
+        "vertical": {
+          "sm": {
+            "v-padding":   "var(--tab-v-sm-v-padding, 2px)",
+            "h-padding":   "var(--tab-v-sm-h-padding, 6px)",
+            "gap":         "var(--tab-button-gap, 4px)",
+            "icon-size":   "var(--tab-icon-size, 16px)",
+            "font-size":   "var(--tab-v-sm-font-size, 14px)",
+            "font-weight-unselected": "var(--tab-v-font-weight-idle, 400)",
+            "font-weight-selected":   "var(--tab-v-font-weight-selected, 600)",
+            "line-height": "var(--tab-v-sm-line-height, 20px)",
+            "css-modifier": ".tab--sm"
+          },
+          "md": {
+            "v-padding":   "var(--tab-v-md-v-padding, 6px)",
+            "h-padding":   "var(--tab-v-md-h-padding, 12px)",
+            "gap":         "var(--tab-button-gap, 4px)",
+            "icon-size":   "var(--tab-icon-size, 16px)",
+            "font-size":   "var(--tab-v-md-font-size, 14px)",
+            "font-weight-unselected": "var(--tab-v-font-weight-idle, 400)",
+            "font-weight-selected":   "var(--tab-v-font-weight-selected, 600)",
+            "line-height": "var(--tab-v-md-line-height, 20px)",
+            "css-modifier": null
+          },
+          "lg": {
+            "v-padding":   "var(--tab-v-lg-v-padding, 8px)",
+            "h-padding":   "var(--tab-v-lg-h-padding, 12px)",
+            "gap":         "var(--tab-button-gap, 4px)",
+            "icon-size":   "var(--tab-icon-size, 16px)",
+            "font-size":   "var(--tab-v-lg-font-size, 16px)",
+            "font-weight-unselected": "var(--tab-v-font-weight-idle, 400)",
+            "font-weight-selected":   "var(--tab-v-font-weight-selected, 600)",
+            "line-height": "var(--tab-v-lg-line-height, 24px)",
+            "css-modifier": ".tab--lg"
+          }
+        }
+      },
+
+      "color_tokens": {
+        "text_idle":       "var(--tab-text-idle, #384250)",
+        "text_active":     "var(--tab-text-active, #161616)",
+        "text_disabled":   "var(--tab-text-disabled, #9DA4AE)",
+        "bg_hover":        "var(--tab-bg-hover, #F3F4F6)",
+        "bg_pressed":      "var(--tab-bg-pressed, #E5E7EB)",
+        "indicator_color": "var(--tab-indicator-color, #1B8354)"
+      },
+
+      "selection_indicator": {
+        "width_horizontal":  "auto (stretches between h-padding insets)",
+        "height_horizontal": "3px",
+        "width_vertical":    "3px",
+        "height_vertical":   "auto (stretches between v-padding insets)",
+        "position":          "absolute",
+        "border-radius":     "var(--radius-full)",
+        "color":             "var(--tab-indicator-color)"
+      },
+
+      "focus_ring": {
+        "type":       "box-shadow on :focus-visible (no pseudo-element)",
+        "css":        "box-shadow: inset 0 0 0 1px white, 0 0 0 3px var(--gray-900)",
+        "border-radius-focus": "var(--radius-xs, 2px)",
+        "figma_source": "button: border 3px solid #161616 (radius-xs) + child 'Focus outline': border 1px solid white (radius-sm)"
+      },
+
+      "state_deltas": {
+        "hovered_unselected": {
+          "background": "var(--tab-bg-hover)",
+          "text": "var(--tab-text-active)",
+          "indicator": "visible — dark color (var(--tab-indicator-color-dark, #161616))"
+        },
+        "pressed_unselected": {
+          "background": "var(--tab-bg-pressed)",
+          "text": "var(--tab-text-active)",
+          "indicator": "visible — dark color (var(--tab-indicator-color-dark, #161616))"
+        },
+        "focused_unselected": {
+          "box-shadow": "inset 0 0 0 1px white, 0 0 0 3px #161616",
+          "border-radius": "var(--radius-xs, 2px)",
+          "text": "var(--tab-text-active)",
+          "indicator": "hidden (no indicator for focused unselected)"
+        },
+        "focused_selected": {
+          "box-shadow": "inset 0 0 0 1px white, 0 0 0 3px #161616",
+          "border-radius": "var(--radius-xs, 2px)",
+          "indicator": "visible — green (unchanged from selected default)"
+        },
+        "disabled": {
+          "text": "var(--tab-text-disabled)",
+          "cursor": "not-allowed",
+          "pointer-events": "none"
+        },
+        "selected": {
+          "indicator": "visible — green (var(--tab-indicator-color))",
+          "font-weight": "700 (horizontal) / 600 (vertical)",
+          "text": "var(--tab-text-active)"
+        },
+        "disabled_selected_horizontal": {
+          "text": "var(--tab-text-disabled, #9DA4AE)",
+          "font-weight": "700 (unchanged from selected)",
+          "indicator": "gray (--tab-text-disabled, #9DA4AE)"
+        },
+        "disabled_selected_vertical": {
+          "text": "var(--tab-text-disabled, #9DA4AE)",
+          "font-weight": "500 (drops from 600 — Figma confirmed)",
+          "indicator": "gray (--tab-text-disabled, #9DA4AE)"
+        },
+        "disabled_unselected": {
+          "text": "var(--tab-text-disabled, #9DA4AE)",
+          "font-weight": "unchanged (500 horizontal / 400 vertical)",
+          "indicator": "none"
+        }
+      },
+
+      "variants": [
+        { "id": "tab-h-md-default-unselected",  "axes": { "orientation": "horizontal", "size": "md", "state": "default",  "selected": false }, "status": "available" },
+        { "id": "tab-h-md-default-selected",    "axes": { "orientation": "horizontal", "size": "md", "state": "default",  "selected": true  }, "status": "available" },
+        { "id": "tab-h-md-hovered",             "axes": { "orientation": "horizontal", "size": "md", "state": "hovered",  "selected": false }, "status": "available" },
+        { "id": "tab-h-md-pressed",             "axes": { "orientation": "horizontal", "size": "md", "state": "pressed",  "selected": false }, "status": "available" },
+        { "id": "tab-h-md-focused",             "axes": { "orientation": "horizontal", "size": "md", "state": "focused",  "selected": false }, "status": "available" },
+        { "id": "tab-h-md-disabled",            "axes": { "orientation": "horizontal", "size": "md", "state": "disabled", "selected": false }, "status": "available" },
+        { "id": "tab-h-sm-default-unselected",  "axes": { "orientation": "horizontal", "size": "sm", "state": "default",  "selected": false }, "status": "available" },
+        { "id": "tab-h-lg-default-unselected",  "axes": { "orientation": "horizontal", "size": "lg", "state": "default",  "selected": false }, "status": "available" },
+        { "id": "tab-v-md-default-unselected",  "axes": { "orientation": "vertical",   "size": "md", "state": "default",  "selected": false }, "status": "available" },
+        { "id": "tab-v-md-default-selected",    "axes": { "orientation": "vertical",   "size": "md", "state": "default",  "selected": true  }, "status": "available" },
+        { "id": "tab-v-md-hovered",             "axes": { "orientation": "vertical",   "size": "md", "state": "hovered",  "selected": false }, "status": "available" },
+        { "id": "tab-v-md-focused",             "axes": { "orientation": "vertical",   "size": "md", "state": "focused",  "selected": false }, "status": "available" },
+        { "id": "tab-v-md-disabled",            "axes": { "orientation": "vertical",   "size": "md", "state": "disabled", "selected": false }, "status": "available" },
+        { "id": "tab-v-sm-default-unselected",  "axes": { "orientation": "vertical",   "size": "sm", "state": "default",  "selected": false }, "status": "available" },
+        { "id": "tab-v-lg-default-unselected",  "axes": { "orientation": "vertical",   "size": "lg", "state": "default",  "selected": false }, "status": "available" }
+      ],
+
+      "implementation_notes": [
+        "Root element must be <button> with role='tab'.",
+        "Selected state is driven by aria-selected='true' — never a CSS class.",
+        "Hover/Pressed backgrounds apply only to aria-selected='false' tabs.",
+        "Selection indicator is ::before pseudo-element. Shown when aria-selected='true'.",
+        "Focus ring is ::after pseudo-element. Shown on :focus-visible.",
+        "Vertical tab selection indicator is on the left edge (RTL: right edge).",
+        "Horizontal tab selection indicator is on the bottom edge (both LTR and RTL).",
+        "Font-weight differences: horizontal uses 500/700, vertical uses 400/600.",
+        "Vertical Large uses 16px/24px font; all other sizes use 14px/20px."
+      ]
+    },
+
+    "tab_list": {
+      "selector_root": ".tab-list",
+      "description": "Tab list container. Wraps tab buttons. Provides ARIA tablist role and orientation-specific layout.",
+      "html_element": "div",
+      "aria_role": "tablist",
+      "axes": ["orientation", "size", "flush"],
+      "axis_values": {
+        "orientation": ["horizontal", "vertical"],
+        "size": ["sm", "md", "lg"],
+        "flush": [false, true]
+      },
+      "discarded_axes": {
+        "RTL": "Layout-only. Handled via [dir='rtl'] ancestor.",
+        "Tab Icons": "No CSS delta on list container. Affects tab instance children only."
+      },
+      "default_variant": {
+        "orientation": "horizontal",
+        "size": "md",
+        "flush": false
+      },
+
+      "divider": {
+        "applies_to": "horizontal only",
+        "description": "3px rounded gray bar at the bottom of the tab list. Implemented as ::after on .tab-list--h.",
+        "height": "3px",
+        "color": "var(--tab-divider-color, #D2D6DB)",
+        "border-radius": "var(--radius-full)"
+      },
+
+      "variants": [
+        { "id": "tab-list-h-md",         "axes": { "orientation": "horizontal", "size": "md", "flush": false }, "status": "available" },
+        { "id": "tab-list-h-md-flush",   "axes": { "orientation": "horizontal", "size": "md", "flush": true  }, "status": "available" },
+        { "id": "tab-list-h-sm",         "axes": { "orientation": "horizontal", "size": "sm", "flush": false }, "status": "available" },
+        { "id": "tab-list-h-lg",         "axes": { "orientation": "horizontal", "size": "lg", "flush": false }, "status": "available" },
+        { "id": "tab-list-v-md",         "axes": { "orientation": "vertical",   "size": "md", "flush": false }, "status": "available" },
+        { "id": "tab-list-v-sm",         "axes": { "orientation": "vertical",   "size": "sm", "flush": false }, "status": "available" },
+        { "id": "tab-list-v-lg",         "axes": { "orientation": "vertical",   "size": "lg", "flush": false }, "status": "available" }
+      ],
+
+      "implementation_notes": [
+        "Set aria-label or aria-labelledby on the tab-list container.",
+        "Horizontal list: position relative, divider via ::after at bottom.",
+        "Vertical list: flex-direction column, no divider.",
+        "Flush removes horizontal padding from the tab list container.",
+        "Tab panels must be rendered outside this component with role='tabpanel' and aria-labelledby matching the tab id."
+      ]
+    }
+  }
+}

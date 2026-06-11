@@ -71,6 +71,11 @@ components/[component-name]/
     └── index.html
 ```
 
+- showcases/index.html contains Preview and Code tabs.
+- Each Preview has a matching Code block.
+- Each Code block has a working Copy button.
+- Code examples match the actual rendered component markup.
+
 ---
 
 ## analysis.md Requirements
@@ -624,6 +629,18 @@ If a global update is required:
 - Add it as a TODO
 - Do not apply it automatically
 
+Exception:
+
+The following shared showcase infrastructure files may be created or updated when generating or upgrading showcases:
+
+```text
+components/_showcase/showcase.css
+components/_showcase/showcase.js
+```
+
+These files are showcase infrastructure only.
+They are not component implementation files.
+
 ## Showcase Generation
 
 showcases/index.html is required.
@@ -639,6 +656,144 @@ Purpose:
 - QA review
 
 The showcase is part of the generated component package.
+
+### Showcase Preview / Code Tabs
+
+Every showcase item must include two tabs:
+
+- Preview
+- Code
+
+Rules:
+
+- Preview tab must be active by default.
+- Code tab must show the exact HTML used in the Preview tab.
+- Code must be wrapped in `<pre><code>`.
+- Each code block must include a Copy button.
+- Copy button must copy only the code of the current showcase item.
+- Do not use inline styles to simulate states unless explicitly documenting static state previews.
+- Prefer CSS classes and component modifiers.
+- Tabs must be keyboard accessible.
+- Use `<button type="button">` for tab controls.
+- Use `aria-selected`, `role="tablist"`, `role="tab"`, and `role="tabpanel"` when practical.
+- Every component variant/state shown visually must also expose its HTML in the Code tab.
+
+### Code Tab Scope Rule
+
+The Code tab must expose only reusable component markup.
+
+Allowed in Code tab:
+
+- The component root element
+- Component child elements
+- Required ARIA attributes
+- Required semantic attributes
+- Required modifier classes
+- Required state attributes such as disabled, aria-disabled, aria-pressed
+
+Forbidden in Code tab:
+
+- showcase wrappers
+- layout containers
+- tab markup
+- preview panel markup
+- code panel markup
+- headings
+- labels
+- variant badges
+- showcase CSS
+- showcase JavaScript
+- temporary QA/debug markup
+
+The copied code must be usable directly by a developer outside the showcase.
+
+### Centralized Showcase Shell
+
+Showcase page structure is not part of the component implementation.
+
+The following concerns must be centralized:
+
+- Page layout
+- Sidebar navigation
+- Page header
+- Main content container
+- Preview / Code tabs behavior
+- Copy behavior
+- Responsive showcase layout
+- Shared showcase styling
+
+Required shared files:
+
+```text
+components/_showcase/
+├── showcase.css
+└── showcase.js
+```
+
+Rules:
+
+- Do not duplicate showcase layout CSS inside component showcases.
+- Do not duplicate sidebar CSS inside component showcases.
+- Do not duplicate Preview / Code JavaScript inside component showcases.
+- Do not duplicate Copy button JavaScript inside component showcases.
+- Do not modify component CSS files for showcase layout.
+- Do not modify `token.css` for showcase layout.
+- Do not include showcase shell markup in Code tabs.
+- Do not include showcase shell markup in copied code.
+- Component showcases should contain only component examples and component-specific notes.
+
+Every `showcases/index.html` must include:
+
+```html
+<link rel="stylesheet" href="../../token.css" />
+<link rel="stylesheet" href="../../_showcase/showcase.css" />
+<script src="../../_showcase/showcase.js" defer></script>
+```
+
+Every `showcases/index.html` must use this minimal shell hook:
+
+```html
+<body data-showcase data-current-component="[component-name]" data-showcase-title="[Component Title]">
+  <div data-showcase-shell>
+    <main data-showcase-content>...</main>
+  </div>
+</body>
+```
+
+Shell rules:
+
+- `showcase.js` must build the page shell.
+- `showcase.js` must build the sidebar.
+- `showcase.js` must build or enhance the page header.
+- `showcase.js` must initialize Preview / Code tabs.
+- `showcase.js` must initialize Copy buttons.
+- `showcase.css` must own all showcase layout, sidebar, tabs, code block, and responsive styling.
+- Component showcases must not duplicate shell layout markup.
+
+Validation:
+
+- Shared showcase files exist.
+- Each showcase references shared showcase files.
+- Each showcase declares `data-current-component`.
+- Each showcase declares `data-showcase-title`.
+- Each showcase has `data-showcase-content`.
+- Code examples contain only reusable component markup.
+- Copied code is reusable outside the showcase.
+
+### Showcase Generation Order
+
+Preferred generation order:
+
+1. Create shared showcase infrastructure if missing.
+2. Generate component files.
+3. Generate showcase examples.
+4. Attach showcase to shared showcase infrastructure.
+
+Rules:
+
+- Never duplicate showcase infrastructure inside component showcases if shared infrastructure exists.
+- Prefer updating `components/_showcase/showcase.css` and `components/_showcase/showcase.js` over creating new showcase-specific infrastructure.
+- Component showcases should contain only component-specific examples and documentation.
 
 ### Showcase Asset Requirements
 
@@ -715,3 +870,56 @@ The skill should automatically:
 
 without additional instructions.
 ```
+
+## Reference Component Policy
+
+The current component manifest is the only source of truth for component behavior, states, variants, anatomy, and visual decisions.
+
+Other existing components may be read only as formatting references.
+
+Allowed:
+
+- Read another component to understand file structure.
+- Read another component to match schema shape.
+- Read another component to align documentation format.
+- Read another component to understand naming conventions.
+
+Not allowed:
+
+- Do not copy visual values from another component.
+- Do not copy tokens from another component.
+- Do not copy states from another component.
+- Do not copy accessibility behavior from another component unless it is explicitly required by the current manifest.
+- Do not copy compliance mappings directly from another component.
+- Do not infer missing behavior from button, chip, or any other component.
+
+When generating a component, the skill must first use:
+components/[component-name]/manifest.json
+
+or the component-local JSON source provided by the user.
+
+If another component is read, it must be treated as a format reference only, not as a source of component behavior.
+
+- No behavior, states, tokens, or accessibility rules were copied from another component unless explicitly justified in analysis.md.
+
+## Focus Policy
+
+Do not assume :focus-visible by default.
+
+Determine focus behavior from:
+
+- Platform Code standards
+- Accessibility standards
+- Manifest analysis
+- Focus layer geometry
+
+Allowed implementations:
+
+- :focus
+- :focus-visible
+- :focus-within
+
+Document the chosen strategy in analysis.md.
+
+If the source does not explicitly require keyboard-only focus behavior,
+do not automatically prefer :focus-visible.

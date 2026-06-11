@@ -1,0 +1,255 @@
+/* =============================================================================
+   List Component
+   manifest: components/list/manifest.json + mainifest-2.json
+   Variants: 18 container (2 RTL × 3 Style × 3 Type)
+             36 item atom (2 RTL × 3 Type × 2 Level × 3 Style)
+
+   Marker strategy:
+   - Ordered / Unordered: CSS counters + ::before (LTR) / ::after (RTL)
+     No marker HTML element. The CSS generates the marker automatically.
+   - With Icon: flex child span.list__icon. Icon order is CSS-controlled
+     for RTL via the `order` property.
+   ============================================================================= */
+
+/* TODO: --list-* tokens are missing from token.css. Proposed mappings in reference.json. */
+
+/* ---- Arabic alphabetic counter for RTL Level Two -------------------------- */
+/*
+ * Requires @counter-style support: Chrome 91+, Firefox 33+, Safari 17+.
+ * TODO: verify minimum Safari version requirement for this project.
+ * If Safari < 17 must be supported, replace with a static fallback or
+ * JS-based counter injection.
+ */
+@counter-style arabic-alpha {
+  system: alphabetic;
+  symbols: 'أ' 'ب' 'ت' 'ث' 'ج' 'ح' 'خ' 'د' 'ذ' 'ر' 'ز' 'س' 'ش' 'ص' 'ض' 'ط' 'ظ' 'ع' 'غ' 'ف' 'ق' 'ك' 'ل' 'م' 'ن' 'ه' 'و' 'ي';
+}
+
+/* ---- Base container ------------------------------------------------------- */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* ---- Counter setup for ordered lists -------------------------------------- */
+
+.list--ordered {
+  counter-reset: list-level-one;
+}
+
+.list--ordered .list__item--level-one {
+  counter-increment: list-level-one;
+  counter-reset: list-level-two;
+}
+
+.list--ordered .list__item--level-two {
+  counter-increment: list-level-two;
+}
+
+/* ---- Base list item ------------------------------------------------------- */
+
+.list__item {
+  display: inline-flex;
+  align-items: flex-start;
+  /* TODO: --list-item-gap missing in token.css. Proposed: var(--Global-spacing-md) */
+  gap: var(--list-item-gap, var(--Global-spacing-md, 8px));
+  padding: 0;
+}
+
+/* Ordered and With Icon items align children to center vertically */
+.list--ordered .list__item,
+.list--with-icon .list__item {
+  align-items: center;
+}
+
+/* ---- Item text ------------------------------------------------------------ */
+
+.list__text {
+  /* TODO: --list-item-font-family missing in token.css */
+  font-family: var(--list-item-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"));
+  /* TODO: --list-item-font-size missing in token.css */
+  font-size: var(--list-item-font-size, var(--Size-Text-typo-size-text-md, 16px));
+  /* TODO: --list-item-font-weight missing in token.css */
+  font-weight: var(--list-item-font-weight, 400);
+  /* TODO: --list-item-line-height missing in token.css */
+  line-height: var(--list-item-line-height, var(--Line-Height-Text-line-heights-text-md, 24px));
+  font-style: normal;
+}
+
+/* ---- LTR markers via ::before -------------------------------------------- */
+/*
+ * In a LTR flex row, ::before is the first flex item → appears on the LEFT.
+ * This is the correct position for the list marker in LTR.
+ */
+
+.list--ordered .list__item--level-one::before,
+.list--ordered .list__item--level-two::before,
+.list--unordered .list__item--level-one::before,
+.list--unordered .list__item--level-two::before {
+  flex-shrink: 0;
+  /* TODO: --list-item-font-family missing in token.css */
+  font-family: var(--list-item-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"));
+  /* TODO: --list-item-font-size missing in token.css */
+  font-size: var(--list-item-font-size, var(--Size-Text-typo-size-text-md, 16px));
+  font-weight: var(--list-item-font-weight, 400);
+  /* TODO: --list-item-line-height missing in token.css */
+  line-height: var(--list-item-line-height, var(--Line-Height-Text-line-heights-text-md, 24px));
+}
+
+/* Ordered — LTR Level One: "1-", "2-", … */
+.list--ordered .list__item--level-one::before {
+  content: counter(list-level-one) "-";
+}
+
+/* Ordered — LTR Level Two: "a-", "b-", … */
+.list--ordered .list__item--level-two::before {
+  content: counter(list-level-two, lower-alpha) "-";
+}
+
+/* Unordered — LTR Level One: "-" */
+.list--unordered .list__item--level-one::before {
+  content: "-";
+}
+
+/* Unordered — LTR Level Two: "•" */
+.list--unordered .list__item--level-two::before {
+  content: "•";
+}
+
+/* ---- RTL markers via ::after --------------------------------------------- */
+/*
+ * In a RTL flex row (dir="rtl" on the element or an ancestor):
+ *   - ::before is still first in DOM → flex places it on the RIGHT (start of RTL row).
+ *   - We want the marker on the LEFT (end of RTL row).
+ *   → Solution: clear ::before in RTL contexts and use ::after instead.
+ *     ::after is the last DOM item → flex places it on the LEFT (end of RTL row). ✓
+ *
+ * [dir="rtl"] covers both:
+ *   - dir="rtl" set on the .list element itself
+ *   - dir="rtl" inherited from an ancestor (e.g., <html dir="rtl">)
+ */
+
+/* Clear LTR ::before in RTL contexts */
+[dir="rtl"] .list--ordered .list__item--level-one::before,
+[dir="rtl"] .list--ordered .list__item--level-two::before,
+[dir="rtl"] .list--unordered .list__item--level-one::before,
+[dir="rtl"] .list--unordered .list__item--level-two::before {
+  content: none;
+}
+
+/* Shared ::after marker styles in RTL */
+[dir="rtl"] .list--ordered .list__item--level-one::after,
+[dir="rtl"] .list--ordered .list__item--level-two::after,
+[dir="rtl"] .list--unordered .list__item--level-one::after,
+[dir="rtl"] .list--unordered .list__item--level-two::after {
+  flex-shrink: 0;
+  font-family: var(--list-item-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"));
+  font-size: var(--list-item-font-size, var(--Size-Text-typo-size-text-md, 16px));
+  font-weight: var(--list-item-font-weight, 400);
+  line-height: var(--list-item-line-height, var(--Line-Height-Text-line-heights-text-md, 24px));
+}
+
+/* Ordered — RTL Level One: "-1", "-2", … */
+[dir="rtl"] .list--ordered .list__item--level-one::after {
+  content: "-" counter(list-level-one);
+}
+
+/* Ordered — RTL Level Two: "أ-", "ب-", … */
+[dir="rtl"] .list--ordered .list__item--level-two::after {
+  content: counter(list-level-two, arabic-alpha) "-";
+}
+
+/* Unordered — RTL Level One: "-" */
+[dir="rtl"] .list--unordered .list__item--level-one::after {
+  content: "-";
+}
+
+/* Unordered — RTL Level Two: "•" */
+[dir="rtl"] .list--unordered .list__item--level-two::after {
+  content: "•";
+}
+
+/* ---- Icon (With Icon type) ----------------------------------------------- */
+
+.list__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  /* TODO: --list-item-icon-size missing in token.css. Proposed: 16px */
+  width: var(--list-item-icon-size, 16px);
+  height: var(--list-item-icon-size, 16px);
+  color: inherit;
+}
+
+.list__icon svg {
+  display: block;
+  width: var(--list-item-icon-size, 16px);
+  height: var(--list-item-icon-size, 16px);
+}
+
+/*
+ * With Icon — RTL: push icon to the end of the row (→ LEFT in RTL flex).
+ * DOM order stays identical for LTR and RTL: [.list__icon][.list__text].
+ * The `order` property handles the visual flip without changing markup.
+ */
+[dir="rtl"] .list--with-icon .list__icon {
+  order: 1;
+}
+
+/* ---- Nesting levels ------------------------------------------------------- */
+
+/* Level One: default state, no indent */
+.list__item--level-one {
+  padding-inline-start: 0;
+}
+
+.list__item--level-two {
+  /*
+   * Logical property: padding-left in LTR, padding-right in RTL.
+   * Works automatically with dir="rtl" on any ancestor. No [dir=rtl] override needed.
+   * TODO: --list-item-indent missing in token.css. Proposed: var(--Global-spacing-3xl)
+   */
+  padding-inline-start: var(--list-item-indent, var(--Global-spacing-3xl, 24px));
+}
+
+/* ---- Style: Primary ------------------------------------------------------- */
+
+.list--primary .list__item::before,
+.list--primary .list__item::after,
+.list--primary .list__text,
+.list--primary .list__icon {
+  /* TODO: --list-text-primary missing in token.css. Proposed: var(--Text-text-primary) */
+  color: var(--list-text-primary, var(--Text-text-primary, #1B8354));
+}
+
+/* ---- Style: Neutral ------------------------------------------------------- */
+
+.list--neutral .list__item::before,
+.list--neutral .list__item::after,
+.list--neutral .list__text,
+.list--neutral .list__icon {
+  /* TODO: --list-text-neutral missing in token.css. Proposed: var(--Text-text-default) */
+  color: var(--list-text-neutral, var(--Text-text-default, #161616));
+}
+
+/* ---- Style: On-Color ------------------------------------------------------ */
+
+.list--on-color .list__item::before,
+.list--on-color .list__item::after,
+.list--on-color .list__text,
+.list--on-color .list__icon {
+  /* TODO: --list-text-oncolor missing in token.css. Proposed: var(--Text-text-oncolor-primary) */
+  color: var(--list-text-oncolor, var(--Text-text-oncolor-primary, #FFF));
+}
+
+/*
+ * .list--unordered: no additional CSS required beyond base .list styles.
+ * Exists as a semantic classifier for template authors and audit rules.
+ */

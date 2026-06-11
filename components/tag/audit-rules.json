@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "tag",
+  "selector_root_tag": ".tag",
+  "selector_root_status_tag": ".status-tag",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "TAG-A11Y-001",
+      "standard_id": "WCAG-2.1-1.1.1",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Icon-only tag must have an accessible label",
+      "description": "A tag with .tag--icon-only has no visible text. The accessible name must be provided via aria-label on the root span, or via .sr-only text inside the tag.",
+      "target": ".tag.tag--icon-only",
+      "expected": "element has non-empty aria-label OR contains .sr-only with non-empty text",
+      "check": {
+        "type": "aria_attribute_required",
+        "condition": "element has class tag--icon-only",
+        "logic": "any_of",
+        "conditions": [
+          "element has non-empty aria-label attribute",
+          "element contains .sr-only with non-empty trimmed text content"
+        ]
+      },
+      "message": "Icon-only .tag is missing an accessible label. Add aria-label on the root span or a .sr-only text child.",
+      "fix": "Add aria-label=\"Describe the tag\" to the root span element, or add <span class=\"sr-only\">Label</span> as a child.",
+      "standard_refs": ["WCAG-2.1-1.1.1", "WCAG-2.1-4.1.2", "PLATFORM-CODE-TAG-003"]
+    },
+
+    {
+      "id": "TAG-A11Y-002",
+      "standard_id": "WCAG-2.1-1.1.1",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Tag icon must have aria-hidden",
+      "description": "The .tag__icon slot wraps a decorative SVG. It must carry aria-hidden='true' to prevent redundant announcements by screen readers when visible text is also present.",
+      "target": ".tag .tag__icon",
+      "expected": "element has aria-hidden='true'",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "all_of",
+        "conditions": [
+          "element has aria-hidden attribute equal to 'true'"
+        ]
+      },
+      "message": ".tag__icon is missing aria-hidden='true'. Screen readers may announce the SVG redundantly.",
+      "fix": "Add aria-hidden=\"true\" to .tag__icon: <span class=\"tag__icon\" aria-hidden=\"true\">...</span>",
+      "standard_refs": ["WCAG-2.1-1.1.1"]
+    },
+
+    {
+      "id": "TAG-A11Y-003",
+      "standard_id": "WCAG-2.1-1.4.1",
+      "rule_type": "structure_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Status Tag must always have visible text alongside the dot",
+      "description": "The .status-tag__dot uses color to convey state. Per WCAG 1.4.1, color alone must not be the sole means of conveying information. A visible .status-tag__text sibling is required. The dot must carry aria-hidden='true'.",
+      "target": ".status-tag",
+      "expected": "contains .status-tag__text with non-empty text AND .status-tag__dot has aria-hidden='true'",
+      "check": {
+        "type": "structure_required",
+        "logic": "all_of",
+        "conditions": [
+          "element contains .status-tag__text with non-empty trimmed text content",
+          "element contains .status-tag__dot with aria-hidden='true'"
+        ]
+      },
+      "message": "Status Tag is missing visible text or dot aria-hidden. The dot color alone does not satisfy WCAG 1.4.1.",
+      "fix": "Ensure .status-tag__text with visible text is present. Add aria-hidden=\"true\" to .status-tag__dot.",
+      "standard_refs": ["WCAG-2.1-1.4.1", "PLATFORM-CODE-TAG-004"]
+    },
+
+    {
+      "id": "TAG-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-TAG-003",
+      "rule_type": "element_type_required",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Tag root must be a <span> element",
+      "description": "Both .tag and .status-tag are non-interactive display components. The root element must be <span> (or an inline non-interactive element). Using <div>, <button>, <a>, or <li> as the root violates the component contract unless the tag is intentionally made interactive by the consuming application.",
+      "target": ".tag, .status-tag",
+      "expected": "element is a <span>",
+      "check": {
+        "type": "element_type_required",
+        "logic": "all_of",
+        "conditions": [
+          "element tag name is 'span'"
+        ]
+      },
+      "message": ".tag or .status-tag root is not a <span> element. Non-interactive labels must use <span>.",
+      "fix": "Change the root element to <span>. If the tag must be interactive (e.g., clickable/dismissible), consult the extended tag patterns in tag.contract.md §8.",
+      "standard_refs": ["PLATFORM-CODE-TAG-003"]
+    },
+
+    {
+      "id": "TAG-STRUCT-002",
+      "standard_id": "PLATFORM-CODE-TAG-003",
+      "rule_type": "structure_required",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Tag must contain .tag__text or be icon-only",
+      "description": "A .tag element without .tag--icon-only must contain a .tag__text child with non-empty text. A .tag--icon-only without aria-label or .sr-only text is caught by TAG-A11Y-001.",
+      "target": ".tag:not(.tag--icon-only)",
+      "expected": "element contains .tag__text with non-empty trimmed text content",
+      "check": {
+        "type": "structure_required",
+        "condition": "element does not have class tag--icon-only",
+        "logic": "all_of",
+        "conditions": [
+          "element contains .tag__text with non-empty trimmed text content"
+        ]
+      },
+      "message": ".tag is missing .tag__text content. Add a .tag__text child, or add .tag--icon-only if icon-only is intended.",
+      "fix": "Add <span class=\"tag__text\">Label</span> as a child, or add class tag--icon-only to the root and provide aria-label.",
+      "standard_refs": ["PLATFORM-CODE-TAG-003"]
+    },
+
+    {
+      "id": "TAG-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-TAG-001",
+      "rule_type": "no_hardcoded_values",
+      "category": "tokens",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "No hardcoded color, spacing, radius, or typography values in tag CSS",
+      "description": "All visual values in tag.css must reference CSS custom properties. Hardcoded hex colors, rgba values (except in the proposed :root token definitions), pixel dimensions, or font values in component selectors are prohibited.",
+      "target": "tag.css",
+      "expected": "no hardcoded visual values in .tag or .status-tag selectors",
+      "check": {
+        "type": "no_hardcoded_values",
+        "scope": "component_selectors",
+        "excluded_contexts": [":root token definitions block"],
+        "detect": ["hex colors", "rgba()", "hardcoded px in color/font/spacing properties", "hardcoded font-family strings"]
+      },
+      "message": "Hardcoded visual value detected in tag.css component selector. Replace with a CSS custom property.",
+      "fix": "Define a component token (e.g., --tag-neutral-bg) in the :root block with the primitive token fallback, then reference it in the selector.",
+      "standard_refs": ["PLATFORM-CODE-TAG-001"]
+    },
+
+    {
+      "id": "TAG-RTL-001",
+      "standard_id": "PLATFORM-CODE-TAG-002",
+      "rule_type": "no_physical_properties",
+      "category": "rtl",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "No physical left/right padding or margin in tag component selectors",
+      "description": "tag.css must not use padding-left, padding-right, margin-left, or margin-right in component selectors. RTL must be handled via [dir='rtl'] flex-direction reversal. Padding-inline is acceptable for symmetric padding.",
+      "target": "tag.css",
+      "expected": "no padding-left, padding-right, margin-left, or margin-right in .tag or .status-tag selectors (excluding [dir='rtl'] rules)",
+      "check": {
+        "type": "no_physical_properties",
+        "forbidden_properties": ["padding-left", "padding-right", "margin-left", "margin-right"],
+        "scope": "component_selectors",
+        "excluded_contexts": ["[dir='rtl'] selectors"]
+      },
+      "message": "Physical directional padding or margin detected in tag.css. Replace with padding-inline or use [dir='rtl'] flex-direction reversal.",
+      "fix": "Replace padding-left/padding-right with padding-inline. Use [dir='rtl'] { flex-direction: row-reverse; } for visual RTL adaptation.",
+      "standard_refs": ["PLATFORM-CODE-TAG-002"]
+    },
+
+    {
+      "id": "TAG-USAGE-001",
+      "standard_id": "PLATFORM-CODE-TAG-003",
+      "rule_type": "modifier_combination",
+      "category": "usage",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Tag must not combine multiple style modifiers",
+      "description": "Only one style modifier should be applied to a .tag element at a time. Combining .tag--error with .tag--warning (or any two style modifiers) produces undefined visual behavior.",
+      "target": ".tag",
+      "expected": "element has at most one style modifier from: tag--neutral (implicit), tag--error, tag--info, tag--success, tag--warning, tag--on-color",
+      "check": {
+        "type": "modifier_combination",
+        "style_modifiers": ["tag--error", "tag--info", "tag--success", "tag--warning", "tag--on-color"],
+        "max_count": 1
+      },
+      "message": "Multiple style modifiers on .tag. Only one style modifier is allowed at a time.",
+      "fix": "Remove all but one style modifier from the element.",
+      "standard_refs": ["PLATFORM-CODE-TAG-003"]
+    },
+
+    {
+      "id": "TAG-USAGE-002",
+      "standard_id": "PLATFORM-CODE-TAG-004",
+      "rule_type": "modifier_combination",
+      "category": "usage",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Status Tag must not combine multiple status or style modifiers",
+      "description": "A .status-tag may have at most one style modifier (--blue, --green, --red, --yellow) and at most one status modifier (--ghost, --inverted). Combining multiple style or multiple status modifiers is invalid.",
+      "target": ".status-tag",
+      "expected": "at most one style modifier AND at most one status modifier",
+      "check": {
+        "type": "modifier_combination",
+        "style_modifiers": ["status-tag--blue", "status-tag--green", "status-tag--red", "status-tag--yellow"],
+        "status_modifiers": ["status-tag--ghost", "status-tag--inverted"],
+        "max_style_count": 1,
+        "max_status_count": 1
+      },
+      "message": "Multiple style or status modifiers on .status-tag. Only one of each is allowed.",
+      "fix": "Remove extra modifiers. Apply exactly one style and at most one status modifier.",
+      "standard_refs": ["PLATFORM-CODE-TAG-004"]
+    },
+
+    {
+      "id": "TAG-TOKEN-002",
+      "standard_id": "PLATFORM-CODE-TAG-001",
+      "rule_type": "token_migration",
+      "category": "tokens",
+      "severity": "medium",
+      "validation_status": "not_run",
+      "title": "Component tokens must be moved from tag.css :root to token.css",
+      "description": "The :root block in tag.css defines proposed component tokens as a temporary measure. These must be extracted to token.css before production deployment. This rule tracks migration completion.",
+      "target": "token.css",
+      "expected": "token.css contains --tag-* and --status-tag-* tokens",
+      "check": {
+        "type": "token_presence",
+        "file": "token.css",
+        "required_tokens": [
+          "--tag-height",
+          "--tag-neutral-bg",
+          "--tag-neutral-text",
+          "--status-tag-height",
+          "--status-tag-neutral-subtle-bg"
+        ]
+      },
+      "message": "Component tokens --tag-* and --status-tag-* are not yet in token.css. Migration from tag.css :root block is pending.",
+      "fix": "Move all --tag-* and --status-tag-* token definitions from tag.css :root block to token.css under a TAG component tokens section.",
+      "standard_refs": ["PLATFORM-CODE-TAG-001"]
+    }
+
+  ]
+}

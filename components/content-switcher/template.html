@@ -1,0 +1,208 @@
+<!--
+  Content Switcher — Template
+  Source: components/content-switcher/mainifest.json
+
+  Usage:
+    Size:    Add content-switcher--sm | content-switcher--md | content-switcher--lg
+    OnColor: Add content-switcher--on-color
+    RTL:     Add dir="rtl" on the container (no extra class needed)
+
+  Accessibility:
+    - role="tablist" on container with aria-label or aria-labelledby
+    - role="tab" + aria-selected="true|false" on each item
+    - tabindex="0" on active item; tabindex="-1" on inactive items (roving tabindex)
+    - aria-controls pointing to the associated tabpanel id
+    - Keyboard: Arrow Left/Right to navigate; Home/End for first/last; Tab to exit
+    - JavaScript required for activation and panel switching
+-->
+
+<!-- ============================================================
+     Variant: Medium — OnColor=False (default) — LTR
+     ============================================================ -->
+<div
+  class="content-switcher content-switcher--md"
+  role="tablist"
+  aria-label="View options"
+>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="true"
+    aria-controls="panel-1"
+    id="tab-1"
+    tabindex="0"
+    type="button"
+  >
+    Item
+  </button>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-2"
+    id="tab-2"
+    tabindex="-1"
+    type="button"
+  >
+    Item
+  </button>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-3"
+    id="tab-3"
+    tabindex="-1"
+    type="button"
+  >
+    Item
+  </button>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-4"
+    id="tab-4"
+    tabindex="-1"
+    type="button"
+  >
+    Item
+  </button>
+</div>
+
+<!-- ============================================================
+     Variant: Medium — OnColor=False — RTL
+     ============================================================ -->
+<div
+  class="content-switcher content-switcher--md"
+  role="tablist"
+  aria-label="خيارات العرض"
+  dir="rtl"
+>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-ar-1"
+    id="tab-ar-1"
+    tabindex="-1"
+    type="button"
+  >
+    عنصر
+  </button>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-ar-2"
+    id="tab-ar-2"
+    tabindex="-1"
+    type="button"
+  >
+    عنصر
+  </button>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-ar-3"
+    id="tab-ar-3"
+    tabindex="-1"
+    type="button"
+  >
+    عنصر
+  </button>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="true"
+    aria-controls="panel-ar-4"
+    id="tab-ar-4"
+    tabindex="0"
+    type="button"
+  >
+    عنصر
+  </button>
+</div>
+
+<!-- ============================================================
+     Variant: Medium — OnColor=True — LTR
+     ============================================================ -->
+<div
+  class="content-switcher content-switcher--md content-switcher--on-color"
+  role="tablist"
+  aria-label="View options"
+>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="true"
+    aria-controls="panel-oc-1"
+    id="tab-oc-1"
+    tabindex="0"
+    type="button"
+  >
+    Item
+  </button>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-oc-2"
+    id="tab-oc-2"
+    tabindex="-1"
+    type="button"
+  >
+    Item
+  </button>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-oc-3"
+    id="tab-oc-3"
+    tabindex="-1"
+    type="button"
+  >
+    Item
+  </button>
+  <button
+    class="content-switcher__item"
+    role="tab"
+    aria-selected="false"
+    aria-controls="panel-oc-4"
+    id="tab-oc-4"
+    tabindex="-1"
+    type="button"
+  >
+    Item
+  </button>
+</div>
+
+<!-- ============================================================
+     Variant: Small — OnColor=False
+     ============================================================ -->
+<div
+  class="content-switcher content-switcher--sm"
+  role="tablist"
+  aria-label="View options"
+>
+  <button class="content-switcher__item" role="tab" aria-selected="true"  tabindex="0"  type="button">Item</button>
+  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+</div>
+
+<!-- ============================================================
+     Variant: Large — OnColor=False
+     ============================================================ -->
+<div
+  class="content-switcher content-switcher--lg"
+  role="tablist"
+  aria-label="View options"
+>
+  <button class="content-switcher__item" role="tab" aria-selected="true"  tabindex="0"  type="button">Item</button>
+  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+</div>

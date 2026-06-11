@@ -1,0 +1,813 @@
+[
+  {
+    "cssProps": {},
+    "type": "COMPONENT_SET",
+    "name": "Rating",
+    "children": [
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-xs, 4px)",
+          "itemSpacing-variable": "--spacing-globalspacing-xs",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:7512bbb4b2237921fd8ebbcddc583b2816855a60/405:112"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, Brand=No",
+        "children": [
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Background-background-secondary, #DBA102)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Background-background-secondary, #DBA102)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Background-background-secondary, #DBA102)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Colors-Gray-neutral-300, #D2D6DB)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              },
+              {
+                "cssProps": {
+                  "width": "23px",
+                  "height": "45px",
+                  "fill": "var(--Background-background-secondary, #DBA102)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 2"
+              },
+              {
+                "cssProps": {
+                  "width": "26px",
+                  "height": "45px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 3"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-xs, 4px)",
+          "itemSpacing-variable": "--spacing-globalspacing-xs",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:7512bbb4b2237921fd8ebbcddc583b2816855a60/405:112"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, Brand=yes",
+        "children": [
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Background-background-primary, #1B8354)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Background-background-primary, #1B8354)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Background-background-primary, #1B8354)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Colors-Gray-neutral-300, #D2D6DB)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              },
+              {
+                "cssProps": {
+                  "width": "23px",
+                  "height": "45px",
+                  "fill": "var(--Background-background-primary, #1B8354)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 2"
+              },
+              {
+                "cssProps": {
+                  "width": "26px",
+                  "height": "45px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 3"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "48px",
+              "height": "48px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "48px",
+                  "height": "48px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)",
+                  "cornerRadius-variable": "--radius-radius-xs",
+                  "cornerRadius-collection": "Radius",
+                  "cornerRadius-variable-id": "VariableID:6298:46476"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-xs, 4px)",
+          "itemSpacing-variable": "--spacing-globalspacing-xs",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:7512bbb4b2237921fd8ebbcddc583b2816855a60/405:112"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Meduim, Brand=No",
+        "children": [
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Background-background-secondary, #DBA102)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Background-background-secondary, #DBA102)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Background-background-secondary, #DBA102)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Colors-Gray-neutral-300, #D2D6DB)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              },
+              {
+                "cssProps": {
+                  "width": "15.333px",
+                  "height": "30px",
+                  "fill": "var(--Background-background-secondary, #DBA102)"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 2"
+              },
+              {
+                "cssProps": {
+                  "width": "17.333px",
+                  "height": "30px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 3"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-xs, 4px)",
+          "itemSpacing-variable": "--spacing-globalspacing-xs",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:7512bbb4b2237921fd8ebbcddc583b2816855a60/405:112"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Meduim, Brand=yes",
+        "children": [
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Background-background-primary, #1B8354)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Background-background-primary, #1B8354)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Background-background-primary, #1B8354)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Colors-Gray-neutral-300, #D2D6DB)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              },
+              {
+                "cssProps": {
+                  "width": "15.333px",
+                  "height": "30px",
+                  "fill": "var(--Background-background-primary, #1B8354)"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 2"
+              },
+              {
+                "cssProps": {
+                  "width": "17.333px",
+                  "height": "30px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 3"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "32px",
+              "height": "32px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "32px",
+                  "height": "32px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-xs, 4px)",
+          "itemSpacing-variable": "--spacing-globalspacing-xs",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:7512bbb4b2237921fd8ebbcddc583b2816855a60/405:112"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, Brand=No",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Background-background-secondary, #DBA102)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Background-background-secondary, #DBA102)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Background-background-secondary, #DBA102)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Colors-Gray-neutral-300, #D2D6DB)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              },
+              {
+                "cssProps": {
+                  "width": "11.5px",
+                  "height": "22.5px",
+                  "fill": "var(--Background-background-secondary, #DBA102)"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 2"
+              },
+              {
+                "cssProps": {
+                  "width": "13px",
+                  "height": "22.5px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 3"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "inline-flex",
+          "align-items": "flex-start",
+          "gap": "var(--Global-spacing-xs, 4px)",
+          "itemSpacing-variable": "--spacing-globalspacing-xs",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:7512bbb4b2237921fd8ebbcddc583b2816855a60/405:112"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, Brand=yes",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Background-background-primary, #1B8354)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Background-background-primary, #1B8354)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Background-background-primary, #1B8354)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Colors-Gray-neutral-300, #D2D6DB)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              },
+              {
+                "cssProps": {
+                  "width": "11.5px",
+                  "height": "22.5px",
+                  "fill": "var(--Background-background-primary, #1B8354)"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 2"
+              },
+              {
+                "cssProps": {
+                  "width": "13px",
+                  "height": "22.5px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+                },
+                "type": "RECTANGLE",
+                "name": "Star 3"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "_RatingStar",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "24px",
+                  "height": "24px",
+                  "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+                },
+                "type": "STAR",
+                "name": "Star 1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

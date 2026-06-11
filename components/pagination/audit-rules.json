@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.0.0",
+  "component": "pagination",
+  "description": "Automated and manual audit rules for the Pagination component.",
+  "rules": [
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-001",
+      "severity": "high",
+      "category": "accessibility",
+      "rule": "Root element must be <nav> with aria-label",
+      "selector": ".pagination",
+      "check": "Element must be a <nav> element with a non-empty aria-label attribute",
+      "fail_example": "<div class='pagination'>",
+      "pass_example": "<nav class='pagination pagination--lg' aria-label='Pagination'>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-002",
+      "severity": "high",
+      "category": "accessibility",
+      "rule": "Current page item must have aria-current='page'",
+      "selector": ".pagination__item--current, [aria-current='page']",
+      "check": "The active page button must have aria-current='page' attribute",
+      "fail_example": "<button class='pagination__item pagination__item--current'>1</button>",
+      "pass_example": "<button class='pagination__item' aria-current='page'>1</button>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-003",
+      "severity": "high",
+      "category": "accessibility",
+      "rule": "Nav buttons must have accessible names",
+      "selector": ".pagination__nav",
+      "check": "prev/next buttons must have aria-label (e.g., 'Previous page', 'Next page')",
+      "fail_example": "<button class='pagination__nav'><svg/></button>",
+      "pass_example": "<button class='pagination__nav pagination__nav--prev' aria-label='Previous page'><svg/></button>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-004",
+      "severity": "medium",
+      "category": "accessibility",
+      "rule": "Page number buttons should have aria-label='Page N'",
+      "selector": ".pagination__item:not(.pagination__item--overflow)",
+      "check": "Each interactive page item button should have aria-label for screen readers",
+      "fail_example": "<button class='pagination__item'>5</button>",
+      "pass_example": "<button class='pagination__item' aria-label='Page 5'>5</button>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-005",
+      "severity": "high",
+      "category": "accessibility",
+      "rule": "Overflow trigger must be an interactive button with disclosure ARIA attributes",
+      "selector": ".pagination__item--overflow",
+      "check": "Overflow item must be a <button> with aria-label, aria-expanded, and aria-haspopup='listbox'. It is NOT a static span — it opens a page-jump panel.",
+      "fail_example": "<span class='pagination__item pagination__item--overflow' aria-hidden='true'>...</span>",
+      "pass_example": "<button class='pagination__item pagination__item--overflow' aria-label='More pages' aria-expanded='false' aria-haspopup='listbox'>...</button>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-015",
+      "severity": "high",
+      "category": "accessibility",
+      "rule": "Overflow panel must have listbox role and accessible name",
+      "selector": ".pagination__overflow-panel",
+      "check": "The panel element must be a <ul> with role='listbox' and aria-label='Jump to page' (or equivalent localized label)",
+      "fail_example": "<div class='pagination__overflow-panel'>",
+      "pass_example": "<ul class='pagination__overflow-panel' role='listbox' aria-label='Jump to page'>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-016",
+      "severity": "high",
+      "category": "accessibility",
+      "rule": "Overflow options must use role='option' and aria-selected on the selected item",
+      "selector": ".pagination__overflow-option",
+      "check": "Each option button must have role='option'. The selected page must have aria-selected='true' and include a visible check indicator.",
+      "fail_example": "<button class='pagination__overflow-option'>4</button>",
+      "pass_example": "<button class='pagination__overflow-option pagination__overflow-option--selected' role='option' aria-selected='true'><svg class='pagination__overflow-check'>...</svg>4</button>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-006",
+      "severity": "high",
+      "category": "css",
+      "rule": "Size modifier is required",
+      "selector": ".pagination",
+      "check": "Root element must have exactly one of: .pagination--lg, .pagination--md, .pagination--sm",
+      "fail_example": "<nav class='pagination'>",
+      "pass_example": "<nav class='pagination pagination--lg'>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-007",
+      "severity": "medium",
+      "category": "css",
+      "rule": "Page items must use position: relative for ::after selector indicator",
+      "selector": ".pagination__item",
+      "check": "CSS must set position: relative on .pagination__item to anchor the ::after pseudo-element",
+      "fail_example": "/* .pagination__item missing position: relative */",
+      "pass_example": ".pagination__item { position: relative; }"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-008",
+      "severity": "medium",
+      "category": "accessibility",
+      "rule": "Disabled nav buttons should use aria-disabled when preserving focus",
+      "selector": ".pagination__nav[disabled]",
+      "check": "If nav button must remain focusable for AT navigation, prefer aria-disabled='true' over disabled attribute",
+      "fail_example": "<button class='pagination__nav' disabled>",
+      "pass_example": "<button class='pagination__nav' aria-disabled='true' tabindex='0'>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-009",
+      "severity": "low",
+      "category": "css",
+      "rule": "No hardcoded visual values in component CSS",
+      "check": "All color, spacing, radius, and font values must use CSS custom properties (var()). No hex, px, or named color literals allowed in non-fallback positions.",
+      "fail_example": "background: #F3F4F6;",
+      "pass_example": "background: var(--pagination-item-hover-bg, var(--Background-background-neutral-100, #F3F4F6));"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-010",
+      "severity": "medium",
+      "category": "tokens",
+      "rule": "Component-level tokens must be defined in token.css",
+      "check": "All --pagination-* tokens must exist in token.css with values. Fallbacks in component CSS are acceptable for development only.",
+      "status": "pending",
+      "notes": "All --pagination-* tokens are currently missing. See analysis.md Missing Tokens."
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-011",
+      "severity": "high",
+      "category": "css",
+      "rule": "Focus indicator must never be suppressed",
+      "selector": ".pagination__item, .pagination__nav",
+      "check": "No outline: none or outline: 0 on interactive elements without a visible replacement focus indicator",
+      "fail_example": ".pagination__item:focus { outline: none; }",
+      "pass_example": ".pagination__item:focus-visible { outline: 2px solid var(--pagination-item-focus-border-color); }"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-012",
+      "severity": "medium",
+      "category": "rtl",
+      "rule": "RTL must use dir attribute, not CSS class",
+      "check": "RTL layout must be triggered by dir='rtl' on the <nav> element, not by a separate .pagination--rtl class",
+      "fail_example": "<nav class='pagination pagination--rtl'>",
+      "pass_example": "<nav class='pagination pagination--lg' dir='rtl'>"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-013",
+      "severity": "advisory",
+      "category": "accessibility",
+      "rule": "Small size touch target",
+      "check": ".pagination--sm produces 24px touch targets, below the recommended 44px minimum for touch interfaces. Consider providing a larger hit area via padding expansion or using .pagination--md or .pagination--lg in touch contexts.",
+      "status": "risk"
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-RULE-014",
+      "severity": "low",
+      "category": "template",
+      "rule": "Template classes / CSS selector orphan check",
+      "check": "Every class used in template.html must have a corresponding selector in pagination.css. Every selector in pagination.css must be used in at least one template or showcase variant.",
+      "verified_classes": [
+        ".pagination",
+        ".pagination--lg",
+        ".pagination--md",
+        ".pagination--sm",
+        ".pagination__nav",
+        ".pagination__nav--prev",
+        ".pagination__nav--next",
+        ".pagination__item",
+        ".pagination__item--current",
+        ".pagination__item--overflow",
+        ".pagination__overflow-panel",
+        ".pagination__overflow-option",
+        ".pagination__overflow-option--selected",
+        ".pagination__overflow-check",
+        ".pagination__overflow-panel > li",
+        ".pagination__overflow-wrapper"
+      ]
+    }
+  ]
+}

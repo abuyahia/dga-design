@@ -1,0 +1,665 @@
+[
+  {
+    "cssProps": {},
+    "type": "COMPONENT_SET",
+    "name": "_RatingStar",
+    "children": [
+      {
+        "cssProps": {
+          "width": "48px",
+          "height": "48px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, State=Normal, Style=Default",
+        "children": [
+          {
+            "cssProps": {
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "48px",
+          "height": "48px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, State=Normal, Style=Brand",
+        "children": [
+          {
+            "cssProps": {
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "48px",
+          "height": "48px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, State=Half, Style=Default",
+        "children": [
+          {
+            "cssProps": {
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "STAR",
+            "name": "Star 1"
+          },
+          {
+            "cssProps": {
+              "width": "23px",
+              "height": "45px",
+              "fill": "var(--Background-background-secondary, #DBA102)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 2"
+          },
+          {
+            "cssProps": {
+              "width": "26px",
+              "height": "45px",
+              "fill": "var(--Background-background-neutral-200, #E5E7EB)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 3"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "48px",
+          "height": "48px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, State=Half, Style=Brand",
+        "children": [
+          {
+            "cssProps": {
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "STAR",
+            "name": "Star 1"
+          },
+          {
+            "cssProps": {
+              "width": "23px",
+              "height": "45px",
+              "fill": "var(--Background-background-primary, #1B8354)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 2"
+          },
+          {
+            "cssProps": {
+              "width": "26px",
+              "height": "45px",
+              "fill": "var(--Background-background-neutral-200, #E5E7EB)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 3"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "48px",
+          "height": "48px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, State=Selected, Style=Default",
+        "children": [
+          {
+            "cssProps": {
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "48px",
+          "height": "48px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, State=Selected, Style=Brand",
+        "children": [
+          {
+            "cssProps": {
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "48px",
+          "height": "48px",
+          "topLeftRadius-variable": "--radius-radius-full",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:6298:46485",
+          "topRightRadius-variable": "--radius-radius-full",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:6298:46485",
+          "bottomLeftRadius-variable": "--radius-radius-full",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:6298:46485",
+          "bottomRightRadius-variable": "--radius-radius-full",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:6298:46485"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, State=Pressed, Style=Default",
+        "children": [
+          {
+            "cssProps": {
+              "width": "54px",
+              "height": "54px",
+              "fill": "var(--Background-background-neutral-100, #F3F4F6)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "ring"
+          },
+          {
+            "cssProps": {
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "48px",
+          "height": "48px",
+          "topLeftRadius-variable": "--radius-radius-full",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:6298:46485",
+          "topRightRadius-variable": "--radius-radius-full",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:6298:46485",
+          "bottomLeftRadius-variable": "--radius-radius-full",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:6298:46485",
+          "bottomRightRadius-variable": "--radius-radius-full",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:6298:46485"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Large, State=Pressed, Style=Brand",
+        "children": [
+          {
+            "cssProps": {
+              "width": "54px",
+              "height": "54px",
+              "fill": "var(--Background-background-neutral-100, #F3F4F6)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "ring"
+          },
+          {
+            "cssProps": {
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Medium, State=Normal, Style=Default",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Medium, State=Normal, Style=Brand",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Medium, State=Half, Style=Default",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          },
+          {
+            "cssProps": {
+              "width": "15.333px",
+              "height": "30px",
+              "fill": "var(--Background-background-secondary, #DBA102)"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 2"
+          },
+          {
+            "cssProps": {
+              "width": "17.333px",
+              "height": "30px",
+              "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 3"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Medium, State=Half, Style=Brand",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          },
+          {
+            "cssProps": {
+              "width": "15.333px",
+              "height": "30px",
+              "fill": "var(--Background-background-primary, #1B8354)"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 2"
+          },
+          {
+            "cssProps": {
+              "width": "17.333px",
+              "height": "30px",
+              "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 3"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Medium, State=Selected, Style=Default",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Medium, State=Selected, Style=Brand",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px",
+          "topLeftRadius-variable": "--radius-radius-full",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:6298:46485",
+          "topRightRadius-variable": "--radius-radius-full",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:6298:46485",
+          "bottomLeftRadius-variable": "--radius-radius-full",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:6298:46485",
+          "bottomRightRadius-variable": "--radius-radius-full",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:6298:46485"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Medium, State=Pressed, Style=Default",
+        "children": [
+          {
+            "cssProps": {
+              "width": "46px",
+              "height": "46px",
+              "fill": "var(--Background-background-neutral-100, #F3F4F6)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "ring"
+          },
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "32px",
+          "height": "32px",
+          "topLeftRadius-variable": "--radius-radius-full",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:6298:46485",
+          "topRightRadius-variable": "--radius-radius-full",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:6298:46485",
+          "bottomLeftRadius-variable": "--radius-radius-full",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:6298:46485",
+          "bottomRightRadius-variable": "--radius-radius-full",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:6298:46485"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Medium, State=Pressed, Style=Brand",
+        "children": [
+          {
+            "cssProps": {
+              "width": "46px",
+              "height": "46px",
+              "fill": "var(--Background-background-neutral-100, #F3F4F6)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "ring"
+          },
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "24px",
+          "height": "24px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, State=Normal, Style=Default",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "24px",
+          "height": "24px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, State=Normal, Style=Brand",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "24px",
+          "height": "24px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, State=Half, Style=Default",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          },
+          {
+            "cssProps": {
+              "width": "11.5px",
+              "height": "22.5px",
+              "fill": "var(--Background-background-secondary, #DBA102)"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 2"
+          },
+          {
+            "cssProps": {
+              "width": "13px",
+              "height": "22.5px",
+              "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 3"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "24px",
+          "height": "24px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, State=Half, Style=Brand",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          },
+          {
+            "cssProps": {
+              "width": "11.5px",
+              "height": "22.5px",
+              "fill": "var(--Background-background-primary, #1B8354)"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 2"
+          },
+          {
+            "cssProps": {
+              "width": "13px",
+              "height": "22.5px",
+              "fill": "var(--Background-background-neutral-200, #E5E7EB)"
+            },
+            "type": "RECTANGLE",
+            "name": "Star 3"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "24px",
+          "height": "24px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, State=Selected, Style=Default",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "24px",
+          "height": "24px"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, State=Selected, Style=Brand",
+        "children": [
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "24px",
+          "height": "24px",
+          "topLeftRadius-variable": "--radius-radius-full",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:6298:46485",
+          "topRightRadius-variable": "--radius-radius-full",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:6298:46485",
+          "bottomLeftRadius-variable": "--radius-radius-full",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:6298:46485",
+          "bottomRightRadius-variable": "--radius-radius-full",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:6298:46485"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, State=Pressed, Style=Default",
+        "children": [
+          {
+            "cssProps": {
+              "width": "38px",
+              "height": "38px",
+              "fill": "var(--Background-background-neutral-100, #F3F4F6)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "ring"
+          },
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "24px",
+          "height": "24px",
+          "topLeftRadius-variable": "--radius-radius-full",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:6298:46485",
+          "topRightRadius-variable": "--radius-radius-full",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:6298:46485",
+          "bottomLeftRadius-variable": "--radius-radius-full",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:6298:46485",
+          "bottomRightRadius-variable": "--radius-radius-full",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:6298:46485"
+        },
+        "type": "COMPONENT",
+        "name": "Size=Small, State=Pressed, Style=Brand",
+        "children": [
+          {
+            "cssProps": {
+              "width": "38px",
+              "height": "38px",
+              "fill": "var(--Background-background-neutral-100, #F3F4F6)",
+              "cornerRadius-variable": "--radius-radius-xs",
+              "cornerRadius-collection": "Radius",
+              "cornerRadius-variable-id": "VariableID:6298:46476"
+            },
+            "type": "RECTANGLE",
+            "name": "ring"
+          },
+          {
+            "cssProps": {},
+            "type": "STAR",
+            "name": "Star 1"
+          }
+        ]
+      }
+    ]
+  }
+]

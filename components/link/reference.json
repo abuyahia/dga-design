@@ -1,0 +1,119 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "link",
+    "description": "Inline navigation element. Renders as an <a> anchor. Supports Primary, Neutral, and On-color styles, Small and Medium sizes, and an Inline mode with persistent underline."
+  },
+  "source": {
+    "manifest": "components/link/mainifest.json",
+    "figma_type": "COMPONENT_SET",
+    "figma_name": "Link",
+    "note": "Manifest filename contains a typo ('mainifest'). Preserved as-is."
+  },
+  "axes": ["style", "state", "size", "inline"],
+  "axis_values": {
+    "style": ["primary", "neutral", "on-color"],
+    "state": ["default", "visited", "disabled", "focused", "hovered", "pressed"],
+    "size": ["small", "medium"],
+    "inline": [false, true]
+  },
+  "discarded_axes": {
+    "rtl": {
+      "values": ["false", "true"],
+      "reason": "Text-only links produce no CSS layout delta between LTR and RTL. Directionality is handled by the document or element dir attribute. RTL will become relevant when icon slots are added."
+    }
+  },
+  "size_tokens": {
+    "small": {
+      "font-size": "var(--link-font-size-sm, var(--Size-Text-typo-size-text-sm, 14px))",
+      "line-height": "var(--link-line-height-sm, var(--Line-Height-Text-line-heights-text-sm, 20px))",
+      "gap": "var(--Link-link-sm-gap, 4px)",
+      "css-modifier": null,
+      "note": "Small is the default size. No modifier class required."
+    },
+    "medium": {
+      "font-size": "var(--link-font-size-md, var(--Size-Text-typo-size-text-md, 16px))",
+      "line-height": "var(--link-line-height-md, var(--Line-Height-Text-line-heights-text-md, 24px))",
+      "gap": "var(--Link-link-md-gap, 8px)",
+      "css-modifier": ".link--md"
+    }
+  },
+  "style_tokens": {
+    "primary": {
+      "default": "var(--Link-link-primary, #1B8354)",
+      "visited": "var(--Link-link-primary-visited, #14573A)",
+      "focused": "var(--Link-link-primary-focused, #1B8354)",
+      "hovered": "var(--Link-link-primary-hovered, #54C08A)",
+      "pressed": "var(--Link-link-primary-pressed, #88D8AD)",
+      "disabled": "var(--Global-text-default-disabled, #9DA4AE)",
+      "focus-ring": "var(--Border-border-black, #161616)",
+      "css-modifier": ".link--primary"
+    },
+    "neutral": {
+      "default": "var(--Link-link-neutral, #384250)",
+      "visited": "var(--Link-link-primary-visited, #14573A)",
+      "focused": "var(--Link-link-neutral-focused, #384250)",
+      "hovered": "var(--Link-link-neutral-hovered, #6C737F)",
+      "pressed": "var(--Link-link-neutral-pressed, #9DA4AE)",
+      "disabled": "var(--Global-text-default-disabled, #9DA4AE)",
+      "focus-ring": "var(--Border-border-black, #161616)",
+      "css-modifier": ".link--neutral",
+      "visited_note": "Neutral Visited intentionally reuses --Link-link-primary-visited. No separate --Link-link-neutral-visited token exists in Figma."
+    },
+    "on-color": {
+      "default": "var(--Link-link-oncolor, #FFF)",
+      "visited": "var(--Link-link-oncolor-visited, rgba(255,255,255,0.90))",
+      "focused": "var(--Link-link-oncolor-focused, #FFF)",
+      "hovered": "var(--Link-link-oncolor-hovered, rgba(255,255,255,0.80))",
+      "pressed": "var(--Link-link-oncolor-pressed, rgba(255,255,255,0.60))",
+      "disabled": "var(--Link-link-oncolor-disabled, rgba(255,255,255,0.30))",
+      "focus-ring": "var(--Border-border-white, #FFF)",
+      "css-modifier": ".link--on-color"
+    }
+  },
+  "inline_token": {
+    "false": {
+      "text-decoration": "none by default; underline on hover and active",
+      "css-modifier": null
+    },
+    "true": {
+      "text-decoration": "underline always",
+      "css-modifier": ".link--inline"
+    }
+  },
+  "anatomy": {
+    "root": {
+      "element": "a",
+      "class": ".link",
+      "description": "Anchor element. Must include href for keyboard operability."
+    },
+    "text": {
+      "element": "text content",
+      "class": null,
+      "description": "Direct text content or a <span> wrapper. No dedicated class required for text-only links."
+    }
+  },
+  "missing_component_tokens": [
+    "--link-font-family",
+    "--link-font-size-sm",
+    "--link-font-size-md",
+    "--link-line-height-sm",
+    "--link-line-height-md",
+    "--link-focus-ring-width",
+    "--link-focus-ring-offset",
+    "--link-font-weight"
+  ],
+  "variants": {
+    "total_in_manifest": 144,
+    "meaningful_css_variants": 36,
+    "notes": "144 = 6 states × 2 RTL × 3 styles × 2 sizes × 2 inline. RTL discarded. Inline is a boolean modifier, not a dimension. Meaningful: 6 states × 3 styles × 2 sizes = 36."
+  },
+  "implementation_notes": [
+    "Focus ring implemented via CSS outline (not border) to avoid layout shift. 2px solid, outline-offset 2px.",
+    "Neutral Visited uses --Link-link-primary-visited token. Intentional per Figma.",
+    "Disabled state: <a> cannot use disabled attribute. Use aria-disabled='true' + tabindex='-1'.",
+    "pointer-events: none on disabled does not prevent keyboard activation — JavaScript click guard is required at implementation level.",
+    "gap token preserved for future icon slot support even though no icon children exist in current manifest.",
+    "Default size is Small. No modifier class required for Small."
+  ]
+}

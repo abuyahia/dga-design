@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "component": "content-switcher",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "note": "No external audit has been completed. All mappings are internal assessments only.",
+
+  "checks": [
+    {
+      "id": "PLATFORM-CODE-CONTENT-SWITCHER-001",
+      "category": "structure",
+      "description": "Container uses role=tablist with aria-label or aria-labelledby",
+      "status": "implemented",
+      "notes": "Defined in template.html and contract.md"
+    },
+    {
+      "id": "PLATFORM-CODE-CONTENT-SWITCHER-002",
+      "category": "structure",
+      "description": "Items use role=tab with aria-selected",
+      "status": "implemented",
+      "notes": "Defined in template.html and contract.md"
+    },
+    {
+      "id": "PLATFORM-CODE-CONTENT-SWITCHER-003",
+      "category": "structure",
+      "description": "Roving tabindex pattern (tabindex=0 on active, tabindex=-1 on others)",
+      "status": "implemented",
+      "notes": "Defined in template.html; requires JavaScript activation"
+    },
+    {
+      "id": "PLATFORM-CODE-CONTENT-SWITCHER-004",
+      "category": "structure",
+      "description": "Items are button elements with type=button",
+      "status": "implemented",
+      "notes": "Defined in template.html"
+    },
+    {
+      "id": "PLATFORM-CODE-CONTENT-SWITCHER-005",
+      "category": "size",
+      "description": "Three sizes supported: Small (32px), Medium (40px), Large (48px)",
+      "status": "implemented",
+      "notes": "Sourced from mainifest.json"
+    },
+    {
+      "id": "PLATFORM-CODE-CONTENT-SWITCHER-006",
+      "category": "oncolor",
+      "description": "OnColor mode changes selected bg to primary green and unselected to transparent overlay",
+      "status": "implemented",
+      "notes": "Sourced from mainifest.json"
+    },
+    {
+      "id": "PLATFORM-CODE-CONTENT-SWITCHER-007",
+      "category": "rtl",
+      "description": "RTL layout supported via dir=rtl and CSS logical properties",
+      "status": "implemented",
+      "notes": "RTL axis from Figma discarded; handled natively"
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-001",
+      "category": "accessibility",
+      "description": "Focus indicator visible on keyboard focus",
+      "status": "implemented",
+      "notes": "Two-layer ring: outer 2px dark outline + inner 1px white ring via ::after. Sourced from items manifest."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-002",
+      "category": "accessibility",
+      "description": "Focus strategy uses :focus-visible (keyboard only)",
+      "status": "implemented",
+      "notes": "Pointer clicks do not show focus ring"
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-003",
+      "category": "accessibility",
+      "description": "Keyboard navigation: Arrow keys, Home, End, Tab",
+      "status": "requires_js",
+      "notes": "CSS and ARIA structure is defined; JavaScript required for activation"
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-004",
+      "category": "accessibility",
+      "description": "Minimum touch target size (min-width 76px, heights 32/40/48px)",
+      "status": "implemented",
+      "notes": "min-width sourced directly from manifest"
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-001",
+      "category": "tokens",
+      "description": "Component uses component-level semantic tokens, not primitives",
+      "status": "pending_token_definition",
+      "notes": "All --content-switcher-* tokens are proposed but not yet in token.css. See analysis.md."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-001",
+      "category": "states",
+      "description": "All required states implemented: normal, hover, selected, focused",
+      "status": "implemented",
+      "notes": "Hover delta requires distinct token values to be visible"
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-002",
+      "category": "states",
+      "description": "Disabled state implemented",
+      "status": "partial",
+      "notes": "Disabled state not in manifest. Conservative opacity-0.38 applied. Needs design review."
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-001",
+      "category": "focus",
+      "description": "Focus ring matches Figma Focus outline layer specification",
+      "status": "implemented",
+      "notes": "Sourced from mainifest-items.json. Outer outline + inner ::after ring."
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+<!--
+  template.html — Pagination component
+  Platform Code Design System
+
+  Usage:
+    Add size modifier: .pagination--lg | .pagination--md | .pagination--sm
+    RTL: add dir="rtl" on the <nav> element
+    Current page: add aria-current="page" on the active page button
+
+    Overflow trigger pattern:
+      Wrap trigger button + panel in <span class="pagination__overflow-wrapper">.
+      The panel MUST be a sibling of the button (not a child) — HTML forbids <button> inside <button>.
+      Toggle aria-expanded="true" on the trigger button via JS to show the panel.
+
+  Dependencies:
+    - token.css (design tokens)
+    - pagination.css (this component)
+    - [optional] button.css (for nav button interactive states)
+-->
+
+<!-- ─── Large (default) ─────────────────────────────────────── -->
+
+<nav class="pagination pagination--lg" aria-label="Pagination">
+
+  <!-- Previous page nav button -->
+  <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <!-- Page 1 — current page -->
+  <button class="pagination__item" type="button" aria-label="Page 1" aria-current="page">1</button>
+
+  <!-- Page 2 -->
+  <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+
+  <!-- Page 3 -->
+  <button class="pagination__item" type="button" aria-label="Page 3">3</button>
+
+  <!-- Overflow trigger + dropdown panel — wrapped in span for positioning context -->
+  <span class="pagination__overflow-wrapper">
+    <button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">
+      ...
+    </button>
+    <!-- Panel is sibling of trigger (not child) to avoid invalid nested <button> HTML -->
+    <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+      <li>
+        <button class="pagination__overflow-option pagination__overflow-option--selected"
+                type="button" role="option" aria-selected="true">
+          <svg class="pagination__overflow-check" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          4
+        </button>
+      </li>
+      <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">7</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">8</button></li>
+    </ul>
+  </span>
+
+  <!-- Page 999 -->
+  <button class="pagination__item" type="button" aria-label="Page 999">999</button>
+
+  <!-- Next page nav button -->
+  <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+</nav>
+
+<!-- ─── Medium ────────────────────────────────────────────────── -->
+
+<nav class="pagination pagination--md" aria-label="Pagination">
+
+  <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <button class="pagination__item" type="button" aria-label="Page 1" aria-current="page">1</button>
+  <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+  <button class="pagination__item" type="button" aria-label="Page 3">3</button>
+
+  <span class="pagination__overflow-wrapper">
+    <button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+    <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+      <li>
+        <button class="pagination__overflow-option pagination__overflow-option--selected"
+                type="button" role="option" aria-selected="true">
+          <svg class="pagination__overflow-check" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          4
+        </button>
+      </li>
+      <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">7</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">8</button></li>
+    </ul>
+  </span>
+
+  <button class="pagination__item" type="button" aria-label="Page 999">999</button>
+
+  <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+</nav>
+
+<!-- ─── Small ─────────────────────────────────────────────────── -->
+
+<nav class="pagination pagination--sm" aria-label="Pagination">
+
+  <button class="pagination__nav pagination__nav--prev" type="button" aria-label="Previous page">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <button class="pagination__item" type="button" aria-label="Page 1" aria-current="page">1</button>
+  <button class="pagination__item" type="button" aria-label="Page 2">2</button>
+  <button class="pagination__item" type="button" aria-label="Page 3">3</button>
+
+  <span class="pagination__overflow-wrapper">
+    <button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="More pages" aria-expanded="false" aria-haspopup="listbox">...</button>
+    <ul class="pagination__overflow-panel" role="listbox" aria-label="Jump to page">
+      <li>
+        <button class="pagination__overflow-option pagination__overflow-option--selected"
+                type="button" role="option" aria-selected="true">
+          <svg class="pagination__overflow-check" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          4
+        </button>
+      </li>
+      <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">7</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">8</button></li>
+    </ul>
+  </span>
+
+  <button class="pagination__item" type="button" aria-label="Page 999">999</button>
+
+  <button class="pagination__nav pagination__nav--next" type="button" aria-label="Next page">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+</nav>
+
+<!-- ─── RTL (Large) ───────────────────────────────────────────── -->
+
+<nav class="pagination pagination--lg" dir="rtl" aria-label="ترقيم الصفحات">
+
+  <button class="pagination__nav pagination__nav--prev" type="button" aria-label="الصفحة السابقة">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <button class="pagination__item" type="button" aria-label="الصفحة 1" aria-current="page">1</button>
+  <button class="pagination__item" type="button" aria-label="الصفحة 2">2</button>
+  <button class="pagination__item" type="button" aria-label="الصفحة 3">3</button>
+
+  <span class="pagination__overflow-wrapper">
+    <button class="pagination__item pagination__item--overflow" type="button"
+            aria-label="صفحات أخرى" aria-expanded="false" aria-haspopup="listbox">...</button>
+    <ul class="pagination__overflow-panel" role="listbox" aria-label="الانتقال إلى صفحة">
+      <li>
+        <button class="pagination__overflow-option pagination__overflow-option--selected"
+                type="button" role="option" aria-selected="true">
+          <svg class="pagination__overflow-check" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          4
+        </button>
+      </li>
+      <li><button class="pagination__overflow-option" type="button" role="option">5</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">6</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">7</button></li>
+      <li><button class="pagination__overflow-option" type="button" role="option">8</button></li>
+    </ul>
+  </span>
+
+  <button class="pagination__item" type="button" aria-label="الصفحة 999">999</button>
+
+  <button class="pagination__nav pagination__nav--next" type="button" aria-label="الصفحة التالية">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+</nav>

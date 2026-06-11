@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "component": "pagination",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "generated_date": "2026-06-09",
+  "auditor": null,
+  "audit_date": null,
+  "checks": [
+    {
+      "id": "PLATFORM-CODE-A11Y-001",
+      "standard": "WCAG 2.1 AA",
+      "criterion": "1.3.1 Info and Relationships",
+      "description": "Pagination landmark uses <nav> with aria-label. Current page uses aria-current='page'. Non-interactive overflow uses aria-hidden='true'.",
+      "status": "internal_pass",
+      "notes": "Implemented per contract. Requires QA verification."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-002",
+      "standard": "WCAG 2.1 AA",
+      "criterion": "1.4.1 Use of Color",
+      "description": "Current page is not indicated by color alone. Font-weight (400→600) change is also present alongside the green bottom indicator.",
+      "status": "internal_pass",
+      "notes": "Color is supplementary. Font-weight change is the primary non-color indicator."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-003",
+      "standard": "WCAG 2.1 AA",
+      "criterion": "1.4.3 Contrast (Minimum)",
+      "description": "Text color var(--Text-text-default, #161616) on white background. Estimated ratio: ~16.1:1.",
+      "status": "internal_pass",
+      "notes": "Requires formal contrast check with final token values in production."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-004",
+      "standard": "WCAG 2.1 AA",
+      "criterion": "1.4.11 Non-text Contrast",
+      "description": "Focus outline: 2px solid #161616 on white = ~16:1 ratio. Passes.",
+      "status": "internal_pass",
+      "notes": null
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-005",
+      "standard": "WCAG 2.1 AA",
+      "criterion": "2.1.1 Keyboard",
+      "description": "All interactive elements (page buttons, nav buttons) are native <button> elements. Fully keyboard accessible.",
+      "status": "internal_pass",
+      "notes": "Overflow span is non-interactive and excluded from tab order."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-006",
+      "standard": "WCAG 2.1 AA",
+      "criterion": "2.4.7 Focus Visible",
+      "description": "All interactive elements show :focus-visible outline. Focus is never suppressed.",
+      "status": "internal_pass",
+      "notes": null
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-007",
+      "standard": "WCAG 2.5.5 Target Size",
+      "criterion": "WCAG 2.5.5 (AAA) / WCAG 2.5.8 (AA, Level 2.2)",
+      "description": "Large (40px) and Medium (32px) meet recommended 24px minimum. Small (24px) meets the absolute minimum but is below the recommended 44px for touch.",
+      "status": "risk",
+      "notes": "Small size touch target is 24px — below recommended 44px. Flag for stakeholder review. Not a blocker for non-touch contexts."
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-001",
+      "standard": "Platform Code Token Standard",
+      "description": "All component-level pagination tokens are missing from token.css.",
+      "status": "pending",
+      "notes": "Fallback values are used. Token definitions must be added to token.css before production. See analysis.md Missing Tokens."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-001",
+      "standard": "Platform Code State Standard",
+      "description": "Pressed and Disabled states not defined in source Figma.",
+      "status": "pending",
+      "notes": "Best-practice CSS added. Requires designer confirmation of visual treatment."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-002",
+      "standard": "Platform Code State Standard",
+      "description": "All required interactive states implemented: Default, Hovered, Focused, Pressed, Current Page, Disabled, Overflow (closed), Overflow (opened with dropdown panel).",
+      "status": "internal_pass",
+      "notes": "Pressed and Disabled are not from Figma — added per best practice. Overflow Opened state added after full manifest read."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-003",
+      "standard": "Platform Code State Standard",
+      "description": "Overflow dropdown panel (page-jump) implemented from manifest-complete.json State=Opened, Size=Large/Small/Meduim, Overflow=Yes variants.",
+      "status": "internal_pass",
+      "notes": "Panel is hidden by default (display: none). Shown when aria-expanded=true on the overflow trigger. Panel visibility is toggled by consumer JS."
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-001",
+      "standard": "Platform Code Focus Standard",
+      "description": "Focus indicator uses :focus-visible with 2px solid outline matching Figma Focused state. Never suppressed.",
+      "status": "internal_pass",
+      "notes": "Uses outline (not border) to prevent layout shift. outline-offset: 0 matches Figma inset appearance."
+    },
+    {
+      "id": "PLATFORM-CODE-RTL-001",
+      "standard": "Platform Code RTL Standard",
+      "description": "RTL support via [dir='rtl']. Arrows flip, item order reverses.",
+      "status": "internal_pass",
+      "notes": "Requires RTL QA on real Arabic content."
+    },
+    {
+      "id": "PLATFORM-CODE-PAGINATION-001",
+      "standard": "Platform Code Pagination Standard",
+      "description": "Pagination assembly uses semantic <nav> with proper ARIA attributes throughout.",
+      "status": "internal_pass",
+      "notes": null
+    }
+  ]
+}

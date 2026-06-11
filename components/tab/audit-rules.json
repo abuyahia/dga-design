@@ -1,0 +1,332 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "tab",
+  "generated": "2026-06-09",
+  "description": "Static audit rules for the Tab component. Rules are checked against rendered HTML. All rule IDs are globally unique within the platform audit system.",
+
+  "rules": [
+
+    {
+      "id": "TAB-A11Y-001",
+      "category": "accessibility",
+      "severity": "error",
+      "title": "Tablist must have an accessible label",
+      "description": "Every element with role='tablist' must have either aria-label or aria-labelledby. Without a label, screen readers cannot identify the tab group.",
+      "wcag_criterion": "4.1.2",
+      "selector": "[role='tablist']",
+      "check": {
+        "type": "attribute_presence",
+        "any_of": ["aria-label", "aria-labelledby"],
+        "fail_condition": "none present"
+      },
+      "fix": "Add aria-label='[Group name]' or aria-labelledby='[heading-id]' to the .tab-list container.",
+      "example_fail": "<div class=\"tab-list tab-list--h\" role=\"tablist\">",
+      "example_pass": "<div class=\"tab-list tab-list--h\" role=\"tablist\" aria-label=\"Account settings\">"
+    },
+
+    {
+      "id": "TAB-A11Y-002",
+      "category": "accessibility",
+      "severity": "error",
+      "title": "Tab button must have role='tab' and aria-selected",
+      "description": "Each tab button must declare role='tab' and aria-selected='true|false'. Missing either attribute breaks the ARIA Tabs pattern — assistive technology cannot identify tabs or their state.",
+      "wcag_criterion": "4.1.2",
+      "selector": ".tab",
+      "check": {
+        "type": "attribute_presence",
+        "all_of": ["role", "aria-selected"],
+        "attribute_values": {
+          "role": "tab",
+          "aria-selected": ["true", "false"]
+        },
+        "fail_condition": "any missing or wrong value"
+      },
+      "fix": "Add role='tab' and aria-selected='true' (or 'false') to every .tab button.",
+      "example_fail": "<button class=\"tab tab--h\" aria-controls=\"panel-1\" id=\"tab-1\">",
+      "example_pass": "<button class=\"tab tab--h\" role=\"tab\" aria-selected=\"true\" aria-controls=\"panel-1\" id=\"tab-1\">"
+    },
+
+    {
+      "id": "TAB-A11Y-003",
+      "category": "accessibility",
+      "severity": "error",
+      "title": "Tab panel must have role='tabpanel' and aria-labelledby matching the tab id",
+      "description": "Each panel must declare role='tabpanel', an id, and aria-labelledby referencing the id of the controlling tab. This establishes the programmatic relationship between tab and panel for screen readers.",
+      "wcag_criterion": "4.1.2",
+      "selector": ".tab-panel",
+      "check": {
+        "type": "attribute_presence",
+        "all_of": ["role", "id", "aria-labelledby"],
+        "attribute_values": {
+          "role": "tabpanel"
+        },
+        "cross_check": "aria-labelledby must match the id of an element with role='tab' that has aria-controls matching this element's id",
+        "fail_condition": "any missing or broken cross-reference"
+      },
+      "fix": "Add role='tabpanel', id='panel-id', and aria-labelledby='tab-id' to each panel. Ensure the tab's aria-controls='panel-id' and id='tab-id' match.",
+      "example_fail": "<div id=\"panel-1\">Content</div>",
+      "example_pass": "<div class=\"tab-panel\" role=\"tabpanel\" id=\"panel-1\" aria-labelledby=\"tab-1\">Content</div>"
+    },
+
+    {
+      "id": "TAB-A11Y-004",
+      "category": "accessibility",
+      "severity": "error",
+      "title": "Tab button must suppress native :focus outline",
+      "description": "tab.css sets outline:none on .tab and uses a custom ::after focus ring instead. If native outline is not suppressed, double focus indicators will appear on keyboard navigation.",
+      "wcag_criterion": "2.4.7",
+      "selector": ".tab",
+      "check": {
+        "type": "css_property",
+        "property": "outline",
+        "expected": "none",
+        "fail_condition": "outline is not none in base state"
+      },
+      "fix": "Ensure tab.css is loaded and applies outline:none to .tab. Do not override the custom ::after focus ring via additional stylesheets.",
+      "example_fail": ".tab { /* no outline reset */ }",
+      "example_pass": ".tab { outline: none; } .tab:focus-visible::after { display: block; }"
+    },
+
+    {
+      "id": "TAB-A11Y-005",
+      "category": "accessibility",
+      "severity": "warning",
+      "title": "Tablist should have Arrow key navigation implemented in JavaScript",
+      "description": "WCAG 2.1.1 requires that all functionality be keyboard operable. The WAI-ARIA APG Tabs pattern mandates Arrow key navigation between tabs. CSS alone cannot implement this. Flag if no keyboard navigation script is detected.",
+      "wcag_criterion": "2.1.1",
+      "selector": "[role='tablist']",
+      "check": {
+        "type": "js_hook_presence",
+        "look_for": ["data-tabs", "keydown", "ArrowRight", "ArrowLeft", "ArrowUp", "ArrowDown"],
+        "fail_condition": "no JavaScript keyboard event listener or data hook detected"
+      },
+      "fix": "Add data-tabs to the tab group wrapper. Implement a keydown listener on the tablist that handles ArrowRight/Left (horizontal) or ArrowUp/Down (vertical), Home, and End.",
+      "example_fail": "<div id=\"tabs\" class=\"tab-list tab-list--h\" role=\"tablist\">",
+      "example_pass": "<div id=\"tabs\" data-tabs><div class=\"tab-list tab-list--h\" role=\"tablist\">..."
+    },
+
+    {
+      "id": "TAB-A11Y-006",
+      "category": "accessibility",
+      "severity": "error",
+      "title": "Only the selected tab should have tabindex='0'",
+      "description": "The roving tabindex pattern requires exactly one tab per tablist to have tabindex='0' (the selected tab). All other tabs must have tabindex='-1'. This ensures only one Tab stop enters the tablist while Arrow keys move between tabs.",
+      "wcag_criterion": "2.4.3",
+      "selector": "[role='tablist']",
+      "check": {
+        "type": "roving_tabindex",
+        "rule": "within a role='tablist', exactly one role='tab' should have tabindex='0' (or no tabindex); all others should have tabindex='-1'. That one must be aria-selected='true'.",
+        "fail_condition": "multiple tabs with tabindex=0, or selected tab has tabindex=-1"
+      },
+      "fix": "Set tabindex='-1' on all non-selected tabs. The selected tab should have tabindex='0' (or omit tabindex). JavaScript must update tabindex values on selection change.",
+      "example_fail": "<button role=\"tab\" aria-selected=\"true\" tabindex=\"-1\">First</button>",
+      "example_pass": "<button role=\"tab\" aria-selected=\"true\">First</button>\n<button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Second</button>"
+    },
+
+    {
+      "id": "TAB-A11Y-007",
+      "category": "accessibility",
+      "severity": "error",
+      "title": "Vertical tablist must declare aria-orientation='vertical'",
+      "description": "Without aria-orientation='vertical', screen readers default to treating the tablist as horizontal, announcing incorrect keyboard navigation instructions (ArrowLeft/Right instead of ArrowUp/Down) to the user.",
+      "wcag_criterion": "4.1.2",
+      "selector": ".tab-list--v",
+      "check": {
+        "type": "attribute_presence",
+        "required": ["aria-orientation"],
+        "attribute_values": {
+          "aria-orientation": "vertical"
+        },
+        "fail_condition": "aria-orientation is absent or not 'vertical'"
+      },
+      "fix": "Add aria-orientation='vertical' to every .tab-list--v container.",
+      "example_fail": "<div class=\"tab-list tab-list--v\" role=\"tablist\" aria-label=\"Settings\">",
+      "example_pass": "<div class=\"tab-list tab-list--v\" role=\"tablist\" aria-label=\"Settings\" aria-orientation=\"vertical\">"
+    },
+
+    {
+      "id": "TAB-STRUCT-001",
+      "category": "structure",
+      "severity": "error",
+      "title": "Tab must use <button> element",
+      "description": "The .tab class must be applied to a <button> element. Using <div>, <a>, <span>, or any other element breaks keyboard access, native form semantics, and the ARIA Tabs pattern. <a> tags are only valid if tabs navigate to separate pages — in that case, use a different component.",
+      "wcag_criterion": "4.1.2",
+      "selector": ".tab",
+      "check": {
+        "type": "element_type",
+        "expected": "button",
+        "fail_condition": "element is not a button"
+      },
+      "fix": "Change the element to <button type='button'>. Never use <div role='button'> or <a> for a tab button.",
+      "example_fail": "<div class=\"tab tab--h\" role=\"tab\">Tab</div>",
+      "example_pass": "<button class=\"tab tab--h\" role=\"tab\" type=\"button\">Tab</button>"
+    },
+
+    {
+      "id": "TAB-STRUCT-002",
+      "category": "structure",
+      "severity": "error",
+      "title": "Selected state must be driven by aria-selected, not a CSS class",
+      "description": "tab.css uses [aria-selected='true'] as the CSS hook for selected appearance. Using a class like .is-selected or .active creates a gap between visual state and accessibility state — the component would appear selected to sighted users but not to assistive technology.",
+      "wcag_criterion": "4.1.2",
+      "selector": ".tab",
+      "check": {
+        "type": "class_absence",
+        "forbidden_classes": ["is-selected", "active", "selected", "tab--selected", "tab--active"],
+        "fail_condition": "any forbidden class present on .tab"
+      },
+      "fix": "Remove any class-based selected state. Use aria-selected='true' only. JavaScript should set aria-selected on state change.",
+      "example_fail": "<button class=\"tab tab--h is-selected\" role=\"tab\">",
+      "example_pass": "<button class=\"tab tab--h\" role=\"tab\" aria-selected=\"true\">"
+    },
+
+    {
+      "id": "TAB-STRUCT-003",
+      "category": "structure",
+      "severity": "error",
+      "title": "Tab must have both an orientation and a base class",
+      "description": "A .tab button must always have exactly one orientation modifier: .tab--h or .tab--v. The base .tab class alone provides no sizing, color, or indicator positioning. Using both .tab--h and .tab--v simultaneously is prohibited.",
+      "wcag_criterion": null,
+      "selector": ".tab",
+      "check": {
+        "type": "class_combination",
+        "requires_one_of": ["tab--h", "tab--v"],
+        "forbids_both": ["tab--h", "tab--v"],
+        "fail_condition": "neither or both orientation modifiers present"
+      },
+      "fix": "Add exactly one orientation modifier: .tab--h for horizontal tabs, .tab--v for vertical tabs.",
+      "example_fail": "<button class=\"tab\" role=\"tab\">Tab</button>",
+      "example_pass": "<button class=\"tab tab--h\" role=\"tab\">Tab</button>"
+    },
+
+    {
+      "id": "TAB-TOKEN-001",
+      "category": "tokens",
+      "severity": "error",
+      "title": "No hardcoded visual values in component selectors",
+      "description": "Component CSS selectors must not contain hardcoded colors, font sizes, padding values, or border radii. All visual values must reference --tab-* CSS custom properties. Hardcoded values are only permitted in the :root token block (as fallbacks) until those tokens are migrated to token.css.",
+      "wcag_criterion": null,
+      "selector": ".tab, .tab-list, .tab-panel",
+      "check": {
+        "type": "css_value_pattern",
+        "forbidden_in_selectors": ["#[0-9a-fA-F]{3,8}", "rgb(", "rgba(", "hsl(", "\\d+px(?!\\s*\\/)", "\\d+rem"],
+        "allowed_exceptions": ["1px solid var(--", "0 0 0 2px var(--"],
+        "fail_condition": "hardcoded color or dimension in a non-:root selector"
+      },
+      "fix": "Replace hardcoded values with --tab-* tokens. If the token does not exist in token.css, add it to the :root block in tab.css with a primitive fallback and note a TODO comment.",
+      "example_fail": ".tab--h { color: #384250; }",
+      "example_pass": ".tab--h { color: var(--tab-text-idle); }"
+    },
+
+    {
+      "id": "TAB-RTL-001",
+      "category": "rtl",
+      "severity": "warning",
+      "title": "No physical left/right properties in base tab selectors",
+      "description": "Using left or right in base selectors (.tab, .tab--h, .tab--v, .tab-list--h, .tab-list--v) without a [dir='rtl'] counterpart breaks RTL layouts. Use logical properties (padding-inline-start, inset-inline-start) or always pair physical properties with an RTL override.",
+      "wcag_criterion": null,
+      "selector": ".tab, .tab--h, .tab--v, .tab-list, .tab-list--h, .tab-list--v",
+      "check": {
+        "type": "css_property_pattern",
+        "check_properties": ["left", "right", "padding-left", "padding-right", "margin-left", "margin-right"],
+        "require_rtl_counterpart": true,
+        "fail_condition": "physical directional property used without a matching [dir='rtl'] override"
+      },
+      "fix": "Pair each `left` with `[dir='rtl'] ... { left: auto; right: ...; }` or switch to logical CSS properties (`inset-inline-start`).",
+      "example_fail": ".tab--v::before { left: 0; }",
+      "example_pass": ".tab--v::before { left: 0; } [dir='rtl'] .tab--v::before { left: auto; right: 0; }"
+    },
+
+    {
+      "id": "TAB-RTL-002",
+      "category": "rtl",
+      "severity": "warning",
+      "title": "Icons inside tabs must use aria-hidden='true'",
+      "description": "Icon SVG or wrapper elements inside .tab must be hidden from screen readers. In RTL, flex-direction: row-reverse visually moves the icon, but the icon has no accessible meaning — it must be aria-hidden='true' so screen readers announce only the label text.",
+      "wcag_criterion": "1.1.1",
+      "selector": ".tab .tab__icon",
+      "check": {
+        "type": "attribute_presence",
+        "required": ["aria-hidden"],
+        "attribute_values": {
+          "aria-hidden": "true"
+        },
+        "fail_condition": "aria-hidden='true' is absent"
+      },
+      "fix": "Add aria-hidden='true' to .tab__icon and to any <svg> directly inside a tab.",
+      "example_fail": "<span class=\"tab__icon\"><svg>...</svg></span>",
+      "example_pass": "<span class=\"tab__icon\" aria-hidden=\"true\"><svg>...</svg></span>"
+    },
+
+    {
+      "id": "TAB-USAGE-001",
+      "category": "usage",
+      "severity": "warning",
+      "title": "Multiple tabs with aria-selected='true' in one tablist",
+      "description": "Exactly one tab per tablist should be selected at any time. Multiple tabs with aria-selected='true' violates the ARIA Tabs pattern and produces confusing screen reader announcements.",
+      "wcag_criterion": "4.1.2",
+      "selector": "[role='tablist']",
+      "check": {
+        "type": "count",
+        "count_selector": "[role='tab'][aria-selected='true']",
+        "expected": "exactly 1",
+        "fail_condition": "0 or more than 1 selected tabs per tablist"
+      },
+      "fix": "Ensure exactly one tab has aria-selected='true' and all others have aria-selected='false' in each tablist.",
+      "example_fail": "<button role=\"tab\" aria-selected=\"true\">A</button><button role=\"tab\" aria-selected=\"true\">B</button>",
+      "example_pass": "<button role=\"tab\" aria-selected=\"true\">A</button><button role=\"tab\" aria-selected=\"false\">B</button>"
+    },
+
+    {
+      "id": "TAB-USAGE-002",
+      "category": "usage",
+      "severity": "error",
+      "title": "Tab orientation modifier must match parent tab-list orientation modifier",
+      "description": "A .tab--h button inside a .tab-list--v (or vice versa) produces misaligned indicator positioning, wrong padding, and broken CSS specificity. The orientation modifier on the tab must match the container.",
+      "wcag_criterion": null,
+      "selector": ".tab-list",
+      "check": {
+        "type": "child_parent_class_match",
+        "rule": ".tab-list--h children must use .tab--h; .tab-list--v children must use .tab--v",
+        "fail_condition": "orientation mismatch between .tab-list and its .tab children"
+      },
+      "fix": "Use .tab--h inside .tab-list--h. Use .tab--v inside .tab-list--v. Never mix.",
+      "example_fail": "<div class=\"tab-list tab-list--h\"><button class=\"tab tab--v\">Tab</button></div>",
+      "example_pass": "<div class=\"tab-list tab-list--h\"><button class=\"tab tab--h\">Tab</button></div>"
+    },
+
+    {
+      "id": "TAB-USAGE-003",
+      "category": "usage",
+      "severity": "warning",
+      "title": "Tab should not be used for primary site navigation",
+      "description": "The Tab component uses ARIA Tabs pattern (tablist/tab/tabpanel). It is designed for switching between related content sections on the same page. Using it for site-level navigation (header links, sidebar navs) is semantically incorrect and violates WAI-ARIA usage intent.",
+      "wcag_criterion": null,
+      "selector": "[role='tablist']",
+      "check": {
+        "type": "ancestor_check",
+        "forbidden_ancestors": ["header", "nav", "[role='navigation']"],
+        "fail_condition": "tablist is inside a navigation landmark"
+      },
+      "fix": "For site navigation, use a Nav component or a <nav> element with <a> links instead of Tab.",
+      "example_fail": "<nav><div class=\"tab-list tab-list--h\" role=\"tablist\">...</div></nav>",
+      "example_pass": "<div id=\"main-content\"><div class=\"tab-list tab-list--h\" role=\"tablist\">...</div></div>"
+    }
+
+  ],
+
+  "rule_summary": {
+    "total": 16,
+    "by_severity": {
+      "error":   11,
+      "warning":  5
+    },
+    "by_category": {
+      "accessibility": 7,
+      "structure":     3,
+      "tokens":        1,
+      "rtl":           2,
+      "usage":         3
+    }
+  }
+}

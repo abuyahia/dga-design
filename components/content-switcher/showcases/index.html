@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Content Switcher — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css"/>
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../content-switcher.css"/>
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css"/>
+    <script src="../../_showcase/showcase.js" defer></script>
+  </head>
+
+  <body data-showcase data-current-component="content-switcher" data-showcase-title="Content Switcher Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
+
+        <!-- ══════════════════════════════════════════════════════════ SECTION 1 — SIZES ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Sizes — OnColor=False (Default)</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, OnColor=False, RTL=False, Selected=First">
+              <span class="showcase__label">Small (32px)</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--sm" role="tablist" aria-label="Size small example">
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, OnColor=False, RTL=False, Selected=First">
+              <span class="showcase__label">Medium (40px)</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md" role="tablist" aria-label="Size medium example">
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Large, OnColor=False, RTL=False, Selected=First">
+              <span class="showcase__label">Large (48px)</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--lg" role="tablist" aria-label="Size large example">
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ SECTION 2 — SELECTED POSITIONS ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Selected Item Positions — Medium</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, OnColor=False, RTL=False, Selected=First">
+              <span class="showcase__label">First selected</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md" role="tablist" aria-label="First selected">
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, OnColor=False, RTL=False, Selected=Second">
+              <span class="showcase__label">Second selected</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md" role="tablist" aria-label="Second selected">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, OnColor=False, RTL=False, Selected=Third">
+              <span class="showcase__label">Third selected</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md" role="tablist" aria-label="Third selected">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, OnColor=False, RTL=False, Selected=Last">
+              <span class="showcase__label">Last selected</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md" role="tablist" aria-label="Last selected">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ SECTION 3 — ON-COLOR ALL SIZES ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">OnColor=True — All Sizes</h2>
+
+          <div class="showcase showcase--on-color">
+            <div class="showcase__row" data-props="Size=Small, OnColor=True, RTL=False, Selected=First">
+              <span class="showcase__label">Small (32px)</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--sm content-switcher--on-color" role="tablist" aria-label="OnColor small">
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, OnColor=True, RTL=False, Selected=First">
+              <span class="showcase__label">Medium (40px)</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md content-switcher--on-color" role="tablist" aria-label="OnColor medium">
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Large, OnColor=True, RTL=False, Selected=First">
+              <span class="showcase__label">Large (48px)</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--lg content-switcher--on-color" role="tablist" aria-label="OnColor large">
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ SECTION 4 — ON-COLOR SELECTED POSITIONS ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">OnColor=True — Selected Positions (Medium)</h2>
+
+          <div class="showcase showcase--on-color">
+            <div class="showcase__row" data-props="Size=Medium, OnColor=True, RTL=False, Selected=First">
+              <span class="showcase__label">First selected</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md content-switcher--on-color" role="tablist" aria-label="OnColor first selected">
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, OnColor=True, RTL=False, Selected=Second">
+              <span class="showcase__label">Second selected</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md content-switcher--on-color" role="tablist" aria-label="OnColor second selected">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, OnColor=True, RTL=False, Selected=Last">
+              <span class="showcase__label">Last selected</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md content-switcher--on-color" role="tablist" aria-label="OnColor last selected">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">Item</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">Item</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ SECTION 5 — RTL ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">RTL — dir="rtl"</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, OnColor=False, RTL=True, Selected=Last">
+              <span class="showcase__label">Small RTL</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--sm" role="tablist" aria-label="صغير" dir="rtl">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">عنصر</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, OnColor=False, RTL=True, Selected=Last">
+              <span class="showcase__label">Medium RTL</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md" role="tablist" aria-label="متوسط" dir="rtl">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">عنصر</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Large, OnColor=False, RTL=True, Selected=Last">
+              <span class="showcase__label">Large RTL</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--lg" role="tablist" aria-label="كبير" dir="rtl">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">عنصر</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ SECTION 6 — RTL + ON-COLOR ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">RTL + OnColor=True</h2>
+
+          <div class="showcase showcase--on-color">
+            <div class="showcase__row" data-props="Size=Small, OnColor=True, RTL=True, Selected=Last">
+              <span class="showcase__label">Small RTL</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--sm content-switcher--on-color" role="tablist" aria-label="صغير على لون" dir="rtl">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">عنصر</button>
+                </div>
+              </div>
+            </div>
+            <div class="showcase__row" data-props="Size=Medium, OnColor=True, RTL=True, Selected=Last">
+              <span class="showcase__label">Medium RTL</span>
+              <div class="showcase__item">
+                <div class="content-switcher content-switcher--md content-switcher--on-color" role="tablist" aria-label="متوسط على لون" dir="rtl">
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button">عنصر</button>
+                  <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button">عنصر</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ SECTION 7 — INTERACTIVE ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Interactive — Click to Switch (Medium)</h2>
+
+          <div class="interactive">
+            <p class="interactive__title">Click or use arrow keys to switch</p>
+            <div class="content-switcher content-switcher--md" role="tablist" aria-label="Interactive example" id="interactive-switcher">
+              <button class="content-switcher__item" role="tab" aria-selected="true" tabindex="0" type="button" aria-controls="panel-a">List</button>
+              <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button" aria-controls="panel-b">Grid</button>
+              <button class="content-switcher__item" role="tab" aria-selected="false" tabindex="-1" type="button" aria-controls="panel-c">Map</button>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- ── Tablist keyboard + click interaction (showcase only) ── -->
+    <script>
+      document.querySelectorAll('.content-switcher[role="tablist"]').forEach(function (tablist) {
+        var tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+
+        tabs.forEach(function (tab, index) {
+          tab.addEventListener('click', function () {
+            tabs.forEach(function (t) {
+              t.setAttribute('aria-selected', 'false');
+              t.setAttribute('tabindex', '-1');
+            });
+            tab.setAttribute('aria-selected', 'true');
+            tab.setAttribute('tabindex', '0');
+            tab.focus();
+          });
+
+          tab.addEventListener('keydown', function (e) {
+            var dir = tablist.getAttribute('dir') === 'rtl' ? -1 : 1;
+            var target = null;
+
+            if (e.key === 'ArrowRight') {
+              target = tabs[(index + dir + tabs.length) % tabs.length];
+            } else if (e.key === 'ArrowLeft') {
+              target = tabs[(index - dir + tabs.length) % tabs.length];
+            } else if (e.key === 'Home') {
+              target = tabs[0];
+            } else if (e.key === 'End') {
+              target = tabs[tabs.length - 1];
+            }
+
+            if (target) {
+              e.preventDefault();
+              tabs.forEach(function (t) { t.setAttribute('tabindex', '-1'); });
+              target.setAttribute('tabindex', '0');
+              target.focus();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

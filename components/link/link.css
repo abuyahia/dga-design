@@ -1,0 +1,149 @@
+/* =============================================================
+   Link Component  ·  Reference: reference.json
+   ============================================================= */
+
+/* ── Internal design tokens (per-style overrides below) ────── */
+.link {
+  /* TODO: --link-font-family missing in token.css. Proposed: var(--Font-Family-font-family-text). */
+  --_link-font-family: var(--link-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic", sans-serif));
+
+  /* TODO: --link-font-size-sm missing in token.css. Proposed: var(--Size-Text-typo-size-text-sm, 14px). */
+  --_link-font-size: var(--link-font-size-sm, var(--Size-Text-typo-size-text-sm, 14px));
+
+  /* TODO: --link-line-height-sm missing in token.css. Proposed: var(--Line-Height-Text-line-heights-text-sm, 20px). */
+  --_link-line-height: var(--link-line-height-sm, var(--Line-Height-Text-line-heights-text-sm, 20px));
+
+  /* TODO: --link-font-weight missing in token.css. Proposed: 400. */
+  --_link-font-weight: var(--link-font-weight, 400);
+
+  /* TODO: --link-focus-ring-width missing in token.css. Proposed: 2px. */
+  --_link-focus-ring-width: var(--link-focus-ring-width, 2px);
+
+  /* TODO: --link-focus-ring-offset missing in token.css. Proposed: 2px. */
+  --_link-focus-ring-offset: var(--link-focus-ring-offset, 2px);
+
+  /* Default style = Primary (overridden by .link--neutral and .link--on-color) */
+  --_link-color: var(--Link-link-primary, #1B8354);
+  --_link-visited-color: var(--Link-link-primary-visited, #14573A);
+  --_link-hovered-color: var(--Link-link-primary-hovered, #54C08A);
+  --_link-pressed-color: var(--Link-link-primary-pressed, #88D8AD);
+  --_link-disabled-color: var(--Global-text-default-disabled, #9DA4AE);
+  --_link-focus-ring: var(--Border-border-black, #161616);
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--Link-link-sm-gap, 4px);
+  padding: var(--Global-spacing-none, 0);
+
+  font-family: var(--_link-font-family);
+  font-size: var(--_link-font-size);
+  font-weight: var(--_link-font-weight);
+  font-style: normal;
+  line-height: var(--_link-line-height);
+
+  color: var(--_link-color);
+  text-decoration: none;
+  cursor: pointer;
+
+  outline: none;
+}
+
+/* ── Medium size ────────────────────────────────────────────── */
+.link--md {
+  /* TODO: --link-font-size-md missing in token.css. Proposed: var(--Size-Text-typo-size-text-md, 16px). */
+  --_link-font-size: var(--link-font-size-md, var(--Size-Text-typo-size-text-md, 16px));
+
+  /* TODO: --link-line-height-md missing in token.css. Proposed: var(--Line-Height-Text-line-heights-text-md, 24px). */
+  --_link-line-height: var(--link-line-height-md, var(--Line-Height-Text-line-heights-text-md, 24px));
+
+  gap: var(--Link-link-md-gap, 8px);
+}
+
+/* ── Style: Primary (explicit modifier — same as default) ───── */
+/* Primary is the default style. .link--primary is optional but documents intent clearly. */
+.link--primary {
+  --_link-color: var(--Link-link-primary, #1B8354);
+  --_link-visited-color: var(--Link-link-primary-visited, #14573A);
+  --_link-hovered-color: var(--Link-link-primary-hovered, #54C08A);
+  --_link-pressed-color: var(--Link-link-primary-pressed, #88D8AD);
+  --_link-disabled-color: var(--Global-text-default-disabled, #9DA4AE);
+  --_link-focus-ring: var(--Border-border-black, #161616);
+}
+
+/* ── Style: Neutral ─────────────────────────────────────────── */
+.link--neutral {
+  --_link-color: var(--Link-link-neutral, #384250);
+  /* Intentional: Neutral Visited reuses primary-visited token per Figma. No --Link-link-neutral-visited token exists. */
+  --_link-visited-color: var(--Link-link-primary-visited, #14573A);
+  --_link-hovered-color: var(--Link-link-neutral-hovered, #6C737F);
+  --_link-pressed-color: var(--Link-link-neutral-pressed, #9DA4AE);
+  /* --_link-disabled-color and --_link-focus-ring unchanged (same as Primary) */
+}
+
+/* ── Style: On-color ─────────────────────────────────────────── */
+.link--on-color {
+  --_link-color: var(--Link-link-oncolor, #FFF);
+  --_link-visited-color: var(--Link-link-oncolor-visited, rgba(255, 255, 255, 0.90));
+  --_link-hovered-color: var(--Link-link-oncolor-hovered, rgba(255, 255, 255, 0.80));
+  --_link-pressed-color: var(--Link-link-oncolor-pressed, rgba(255, 255, 255, 0.60));
+  --_link-disabled-color: var(--Link-link-oncolor-disabled, rgba(255, 255, 255, 0.30));
+  --_link-focus-ring: var(--Border-border-white, #FFF);
+}
+
+/* ── Inline mode (persistent underline) ─────────────────────── */
+.link--inline {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+}
+
+/* ── Visited ─────────────────────────────────────────────────── */
+.link:visited {
+  /* Browser privacy restrictions: only color and text-decoration are applied from :visited rules. */
+  color: var(--_link-visited-color);
+}
+
+/* ── Hovered ─────────────────────────────────────────────────── */
+.link:not([aria-disabled="true"]):hover {
+  color: var(--_link-hovered-color);
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+}
+
+/* ── Pressed / Active ────────────────────────────────────────── */
+.link:not([aria-disabled="true"]):active {
+  color: var(--_link-pressed-color);
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-underline-position: from-font;
+}
+
+/* ── Focused ─────────────────────────────────────────────────── */
+/* Deviation from Figma: Figma uses border (layout-shifting). CSS uses outline (layout-neutral). */
+.link:focus-visible,
+.link:focus {
+  outline: var(--_link-focus-ring-width) solid var(--_link-focus-ring);
+  outline-offset: var(--_link-focus-ring-offset);
+  border-radius: 2px;
+}
+
+/* ── Disabled ────────────────────────────────────────────────── */
+/* <a> cannot use disabled attribute. Use aria-disabled="true" + tabindex="-1" in HTML. */
+/* pointer-events: none suppresses mouse clicks but NOT keyboard activation — add a JS guard. */
+.link[aria-disabled="true"] {
+  color: var(--_link-disabled-color);
+  cursor: not-allowed;
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* ── RTL ─────────────────────────────────────────────────────── */
+/* Text-only links require no CSS layout change for RTL. text-align follows natural text direction. */
+/* When icon slots are added, add [dir="rtl"] .link { flex-direction: row-reverse; } here. */

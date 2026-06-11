@@ -1,0 +1,223 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "list",
+  "selector_root": ".list",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "LIST-STRUCT-001",
+      "standard_id": "WCAG-2.1-1.3.1",
+      "rule_type": "element_role",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "List container must use native list element",
+      "description": "The .list element must be an <ol> or <ul> native HTML element to convey list structure to assistive technology. role='list' must also be present to restore VoiceOver/Safari semantics when list-style:none is applied.",
+      "target": ".list",
+      "expected": "element is <ol> or <ul> AND has role='list' attribute",
+      "check": {
+        "type": "element_role",
+        "logic": "all_of",
+        "conditions": [
+          "element tag is 'ol' OR element tag is 'ul'",
+          "element has attribute role='list'"
+        ]
+      },
+      "message": "List container is not a native <ol> or <ul> element, or is missing role='list'.",
+      "fix": "Use <ol class=\"list list--ordered ...\"> or <ul class=\"list list--unordered ...\"> and add role=\"list\".",
+      "standard_refs": ["WCAG-2.1-1.3.1", "PLATFORM-CODE-LIST-001"]
+    },
+
+    {
+      "id": "LIST-STRUCT-002",
+      "standard_id": "WCAG-2.1-1.3.1",
+      "rule_type": "element_role",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "List item must use native <li> element",
+      "description": "Every .list__item must be a native <li> element, a direct child of the .list container.",
+      "target": ".list__item",
+      "expected": "element tag is 'li' AND direct child of <ol> or <ul>",
+      "check": {
+        "type": "element_role",
+        "logic": "all_of",
+        "conditions": [
+          "element tag is 'li'",
+          "parent element tag is 'ol' OR parent element tag is 'ul'"
+        ]
+      },
+      "message": "List item is not a native <li> element or is not a direct child of <ol>/<ul>.",
+      "fix": "Use <li class=\"list__item ...\"> as a direct child of the list container.",
+      "standard_refs": ["WCAG-2.1-1.3.1", "PLATFORM-CODE-LIST-002"]
+    },
+
+    {
+      "id": "LIST-STRUCT-003",
+      "standard_id": "WCAG-2.1-4.1.1",
+      "rule_type": "html_validity",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "List container must contain only <li> children",
+      "description": "The <ol> or <ul> element must contain only <li> elements as direct children. Text nodes and non-li elements inside a list are invalid HTML.",
+      "target": ".list",
+      "expected": "all direct children of .list are <li> elements",
+      "check": {
+        "type": "html_validity",
+        "condition": "direct children are only <li> elements"
+      },
+      "message": "List container has non-<li> direct children.",
+      "fix": "Ensure only <li> elements are direct children of the list.",
+      "standard_refs": ["WCAG-2.1-4.1.1"]
+    },
+
+    {
+      "id": "LIST-A11Y-001",
+      "standard_id": "WCAG-2.1-1.1.1",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Icon in with-icon list must carry aria-hidden",
+      "description": "The .list__icon span and the SVG it contains must carry aria-hidden='true' to suppress redundant AT announcements. The item text in .list__text provides the accessible label.",
+      "target": ".list--with-icon .list__icon",
+      "expected": "element has aria-hidden='true' OR contains svg with aria-hidden='true'",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "any_of",
+        "conditions": [
+          "element has aria-hidden='true'",
+          "child svg has aria-hidden='true'"
+        ]
+      },
+      "message": "Icon in with-icon list item is missing aria-hidden='true'. Screen readers will announce icon content.",
+      "fix": "Add aria-hidden=\"true\" to <span class=\"list__icon\"> or to the <svg> inside it.",
+      "standard_refs": ["WCAG-2.1-1.1.1", "PLATFORM-CODE-LIST-004"]
+    },
+
+    {
+      "id": "LIST-A11Y-002",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Every list item must contain visible text",
+      "description": "Each .list__item must contain a .list__text span with non-empty text content. This ensures every item has an accessible label and visible content.",
+      "target": ".list__item",
+      "expected": "contains .list__text with non-empty text content",
+      "check": {
+        "type": "aria_attribute_required",
+        "condition": "element has child .list__text",
+        "logic": "all_of",
+        "conditions": [
+          "element contains .list__text",
+          ".list__text has non-empty trimmed text content"
+        ]
+      },
+      "message": "List item is missing .list__text or .list__text has empty content.",
+      "fix": "Add <span class=\"list__text\">Item label</span> inside each <li class=\"list__item\">.",
+      "standard_refs": ["WCAG-2.1-4.1.2"]
+    },
+
+    {
+      "id": "LIST-CONTENT-001",
+      "standard_id": "PLATFORM-CODE-LIST-003",
+      "rule_type": "element_presence",
+      "category": "content",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Ordered and unordered list items must NOT contain a .list__marker element",
+      "description": "Markers for ordered and unordered list types are generated by CSS counters via ::before (LTR) and ::after (RTL). No .list__marker HTML element is permitted — its presence indicates a regression to the old implementation.",
+      "target": ".list--ordered .list__item, .list--unordered .list__item",
+      "expected": "element does NOT contain .list__marker",
+      "check": {
+        "type": "element_absence",
+        "condition": "element does not contain .list__marker"
+      },
+      "message": "Ordered or unordered list item contains a .list__marker element. Markers must be CSS-generated, not HTML elements.",
+      "fix": "Remove <span class=\"list__marker\"> from the list item. Ensure list.css defines ::before (LTR) and ::after (RTL) counter content on .list__item.",
+      "standard_refs": ["PLATFORM-CODE-LIST-003"]
+    },
+
+    {
+      "id": "LIST-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-TOKEN-001",
+      "rule_type": "css_token_usage",
+      "category": "tokens",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "List CSS must not use primitive token references directly",
+      "description": "Component CSS selectors must reference --list-* component tokens, not --Text-*, --Global-*, or --Font-* global tokens directly. If --list-* tokens are not yet in token.css, use the component token name with a TODO comment and fallback.",
+      "target": ".list, .list__item, .list__marker, .list__text, .list__icon",
+      "expected": "no direct use of --Text-*, --Global-*, --Font-*, --Size-*, --Line-Height-* in component selectors",
+      "check": {
+        "type": "css_token_usage",
+        "forbidden_patterns": [
+          "var(--Text-",
+          "var(--Global-",
+          "var(--Font-",
+          "var(--Size-",
+          "var(--Line-Height-"
+        ]
+      },
+      "message": "Component CSS uses a primitive global token directly. Replace with the corresponding --list-* component token.",
+      "fix": "Replace var(--Text-text-primary) with var(--list-text-primary, var(--Text-text-primary)). Add --list-text-primary to token.css.",
+      "standard_refs": ["PLATFORM-CODE-TOKEN-001"]
+    },
+
+    {
+      "id": "LIST-MODIFIER-001",
+      "standard_id": "PLATFORM-CODE-LIST-001",
+      "rule_type": "css_class_required",
+      "category": "structure",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "List container must have a type modifier",
+      "description": "Every .list element must carry one type modifier: .list--ordered, .list--unordered, or .list--with-icon.",
+      "target": ".list",
+      "expected": "element has one of: class list--ordered, list--unordered, list--with-icon",
+      "check": {
+        "type": "css_class_required",
+        "logic": "any_of",
+        "conditions": [
+          "element has class list--ordered",
+          "element has class list--unordered",
+          "element has class list--with-icon"
+        ]
+      },
+      "message": "List container is missing a type modifier class.",
+      "fix": "Add one of: list--ordered, list--unordered, list--with-icon to the .list element.",
+      "standard_refs": ["PLATFORM-CODE-LIST-001"]
+    },
+
+    {
+      "id": "LIST-MODIFIER-002",
+      "standard_id": "PLATFORM-CODE-LIST-001",
+      "rule_type": "css_class_required",
+      "category": "structure",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "List container must have a style modifier",
+      "description": "Every .list element must carry one style modifier: .list--primary, .list--neutral, or .list--on-color.",
+      "target": ".list",
+      "expected": "element has one of: class list--primary, list--neutral, list--on-color",
+      "check": {
+        "type": "css_class_required",
+        "logic": "any_of",
+        "conditions": [
+          "element has class list--primary",
+          "element has class list--neutral",
+          "element has class list--on-color"
+        ]
+      },
+      "message": "List container is missing a style modifier class.",
+      "fix": "Add one of: list--primary, list--neutral, list--on-color to the .list element.",
+      "standard_refs": ["PLATFORM-CODE-LIST-001"]
+    }
+
+  ]
+}

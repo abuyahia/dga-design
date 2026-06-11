@@ -1,0 +1,330 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "tag",
+    "display_name": "Tag / Status Tag",
+    "description": "Display-only label components used to annotate content with status, category, or metadata. Tag is a compact inline badge. Status Tag is a pill-shaped indicator with a colored dot and text.",
+    "category": "feedback",
+    "status": "stable"
+  },
+  "source": {
+    "manifest_tag": "components/tag/manifest.json",
+    "manifest_status_tag": "components/tag/status-tag.json",
+    "figma_set_tag": "Tag",
+    "figma_set_status_tag": "Status Tag",
+    "total_variants_tag": 288,
+    "total_variants_status_tag": 90
+  },
+
+  "components": {
+
+    "tag": {
+      "selector_root": ".tag",
+      "axes": ["size", "style", "outline", "rounded", "icon_only"],
+      "axis_values": {
+        "size": ["xs", "sm", "md"],
+        "style": ["neutral", "error", "info", "success", "warning", "on-color"],
+        "outline": [false, true],
+        "rounded": [false, true],
+        "icon_only": [false, true]
+      },
+      "discarded_axes": {
+        "RTL": "Layout-only axis. Handled via [dir='rtl'] CSS selector. No separate visual tokens. Produces flex row-reverse and text-align: right — no token differences between LTR and RTL."
+      },
+      "default_variant": {
+        "size": "md",
+        "style": "neutral",
+        "outline": false,
+        "rounded": false,
+        "icon_only": false
+      },
+      "size_tokens": {
+        "xs": {
+          "height": "var(--tag-xs-height, 20px)",
+          "padding-inline": "var(--tag-xs-padding-inline, 8px)",
+          "gap": "var(--tag-xs-gap, 4px)",
+          "icon-size": "var(--tag-xs-icon-size, 10px)",
+          "font-size": "var(--tag-xs-font-size, 10px)",
+          "font-weight": "var(--tag-xs-font-weight, 600)",
+          "line-height": "var(--tag-xs-line-height, 14px)",
+          "css-modifier": ".tag--xs"
+        },
+        "sm": {
+          "height": "var(--tag-sm-height, 24px)",
+          "padding-inline": "var(--tag-sm-padding-inline, 8px)",
+          "gap": "var(--tag-sm-gap, 4px)",
+          "icon-size": "var(--tag-sm-icon-size, 14px)",
+          "font-size": "var(--tag-sm-font-size, 12px)",
+          "font-weight": "var(--tag-sm-font-weight, 500)",
+          "line-height": "var(--tag-sm-line-height, 18px)",
+          "css-modifier": ".tag--sm"
+        },
+        "md": {
+          "height": "var(--tag-height, 32px)",
+          "padding-inline": "var(--tag-padding-inline, 12px)",
+          "gap": "var(--tag-gap, 4px)",
+          "icon-size": "var(--tag-icon-size, 18px)",
+          "font-size": "var(--tag-font-size, 16px)",
+          "font-weight": "var(--tag-font-weight, 500)",
+          "line-height": "var(--tag-line-height, 24px)",
+          "css-modifier": null
+        }
+      },
+      "icon_only_tokens": {
+        "xs": {
+          "width": "var(--tag-xs-height, 20px)",
+          "height": "var(--tag-xs-height, 20px)",
+          "padding-inline": "var(--tag-icon-only-padding, 2px)",
+          "css-modifier": ".tag--icon-only.tag--xs"
+        },
+        "sm": {
+          "width": "var(--tag-sm-height, 24px)",
+          "height": "var(--tag-sm-height, 24px)",
+          "padding-inline": "var(--tag-icon-only-padding, 2px)",
+          "css-modifier": ".tag--icon-only.tag--sm"
+        },
+        "md": {
+          "width": "var(--tag-height, 32px)",
+          "height": "var(--tag-height, 32px)",
+          "padding-inline": "var(--tag-icon-only-padding, 2px)",
+          "css-modifier": ".tag--icon-only"
+        }
+      },
+      "style_tokens": {
+        "neutral": {
+          "bg": "var(--tag-neutral-bg)",
+          "border-color": "var(--tag-neutral-border)",
+          "text": "var(--tag-neutral-text)",
+          "outline_border-color": "var(--tag-neutral-border-outline)",
+          "outline_bg": "none",
+          "figma_bg": "var(--Tag-tag-background-neutral-light, #F9FAFB)",
+          "figma_border": "var(--Border-border-neutral-secondary, #E5E7EB)",
+          "figma_text": "var(--Tag-tag-text-neutral, #1F2A37)",
+          "figma_outline_border": "var(--Tag-tag-border-neutral, #4D5761)"
+        },
+        "error": {
+          "bg": "var(--tag-error-bg)",
+          "border-color": "var(--tag-error-border)",
+          "text": "var(--tag-error-text)",
+          "outline_border-color": "var(--tag-error-border-outline)",
+          "outline_bg": "none",
+          "figma_bg": "var(--Tag-tag-background-error-light, #FEF3F2)",
+          "figma_border": "var(--Tag-tag-border-error-light, #FECDCA)",
+          "figma_text": "var(--Tag-tag-text-error, #912018)",
+          "figma_outline_border": "var(--Tag-tag-border-error, #B42318)"
+        },
+        "info": {
+          "bg": "var(--tag-info-bg)",
+          "border-color": "var(--tag-info-border)",
+          "text": "var(--tag-info-text)",
+          "outline_border-color": "var(--tag-info-border-outline)",
+          "outline_bg": "none",
+          "figma_bg": "var(--Tag-tag-background-info-light, #EFF8FF)",
+          "figma_border": "var(--Tag-tag-border-info-light, #B2DDFF)",
+          "figma_text": "var(--Tag-tag-text-info, #1849A9)",
+          "figma_outline_border": "var(--Tag-tag-border-info, #175CD3)"
+        },
+        "success": {
+          "bg": "var(--tag-success-bg)",
+          "border-color": "var(--tag-success-border)",
+          "text": "var(--tag-success-text)",
+          "outline_border-color": "var(--tag-success-border-outline)",
+          "outline_bg": "none",
+          "figma_bg": "var(--Tag-tag-background-success-light, #ECFDF3)",
+          "figma_border": "var(--Tag-tag-border-success-light, #ABEFC6)",
+          "figma_text": "var(--Tag-tag-text-success, #085D3A)",
+          "figma_outline_border": "var(--Tag-tag-border-success, #067647)"
+        },
+        "warning": {
+          "bg": "var(--tag-warning-bg)",
+          "border-color": "var(--tag-warning-border)",
+          "text": "var(--tag-warning-text)",
+          "outline_border-color": "var(--tag-warning-border-outline)",
+          "outline_bg": "none",
+          "figma_bg": "var(--Tag-tag-background-warning-light, #FFFAEB)",
+          "figma_border": "var(--Tag-tag-border-warning-light, #FEDF89)",
+          "figma_text": "var(--Tag-tag-text-warning, #93370D)",
+          "figma_outline_border": "var(--Tag-tag-border-warning, #B54708)"
+        },
+        "on-color": {
+          "bg": "var(--tag-on-color-bg)",
+          "border-color": "none",
+          "text": "var(--tag-on-color-text)",
+          "outline_border-color": "var(--tag-on-color-border-outline)",
+          "outline_bg": "none",
+          "figma_bg": "var(--Tag-tag-background-on-color, rgba(255,255,255,0.20))",
+          "figma_text": "var(--Text-text-oncolor-primary, #FFF)",
+          "figma_outline_border": "var(--Tag-tag-border-on-color, rgba(255,255,255,0.60))",
+          "_note": "No border in default (non-outline) on-color variant."
+        }
+      },
+      "radius_tokens": {
+        "default": "var(--tag-radius, 4px)",
+        "rounded": "var(--tag-radius-rounded, 9999px)"
+      },
+      "variants": [
+        { "id": "tag-neutral-md-default",    "axes": { "size": "md",  "style": "neutral", "outline": false, "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-md-rounded",    "axes": { "size": "md",  "style": "neutral", "outline": false, "rounded": true,  "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-md-outline",    "axes": { "size": "md",  "style": "neutral", "outline": true,  "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-md-icon-only",  "axes": { "size": "md",  "style": "neutral", "outline": false, "rounded": false, "icon_only": true  }, "status": "available" },
+        { "id": "tag-error-md-default",      "axes": { "size": "md",  "style": "error",   "outline": false, "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-error-md-outline",      "axes": { "size": "md",  "style": "error",   "outline": true,  "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-info-md-default",       "axes": { "size": "md",  "style": "info",    "outline": false, "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-info-md-outline",       "axes": { "size": "md",  "style": "info",    "outline": true,  "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-success-md-default",    "axes": { "size": "md",  "style": "success", "outline": false, "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-success-md-outline",    "axes": { "size": "md",  "style": "success", "outline": true,  "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-warning-md-default",    "axes": { "size": "md",  "style": "warning", "outline": false, "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-warning-md-outline",    "axes": { "size": "md",  "style": "warning", "outline": true,  "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-on-color-md-default",   "axes": { "size": "md",  "style": "on-color","outline": false, "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-on-color-md-outline",   "axes": { "size": "md",  "style": "on-color","outline": true,  "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-sm-default",    "axes": { "size": "sm",  "style": "neutral", "outline": false, "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-sm-rounded",    "axes": { "size": "sm",  "style": "neutral", "outline": false, "rounded": true,  "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-sm-outline",    "axes": { "size": "sm",  "style": "neutral", "outline": true,  "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-sm-icon-only",  "axes": { "size": "sm",  "style": "neutral", "outline": false, "rounded": false, "icon_only": true  }, "status": "available" },
+        { "id": "tag-neutral-xs-default",    "axes": { "size": "xs",  "style": "neutral", "outline": false, "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-xs-rounded",    "axes": { "size": "xs",  "style": "neutral", "outline": false, "rounded": true,  "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-xs-outline",    "axes": { "size": "xs",  "style": "neutral", "outline": true,  "rounded": false, "icon_only": false }, "status": "available" },
+        { "id": "tag-neutral-xs-icon-only",  "axes": { "size": "xs",  "style": "neutral", "outline": false, "rounded": false, "icon_only": true  }, "status": "available" }
+      ],
+      "implementation_notes": [
+        "Neutral is the default style. No modifier class needed for neutral.",
+        "Medium is the default size. No modifier class needed for medium.",
+        "The icon slot is optional. Omit .tag__icon when no icon is provided.",
+        "Icon-only tags must have aria-label on the root span. See tag.contract.md §4.",
+        "RTL layout is handled by [dir='rtl'] on an ancestor element, not on the component root.",
+        "On-Color style has no border in its default (non-outline) state.",
+        "x Small uses font-weight: 600 (semibold); Small and Medium use font-weight: 500 (medium). This is intentional per Figma."
+      ]
+    },
+
+    "status_tag": {
+      "selector_root": ".status-tag",
+      "axes": ["size", "style", "status"],
+      "axis_values": {
+        "size": ["xs", "sm", "md"],
+        "style": ["neutral", "blue", "green", "red", "yellow"],
+        "status": ["subtle", "ghost", "inverted"]
+      },
+      "discarded_axes": {
+        "RTL": "Layout-only axis. Handled via [dir='rtl'] CSS selector. Dot and text order reversed via flex row-reverse."
+      },
+      "default_variant": {
+        "size": "md",
+        "style": "neutral",
+        "status": "subtle"
+      },
+      "size_tokens": {
+        "xs": {
+          "height": "var(--status-tag-xs-height, 20px)",
+          "padding-inline": "var(--status-tag-xs-padding-inline, 8px)",
+          "gap": "var(--status-tag-xs-gap, 8px)",
+          "dot-size": "var(--status-tag-xs-dot-size, 10px)",
+          "font-size": "var(--status-tag-xs-font-size, 10px)",
+          "font-weight": "var(--status-tag-xs-font-weight, 500)",
+          "line-height": "var(--status-tag-xs-line-height, 14px)",
+          "css-modifier": ".status-tag--xs"
+        },
+        "sm": {
+          "height": "var(--status-tag-sm-height, 24px)",
+          "padding-inline": "var(--status-tag-sm-padding-inline, 8px)",
+          "gap": "var(--status-tag-sm-gap, 8px)",
+          "dot-size": "var(--status-tag-sm-dot-size, 10px)",
+          "font-size": "var(--status-tag-sm-font-size, 14px)",
+          "font-weight": "var(--status-tag-sm-font-weight, 500)",
+          "line-height": "var(--status-tag-sm-line-height, 20px)",
+          "css-modifier": ".status-tag--sm"
+        },
+        "md": {
+          "height": "var(--status-tag-height, 32px)",
+          "padding-inline": "var(--status-tag-padding-inline, 16px)",
+          "gap": "var(--status-tag-gap, 8px)",
+          "dot-size": "var(--status-tag-dot-size, 10px)",
+          "font-size": "var(--status-tag-font-size, 16px)",
+          "font-weight": "var(--status-tag-font-weight, 500)",
+          "line-height": "var(--status-tag-line-height, 24px)",
+          "css-modifier": null
+        }
+      },
+      "style_tokens": {
+        "neutral": {
+          "subtle_bg": "var(--status-tag-neutral-subtle-bg)",
+          "subtle_dot": "var(--status-tag-neutral-subtle-dot)",
+          "subtle_text": "var(--status-tag-neutral-subtle-text)",
+          "ghost_dot": "var(--status-tag-neutral-subtle-dot)",
+          "ghost_text": "var(--status-tag-ghost-text)",
+          "inverted_bg": "var(--status-tag-neutral-inverted-bg)",
+          "inverted_dot": "var(--status-tag-neutral-inverted-dot)",
+          "inverted_text": "var(--status-tag-inverted-text)"
+        },
+        "blue": {
+          "subtle_bg": "var(--status-tag-blue-subtle-bg)",
+          "subtle_dot": "var(--status-tag-blue-subtle-dot)",
+          "subtle_text": "var(--status-tag-blue-subtle-text)",
+          "ghost_dot": "var(--status-tag-blue-subtle-dot)",
+          "ghost_text": "var(--status-tag-ghost-text)",
+          "inverted_bg": "var(--status-tag-blue-inverted-bg)",
+          "inverted_dot": "var(--status-tag-blue-inverted-dot)",
+          "inverted_text": "var(--status-tag-inverted-text)"
+        },
+        "green": {
+          "subtle_bg": "var(--status-tag-green-subtle-bg)",
+          "subtle_dot": "var(--status-tag-green-subtle-dot)",
+          "subtle_text": "var(--status-tag-green-subtle-text)",
+          "ghost_dot": "var(--status-tag-green-subtle-dot)",
+          "ghost_text": "var(--status-tag-ghost-text)",
+          "inverted_bg": "var(--status-tag-green-inverted-bg)",
+          "inverted_dot": "var(--status-tag-green-inverted-dot)",
+          "inverted_text": "var(--status-tag-inverted-text)"
+        },
+        "red": {
+          "subtle_bg": "var(--status-tag-red-subtle-bg)",
+          "subtle_dot": "var(--status-tag-red-subtle-dot)",
+          "subtle_text": "var(--status-tag-red-subtle-text)",
+          "ghost_dot": "var(--status-tag-red-subtle-dot)",
+          "ghost_text": "var(--status-tag-ghost-text)",
+          "inverted_bg": "var(--status-tag-red-inverted-bg)",
+          "inverted_dot": "var(--status-tag-red-inverted-dot)",
+          "inverted_text": "var(--status-tag-inverted-text)"
+        },
+        "yellow": {
+          "subtle_bg": "var(--status-tag-yellow-subtle-bg)",
+          "subtle_dot": "var(--status-tag-yellow-subtle-dot)",
+          "subtle_text": "var(--status-tag-yellow-subtle-text)",
+          "ghost_dot": "var(--status-tag-yellow-subtle-dot)",
+          "ghost_text": "var(--status-tag-ghost-text)",
+          "inverted_bg": "var(--status-tag-yellow-inverted-bg)",
+          "inverted_dot": "var(--status-tag-yellow-inverted-dot)",
+          "inverted_text": "var(--status-tag-inverted-text)"
+        }
+      },
+      "variants": [
+        { "id": "status-tag-neutral-subtle-md",   "axes": { "size": "md", "style": "neutral", "status": "subtle"   }, "status": "available" },
+        { "id": "status-tag-neutral-ghost-md",    "axes": { "size": "md", "style": "neutral", "status": "ghost"    }, "status": "available" },
+        { "id": "status-tag-neutral-inverted-md", "axes": { "size": "md", "style": "neutral", "status": "inverted" }, "status": "available" },
+        { "id": "status-tag-blue-subtle-md",      "axes": { "size": "md", "style": "blue",    "status": "subtle"   }, "status": "available" },
+        { "id": "status-tag-blue-ghost-md",       "axes": { "size": "md", "style": "blue",    "status": "ghost"    }, "status": "available" },
+        { "id": "status-tag-blue-inverted-md",    "axes": { "size": "md", "style": "blue",    "status": "inverted" }, "status": "available" },
+        { "id": "status-tag-green-subtle-md",     "axes": { "size": "md", "style": "green",   "status": "subtle"   }, "status": "available" },
+        { "id": "status-tag-green-ghost-md",      "axes": { "size": "md", "style": "green",   "status": "ghost"    }, "status": "available" },
+        { "id": "status-tag-green-inverted-md",   "axes": { "size": "md", "style": "green",   "status": "inverted" }, "status": "available" },
+        { "id": "status-tag-red-subtle-md",       "axes": { "size": "md", "style": "red",     "status": "subtle"   }, "status": "available" },
+        { "id": "status-tag-red-ghost-md",        "axes": { "size": "md", "style": "red",     "status": "ghost"    }, "status": "available" },
+        { "id": "status-tag-red-inverted-md",     "axes": { "size": "md", "style": "red",     "status": "inverted" }, "status": "available" },
+        { "id": "status-tag-yellow-subtle-md",    "axes": { "size": "md", "style": "yellow",  "status": "subtle"   }, "status": "available" },
+        { "id": "status-tag-yellow-ghost-md",     "axes": { "size": "md", "style": "yellow",  "status": "ghost"    }, "status": "available" },
+        { "id": "status-tag-yellow-inverted-md",  "axes": { "size": "md", "style": "yellow",  "status": "inverted" }, "status": "available" },
+        { "id": "status-tag-neutral-subtle-sm",   "axes": { "size": "sm", "style": "neutral", "status": "subtle"   }, "status": "available" },
+        { "id": "status-tag-neutral-subtle-xs",   "axes": { "size": "xs", "style": "neutral", "status": "subtle"   }, "status": "available" }
+      ],
+      "implementation_notes": [
+        "Status Tag is always pill-shaped (border-radius: full). No shape modifier.",
+        "Neutral is the default style. No modifier class needed for neutral.",
+        "Medium is the default size. No modifier class needed for medium.",
+        "Subtle is the default status. No modifier class needed for subtle.",
+        "Ghost status removes the background. Dot retains style color. Text shifts to neutral regardless of style.",
+        "Inverted status applies a dark background. Dot becomes rgba(255,255,255,0.60). Text becomes white.",
+        "Style names (blue/green/red/yellow) map to Figma axis values, not semantic token names."
+      ]
+    }
+  }
+}

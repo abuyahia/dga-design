@@ -1,0 +1,104 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "list",
+    "description": "List component supporting ordered, unordered, and icon-annotated lists with two nesting levels and three style variants. Includes a reusable List item atom and a List container. Fully bilingual (LTR/RTL)."
+  },
+  "source_files": {
+    "container": "manifest.json",
+    "item_atom": "mainifest-2.json"
+  },
+  "axes": ["type", "style", "level", "rtl"],
+  "axis_values": {
+    "type": ["ordered", "unordered", "with-icon"],
+    "style": ["primary", "neutral", "on-color"],
+    "level": ["one", "two"],
+    "rtl": ["no", "yes"]
+  },
+  "variant_count": {
+    "list_container": 18,
+    "list_item_atom": 36,
+    "note": "Container: 2 RTL × 3 Style × 3 Type = 18. Item atom: 2 RTL × 3 Type × 2 Level × 3 Style = 36."
+  },
+  "discarded_axes": {
+    "rtl_css_selector": {
+      "reason": "RTL indent is handled via CSS logical property padding-inline-start, which automatically flips for [dir=rtl] contexts. No separate [dir=rtl] CSS selector needed for indentation. Flex direction reversal for RTL marker order is handled by the browser dir attribute, not by a CSS modifier."
+    }
+  },
+  "anatomy": {
+    "container": {
+      "element": "ol | ul",
+      "class": ".list",
+      "description": "Column flex container. Uses ol for ordered type, ul for unordered and with-icon types."
+    },
+    "item": {
+      "element": "li",
+      "class": ".list__item",
+      "description": "Row flex item. gap=8px between marker and text."
+    },
+    "marker": {
+      "element": "span",
+      "class": ".list__marker",
+      "description": "Text-based marker. Not present for with-icon type.",
+      "values": {
+        "ordered_level_one_ltr": "1-",
+        "ordered_level_two_ltr": "a-",
+        "ordered_level_one_rtl": "-1",
+        "ordered_level_two_rtl": "أ-",
+        "unordered_level_one": "-",
+        "unordered_level_two": "•"
+      }
+    },
+    "icon": {
+      "element": "span",
+      "class": ".list__icon",
+      "description": "Icon wrapper. Present only for with-icon type. Contains an SVG with aria-hidden=true.",
+      "icon_size": "16px"
+    },
+    "text": {
+      "element": "span",
+      "class": ".list__text",
+      "description": "Item label text."
+    }
+  },
+  "tokens": {
+    "component_level": {
+      "_note": "All component tokens are missing from token.css. Fallback values from manifest used. TODO: add to token.css.",
+      "--list-text-primary": "var(--Text-text-primary, #1B8354)",
+      "--list-text-neutral": "var(--Text-text-default, #161616)",
+      "--list-text-oncolor": "var(--Text-text-oncolor-primary, #FFF)",
+      "--list-item-gap": "var(--Global-spacing-md, 8px)",
+      "--list-item-indent": "var(--Global-spacing-3xl, 24px)",
+      "--list-item-font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+      "--list-item-font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+      "--list-item-line-height": "var(--Line-Height-Text-line-heights-text-md, 24px)",
+      "--list-item-icon-size": "16px",
+      "--list-item-font-weight": "400"
+    }
+  },
+  "css_modifiers": {
+    "type": {
+      ".list--ordered": "Ordered list (rendered as ol)",
+      ".list--unordered": "Unordered list (rendered as ul)",
+      ".list--with-icon": "Icon-annotated list (rendered as ul)"
+    },
+    "style": {
+      ".list--primary": "Primary style: brand green text",
+      ".list--neutral": "Neutral style: default dark text",
+      ".list--on-color": "On-color style: white text (requires colored background context)"
+    },
+    "level": {
+      ".list__item--level-one": "Top-level item, no indent",
+      ".list__item--level-two": "Nested item, padding-inline-start: 24px"
+    }
+  },
+  "implementation_notes": [
+    "Container uses display:flex (not inline-flex) for block-level list layout.",
+    "role='list' is added to the container to restore VoiceOver/Safari list semantics when list-style:none is applied.",
+    "padding-inline-start logical property handles Level Two indent for both LTR and RTL without a separate CSS selector.",
+    "Marker order in RTL (number after Arabic text) is handled by the browser's natural flex + dir=rtl behavior.",
+    "Icon SVG must carry aria-hidden='true'. Accessible label is provided by .list__text.",
+    "The On-Color style variant requires a dark or brand-color background in the consuming layout.",
+    "No interactive states. No focus ring. No hover/active/disabled states."
+  ]
+}
