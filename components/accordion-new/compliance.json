@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "component": "accordion-new",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "last_reviewed": "2026-06-12",
+  "reviewed_by": "platform-component-builder",
+
+  "checks": [
+    {
+      "id": "PLATFORM-CODE-ACCORDION-001",
+      "category": "structure",
+      "description": "Root element is a div with class .accordion and border-top divider",
+      "status": "pending_audit",
+      "notes": "Matches Figma anatomy. Pending visual QA."
+    },
+    {
+      "id": "PLATFORM-CODE-ACCORDION-002",
+      "category": "structure",
+      "description": "Trigger is a native <button> element",
+      "status": "pending_audit",
+      "notes": "Required for native keyboard activation (Enter, Space) and accessible semantics."
+    },
+    {
+      "id": "PLATFORM-CODE-ACCORDION-003",
+      "category": "structure",
+      "description": "Panel has role=region and aria-labelledby pointing to trigger id",
+      "status": "pending_audit",
+      "notes": "Required by ARIA Authoring Practices Guide accordion pattern."
+    },
+    {
+      "id": "PLATFORM-CODE-ACCORDION-004",
+      "category": "structure",
+      "description": "Icon has aria-hidden=true",
+      "status": "pending_audit",
+      "notes": "Icon is decorative — must not be read by screen readers."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-001",
+      "category": "accessibility",
+      "description": "aria-expanded reflects panel open/closed state on the trigger button",
+      "status": "pending_audit",
+      "notes": "Value must toggle true/false on user activation."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-002",
+      "category": "accessibility",
+      "description": "aria-controls on trigger references panel id",
+      "status": "pending_audit",
+      "notes": "Links trigger to its controlled panel."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-003",
+      "category": "accessibility",
+      "description": "Focus indicator is visible and meets minimum 2px contrast requirement",
+      "status": "pending_audit",
+      "notes": "Figma specifies 2px solid #161616 (black) on trigger — high contrast focus ring."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-004",
+      "category": "accessibility",
+      "description": "Disabled state uses [disabled] attribute on button",
+      "status": "pending_audit",
+      "notes": "Native disabled prevents interaction and communicates state to assistive technology."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-005",
+      "category": "accessibility",
+      "description": "Focus strategy uses :focus-visible (keyboard only)",
+      "status": "pending_audit",
+      "notes": "Pointer users do not see focus ring; keyboard users do."
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-001",
+      "category": "tokens",
+      "description": "All visual values reference component-level semantic tokens",
+      "status": "incomplete",
+      "notes": "Component-level tokens (--accordion-*) are defined in accordion-new.css but are NOT yet present in token.css. Global token fallbacks used. Requires token.css update."
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-002",
+      "category": "tokens",
+      "description": "No hardcoded hex or pixel values in component selectors",
+      "status": "incomplete",
+      "notes": "Hardcoded fallback values present in CSS custom property declarations. These are acceptable fallbacks until token.css is updated. No hardcodes in selectors."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-001",
+      "category": "states",
+      "description": "All 5 states (default, hovered, pressed, focused, disabled) are implemented",
+      "status": "pending_audit",
+      "notes": "All states mapped to CSS selectors."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-002",
+      "category": "states",
+      "description": "Expanded and collapsed states are implemented via aria-expanded",
+      "status": "pending_audit",
+      "notes": "Panel display toggled by CSS selector targeting aria-expanded on adjacent trigger."
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-001",
+      "category": "focus",
+      "description": "Non-flush focus ring implemented as inset outline on trigger",
+      "status": "pending_audit",
+      "notes": "outline: 2px solid; outline-offset: -2px applied on :focus-visible."
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-002",
+      "category": "focus",
+      "description": "Flush focus ring bleeds to fill parent container width",
+      "status": "pending_audit",
+      "notes": "Implemented via ::after with negative inset-inline. Requires parent overflow:clip. Approximate — pending design team verification."
+    },
+    {
+      "id": "PLATFORM-CODE-RTL-001",
+      "category": "rtl",
+      "description": "RTL layout is supported via CSS logical properties",
+      "status": "pending_audit",
+      "notes": "All horizontal spacing uses padding-inline, margin-inline, inset-inline. No explicit RTL class needed."
+    }
+  ]
+}

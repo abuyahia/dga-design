@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "divider",
+  "generated": "2026-06-12",
+  "overall_status": "pending_audit",
+  "official_compliance_claim": false,
+  "_note": "Status 'mapped' means the component has been mapped to this criterion internally. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.1.1",
+          "title": "Non-text Content",
+          "status": "mapped",
+          "evidence": "Divider is a visual line with no non-text content (images, icons). When decorative, aria-hidden='true' suppresses AT announcement. When semantic, <hr> provides role='separator' with no name required.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "1.3.1",
+          "title": "Info and Relationships",
+          "status": "mapped",
+          "evidence": "<hr> provides implicit role='separator'. Programmatic relationship between divided sections is established by document structure. Vertical dividers use aria-orientation='vertical'.",
+          "audit_rule_ids": ["PLATFORM-CODE-DIVIDER-001"]
+        },
+        {
+          "id": "1.4.1",
+          "title": "Use of Color",
+          "status": "mapped",
+          "evidence": "RISK: Color variants (neutral, primary, alpha-white, white) must not be used as the sole means of conveying information. Contract documents this as consumer responsibility. Component itself does not convey information through color.",
+          "audit_rule_ids": ["PLATFORM-CODE-DIVIDER-004"]
+        },
+        {
+          "id": "1.4.11",
+          "title": "Non-text Contrast",
+          "status": "mapped",
+          "evidence": "Neutral divider (#D2D6DB on white) = ~1.4:1. This is below the 3:1 minimum for UI components under WCAG 1.4.11. However, the divider is decorative (not a UI component required for interaction). Primary divider (#1B8354 on white) = ~5.4:1 — passes. Formal audit required for specific usage contexts.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "Divider is not interactive and does not receive keyboard focus. No keyboard operability requirements apply.",
+          "audit_rule_ids": ["PLATFORM-CODE-DIVIDER-003"]
+        },
+        {
+          "id": "4.1.2",
+          "title": "Name, Role, Value",
+          "status": "mapped",
+          "evidence": "Semantic: <hr> provides role='separator' implicitly. Name not required for separators. Vertical: aria-orientation='vertical' communicates direction. Decorative: role='none' aria-hidden='true' removes from AT tree.",
+          "audit_rule_ids": ["PLATFORM-CODE-DIVIDER-001", "PLATFORM-CODE-DIVIDER-002"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE-INTERNAL",
+      "name": "Platform Code Internal Design System Standards",
+      "source_status": "internal_mapping",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-DIVIDER-001",
+          "title": "Semantic element usage",
+          "status": "mapped",
+          "evidence": "template.html uses <hr class='divider'>. Vertical uses aria-orientation='vertical'. Audit rule PLATFORM-CODE-DIVIDER-001 enforces this.",
+          "audit_rule_ids": ["PLATFORM-CODE-DIVIDER-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-DIVIDER-002",
+          "title": "Decorative dividers aria-hidden",
+          "status": "mapped",
+          "evidence": "Contract documents role='none' aria-hidden='true' for decorative use. Consumer responsibility.",
+          "audit_rule_ids": ["PLATFORM-CODE-DIVIDER-002"]
+        },
+        {
+          "id": "PLATFORM-CODE-TOKEN-001",
+          "title": "Component CSS uses component-level semantic tokens only",
+          "status": "mapped",
+          "evidence": "divider.css uses --divider-* tokens throughout with inline fallbacks. All 5 tokens documented as missing from token.css in analysis.md.",
+          "audit_rule_ids": ["PLATFORM-CODE-DIVIDER-005"]
+        }
+      ]
+    }
+  ],
+
+  "variant_compliance_notes": [
+    {
+      "variant_id": "neutral-horizontal",
+      "note": "Neutral color (#D2D6DB on white) = ~1.4:1. Acceptable for decorative separators. Not suitable for focus indicators or informational use."
+    },
+    {
+      "variant_id": "alpha-white-horizontal",
+      "note": "Designed for dark/colored backgrounds. Contrast on dark bg must be verified in deployment context."
+    },
+    {
+      "variant_id": "white-horizontal",
+      "note": "Designed for dark/colored backgrounds. Pure white (#FFF) on dark backgrounds will meet contrast requirements. Verify in deployment context."
+    },
+    {
+      "variant_id": "all-vertical",
+      "note": "All vertical variants require aria-orientation='vertical' when semantic. Consumer must apply this attribute."
+    }
+  ]
+}

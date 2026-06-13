@@ -1,0 +1,283 @@
+<!-- ==========================================================================
+     template.html — File Upload Component
+     Platform Code Design System
+     --------------------------------------------------------------------------
+     Templates for all sub-components:
+       1. File Item (.file-item)
+       2. Drop Zone (.drop-zone)
+       3. File Upload / Single (.file-upload)
+       4. File Upload / Multiple (.file-upload--multiple)
+     ========================================================================== -->
+
+
+<!-- ── 1. File Item: Uploaded ─────────────────────────────────────────── -->
+<!--
+  Attrs:
+    role="listitem"   — used inside a role="list" container
+    aria-label        — optional for the row itself; required on .file-item__remove
+-->
+<div class="file-item" role="listitem">
+  <div class="file-item__row">
+    <div class="file-item__lead">
+      <!-- TODO: replace with success checkmark icon from icon library -->
+      <span class="file-item__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="9" stroke="#067647" stroke-width="1.5"/>
+          <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#067647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="file-item__name">File-name.csv</span>
+    </div>
+    <div class="file-item__trail">
+      <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="file-item__error-row" role="alert">
+    <div class="file-item__error-text">Here goes the helper text.</div>
+  </div>
+</div>
+
+
+<!-- ── 1b. File Item: Loading ──────────────────────────────────────────── -->
+<div class="file-item" role="listitem">
+  <div class="file-item__row">
+    <div class="file-item__lead">
+      <!-- Loading: spinner via CSS animation -->
+      <span class="file-item__icon file-item__icon--loading" role="status" aria-label="Uploading File-name.csv"></span>
+      <span class="file-item__name">File-name.csv</span>
+    </div>
+    <div class="file-item__trail">
+      <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── 1c. File Item: Error ────────────────────────────────────────────── -->
+<div class="file-item file-item--error" role="listitem">
+  <div class="file-item__row">
+    <div class="file-item__lead">
+      <!-- TODO: replace with error icon from icon library -->
+      <span class="file-item__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="9" stroke="#B42318" stroke-width="1.5"/>
+          <path d="M10 6v5M10 13.5v.5" stroke="#B42318" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="file-item__name">File-name.csv</span>
+    </div>
+    <div class="file-item__trail">
+      <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="file-item__error-row" role="alert">
+    <div class="file-item__error-text">Here goes the helper text.</div>
+  </div>
+</div>
+
+
+<!-- ── 2. Drop Zone: Default ──────────────────────────────────────────── -->
+<!--
+  Add .is-drag-hover via JS on dragover.
+  Remove .is-drag-hover via JS on dragleave / drop.
+  Add aria-disabled="true" to disable.
+-->
+<div class="drop-zone" role="region" aria-label="File drop zone">
+  <!-- TODO: replace with actual file-upload icon from icon library -->
+  <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <div class="drop-zone__text">
+    <p class="drop-zone__lead">Drag and drop files here to upload</p>
+    <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <input type="file" id="drop-zone-file-input" hidden aria-hidden="true" tabindex="-1">
+  <button
+    type="button"
+    class="drop-zone__trigger"
+    onclick="document.getElementById('drop-zone-file-input').click()"
+  >
+    Browse Files
+  </button>
+</div>
+
+
+<!-- ── 2b. Drop Zone: Drag-hover ─────────────────────────────────────── -->
+<!-- Static preview — in production, .is-drag-hover is toggled by JS -->
+<div class="drop-zone is-drag-hover" role="region" aria-label="File drop zone">
+  <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <div class="drop-zone__text">
+    <p class="drop-zone__lead">Drag and drop files here to upload</p>
+    <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <button type="button" class="drop-zone__trigger" disabled>Browse Files</button>
+</div>
+
+
+<!-- ── 2c. Drop Zone: Disabled ───────────────────────────────────────── -->
+<div class="drop-zone" aria-disabled="true" role="region" aria-label="File drop zone">
+  <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <div class="drop-zone__text">
+    <p class="drop-zone__lead">Drag and drop files here to upload</p>
+    <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <button type="button" class="drop-zone__trigger" disabled>Browse Files</button>
+</div>
+
+
+<!-- ── 3. File Upload / Single: Default ─────────────────────────────── -->
+<div class="file-upload">
+  <div class="file-upload__header">
+    <div class="file-upload__label-row">
+      <label class="file-upload__label" for="file-single-input">Upload files</label>
+    </div>
+    <p class="file-upload__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <input type="file" id="file-single-input" hidden aria-hidden="true" tabindex="-1">
+  <button
+    type="button"
+    class="file-upload__trigger"
+    onclick="document.getElementById('file-single-input').click()"
+  >
+    Browse Files
+  </button>
+  <div class="file-upload__file" aria-live="polite">
+    <!-- .file-item injected here when a file is selected -->
+  </div>
+</div>
+
+
+<!-- ── 3b. File Upload / Single: Uploaded ───────────────────────────── -->
+<div class="file-upload is-uploaded">
+  <div class="file-upload__header">
+    <div class="file-upload__label-row">
+      <label class="file-upload__label" for="file-single-input-2">Upload files</label>
+    </div>
+    <p class="file-upload__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <input type="file" id="file-single-input-2" hidden aria-hidden="true" tabindex="-1">
+  <button
+    type="button"
+    class="file-upload__trigger"
+    onclick="document.getElementById('file-single-input-2').click()"
+  >
+    Browse Files
+  </button>
+  <div class="file-upload__file" aria-live="polite">
+    <div class="file-item" role="listitem">
+      <div class="file-item__row">
+        <div class="file-item__lead">
+          <span class="file-item__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="9" stroke="#067647" stroke-width="1.5"/>
+              <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#067647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="file-item__name">File-name.csv</span>
+        </div>
+        <div class="file-item__trail">
+          <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── 3c. File Upload / Single: Disabled ───────────────────────────── -->
+<div class="file-upload" aria-disabled="true">
+  <div class="file-upload__header">
+    <div class="file-upload__label-row">
+      <label class="file-upload__label">Upload files</label>
+    </div>
+    <p class="file-upload__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <button type="button" class="file-upload__trigger" disabled>Browse Files</button>
+</div>
+
+
+<!-- ── 4. File Upload / Multiple ────────────────────────────────────── -->
+<div class="file-upload--multiple">
+  <div class="drop-zone" role="region" aria-label="File drop zone">
+    <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="drop-zone__text">
+      <p class="drop-zone__lead">Drag and drop files here to upload</p>
+      <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+    </div>
+    <input type="file" id="file-multiple-input" multiple hidden aria-hidden="true" tabindex="-1">
+    <button
+      type="button"
+      class="drop-zone__trigger"
+      onclick="document.getElementById('file-multiple-input').click()"
+    >
+      Browse Files
+    </button>
+  </div>
+  <div class="file-upload__files" role="list" aria-label="Uploaded files" aria-live="polite">
+    <div class="file-item" role="listitem">
+      <div class="file-item__row">
+        <div class="file-item__lead">
+          <span class="file-item__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="10" cy="10" r="9" stroke="#067647" stroke-width="1.5"/>
+              <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#067647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="file-item__name">File-name.csv</span>
+        </div>
+        <div class="file-item__trail">
+          <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── RTL: File Upload / Single (Arabic) ────────────────────────────── -->
+<div class="file-upload" dir="rtl">
+  <div class="file-upload__header">
+    <div class="file-upload__label-row">
+      <label class="file-upload__label" for="file-single-rtl">رفع المرفقات</label>
+    </div>
+    <p class="file-upload__helper">الحد الأقصى لحجم الملف المسموح به هو 2 ميجابايت، وتشمل الصيغ المدعومة .jpg و .png و .pdf.</p>
+  </div>
+  <input type="file" id="file-single-rtl" hidden aria-hidden="true" tabindex="-1">
+  <button
+    type="button"
+    class="file-upload__trigger"
+    onclick="document.getElementById('file-single-rtl').click()"
+  >
+    تصفح الملفات
+  </button>
+</div>

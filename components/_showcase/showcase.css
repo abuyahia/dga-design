@@ -375,14 +375,129 @@ body {
   font-weight: 500;
 }
 
-/* ── 15. Overflow safety (ripple / focus ring containment) ─────────────── */
+/* ── 15. sc-* section / item / tab / panel layout ──────────────────────── */
+
+.sc-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.sc-section__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900, #111827);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-200, #e5e7eb);
+}
+
+.sc-section__desc {
+  font-size: var(--fs-text-sm, 14px);
+  color: var(--gray-500, #6b7280);
+  line-height: 1.6;
+}
+
+.sc-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--gray-200, #e5e7eb);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+}
+
+.sc-item__label {
+  font-size: var(--fs-text-sm, 14px);
+  font-weight: 600;
+  color: var(--gray-700, #374151);
+  padding: 10px 16px;
+  background: var(--gray-50, #f9fafb);
+  border-bottom: 1px solid var(--gray-200, #e5e7eb);
+}
+
+.sc-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 8px 12px 0;
+  background: var(--gray-50, #f9fafb);
+  border-bottom: 1px solid var(--gray-200, #e5e7eb);
+}
+
+.sc-tab {
+  padding: 6px 14px;
+  font-size: var(--fs-text-sm, 14px);
+  font-weight: 500;
+  color: var(--gray-400, #9ca3af);
+  background: transparent;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  line-height: 1.43;
+  margin-bottom: -1px;
+  transition: color 0.15s;
+}
+
+.sc-tab:hover {
+  color: var(--gray-600, #4b5563);
+}
+
+.sc-tab--active {
+  color: var(--gray-900, #111827);
+  background: var(--white, #ffffff);
+  border-color: var(--gray-200, #e5e7eb);
+}
+
+.sc-panel--preview {
+  padding: 24px;
+  background: var(--white, #ffffff);
+}
+
+.sc-panel--code {
+  display: flex;
+  flex-direction: column;
+  background: #16181d;
+  overflow-x: auto;
+}
+
+.sc-panel--code pre {
+  margin: 0;
+  padding: 20px 24px;
+  font-family: 'ui-monospace', 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: #cdd6f4;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.sc-copy {
+  align-self: flex-end;
+  margin: 8px 16px 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.sc-copy:hover {
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.10);
+}
+
+/* ── 17. Overflow safety (ripple / focus ring containment) ─────────────── */
 
 .overflow-safe {
   padding: 20px;
   overflow: visible;
 }
 
-/* ── 16. Responsive ────────────────────────────────────────────────────── */
+/* ── 18. Responsive ────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
   [data-showcase-shell] {

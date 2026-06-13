@@ -1,0 +1,1081 @@
+[
+  {
+    "cssProps": {
+      "itemSpacing-variable": "--spacing-spacing-3xl",
+      "itemSpacing-collection": "Spacing",
+      "itemSpacing-variable-id": "VariableID:7ad06e32a53ffb3e83b58a38e94cabca462230cd/53:1729"
+    },
+    "type": "COMPONENT_SET",
+    "name": "_Drop Zone",
+    "children": [
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "318px",
+          "padding": "var(--size-24, 24px)",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-3xl, 24px)",
+          "border-radius": "var(--Radius-radius-sm, 4px)",
+          "border": "1px dashed var(--Border-border-neutral-primary, #D2D6DB)",
+          "background": "var(--Background-background-neutral-100, #F3F4F6)",
+          "itemSpacing-variable": "--spacing-globalspacing-3xl",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:73473aecaa515ffb2a50edba4d632b49ab51f82b/405:119",
+          "paddingLeft-variable": "--global-size24",
+          "paddingLeft-collection": "global",
+          "paddingLeft-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingTop-variable": "--global-size24",
+          "paddingTop-collection": "global",
+          "paddingTop-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingRight-variable": "--global-size24",
+          "paddingRight-collection": "global",
+          "paddingRight-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingBottom-variable": "--global-size24",
+          "paddingBottom-collection": "global",
+          "paddingBottom-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "topLeftRadius-variable": "--radius-radiusradius-sm",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "topRightRadius-variable": "--radius-radiusradius-sm",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomRightRadius-variable": "--radius-radiusradius-sm",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+        },
+        "type": "COMPONENT",
+        "name": "State=Default, RTL=False",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "file-upload",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "18.501px",
+                  "height": "21.501px"
+                },
+                "type": "GROUP",
+                "name": "elements"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "flex-direction": "column",
+              "align-items": "center",
+              "gap": "var(--Text-text-content-gap, 8px)",
+              "align-self": "stretch",
+              "itemSpacing-variable": "--spacing-texttext-content-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:ed1d246e35d368141beeba50c23aa13da8a2eb97/405:135"
+            },
+            "type": "FRAME",
+            "name": "Text wrapper",
+            "children": [
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Text-text-display, #1F2A37)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "500",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Drag and drop files here to upload",
+                "type": "TEXT",
+                "name": "Lead Text"
+              },
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Text-text-primary-paragraph, #384250)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xs, 12px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xs, 18px) /* 150% */"
+                },
+                "characters": "Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.",
+                "type": "TEXT",
+                "name": "Helper Text"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-height": "32px",
+              "max-height": "32px",
+              "padding": "var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "gap": "var(--Button-buttons-md-gap, 4px)",
+              "border-radius": "var(--Radius-radius-sm, 4px)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "itemSpacing-variable": "--spacing-buttonbuttons-md-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:33c850b036946251c0cebd1390b654afff200355/434:62",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingTop-variable": "--spacing-globalspacing-none",
+              "paddingTop-collection": "Spacing",
+              "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingBottom-variable": "--spacing-globalspacing-none",
+              "paddingBottom-collection": "Spacing",
+              "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "topLeftRadius-variable": "--radius-radiusradius-sm",
+              "topLeftRadius-collection": "Radius",
+              "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "topRightRadius-variable": "--radius-radiusradius-sm",
+              "topRightRadius-collection": "Radius",
+              "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+              "bottomLeftRadius-collection": "Radius",
+              "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomRightRadius-variable": "--radius-radiusradius-sm",
+              "bottomRightRadius-collection": "Radius",
+              "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+            },
+            "type": "INSTANCE",
+            "name": "Button",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "justify-content": "center",
+                  "align-items": "center"
+                },
+                "type": "FRAME",
+                "name": "Text wrapper",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Text-text-default, #161616)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Browse Files",
+                    "type": "TEXT",
+                    "name": "Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "318px",
+          "padding": "var(--size-24, 24px)",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-3xl, 24px)",
+          "border-radius": "var(--Radius-radius-sm, 4px)",
+          "border": "1px dashed var(--Border-border-neutral-primary, #D2D6DB)",
+          "background": "var(--Background-background-neutral-100, #F3F4F6)",
+          "itemSpacing-variable": "--spacing-globalspacing-3xl",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:73473aecaa515ffb2a50edba4d632b49ab51f82b/405:119",
+          "paddingLeft-variable": "--global-size24",
+          "paddingLeft-collection": "global",
+          "paddingLeft-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingTop-variable": "--global-size24",
+          "paddingTop-collection": "global",
+          "paddingTop-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingRight-variable": "--global-size24",
+          "paddingRight-collection": "global",
+          "paddingRight-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingBottom-variable": "--global-size24",
+          "paddingBottom-collection": "global",
+          "paddingBottom-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "topLeftRadius-variable": "--radius-radiusradius-sm",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "topRightRadius-variable": "--radius-radiusradius-sm",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomRightRadius-variable": "--radius-radiusradius-sm",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+        },
+        "type": "COMPONENT",
+        "name": "State=Default, RTL=True",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "file-upload",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "18.501px",
+                  "height": "21.501px"
+                },
+                "type": "GROUP",
+                "name": "elements"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "flex-direction": "column",
+              "align-items": "center",
+              "gap": "var(--Text-text-content-gap, 8px)",
+              "align-self": "stretch",
+              "itemSpacing-variable": "--spacing-texttext-content-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:ed1d246e35d368141beeba50c23aa13da8a2eb97/405:135"
+            },
+            "type": "FRAME",
+            "name": "Text wrapper",
+            "children": [
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Text-text-display, #1F2A37)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "500",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "اسحب و أفلت الملفات هنا للرفع",
+                "type": "TEXT",
+                "name": "Lead Text"
+              },
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Text-text-primary-paragraph, #384250)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xs, 12px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xs, 18px) /* 150% */"
+                },
+                "characters": "الحد الأقصى لحجم الملف المسموح به هو 2 ميجابايت، وتشمل الصيغ المدعومة .jpg و .png و .pdf.",
+                "type": "TEXT",
+                "name": "Helper Text"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-height": "32px",
+              "max-height": "32px",
+              "padding": "var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "gap": "var(--Button-buttons-md-gap, 4px)",
+              "border-radius": "var(--Radius-radius-sm, 4px)",
+              "background": "var(--Button-button-background-neutral-default, #F3F4F6)",
+              "itemSpacing-variable": "--spacing-buttonbuttons-md-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:33c850b036946251c0cebd1390b654afff200355/434:62",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingTop-variable": "--spacing-globalspacing-none",
+              "paddingTop-collection": "Spacing",
+              "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingBottom-variable": "--spacing-globalspacing-none",
+              "paddingBottom-collection": "Spacing",
+              "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "topLeftRadius-variable": "--radius-radiusradius-sm",
+              "topLeftRadius-collection": "Radius",
+              "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "topRightRadius-variable": "--radius-radiusradius-sm",
+              "topRightRadius-collection": "Radius",
+              "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+              "bottomLeftRadius-collection": "Radius",
+              "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomRightRadius-variable": "--radius-radiusradius-sm",
+              "bottomRightRadius-collection": "Radius",
+              "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+            },
+            "type": "INSTANCE",
+            "name": "Button",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "justify-content": "center",
+                  "align-items": "center"
+                },
+                "type": "FRAME",
+                "name": "Text wrapper",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Text-text-default, #161616)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "تصفح الملفات",
+                    "type": "TEXT",
+                    "name": "Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "318px",
+          "padding": "var(--size-24, 24px)",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-3xl, 24px)",
+          "border-radius": "var(--Radius-radius-sm, 4px)",
+          "border": "2px dashed var(--Border-border-success, #067647)",
+          "background": "var(--Background-background-success-25, #F6FEF9)",
+          "itemSpacing-variable": "--spacing-globalspacing-3xl",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:73473aecaa515ffb2a50edba4d632b49ab51f82b/405:119",
+          "paddingLeft-variable": "--global-size24",
+          "paddingLeft-collection": "global",
+          "paddingLeft-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingTop-variable": "--global-size24",
+          "paddingTop-collection": "global",
+          "paddingTop-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingRight-variable": "--global-size24",
+          "paddingRight-collection": "global",
+          "paddingRight-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingBottom-variable": "--global-size24",
+          "paddingBottom-collection": "global",
+          "paddingBottom-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "topLeftRadius-variable": "--radius-radiusradius-sm",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "topRightRadius-variable": "--radius-radiusradius-sm",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomRightRadius-variable": "--radius-radiusradius-sm",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+        },
+        "type": "COMPONENT",
+        "name": "State=Drag+hover, RTL=False",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "file-upload",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "18.501px",
+                  "height": "21.501px"
+                },
+                "type": "GROUP",
+                "name": "elements"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "flex-direction": "column",
+              "align-items": "center",
+              "gap": "var(--Text-text-content-gap, 8px)",
+              "align-self": "stretch",
+              "itemSpacing-variable": "--spacing-texttext-content-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:ed1d246e35d368141beeba50c23aa13da8a2eb97/405:135"
+            },
+            "type": "FRAME",
+            "name": "Text wrapper",
+            "children": [
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Text-text-success, #067647)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "500",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Drag and drop files here to upload",
+                "type": "TEXT",
+                "name": "Lead Text"
+              },
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Text-text-success, #067647)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xs, 12px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xs, 18px) /* 150% */"
+                },
+                "characters": "Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.",
+                "type": "TEXT",
+                "name": "Helper Text"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-height": "32px",
+              "max-height": "32px",
+              "padding": "var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "gap": "var(--Button-buttons-md-gap, 4px)",
+              "border-radius": "var(--Radius-radius-sm, 4px)",
+              "background": "var(--Global-background-disabled, #E5E7EB)",
+              "itemSpacing-variable": "--spacing-buttonbuttons-md-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:33c850b036946251c0cebd1390b654afff200355/434:62",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingTop-variable": "--spacing-globalspacing-none",
+              "paddingTop-collection": "Spacing",
+              "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingBottom-variable": "--spacing-globalspacing-none",
+              "paddingBottom-collection": "Spacing",
+              "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "topLeftRadius-variable": "--radius-radiusradius-sm",
+              "topLeftRadius-collection": "Radius",
+              "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "topRightRadius-variable": "--radius-radiusradius-sm",
+              "topRightRadius-collection": "Radius",
+              "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+              "bottomLeftRadius-collection": "Radius",
+              "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomRightRadius-variable": "--radius-radiusradius-sm",
+              "bottomRightRadius-collection": "Radius",
+              "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+            },
+            "type": "INSTANCE",
+            "name": "Button",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "justify-content": "center",
+                  "align-items": "center"
+                },
+                "type": "FRAME",
+                "name": "Text wrapper",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Browse Files",
+                    "type": "TEXT",
+                    "name": "Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "318px",
+          "padding": "var(--size-24, 24px)",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-3xl, 24px)",
+          "border-radius": "var(--Radius-radius-sm, 4px)",
+          "border": "2px dashed var(--Border-border-success, #067647)",
+          "background": "var(--Background-background-success-25, #F6FEF9)",
+          "itemSpacing-variable": "--spacing-globalspacing-3xl",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:73473aecaa515ffb2a50edba4d632b49ab51f82b/405:119",
+          "paddingLeft-variable": "--global-size24",
+          "paddingLeft-collection": "global",
+          "paddingLeft-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingTop-variable": "--global-size24",
+          "paddingTop-collection": "global",
+          "paddingTop-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingRight-variable": "--global-size24",
+          "paddingRight-collection": "global",
+          "paddingRight-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingBottom-variable": "--global-size24",
+          "paddingBottom-collection": "global",
+          "paddingBottom-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "topLeftRadius-variable": "--radius-radiusradius-sm",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "topRightRadius-variable": "--radius-radiusradius-sm",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomRightRadius-variable": "--radius-radiusradius-sm",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+        },
+        "type": "COMPONENT",
+        "name": "State=Drag+hover, RTL=True",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px"
+            },
+            "type": "INSTANCE",
+            "name": "file-upload",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "18.501px",
+                  "height": "21.501px"
+                },
+                "type": "GROUP",
+                "name": "elements"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "flex-direction": "column",
+              "align-items": "center",
+              "gap": "var(--Text-text-content-gap, 8px)",
+              "align-self": "stretch",
+              "itemSpacing-variable": "--spacing-texttext-content-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:ed1d246e35d368141beeba50c23aa13da8a2eb97/405:135"
+            },
+            "type": "FRAME",
+            "name": "Text wrapper",
+            "children": [
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Text-text-success, #067647)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "500",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "اسحب و أفلت الملفات هنا للرفع",
+                "type": "TEXT",
+                "name": "Lead Text"
+              },
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Text-text-success, #067647)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xs, 12px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xs, 18px) /* 150% */"
+                },
+                "characters": "الحد الأقصى لحجم الملف المسموح به هو 2 ميجابايت، وتشمل الصيغ المدعومة .jpg و .png و .pdf.",
+                "type": "TEXT",
+                "name": "Helper Text"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-height": "32px",
+              "max-height": "32px",
+              "padding": "var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "gap": "var(--Button-buttons-md-gap, 4px)",
+              "border-radius": "var(--Radius-radius-sm, 4px)",
+              "background": "var(--Global-background-disabled, #E5E7EB)",
+              "itemSpacing-variable": "--spacing-buttonbuttons-md-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:33c850b036946251c0cebd1390b654afff200355/434:62",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingTop-variable": "--spacing-globalspacing-none",
+              "paddingTop-collection": "Spacing",
+              "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingBottom-variable": "--spacing-globalspacing-none",
+              "paddingBottom-collection": "Spacing",
+              "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "topLeftRadius-variable": "--radius-radiusradius-sm",
+              "topLeftRadius-collection": "Radius",
+              "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "topRightRadius-variable": "--radius-radiusradius-sm",
+              "topRightRadius-collection": "Radius",
+              "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+              "bottomLeftRadius-collection": "Radius",
+              "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomRightRadius-variable": "--radius-radiusradius-sm",
+              "bottomRightRadius-collection": "Radius",
+              "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+            },
+            "type": "INSTANCE",
+            "name": "Button",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "justify-content": "center",
+                  "align-items": "center"
+                },
+                "type": "FRAME",
+                "name": "Text wrapper",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "تصفح الملفات",
+                    "type": "TEXT",
+                    "name": "Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "318px",
+          "padding": "var(--size-24, 24px)",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-3xl, 24px)",
+          "border-radius": "var(--Radius-radius-sm, 4px)",
+          "border": "1px dashed var(--Global-border-disabled, #9DA4AE)",
+          "itemSpacing-variable": "--spacing-globalspacing-3xl",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:73473aecaa515ffb2a50edba4d632b49ab51f82b/405:119",
+          "paddingLeft-variable": "--global-size24",
+          "paddingLeft-collection": "global",
+          "paddingLeft-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingTop-variable": "--global-size24",
+          "paddingTop-collection": "global",
+          "paddingTop-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingRight-variable": "--global-size24",
+          "paddingRight-collection": "global",
+          "paddingRight-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingBottom-variable": "--global-size24",
+          "paddingBottom-collection": "global",
+          "paddingBottom-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "topLeftRadius-variable": "--radius-radiusradius-sm",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "topRightRadius-variable": "--radius-radiusradius-sm",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomRightRadius-variable": "--radius-radiusradius-sm",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+        },
+        "type": "COMPONENT",
+        "name": "State=Disabled, RTL=False",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "opacity": "0.7"
+            },
+            "type": "INSTANCE",
+            "name": "file-upload",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "18.501px",
+                  "height": "21.501px"
+                },
+                "type": "GROUP",
+                "name": "elements"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "flex-direction": "column",
+              "align-items": "center",
+              "gap": "var(--Text-text-content-gap, 8px)",
+              "align-self": "stretch",
+              "itemSpacing-variable": "--spacing-texttext-content-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:ed1d246e35d368141beeba50c23aa13da8a2eb97/405:135"
+            },
+            "type": "FRAME",
+            "name": "Text wrapper",
+            "children": [
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "500",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "Drag and drop files here to upload",
+                "type": "TEXT",
+                "name": "Lead Text"
+              },
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xs, 12px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xs, 18px) /* 150% */"
+                },
+                "characters": "Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.",
+                "type": "TEXT",
+                "name": "Helper Text"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-height": "32px",
+              "max-height": "32px",
+              "padding": "var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "gap": "var(--Button-buttons-md-gap, 4px)",
+              "border-radius": "var(--Radius-radius-sm, 4px)",
+              "background": "var(--Global-background-disabled, #E5E7EB)",
+              "itemSpacing-variable": "--spacing-buttonbuttons-md-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:33c850b036946251c0cebd1390b654afff200355/434:62",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingTop-variable": "--spacing-globalspacing-none",
+              "paddingTop-collection": "Spacing",
+              "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingBottom-variable": "--spacing-globalspacing-none",
+              "paddingBottom-collection": "Spacing",
+              "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "topLeftRadius-variable": "--radius-radiusradius-sm",
+              "topLeftRadius-collection": "Radius",
+              "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "topRightRadius-variable": "--radius-radiusradius-sm",
+              "topRightRadius-collection": "Radius",
+              "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+              "bottomLeftRadius-collection": "Radius",
+              "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomRightRadius-variable": "--radius-radiusradius-sm",
+              "bottomRightRadius-collection": "Radius",
+              "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+            },
+            "type": "INSTANCE",
+            "name": "Button",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "justify-content": "center",
+                  "align-items": "center"
+                },
+                "type": "FRAME",
+                "name": "Text wrapper",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "Browse Files",
+                    "type": "TEXT",
+                    "name": "Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "display": "flex",
+          "width": "318px",
+          "padding": "var(--size-24, 24px)",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
+          "gap": "var(--Global-spacing-3xl, 24px)",
+          "border-radius": "var(--Radius-radius-sm, 4px)",
+          "border": "1px dashed var(--Global-border-disabled, #9DA4AE)",
+          "itemSpacing-variable": "--spacing-globalspacing-3xl",
+          "itemSpacing-collection": "Spacing",
+          "itemSpacing-variable-id": "VariableID:73473aecaa515ffb2a50edba4d632b49ab51f82b/405:119",
+          "paddingLeft-variable": "--global-size24",
+          "paddingLeft-collection": "global",
+          "paddingLeft-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingTop-variable": "--global-size24",
+          "paddingTop-collection": "global",
+          "paddingTop-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingRight-variable": "--global-size24",
+          "paddingRight-collection": "global",
+          "paddingRight-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "paddingBottom-variable": "--global-size24",
+          "paddingBottom-collection": "global",
+          "paddingBottom-variable-id": "VariableID:54e41c8e8b18c79cb8d7e73e8d45a85229156b5b/31:3014",
+          "topLeftRadius-variable": "--radius-radiusradius-sm",
+          "topLeftRadius-collection": "Radius",
+          "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "topRightRadius-variable": "--radius-radiusradius-sm",
+          "topRightRadius-collection": "Radius",
+          "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+          "bottomLeftRadius-collection": "Radius",
+          "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+          "bottomRightRadius-variable": "--radius-radiusradius-sm",
+          "bottomRightRadius-collection": "Radius",
+          "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+        },
+        "type": "COMPONENT",
+        "name": "State=Disabled, RTL=True",
+        "children": [
+          {
+            "cssProps": {
+              "width": "24px",
+              "height": "24px",
+              "opacity": "0.7"
+            },
+            "type": "INSTANCE",
+            "name": "file-upload",
+            "children": [
+              {
+                "cssProps": {
+                  "width": "18.501px",
+                  "height": "21.501px"
+                },
+                "type": "GROUP",
+                "name": "elements"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "flex-direction": "column",
+              "align-items": "center",
+              "gap": "var(--Text-text-content-gap, 8px)",
+              "align-self": "stretch",
+              "itemSpacing-variable": "--spacing-texttext-content-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:ed1d246e35d368141beeba50c23aa13da8a2eb97/405:135"
+            },
+            "type": "FRAME",
+            "name": "Text wrapper",
+            "children": [
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-md, 16px)",
+                  "font-style": "normal",
+                  "font-weight": "500",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-md, 24px) /* 150% */"
+                },
+                "characters": "اسحب وأفلت الملفات هنا للرفع",
+                "type": "TEXT",
+                "name": "Lead Text"
+              },
+              {
+                "cssProps": {
+                  "align-self": "stretch",
+                  "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                  "text-align": "center",
+                  "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                  "font-size": "var(--Size-Text-typo-size-text-xs, 12px)",
+                  "font-style": "normal",
+                  "font-weight": "400",
+                  "line-height": "var(--Line-Height-Text-line-heights-text-xs, 18px) /* 150% */"
+                },
+                "characters": "الحد الأقصى لحجم الملف المسموح به هو 2 ميجابايت، وتشمل الصيغ المدعومة .jpg و .png و .pdf.",
+                "type": "TEXT",
+                "name": "Helper Text"
+              }
+            ]
+          },
+          {
+            "cssProps": {
+              "display": "flex",
+              "height": "32px",
+              "min-height": "32px",
+              "max-height": "32px",
+              "padding": "var(--Global-spacing-none, 0) var(--Button-buttons-md-padding, 12px)",
+              "justify-content": "center",
+              "align-items": "center",
+              "gap": "var(--Button-buttons-md-gap, 4px)",
+              "border-radius": "var(--Radius-radius-sm, 4px)",
+              "background": "var(--Global-background-disabled, #E5E7EB)",
+              "itemSpacing-variable": "--spacing-buttonbuttons-md-gap",
+              "itemSpacing-collection": "Spacing",
+              "itemSpacing-variable-id": "VariableID:33c850b036946251c0cebd1390b654afff200355/434:62",
+              "paddingLeft-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingLeft-collection": "Spacing",
+              "paddingLeft-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingTop-variable": "--spacing-globalspacing-none",
+              "paddingTop-collection": "Spacing",
+              "paddingTop-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "paddingRight-variable": "--spacing-buttonbuttons-md-padding",
+              "paddingRight-collection": "Spacing",
+              "paddingRight-variable-id": "VariableID:c89e3b82087a4e5fe68a110e94992aeee178f9a6/434:63",
+              "paddingBottom-variable": "--spacing-globalspacing-none",
+              "paddingBottom-collection": "Spacing",
+              "paddingBottom-variable-id": "VariableID:4ca070bda5306aa2e5fb4a6a7328e803db640542/405:141",
+              "topLeftRadius-variable": "--radius-radiusradius-sm",
+              "topLeftRadius-collection": "Radius",
+              "topLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "topRightRadius-variable": "--radius-radiusradius-sm",
+              "topRightRadius-collection": "Radius",
+              "topRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomLeftRadius-variable": "--radius-radiusradius-sm",
+              "bottomLeftRadius-collection": "Radius",
+              "bottomLeftRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1",
+              "bottomRightRadius-variable": "--radius-radiusradius-sm",
+              "bottomRightRadius-collection": "Radius",
+              "bottomRightRadius-variable-id": "VariableID:761413c9d1f8cb142503d9368b1c7683e4721333/431:1"
+            },
+            "type": "INSTANCE",
+            "name": "Button",
+            "children": [
+              {
+                "cssProps": {
+                  "display": "flex",
+                  "justify-content": "center",
+                  "align-items": "center"
+                },
+                "type": "FRAME",
+                "name": "Text wrapper",
+                "children": [
+                  {
+                    "cssProps": {
+                      "color": "var(--Global-text-default-disabled, #9DA4AE)",
+                      "font-family": "var(--Font-Family-font-family-text, \"IBM Plex Sans Arabic\")",
+                      "font-size": "var(--Size-Text-typo-size-text-sm, 14px)",
+                      "font-style": "normal",
+                      "font-weight": "500",
+                      "line-height": "var(--Line-Height-Text-line-heights-text-sm, 20px) /* 142.857% */"
+                    },
+                    "characters": "تصفح الملفات",
+                    "type": "TEXT",
+                    "name": "Text"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

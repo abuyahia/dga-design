@@ -1,0 +1,88 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "floating-button",
+    "display_name": "Floating Button",
+    "description": "A circular Floating Action Button (FAB). Used for the primary or persistent action on a screen. Available as icon-only (circular) or with a label (pill). Supports three style variants and two context modes.",
+    "category": "action",
+    "classification": "Primitive",
+    "css_root_class": "fab"
+  },
+  "source": {
+    "figma_type": "COMPONENT_SET",
+    "figma_name": "Floating Button",
+    "manifest_path": "components/floating-button/mainifest.json",
+    "manifest_filename_note": "Filename typo in Figma export ('mainifest.json'). Preserved as-is.",
+    "total_figma_variants": 288
+  },
+  "axes": ["style", "size", "icon-only", "on-color"],
+  "discarded_axes": {
+    "RTL": "Icon-only circular shape produces zero CSS delta for RTL. Partially retained: [dir='rtl'] selector reverses flex-direction for labeled mode only."
+  },
+  "axis_values": {
+    "style": ["primary-neutral", "primary-brand", "secondary-solid"],
+    "size": ["small", "large"],
+    "icon-only": [true, false],
+    "on-color": [false, true]
+  },
+  "states": ["default", "hovered", "focused", "pressed", "disabled", "selected"],
+  "state_implementation": "CSS pseudo-classes and attribute selectors — not duplicated HTML markup.",
+  "meaningful_variants": 24,
+  "css_modifiers": {
+    "style": {
+      "primary-neutral": "(default — no modifier)",
+      "primary-brand": ".fab--primary-brand",
+      "secondary-solid": ".fab--secondary-solid"
+    },
+    "size": {
+      "small": "(default — no modifier)",
+      "large": ".fab--lg"
+    },
+    "on-color": {
+      "no": "(default — no modifier)",
+      "yes": ".fab--on-color"
+    },
+    "icon-only": {
+      "true": "(structural — omit .fab__label; add aria-label to button)",
+      "false": "(structural — include .fab__label)"
+    }
+  },
+  "anatomy": {
+    "root": "button.fab",
+    "icon": "span.fab__icon > svg",
+    "label": "span.fab__label (optional — labeled mode only)",
+    "focus_ring": "fab::after pseudo-element"
+  },
+  "size_tokens": {
+    "small": {
+      "padding": "var(--fab-padding-sm)",
+      "padding_value": "16px",
+      "icon_size": "var(--fab-icon-size)",
+      "icon_size_value": "24px",
+      "computed_diameter": "56px"
+    },
+    "large": {
+      "padding": "var(--fab-padding-lg)",
+      "padding_value": "20px",
+      "icon_size": "var(--fab-icon-size)",
+      "icon_size_value": "24px",
+      "computed_diameter": "64px"
+    }
+  },
+  "focus_ring": {
+    "implementation": "::after pseudo-element",
+    "offset": "5px (inset: -5px)",
+    "width": "3px",
+    "color": "var(--fab-focus-ring-color)",
+    "color_note": "Figma: var(--Icon-icon-default, #161616). Mapped to --gray-950.",
+    "border_radius": "var(--fab-radius)"
+  },
+  "implementation_notes": [
+    "Local CSS custom properties (--_fab-bg, --_fab-bg-hover, etc.) are defined on .fab and overridden per style/context modifier. State selectors consume only local variables.",
+    "All --fab-* tokens are missing from token.css. Provisional definitions are in a :root block at the top of floating-button.css with TODO comments.",
+    "Focus: both :focus and :focus-visible are applied. .is-focused class added for static showcase display.",
+    "Pressing the button cancels the focus ring (fab:active::after { opacity: 0 }).",
+    "Disabled state uses pointer-events: none to prevent hover/active interference.",
+    "RTL: [dir='rtl'] .fab reverses flex-direction for labeled mode."
+  ]
+}

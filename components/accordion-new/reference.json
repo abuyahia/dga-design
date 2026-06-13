@@ -1,0 +1,168 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "accordion-new",
+    "figma_name": "Accordion",
+    "description": "A disclosure widget that delivers large amounts of content in a small space through progressive disclosure. The user sees a title and can expand the item to reveal content.",
+    "classification": "Primitive",
+    "source_files": [
+      "components/accordion-new/mainifest-1.json",
+      "components/accordion-new/mainifest-2.json"
+    ],
+    "assembly_file": "components/accordion-new/mainifest-list.json"
+  },
+  "axes": ["size", "icon_alignment", "state", "expanded", "flush"],
+  "axis_values": {
+    "size": ["large", "medium", "small"],
+    "icon_alignment": ["trailing", "leading"],
+    "state": ["default", "hovered", "pressed", "focused", "disabled"],
+    "expanded": [true, false],
+    "flush": [true, false]
+  },
+  "discarded_axes": {
+    "rtl": "RTL absent from accordion item manifests. Handled by parent dir='rtl' attribute. CSS logical properties used throughout — no separate RTL class needed."
+  },
+  "size_tokens": {
+    "large": {
+      "padding-block": "var(--accordion-lg-padding-block, 16px)",
+      "padding-inline": "var(--accordion-padding-inline, 16px)",
+      "gap": "var(--accordion-gap, 16px)",
+      "icon-size": "var(--accordion-icon-size, 16px)",
+      "css-modifier": null
+    },
+    "medium": {
+      "padding-block": "var(--accordion-md-padding-block, 12px)",
+      "padding-inline": "var(--accordion-padding-inline, 16px)",
+      "gap": "var(--accordion-gap, 16px)",
+      "icon-size": "var(--accordion-icon-size, 16px)",
+      "css-modifier": ".accordion--md"
+    },
+    "small": {
+      "padding-block": "var(--accordion-sm-padding-block, 8px)",
+      "padding-inline": "var(--accordion-padding-inline, 16px)",
+      "gap": "var(--accordion-gap, 16px)",
+      "icon-size": "var(--accordion-icon-size, 16px)",
+      "css-modifier": ".accordion--sm"
+    }
+  },
+  "icon_alignment_tokens": {
+    "trailing": {
+      "css-modifier": null,
+      "description": "Icon placed at inline-end of header. Content panel indented on inline-end side.",
+      "content-panel-padding": "var(--accordion-content-padding-top) var(--accordion-content-icon-indent) var(--accordion-content-padding-bottom) var(--accordion-padding-inline)"
+    },
+    "leading": {
+      "css-modifier": ".accordion--icon-leading",
+      "description": "Icon placed at inline-start of header. Content panel indented on inline-start side.",
+      "content-panel-padding": "var(--accordion-content-padding-top) var(--accordion-padding-inline) var(--accordion-content-padding-bottom) var(--accordion-content-icon-indent)"
+    }
+  },
+  "flush_tokens": {
+    "false": {
+      "css-modifier": null,
+      "header-padding-inline": "var(--accordion-padding-inline, 16px)"
+    },
+    "true": {
+      "css-modifier": ".accordion--flush",
+      "header-padding-inline": "0",
+      "note": "Interaction background bleeds via ::before with negative inset-inline. Focus ring bleeds via ::after with negative inset-inline. Leading flush content indent: var(--accordion-content-icon-indent-flush, 32px)."
+    }
+  },
+  "state_tokens": {
+    "default": {
+      "background": "none",
+      "title-color": "var(--accordion-title-color, #161616)"
+    },
+    "hovered": {
+      "background": "var(--accordion-bg-hovered, #F3F4F6)",
+      "title-color": "var(--accordion-title-color, #161616)",
+      "css-selector": ".accordion__trigger:hover:not([disabled])"
+    },
+    "pressed": {
+      "background": "var(--accordion-bg-pressed, #E5E7EB)",
+      "title-color": "var(--accordion-title-color, #161616)",
+      "css-selector": ".accordion__trigger:active:not([disabled])"
+    },
+    "focused": {
+      "background": "none",
+      "title-color": "var(--accordion-title-color, #161616)",
+      "focus-ring": "2px solid var(--accordion-focus-ring-color, #161616)",
+      "css-selector": ".accordion__trigger:focus-visible",
+      "note": "Flush mode focus ring bleeds via ::after pseudo-element"
+    },
+    "disabled": {
+      "background": "none",
+      "title-color": "var(--accordion-title-color-disabled, #9DA4AE)",
+      "icon-opacity": "0.4",
+      "css-selector": ".accordion__trigger[disabled]"
+    }
+  },
+  "content_panel_padding": {
+    "trailing_flush_false": {
+      "top": "var(--Global-spacing-md, 8px)",
+      "inline-end": "var(--Global-spacing-6xl, 48px)",
+      "bottom": "var(--Global-spacing-3xl, 24px)",
+      "inline-start": "var(--Global-spacing-xl, 16px)"
+    },
+    "trailing_flush_true": {
+      "top": "var(--Global-spacing-md, 8px)",
+      "inline-end": "var(--Global-spacing-6xl, 48px)",
+      "bottom": "var(--Global-spacing-3xl, 24px)",
+      "inline-start": "0"
+    },
+    "leading_flush_false": {
+      "top": "var(--Global-spacing-md, 8px)",
+      "inline-end": "var(--Global-spacing-xl, 16px)",
+      "bottom": "var(--Global-spacing-3xl, 24px)",
+      "inline-start": "var(--Global-spacing-6xl, 48px)"
+    },
+    "leading_flush_true": {
+      "top": "var(--Global-spacing-md, 8px)",
+      "inline-end": "0",
+      "bottom": "var(--Global-spacing-3xl, 24px)",
+      "inline-start": "var(--Global-spacing-4xl, 32px)"
+    }
+  },
+  "anatomy": {
+    "root": {
+      "element": "div",
+      "class": "accordion",
+      "required": true
+    },
+    "trigger": {
+      "element": "button",
+      "class": "accordion__trigger",
+      "required": true,
+      "aria": ["aria-expanded", "aria-controls", "id"]
+    },
+    "title": {
+      "element": "span",
+      "class": "accordion__title",
+      "required": true
+    },
+    "icon": {
+      "element": "svg",
+      "class": "accordion__icon",
+      "required": true,
+      "aria": ["aria-hidden=\"true\""]
+    },
+    "panel": {
+      "element": "div",
+      "class": "accordion__panel",
+      "required": true,
+      "aria": ["id", "role=\"region\"", "aria-labelledby"]
+    },
+    "body": {
+      "element": "div",
+      "class": "accordion__body",
+      "required": true
+    }
+  },
+  "implementation_notes": [
+    "Single chevron icon rotated 180deg via CSS transform replaces separate arrow-down/arrow-up icons.",
+    "Panel visibility toggled by aria-expanded on trigger + adjacent sibling CSS selector.",
+    "Flush interaction background uses ::before with negative inset-inline to bleed beyond 0-padded header.",
+    "Flush focus ring uses ::after pseudo with negative inset-inline — parent overflow:clip required for clean bleed.",
+    "All component tokens are pending addition to token.css — see analysis.md Missing Tokens."
+  ]
+}

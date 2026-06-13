@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Upload — Platform Code Design System</title>
+
+    <link rel="stylesheet" href="../../../token.css" />
+    <link rel="stylesheet" href="../file-upload.css" />
+    <link rel="stylesheet" href="../../_showcase/showcase.css" />
+    <script src="../../_showcase/showcase.js" defer></script>
+
+    <style>
+      /* ── File Upload showcase helpers (component-specific only) ─────── */
+
+      /* Constrain component widths for readable previews */
+      .demo-upload-host {
+        width: 340px;
+      }
+
+      /* Side-by-side container for RTL demos */
+      .demo-rtl-row {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+      }
+
+      .demo-rtl-row > * {
+        flex: 0 0 auto;
+        width: 320px;
+      }
+
+      /* Label above preview */
+      .demo-dir-label {
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--gray-400, #9CA3AF);
+        margin-bottom: 12px;
+        font-family: var(--font-sans, system-ui, sans-serif);
+      }
+    </style>
+  </head>
+
+  <body data-showcase data-current-component="file-upload" data-showcase-title="File Upload">
+    <div data-showcase-shell>
+      <main data-showcase-content>
+        <div class="page">
+
+
+          <!-- ── Section: File Item — States ─────────────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">File Item — States</h2>
+
+            <div class="showcase">
+
+              <!-- Uploaded -->
+              <div class="showcase__row"
+                data-code='<div class="file-item" role="listitem">
+  <div class="file-item__row">
+    <div class="file-item__lead">
+      <span class="file-item__icon" aria-hidden="true"><!-- success icon --></span>
+      <span class="file-item__name">File-name.csv</span>
+    </div>
+    <div class="file-item__trail">
+      <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+        <!-- × icon -->
+      </button>
+    </div>
+  </div>
+</div>'>
+                <span class="showcase__label">Uploaded</span>
+                <div class="demo-upload-host">
+                  <div class="file-item" role="listitem">
+                    <div class="file-item__row">
+                      <div class="file-item__lead">
+                        <span class="file-item__icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#067647" stroke-width="1.5"/>
+                            <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#067647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </span>
+                        <span class="file-item__name">File-name.csv</span>
+                      </div>
+                      <div class="file-item__trail">
+                        <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Loading -->
+              <div class="showcase__row"
+                data-code='<div class="file-item" role="listitem">
+  <div class="file-item__row">
+    <div class="file-item__lead">
+      <span class="file-item__icon file-item__icon--loading" role="status" aria-label="Uploading File-name.csv"></span>
+      <span class="file-item__name">File-name.csv</span>
+    </div>
+    <div class="file-item__trail">
+      <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+        <!-- × icon -->
+      </button>
+    </div>
+  </div>
+</div>'>
+                <span class="showcase__label">Loading</span>
+                <div class="demo-upload-host">
+                  <div class="file-item" role="listitem">
+                    <div class="file-item__row">
+                      <div class="file-item__lead">
+                        <span class="file-item__icon file-item__icon--loading" role="status" aria-label="Uploading File-name.csv"></span>
+                        <span class="file-item__name">File-name.csv</span>
+                      </div>
+                      <div class="file-item__trail">
+                        <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Error -->
+              <div class="showcase__row"
+                data-code='<div class="file-item file-item--error" role="listitem">
+  <div class="file-item__row">
+    <div class="file-item__lead">
+      <span class="file-item__icon" aria-hidden="true"><!-- error icon --></span>
+      <span class="file-item__name">File-name.csv</span>
+    </div>
+    <div class="file-item__trail">
+      <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+        <!-- × icon -->
+      </button>
+    </div>
+  </div>
+  <div class="file-item__error-row" role="alert">
+    <div class="file-item__error-text">Here goes the helper text.</div>
+  </div>
+</div>'>
+                <span class="showcase__label">Error</span>
+                <div class="demo-upload-host">
+                  <div class="file-item file-item--error" role="listitem">
+                    <div class="file-item__row">
+                      <div class="file-item__lead">
+                        <span class="file-item__icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#B42318" stroke-width="1.5"/>
+                            <path d="M10 6v5M10 13.5v.5" stroke="#B42318" stroke-width="1.5" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                        <span class="file-item__name">File-name.csv</span>
+                      </div>
+                      <div class="file-item__trail">
+                        <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="file-item__error-row" role="alert">
+                      <div class="file-item__error-text">Here goes the helper text.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- ── Section: File Item — RTL ──────────────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">File Item — RTL</h2>
+
+            <div class="showcase">
+
+              <!-- Uploaded RTL -->
+              <div class="showcase__row"
+                data-code='<div class="file-item" role="listitem" dir="rtl">
+  <div class="file-item__row">
+    <div class="file-item__lead">
+      <span class="file-item__icon" aria-hidden="true"><!-- success icon --></span>
+      <span class="file-item__name">اسم الملف.csv</span>
+    </div>
+    <div class="file-item__trail">
+      <button type="button" class="file-item__remove" aria-label="إزالة اسم الملف.csv">
+        <!-- × icon -->
+      </button>
+    </div>
+  </div>
+</div>'>
+                <span class="showcase__label">Uploaded (RTL)</span>
+                <div class="demo-upload-host" dir="rtl">
+                  <div class="file-item" role="listitem">
+                    <div class="file-item__row">
+                      <div class="file-item__lead">
+                        <span class="file-item__icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#067647" stroke-width="1.5"/>
+                            <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#067647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                        </span>
+                        <span class="file-item__name">اسم الملف.csv</span>
+                      </div>
+                      <div class="file-item__trail">
+                        <button type="button" class="file-item__remove" aria-label="إزالة اسم الملف.csv">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Error RTL -->
+              <div class="showcase__row"
+                data-code='<div class="file-item file-item--error" role="listitem" dir="rtl">
+  <div class="file-item__row">
+    <div class="file-item__lead">
+      <span class="file-item__icon" aria-hidden="true"><!-- error icon --></span>
+      <span class="file-item__name">اسم الملف.csv</span>
+    </div>
+    <div class="file-item__trail">
+      <button type="button" class="file-item__remove" aria-label="إزالة اسم الملف.csv">
+        <!-- × icon -->
+      </button>
+    </div>
+  </div>
+  <div class="file-item__error-row" role="alert">
+    <div class="file-item__error-text">تكتب هنا رسالة المساعدة.</div>
+  </div>
+</div>'>
+                <span class="showcase__label">Error (RTL)</span>
+                <div class="demo-upload-host" dir="rtl">
+                  <div class="file-item file-item--error" role="listitem">
+                    <div class="file-item__row">
+                      <div class="file-item__lead">
+                        <span class="file-item__icon" aria-hidden="true">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#B42318" stroke-width="1.5"/>
+                            <path d="M10 6v5M10 13.5v.5" stroke="#B42318" stroke-width="1.5" stroke-linecap="round"/>
+                          </svg>
+                        </span>
+                        <span class="file-item__name">اسم الملف.csv</span>
+                      </div>
+                      <div class="file-item__trail">
+                        <button type="button" class="file-item__remove" aria-label="إزالة اسم الملف.csv">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="file-item__error-row" role="alert">
+                      <div class="file-item__error-text">تكتب هنا رسالة المساعدة.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- ── Section: Drop Zone — States ───────────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">Drop Zone — States</h2>
+
+            <div class="showcase">
+
+              <!-- Default -->
+              <div class="showcase__row"
+                data-code='<div class="drop-zone" role="region" aria-label="File drop zone">
+  <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <div class="drop-zone__text">
+    <p class="drop-zone__lead">Drag and drop files here to upload</p>
+    <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <input type="file" id="drop-zone-input" hidden aria-hidden="true" tabindex="-1">
+  <button type="button" class="drop-zone__trigger" onclick="document.getElementById(&apos;drop-zone-input&apos;).click()">Browse Files</button>
+</div>'>
+                <span class="showcase__label">Default</span>
+                <div class="demo-upload-host">
+                  <div class="drop-zone" role="region" aria-label="File drop zone">
+                    <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <div class="drop-zone__text">
+                      <p class="drop-zone__lead">Drag and drop files here to upload</p>
+                      <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+                    </div>
+                    <input type="file" id="dz-input-default" hidden aria-hidden="true" tabindex="-1">
+                    <button type="button" class="drop-zone__trigger" onclick="document.getElementById('dz-input-default').click()">Browse Files</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Drag hover -->
+              <div class="showcase__row"
+                data-code='<!-- Add .is-drag-hover via JS on dragover event -->
+<div class="drop-zone is-drag-hover" role="region" aria-label="File drop zone">
+  <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <div class="drop-zone__text">
+    <p class="drop-zone__lead">Drag and drop files here to upload</p>
+    <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <button type="button" class="drop-zone__trigger" disabled>Browse Files</button>
+</div>'>
+                <span class="showcase__label">Drag hover</span>
+                <div class="demo-upload-host">
+                  <div class="drop-zone is-drag-hover" role="region" aria-label="File drop zone">
+                    <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <div class="drop-zone__text">
+                      <p class="drop-zone__lead">Drag and drop files here to upload</p>
+                      <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+                    </div>
+                    <button type="button" class="drop-zone__trigger" disabled>Browse Files</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Disabled -->
+              <div class="showcase__row"
+                data-code='<div class="drop-zone" aria-disabled="true" role="region" aria-label="File drop zone">
+  <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <div class="drop-zone__text">
+    <p class="drop-zone__lead">Drag and drop files here to upload</p>
+    <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <button type="button" class="drop-zone__trigger" disabled>Browse Files</button>
+</div>'>
+                <span class="showcase__label">Disabled</span>
+                <div class="demo-upload-host">
+                  <div class="drop-zone" aria-disabled="true" role="region" aria-label="File drop zone">
+                    <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <div class="drop-zone__text">
+                      <p class="drop-zone__lead">Drag and drop files here to upload</p>
+                      <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+                    </div>
+                    <button type="button" class="drop-zone__trigger" disabled>Browse Files</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- ── Section: File Upload Single — States ───────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">File Upload / Single — States</h2>
+
+            <div class="showcase">
+
+              <!-- Default -->
+              <div class="showcase__row"
+                data-code='<div class="file-upload">
+  <div class="file-upload__header">
+    <div class="file-upload__label-row">
+      <label class="file-upload__label" for="upload-input">Upload files</label>
+    </div>
+    <p class="file-upload__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <input type="file" id="upload-input" hidden aria-hidden="true" tabindex="-1">
+  <button type="button" class="file-upload__trigger" onclick="document.getElementById(&apos;upload-input&apos;).click()">Browse Files</button>
+  <div class="file-upload__file" aria-live="polite"></div>
+</div>'>
+                <span class="showcase__label">Default</span>
+                <div class="demo-upload-host">
+                  <div class="file-upload">
+                    <div class="file-upload__header">
+                      <div class="file-upload__label-row">
+                        <label class="file-upload__label" for="su-default">Upload files</label>
+                      </div>
+                      <p class="file-upload__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+                    </div>
+                    <input type="file" id="su-default" hidden aria-hidden="true" tabindex="-1">
+                    <button type="button" class="file-upload__trigger" onclick="document.getElementById('su-default').click()">Browse Files</button>
+                    <div class="file-upload__file" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Uploaded -->
+              <div class="showcase__row"
+                data-code='<div class="file-upload is-uploaded">
+  <div class="file-upload__header">
+    <div class="file-upload__label-row">
+      <label class="file-upload__label" for="upload-input">Upload files</label>
+    </div>
+    <p class="file-upload__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <input type="file" id="upload-input" hidden aria-hidden="true" tabindex="-1">
+  <button type="button" class="file-upload__trigger" onclick="document.getElementById(&apos;upload-input&apos;).click()">Browse Files</button>
+  <div class="file-upload__file" aria-live="polite">
+    <div class="file-item" role="listitem">
+      <div class="file-item__row">
+        <div class="file-item__lead">
+          <span class="file-item__icon" aria-hidden="true"><!-- success icon --></span>
+          <span class="file-item__name">File-name.csv</span>
+        </div>
+        <div class="file-item__trail">
+          <button type="button" class="file-item__remove" aria-label="Remove File-name.csv"><!-- × --></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>'>
+                <span class="showcase__label">Uploaded</span>
+                <div class="demo-upload-host">
+                  <div class="file-upload is-uploaded">
+                    <div class="file-upload__header">
+                      <div class="file-upload__label-row">
+                        <label class="file-upload__label" for="su-uploaded">Upload files</label>
+                      </div>
+                      <p class="file-upload__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+                    </div>
+                    <input type="file" id="su-uploaded" hidden aria-hidden="true" tabindex="-1">
+                    <button type="button" class="file-upload__trigger" onclick="document.getElementById('su-uploaded').click()">Browse Files</button>
+                    <div class="file-upload__file" aria-live="polite">
+                      <div class="file-item" role="listitem">
+                        <div class="file-item__row">
+                          <div class="file-item__lead">
+                            <span class="file-item__icon" aria-hidden="true">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" stroke="#067647" stroke-width="1.5"/>
+                                <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#067647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </span>
+                            <span class="file-item__name">File-name.csv</span>
+                          </div>
+                          <div class="file-item__trail">
+                            <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Disabled -->
+              <div class="showcase__row"
+                data-code='<div class="file-upload" aria-disabled="true">
+  <div class="file-upload__header">
+    <div class="file-upload__label-row">
+      <label class="file-upload__label">Upload files</label>
+    </div>
+    <p class="file-upload__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+  </div>
+  <button type="button" class="file-upload__trigger" disabled>Browse Files</button>
+</div>'>
+                <span class="showcase__label">Disabled</span>
+                <div class="demo-upload-host">
+                  <div class="file-upload" aria-disabled="true">
+                    <div class="file-upload__header">
+                      <div class="file-upload__label-row">
+                        <label class="file-upload__label">Upload files</label>
+                      </div>
+                      <p class="file-upload__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+                    </div>
+                    <button type="button" class="file-upload__trigger" disabled>Browse Files</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- ── Section: File Upload Single — RTL ─────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">File Upload / Single — RTL</h2>
+
+            <div class="showcase">
+
+              <!-- Default RTL -->
+              <div class="showcase__row"
+                data-code='<div class="file-upload" dir="rtl">
+  <div class="file-upload__header">
+    <div class="file-upload__label-row">
+      <label class="file-upload__label" for="upload-rtl">رفع المرفقات</label>
+    </div>
+    <p class="file-upload__helper">الحد الأقصى لحجم الملف المسموح به هو 2 ميجابايت، وتشمل الصيغ المدعومة .jpg و .png و .pdf.</p>
+  </div>
+  <input type="file" id="upload-rtl" hidden aria-hidden="true" tabindex="-1">
+  <button type="button" class="file-upload__trigger" onclick="document.getElementById(&apos;upload-rtl&apos;).click()">تصفح الملفات</button>
+  <div class="file-upload__file" aria-live="polite"></div>
+</div>'>
+                <span class="showcase__label">Default (RTL)</span>
+                <div class="demo-upload-host" dir="rtl">
+                  <div class="file-upload">
+                    <div class="file-upload__header">
+                      <div class="file-upload__label-row">
+                        <label class="file-upload__label" for="su-rtl">رفع المرفقات</label>
+                      </div>
+                      <p class="file-upload__helper">الحد الأقصى لحجم الملف المسموح به هو 2 ميجابايت، وتشمل الصيغ المدعومة .jpg و .png و .pdf.</p>
+                    </div>
+                    <input type="file" id="su-rtl" hidden aria-hidden="true" tabindex="-1">
+                    <button type="button" class="file-upload__trigger" onclick="document.getElementById('su-rtl').click()">تصفح الملفات</button>
+                    <div class="file-upload__file" aria-live="polite"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Uploaded RTL -->
+              <div class="showcase__row"
+                data-code='<div class="file-upload is-uploaded" dir="rtl">
+  <div class="file-upload__header">
+    <div class="file-upload__label-row">
+      <label class="file-upload__label" for="upload-rtl-up">رفع المرفقات</label>
+    </div>
+    <p class="file-upload__helper">الحد الأقصى لحجم الملف المسموح به هو 2 ميجابايت، وتشمل الصيغ المدعومة .jpg و .png و .pdf.</p>
+  </div>
+  <input type="file" id="upload-rtl-up" hidden aria-hidden="true" tabindex="-1">
+  <button type="button" class="file-upload__trigger" onclick="document.getElementById(&apos;upload-rtl-up&apos;).click()">تصفح الملفات</button>
+  <div class="file-upload__file" aria-live="polite">
+    <div class="file-item" role="listitem">
+      <div class="file-item__row">
+        <div class="file-item__lead">
+          <span class="file-item__icon" aria-hidden="true"><!-- success icon --></span>
+          <span class="file-item__name">اسم الملف.csv</span>
+        </div>
+        <div class="file-item__trail">
+          <button type="button" class="file-item__remove" aria-label="إزالة اسم الملف.csv"><!-- × --></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>'>
+                <span class="showcase__label">Uploaded (RTL)</span>
+                <div class="demo-upload-host" dir="rtl">
+                  <div class="file-upload is-uploaded">
+                    <div class="file-upload__header">
+                      <div class="file-upload__label-row">
+                        <label class="file-upload__label" for="su-rtl-up">رفع المرفقات</label>
+                      </div>
+                      <p class="file-upload__helper">الحد الأقصى لحجم الملف المسموح به هو 2 ميجابايت، وتشمل الصيغ المدعومة .jpg و .png و .pdf.</p>
+                    </div>
+                    <input type="file" id="su-rtl-up" hidden aria-hidden="true" tabindex="-1">
+                    <button type="button" class="file-upload__trigger" onclick="document.getElementById('su-rtl-up').click()">تصفح الملفات</button>
+                    <div class="file-upload__file" aria-live="polite">
+                      <div class="file-item" role="listitem">
+                        <div class="file-item__row">
+                          <div class="file-item__lead">
+                            <span class="file-item__icon" aria-hidden="true">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" stroke="#067647" stroke-width="1.5"/>
+                                <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#067647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </span>
+                            <span class="file-item__name">اسم الملف.csv</span>
+                          </div>
+                          <div class="file-item__trail">
+                            <button type="button" class="file-item__remove" aria-label="إزالة اسم الملف.csv">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- ── Section: File Upload Multiple ─────────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">File Upload / Multiple</h2>
+
+            <div class="showcase">
+
+              <!-- Multiple LTR -->
+              <div class="showcase__row"
+                data-code='<div class="file-upload--multiple">
+  <div class="drop-zone" role="region" aria-label="File drop zone">
+    <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <div class="drop-zone__text">
+      <p class="drop-zone__lead">Drag and drop files here to upload</p>
+      <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+    </div>
+    <input type="file" id="multi-input" multiple hidden aria-hidden="true" tabindex="-1">
+    <button type="button" class="drop-zone__trigger" onclick="document.getElementById(&apos;multi-input&apos;).click()">Browse Files</button>
+  </div>
+  <div class="file-upload__files" role="list" aria-label="Uploaded files" aria-live="polite">
+    <div class="file-item" role="listitem">
+      <div class="file-item__row">
+        <div class="file-item__lead">
+          <span class="file-item__icon" aria-hidden="true"><!-- icon --></span>
+          <span class="file-item__name">File-name.csv</span>
+        </div>
+        <div class="file-item__trail">
+          <button type="button" class="file-item__remove" aria-label="Remove File-name.csv"><!-- × --></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>'>
+                <span class="showcase__label">Multiple (with file)</span>
+                <div class="demo-upload-host">
+                  <div class="file-upload--multiple">
+                    <div class="drop-zone" role="region" aria-label="File drop zone">
+                      <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      </svg>
+                      <div class="drop-zone__text">
+                        <p class="drop-zone__lead">Drag and drop files here to upload</p>
+                        <p class="drop-zone__helper">Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.</p>
+                      </div>
+                      <input type="file" id="multi-input-sc" multiple hidden aria-hidden="true" tabindex="-1">
+                      <button type="button" class="drop-zone__trigger" onclick="document.getElementById('multi-input-sc').click()">Browse Files</button>
+                    </div>
+                    <div class="file-upload__files" role="list" aria-label="Uploaded files" aria-live="polite">
+                      <div class="file-item" role="listitem">
+                        <div class="file-item__row">
+                          <div class="file-item__lead">
+                            <span class="file-item__icon" aria-hidden="true">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" stroke="#067647" stroke-width="1.5"/>
+                                <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#067647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </span>
+                            <span class="file-item__name">File-name.csv</span>
+                          </div>
+                          <div class="file-item__trail">
+                            <button type="button" class="file-item__remove" aria-label="Remove File-name.csv">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Multiple RTL -->
+              <div class="showcase__row"
+                data-code='<div class="file-upload--multiple" dir="rtl">
+  <div class="drop-zone" role="region" aria-label="منطقة رفع الملفات">
+    <!-- ... same structure with Arabic text ... -->
+  </div>
+  <div class="file-upload__files" role="list" aria-label="الملفات المرفوعة" aria-live="polite">
+    <!-- .file-item instances -->
+  </div>
+</div>'>
+                <span class="showcase__label">Multiple (RTL)</span>
+                <div class="demo-upload-host" dir="rtl">
+                  <div class="file-upload--multiple">
+                    <div class="drop-zone" role="region" aria-label="منطقة رفع الملفات">
+                      <svg class="drop-zone__icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3v12M8 8l4-5 4 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      </svg>
+                      <div class="drop-zone__text">
+                        <p class="drop-zone__lead">اسحب و أفلت الملفات هنا للرفع</p>
+                        <p class="drop-zone__helper">الحد الأقصى لحجم الملف المسموح به هو 2 ميجابايت، وتشمل الصيغ المدعومة .jpg و .png و .pdf.</p>
+                      </div>
+                      <input type="file" id="multi-input-rtl" multiple hidden aria-hidden="true" tabindex="-1">
+                      <button type="button" class="drop-zone__trigger" onclick="document.getElementById('multi-input-rtl').click()">تصفح الملفات</button>
+                    </div>
+                    <div class="file-upload__files" role="list" aria-label="الملفات المرفوعة" aria-live="polite">
+                      <div class="file-item" role="listitem">
+                        <div class="file-item__row">
+                          <div class="file-item__lead">
+                            <span class="file-item__icon" aria-hidden="true">
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <circle cx="10" cy="10" r="9" stroke="#067647" stroke-width="1.5"/>
+                                <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#067647" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                              </svg>
+                            </span>
+                            <span class="file-item__name">اسم الملف.csv</span>
+                          </div>
+                          <div class="file-item__trail">
+                            <button type="button" class="file-item__remove" aria-label="إزالة اسم الملف.csv">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+        </div><!-- /.page -->
+      </main>
+    </div>
+  </body>
+</html>

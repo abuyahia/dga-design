@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Button — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css" />
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../floating-button.css" />
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css" />
+    <script src="../../_showcase/showcase.js" defer></script>
+  </head>
+
+  <body data-showcase data-current-component="floating-button" data-showcase-title="Floating Button Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
+
+        <!-- ══════════════════════════════════════════════════════════════
+             Primary-Neutral
+             ══════════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Primary-Neutral</h2>
+
+          <!-- Icon Only — Small & Large -->
+          <h3 class="variant__subtitle">Icon Only</h3>
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Default, Icon only=True, On color=No">
+              <span class="showcase__label">Default — Small</span>
+              <button type="button" class="fab" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Large, State=Default, Icon only=True, On color=No">
+              <span class="showcase__label">Default — Large</span>
+              <button type="button" class="fab fab--lg" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Hovered, Icon only=True, On color=No">
+              <span class="showcase__label">Hovered</span>
+              <button type="button" class="fab" aria-label="Add item" style="background: var(--fab-bg-primary-neutral-hovered);">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Foucsed, Icon only=True, On color=No">
+              <span class="showcase__label">Focused</span>
+              <button type="button" class="fab is-focused" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Pressed, Icon only=True, On color=No">
+              <span class="showcase__label">Pressed</span>
+              <button type="button" class="fab is-pressed" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Selected, Icon only=True, On color=No">
+              <span class="showcase__label">Selected</span>
+              <button type="button" class="fab" aria-label="Remove item" aria-pressed="true">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Disabled, Icon only=True, On color=No">
+              <span class="showcase__label">Disabled</span>
+              <button type="button" class="fab" aria-label="Add item" disabled>
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- With Label -->
+          <h3 class="variant__subtitle">With Label</h3>
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Default, Icon only=False, On color=No">
+              <span class="showcase__label">Default — Small</span>
+              <button type="button" class="fab">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="fab__label">Add</span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Large, State=Default, Icon only=False, On color=No">
+              <span class="showcase__label">Default — Large</span>
+              <button type="button" class="fab fab--lg">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="fab__label">Add</span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Disabled, Icon only=False, On color=No">
+              <span class="showcase__label">Disabled</span>
+              <button type="button" class="fab" disabled>
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="fab__label">Add</span>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════
+             Primary-Brand
+             ══════════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Primary-Brand</h2>
+
+          <h3 class="variant__subtitle">Icon Only</h3>
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Style=Primary-Brand, Size=Small, State=Default, Icon only=True, On color=No">
+              <span class="showcase__label">Default — Small</span>
+              <button type="button" class="fab fab--primary-brand" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Brand, Size=Large, State=Default, Icon only=True, On color=No">
+              <span class="showcase__label">Default — Large</span>
+              <button type="button" class="fab fab--primary-brand fab--lg" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Brand, Size=Small, State=Hovered, Icon only=True, On color=No">
+              <span class="showcase__label">Hovered</span>
+              <button type="button" class="fab fab--primary-brand" aria-label="Add item" style="background: var(--fab-bg-primary-brand-hovered);">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Brand, Size=Small, State=Foucsed, Icon only=True, On color=No">
+              <span class="showcase__label">Focused</span>
+              <button type="button" class="fab fab--primary-brand is-focused" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Brand, Size=Small, State=Pressed, Icon only=True, On color=No">
+              <span class="showcase__label">Pressed</span>
+              <button type="button" class="fab fab--primary-brand is-pressed" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Brand, Size=Small, State=Disabled, Icon only=True, On color=No">
+              <span class="showcase__label">Disabled</span>
+              <button type="button" class="fab fab--primary-brand" aria-label="Add item" disabled>
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+          </div>
+
+          <h3 class="variant__subtitle">With Label</h3>
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Style=Primary-Brand, Size=Small, State=Default, Icon only=False, On color=No">
+              <span class="showcase__label">Default — Small</span>
+              <button type="button" class="fab fab--primary-brand">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="fab__label">Create</span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Brand, Size=Large, State=Default, Icon only=False, On color=No">
+              <span class="showcase__label">Default — Large</span>
+              <button type="button" class="fab fab--primary-brand fab--lg">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="fab__label">Create</span>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════
+             Secondary-Solid
+             ══════════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Secondary-Solid</h2>
+
+          <h3 class="variant__subtitle">Icon Only</h3>
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Style=Secondary-Solid, Size=Small, State=Default, Icon only=True, On color=No">
+              <span class="showcase__label">Default — Small</span>
+              <button type="button" class="fab fab--secondary-solid" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Secondary-Solid, Size=Large, State=Default, Icon only=True, On color=No">
+              <span class="showcase__label">Default — Large</span>
+              <button type="button" class="fab fab--secondary-solid fab--lg" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Secondary-Solid, Size=Small, State=Hovered, Icon only=True, On color=No">
+              <span class="showcase__label">Hovered</span>
+              <button type="button" class="fab fab--secondary-solid" aria-label="Add item" style="background: var(--fab-bg-secondary-solid-hovered);">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Secondary-Solid, Size=Small, State=Foucsed, Icon only=True, On color=No">
+              <span class="showcase__label">Focused</span>
+              <button type="button" class="fab fab--secondary-solid is-focused" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Secondary-Solid, Size=Small, State=Pressed, Icon only=True, On color=No">
+              <span class="showcase__label">Pressed</span>
+              <button type="button" class="fab fab--secondary-solid is-pressed" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Secondary-Solid, Size=Small, State=Disabled, Icon only=True, On color=No">
+              <span class="showcase__label">Disabled</span>
+              <button type="button" class="fab fab--secondary-solid" aria-label="Add item" disabled>
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+          </div>
+
+          <h3 class="variant__subtitle">With Label</h3>
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Style=Secondary-Solid, Size=Small, State=Default, Icon only=False, On color=No">
+              <span class="showcase__label">Default — Small</span>
+              <button type="button" class="fab fab--secondary-solid">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="fab__label">Add</span>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════
+             On-Color Context
+             ══════════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">On-Color Context</h2>
+          <p class="variant__desc">Use <code>.fab--on-color</code> when the FAB appears on a colored or dark surface.</p>
+
+          <div class="showcase" style="background: var(--gray-950); padding: 24px; border-radius: 8px; gap: 16px; flex-direction: column; align-items: flex-start;">
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Default, Icon only=True, On color=Yes">
+              <span class="showcase__label" style="color: var(--white);">Primary-Neutral</span>
+              <button type="button" class="fab fab--on-color" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Brand, Size=Small, State=Default, Icon only=True, On color=Yes">
+              <span class="showcase__label" style="color: var(--white);">Primary-Brand</span>
+              <button type="button" class="fab fab--primary-brand fab--on-color" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Secondary-Solid, Size=Small, State=Default, Icon only=True, On color=Yes">
+              <span class="showcase__label" style="color: var(--white);">Secondary-Solid</span>
+              <button type="button" class="fab fab--secondary-solid fab--on-color" aria-label="Add item">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Default, Icon only=False, On color=Yes">
+              <span class="showcase__label" style="color: var(--white);">Primary-Neutral + Label</span>
+              <button type="button" class="fab fab--on-color">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="fab__label">Add</span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="Style=Primary-Neutral, Size=Small, State=Disabled, Icon only=True, On color=Yes">
+              <span class="showcase__label" style="color: var(--white);">Disabled</span>
+              <button type="button" class="fab fab--on-color" aria-label="Add item" disabled>
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════════
+             RTL
+             ══════════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">RTL — Labeled Mode</h2>
+          <p class="variant__desc">Apply <code>dir="rtl"</code> to a parent element. Icon-only FABs are unaffected (circular).</p>
+
+          <div class="showcase" dir="rtl">
+
+            <div class="showcase__row" data-props="RTL=True, Style=Primary-Neutral, Size=Small, State=Default, Icon only=False, On color=No">
+              <span class="showcase__label">Primary-Neutral + Label</span>
+              <button type="button" class="fab">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="fab__label">إضافة</span>
+              </button>
+            </div>
+
+            <div class="showcase__row" data-props="RTL=True, Style=Primary-Brand, Size=Small, State=Default, Icon only=False, On color=No">
+              <span class="showcase__label">Primary-Brand + Label</span>
+              <button type="button" class="fab fab--primary-brand">
+                <span class="fab__icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span class="fab__label">إنشاء</span>
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!--
+  accordion-new — Template
+  Platform Code Design System
+
+  Usage:
+  - Replace accordion-trigger-N / accordion-panel-N with unique IDs per instance.
+  - Set aria-expanded="true" to render in expanded state.
+  - Add modifier classes to .accordion root:
+      .accordion--sm    → small size
+      .accordion--md    → medium size
+      (none)            → large size (default)
+      .accordion--icon-leading  → icon at inline-start
+      .accordion--flush         → zero horizontal padding (parent needs overflow:clip)
+  - Add [disabled] to button to disable the item.
+
+  Required JS: toggle aria-expanded value on button click.
+-->
+
+<!-- ── Default: Large, Trailing icon, Flush=False, Collapsed ──────────────── -->
+<div class="accordion">
+  <button
+    class="accordion__trigger"
+    type="button"
+    id="accordion-trigger-1"
+    aria-expanded="false"
+    aria-controls="accordion-panel-1"
+  >
+    <span class="accordion__title">Accordion Title</span>
+    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+      <path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div
+    class="accordion__panel"
+    id="accordion-panel-1"
+    role="region"
+    aria-labelledby="accordion-trigger-1"
+  >
+    <div class="accordion__body">
+      The accordion component delivers large amounts of content in a small space
+      through progressive disclosure.
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Expanded state ────────────────────────────────────────────────────── -->
+<div class="accordion">
+  <button
+    class="accordion__trigger"
+    type="button"
+    id="accordion-trigger-2"
+    aria-expanded="true"
+    aria-controls="accordion-panel-2"
+  >
+    <span class="accordion__title">Accordion Title</span>
+    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+      <path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div
+    class="accordion__panel"
+    id="accordion-panel-2"
+    role="region"
+    aria-labelledby="accordion-trigger-2"
+  >
+    <div class="accordion__body">
+      The accordion component delivers large amounts of content in a small space
+      through progressive disclosure. The user gets key details about the underlying
+      content and can choose to expand that content within the constraints of the accordion.
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Medium size ───────────────────────────────────────────────────────── -->
+<div class="accordion accordion--md">
+  <button
+    class="accordion__trigger"
+    type="button"
+    id="accordion-trigger-3"
+    aria-expanded="false"
+    aria-controls="accordion-panel-3"
+  >
+    <span class="accordion__title">Accordion Title</span>
+    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+      <path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div
+    class="accordion__panel"
+    id="accordion-panel-3"
+    role="region"
+    aria-labelledby="accordion-trigger-3"
+  >
+    <div class="accordion__body">Content goes here.</div>
+  </div>
+</div>
+
+
+<!-- ── Small size ────────────────────────────────────────────────────────── -->
+<div class="accordion accordion--sm">
+  <button
+    class="accordion__trigger"
+    type="button"
+    id="accordion-trigger-4"
+    aria-expanded="false"
+    aria-controls="accordion-panel-4"
+  >
+    <span class="accordion__title">Accordion Title</span>
+    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+      <path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div
+    class="accordion__panel"
+    id="accordion-panel-4"
+    role="region"
+    aria-labelledby="accordion-trigger-4"
+  >
+    <div class="accordion__body">Content goes here.</div>
+  </div>
+</div>
+
+
+<!-- ── Leading icon ──────────────────────────────────────────────────────── -->
+<div class="accordion accordion--icon-leading">
+  <button
+    class="accordion__trigger"
+    type="button"
+    id="accordion-trigger-5"
+    aria-expanded="false"
+    aria-controls="accordion-panel-5"
+  >
+    <span class="accordion__title">Accordion Title</span>
+    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+      <path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div
+    class="accordion__panel"
+    id="accordion-panel-5"
+    role="region"
+    aria-labelledby="accordion-trigger-5"
+  >
+    <div class="accordion__body">Content goes here.</div>
+  </div>
+</div>
+
+
+<!-- ── Flush variant (wrap in overflow:clip container) ───────────────────── -->
+<div style="overflow: clip; padding-inline: 16px;">
+  <div class="accordion accordion--flush">
+    <button
+      class="accordion__trigger"
+      type="button"
+      id="accordion-trigger-6"
+      aria-expanded="false"
+      aria-controls="accordion-panel-6"
+    >
+      <span class="accordion__title">Accordion Title</span>
+      <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+        <path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div
+      class="accordion__panel"
+      id="accordion-panel-6"
+      role="region"
+      aria-labelledby="accordion-trigger-6"
+    >
+      <div class="accordion__body">Content goes here.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── Disabled ──────────────────────────────────────────────────────────── -->
+<div class="accordion">
+  <button
+    class="accordion__trigger"
+    type="button"
+    id="accordion-trigger-7"
+    aria-expanded="false"
+    aria-controls="accordion-panel-7"
+    disabled
+  >
+    <span class="accordion__title">Disabled Accordion</span>
+    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+      <path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div
+    class="accordion__panel"
+    id="accordion-panel-7"
+    role="region"
+    aria-labelledby="accordion-trigger-7"
+  >
+    <div class="accordion__body">Content goes here.</div>
+  </div>
+</div>

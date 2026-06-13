@@ -37,6 +37,7 @@
   */
   var COMPONENTS = [
     { id: 'accordion', label: 'Accordion' },
+    { id: 'accordion-new', label: 'Accordion (New)' },
     { id: 'avatar', label: 'Avatar' },
     { id: 'breadcrumb', label: 'Breadcrumb' },
     { id: 'button', label: 'Button' },
@@ -44,6 +45,10 @@
     { id: 'chip', label: 'Chip' },
     { id: 'content-switcher', label: 'Content Switcher' },
     { id: 'dga-links', label: 'DGA Links' },
+    { id: 'divider', label: 'Divider' },
+    { id: 'file-upload', label: 'File Upload' },
+    { id: 'floating-button', label: 'Floating Button' },
+    { id: 'inline-alert', label: 'Inline Alert' },
     { id: 'input-affix', label: 'Input Affix' },
     { id: 'label', label: 'Label' },
     { id: 'link', label: 'Link' },
@@ -332,7 +337,55 @@
       .replace(/"/g, '&quot;');
   }
 
-  /* ── 6. Indeterminate checkboxes ─────────────────────────────────────── */
+  /* ── 6. sc-tabs wiring (used by inline-alert and similar showcases) ─── */
+
+  function initScTabs() {
+    document.querySelectorAll('.sc-tabs[role="tablist"]').forEach(function (tablist) {
+      var tabs = Array.from(tablist.querySelectorAll('.sc-tab'));
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var targetId = tab.getAttribute('data-tab-target');
+          if (!targetId) return;
+
+          tabs.forEach(function (t) {
+            t.classList.remove('sc-tab--active');
+            t.setAttribute('aria-selected', 'false');
+          });
+
+          tab.classList.add('sc-tab--active');
+          tab.setAttribute('aria-selected', 'true');
+
+          var item = tablist.closest('.sc-item');
+          if (!item) return;
+
+          item.querySelectorAll('.sc-panel').forEach(function (panel) {
+            panel.hidden = (panel.id !== targetId);
+          });
+        });
+      });
+    });
+
+    document.querySelectorAll('.sc-copy').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var panel = btn.closest('.sc-panel--code');
+        if (!panel) return;
+        var pre = panel.querySelector('pre');
+        var text = pre ? pre.textContent : '';
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            btn.textContent = 'Copied!';
+            setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+          }).catch(function () { fallbackCopy(text, btn); });
+        } else {
+          fallbackCopy(text, btn);
+        }
+      });
+    });
+  }
+
+  /* ── 7. Indeterminate checkboxes ─────────────────────────────────────── */
 
   function initIndeterminate() {
     document.querySelectorAll('.showcase-indeterminate').forEach(function (input) {
@@ -347,6 +400,7 @@
     initTabs();
     initPropTags();
     initIndeterminate();
+    initScTabs();
   });
 
 }());

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion (New) — Component Showcase | Platform Code Design System</title>
+    <!-- 1. Global tokens -->
+    <link rel="stylesheet" href="../../../token.css" />
+    <!-- 2. Component CSS -->
+    <link rel="stylesheet" href="../accordion-new.css" />
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css" />
+    <script src="../../_showcase/showcase.js" defer></script>
+
+    <style>
+      /* ════════════════════════════════════════════════
+         ACCORDION-NEW SHOWCASE — Page-level styles only
+         Shared shell (layout, sidebar, tabs, copy) lives
+         in showcase.css. This block is accordion-specific.
+         ════════════════════════════════════════════════ */
+      .showcase .accordion {
+        max-width: 400px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body
+    data-showcase
+    data-current-component="accordion-new"
+    data-showcase-title="Accordion (New) Showcase"
+  >
+    <div data-showcase-shell>
+      <main data-showcase-content>
+
+        <!-- ─────────────────────────────────────────────
+             Section 1: States
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">States</h2>
+          <p class="showcase-section__desc">
+            Medium size, Trailing icon, Flush=False. All interactive states.
+          </p>
+
+          <!-- Default — collapsed -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Icon=Trailing, Flush=False, State=Collapsed">
+              <span class="showcase__label">Default — collapsed</span>
+              <div class="showcase__item">
+                <div class="accordion accordion--md">
+                  <button class="accordion__trigger" type="button" id="s1-t1" aria-expanded="false" aria-controls="s1-p1">
+                    <span class="accordion__title">Accordion Title</span>
+                    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="accordion__panel" id="s1-p1" role="region" aria-labelledby="s1-t1">
+                    <div class="accordion__body">Content goes here.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Default — expanded -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Icon=Trailing, Flush=False, State=Expanded">
+              <span class="showcase__label">Default — expanded</span>
+              <div class="showcase__item">
+                <div class="accordion accordion--md">
+                  <button class="accordion__trigger" type="button" id="s1-t2" aria-expanded="true" aria-controls="s1-p2">
+                    <span class="accordion__title">Accordion Title</span>
+                    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="accordion__panel" id="s1-p2" role="region" aria-labelledby="s1-t2">
+                    <div class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content within the constraints of the accordion.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disabled -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Icon=Trailing, Flush=False, State=Disabled">
+              <span class="showcase__label">Disabled</span>
+              <div class="showcase__item">
+                <div class="accordion accordion--md">
+                  <button class="accordion__trigger" type="button" id="s1-t3" aria-expanded="false" aria-controls="s1-p3" disabled>
+                    <span class="accordion__title">Disabled Accordion</span>
+                    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="accordion__panel" id="s1-p3" role="region" aria-labelledby="s1-t3">
+                    <div class="accordion__body">Content goes here.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ─────────────────────────────────────────────
+             Section 2: Sizes
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">Sizes</h2>
+          <p class="showcase-section__desc">
+            Three sizes — padding-block changes, typography remains the same.
+          </p>
+
+          <!-- Large -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Large, Icon=Trailing, State=Collapsed">
+              <span class="showcase__label">Large (default)</span>
+              <div class="showcase__item">
+                <div class="accordion">
+                  <button class="accordion__trigger" type="button" id="sz-t1" aria-expanded="false" aria-controls="sz-p1">
+                    <span class="accordion__title">Large Accordion</span>
+                    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="accordion__panel" id="sz-p1" role="region" aria-labelledby="sz-t1">
+                    <div class="accordion__body">Content goes here.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Medium -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Icon=Trailing, State=Collapsed">
+              <span class="showcase__label">Medium</span>
+              <div class="showcase__item">
+                <div class="accordion accordion--md">
+                  <button class="accordion__trigger" type="button" id="sz-t2" aria-expanded="false" aria-controls="sz-p2">
+                    <span class="accordion__title">Medium Accordion</span>
+                    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="accordion__panel" id="sz-p2" role="region" aria-labelledby="sz-t2">
+                    <div class="accordion__body">Content goes here.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Small -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Small, Icon=Trailing, State=Collapsed">
+              <span class="showcase__label">Small</span>
+              <div class="showcase__item">
+                <div class="accordion accordion--sm">
+                  <button class="accordion__trigger" type="button" id="sz-t3" aria-expanded="false" aria-controls="sz-p3">
+                    <span class="accordion__title">Small Accordion</span>
+                    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="accordion__panel" id="sz-p3" role="region" aria-labelledby="sz-t3">
+                    <div class="accordion__body">Content goes here.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ─────────────────────────────────────────────
+             Section 3: Icon Alignment
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">Icon Alignment</h2>
+          <p class="showcase-section__desc">
+            Trailing (default) vs. Leading. Content panel indents on the icon side.
+          </p>
+
+          <!-- Trailing — expanded -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Icon=Trailing, State=Expanded">
+              <span class="showcase__label">Trailing (default) — expanded</span>
+              <div class="showcase__item">
+                <div class="accordion accordion--md">
+                  <button class="accordion__trigger" type="button" id="ia-t1" aria-expanded="true" aria-controls="ia-p1">
+                    <span class="accordion__title">Trailing Icon</span>
+                    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="accordion__panel" id="ia-p1" role="region" aria-labelledby="ia-t1">
+                    <div class="accordion__body">Content indented on the trailing (end) side — aligned with the icon column.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Leading — expanded -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Icon=Leading, State=Expanded">
+              <span class="showcase__label">Leading — expanded</span>
+              <div class="showcase__item">
+                <div class="accordion accordion--md accordion--icon-leading">
+                  <button class="accordion__trigger" type="button" id="ia-t2" aria-expanded="true" aria-controls="ia-p2">
+                    <span class="accordion__title">Leading Icon</span>
+                    <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="accordion__panel" id="ia-p2" role="region" aria-labelledby="ia-t2">
+                    <div class="accordion__body">Content indented on the leading (start) side — aligned with the title column.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ─────────────────────────────────────────────
+             Section 4: Flush Variant
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">Flush Variant</h2>
+          <p class="showcase-section__desc">
+            Zero horizontal padding. Hover/pressed background and focus ring bleed to fill container.
+            Wrap in <code>overflow: clip</code>.
+          </p>
+
+          <!-- Flush — collapsed -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Icon=Trailing, Flush=True, State=Collapsed">
+              <span class="showcase__label">Flush — collapsed</span>
+              <div class="showcase__item">
+                <div style="overflow: clip; padding-inline: 16px; max-width: 400px; width: 100%;">
+                  <div class="accordion accordion--md accordion--flush">
+                    <button class="accordion__trigger" type="button" id="fl-t1" aria-expanded="false" aria-controls="fl-p1">
+                      <span class="accordion__title">Flush Accordion</span>
+                      <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="accordion__panel" id="fl-p1" role="region" aria-labelledby="fl-t1">
+                      <div class="accordion__body">Content goes here.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flush + Leading — expanded -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Icon=Leading, Flush=True, State=Expanded">
+              <span class="showcase__label">Flush + Leading — expanded</span>
+              <div class="showcase__item">
+                <div style="overflow: clip; padding-inline: 16px; max-width: 400px; width: 100%;">
+                  <div class="accordion accordion--md accordion--flush accordion--icon-leading">
+                    <button class="accordion__trigger" type="button" id="fl-t2" aria-expanded="true" aria-controls="fl-p2">
+                      <span class="accordion__title">Flush + Leading</span>
+                      <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="accordion__panel" id="fl-p2" role="region" aria-labelledby="fl-t2">
+                      <div class="accordion__body">Content indented by icon + gap (32px) — no base padding in flush mode.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- ─────────────────────────────────────────────
+             Section 5: Accordion Group
+             ───────────────────────────────────────────── -->
+        <section class="showcase-section">
+          <h2 class="showcase-section__title">Accordion Group</h2>
+          <p class="showcase-section__desc">
+            Multiple accordion items stacked — typical usage pattern. The group wrapper adds the bottom border.
+          </p>
+
+          <!-- Group — 3 items -->
+          <div class="showcase">
+            <div class="showcase__row" data-props="Size=Medium, Icon=Trailing, Count=3">
+              <span class="showcase__label">Group — 3 items (one expanded)</span>
+              <div class="showcase__item">
+                <div style="max-width: 400px; width: 100%; border-bottom: 1px solid var(--Border-border-neutral-primary, #D2D6DB);">
+                  <div class="accordion accordion--md">
+                    <button class="accordion__trigger" type="button" id="grp-t1" aria-expanded="true" aria-controls="grp-p1">
+                      <span class="accordion__title">What is an accordion?</span>
+                      <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="accordion__panel" id="grp-p1" role="region" aria-labelledby="grp-t1">
+                      <div class="accordion__body">The accordion component delivers large amounts of content in a small space through progressive disclosure.</div>
+                    </div>
+                  </div>
+                  <div class="accordion accordion--md">
+                    <button class="accordion__trigger" type="button" id="grp-t2" aria-expanded="false" aria-controls="grp-p2">
+                      <span class="accordion__title">When should I use it?</span>
+                      <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="accordion__panel" id="grp-p2" role="region" aria-labelledby="grp-t2">
+                      <div class="accordion__body">Use an accordion when users need selective access to content sections and can orient themselves from the title alone.</div>
+                    </div>
+                  </div>
+                  <div class="accordion accordion--md">
+                    <button class="accordion__trigger" type="button" id="grp-t3" aria-expanded="false" aria-controls="grp-p3">
+                      <span class="accordion__title">Is it accessible?</span>
+                      <svg class="accordion__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none"><path d="M3.5 6l4.5 4.5 4.5-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="accordion__panel" id="grp-p3" role="region" aria-labelledby="grp-t3">
+                      <div class="accordion__body">Yes. The trigger uses a native button with aria-expanded and aria-controls. The panel has role=region and aria-labelledby.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- ── Accordion toggle behaviour for showcase previews ──────────────── -->
+    <script>
+    (function () {
+      document.querySelectorAll('.accordion__trigger:not([disabled])').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        });
+      });
+    }());
+    </script>
+
+  </body>
+</html>

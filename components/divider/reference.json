@@ -1,0 +1,151 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "divider",
+    "description": "A horizontal or vertical visual separator. Used to divide content areas, list items, or sections. Implemented as a semantic <hr> element or aria separator.",
+    "classification": "Primitive"
+  },
+  "source": {
+    "manifest": "components/divider/mainifest.json",
+    "note": "Source filename contains a typo: mainifest.json (not manifest.json). Treated as canonical source."
+  },
+  "axes": ["color", "direction"],
+  "axis_values": {
+    "color": ["neutral", "primary", "alpha-white", "white"],
+    "direction": ["horizontal", "vertical"]
+  },
+  "discarded_axes": [
+    {
+      "axis": "RTL",
+      "reason": "No RTL axis present in manifest. Horizontal and vertical dividers are direction-neutral — reading direction does not affect orientation or appearance."
+    },
+    {
+      "axis": "size / thickness",
+      "reason": "No size axis in manifest. All variants use 1px thickness. The 192px width/height in Figma is a canvas preview value, not a component constraint."
+    }
+  ],
+  "color_tokens": {
+    "neutral": {
+      "background": "var(--divider-color-neutral, #D2D6DB)",
+      "figma_source": "var(--Border-border-neutral-primary, #D2D6DB)",
+      "css-modifier": null
+    },
+    "primary": {
+      "background": "var(--divider-color-primary, #1B8354)",
+      "figma_source": "var(--Border-border-primary, #1B8354)",
+      "css-modifier": ".divider--primary"
+    },
+    "alpha-white": {
+      "background": "var(--divider-color-alpha-white, rgba(255, 255, 255, 0.30))",
+      "figma_source": "var(--Alpha-alpha-white-30, rgba(255, 255, 255, 0.30))",
+      "css-modifier": ".divider--alpha-white"
+    },
+    "white": {
+      "background": "var(--divider-color-white, #FFF)",
+      "figma_source": "var(--Border-border-white, #FFF)",
+      "css-modifier": ".divider--white"
+    }
+  },
+  "direction_tokens": {
+    "horizontal": {
+      "height": "var(--divider-thickness, 1px)",
+      "width": "100%",
+      "css-modifier": null
+    },
+    "vertical": {
+      "height": "100%",
+      "width": "var(--divider-thickness, 1px)",
+      "css-modifier": ".divider--vertical"
+    }
+  },
+  "variants": [
+    {
+      "id": "neutral-horizontal",
+      "axes": { "color": "neutral", "direction": "horizontal" },
+      "status": "available",
+      "properties": {
+        "height": "var(--divider-thickness, 1px)",
+        "width": "100%",
+        "background": "var(--divider-color-neutral, #D2D6DB)"
+      }
+    },
+    {
+      "id": "primary-horizontal",
+      "axes": { "color": "primary", "direction": "horizontal" },
+      "status": "available",
+      "properties": {
+        "height": "var(--divider-thickness, 1px)",
+        "width": "100%",
+        "background": "var(--divider-color-primary, #1B8354)"
+      }
+    },
+    {
+      "id": "alpha-white-horizontal",
+      "axes": { "color": "alpha-white", "direction": "horizontal" },
+      "status": "available",
+      "properties": {
+        "height": "var(--divider-thickness, 1px)",
+        "width": "100%",
+        "background": "var(--divider-color-alpha-white, rgba(255, 255, 255, 0.30))"
+      }
+    },
+    {
+      "id": "white-horizontal",
+      "axes": { "color": "white", "direction": "horizontal" },
+      "status": "available",
+      "properties": {
+        "height": "var(--divider-thickness, 1px)",
+        "width": "100%",
+        "background": "var(--divider-color-white, #FFF)"
+      }
+    },
+    {
+      "id": "neutral-vertical",
+      "axes": { "color": "neutral", "direction": "vertical" },
+      "status": "available",
+      "properties": {
+        "height": "100%",
+        "width": "var(--divider-thickness, 1px)",
+        "background": "var(--divider-color-neutral, #D2D6DB)"
+      }
+    },
+    {
+      "id": "primary-vertical",
+      "axes": { "color": "primary", "direction": "vertical" },
+      "status": "available",
+      "properties": {
+        "height": "100%",
+        "width": "var(--divider-thickness, 1px)",
+        "background": "var(--divider-color-primary, #1B8354)"
+      }
+    },
+    {
+      "id": "alpha-white-vertical",
+      "axes": { "color": "alpha-white", "direction": "vertical" },
+      "status": "available",
+      "properties": {
+        "height": "100%",
+        "width": "var(--divider-thickness, 1px)",
+        "background": "var(--divider-color-alpha-white, rgba(255, 255, 255, 0.30))"
+      }
+    },
+    {
+      "id": "white-vertical",
+      "axes": { "color": "white", "direction": "vertical" },
+      "status": "available",
+      "properties": {
+        "height": "100%",
+        "width": "var(--divider-thickness, 1px)",
+        "background": "var(--divider-color-white, #FFF)"
+      }
+    }
+  ],
+  "implementation_notes": [
+    "HTML element: <hr> with CSS resets is the default. <div role='separator'> is acceptable for non-semantic contexts.",
+    "Horizontal: default class only — no modifier. Vertical: add .divider--vertical.",
+    "Decorative use: add role='none' aria-hidden='true' to suppress AT announcement.",
+    "Vertical divider height requires a parent with a defined height (not height:auto).",
+    "All 192px dimensions in Figma are canvas preview values — not component size constraints.",
+    "The --divider-color-alpha-white and --divider-color-white variants are designed for use on dark or colored backgrounds."
+  ]
+}

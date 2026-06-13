@@ -1,0 +1,77 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "file-upload",
+    "description": "File upload component supporting single-file and multiple-file modes, with a drop zone and file row indicators (loading, uploaded, error states)."
+  },
+  "axes": ["type", "state", "rtl"],
+  "axis_values": {
+    "type": ["single", "multiple"],
+    "state_single": ["default", "disabled", "uploaded"],
+    "state_drop_zone": ["default", "drag-hover", "disabled"],
+    "state_file_item": ["loading", "uploaded", "error"],
+    "rtl": [false, true]
+  },
+  "sub_components": {
+    "_file_item": {
+      "css_class": ".file-item",
+      "states": ["loading", "uploaded", "error"],
+      "state_modifier": {
+        "error": ".file-item--error"
+      }
+    },
+    "_drop_zone": {
+      "css_class": ".drop-zone",
+      "states": ["default", "drag-hover", "disabled"],
+      "state_modifier": {
+        "drag-hover": ".is-drag-hover",
+        "disabled": "[aria-disabled=true]"
+      }
+    }
+  },
+  "css_class": {
+    "single_root": ".file-upload",
+    "multiple_root": ".file-upload--multiple",
+    "state": {
+      "disabled": "[aria-disabled='true'] on root",
+      "uploaded": ".is-uploaded on .file-upload"
+    },
+    "rtl": "[dir='rtl'] ancestor attribute"
+  },
+  "variants": [
+    { "type": "single", "state": "default",  "rtl": false, "class": ".file-upload" },
+    { "type": "single", "state": "default",  "rtl": true,  "class": ".file-upload + [dir=rtl]" },
+    { "type": "single", "state": "disabled", "rtl": false, "class": ".file-upload[aria-disabled=true]" },
+    { "type": "single", "state": "disabled", "rtl": true,  "class": ".file-upload[aria-disabled=true] + [dir=rtl]" },
+    { "type": "single", "state": "uploaded", "rtl": false, "class": ".file-upload.is-uploaded" },
+    { "type": "single", "state": "uploaded", "rtl": true,  "class": ".file-upload.is-uploaded + [dir=rtl]" },
+    { "type": "drop-zone", "state": "default",    "rtl": false, "class": ".drop-zone" },
+    { "type": "drop-zone", "state": "default",    "rtl": true,  "class": ".drop-zone + [dir=rtl]" },
+    { "type": "drop-zone", "state": "drag-hover", "rtl": false, "class": ".drop-zone.is-drag-hover" },
+    { "type": "drop-zone", "state": "drag-hover", "rtl": true,  "class": ".drop-zone.is-drag-hover + [dir=rtl]" },
+    { "type": "drop-zone", "state": "disabled",   "rtl": false, "class": ".drop-zone[aria-disabled=true]" },
+    { "type": "drop-zone", "state": "disabled",   "rtl": true,  "class": ".drop-zone[aria-disabled=true] + [dir=rtl]" },
+    { "type": "file-item", "state": "loading",  "rtl": false, "class": ".file-item" },
+    { "type": "file-item", "state": "loading",  "rtl": true,  "class": ".file-item + [dir=rtl]" },
+    { "type": "file-item", "state": "uploaded", "rtl": false, "class": ".file-item" },
+    { "type": "file-item", "state": "uploaded", "rtl": true,  "class": ".file-item + [dir=rtl]" },
+    { "type": "file-item", "state": "error",    "rtl": false, "class": ".file-item.file-item--error" },
+    { "type": "file-item", "state": "error",    "rtl": true,  "class": ".file-item.file-item--error + [dir=rtl]" },
+    { "type": "multiple",  "state": "default",  "rtl": false, "class": ".file-upload--multiple" },
+    { "type": "multiple",  "state": "default",  "rtl": true,  "class": ".file-upload--multiple + [dir=rtl]" }
+  ],
+  "implementation_notes": [
+    "RTL is handled via [dir=rtl] on an ancestor element — no separate RTL modifier class needed.",
+    "Loading spinner is implemented as a CSS @keyframes border-based animation — no SVG required.",
+    "Feedback Icon SVG content (success checkmark, error icon) is a placeholder — source from icon library.",
+    "The hidden <input type='file'> is required in HTML for browser-native file selection, triggered via JS from the visible button.",
+    "Drag-and-drop behavior requires application-layer JS to toggle .is-drag-hover on the .drop-zone element.",
+    "All component-level CSS custom properties are fallback-mapped from manifest source tokens but are not yet defined in token.css — see analysis.md."
+  ],
+  "discarded_axes": [
+    {
+      "axis": "rtl (Drop Zone CSS)",
+      "reason": "Drop Zone layout is centered/symmetric — LTR and RTL produce identical CSS. Only text content differs. Handled by dir attribute on ancestor and browser text rendering."
+    }
+  ]
+}

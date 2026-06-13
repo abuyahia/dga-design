@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "component": "file-upload",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "last_updated": "2026-06-12",
+  "accessibility": {
+    "PLATFORM-CODE-A11Y-001": {
+      "rule": "Interactive elements must be keyboard operable",
+      "status": "pending_audit",
+      "notes": "Browse Files and Remove buttons implemented as <button type='button'>. File input hidden and triggered via JS."
+    },
+    "PLATFORM-CODE-A11Y-002": {
+      "rule": "Focus indicators must be visible on keyboard focus",
+      "status": "pending_audit",
+      "notes": ":focus-visible with outline applied to .file-upload__trigger, .drop-zone__trigger, .file-item__remove"
+    },
+    "PLATFORM-CODE-A11Y-003": {
+      "rule": "Interactive elements must have accessible names",
+      "status": "pending_audit",
+      "notes": "Remove button requires aria-label='Remove [filename]'. Browse Files uses visible text. Drop zone requires aria-label='File drop zone'."
+    },
+    "PLATFORM-CODE-A11Y-004": {
+      "rule": "Disabled state must be communicated to assistive technology",
+      "status": "pending_audit",
+      "notes": "aria-disabled='true' on root elements. Pointer events disabled via CSS."
+    },
+    "PLATFORM-CODE-A11Y-005": {
+      "rule": "Error messages must be associated with their input",
+      "status": "pending_audit",
+      "notes": "File item error row uses role='alert'. aria-describedby association recommended for production."
+    },
+    "PLATFORM-CODE-A11Y-006": {
+      "rule": "Loading state must be announced to assistive technology",
+      "status": "pending_audit",
+      "notes": "Loading file item should include role='status' or aria-label describing upload progress."
+    }
+  },
+  "tokens": {
+    "PLATFORM-CODE-TOKEN-001": {
+      "rule": "Component CSS must use component-level semantic tokens, not primitive tokens",
+      "status": "pending_audit",
+      "notes": "All CSS custom properties are defined at component level with fallbacks. Tokens not yet in token.css — see analysis.md."
+    }
+  },
+  "states": {
+    "PLATFORM-CODE-STATE-001": {
+      "rule": "All Figma states must be implemented in CSS",
+      "status": "pending_audit",
+      "covered_states": [
+        "file-upload: default, disabled, uploaded",
+        "drop-zone: default, drag-hover, disabled",
+        "file-item: loading, uploaded, error"
+      ]
+    }
+  },
+  "focus": {
+    "PLATFORM-CODE-FOCUS-001": {
+      "rule": "Focus ring must be visible on keyboard navigation",
+      "status": "pending_audit",
+      "strategy": ":focus-visible with outline on all interactive elements",
+      "notes": "Source does not specify keyboard-only focus; :focus-visible chosen per accessibility best practice."
+    }
+  },
+  "rtl": {
+    "PLATFORM-CODE-FILE-UPLOAD-001": {
+      "rule": "Component must support RTL layout",
+      "status": "pending_audit",
+      "notes": "RTL handled via [dir=rtl] selectors. Drop Zone requires no CSS changes (centered layout)."
+    }
+  }
+}

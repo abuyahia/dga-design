@@ -26,6 +26,7 @@
   transition: background var(--transition-fast) var(--ease-in-out);
   outline: none;
   -webkit-appearance: none;
+  width: max-content;
 }
 
 /* ── Icon ───────────────────────────────────────────────────── */

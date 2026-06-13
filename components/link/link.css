@@ -49,6 +49,7 @@
   cursor: pointer;
 
   outline: none;
+  width: max-content;
 }
 
 /* ── Medium size ────────────────────────────────────────────── */

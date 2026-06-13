@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "component": "file-upload",
+  "rules": [
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-001",
+      "severity": "high",
+      "category": "accessibility",
+      "rule": "Browse Files button must trigger a hidden file input",
+      "check": "Button with class .file-upload__trigger or .drop-zone__trigger must have a corresponding <input type='file' hidden> and JS click handler",
+      "rationale": "Native file input is required for browser file selection; the visible button is a proxy"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-002",
+      "severity": "high",
+      "category": "accessibility",
+      "rule": "Remove buttons must have aria-label identifying the file",
+      "check": ".file-item__remove must have aria-label='Remove [filename]'",
+      "rationale": "Without an accessible name, screen readers cannot distinguish which file is being removed"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-003",
+      "severity": "high",
+      "category": "accessibility",
+      "rule": "Drop zone must have an accessible region label",
+      "check": ".drop-zone must have role='region' and aria-label",
+      "rationale": "Users need to identify the drop zone by region when navigating via landmarks"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-004",
+      "severity": "high",
+      "category": "state",
+      "rule": "Disabled state must prevent all interaction",
+      "check": ".file-upload[aria-disabled=true] and .drop-zone[aria-disabled=true] must set pointer-events: none and cursor: not-allowed on interactive descendants",
+      "rationale": "Disabled components must not accept mouse or keyboard input"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-005",
+      "severity": "high",
+      "category": "state",
+      "rule": "File item error state must expose error message",
+      "check": ".file-item--error must show .file-item__error-row. Error row must have role='alert'",
+      "rationale": "Error messages must be announced by assistive technology"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-006",
+      "severity": "medium",
+      "category": "tokens",
+      "rule": "CSS must use component-level tokens, not primitive values",
+      "check": "No hex, rgba, or pixel values in component selectors. All values must reference CSS custom properties",
+      "rationale": "Component tokens allow theming and systematic updates"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-007",
+      "severity": "medium",
+      "category": "accessibility",
+      "rule": "Loading state must be communicated to assistive technology",
+      "check": ".file-item in loading state must include role='status' or equivalent live region text",
+      "rationale": "Screen readers must announce upload progress"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-008",
+      "severity": "medium",
+      "category": "rtl",
+      "rule": "Single upload and file item must mirror layout in RTL",
+      "check": "[dir=rtl] selectors must flip alignment of .file-upload__header and .file-item__row",
+      "rationale": "Arabic/RTL users expect right-to-left reading order"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-009",
+      "severity": "medium",
+      "category": "state",
+      "rule": "Drag-hover state must be toggled via JS class",
+      "check": ".drop-zone.is-drag-hover must apply success border and background. Class toggled on dragover/dragleave/drop events",
+      "rationale": "CSS state requires accurate JS event bridging for correct visual feedback"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-010",
+      "severity": "medium",
+      "category": "accessibility",
+      "rule": "Focus ring must be visible on all interactive elements",
+      "check": ".file-upload__trigger, .drop-zone__trigger, .file-item__remove must render visible outline on :focus-visible",
+      "rationale": "Keyboard users must have visible focus indicators"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-011",
+      "severity": "low",
+      "category": "tokens",
+      "rule": "Component-level tokens must be added to token.css",
+      "check": "All --file-upload-*, --drop-zone-*, --file-item-* tokens listed in analysis.md Missing Tokens must be defined in token.css",
+      "rationale": "Token definitions should not live solely as fallback values in component CSS"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-012",
+      "severity": "low",
+      "category": "documentation",
+      "rule": "Feedback icon SVG must be sourced from icon library",
+      "check": ".file-item__icon placeholder SVG must be replaced with actual success/error icons",
+      "rationale": "Placeholder SVGs do not match the design system icon library"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-013",
+      "severity": "advisory",
+      "category": "accessibility",
+      "rule": "Multiple upload should announce file list changes",
+      "check": ".file-upload__files should have aria-live='polite' so additions/removals are announced",
+      "rationale": "Screen reader users benefit from hearing file list changes without manual navigation"
+    },
+    {
+      "id": "PLATFORM-CODE-FILE-UPLOAD-014",
+      "severity": "advisory",
+      "category": "behavior",
+      "rule": "Drag-and-drop JS should be provided in application layer",
+      "check": "dragover, dragleave, drop event handlers must toggle .is-drag-hover and handle dropped FileList",
+      "rationale": "CSS provides all visual states; behavior requires application-layer JS"
+    }
+  ]
+}

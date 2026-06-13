@@ -1,0 +1,498 @@
+/* ==========================================================================
+   file-upload.css — File Upload Component
+   Platform Code Design System
+   --------------------------------------------------------------------------
+   Sub-components covered:
+     .file-item     — file row indicator (loading / uploaded / error)
+     .drop-zone     — drag-and-drop area
+     .file-upload   — single-file upload (label + trigger + optional file row)
+     .file-upload--multiple — multiple-file upload (drop zone + file list)
+   ========================================================================== */
+
+/* ── 0. Component-level token definitions ─────────────────────────────── */
+/* TODO: move all tokens below into token.css */
+
+:root {
+  /* ── File Item ──────────────────────────────────────────────────────── */
+  --file-item-border:            1px solid var(--Border-border-neutral-primary, #D2D6DB);
+  --file-item-border-error:      1px solid var(--Border-border-error, #B42318);
+  --file-item-bg:                var(--Background-background-neutral-100, #F3F4F6);
+  --file-item-radius:            var(--Radius-radius-sm, 4px);
+  --file-item-padding:           var(--global-size8, 8px);
+  --file-item-gap:               var(--Global-spacing-md, 8px);
+  --file-item-name-color:        var(--Text-text-default, #161616);
+  --file-item-name-font-size:    var(--Size-Text-typo-size-text-sm, 14px);
+  --file-item-name-font-weight:  500;
+  --file-item-name-line-height:  var(--Line-Height-Text-line-heights-text-sm, 20px);
+  --file-item-error-text-color:  var(--text-text-error-primary, #CE281C);
+  --file-item-error-separator:   1px solid var(--Border-border-neutral-primary, #D2D6DB);
+  --file-item-remove-size:       20px;
+  --file-item-remove-radius:     var(--Radius-radius-sm, 4px);
+  --file-item-icon-size:         20px;
+
+  /* ── Drop Zone ──────────────────────────────────────────────────────── */
+  --drop-zone-border:                    1px dashed var(--Border-border-neutral-primary, #D2D6DB);
+  --drop-zone-border-draghover:          2px dashed var(--Border-border-success, #067647);
+  --drop-zone-border-disabled:           1px dashed var(--Global-border-disabled, #9DA4AE);
+  --drop-zone-bg:                        var(--Background-background-neutral-100, #F3F4F6);
+  --drop-zone-bg-draghover:              var(--Background-background-success-25, #F6FEF9);
+  --drop-zone-lead-color:                var(--Text-text-display, #1F2A37);
+  --drop-zone-lead-color-draghover:      var(--Text-text-success, #067647);
+  --drop-zone-lead-color-disabled:       var(--Global-text-default-disabled, #9DA4AE);
+  --drop-zone-helper-color:              var(--Text-text-primary-paragraph, #384250);
+  --drop-zone-helper-color-draghover:    var(--Text-text-success, #067647);
+  --drop-zone-helper-color-disabled:     var(--Global-text-default-disabled, #9DA4AE);
+  --drop-zone-icon-opacity-disabled:     0.7;
+  --drop-zone-radius:                    var(--Radius-radius-sm, 4px);
+  --drop-zone-padding:                   var(--global-size24, 24px);
+  --drop-zone-gap:                       var(--Global-spacing-3xl, 24px);
+  --drop-zone-trigger-bg:                var(--Button-button-background-neutral-default, #F3F4F6);
+  --drop-zone-trigger-bg-draghover:      var(--Global-background-disabled, #E5E7EB);
+  --drop-zone-trigger-text-color:        var(--Text-text-default, #161616);
+  --drop-zone-trigger-text-disabled:     var(--Global-text-default-disabled, #9DA4AE);
+
+  /* ── Single file upload ─────────────────────────────────────────────── */
+  --file-upload-label-color:             var(--Form-field-text-label, #161616);
+  --file-upload-label-disabled-color:    var(--Global-text-default-disabled, #9DA4AE);
+  --file-upload-helper-color:            var(--text-text-tertiary, #64748B);
+  --file-upload-helper-disabled-color:   var(--Global-text-default-disabled, #9DA4AE);
+  --file-upload-gap:                     var(--Global-spacing-xl, 16px);
+
+  /* ── Shared trigger (Browse Files button) ───────────────────────────── */
+  --file-upload-trigger-height:          32px;
+  --file-upload-trigger-padding-x:       var(--Button-buttons-md-padding, 12px);
+  --file-upload-trigger-gap:             var(--Button-buttons-md-gap, 4px);
+  --file-upload-trigger-radius:          var(--Radius-radius-sm, 4px);
+  --file-upload-trigger-font-size:       var(--Size-Text-typo-size-text-sm, 14px);
+  --file-upload-trigger-font-weight:     500;
+  --file-upload-trigger-line-height:     var(--Line-Height-Text-line-heights-text-sm, 20px);
+
+  /* Single trigger — dark/primary style */
+  --file-upload-trigger-bg:              var(--Button-button-background-black-default, #0D121C);
+  --file-upload-trigger-bg-disabled:     var(--Global-background-disabled, #E5E7EB);
+  --file-upload-trigger-text-color:      var(--Text-text-oncolor-primary, #FFF);
+  --file-upload-trigger-text-disabled:   var(--Global-text-default-disabled, #9DA4AE);
+}
+
+/* ── 1. File Item ──────────────────────────────────────────────────────── */
+
+.file-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: var(--file-item-border);
+  border-radius: var(--file-item-radius);
+  background: var(--file-item-bg);
+}
+
+.file-item--error {
+  border: var(--file-item-border-error);
+}
+
+/* Row: icon + filename + remove */
+.file-item__row {
+  display: flex;
+  padding: var(--file-item-padding);
+  align-items: center;
+  gap: var(--file-item-gap);
+  align-self: stretch;
+}
+
+/* Lead: icon + filename */
+.file-item__lead {
+  display: flex;
+  align-items: center;
+  gap: var(--file-item-gap);
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+/* State indicator icon */
+.file-item__icon {
+  width: var(--file-item-icon-size);
+  height: var(--file-item-icon-size);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Loading spinner — CSS border animation */
+.file-item__icon--loading {
+  border-radius: 50%;
+  border: 2px solid var(--file-item-bg);
+  border-top-color: var(--Background-background-black, #161616);
+  animation: file-item-spin 0.75s linear infinite;
+}
+
+@keyframes file-item-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Filename */
+.file-item__name {
+  flex: 1 0 0;
+  color: var(--file-item-name-color);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--file-item-name-font-size);
+  font-weight: var(--file-item-name-font-weight);
+  line-height: var(--file-item-name-line-height);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Trail: remove button wrapper */
+.file-item__trail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* Remove (×) button */
+.file-item__remove {
+  display: flex;
+  width: var(--file-item-remove-size);
+  height: var(--file-item-remove-size);
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--file-item-remove-radius);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  color: var(--file-item-name-color);
+  position: relative;
+}
+
+.file-item__remove:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.file-item__remove:focus-visible {
+  outline: 2px solid var(--file-item-name-color);
+  outline-offset: 1px;
+}
+
+/* Error row — hidden by default, shown in error state */
+.file-item__error-row {
+  display: none;
+  padding: var(--file-item-padding);
+  align-items: flex-start;
+  gap: var(--file-item-gap);
+  align-self: stretch;
+  border-top: var(--file-item-error-separator);
+}
+
+.file-item--error .file-item__error-row {
+  display: flex;
+}
+
+.file-item__error-text {
+  flex: 1 0 0;
+  color: var(--file-item-error-text-color);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--file-item-name-font-size);
+  font-weight: 400;
+  line-height: var(--file-item-name-line-height);
+}
+
+/* RTL — File Item */
+[dir="rtl"] .file-item__row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .file-item__lead {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .file-item__name {
+  text-align: right;
+}
+
+[dir="rtl"] .file-item__error-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .file-item__error-text {
+  text-align: right;
+}
+
+/* ── 2. Drop Zone ──────────────────────────────────────────────────────── */
+
+.drop-zone {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--drop-zone-gap);
+  padding: var(--drop-zone-padding);
+  border: var(--drop-zone-border);
+  border-radius: var(--drop-zone-radius);
+  background: var(--drop-zone-bg);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+/* Drag-hover state */
+.drop-zone.is-drag-hover {
+  border: var(--drop-zone-border-draghover);
+  background: var(--drop-zone-bg-draghover);
+}
+
+/* Disabled state */
+.drop-zone[aria-disabled="true"] {
+  border: var(--drop-zone-border-disabled);
+  background: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Upload icon */
+.drop-zone__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--drop-zone-lead-color);
+  transition: opacity 0.15s ease;
+}
+
+.drop-zone.is-drag-hover .drop-zone__icon {
+  color: var(--drop-zone-lead-color-draghover);
+}
+
+.drop-zone[aria-disabled="true"] .drop-zone__icon {
+  opacity: var(--drop-zone-icon-opacity-disabled);
+  color: var(--drop-zone-lead-color-disabled);
+}
+
+/* Text wrapper */
+.drop-zone__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--Text-text-content-gap, 8px);
+  align-self: stretch;
+}
+
+/* Lead text */
+.drop-zone__lead {
+  align-self: stretch;
+  color: var(--drop-zone-lead-color);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Text-typo-size-text-md, 16px);
+  font-weight: 500;
+  line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+  text-align: center;
+  margin: 0;
+}
+
+/* Helper text */
+.drop-zone__helper {
+  align-self: stretch;
+  color: var(--drop-zone-helper-color);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Text-typo-size-text-xs, 12px);
+  font-weight: 400;
+  line-height: var(--Line-Height-Text-line-heights-text-xs, 18px);
+  text-align: center;
+  margin: 0;
+}
+
+.drop-zone.is-drag-hover .drop-zone__lead {
+  color: var(--drop-zone-lead-color-draghover);
+}
+
+.drop-zone.is-drag-hover .drop-zone__helper {
+  color: var(--drop-zone-helper-color-draghover);
+}
+
+.drop-zone[aria-disabled="true"] .drop-zone__lead {
+  color: var(--drop-zone-lead-color-disabled);
+}
+
+.drop-zone[aria-disabled="true"] .drop-zone__helper {
+  color: var(--drop-zone-helper-color-disabled);
+}
+
+/* Browse Files trigger */
+.drop-zone__trigger {
+  display: flex;
+  height: var(--file-upload-trigger-height);
+  min-height: var(--file-upload-trigger-height);
+  max-height: var(--file-upload-trigger-height);
+  padding: 0 var(--file-upload-trigger-padding-x);
+  justify-content: center;
+  align-items: center;
+  gap: var(--file-upload-trigger-gap);
+  border-radius: var(--file-upload-trigger-radius);
+  border: none;
+  background: var(--drop-zone-trigger-bg);
+  color: var(--drop-zone-trigger-text-color);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--file-upload-trigger-font-size);
+  font-weight: var(--file-upload-trigger-font-weight);
+  line-height: var(--file-upload-trigger-line-height);
+  cursor: pointer;
+}
+
+.drop-zone__trigger:focus-visible {
+  outline: 2px solid var(--drop-zone-lead-color);
+  outline-offset: 2px;
+}
+
+.drop-zone.is-drag-hover .drop-zone__trigger,
+.drop-zone[aria-disabled="true"] .drop-zone__trigger {
+  background: var(--drop-zone-trigger-bg-draghover);
+  color: var(--drop-zone-trigger-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── 3. File Upload / Single ───────────────────────────────────────────── */
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--file-upload-gap);
+}
+
+/* Header: label + helper */
+.file-upload__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--Text-text-content-gap, 8px);
+  align-self: stretch;
+}
+
+.file-upload__label-row {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--Form-label-gap, 4px);
+  align-self: stretch;
+}
+
+.file-upload__label {
+  color: var(--file-upload-label-color);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Text-typo-size-text-md, 16px);
+  font-weight: 400;
+  line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+  margin: 0;
+  cursor: pointer;
+}
+
+.file-upload__helper {
+  align-self: stretch;
+  color: var(--file-upload-helper-color);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Text-typo-size-text-xs, 12px);
+  font-weight: 400;
+  line-height: var(--Line-Height-Text-line-heights-text-xs, 18px);
+  margin: 0;
+}
+
+/* Browse Files trigger — dark/primary */
+.file-upload__trigger {
+  display: flex;
+  height: var(--file-upload-trigger-height);
+  min-height: var(--file-upload-trigger-height);
+  max-height: var(--file-upload-trigger-height);
+  padding: 0 var(--file-upload-trigger-padding-x);
+  justify-content: center;
+  align-items: center;
+  gap: var(--file-upload-trigger-gap);
+  border-radius: var(--file-upload-trigger-radius);
+  border: none;
+  background: var(--file-upload-trigger-bg);
+  color: var(--file-upload-trigger-text-color);
+  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-size: var(--file-upload-trigger-font-size);
+  font-weight: var(--file-upload-trigger-font-weight);
+  line-height: var(--file-upload-trigger-line-height);
+  cursor: pointer;
+}
+
+.file-upload__trigger:focus-visible {
+  outline: 2px solid var(--file-upload-trigger-bg);
+  outline-offset: 2px;
+}
+
+/* File container — hidden until uploaded */
+.file-upload__file {
+  display: none;
+  align-self: stretch;
+  flex-direction: column;
+}
+
+.file-upload.is-uploaded .file-upload__file {
+  display: flex;
+}
+
+/* Disabled state — Single */
+.file-upload[aria-disabled="true"] {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.file-upload[aria-disabled="true"] .file-upload__label {
+  color: var(--file-upload-label-disabled-color);
+}
+
+.file-upload[aria-disabled="true"] .file-upload__helper {
+  color: var(--file-upload-helper-disabled-color);
+}
+
+.file-upload[aria-disabled="true"] .file-upload__trigger {
+  background: var(--file-upload-trigger-bg-disabled);
+  color: var(--file-upload-trigger-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* RTL — Single */
+[dir="rtl"] .file-upload {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .file-upload__header {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .file-upload__label-row {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .file-upload__label {
+  text-align: right;
+}
+
+[dir="rtl"] .file-upload__helper {
+  text-align: right;
+}
+
+/* ── 4. File Upload / Multiple ─────────────────────────────────────────── */
+
+.file-upload--multiple {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--file-upload-gap);
+}
+
+/* File list */
+.file-upload__files {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+/* RTL — Multiple */
+[dir="rtl"] .file-upload--multiple {
+  align-items: flex-end;
+}

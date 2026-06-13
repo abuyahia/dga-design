@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "component": "floating-button",
+  "generated": "2026-06-13",
+  "rules": [
+    {
+      "id": "FAB-STRUCT-001",
+      "severity": "error",
+      "category": "structure",
+      "description": "Root element must be <button>.",
+      "check": "Root element tag is 'button'.",
+      "fix": "Replace root element with <button>."
+    },
+    {
+      "id": "FAB-STRUCT-002",
+      "severity": "error",
+      "category": "structure",
+      "description": "Root element must have type='button'.",
+      "check": "Root <button> has attribute type='button'.",
+      "fix": "Add type='button' to the <button> element."
+    },
+    {
+      "id": "FAB-STRUCT-003",
+      "severity": "error",
+      "category": "structure",
+      "description": "Root element must have class 'fab'.",
+      "check": "Root element has class 'fab'.",
+      "fix": "Add class='fab' to the root element."
+    },
+    {
+      "id": "FAB-STRUCT-004",
+      "severity": "error",
+      "category": "structure",
+      "description": "Icon-only FAB must have aria-label or aria-labelledby.",
+      "check": "If no .fab__label child exists, button must have aria-label or aria-labelledby.",
+      "fix": "Add aria-label to describe the button action."
+    },
+    {
+      "id": "FAB-STRUCT-005",
+      "severity": "error",
+      "category": "structure",
+      "description": ".fab__icon must have aria-hidden='true'.",
+      "check": ".fab__icon has aria-hidden='true'.",
+      "fix": "Add aria-hidden='true' to .fab__icon."
+    },
+    {
+      "id": "FAB-STRUCT-006",
+      "severity": "error",
+      "category": "structure",
+      "description": ".fab__icon must contain an SVG element.",
+      "check": ".fab__icon contains at least one <svg> child.",
+      "fix": "Add inline SVG icon inside .fab__icon."
+    },
+    {
+      "id": "FAB-STATE-001",
+      "severity": "error",
+      "category": "state",
+      "description": "Disabled FAB must use the native 'disabled' attribute or aria-disabled='true'.",
+      "check": "Disabled FAB has [disabled] or [aria-disabled='true'].",
+      "fix": "Add disabled attribute to the <button> element."
+    },
+    {
+      "id": "FAB-STATE-002",
+      "severity": "warning",
+      "category": "state",
+      "description": "aria-disabled='true' alone does not prevent keyboard focus. Use [disabled] for full native behavior.",
+      "check": "If aria-disabled='true' is used without [disabled], verify JS focus prevention.",
+      "fix": "Prefer [disabled] over aria-disabled='true' for <button> elements."
+    },
+    {
+      "id": "FAB-STATE-003",
+      "severity": "warning",
+      "category": "state",
+      "description": "Selected/toggle state must use aria-pressed='true'.",
+      "check": "Selected FAB has aria-pressed='true'.",
+      "fix": "Add aria-pressed='true' to the selected FAB."
+    },
+    {
+      "id": "FAB-A11Y-001",
+      "severity": "error",
+      "category": "accessibility",
+      "description": "Focus ring must be visible. Do not suppress ::after on focus via CSS overrides.",
+      "check": "No CSS rule in component overrides .fab::after { display: none } or { opacity: 0 } on :focus.",
+      "fix": "Remove CSS that hides the focus ring on focus."
+    },
+    {
+      "id": "FAB-A11Y-002",
+      "severity": "warning",
+      "category": "accessibility",
+      "description": "Minimum touch target is 44×44px. Small FAB is 56px (passes). Do not reduce padding below 12px.",
+      "check": "Computed size of FAB is at least 44px in both dimensions.",
+      "fix": "Do not override --fab-padding-sm to a value that reduces the button below 44px diameter."
+    },
+    {
+      "id": "FAB-A11Y-003",
+      "severity": "warning",
+      "category": "accessibility",
+      "description": "Focus ring color may have insufficient contrast on dark page backgrounds. Review per usage context.",
+      "check": "Focus ring color (--fab-focus-ring-color) achieves ≥3:1 contrast ratio against the page background.",
+      "fix": "Apply --fab-focus-ring-color-on-color token (to be added) when FAB is on a dark background."
+    },
+    {
+      "id": "FAB-TOKEN-001",
+      "severity": "error",
+      "category": "tokens",
+      "description": "Component selectors must not use raw hex or rgba values.",
+      "check": "No hex (#) or rgba() values appear in .fab, .fab--*, .fab__* selectors.",
+      "fix": "Replace raw values with --fab-* tokens."
+    },
+    {
+      "id": "FAB-TOKEN-002",
+      "severity": "warning",
+      "category": "tokens",
+      "description": "Provisional --fab-* token definitions in :root must be migrated to token.css.",
+      "check": ":root { --fab-* } block exists only in floating-button.css (provisional).",
+      "fix": "Move all --fab-* definitions to token.css and remove the :root block from floating-button.css."
+    },
+    {
+      "id": "FAB-CSS-001",
+      "severity": "error",
+      "category": "css",
+      "description": "All classes used in template.html must exist in floating-button.css.",
+      "check": "fab, fab--lg, fab--primary-brand, fab--secondary-solid, fab--on-color, fab__icon, fab__label are defined in CSS.",
+      "fix": "Add missing class definitions to floating-button.css."
+    },
+    {
+      "id": "FAB-CSS-002",
+      "severity": "warning",
+      "category": "css",
+      "description": "fab::after must be present for focus ring. Removing it breaks accessibility.",
+      "check": ".fab::after selector exists in floating-button.css.",
+      "fix": "Restore .fab::after selector."
+    },
+    {
+      "id": "FAB-CSS-003",
+      "severity": "warning",
+      "category": "css",
+      "description": "Transition should only apply to background-color to avoid layout jank.",
+      "check": "transition on .fab targets background or background-color only.",
+      "fix": "Set transition: background var(--transition-fast) var(--ease-in-out)."
+    },
+    {
+      "id": "FAB-LAYOUT-001",
+      "severity": "warning",
+      "category": "layout",
+      "description": "FAB is not self-positioned. It must be positioned by a wrapper or layout system.",
+      "check": "floating-button.css does not set position: fixed or position: absolute on .fab.",
+      "fix": "Position the FAB via a parent wrapper. See contract.md section 8."
+    },
+    {
+      "id": "FAB-SHOWCASE-001",
+      "severity": "warning",
+      "category": "showcase",
+      "description": "Showcase must reference shared infrastructure files.",
+      "check": "showcases/index.html links token.css, _showcase/showcase.css, _showcase/showcase.js.",
+      "fix": "Add missing link/script references to showcases/index.html."
+    },
+    {
+      "id": "FAB-SHOWCASE-002",
+      "severity": "warning",
+      "category": "showcase",
+      "description": "Showcase body must declare data-current-component='floating-button'.",
+      "check": "<body data-current-component='floating-button'>.",
+      "fix": "Add data-current-component attribute to <body>."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "component": "divider",
+  "schema_version": "1.0.0",
+  "generated": "2026-06-12",
+  "rules": [
+
+    {
+      "id": "PLATFORM-CODE-DIVIDER-001",
+      "type": "structural",
+      "severity": "high",
+      "title": "Semantic divider must use <hr> or role='separator'",
+      "description": "When the divider represents a meaningful content boundary, it must use either a semantic <hr> element or an element with role='separator'. Using a plain <div> or <span> without role='separator' removes it from the accessibility tree.",
+      "check": "element.tagName === 'HR' or element.getAttribute('role') === 'separator'",
+      "remediation": "Replace <div class='divider'> with <hr class='divider'> for semantic use. For non-semantic contexts, add role='separator' to the element."
+    },
+
+    {
+      "id": "PLATFORM-CODE-DIVIDER-002",
+      "type": "accessibility",
+      "severity": "high",
+      "title": "Decorative divider must have role='none' and aria-hidden='true'",
+      "description": "When the divider is purely decorative (no thematic break meaning), it must have role='none' aria-hidden='true' to suppress AT announcement. Repeating decorative dividers without aria-hidden create noise in screen reader navigation.",
+      "check": "If decorative: element[role='none'][aria-hidden='true']",
+      "remediation": "Add role='none' aria-hidden='true' to <hr class='divider'> when the divider is purely decorative."
+    },
+
+    {
+      "id": "PLATFORM-CODE-DIVIDER-003",
+      "type": "accessibility",
+      "severity": "high",
+      "title": "Divider must not be focusable",
+      "description": "The divider is not an interactive element. Adding tabindex to a divider makes it focusable, which creates a keyboard navigation trap and announces a non-interactive element to screen reader users.",
+      "check": "!element.hasAttribute('tabindex')",
+      "remediation": "Remove any tabindex attribute from .divider elements."
+    },
+
+    {
+      "id": "PLATFORM-CODE-DIVIDER-004",
+      "type": "accessibility",
+      "severity": "medium",
+      "title": "Color must not be the sole means of conveying information",
+      "description": "The divider color variants (neutral, primary, alpha-white, white) must not be used as the only way to communicate meaning or state. Color-only information violates WCAG 1.4.1.",
+      "check": "Color variant usage does not convey meaning without an additional non-color indicator",
+      "remediation": "Pair color variants with structural context, labels, headings, or other non-color indicators when the color is intended to convey meaning."
+    },
+
+    {
+      "id": "PLATFORM-CODE-DIVIDER-005",
+      "type": "token",
+      "severity": "medium",
+      "title": "No hardcoded visual values in component CSS",
+      "description": "Component CSS must not use hardcoded hex, rgba, or pixel values outside of token fallbacks in var().",
+      "check": "No raw color or size values outside var(--divider-*, fallback) patterns",
+      "remediation": "Replace hardcoded values with component-level tokens (--divider-*). Fallbacks inside var() are acceptable pending token.css update."
+    },
+
+    {
+      "id": "PLATFORM-CODE-DIVIDER-006",
+      "type": "structural",
+      "severity": "medium",
+      "title": "Vertical divider must have aria-orientation='vertical'",
+      "description": "The separator role has aria-orientation='horizontal' by default. Vertical dividers must explicitly declare aria-orientation='vertical' for correct AT announcement.",
+      "check": ".divider--vertical[aria-orientation='vertical']",
+      "remediation": "Add aria-orientation='vertical' to any <hr> or role='separator' element that uses .divider--vertical."
+    },
+
+    {
+      "id": "PLATFORM-CODE-DIVIDER-007",
+      "type": "structural",
+      "severity": "low",
+      "title": "Divider must not contain child elements",
+      "description": "The .divider element must have no children. Adding child elements to a self-contained divider breaks the component contract and may cause rendering issues.",
+      "check": "element.children.length === 0",
+      "remediation": "Remove any child elements from .divider. The component is self-contained."
+    },
+
+    {
+      "id": "PLATFORM-CODE-DIVIDER-008",
+      "type": "token",
+      "severity": "low",
+      "title": "Component tokens should be defined in token.css",
+      "description": "The --divider-* token definitions should be formally defined in token.css under a Divider tokens section. Currently only active as inline var() fallbacks.",
+      "check": "token.css contains --divider-thickness, --divider-color-neutral, --divider-color-primary, --divider-color-alpha-white, --divider-color-white",
+      "remediation": "Add a '/* Divider tokens */' section to token.css with the tokens listed in analysis.md Missing Tokens."
+    },
+
+    {
+      "id": "PLATFORM-CODE-DIVIDER-009",
+      "type": "structural",
+      "severity": "low",
+      "title": "Alpha-white and white variants should be used on dark backgrounds only",
+      "description": "The --divider-alpha-white and --divider-white modifiers use white/near-white colors that will be invisible on white backgrounds.",
+      "check": ".divider--alpha-white or .divider--white used only on dark or colored background contexts",
+      "remediation": "Ensure .divider--alpha-white and .divider--white are only placed on dark or colored backgrounds. Add a background color context comment in the implementation."
+    }
+
+  ]
+}

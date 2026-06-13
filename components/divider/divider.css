@@ -1,0 +1,69 @@
+/* =============================================================================
+   Divider — Component Styles
+   Source: components/divider/mainifest.json
+   Contract: components/divider/divider.contract.md
+   Classification: Primitive
+   ─────────────────────────────────────────────────────────────────────────────
+   Tokens: All --divider-* tokens below are missing from token.css.
+           Fallback values are active inline.
+           Add to token.css before production:
+
+   --divider-thickness:        1px;
+   --divider-color-neutral:    var(--Border-border-neutral-primary, #D2D6DB);
+   --divider-color-primary:    var(--Border-border-primary, #1B8354);
+   --divider-color-alpha-white: var(--Alpha-alpha-white-30, rgba(255, 255, 255, 0.30));
+   --divider-color-white:      var(--Border-border-white, #FFF);
+   ============================================================================= */
+
+
+/* ── Base ──────────────────────────────────────────────────────────────────── */
+
+.divider {
+  display: block;
+  border: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+
+  /* Horizontal (default) */
+  height: var(--divider-thickness, 1px);
+  width: 100%;
+
+  /* Default color: Neutral */
+  background: var(--divider-color-neutral, #D2D6DB);
+}
+
+
+/* ── Direction: Vertical ───────────────────────────────────────────────────── */
+
+.divider--vertical {
+  height: 100%;
+  width: var(--divider-thickness, 1px);
+  align-self: stretch;
+}
+
+
+/* ── Color: Primary ────────────────────────────────────────────────────────── */
+
+.divider--primary {
+  /* TODO: --divider-color-primary missing in token.css. Proposed: var(--Border-border-primary, #1B8354). */
+  background: var(--divider-color-primary, #1B8354);
+}
+
+
+/* ── Color: Alpha White ────────────────────────────────────────────────────── */
+
+.divider--alpha-white {
+  /* TODO: --divider-color-alpha-white missing in token.css. Proposed: var(--Alpha-alpha-white-30, rgba(255,255,255,0.30)). */
+  /* For use on dark or colored backgrounds only. */
+  background: var(--divider-color-alpha-white, rgba(255, 255, 255, 0.30));
+}
+
+
+/* ── Color: White ──────────────────────────────────────────────────────────── */
+
+.divider--white {
+  /* TODO: --divider-color-white missing in token.css. Proposed: var(--Border-border-white, #FFF). */
+  /* For use on dark or colored backgrounds only. */
+  background: var(--divider-color-white, #FFF);
+}

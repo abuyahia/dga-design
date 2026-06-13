@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "inline-alert",
+  "generated": "2026-06-13",
+  "overall_status": "pending_audit",
+  "official_compliance_claim": false,
+  "_note": "Status 'mapped' means the component has been mapped to this criterion. It does not mean the criterion has been verified by a formal audit. Run audit-rules.json checks and update validation_status before changing overall_status.",
+
+  "standards": [
+
+    {
+      "id": "WCAG-2.1",
+      "name": "Web Content Accessibility Guidelines 2.1",
+      "level": "AA",
+      "source_status": "internal_mapping",
+      "official_reference": "https://www.w3.org/TR/WCAG21/",
+      "criteria": [
+        {
+          "id": "1.1.1",
+          "title": "Non-text Content",
+          "status": "mapped",
+          "evidence": "All icon SVGs carry aria-hidden='true'. The close button uses aria-label='Dismiss notification'. Type meaning (neutral/info/destructive/warning/success) is communicated via visible title text, not icon alone.",
+          "audit_rule_ids": ["IA-A11Y-001", "IA-A11Y-002"]
+        },
+        {
+          "id": "1.3.1",
+          "title": "Info and Relationships",
+          "status": "mapped",
+          "evidence": "role='alert' on the root communicates the notification role semantically. Title is a <p> element; body is a <p> element. Structural relationships are preserved in the DOM.",
+          "audit_rule_ids": ["IA-STRUCT-001"]
+        },
+        {
+          "id": "1.4.1",
+          "title": "Use of Color",
+          "status": "mapped",
+          "evidence": "Alert type is communicated by icon shape (help-circle, alert-02, tick-02) and title text in addition to color. Color is not the sole means of conveying meaning.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "1.4.3",
+          "title": "Contrast (Minimum)",
+          "status": "mapped",
+          "evidence": "Title: #1F2A37 on #FFF = ~14.5:1 (passes 4.5:1). Body: #384250 on #FFF = ~9.3:1 (passes). Color-bg variants use tinted backgrounds requiring per-deployment verification. Action button text: #161616 on #F3F4F6 = ~17:1 (passes).",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "1.4.11",
+          "title": "Non-text Contrast",
+          "status": "mapped",
+          "evidence": "Border on white background (#D2D6DB on #FFF) = ~1.6:1 — below 3:1 threshold. Accent bar provides additional visual differentiation. Requires per-deployment review for color-bg variants.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "2.1.1",
+          "title": "Keyboard",
+          "status": "mapped",
+          "evidence": "Close button is a native <button> element — keyboard operable by default (Tab to focus, Enter/Space to activate). Action buttons are native <button> elements. No custom keyboard interaction is required.",
+          "audit_rule_ids": ["IA-A11Y-003"]
+        },
+        {
+          "id": "2.4.3",
+          "title": "Focus Order",
+          "status": "mapped",
+          "evidence": "DOM order: icon-wrap (non-interactive), content (non-interactive), close button (interactive), actions (interactive). Focus order matches visual order for LTR. RTL mirrors visual order via dir='rtl'. Logical tab order is preserved.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "2.4.7",
+          "title": "Focus Visible",
+          "status": "mapped",
+          "evidence": "Close button and action buttons use :focus-visible with outline ring. Suppression of outline is caught by IA-A11Y-004.",
+          "audit_rule_ids": ["IA-A11Y-004"]
+        },
+        {
+          "id": "4.1.2",
+          "title": "Name, Role, Value",
+          "status": "mapped",
+          "evidence": "Role: role='alert' on root. Close button name: aria-label='Dismiss notification'. Action buttons: visible text label. Live region: aria-live='polite' by default. All interactive elements have computable accessible names.",
+          "audit_rule_ids": ["IA-A11Y-001", "IA-A11Y-002", "IA-STRUCT-001"]
+        },
+        {
+          "id": "4.1.3",
+          "title": "Status Messages",
+          "status": "mapped",
+          "evidence": "root uses role='alert' which is equivalent to aria-live='assertive' implicitly. For non-urgent alerts aria-live='polite' can be added. The component communicates status programmatically without requiring focus.",
+          "audit_rule_ids": ["IA-STRUCT-001"]
+        }
+      ]
+    },
+
+    {
+      "id": "PLATFORM-CODE",
+      "name": "Platform Code Design System Standards",
+      "source_status": "internal_mapping",
+      "criteria": [
+        {
+          "id": "PLATFORM-CODE-IA-001",
+          "title": "Component token usage",
+          "status": "mapped",
+          "evidence": "All CSS properties reference --inline-alert-* component-level tokens with global token fallbacks. No hardcoded hex, spacing, or radius values in component selectors.",
+          "audit_rule_ids": ["IA-TOKEN-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-IA-002",
+          "title": "Semantic HTML structure",
+          "status": "mapped",
+          "evidence": "Root is a div with role='alert'. Close button is a native <button>. Action buttons are native <button> elements. No ARIA overrides of native semantics.",
+          "audit_rule_ids": ["IA-STRUCT-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-IA-003",
+          "title": "RTL support",
+          "status": "mapped",
+          "evidence": "CSS logical properties (inset-inline-start, inset-inline-end, padding-inline) used throughout. [dir='rtl'] selectors handle content direction changes.",
+          "audit_rule_ids": ["IA-RTL-001"]
+        },
+        {
+          "id": "PLATFORM-CODE-IA-004",
+          "title": "Mobile responsive layout",
+          "status": "mapped",
+          "evidence": "Mobile layout triggered by .inline-alert--mobile modifier and @media (max-width: 768px). Action buttons become full-width at mobile size.",
+          "audit_rule_ids": []
+        },
+        {
+          "id": "PLATFORM-CODE-IA-005",
+          "title": "Focus ring visibility",
+          "status": "mapped",
+          "evidence": "Focus rings use :focus-visible on close button and action buttons. outline style defined in component CSS.",
+          "audit_rule_ids": ["IA-A11Y-004"]
+        }
+      ]
+    }
+
+  ],
+
+  "variant_compliance_notes": [
+    {
+      "variant": "destructive, white background",
+      "note": "Border (#D2D6DB on #FFF) does not meet WCAG 1.4.11 non-text contrast of 3:1. The accent bar and icon provide supplementary visual differentiation. Remediation: use a colored border for destructive type in white background mode (design decision pending)."
+    },
+    {
+      "variant": "all types, color background",
+      "note": "Tinted backgrounds require per-deployment verification of text contrast ratios against the specific background color values."
+    },
+    {
+      "variant": "destructive type",
+      "note": "Uses help-circle icon per Figma — icon name does not match semantic expectation for destructive/error. Design review pending. Accessibility note: type is still communicated by text, so no WCAG failure."
+    }
+  ]
+}

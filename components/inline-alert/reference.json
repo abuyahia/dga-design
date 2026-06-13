@@ -1,0 +1,174 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "inline-alert",
+    "description": "A dismissible inline notification that communicates system status, feedback, or contextual information using typed severity levels (neutral, info, destructive, warning, success) and optional action buttons.",
+    "classification": "Composite"
+  },
+  "source": {
+    "figma_export": "components/inline-alert/mainifest.json",
+    "figma_node_type": "COMPONENT_SET",
+    "figma_node_name": "Inline Alert",
+    "total_figma_variants": 40
+  },
+  "axes": ["type", "background", "mobile", "rtl"],
+  "axis_values": {
+    "type": ["neutral", "info", "destructive", "warning", "success"],
+    "background": ["white", "color"],
+    "mobile": [false, true],
+    "rtl": [false, true]
+  },
+  "variants": [
+    {
+      "type": "neutral",
+      "background": "white",
+      "css_modifiers": [],
+      "description": "Default neutral alert on white background"
+    },
+    {
+      "type": "info",
+      "background": "white",
+      "css_modifiers": ["inline-alert--info"],
+      "description": "Informational alert on white background"
+    },
+    {
+      "type": "destructive",
+      "background": "white",
+      "css_modifiers": ["inline-alert--destructive"],
+      "description": "Error/destructive alert on white background"
+    },
+    {
+      "type": "warning",
+      "background": "white",
+      "css_modifiers": ["inline-alert--warning"],
+      "description": "Warning alert on white background"
+    },
+    {
+      "type": "success",
+      "background": "white",
+      "css_modifiers": ["inline-alert--success"],
+      "description": "Success alert on white background"
+    },
+    {
+      "type": "neutral",
+      "background": "color",
+      "css_modifiers": ["inline-alert--color-bg"],
+      "description": "Neutral alert on tinted background"
+    },
+    {
+      "type": "info",
+      "background": "color",
+      "css_modifiers": ["inline-alert--info", "inline-alert--color-bg"],
+      "description": "Informational alert on tinted background with colored border"
+    },
+    {
+      "type": "destructive",
+      "background": "color",
+      "css_modifiers": ["inline-alert--destructive", "inline-alert--color-bg"],
+      "description": "Error/destructive alert on tinted background with colored border"
+    },
+    {
+      "type": "warning",
+      "background": "color",
+      "css_modifiers": ["inline-alert--warning", "inline-alert--color-bg"],
+      "description": "Warning alert on tinted background with colored border"
+    },
+    {
+      "type": "success",
+      "background": "color",
+      "css_modifiers": ["inline-alert--success", "inline-alert--color-bg"],
+      "description": "Success alert on tinted background with colored border"
+    }
+  ],
+  "rtl_strategy": {
+    "method": "dir_attribute",
+    "selector": "[dir=\"rtl\"] .inline-alert",
+    "note": "RTL is handled via CSS logical properties and [dir='rtl'] selectors. No separate modifier class is needed."
+  },
+  "mobile_strategy": {
+    "css_modifier": "inline-alert--mobile",
+    "breakpoint": "max-width: 768px",
+    "layout_changes": [
+      "Header becomes flex-column",
+      "Close button repositioned to absolute inset-inline-end: -8px",
+      "Action buttons become full-width (align-self: stretch)",
+      "Action buttons enlarge to height: 40px (lg size)"
+    ]
+  },
+  "discarded_axes": [
+    {
+      "axis": "rtl_class",
+      "reason": "RTL produces only layout direction changes achievable via CSS logical properties and [dir='rtl'] attribute selectors. No standalone CSS modifier class is needed."
+    }
+  ],
+  "anatomy": {
+    "root": ".inline-alert",
+    "accent_bar": ".inline-alert::before",
+    "header": ".inline-alert__header",
+    "icon_wrap": ".inline-alert__icon-wrap",
+    "icon": ".inline-alert__icon",
+    "content": ".inline-alert__content",
+    "title": ".inline-alert__title",
+    "body": ".inline-alert__body",
+    "close": ".inline-alert__close",
+    "actions": ".inline-alert__actions",
+    "action_primary": ".inline-alert__action.inline-alert__action--primary",
+    "action_secondary": ".inline-alert__action.inline-alert__action--secondary"
+  },
+  "type_tokens": {
+    "neutral": {
+      "icon_bg": "var(--Background-background-neutral-50, #F9FAFB)",
+      "accent_bg": "var(--Background-background-neutral-200, #E5E7EB)",
+      "root_bg_white": "var(--Background-background-notification-white, #FFF)",
+      "root_bg_color": "var(--Background-background-neutral-25, #FCFCFD)",
+      "border_white": "var(--Border-border-neutral-primary, #D2D6DB)",
+      "border_color": "var(--Border-border-neutral-primary, #D2D6DB)",
+      "icon_name": "help-circle"
+    },
+    "info": {
+      "icon_bg": "var(--Icon-background-info-light, #EFF8FF)",
+      "accent_bg": "var(--Background-background-info, #1570EF)",
+      "root_bg_white": "var(--Background-background-notification-white, #FFF)",
+      "root_bg_color": "var(--Background-background-info-25, #F5FAFF)",
+      "border_white": "var(--Border-border-neutral-primary, #D2D6DB)",
+      "border_color": "var(--Border-border-info-light, #B2DDFF)",
+      "icon_name": "help-circle"
+    },
+    "destructive": {
+      "icon_bg": "var(--Icon-background-error-light, #FEF3F2)",
+      "accent_bg": "var(--Background-background-error, #D92D20)",
+      "root_bg_white": "var(--Background-background-notification-white, #FFF)",
+      "root_bg_color": "var(--Background-background-error-25, #FFFBFA)",
+      "border_white": "var(--Border-border-neutral-primary, #D2D6DB)",
+      "border_color": "var(--Border-border-error-light, #FECDCA)",
+      "icon_name": "help-circle",
+      "_note": "Destructive type uses help-circle icon per Figma manifest. Flag for design review — alert-02 or error-specific icon may be more semantically appropriate."
+    },
+    "warning": {
+      "icon_bg": "var(--Icon-background-warning-light, #FFFAEB)",
+      "accent_bg": "var(--Background-background-warning, #DC6803)",
+      "root_bg_white": "var(--Background-background-notification-white, #FFF)",
+      "root_bg_color": "var(--Background-background-warning-25, #FFFCF5)",
+      "border_white": "var(--Border-border-neutral-primary, #D2D6DB)",
+      "border_color": "var(--Border-border-warning-light, #FEDF89)",
+      "icon_name": "alert-02"
+    },
+    "success": {
+      "icon_bg": "var(--Icon-background-success-light, #ECFDF3)",
+      "accent_bg": "var(--Background-background-success, #079455)",
+      "root_bg_white": "var(--Background-background-notification-white, #FFF)",
+      "root_bg_color": "var(--Background-background-success-25, #F6FEF9)",
+      "border_white": "var(--Border-border-neutral-primary, #D2D6DB)",
+      "border_color": "var(--Border-border-success-light, #ABEFC6)",
+      "icon_name": "tick-02"
+    }
+  },
+  "implementation_notes": [
+    "Vertical accent bar implemented as ::before pseudo-element. Fixed Figma height (132px) replaced with inset: 0; height: 100%.",
+    "Action buttons use inline-alert-scoped styles, not .btn classes. Optional dependency on Button component documented in contract.md.",
+    "Icon is an implementation slot. Production use should use the design system icon component.",
+    "RTL uses CSS logical properties (inset-inline-start, inset-inline-end) for native RTL support.",
+    "Mobile layout reflow is triggered by .inline-alert--mobile modifier or @media (max-width: 768px).",
+    "Mobile close button uses position: absolute; inset-inline-end: -8px as per Figma exact value."
+  ]
+}

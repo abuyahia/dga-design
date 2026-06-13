@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0.0",
+  "component": "floating-button",
+  "generated": "2026-06-13",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "audit_note": "No external audit completed. All compliance items are internal self-assessments.",
+
+  "checks": [
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-001",
+      "category": "structure",
+      "description": "Component root must be a <button> element.",
+      "status": "pass",
+      "notes": "template.html uses <button type='button' class='fab'>."
+    },
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-002",
+      "category": "structure",
+      "description": "type='button' must always be set to prevent accidental form submission.",
+      "status": "pass",
+      "notes": "All template examples include type='button'."
+    },
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-003",
+      "category": "structure",
+      "description": "Icon-only FAB must have an accessible name via aria-label or aria-labelledby.",
+      "status": "pass",
+      "notes": "Contract section 6 requires aria-label for icon-only mode. All icon-only template examples include aria-label."
+    },
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-004",
+      "category": "structure",
+      "description": "Icon slot must have aria-hidden='true'.",
+      "status": "pass",
+      "notes": "fab__icon has aria-hidden='true' in all template examples."
+    },
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-005",
+      "category": "states",
+      "description": "All six Figma states (Default, Hovered, Focused, Pressed, Disabled, Selected) must be implemented.",
+      "status": "pass",
+      "notes": "All states implemented via CSS selectors. See floating-button.css."
+    },
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-006",
+      "category": "states",
+      "description": "Disabled state must use the 'disabled' HTML attribute or aria-disabled='true'.",
+      "status": "pass",
+      "notes": "Both [disabled] and [aria-disabled='true'] selectors are supported in CSS."
+    },
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-007",
+      "category": "states",
+      "description": "Selected/toggle state must use aria-pressed='true'.",
+      "status": "pass",
+      "notes": "CSS selector .fab[aria-pressed='true'] implements selected state."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-001",
+      "category": "accessibility",
+      "description": "Focus indicator must be visible and meet WCAG 2.2 Focus Appearance requirements.",
+      "status": "partial",
+      "notes": "Focus ring: 3px solid, extends 5px beyond button. Color: --fab-focus-ring-color (--gray-950 = #0D121C). On white/light backgrounds: contrast ratio ~19:1 (pass). On dark page backgrounds: potentially insufficient. Risk documented in analysis.md."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-002",
+      "category": "accessibility",
+      "description": "Disabled state must not receive keyboard focus.",
+      "status": "pass",
+      "notes": "The 'disabled' attribute natively prevents focus. aria-disabled='true' relies on CSS pointer-events: none and JS prevention — documented in contract."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-003",
+      "category": "accessibility",
+      "description": "Interactive element must have a minimum touch target of 44×44px.",
+      "status": "partial",
+      "notes": "Small size diameter: 56px (icon 24px + padding 16px×2). Passes. The touch target is the button itself; no additional wrapper needed."
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-001",
+      "category": "tokens",
+      "description": "Component CSS must use component-level semantic tokens, not raw primitives.",
+      "status": "partial",
+      "notes": "Component selectors use --fab-* and --_fab-* (local) tokens only. Provisional :root block maps --fab-* to primitives. Block must be migrated to token.css."
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-002",
+      "category": "tokens",
+      "description": "No hardcoded hex or rgba values in component selectors.",
+      "status": "pass",
+      "notes": "All component selectors use var(--fab-*) or var(--_fab-*). rgba values exist only in the provisional :root token definition block."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-001",
+      "category": "states",
+      "description": "State deltas must be CSS selectors, not duplicated HTML markup.",
+      "status": "pass",
+      "notes": "All six states are CSS-selector driven. No duplicated markup."
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-001",
+      "category": "accessibility",
+      "description": "Focus ring must not be removed or suppressed by non-focus states.",
+      "status": "pass",
+      "notes": "Focus ring (::after) is only suppressed during :active and [disabled] — both intentional per Figma."
+    },
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-008",
+      "category": "structure",
+      "description": "Component must support all three style variants (primary-neutral, primary-brand, secondary-solid).",
+      "status": "pass",
+      "notes": "All three styles implemented. primary-neutral is default. primary-brand: .fab--primary-brand. secondary-solid: .fab--secondary-solid."
+    },
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-009",
+      "category": "structure",
+      "description": "Component must support on-color context modifier.",
+      "status": "pass",
+      "notes": ".fab--on-color modifier implemented. Works independently and combined with style modifiers."
+    },
+    {
+      "id": "PLATFORM-CODE-FLOATING-BUTTON-010",
+      "category": "structure",
+      "description": "Component must support both size variants (small, large).",
+      "status": "pass",
+      "notes": "Small is default. .fab--lg for large."
+    }
+  ]
+}

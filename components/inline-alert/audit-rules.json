@@ -1,0 +1,259 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "inline-alert",
+  "selector_root": ".inline-alert",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "IA-A11Y-001",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Inline alert must have role='alert'",
+      "description": "The root element of every inline-alert must carry role='alert' to communicate its notification role to assistive technologies. Without this, screen readers may not announce the alert content.",
+      "target": ".inline-alert",
+      "expected": "element has role='alert'",
+      "check": {
+        "type": "attribute_required",
+        "attribute": "role",
+        "value": "alert"
+      },
+      "message": "Inline alert root is missing role='alert'. Screen readers will not identify this element as a notification.",
+      "fix": "Add role=\"alert\" to the root .inline-alert element.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-IA-002"]
+    },
+
+    {
+      "id": "IA-A11Y-002",
+      "standard_id": "WCAG-2.1-1.1.1",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Close button must have an accessible label",
+      "description": "The close button (.inline-alert__close) has no visible text. It must have an aria-label to provide an accessible name for screen reader users.",
+      "target": ".inline-alert__close",
+      "expected": "element has non-empty aria-label attribute",
+      "check": {
+        "type": "aria_attribute_required",
+        "attribute": "aria-label",
+        "logic": "non_empty"
+      },
+      "message": "Close button is missing aria-label. Screen reader users cannot determine the button purpose.",
+      "fix": "Add aria-label=\"Dismiss notification\" to the .inline-alert__close button element.",
+      "standard_refs": ["WCAG-2.1-1.1.1", "WCAG-2.1-4.1.2", "PLATFORM-CODE-IA-002"]
+    },
+
+    {
+      "id": "IA-A11Y-003",
+      "standard_id": "WCAG-2.1-2.1.1",
+      "rule_type": "element_type",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Close button must be a native button element",
+      "description": "The close button must be a native <button> element (or <input type='button'>) to ensure keyboard operability without additional JavaScript. Using a <div> or <span> as the close trigger requires manual ARIA and keyboard event handling.",
+      "target": ".inline-alert__close",
+      "expected": "element tag is 'button' or 'input[type=button]'",
+      "check": {
+        "type": "element_type",
+        "allowed_tags": ["button", "input"]
+      },
+      "message": "Close button is not a native <button> element. Keyboard users may not be able to activate it.",
+      "fix": "Use <button type=\"button\" class=\"inline-alert__close\" aria-label=\"Dismiss notification\"> instead of a div or span.",
+      "standard_refs": ["WCAG-2.1-2.1.1", "PLATFORM-CODE-IA-002"]
+    },
+
+    {
+      "id": "IA-A11Y-004",
+      "standard_id": "WCAG-2.1-2.4.7",
+      "rule_type": "css_rule_forbidden",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Focus must not be suppressed on interactive elements",
+      "description": "The close button and action buttons must never have outline: none or outline: 0 without a :focus-visible replacement. Suppressing focus indicators breaks keyboard navigation for users who rely on visible focus.",
+      "target": ".inline-alert__close, .inline-alert__action",
+      "expected": "element does not suppress focus outline without :focus-visible replacement",
+      "check": {
+        "type": "css_rule_forbidden",
+        "forbidden_patterns": [
+          "outline: none",
+          "outline: 0",
+          "outline-width: 0"
+        ],
+        "exception": ":focus-visible replacement must exist"
+      },
+      "message": "Focus outline is suppressed on an interactive element inside inline-alert. This breaks keyboard navigation.",
+      "fix": "Remove outline: none or replace with a :focus-visible selector that provides a visible focus indicator.",
+      "standard_refs": ["WCAG-2.1-2.4.7", "PLATFORM-CODE-IA-005"]
+    },
+
+    {
+      "id": "IA-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-IA-002",
+      "rule_type": "element_required",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Inline alert must contain a title element",
+      "description": "Every inline-alert must contain at least one .inline-alert__title element. An inline-alert without a title has no accessible content for screen reader users.",
+      "target": ".inline-alert",
+      "expected": "element contains at least one .inline-alert__title child",
+      "check": {
+        "type": "element_required",
+        "selector": ".inline-alert__title",
+        "min_count": 1
+      },
+      "message": "Inline alert is missing a .inline-alert__title element. The alert has no accessible title.",
+      "fix": "Add <p class=\"inline-alert__title\">Alert message here</p> inside .inline-alert__content.",
+      "standard_refs": ["PLATFORM-CODE-IA-002"]
+    },
+
+    {
+      "id": "IA-STRUCT-002",
+      "standard_id": "PLATFORM-CODE-IA-002",
+      "rule_type": "element_required",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Inline alert must contain an icon wrap",
+      "description": "Every inline-alert must contain a .inline-alert__icon-wrap element. This provides the type-indicating visual (colored circle with icon).",
+      "target": ".inline-alert",
+      "expected": "element contains .inline-alert__icon-wrap",
+      "check": {
+        "type": "element_required",
+        "selector": ".inline-alert__icon-wrap",
+        "min_count": 1
+      },
+      "message": "Inline alert is missing .inline-alert__icon-wrap. The type indicator circle is absent.",
+      "fix": "Add <div class=\"inline-alert__icon-wrap\"><svg class=\"inline-alert__icon\" aria-hidden=\"true\">...</svg></div> inside .inline-alert__header.",
+      "standard_refs": ["PLATFORM-CODE-IA-002"]
+    },
+
+    {
+      "id": "IA-STRUCT-003",
+      "standard_id": "PLATFORM-CODE-IA-002",
+      "rule_type": "element_type",
+      "category": "structure",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Action buttons must be native button elements",
+      "description": "Elements with class .inline-alert__action must be native <button> or <a> elements. Using a <div> or <span> as an action trigger requires manual keyboard and ARIA handling.",
+      "target": ".inline-alert__action",
+      "expected": "element tag is 'button', 'input', or 'a'",
+      "check": {
+        "type": "element_type",
+        "allowed_tags": ["button", "input", "a"]
+      },
+      "message": "An inline-alert action is not a native interactive element. Keyboard accessibility may be broken.",
+      "fix": "Use <button type=\"button\" class=\"inline-alert__action inline-alert__action--primary\"> for action triggers.",
+      "standard_refs": ["WCAG-2.1-2.1.1", "PLATFORM-CODE-IA-002"]
+    },
+
+    {
+      "id": "IA-STRUCT-004",
+      "standard_id": "PLATFORM-CODE-IA-002",
+      "rule_type": "aria_attribute_forbidden",
+      "category": "structure",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Icon SVGs must have aria-hidden",
+      "description": "All SVG elements inside .inline-alert__icon-wrap and .inline-alert__close must carry aria-hidden='true'. Icon SVGs are decorative — they must not pollute the accessibility tree with unnamed or confusing content.",
+      "target": ".inline-alert__icon-wrap svg, .inline-alert__close svg",
+      "expected": "svg elements have aria-hidden='true'",
+      "check": {
+        "type": "attribute_required",
+        "attribute": "aria-hidden",
+        "value": "true"
+      },
+      "message": "Icon SVG is missing aria-hidden='true'. It may pollute the accessibility tree.",
+      "fix": "Add aria-hidden=\"true\" and focusable=\"false\" to all icon SVG elements inside .inline-alert__icon-wrap and .inline-alert__close.",
+      "standard_refs": ["WCAG-2.1-1.1.1", "PLATFORM-CODE-IA-002"]
+    },
+
+    {
+      "id": "IA-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-IA-001",
+      "rule_type": "css_rule_forbidden",
+      "category": "token",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "No hardcoded hex or pixel values in component CSS",
+      "description": "Component CSS must use --inline-alert-* tokens with primitive token fallbacks. Hardcoded hex, rgba, pixel spacing, or radius values in component selectors create token drift risk when primitives are renamed.",
+      "target": ".inline-alert, .inline-alert *",
+      "expected": "no hardcoded color, spacing, or radius values outside CSS custom property definitions",
+      "check": {
+        "type": "css_rule_forbidden",
+        "forbidden_patterns": [
+          "background: #",
+          "color: #",
+          "border-color: #",
+          "background-color: #"
+        ],
+        "exception": "CSS custom property fallback values (inside var()) are acceptable"
+      },
+      "message": "Hardcoded hex value found in inline-alert CSS. Replace with a component-level or global token.",
+      "fix": "Replace hardcoded values with var(--inline-alert-[property], var(--global-token, fallback)).",
+      "standard_refs": ["PLATFORM-CODE-IA-001"]
+    },
+
+    {
+      "id": "IA-RTL-001",
+      "standard_id": "PLATFORM-CODE-IA-003",
+      "rule_type": "css_rule_required",
+      "category": "rtl",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Use logical properties for directional CSS",
+      "description": "Directional CSS properties (left, right, padding-left, padding-right, margin-left, margin-right) must be replaced with their CSS logical property equivalents (inset-inline-start, inset-inline-end, padding-inline-start, padding-inline-end) to support RTL layouts without duplicate overrides.",
+      "target": ".inline-alert, .inline-alert *",
+      "expected": "no physical directional properties (left, right, etc.) in component selectors outside of ::before/::after that have [dir='rtl'] overrides",
+      "check": {
+        "type": "css_rule_forbidden",
+        "forbidden_patterns": [
+          "left: ",
+          "right: ",
+          "padding-left: ",
+          "padding-right: ",
+          "margin-left: ",
+          "margin-right: "
+        ],
+        "exception": "[dir='rtl'] overrides are acceptable"
+      },
+      "message": "Physical directional property found in inline-alert CSS. Replace with logical property equivalent.",
+      "fix": "Replace 'left' with 'inset-inline-start', 'right' with 'inset-inline-end', 'padding-left' with 'padding-inline-start', etc.",
+      "standard_refs": ["PLATFORM-CODE-IA-003"]
+    },
+
+    {
+      "id": "IA-A11Y-005",
+      "standard_id": "WCAG-2.1-4.1.3",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Inline alert should declare aria-live",
+      "description": "For programmatically injected alerts (added to DOM after page load), the root must carry aria-live='polite' or aria-live='assertive' to ensure screen readers announce the content. role='alert' implies aria-live='assertive' — if polite announcement is preferred, set aria-live='polite' explicitly.",
+      "target": ".inline-alert",
+      "expected": "element has aria-live attribute OR role='alert' (which implies assertive)",
+      "check": {
+        "type": "attribute_required",
+        "logic": "any_of",
+        "conditions": [
+          "element has aria-live='polite'",
+          "element has aria-live='assertive'",
+          "element has role='alert'"
+        ]
+      },
+      "message": "Inline alert does not have an aria-live declaration. Dynamically injected alerts may not be announced by screen readers.",
+      "fix": "Add aria-live=\"polite\" to the root .inline-alert element (or rely on role='alert' for assertive behavior).",
+      "standard_refs": ["WCAG-2.1-4.1.3", "PLATFORM-CODE-IA-002"]
+    }
+
+  ]
+}

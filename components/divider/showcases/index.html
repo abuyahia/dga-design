@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Divider — Platform Code Design System</title>
+
+    <link rel="stylesheet" href="../../../token.css" />
+    <link rel="stylesheet" href="../divider.css" />
+    <link rel="stylesheet" href="../../_showcase/showcase.css" />
+    <script src="../../_showcase/showcase.js" defer></script>
+
+    <style>
+      /* ── Divider showcase helpers (component-specific only) ──────────── */
+
+      /* Spacer rows to give horizontal dividers visible context */
+      .demo-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 12px 0;
+        font-size: 13px;
+        color: var(--gray-500, #6C737F);
+        font-family: var(--font-sans, system-ui, sans-serif);
+      }
+
+      .demo-row--block {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .demo-label {
+        font-size: 13px;
+        color: var(--gray-600, #4D5761);
+      }
+
+      /* Vertical divider needs a height context */
+      .demo-vertical-host {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: 48px;
+        font-size: 13px;
+        color: var(--gray-500, #6C737F);
+        font-family: var(--font-sans, system-ui, sans-serif);
+      }
+
+      /* Dark background for on-color variants */
+      .on-dark {
+        background: var(--gray-900, #0D121C);
+        border-radius: 6px;
+        padding: 20px 24px;
+        color: var(--white, #FFF);
+        font-size: 13px;
+        font-family: var(--font-sans, system-ui, sans-serif);
+      }
+
+      .on-color {
+        background: var(--sa-700, #14573A);
+        border-radius: 6px;
+        padding: 20px 24px;
+        color: var(--white, #FFF);
+        font-size: 13px;
+        font-family: var(--font-sans, system-ui, sans-serif);
+      }
+
+      .on-dark .demo-row,
+      .on-color .demo-row {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .on-dark .demo-vertical-host,
+      .on-color .demo-vertical-host {
+        color: rgba(255, 255, 255, 0.6);
+      }
+    </style>
+  </head>
+
+  <body data-showcase data-current-component="divider" data-showcase-title="Divider">
+    <div data-showcase-shell>
+      <main data-showcase-content>
+        <div class="page">
+
+
+          <!-- ── Section: Horizontal / Color variants ─────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">Horizontal — Color Variants</h2>
+
+            <div class="showcase">
+
+              <div class="showcase__row"
+                data-preview='<div class="demo-row demo-row--block"><span class="demo-label">Above content</span><hr class="divider" /><span class="demo-label">Below content</span></div>'
+                data-code='<hr class="divider" />'>
+                <span class="showcase__label">Neutral</span>
+                <div class="demo-row demo-row--block">
+                  <span class="demo-label">Above content</span>
+                  <hr class="divider" />
+                  <span class="demo-label">Below content</span>
+                </div>
+              </div>
+
+              <div class="showcase__row"
+                data-code='<hr class="divider divider--primary" />'>
+                <span class="showcase__label">Primary</span>
+                <div class="demo-row demo-row--block">
+                  <span class="demo-label">Above content</span>
+                  <hr class="divider divider--primary" />
+                  <span class="demo-label">Below content</span>
+                </div>
+              </div>
+
+              <div class="showcase__row" style="padding: 0; overflow: hidden; border-radius: inherit;">
+                <div class="on-dark" style="width: 100%; border-radius: 0;">
+                  <div style="margin-bottom: 4px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.5;">Alpha White — on dark background</div>
+                  <div class="demo-row demo-row--block" style="padding-top: 8px;">
+                    <span>Above content</span>
+                    <hr class="divider divider--alpha-white" />
+                    <span>Below content</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="showcase__row" style="padding: 0; overflow: hidden; border-radius: inherit;">
+                <div class="on-dark" style="width: 100%; border-radius: 0;">
+                  <div style="margin-bottom: 4px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.5;">White — on dark background</div>
+                  <div class="demo-row demo-row--block" style="padding-top: 8px;">
+                    <span>Above content</span>
+                    <hr class="divider divider--white" />
+                    <span>Below content</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- ── Section: Vertical / Color variants ─────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">Vertical — Color Variants</h2>
+            <p class="variant__note" style="font-size:13px;color:var(--gray-500,#6C737F);margin-bottom:8px;">Vertical dividers require a parent container with a defined height.</p>
+
+            <div class="showcase">
+
+              <div class="showcase__row"
+                data-code='<hr class="divider divider--vertical" aria-orientation="vertical" />'>
+                <span class="showcase__label">Neutral</span>
+                <div class="demo-vertical-host">
+                  <span>Left</span>
+                  <hr class="divider divider--vertical" aria-orientation="vertical" />
+                  <span>Right</span>
+                </div>
+              </div>
+
+              <div class="showcase__row"
+                data-code='<hr class="divider divider--vertical divider--primary" aria-orientation="vertical" />'>
+                <span class="showcase__label">Primary</span>
+                <div class="demo-vertical-host">
+                  <span>Left</span>
+                  <hr class="divider divider--vertical divider--primary" aria-orientation="vertical" />
+                  <span>Right</span>
+                </div>
+              </div>
+
+              <div class="showcase__row" style="padding: 0; overflow: hidden; border-radius: inherit;">
+                <div class="on-dark" style="width: 100%; border-radius: 0;">
+                  <div style="margin-bottom: 8px; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.5;">Alpha White + White — on dark background</div>
+                  <div class="demo-vertical-host">
+                    <span>Alpha</span>
+                    <hr class="divider divider--vertical divider--alpha-white" aria-orientation="vertical" />
+                    <span>White</span>
+                    <hr class="divider divider--vertical divider--white" aria-orientation="vertical" />
+                    <span>End</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- ── Section: Semantic vs Decorative ────────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">Semantic vs. Decorative</h2>
+
+            <div class="showcase">
+
+              <div class="showcase__row"
+                data-code='<hr class="divider" />'>
+                <span class="showcase__label">Semantic</span>
+                <div class="demo-row demo-row--block">
+                  <span class="demo-label">Section A — <code style="font-size:11px;">&lt;hr&gt;</code> represents a thematic break</span>
+                  <hr class="divider" />
+                  <span class="demo-label">Section B</span>
+                </div>
+              </div>
+
+              <div class="showcase__row"
+                data-code='<hr class="divider" role="none" aria-hidden="true" />'>
+                <span class="showcase__label">Decorative</span>
+                <div class="demo-row demo-row--block">
+                  <span class="demo-label">Purely visual — <code style="font-size:11px;">aria-hidden="true"</code> suppresses AT</span>
+                  <hr class="divider" role="none" aria-hidden="true" />
+                  <span class="demo-label">No thematic break implied</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- ── Section: In-context examples ─────────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">In-context Examples</h2>
+
+            <div class="showcase">
+
+              <!-- Between list items -->
+              <div class="showcase__row"
+                data-code='<ul style="list-style:none;padding:0;">
+  <li style="padding:12px 0;">Item one</li>
+  <hr class="divider" role="none" aria-hidden="true" />
+  <li style="padding:12px 0;">Item two</li>
+  <hr class="divider" role="none" aria-hidden="true" />
+  <li style="padding:12px 0;">Item three</li>
+</ul>'>
+                <span class="showcase__label">List items</span>
+                <ul style="list-style:none;padding:0;width:240px;font-size:14px;font-family:var(--font-sans,system-ui,sans-serif);color:var(--gray-700,#374151);">
+                  <li style="padding:12px 0;">Item one</li>
+                  <hr class="divider" role="none" aria-hidden="true" />
+                  <li style="padding:12px 0;">Item two</li>
+                  <hr class="divider" role="none" aria-hidden="true" />
+                  <li style="padding:12px 0;">Item three</li>
+                </ul>
+              </div>
+
+              <!-- Inline / horizontal flex layout with vertical divider -->
+              <div class="showcase__row"
+                data-code='<div style="display:flex;align-items:center;gap:16px;height:32px;">
+  <span>Home</span>
+  <hr class="divider divider--vertical" aria-orientation="vertical" />
+  <span>About</span>
+  <hr class="divider divider--vertical" aria-orientation="vertical" />
+  <span>Contact</span>
+</div>'>
+                <span class="showcase__label">Nav breadcrumb</span>
+                <div style="display:flex;align-items:center;gap:16px;height:32px;font-size:14px;font-family:var(--font-sans,system-ui,sans-serif);color:var(--gray-700,#374151);">
+                  <span>Home</span>
+                  <hr class="divider divider--vertical" aria-orientation="vertical" />
+                  <span>About</span>
+                  <hr class="divider divider--vertical" aria-orientation="vertical" />
+                  <span>Contact</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+          <!-- ── Section: RTL ──────────────────────────────────────────── -->
+          <section class="variant">
+            <h2 class="variant__title">RTL</h2>
+            <p class="variant__note" style="font-size:13px;color:var(--gray-500,#6C737F);margin-bottom:8px;">Dividers are direction-neutral. No visual change in RTL.</p>
+
+            <div class="showcase">
+
+              <div class="showcase__row"
+                data-code='<hr class="divider" />'>
+                <span class="showcase__label">Horizontal RTL</span>
+                <div class="demo-row demo-row--block" dir="rtl">
+                  <span class="demo-label" style="text-align:right;">المحتوى أعلاه</span>
+                  <hr class="divider" />
+                  <span class="demo-label" style="text-align:right;">المحتوى أدناه</span>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

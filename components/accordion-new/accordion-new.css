@@ -1,0 +1,254 @@
+/* ==========================================================================
+   accordion-new.css — Accordion Component
+   Platform Code Design System
+   --------------------------------------------------------------------------
+   Source: components/accordion-new/mainifest-1.json
+           components/accordion-new/mainifest-2.json
+   Classification: Primitive
+   ========================================================================== */
+
+/* ── 1. Component token bridge ───────────────────────────────────────────── */
+/* TODO: all --accordion-* tokens below are pending addition to token.css.   */
+/* Fallback values match Figma source. Remove fallbacks once tokens land.     */
+
+.accordion {
+  /* Colors */
+  --accordion-border-color: var(--Border-border-neutral-primary, #D2D6DB);
+  --accordion-title-color: var(--Text-text-default, #161616);
+  --accordion-title-color-disabled: var(--Global-text-default-disabled, #9DA4AE);
+  --accordion-content-color: var(--Text-text-primary-paragraph, #384250);
+  --accordion-bg-hovered: var(--Button-button-background-neutral-hovered, #F3F4F6);
+  --accordion-bg-pressed: var(--Button-button-background-neutral-pressed, #E5E7EB);
+  --accordion-focus-ring-color: var(--Border-border-black, #161616);
+  --accordion-focus-ring-width: 2px;
+
+  /* Typography */
+  --accordion-title-font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  --accordion-title-font-size: var(--Size-Text-typo-size-text-md, 16px);
+  --accordion-title-font-weight: 600;
+  --accordion-title-line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+
+  --accordion-content-font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  --accordion-content-font-size: var(--Size-Text-typo-size-text-md, 16px);
+  --accordion-content-font-weight: 400;
+  --accordion-content-line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+
+  /* Spacing — size defaults to Large */
+  --accordion-padding-block: var(--Global-spacing-xl, 16px);
+  --accordion-padding-inline: var(--Global-spacing-xl, 16px);
+  --accordion-gap: var(--Global-spacing-xl, 16px);
+  --accordion-icon-size: 16px;
+
+  /* Content panel */
+  --accordion-content-padding-top: var(--Global-spacing-md, 8px);
+  --accordion-content-padding-bottom: var(--Global-spacing-3xl, 24px);
+  --accordion-content-icon-indent: var(--Global-spacing-6xl, 48px);
+  --accordion-content-icon-indent-flush: var(--Global-spacing-4xl, 32px);
+  --accordion-content-gap: var(--Global-spacing-md, 8px);
+
+  /* TODO: --accordion-transition-duration missing in token.css. Proposed: var(--transition-fast) */
+  --accordion-transition-duration: 200ms;
+  /* TODO: --accordion-transition-easing missing in token.css. Proposed: var(--ease-in-out) */
+  --accordion-transition-easing: ease-in-out;
+}
+
+/* ── 2. Root ─────────────────────────────────────────────────────────────── */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  border-top: 1px solid var(--accordion-border-color);
+}
+
+/* ── 3. Trigger ──────────────────────────────────────────────────────────── */
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--accordion-gap);
+  padding-block: var(--accordion-padding-block);
+  padding-inline: var(--accordion-padding-inline);
+  align-self: stretch;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+
+  color: var(--accordion-title-color);
+  font-family: var(--accordion-title-font-family);
+  font-size: var(--accordion-title-font-size);
+  font-weight: var(--accordion-title-font-weight);
+  line-height: var(--accordion-title-line-height);
+  text-align: start;
+}
+
+/* ── 4. Interaction layer (hover / pressed background) ───────────────────── */
+/* Mapped from Figma: Background RECTANGLE, position:absolute, mix-blend-mode:multiply */
+/* mix-blend-mode:multiply over white = flat color — not reproduced in CSS    */
+
+.accordion__trigger::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+}
+
+.accordion__trigger:hover:not([disabled])::before {
+  background: var(--accordion-bg-hovered);
+}
+
+.accordion__trigger:active:not([disabled])::before {
+  background: var(--accordion-bg-pressed);
+}
+
+/* ── 5. Focus ring ───────────────────────────────────────────────────────── */
+/* Non-flush: inset outline on the trigger itself                             */
+
+.accordion__trigger:focus-visible,
+.accordion__trigger:focus {
+  outline: var(--accordion-focus-ring-width) solid var(--accordion-focus-ring-color);
+  outline-offset: -2px;
+}
+
+/* ── 6. Title ────────────────────────────────────────────────────────────── */
+
+.accordion__title {
+  flex: 1 0 0;
+  position: relative;
+  z-index: 1;
+  text-align: start;
+}
+
+/* ── 7. Icon ─────────────────────────────────────────────────────────────── */
+
+.accordion__icon {
+  width: var(--accordion-icon-size);
+  height: var(--accordion-icon-size);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: transform var(--accordion-transition-duration) var(--accordion-transition-easing);
+}
+
+.accordion__trigger[aria-expanded="true"] .accordion__icon {
+  transform: rotate(180deg);
+}
+
+/* ── 8. Panel ────────────────────────────────────────────────────────────── */
+/* Default (Trailing icon): indent on inline-end side (icon column)          */
+
+.accordion__panel {
+  display: none;
+  flex-direction: column;
+  align-self: stretch;
+  gap: var(--accordion-content-gap);
+  padding-block-start: var(--accordion-content-padding-top);
+  padding-block-end: var(--accordion-content-padding-bottom);
+  padding-inline-start: var(--accordion-padding-inline);
+  padding-inline-end: var(--accordion-content-icon-indent);
+}
+
+.accordion__trigger[aria-expanded="true"]+.accordion__panel {
+  display: flex;
+}
+
+/* ── 9. Body (content slot) ──────────────────────────────────────────────── */
+
+.accordion__body {
+  flex: 1 0 0;
+  color: var(--accordion-content-color);
+  font-family: var(--accordion-content-font-family);
+  font-size: var(--accordion-content-font-size);
+  font-weight: var(--accordion-content-font-weight);
+  line-height: var(--accordion-content-line-height);
+}
+
+/* ── 10. Size modifiers ──────────────────────────────────────────────────── */
+
+.accordion--md {
+  --accordion-padding-block: var(--Global-spacing-lg, 12px);
+}
+
+.accordion--sm {
+  --accordion-padding-block: var(--Global-spacing-md, 8px);
+}
+
+/* ── 11. Icon-leading modifier ───────────────────────────────────────────── */
+/* Icon-leading: reverse flex order so icon appears at inline-start visually */
+
+.accordion--icon-leading .accordion__trigger {
+  flex-direction: row-reverse;
+}
+
+.accordion--icon-leading .accordion__panel {
+  padding-inline-start: var(--accordion-content-icon-indent);
+  padding-inline-end: var(--accordion-padding-inline);
+}
+
+/* ── 12. Flush modifier ──────────────────────────────────────────────────── */
+/* Flush: zero horizontal padding on header; interaction and focus ring bleed */
+
+.accordion--flush .accordion__trigger {
+  padding-inline: 0;
+}
+
+/* Flush interaction background bleeds beyond 0-padded header.               */
+/* Parent must have overflow:clip or overflow:hidden.                         */
+.accordion--flush .accordion__trigger::before {
+  inset-inline: calc(-1 * var(--accordion-padding-inline));
+}
+
+/* Flush focus: suppress default outline; use ::after bleed instead          */
+.accordion--flush .accordion__trigger:focus-visible,
+.accordion--flush .accordion__trigger:focus {
+  outline: none;
+}
+
+.accordion--flush .accordion__trigger:focus-visible::after,
+.accordion--flush .accordion__trigger:focus::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline: calc(-1 * var(--accordion-padding-inline));
+  border: var(--accordion-focus-ring-width) solid var(--accordion-focus-ring-color);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Flush content panel: no inline-start padding (Trailing) */
+.accordion--flush .accordion__panel {
+  padding-inline-start: 0;
+}
+
+/* Flush + Leading: reduced indent (icon + gap only, no base padding) */
+.accordion--flush.accordion--icon-leading .accordion__panel {
+  padding-inline-start: var(--accordion-content-icon-indent-flush);
+  padding-inline-end: 0;
+}
+
+/* ── 13. Disabled state ──────────────────────────────────────────────────── */
+
+.accordion__trigger[disabled],
+.accordion__trigger[aria-disabled="true"] {
+  cursor: not-allowed;
+  color: var(--accordion-title-color-disabled);
+}
+
+.accordion__trigger[disabled] .accordion__icon,
+.accordion__trigger[aria-disabled="true"] .accordion__icon {
+  opacity: 0.4;
+}
+
+/* ── 14. Reduced motion ──────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion__icon {
+    transition: none;
+  }
+}

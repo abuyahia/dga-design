@@ -1,0 +1,161 @@
+[
+  {
+    "cssProps": {},
+    "type": "COMPONENT_SET",
+    "name": "Divider",
+    "children": [
+      {
+        "cssProps": {
+          "width": "192px",
+          "height": "1px"
+        },
+        "type": "COMPONENT",
+        "name": "Color=Neutral, Line Type=Horizontal",
+        "children": [
+          {
+            "cssProps": {
+              "width": "192px",
+              "height": "1px",
+              "background": "var(--Border-border-neutral-primary, #D2D6DB)"
+            },
+            "type": "RECTANGLE",
+            "name": "Divider"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "192px",
+          "height": "1px"
+        },
+        "type": "COMPONENT",
+        "name": "Color=Primary, Line Type=Horizontal",
+        "children": [
+          {
+            "cssProps": {
+              "width": "192px",
+              "height": "1px",
+              "background": "var(--Border-border-primary, #1B8354)"
+            },
+            "type": "RECTANGLE",
+            "name": "Divider"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "192px",
+          "height": "1px"
+        },
+        "type": "COMPONENT",
+        "name": "Color=Alpha-white, Line Type=Horizontal",
+        "children": [
+          {
+            "cssProps": {
+              "width": "192px",
+              "height": "1px",
+              "background": "var(--Alpha-alpha-white-30, rgba(255, 255, 255, 0.30))"
+            },
+            "type": "RECTANGLE",
+            "name": "Divider"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "192px",
+          "height": "1px"
+        },
+        "type": "COMPONENT",
+        "name": "Color=White, Line Type=Horizontal",
+        "children": [
+          {
+            "cssProps": {
+              "width": "192px",
+              "height": "1px",
+              "background": "var(--Border-border-white, #FFF)"
+            },
+            "type": "RECTANGLE",
+            "name": "Divider"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "0",
+          "height": "192px"
+        },
+        "type": "COMPONENT",
+        "name": "Color=Neutral, Line Type=Vertical",
+        "children": [
+          {
+            "cssProps": {
+              "width": "1px",
+              "height": "192px",
+              "background": "var(--Border-border-neutral-primary, #D2D6DB)"
+            },
+            "type": "LINE",
+            "name": "Line 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "0",
+          "height": "192px"
+        },
+        "type": "COMPONENT",
+        "name": "Color=White, Line Type=Vertical",
+        "children": [
+          {
+            "cssProps": {
+              "width": "1px",
+              "height": "192px",
+              "background": "var(--Border-border-white, #FFF)"
+            },
+            "type": "LINE",
+            "name": "Line 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "0",
+          "height": "192px"
+        },
+        "type": "COMPONENT",
+        "name": "Color=Alpha-white, Line Type=Vertical",
+        "children": [
+          {
+            "cssProps": {
+              "width": "1px",
+              "height": "192px",
+              "background": "var(--Alpha-alpha-white-30, rgba(255, 255, 255, 0.30))"
+            },
+            "type": "LINE",
+            "name": "Line 1"
+          }
+        ]
+      },
+      {
+        "cssProps": {
+          "width": "0",
+          "height": "192px"
+        },
+        "type": "COMPONENT",
+        "name": "Color=Primary, Line Type=Vertical",
+        "children": [
+          {
+            "cssProps": {
+              "width": "1px",
+              "height": "192px",
+              "background": "var(--Border-border-primary, #1B8354)"
+            },
+            "type": "LINE",
+            "name": "Line 1"
+          }
+        ]
+      }
+    ]
+  }
+]

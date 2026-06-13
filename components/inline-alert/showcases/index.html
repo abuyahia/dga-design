@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inline Alert — Showcase</title>
+  <link rel="stylesheet" href="../../token.css" />
+  <link rel="stylesheet" href="../../_showcase/showcase.css" />
+  <link rel="stylesheet" href="../inline-alert.css" />
+  <script src="../../_showcase/showcase.js" defer></script>
+</head>
+<body
+  data-showcase
+  data-current-component="inline-alert"
+  data-showcase-title="Inline Alert"
+>
+  <div data-showcase-shell>
+    <main data-showcase-content>
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: Type Variants — White Background
+           ══════════════════════════════════════════════ -->
+      <section class="sc-section">
+        <h2 class="sc-section__title">Type Variants — White Background</h2>
+        <p class="sc-section__desc">Five semantic types on the default white background. The accent bar and icon circle color change per type. Borders remain neutral on white background.</p>
+
+        <!-- Neutral -->
+        <div class="sc-item">
+          <h3 class="sc-item__label">Neutral</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="neutral-white-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="neutral-white-code">Code</button>
+          </div>
+          <div id="neutral-white-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert" role="alert" aria-live="polite">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#6B7280" stroke-width="1.5"/>
+                    <path d="M10 14v-1" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">Notification/Alert message title</p>
+                  <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="inline-alert__actions">
+                <button type="button" class="inline-alert__action inline-alert__action--primary">Primary Action</button>
+                <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+              </div>
+            </div>
+          </div>
+          <div id="neutral-white-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert" role="alert" aria-live="polite"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;
+      &lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;circle cx="10" cy="10" r="9" stroke="#6B7280" stroke-width="1.5"/&gt;
+        &lt;path d="M10 14v-1" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/&gt;
+        &lt;path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Notification/Alert message title&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;When a Notification/Alert needs a further detailed explanation, it goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;
+      &lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;Primary Action&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;Dismiss&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Info -->
+        <div class="sc-item">
+          <h3 class="sc-item__label">Info</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="info-white-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="info-white-code">Code</button>
+          </div>
+          <div id="info-white-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert inline-alert--info" role="alert" aria-live="polite">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#1570EF" stroke-width="1.5"/>
+                    <path d="M10 14v-1" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">Notification/Alert message title</p>
+                  <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="inline-alert__actions">
+                <button type="button" class="inline-alert__action inline-alert__action--primary">Learn more</button>
+                <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+              </div>
+            </div>
+          </div>
+          <div id="info-white-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert inline-alert--info" role="alert" aria-live="polite"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;
+      &lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;!-- info icon --&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Notification/Alert message title&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;When a Notification/Alert needs a further detailed explanation, it goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;
+      &lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;Learn more&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;Dismiss&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Destructive -->
+        <div class="sc-item">
+          <h3 class="sc-item__label">Destructive</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="destructive-white-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="destructive-white-code">Code</button>
+          </div>
+          <div id="destructive-white-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert inline-alert--destructive" role="alert" aria-live="assertive">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#D92D20" stroke-width="1.5"/>
+                    <path d="M10 14v-1" stroke="#D92D20" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#D92D20" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">Notification/Alert message title</p>
+                  <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="inline-alert__actions">
+                <button type="button" class="inline-alert__action inline-alert__action--primary">Try again</button>
+                <button type="button" class="inline-alert__action inline-alert__action--secondary">Cancel</button>
+              </div>
+            </div>
+          </div>
+          <div id="destructive-white-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert inline-alert--destructive" role="alert" aria-live="assertive"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;
+      &lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;!-- error icon --&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Notification/Alert message title&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;When a Notification/Alert needs a further detailed explanation, it goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;
+      &lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;Try again&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;Cancel&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Warning -->
+        <div class="sc-item">
+          <h3 class="sc-item__label">Warning</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="warning-white-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="warning-white-code">Code</button>
+          </div>
+          <div id="warning-white-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert inline-alert--warning" role="alert" aria-live="polite">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 2L18.66 17H1.34L10 2Z" stroke="#DC6803" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M10 8v4" stroke="#DC6803" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="10" cy="14.5" r="0.75" fill="#DC6803"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">Notification/Alert message title</p>
+                  <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="inline-alert__actions">
+                <button type="button" class="inline-alert__action inline-alert__action--primary">Resolve</button>
+                <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+              </div>
+            </div>
+          </div>
+          <div id="warning-white-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert inline-alert--warning" role="alert" aria-live="polite"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;
+      &lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;!-- warning icon --&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Notification/Alert message title&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;When a Notification/Alert needs a further detailed explanation, it goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;
+      &lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;Resolve&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;Dismiss&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="sc-item">
+          <h3 class="sc-item__label">Success</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="success-white-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="success-white-code">Code</button>
+          </div>
+          <div id="success-white-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert inline-alert--success" role="alert" aria-live="polite">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#079455" stroke-width="1.5"/>
+                    <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#079455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">Notification/Alert message title</p>
+                  <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="inline-alert__actions">
+                <button type="button" class="inline-alert__action inline-alert__action--primary">Continue</button>
+                <button type="button" class="inline-alert__action inline-alert__action--secondary">View details</button>
+              </div>
+            </div>
+          </div>
+          <div id="success-white-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert inline-alert--success" role="alert" aria-live="polite"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;
+      &lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;!-- tick icon --&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Notification/Alert message title&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;When a Notification/Alert needs a further detailed explanation, it goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;
+      &lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;Continue&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;View details&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: Color Background Variants
+           ══════════════════════════════════════════════ -->
+      <section class="sc-section">
+        <h2 class="sc-section__title">Color Background Variants</h2>
+        <p class="sc-section__desc">Add <code>.inline-alert--color-bg</code> to apply a type-tinted background and colored border.</p>
+
+        <!-- Info + Color -->
+        <div class="sc-item">
+          <h3 class="sc-item__label">Info — Color Background</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="info-color-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="info-color-code">Code</button>
+          </div>
+          <div id="info-color-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert inline-alert--info inline-alert--color-bg" role="alert" aria-live="polite">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#1570EF" stroke-width="1.5"/>
+                    <path d="M10 14v-1" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">Notification/Alert message title</p>
+                  <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="inline-alert__actions">
+                <button type="button" class="inline-alert__action inline-alert__action--primary">Learn more</button>
+                <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+              </div>
+            </div>
+          </div>
+          <div id="info-color-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert inline-alert--info inline-alert--color-bg" role="alert" aria-live="polite"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;
+      &lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false"&gt;&lt;!-- info icon --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Notification/Alert message title&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;When a Notification/Alert needs a further detailed explanation, it goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;
+      &lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;Learn more&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;Dismiss&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Warning + Color -->
+        <div class="sc-item">
+          <h3 class="sc-item__label">Warning — Color Background</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="warning-color-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="warning-color-code">Code</button>
+          </div>
+          <div id="warning-color-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert inline-alert--warning inline-alert--color-bg" role="alert" aria-live="polite">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 2L18.66 17H1.34L10 2Z" stroke="#DC6803" stroke-width="1.5" stroke-linejoin="round"/>
+                    <path d="M10 8v4" stroke="#DC6803" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="10" cy="14.5" r="0.75" fill="#DC6803"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">Notification/Alert message title</p>
+                  <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="inline-alert__actions">
+                <button type="button" class="inline-alert__action inline-alert__action--primary">Resolve</button>
+                <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+              </div>
+            </div>
+          </div>
+          <div id="warning-color-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert inline-alert--warning inline-alert--color-bg" role="alert" aria-live="polite"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;&lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false"&gt;&lt;!-- warning icon --&gt;&lt;/svg&gt;&lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Notification/Alert message title&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;When a Notification/Alert needs a further detailed explanation, it goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;&lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;&lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;&lt;/svg&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;Resolve&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;Dismiss&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Success + Color -->
+        <div class="sc-item">
+          <h3 class="sc-item__label">Success — Color Background</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="success-color-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="success-color-code">Code</button>
+          </div>
+          <div id="success-color-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert inline-alert--success inline-alert--color-bg" role="alert" aria-live="polite">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#079455" stroke-width="1.5"/>
+                    <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#079455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">Notification/Alert message title</p>
+                  <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="inline-alert__actions">
+                <button type="button" class="inline-alert__action inline-alert__action--primary">Continue</button>
+                <button type="button" class="inline-alert__action inline-alert__action--secondary">View details</button>
+              </div>
+            </div>
+          </div>
+          <div id="success-color-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert inline-alert--success inline-alert--color-bg" role="alert" aria-live="polite"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;&lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false"&gt;&lt;!-- tick icon --&gt;&lt;/svg&gt;&lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Notification/Alert message title&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;When a Notification/Alert needs a further detailed explanation, it goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;&lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;&lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;&lt;/svg&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;Continue&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;View details&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: Content Variants
+           ══════════════════════════════════════════════ -->
+      <section class="sc-section">
+        <h2 class="sc-section__title">Content Variants</h2>
+
+        <!-- Title only -->
+        <div class="sc-item">
+          <h3 class="sc-item__label">Title Only (no body, no actions)</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="title-only-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="title-only-code">Code</button>
+          </div>
+          <div id="title-only-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert inline-alert--info" role="alert" aria-live="polite">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#1570EF" stroke-width="1.5"/>
+                    <path d="M10 14v-1" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">Short informational message with no supporting text.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="title-only-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert inline-alert--info" role="alert" aria-live="polite"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;
+      &lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false"&gt;&lt;!-- icon --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Short informational message with no supporting text.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;
+      &lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: Mobile Layout
+           ══════════════════════════════════════════════ -->
+      <section class="sc-section">
+        <h2 class="sc-section__title">Mobile Layout</h2>
+        <p class="sc-section__desc">Add <code>.inline-alert--mobile</code> for the stacked mobile layout. This is also automatically applied at breakpoints ≤768px.</p>
+
+        <div class="sc-item">
+          <h3 class="sc-item__label">Success — Mobile Layout</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="mobile-success-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="mobile-success-code">Code</button>
+          </div>
+          <div id="mobile-success-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div style="max-width: 360px;">
+              <div class="inline-alert inline-alert--success inline-alert--mobile" role="alert" aria-live="polite">
+                <div class="inline-alert__header">
+                  <div class="inline-alert__icon-wrap">
+                    <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                      <circle cx="10" cy="10" r="9" stroke="#079455" stroke-width="1.5"/>
+                      <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#079455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="inline-alert__content">
+                    <p class="inline-alert__title">Notification/Alert message title</p>
+                    <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+                  </div>
+                  <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+                    <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                      <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="inline-alert__actions">
+                  <button type="button" class="inline-alert__action inline-alert__action--primary">Continue</button>
+                  <button type="button" class="inline-alert__action inline-alert__action--secondary">View details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="mobile-success-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert inline-alert--success inline-alert--mobile" role="alert" aria-live="polite"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;
+      &lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false"&gt;&lt;!-- tick icon --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;Notification/Alert message title&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;When a Notification/Alert needs a further detailed explanation, it goes here.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="Dismiss notification"&gt;
+      &lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;Continue&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;View details&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ══════════════════════════════════════════════
+           SECTION: RTL
+           ══════════════════════════════════════════════ -->
+      <section class="sc-section">
+        <h2 class="sc-section__title">RTL (Right-to-Left)</h2>
+        <p class="sc-section__desc">Add <code>dir="rtl"</code> to the root element or any ancestor. CSS logical properties handle the layout reversal automatically.</p>
+
+        <div class="sc-item">
+          <h3 class="sc-item__label">Neutral — RTL</h3>
+          <div class="sc-tabs" role="tablist">
+            <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true" data-tab-target="rtl-neutral-preview">Preview</button>
+            <button type="button" class="sc-tab" role="tab" aria-selected="false" data-tab-target="rtl-neutral-code">Code</button>
+          </div>
+          <div id="rtl-neutral-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+            <div class="inline-alert" role="alert" aria-live="polite" dir="rtl">
+              <div class="inline-alert__header">
+                <div class="inline-alert__icon-wrap">
+                  <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <circle cx="10" cy="10" r="9" stroke="#6B7280" stroke-width="1.5"/>
+                    <path d="M10 14v-1" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="inline-alert__content">
+                  <p class="inline-alert__title">عنوان رسالة الإشعار / التنبيه</p>
+                  <p class="inline-alert__body">عندما يحتاج الإشعار / التنبيه إلى شرح تفصيلي إضافي، يتم وضعه هنا.</p>
+                </div>
+                <button type="button" class="inline-alert__close" aria-label="إغلاق الإشعار">
+                  <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div class="inline-alert__actions">
+                <button type="button" class="inline-alert__action inline-alert__action--primary">الإجراء الأساسي</button>
+                <button type="button" class="inline-alert__action inline-alert__action--secondary">إغلاق</button>
+              </div>
+            </div>
+          </div>
+          <div id="rtl-neutral-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+            <button type="button" class="sc-copy" aria-label="Copy code">Copy</button>
+            <pre><code>&lt;div class="inline-alert" role="alert" aria-live="polite" dir="rtl"&gt;
+  &lt;div class="inline-alert__header"&gt;
+    &lt;div class="inline-alert__icon-wrap"&gt;
+      &lt;svg class="inline-alert__icon" aria-hidden="true" focusable="false"&gt;&lt;!-- icon --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="inline-alert__content"&gt;
+      &lt;p class="inline-alert__title"&gt;عنوان رسالة الإشعار / التنبيه&lt;/p&gt;
+      &lt;p class="inline-alert__body"&gt;عندما يحتاج الإشعار / التنبيه إلى شرح تفصيلي إضافي، يتم وضعه هنا.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="inline-alert__close" aria-label="إغلاق الإشعار"&gt;
+      &lt;svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none"&gt;
+        &lt;path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="inline-alert__actions"&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--primary"&gt;الإجراء الأساسي&lt;/button&gt;
+    &lt;button type="button" class="inline-alert__action inline-alert__action--secondary"&gt;إغلاق&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,276 @@
+<!--
+  Inline Alert — Component Template
+  Platform Code Design System v2
+
+  Usage: copy the variant you need and replace placeholder text.
+
+  Modifiers:
+    Type:       (none) | inline-alert--info | inline-alert--destructive | inline-alert--warning | inline-alert--success
+    Background: (none) | inline-alert--color-bg
+    Layout:     (none) | inline-alert--mobile
+
+  RTL: add dir="rtl" to .inline-alert or any ancestor.
+
+  The .inline-alert__actions element is optional — omit it when no actions are needed.
+  The .inline-alert__body element is optional — omit it when only a title is needed.
+-->
+
+
+<!-- ────────────────────────────────────────────────
+     NEUTRAL — White background (default)
+     ──────────────────────────────────────────────── -->
+<div class="inline-alert" role="alert" aria-live="polite">
+  <div class="inline-alert__header">
+    <div class="inline-alert__icon-wrap">
+      <!-- help-circle icon -->
+      <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#6B7280" stroke-width="1.5"/>
+        <path d="M10 14v-1" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="inline-alert__content">
+      <p class="inline-alert__title">Notification/Alert message title</p>
+      <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+    </div>
+    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="inline-alert__actions">
+    <button type="button" class="inline-alert__action inline-alert__action--primary">Primary Action</button>
+    <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────────────────
+     INFO — White background
+     ──────────────────────────────────────────────── -->
+<div class="inline-alert inline-alert--info" role="alert" aria-live="polite">
+  <div class="inline-alert__header">
+    <div class="inline-alert__icon-wrap">
+      <!-- help-circle icon -->
+      <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#1570EF" stroke-width="1.5"/>
+        <path d="M10 14v-1" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="inline-alert__content">
+      <p class="inline-alert__title">Notification/Alert message title</p>
+      <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+    </div>
+    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="inline-alert__actions">
+    <button type="button" class="inline-alert__action inline-alert__action--primary">Learn more</button>
+    <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────────────────
+     DESTRUCTIVE — White background
+     ──────────────────────────────────────────────── -->
+<div class="inline-alert inline-alert--destructive" role="alert" aria-live="assertive">
+  <div class="inline-alert__header">
+    <div class="inline-alert__icon-wrap">
+      <!-- help-circle icon (per Figma manifest) -->
+      <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#D92D20" stroke-width="1.5"/>
+        <path d="M10 14v-1" stroke="#D92D20" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#D92D20" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="inline-alert__content">
+      <p class="inline-alert__title">Notification/Alert message title</p>
+      <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+    </div>
+    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="inline-alert__actions">
+    <button type="button" class="inline-alert__action inline-alert__action--primary">Try again</button>
+    <button type="button" class="inline-alert__action inline-alert__action--secondary">Cancel</button>
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────────────────
+     WARNING — White background
+     ──────────────────────────────────────────────── -->
+<div class="inline-alert inline-alert--warning" role="alert" aria-live="polite">
+  <div class="inline-alert__header">
+    <div class="inline-alert__icon-wrap">
+      <!-- alert-02 icon -->
+      <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 2L18.66 17H1.34L10 2Z" stroke="#DC6803" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M10 8v4" stroke="#DC6803" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="10" cy="14.5" r="0.75" fill="#DC6803"/>
+      </svg>
+    </div>
+    <div class="inline-alert__content">
+      <p class="inline-alert__title">Notification/Alert message title</p>
+      <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+    </div>
+    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="inline-alert__actions">
+    <button type="button" class="inline-alert__action inline-alert__action--primary">Resolve</button>
+    <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────────────────
+     SUCCESS — White background
+     ──────────────────────────────────────────────── -->
+<div class="inline-alert inline-alert--success" role="alert" aria-live="polite">
+  <div class="inline-alert__header">
+    <div class="inline-alert__icon-wrap">
+      <!-- tick-02 icon -->
+      <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#079455" stroke-width="1.5"/>
+        <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#079455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="inline-alert__content">
+      <p class="inline-alert__title">Notification/Alert message title</p>
+      <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+    </div>
+    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="inline-alert__actions">
+    <button type="button" class="inline-alert__action inline-alert__action--primary">Continue</button>
+    <button type="button" class="inline-alert__action inline-alert__action--secondary">View details</button>
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────────────────
+     INFO — Color background
+     ──────────────────────────────────────────────── -->
+<div class="inline-alert inline-alert--info inline-alert--color-bg" role="alert" aria-live="polite">
+  <div class="inline-alert__header">
+    <div class="inline-alert__icon-wrap">
+      <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#1570EF" stroke-width="1.5"/>
+        <path d="M10 14v-1" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="inline-alert__content">
+      <p class="inline-alert__title">Notification/Alert message title</p>
+      <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+    </div>
+    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="inline-alert__actions">
+    <button type="button" class="inline-alert__action inline-alert__action--primary">Learn more</button>
+    <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────────────────
+     TITLE ONLY (no body, no actions)
+     ──────────────────────────────────────────────── -->
+<div class="inline-alert inline-alert--info" role="alert" aria-live="polite">
+  <div class="inline-alert__header">
+    <div class="inline-alert__icon-wrap">
+      <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#1570EF" stroke-width="1.5"/>
+        <path d="M10 14v-1" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="inline-alert__content">
+      <p class="inline-alert__title">Short informational message with no supporting text.</p>
+    </div>
+    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <!-- No .inline-alert__actions — omit when no actions needed -->
+</div>
+
+
+<!-- ────────────────────────────────────────────────
+     RTL — Neutral
+     ──────────────────────────────────────────────── -->
+<div class="inline-alert" role="alert" aria-live="polite" dir="rtl">
+  <div class="inline-alert__header">
+    <div class="inline-alert__icon-wrap">
+      <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#6B7280" stroke-width="1.5"/>
+        <path d="M10 14v-1" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M10 11c0-2 3-2.5 3-4.5a3 3 0 1 0-6 0" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="inline-alert__content">
+      <p class="inline-alert__title">عنوان رسالة الإشعار / التنبيه</p>
+      <p class="inline-alert__body">عندما يحتاج الإشعار / التنبيه إلى شرح تفصيلي إضافي، يتم وضعه هنا.</p>
+    </div>
+    <button type="button" class="inline-alert__close" aria-label="إغلاق الإشعار">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="inline-alert__actions">
+    <button type="button" class="inline-alert__action inline-alert__action--primary">الإجراء الأساسي</button>
+    <button type="button" class="inline-alert__action inline-alert__action--secondary">إغلاق</button>
+  </div>
+</div>
+
+
+<!-- ────────────────────────────────────────────────
+     MOBILE — Success
+     ──────────────────────────────────────────────── -->
+<div class="inline-alert inline-alert--success inline-alert--mobile" role="alert" aria-live="polite">
+  <div class="inline-alert__header">
+    <div class="inline-alert__icon-wrap">
+      <svg class="inline-alert__icon" aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="9" stroke="#079455" stroke-width="1.5"/>
+        <path d="M6.5 10.5l2.5 2.5 4.5-5" stroke="#079455" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="inline-alert__content">
+      <p class="inline-alert__title">Notification/Alert message title</p>
+      <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
+    </div>
+    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="inline-alert__actions">
+    <button type="button" class="inline-alert__action inline-alert__action--primary">Continue</button>
+    <button type="button" class="inline-alert__action inline-alert__action--secondary">View details</button>
+  </div>
+</div>

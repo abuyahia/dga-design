@@ -1,0 +1,327 @@
+/* =============================================================
+   Floating Button (fab)  ·  reference: reference.json
+   Classification: Primitive
+   ============================================================= */
+
+/* ── Provisional token definitions ─────────────────────────────
+   TODO: Move all --fab-* definitions to token.css once reviewed.
+   Component selectors below use only var(--fab-*) — no raw values.
+   ──────────────────────────────────────────────────────────── */
+:root {
+  /* ── Layout ─────────────────────────────────────────────── */
+  /* TODO: --fab-padding-sm missing in token.css. Proposed: var(--spacing-lg) = 16px. */
+  --fab-padding-sm: var(--spacing-lg);
+  /* TODO: --fab-padding-lg missing in token.css. Proposed: var(--spacing-xl) = 20px. */
+  --fab-padding-lg: var(--spacing-xl);
+  /* TODO: --fab-gap missing in token.css. Proposed: var(--spacing-sm) = 8px. */
+  --fab-gap: var(--spacing-sm);
+  /* TODO: --fab-radius missing in token.css. Proposed: var(--radius-full) = 9999px. */
+  --fab-radius: var(--radius-full);
+  /* TODO: --fab-icon-size missing in token.css. Proposed: var(--icon-size-md) = 24px. */
+  --fab-icon-size: var(--icon-size-md);
+
+  /* ── Typography ─────────────────────────────────────────── */
+  /* TODO: --fab-label-font-family missing. Proposed: var(--font-sans). */
+  --fab-label-font-family: var(--font-sans);
+  /* TODO: --fab-label-font-size missing. Proposed: var(--fs-text-md) = 16px. */
+  --fab-label-font-size: var(--fs-text-md);
+  /* TODO: --fab-label-font-weight missing. Proposed: var(--font-weight-medium) = 500. */
+  --fab-label-font-weight: var(--font-weight-medium);
+  /* TODO: --fab-label-line-height missing. Proposed: var(--lh-text-md) = 24px. */
+  --fab-label-line-height: var(--lh-text-md);
+
+  /* ── Focus ring ─────────────────────────────────────────── */
+  /* TODO: --fab-focus-ring-color missing. Figma: #161616 (Icon-icon-default). Mapped to --gray-950. */
+  --fab-focus-ring-color: var(--gray-950);
+  /* TODO: --fab-focus-ring-width missing. Figma value: 3px. */
+  --fab-focus-ring-width: 3px;
+  /* TODO: --fab-focus-ring-offset missing. Figma: absolute position left/top = -5px. */
+  --fab-focus-ring-offset: 5px;
+
+  /* ── Primary-Neutral backgrounds ────────────────────────── */
+  /* TODO: --fab-bg-primary-neutral-default missing. Maps to --gray-950. */
+  --fab-bg-primary-neutral-default: var(--gray-950);
+  /* TODO: --fab-bg-primary-neutral-hovered missing. Maps to --gray-800. */
+  --fab-bg-primary-neutral-hovered: var(--gray-800);
+  /* TODO: --fab-bg-primary-neutral-pressed missing. Maps to --gray-600. */
+  --fab-bg-primary-neutral-pressed: var(--gray-600);
+  /* TODO: --fab-bg-primary-neutral-selected missing. Maps to --gray-700. */
+  --fab-bg-primary-neutral-selected: var(--gray-700);
+  /* TODO: --fab-text-primary-neutral missing. Maps to --white. */
+  --fab-text-primary-neutral: var(--white);
+
+  /* ── Primary-Neutral On-Color backgrounds ───────────────── */
+  /* TODO: --fab-bg-primary-neutral-on-color-default missing. Maps to --gray-100. */
+  --fab-bg-primary-neutral-on-color-default: var(--gray-100);
+  /* TODO: --fab-bg-primary-neutral-on-color-hovered missing. Figma: rgba(255,255,255,0.80). No primitive. */
+  --fab-bg-primary-neutral-on-color-hovered: rgba(255, 255, 255, 0.80);
+  /* TODO: --fab-bg-primary-neutral-on-color-focused missing. Maps to --white. */
+  --fab-bg-primary-neutral-on-color-focused: var(--white);
+  /* TODO: --fab-bg-primary-neutral-on-color-pressed missing. Maps to --gray-200. */
+  --fab-bg-primary-neutral-on-color-pressed: var(--gray-200);
+  /* TODO: --fab-bg-primary-neutral-on-color-selected missing. Figma: rgba(255,255,255,0.70). No primitive. */
+  --fab-bg-primary-neutral-on-color-selected: rgba(255, 255, 255, 0.70);
+  /* TODO: --fab-text-primary-neutral-on-color missing. Figma: #161616 (Text-text-default). Closest: --gray-950. */
+  --fab-text-primary-neutral-on-color: var(--gray-950);
+
+  /* ── Primary-Brand backgrounds ──────────────────────────── */
+  /* TODO: --fab-bg-primary-brand-default missing. Maps to --sa-600. */
+  --fab-bg-primary-brand-default: var(--sa-600);
+  /* TODO: --fab-bg-primary-brand-hovered missing. Maps to --sa-700. */
+  --fab-bg-primary-brand-hovered: var(--sa-700);
+  /* TODO: --fab-bg-primary-brand-pressed missing. Maps to --sa-900. */
+  --fab-bg-primary-brand-pressed: var(--sa-900);
+  /* TODO: --fab-bg-primary-brand-selected missing. Maps to --sa-800. */
+  --fab-bg-primary-brand-selected: var(--sa-800);
+  /* TODO: --fab-text-primary-brand missing. Maps to --white. */
+  --fab-text-primary-brand: var(--white);
+
+  /* ── Secondary-Solid backgrounds ───────────────────────── */
+  /* TODO: --fab-bg-secondary-solid-default missing. Maps to --gray-100. */
+  --fab-bg-secondary-solid-default: var(--gray-100);
+  /* TODO: --fab-bg-secondary-solid-hovered missing. Maps to --gray-200. */
+  --fab-bg-secondary-solid-hovered: var(--gray-200);
+  /* TODO: --fab-bg-secondary-solid-pressed missing. Maps to --gray-200 (Figma: neutral-pressed). */
+  --fab-bg-secondary-solid-pressed: var(--gray-200);
+  /* TODO: --fab-bg-secondary-solid-selected missing. Maps to --gray-200 (Figma: neutral-selected). */
+  --fab-bg-secondary-solid-selected: var(--gray-200);
+  /* TODO: --fab-text-secondary-solid missing. Figma: #161616. Closest: --gray-950. */
+  --fab-text-secondary-solid: var(--gray-950);
+
+  /* ── Secondary-Solid On-Color backgrounds ───────────────── */
+  /* TODO: --fab-bg-secondary-solid-on-color-default missing. Figma: rgba(255,255,255,0.20). No primitive. */
+  --fab-bg-secondary-solid-on-color-default: rgba(255, 255, 255, 0.20);
+  /* TODO: --fab-bg-secondary-solid-on-color-hovered missing. Figma: rgba(255,255,255,0.20). No primitive. */
+  --fab-bg-secondary-solid-on-color-hovered: rgba(255, 255, 255, 0.20);
+  /* TODO: --fab-bg-secondary-solid-on-color-focused missing. Figma: rgba(255,255,255,0.00) = transparent. */
+  --fab-bg-secondary-solid-on-color-focused: transparent;
+  /* TODO: --fab-bg-secondary-solid-on-color-pressed missing. Figma: rgba(255,255,255,0.40). No primitive. */
+  --fab-bg-secondary-solid-on-color-pressed: rgba(255, 255, 255, 0.40);
+  /* TODO: --fab-bg-secondary-solid-on-color-selected missing. Figma: rgba(255,255,255,0.30). No primitive. */
+  --fab-bg-secondary-solid-on-color-selected: rgba(255, 255, 255, 0.30);
+  /* TODO: --fab-text-secondary-solid-on-color missing. Maps to --white. */
+  --fab-text-secondary-solid-on-color: var(--white);
+
+  /* ── Disabled ───────────────────────────────────────────── */
+  /* TODO: --fab-bg-disabled missing. Maps to --gray-200. */
+  --fab-bg-disabled: var(--gray-200);
+  /* TODO: --fab-bg-disabled-on-color missing. Figma: rgba(255,255,255,0.20). */
+  --fab-bg-disabled-on-color: rgba(255, 255, 255, 0.20);
+  /* TODO: --fab-text-disabled missing. Maps to --gray-400. */
+  --fab-text-disabled: var(--gray-400);
+  /* TODO: --fab-text-disabled-on-color missing. Figma: rgba(255,255,255,0.40). */
+  --fab-text-disabled-on-color: rgba(255, 255, 255, 0.40);
+}
+
+/* =============================================================
+   Base
+   ============================================================= */
+.fab {
+  /* ── Local state variables — overridden by style/context modifiers ── */
+  --_fab-bg: var(--fab-bg-primary-neutral-default);
+  --_fab-bg-hover: var(--fab-bg-primary-neutral-hovered);
+  --_fab-bg-focus: var(--fab-bg-primary-neutral-default);
+  --_fab-bg-active: var(--fab-bg-primary-neutral-pressed);
+  --_fab-bg-selected: var(--fab-bg-primary-neutral-selected);
+  --_fab-bg-disabled: var(--fab-bg-disabled);
+  --_fab-text: var(--fab-text-primary-neutral);
+  --_fab-text-disabled: var(--fab-text-disabled);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--fab-gap);
+  padding: var(--fab-padding-sm);
+  border: 0;
+  border-radius: var(--fab-radius);
+  background: var(--_fab-bg);
+  color: var(--_fab-text);
+  font-family: var(--fab-label-font-family);
+  font-size: var(--fab-label-font-size);
+  font-weight: var(--fab-label-font-weight);
+  line-height: var(--fab-label-line-height);
+  font-style: normal;
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background var(--transition-fast) var(--ease-in-out);
+  outline: none;
+  -webkit-appearance: none;
+  white-space: nowrap;
+  user-select: none;
+  width: max-content;
+}
+
+/* ── Icon slot ──────────────────────────────────────────────── */
+.fab__icon {
+  width: var(--fab-icon-size);
+  height: var(--fab-icon-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.fab__icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ── Label slot ─────────────────────────────────────────────── */
+.fab__label {
+  position: relative;
+  z-index: 1;
+}
+
+/* =============================================================
+   Size: Large
+   Default (no modifier) = Small
+   ============================================================= */
+.fab--lg {
+  padding: var(--fab-padding-lg);
+}
+
+/* =============================================================
+   Style: Primary-Brand
+   ============================================================= */
+.fab--primary-brand {
+  --_fab-bg: var(--fab-bg-primary-brand-default);
+  --_fab-bg-hover: var(--fab-bg-primary-brand-hovered);
+  --_fab-bg-focus: var(--fab-bg-primary-brand-default);
+  --_fab-bg-active: var(--fab-bg-primary-brand-pressed);
+  --_fab-bg-selected: var(--fab-bg-primary-brand-selected);
+  --_fab-text: var(--fab-text-primary-brand);
+}
+
+/* =============================================================
+   Style: Secondary-Solid
+   ============================================================= */
+.fab--secondary-solid {
+  --_fab-bg: var(--fab-bg-secondary-solid-default);
+  --_fab-bg-hover: var(--fab-bg-secondary-solid-hovered);
+  --_fab-bg-focus: var(--fab-bg-secondary-solid-default);
+  --_fab-bg-active: var(--fab-bg-secondary-solid-pressed);
+  --_fab-bg-selected: var(--fab-bg-secondary-solid-selected);
+  --_fab-text: var(--fab-text-secondary-solid);
+}
+
+/* =============================================================
+   On-Color Context
+   Primary-Neutral on a colored / dark background
+   ============================================================= */
+.fab--on-color {
+  --_fab-bg: var(--fab-bg-primary-neutral-on-color-default);
+  --_fab-bg-hover: var(--fab-bg-primary-neutral-on-color-hovered);
+  --_fab-bg-focus: var(--fab-bg-primary-neutral-on-color-focused);
+  --_fab-bg-active: var(--fab-bg-primary-neutral-on-color-pressed);
+  --_fab-bg-selected: var(--fab-bg-primary-neutral-on-color-selected);
+  --_fab-bg-disabled: var(--fab-bg-disabled-on-color);
+  --_fab-text: var(--fab-text-primary-neutral-on-color);
+  --_fab-text-disabled: var(--fab-text-disabled-on-color);
+}
+
+/* Primary-Brand on a colored / dark background
+   Figma: backgrounds are identical to non-on-color Primary-Brand. */
+.fab--primary-brand.fab--on-color {
+  --_fab-bg: var(--fab-bg-primary-brand-default);
+  --_fab-bg-hover: var(--fab-bg-primary-brand-hovered);
+  --_fab-bg-focus: var(--fab-bg-primary-brand-default);
+  --_fab-bg-active: var(--fab-bg-primary-brand-pressed);
+  --_fab-bg-selected: var(--fab-bg-primary-brand-selected);
+  --_fab-bg-disabled: var(--fab-bg-disabled-on-color);
+  --_fab-text: var(--fab-text-primary-brand);
+  --_fab-text-disabled: var(--fab-text-disabled-on-color);
+}
+
+/* Secondary-Solid on a colored / dark background */
+.fab--secondary-solid.fab--on-color {
+  --_fab-bg: var(--fab-bg-secondary-solid-on-color-default);
+  --_fab-bg-hover: var(--fab-bg-secondary-solid-on-color-hovered);
+  --_fab-bg-focus: var(--fab-bg-secondary-solid-on-color-focused);
+  --_fab-bg-active: var(--fab-bg-secondary-solid-on-color-pressed);
+  --_fab-bg-selected: var(--fab-bg-secondary-solid-on-color-selected);
+  --_fab-bg-disabled: var(--fab-bg-disabled-on-color);
+  --_fab-text: var(--fab-text-secondary-solid-on-color);
+  --_fab-text-disabled: var(--fab-text-disabled-on-color);
+}
+
+/* =============================================================
+   States
+   ============================================================= */
+
+/* ── Hovered ──────────────────────────────────────────────── */
+.fab:hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--_fab-bg-hover);
+}
+
+/* ── Focused ──────────────────────────────────────────────── */
+.fab:focus,
+.fab:focus-visible,
+.fab.is-focused {
+  background: var(--_fab-bg-focus);
+}
+
+/* Focus ring — ::after
+   Figma: Focus outline RECTANGLE, position absolute, left: -5px, top: -5px,
+   border: 3px solid var(--Icon-icon-default, #161616), border-radius: full. */
+.fab::after {
+  content: '';
+  position: absolute;
+  inset: calc(-1 * var(--fab-focus-ring-offset));
+  border-radius: var(--fab-radius);
+  border: var(--fab-focus-ring-width) solid var(--fab-focus-ring-color);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fab:focus::after,
+.fab:focus-visible::after,
+.fab.is-focused::after {
+  opacity: 1;
+}
+
+/* ── Pressed ──────────────────────────────────────────────── */
+.fab:active:not(:disabled):not([aria-disabled="true"]),
+.fab.is-pressed {
+  background: var(--_fab-bg-active);
+}
+
+/* Pressed cancels focus ring (Figma: Focused and Pressed are mutually exclusive) */
+.fab:active::after,
+.fab.is-pressed::after {
+  opacity: 0;
+}
+
+/* ── Selected ─────────────────────────────────────────────── */
+.fab[aria-pressed="true"],
+.fab.is-selected {
+  background: var(--_fab-bg-selected);
+}
+
+/* ── Disabled ─────────────────────────────────────────────── */
+.fab:disabled,
+.fab[aria-disabled="true"] {
+  background: var(--_fab-bg-disabled);
+  color: var(--_fab-text-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.fab:disabled::after,
+.fab[aria-disabled="true"]::after {
+  display: none;
+}
+
+/* =============================================================
+   RTL — labeled mode
+   Icon-only (circular) is symmetric; RTL has no visual delta.
+   Label mode reverses icon/text order.
+   ============================================================= */
+[dir="rtl"] .fab {
+  flex-direction: row-reverse;
+}

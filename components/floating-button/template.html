@@ -1,0 +1,228 @@
+<!--
+  Floating Button — HTML Templates
+  Reference: floating-button.contract.md, reference.json
+
+  Anatomy:
+    <button type="button" class="fab [modifiers]" aria-label="[label]">
+      <span class="fab__icon" aria-hidden="true"><svg>...</svg></span>
+      <span class="fab__label">[label text]</span>  ← labeled mode only
+    </button>
+
+  Modifiers:
+    Style:   (none) = Primary-Neutral | .fab--primary-brand | .fab--secondary-solid
+    Size:    (none) = Small            | .fab--lg
+    Context: (none) = Default          | .fab--on-color
+    States:  :hover (auto) | :focus/:focus-visible (auto) | :active (auto)
+             [disabled]    | [aria-pressed="true"]
+
+  Note: aria-label is REQUIRED for icon-only buttons (no visible label).
+-->
+
+<!-- ── SVG icon reusable reference ─────────────────────────────
+     Replace with your icon system. Must be 24×24 viewBox.
+     currentColor inherits the button text/icon color.
+────────────────────────────────────────────────────────────── -->
+
+<!-- =============================================================
+     Primary-Neutral — Icon Only
+     ============================================================= -->
+
+<!-- Small (default) -->
+<button type="button" class="fab" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- Large -->
+<button type="button" class="fab fab--lg" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- =============================================================
+     Primary-Neutral — With Label
+     ============================================================= -->
+
+<!-- Small (default) -->
+<button type="button" class="fab">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+  <span class="fab__label">Add</span>
+</button>
+
+<!-- Large -->
+<button type="button" class="fab fab--lg">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+  <span class="fab__label">Add</span>
+</button>
+
+<!-- =============================================================
+     Primary-Brand — Icon Only
+     ============================================================= -->
+
+<!-- Small (default) -->
+<button type="button" class="fab fab--primary-brand" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- Large -->
+<button type="button" class="fab fab--primary-brand fab--lg" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- =============================================================
+     Primary-Brand — With Label
+     ============================================================= -->
+
+<button type="button" class="fab fab--primary-brand">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+  <span class="fab__label">Create</span>
+</button>
+
+<!-- =============================================================
+     Secondary-Solid — Icon Only
+     ============================================================= -->
+
+<!-- Small (default) -->
+<button type="button" class="fab fab--secondary-solid" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- Large -->
+<button type="button" class="fab fab--secondary-solid fab--lg" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- =============================================================
+     Secondary-Solid — With Label
+     ============================================================= -->
+
+<button type="button" class="fab fab--secondary-solid">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+  <span class="fab__label">Add</span>
+</button>
+
+<!-- =============================================================
+     On-Color Context — All Styles
+     Place on a dark/colored background surface.
+     ============================================================= -->
+
+<!-- Primary-Neutral on color -->
+<button type="button" class="fab fab--on-color" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- Primary-Brand on color -->
+<button type="button" class="fab fab--primary-brand fab--on-color" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- Secondary-Solid on color -->
+<button type="button" class="fab fab--secondary-solid fab--on-color" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- =============================================================
+     States
+     ============================================================= -->
+
+<!-- Focused — use .is-focused for static showcase display -->
+<button type="button" class="fab is-focused" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- Pressed — use .is-pressed for static showcase display -->
+<button type="button" class="fab is-pressed" aria-label="Add item">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- Selected / toggle active -->
+<button type="button" class="fab" aria-label="Remove item" aria-pressed="true">
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- Disabled -->
+<button type="button" class="fab" aria-label="Add item" disabled>
+  <span class="fab__icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</button>
+
+<!-- =============================================================
+     RTL — Labeled mode
+     Apply dir="rtl" to a parent element.
+     ============================================================= -->
+
+<div dir="rtl">
+  <button type="button" class="fab fab--primary-brand">
+    <span class="fab__icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span class="fab__label">إضافة</span>
+  </button>
+</div>
