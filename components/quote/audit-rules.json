@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "quote",
+  "selector_root": ".quote",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "QUOTE-A11Y-001",
+      "standard_id": "PLATFORM-CODE-QUOTE-001",
+      "rule_type": "element_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Quote root must be <blockquote>",
+      "description": "The .quote class must be applied to a <blockquote> element. Using <div> or other non-semantic elements removes the quotation semantics from the accessibility tree.",
+      "target": ".quote",
+      "expected": "element tag is 'blockquote'",
+      "check": {
+        "type": "element_required",
+        "expected_tag": "blockquote"
+      },
+      "message": "The .quote class is applied to a non-blockquote element. Use <blockquote class=\"quote\">.",
+      "fix": "Change the root element to <blockquote class=\"quote\" dir=\"ltr\">.",
+      "standard_refs": ["PLATFORM-CODE-QUOTE-001", "WCAG-2.1-1.3.1"]
+    },
+
+    {
+      "id": "QUOTE-A11Y-002",
+      "standard_id": "PLATFORM-CODE-QUOTE-002",
+      "rule_type": "element_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Author name must use <cite>",
+      "description": "The .quote__author-name class should be applied to a <cite> element to convey semantic attribution. Using <span> or <p> removes the citation semantics.",
+      "target": ".quote__author-name",
+      "expected": "element tag is 'cite'",
+      "check": {
+        "type": "element_required",
+        "expected_tag": "cite"
+      },
+      "message": "Author name (.quote__author-name) is not a <cite> element. Screen readers may not identify this as a citation.",
+      "fix": "Change .quote__author-name to <cite class=\"quote__author-name\">.",
+      "standard_refs": ["PLATFORM-CODE-QUOTE-002", "WCAG-2.1-1.3.1"]
+    },
+
+    {
+      "id": "QUOTE-A11Y-003",
+      "standard_id": "PLATFORM-CODE-QUOTE-001",
+      "rule_type": "element_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Author attribution section should use <footer>",
+      "description": "The .quote__author-details class should be applied to a <footer> element inside the <blockquote> to semantically scope the attribution.",
+      "target": ".quote__author-details",
+      "expected": "element tag is 'footer'",
+      "check": {
+        "type": "element_required",
+        "expected_tag": "footer"
+      },
+      "message": "Author details (.quote__author-details) is not a <footer> element. Use <footer> for semantic attribution scoping.",
+      "fix": "Change .quote__author-details to <footer class=\"quote__author-details\">.",
+      "standard_refs": ["PLATFORM-CODE-QUOTE-001", "WCAG-2.1-1.3.1"]
+    },
+
+    {
+      "id": "QUOTE-A11Y-004",
+      "standard_id": "WCAG-2.1-1.3.1",
+      "rule_type": "attribute_required",
+      "category": "accessibility",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Quote must have dir attribute set",
+      "description": "The .quote root element or an ancestor must have a dir attribute ('ltr' or 'rtl') to ensure correct text direction and CSS layout. Absence of dir attribute may result in incorrect quote mark positioning and layout alignment.",
+      "target": ".quote",
+      "expected": "element or an ancestor has dir attribute with value 'ltr' or 'rtl'",
+      "check": {
+        "type": "attribute_required",
+        "attribute": "dir",
+        "scope": "self_or_ancestor",
+        "allowed_values": ["ltr", "rtl"]
+      },
+      "message": "No dir attribute found on .quote or its ancestors. Set dir='ltr' or dir='rtl' to ensure correct layout and text direction.",
+      "fix": "Add dir=\"ltr\" or dir=\"rtl\" to the <blockquote class=\"quote\"> element.",
+      "standard_refs": ["WCAG-2.1-1.3.1", "PLATFORM-CODE-QUOTE-004"]
+    },
+
+    {
+      "id": "QUOTE-A11Y-005",
+      "standard_id": "WCAG-2.1-1.1.1",
+      "rule_type": "advisory",
+      "category": "accessibility",
+      "severity": "advisory",
+      "validation_status": "not_run",
+      "title": "Decorative quote marks must not generate meaningful accessible names",
+      "description": "The decorative \" and \" marks are rendered via CSS ::before/::after pseudo-elements using content alt text ('/ \"\"'). Verify that no HTML element containing literal quotation mark characters \" or \" exists inside .quote — these would be announced by screen readers redundantly.",
+      "target": ".quote",
+      "expected": "no child elements contain standalone U+201C or U+201D characters as content",
+      "check": {
+        "type": "advisory",
+        "note": "Static analysis cannot fully verify pseudo-element rendering. Verify in browser with screen reader."
+      },
+      "message": "Verify that opening and closing quotation marks are only rendered via CSS pseudo-elements, not HTML text nodes.",
+      "fix": "Remove any HTML text nodes containing \" or \" from inside .quote. These characters are managed exclusively by CSS ::before and ::after.",
+      "standard_refs": ["WCAG-2.1-1.1.1"]
+    },
+
+    {
+      "id": "QUOTE-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-QUOTE-001",
+      "rule_type": "element_required",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Quote must contain .quote__text",
+      "description": ".quote__text is the required slot. A quote without visible text content is incomplete.",
+      "target": ".quote",
+      "expected": "element contains a child with class 'quote__text'",
+      "check": {
+        "type": "child_required",
+        "child_selector": ".quote__text"
+      },
+      "message": "Quote is missing .quote__text. Every quote must contain a text element.",
+      "fix": "Add <p class=\"quote__text\">...</p> inside .quote__body.",
+      "standard_refs": ["PLATFORM-CODE-QUOTE-001"]
+    },
+
+    {
+      "id": "QUOTE-STRUCT-002",
+      "standard_id": "PLATFORM-CODE-QUOTE-001",
+      "rule_type": "element_required",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Quote must contain .quote__body",
+      "description": ".quote__body is required. It provides the horizontal inset padding for the quote content.",
+      "target": ".quote",
+      "expected": "element contains a child with class 'quote__body'",
+      "check": {
+        "type": "child_required",
+        "child_selector": ".quote__body"
+      },
+      "message": "Quote is missing .quote__body wrapper. The body container is required for correct layout.",
+      "fix": "Wrap .quote__title and .quote__text inside <div class=\"quote__body\">.",
+      "standard_refs": ["PLATFORM-CODE-QUOTE-001"]
+    },
+
+    {
+      "id": "QUOTE-STRUCT-003",
+      "standard_id": "PLATFORM-CODE-QUOTE-004",
+      "rule_type": "css_class_forbidden",
+      "category": "structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "RTL must not be applied via modifier class",
+      "description": "RTL layout is controlled by the [dir='rtl'] CSS selector, not a modifier class like .quote--rtl. Using a modifier class will not activate the RTL CSS rules.",
+      "target": ".quote",
+      "expected": "element does not have class 'quote--rtl'",
+      "check": {
+        "type": "class_forbidden",
+        "forbidden_class": "quote--rtl"
+      },
+      "message": "RTL modifier class .quote--rtl found. RTL layout is activated by dir='rtl' attribute, not a class.",
+      "fix": "Remove .quote--rtl class. Add dir=\"rtl\" attribute to the <blockquote> element instead.",
+      "standard_refs": ["PLATFORM-CODE-QUOTE-004"]
+    },
+
+    {
+      "id": "QUOTE-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-QUOTE-003",
+      "rule_type": "css_property_forbidden",
+      "category": "tokens",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Quote must not use hardcoded color values",
+      "description": "All color values in .quote and its children must use CSS custom properties. Hardcoded hex, rgb, or rgba values bypass the token system.",
+      "target": ".quote",
+      "expected": "color, background, and background-color properties use var(--*) not raw color values",
+      "check": {
+        "type": "css_property_check",
+        "properties": ["color", "background", "background-color"],
+        "must_be_variable": true,
+        "forbidden_pattern": "^#|^rgb|^rgba"
+      },
+      "message": "Hardcoded color found in .quote or a child element. Replace with the appropriate design token.",
+      "fix": "Replace hardcoded color with the corresponding --quote-* token from reference.json.",
+      "standard_refs": ["PLATFORM-CODE-QUOTE-003"]
+    }
+
+  ]
+}

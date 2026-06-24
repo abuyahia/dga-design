@@ -1,0 +1,159 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "quote",
+    "description": "A blockquote presentation component for highlighting attributed quotations. Supports RTL/LTR direction, Large/Small sizes, and optional white background surface. Renders as a semantic <blockquote> with decorative quotation marks via CSS pseudo-elements. No interactive states."
+  },
+  "source": {
+    "manifest": "components/quote/mainifest.json",
+    "figma_type": "COMPONENT_SET",
+    "figma_name": "Quote",
+    "note": "Manifest filename contains a typo ('mainifest'). Preserved as-is per platform policy."
+  },
+  "axes": ["direction", "size", "background"],
+  "axis_values": {
+    "direction": ["ltr", "rtl"],
+    "size": ["large", "small"],
+    "background": ["none", "white"]
+  },
+  "discarded_axes": {},
+  "size_tokens": {
+    "large": {
+      "width": "var(--quote-width-lg, 846px)",
+      "css-modifier": null,
+      "note": "846px is hardcoded in Figma. No Figma width variable found for Large size. Missing token: --quote-width-lg. Large is the default size — no modifier class required."
+    },
+    "small": {
+      "width": "var(--quote-width-sm, var(--Width-width-lg, 640px))",
+      "css-modifier": ".quote--sm",
+      "note": "Figma maps Small to var(--Width-width-lg, 640px). Token name 'width-lg' for the 'Small' component variant is an inconsistency in Figma upstream token naming — preserved as-is."
+    }
+  },
+  "background_tokens": {
+    "none": {
+      "background": "transparent (no background property set)",
+      "css-modifier": null,
+      "note": "No background is the default. No modifier class required."
+    },
+    "white": {
+      "background": "var(--quote-bg, var(--Background-background-neutral-50, #F9FAFB))",
+      "css-modifier": ".quote--white-bg"
+    }
+  },
+  "direction_tokens": {
+    "ltr": {
+      "root-align-items": "flex-start",
+      "body-align-items": "flex-start",
+      "author-info-align-items": "flex-start",
+      "body-text-align": "unset (inherits, left by default)",
+      "author-text-align": "right (explicit per Figma)",
+      "mark-open-position": "left: 14px; top: 20px (Large) / left: 13px; top: 20px (Small)",
+      "mark-close-position": "right: 19px; bottom: 23px (Large) / right: 13px; bottom: 36px (Small)",
+      "css-selector": "default (no modifier)"
+    },
+    "rtl": {
+      "root-align-items": "flex-end",
+      "body-align-items": "flex-end",
+      "author-info-align-items": "flex-end",
+      "body-text-align": "right",
+      "author-text-align": "right",
+      "mark-open-position": "right: 7px; top: 20px (Large and Small — same)",
+      "mark-close-position": "left: 23px; bottom: 23px (Large and Small — same)",
+      "css-selector": "[dir='rtl'] .quote"
+    }
+  },
+  "anatomy": {
+    "root": {
+      "element": "blockquote",
+      "class": ".quote",
+      "description": "Root element. position: relative to contain absolute pseudo-element quote marks. box-sizing: border-box."
+    },
+    "body": {
+      "element": "div",
+      "class": ".quote__body",
+      "description": "Content area with horizontal inset padding (64px each side) for the quote body."
+    },
+    "title": {
+      "element": "p",
+      "class": ".quote__title",
+      "description": "Optional heading text for the quote. Display font, weight 500, 24px/32px. Can be replaced with an <h*> element at the appropriate document heading level if semantic heading structure is required."
+    },
+    "text": {
+      "element": "p",
+      "class": ".quote__text",
+      "description": "Main quote body text. Text font, weight 400, 20px/30px."
+    },
+    "author-details": {
+      "element": "footer",
+      "class": ".quote__author-details",
+      "description": "Author attribution container. justify-content: flex-end aligns the author block to the end of the row in both LTR and RTL."
+    },
+    "author-info": {
+      "element": "div",
+      "class": ".quote__author-info",
+      "description": "Column stack for author name and description. align-items changes between LTR and RTL."
+    },
+    "author-name": {
+      "element": "cite",
+      "class": ".quote__author-name",
+      "description": "Author name. <cite> provides semantic attribution. font-style: normal overrides browser italic default. text-align: right in both LTR and RTL per Figma."
+    },
+    "author-description": {
+      "element": "span",
+      "class": ".quote__author-description",
+      "description": "Author brief, title, or role. 18px/28px text font. text-align: right in both LTR and RTL per Figma."
+    },
+    "mark-open": {
+      "element": "::before pseudo-element on .quote",
+      "class": null,
+      "description": "Opening decorative quotation mark " (U+201C). Absolute positioned. Not in HTML. CSS content alt text empty to suppress from screen readers."
+    },
+    "mark-close": {
+      "element": "::after pseudo-element on .quote",
+      "class": null,
+      "description": "Closing decorative quotation mark " (U+201D). Absolute positioned. Not in HTML. CSS content alt text empty to suppress from screen readers."
+    }
+  },
+  "missing_component_tokens": [
+    "--quote-padding",
+    "--quote-gap",
+    "--quote-radius",
+    "--quote-bg",
+    "--quote-body-padding-x",
+    "--quote-body-gap",
+    "--quote-author-gap",
+    "--quote-author-info-gap",
+    "--quote-title-color",
+    "--quote-title-font-family",
+    "--quote-title-font-size",
+    "--quote-title-line-height",
+    "--quote-text-color",
+    "--quote-text-font-family",
+    "--quote-text-font-size",
+    "--quote-text-line-height",
+    "--quote-author-name-font-size",
+    "--quote-author-name-line-height",
+    "--quote-author-description-font-size",
+    "--quote-author-description-line-height",
+    "--quote-mark-color",
+    "--quote-mark-font-size",
+    "--quote-width-lg",
+    "--quote-width-sm"
+  ],
+  "variants": {
+    "total_in_manifest": 8,
+    "meaningful_css_variants": 8,
+    "notes": "8 = 2 direction × 2 size × 2 background. All 8 produce distinct CSS output. No axis was discarded. RTL axis is NOT discarded because it produces layout and positioning deltas (unlike text-only components)."
+  },
+  "implementation_notes": [
+    "Decorative quotation marks \" and \" are rendered via ::before and ::after pseudo-elements, not HTML. CSS content alt text ('/ \"\"') suppresses them from modern screen readers.",
+    "Quote mark positions differ between LTR Large, LTR Small, and RTL (same for both RTL sizes). Handled via .quote--sm and [dir='rtl'] selectors.",
+    "align-items uses physical values (flex-start/flex-end) per Figma. RTL overrides explicitly set flex-end on root, body, and author-info.",
+    "justify-content: flex-end on .quote__author-details is the same for LTR and RTL. No override needed. Physical right-alignment is intentional for both directions.",
+    "text-align: right on .quote__author-name and .quote__author-description is preserved for both LTR and RTL per Figma specification.",
+    "Root element is <blockquote> for semantic quotation. Author name uses <cite>. Attribution section uses <footer> inside blockquote.",
+    "No interactive states in this component. No hover, focus, pressed, or disabled CSS needed.",
+    "Large width 846px has no Figma variable. Token --quote-width-lg proposed and documented. Fallback 846px hardcoded.",
+    "Figma token --Width-width-lg (640px) used for Small. The 'lg' suffix for the Small variant is an upstream naming inconsistency — preserved as-is."
+  ]
+}

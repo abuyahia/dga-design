@@ -1,0 +1,257 @@
+/* =============================================================
+   Quote Component  ·  Reference: reference.json
+   ============================================================= */
+
+/* ── Internal design tokens ─────────────────────────────────── */
+.quote {
+  /* TODO: --quote-padding missing in token.css. Proposed mapping: var(--Global-spacing-2xl, 20px). */
+  --_quote-padding: var(--quote-padding, var(--Global-spacing-2xl, 20px));
+
+  /* TODO: --quote-gap missing in token.css. Proposed mapping: var(--Global-spacing-6xl, 48px). */
+  --_quote-gap: var(--quote-gap, var(--Global-spacing-6xl, 48px));
+
+  /* TODO: --quote-radius missing in token.css. Proposed mapping: var(--Radius-radius-lg, 16px). */
+  --_quote-radius: var(--quote-radius, var(--Radius-radius-lg, 16px));
+
+  /* TODO: --quote-bg missing in token.css. Proposed mapping: var(--Background-background-neutral-50, #F9FAFB). */
+  --_quote-bg: var(--quote-bg, var(--Background-background-neutral-50, #F9FAFB));
+
+  /* TODO: --quote-body-padding-x missing in token.css. Proposed mapping: var(--Global-spacing-7xl, 64px). */
+  --_quote-body-padding-x: var(--quote-body-padding-x, var(--Global-spacing-7xl, 64px));
+
+  /* TODO: --quote-body-gap missing in token.css. Proposed mapping: var(--Global-spacing-xl, 16px). */
+  --_quote-body-gap: var(--quote-body-gap, var(--Global-spacing-xl, 16px));
+
+  /* TODO: --quote-author-gap missing in token.css. Proposed mapping: var(--Global-spacing-xl, 16px). */
+  --_quote-author-gap: var(--quote-author-gap, var(--Global-spacing-xl, 16px));
+
+  /* TODO: --quote-author-info-gap missing in token.css. Proposed mapping: var(--Global-spacing-md, 8px). */
+  --_quote-author-info-gap: var(--quote-author-info-gap, var(--Global-spacing-md, 8px));
+
+  /* TODO: --quote-title-color missing in token.css. Proposed mapping: var(--Text-text-default, #161616). */
+  --_quote-title-color: var(--quote-title-color, var(--Text-text-default, #161616));
+
+  /* TODO: --quote-title-font-family missing in token.css. Proposed mapping: var(--Font-Family-font-family-display). */
+  --_quote-title-font-family: var(--quote-title-font-family, var(--Font-Family-font-family-display, "IBM Plex Sans Arabic", sans-serif));
+
+  /* TODO: --quote-title-font-size missing in token.css. Proposed mapping: var(--Size-Display-typo-size-display-xs, 24px). */
+  --_quote-title-font-size: var(--quote-title-font-size, var(--Size-Display-typo-size-display-xs, 24px));
+
+  /* TODO: --quote-title-line-height missing in token.css. Proposed mapping: var(--Line-Height-Display-line-heights-display-xs, 32px). */
+  --_quote-title-line-height: var(--quote-title-line-height, var(--Line-Height-Display-line-heights-display-xs, 32px));
+
+  /* TODO: --quote-text-color missing in token.css. Proposed mapping: var(--Text-text-primary-paragraph, #384250). */
+  --_quote-text-color: var(--quote-text-color, var(--Text-text-primary-paragraph, #384250));
+
+  /* TODO: --quote-text-font-family missing in token.css. Proposed mapping: var(--Font-Family-font-family-text). */
+  --_quote-text-font-family: var(--quote-text-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic", sans-serif));
+
+  /* TODO: --quote-text-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-xl, 20px). */
+  --_quote-text-font-size: var(--quote-text-font-size, var(--Size-Text-typo-size-text-xl, 20px));
+
+  /* TODO: --quote-text-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-xl, 30px). */
+  --_quote-text-line-height: var(--quote-text-line-height, var(--Line-Height-Text-line-heights-text-xl, 30px));
+
+  /* TODO: --quote-author-name-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-xl, 20px). */
+  --_quote-author-name-font-size: var(--quote-author-name-font-size, var(--Size-Text-typo-size-text-xl, 20px));
+
+  /* TODO: --quote-author-name-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-xl, 30px). */
+  --_quote-author-name-line-height: var(--quote-author-name-line-height, var(--Line-Height-Text-line-heights-text-xl, 30px));
+
+  /* TODO: --quote-author-description-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-Ig, 18px). Note: 'Ig' may be a typo for 'lg' in upstream token. */
+  --_quote-author-description-font-size: var(--quote-author-description-font-size, var(--Size-Text-typo-size-text-Ig, 18px));
+
+  /* TODO: --quote-author-description-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-Ig, 28px). */
+  --_quote-author-description-line-height: var(--quote-author-description-line-height, var(--Line-Height-Text-line-heights-text-Ig, 28px));
+
+  /* TODO: --quote-mark-color missing in token.css. Proposed mapping: var(--Text-text-primary-sa-flag, #14573A). */
+  --_quote-mark-color: var(--quote-mark-color, var(--Text-text-primary-sa-flag, #14573A));
+
+  /* TODO: --quote-mark-font-size missing in token.css. No primitive token maps to 128px. Hardcoded fallback. */
+  --_quote-mark-font-size: var(--quote-mark-font-size, 128px);
+
+  /* TODO: --quote-width-lg missing in token.css. No Figma variable exists for Large width. 846px hardcoded. */
+  --_quote-width: var(--quote-width-lg, 846px);
+}
+
+/* ── Base ──────────────────────────────────────────────────── */
+.quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--_quote-padding);
+  gap: var(--_quote-gap);
+  border-radius: var(--_quote-radius);
+  width: var(--_quote-width);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* ── Decorative quotation marks ──────────────────────────────── */
+/* Rendered as pseudo-elements. Not in HTML. Visual-only layers from Figma. */
+/* content alt text ("/ """) suppresses announcement by modern screen readers. */
+.quote::before,
+.quote::after {
+  position: absolute;
+  color: var(--_quote-mark-color);
+  font-family: var(--_quote-text-font-family);
+  font-size: var(--_quote-mark-font-size);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 32px;
+  pointer-events: none;
+}
+
+/* LTR Large: opening mark top-left */
+.quote::before {
+  content: "\201C" / "";
+  left: 14px;
+  top: 20px;
+}
+
+/* LTR Large: closing mark bottom-right */
+.quote::after {
+  content: "\201D" / "";
+  right: 19px;
+  bottom: 23px;
+}
+
+/* ── Body ────────────────────────────────────────────────────── */
+.quote__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+  padding: 0 var(--_quote-body-padding-x);
+  gap: var(--_quote-body-gap);
+}
+
+/* ── Title ──────────────────────────────────────────────────── */
+.quote__title {
+  align-self: stretch;
+  margin: 0;
+  color: var(--_quote-title-color);
+  font-family: var(--_quote-title-font-family);
+  font-size: var(--_quote-title-font-size);
+  font-style: normal;
+  font-weight: 500;
+  line-height: var(--_quote-title-line-height);
+}
+
+/* ── Text ──────────────────────────────────────────────────── */
+.quote__text {
+  align-self: stretch;
+  margin: 0;
+  color: var(--_quote-text-color);
+  font-family: var(--_quote-text-font-family);
+  font-size: var(--_quote-text-font-size);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--_quote-text-line-height);
+}
+
+/* ── Author Details ──────────────────────────────────────────── */
+/* justify-content: flex-end is the same for LTR and RTL per Figma — no RTL override needed */
+.quote__author-details {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--_quote-author-gap);
+  padding: 0;
+}
+
+/* ── Author Info ─────────────────────────────────────────────── */
+.quote__author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--_quote-author-info-gap);
+}
+
+/* ── Author Name ─────────────────────────────────────────────── */
+/* <cite> browser default is italic — overridden to match Figma */
+.quote__author-name {
+  display: block;
+  font-style: normal;
+  /* text-align: right intentional for both LTR and RTL per Figma specification */
+  text-align: right;
+  color: var(--_quote-title-color);
+  font-family: var(--_quote-text-font-family);
+  font-size: var(--_quote-author-name-font-size);
+  font-weight: 500;
+  line-height: var(--_quote-author-name-line-height);
+}
+
+/* ── Author Description ──────────────────────────────────────── */
+/* text-align: right intentional for both LTR and RTL per Figma specification */
+.quote__author-description {
+  display: block;
+  text-align: right;
+  color: var(--_quote-text-color);
+  font-family: var(--_quote-text-font-family);
+  font-size: var(--_quote-author-description-font-size);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--_quote-author-description-line-height);
+}
+
+/* ── Size: Small ─────────────────────────────────────────────── */
+.quote--sm {
+  /* TODO: --quote-width-sm missing in token.css. Proposed: var(--Width-width-lg, 640px). */
+  /* Note: Figma token 'width-lg' used for 'Small' size — upstream naming inconsistency. */
+  --_quote-width: var(--quote-width-sm, var(--Width-width-lg, 640px));
+}
+
+/* LTR Small: opening mark shifts 1px left */
+.quote--sm::before {
+  left: 13px;
+}
+
+/* LTR Small: closing mark shifts right and bottom relative to Large */
+.quote--sm::after {
+  right: 13px;
+  bottom: 36px;
+}
+
+/* ── Background: White ───────────────────────────────────────── */
+.quote--white-bg {
+  background: var(--_quote-bg);
+}
+
+/* ── RTL ─────────────────────────────────────────────────────── */
+/* Direction is set via dir="rtl" on the component root or an ancestor. */
+/* Not a modifier class — direction is a document-level concern. */
+
+[dir="rtl"] .quote {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .quote__body {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .quote__author-info {
+  align-items: flex-end;
+}
+
+[dir="rtl"] .quote__title,
+[dir="rtl"] .quote__text {
+  text-align: right;
+}
+
+/* RTL: opening mark at top-right, closing mark at bottom-left */
+/* Positions are the same for both Large and Small in RTL per manifest */
+[dir="rtl"] .quote::before {
+  content: "\201C" / "";
+  right: 7px;
+  left: unset;
+  top: 20px;
+}
+
+[dir="rtl"] .quote::after {
+  content: "\201D" / "";
+  left: 23px;
+  right: unset;
+  bottom: 23px;
+}

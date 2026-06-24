@@ -459,6 +459,51 @@
   --accordion-normal-bg-pressed:    var(--gray-200);
   --accordion-normal-focus-ring:    #161616;
   --accordion-normal-disabled-text: var(--gray-400);
+
+  /* ===================================================
+     Content Switcher Tokens
+     =================================================== */
+
+  --content-switcher-font-family: var(--font-sans);
+  --content-switcher-radius:      var(--radius-md);
+
+  /* Item — default */
+  --content-switcher-item-bg-default:    var(--gray-100);
+  --content-switcher-item-bg-hovered:    var(--gray-200);
+  --content-switcher-item-bg-selected:   var(--gray-950);
+  --content-switcher-item-text-default:  var(--gray-900);
+  --content-switcher-item-text-selected: var(--white);
+  --content-switcher-item-border:        var(--gray-200);
+
+  /* Focus */
+  --content-switcher-focus-ring:       var(--black);
+  --content-switcher-focus-ring-inner: var(--white);
+
+  /* Size — sm */
+  --content-switcher-sm-height:      var(--space-32);
+  --content-switcher-sm-padding-x:   var(--space-12);
+  --content-switcher-sm-font-size:   var(--fs-text-md);
+  --content-switcher-sm-line-height: var(--lh-text-md);
+
+  /* Size — md */
+  --content-switcher-md-height:      var(--space-40);
+  --content-switcher-md-padding-x:   var(--space-16);
+  --content-switcher-md-font-size:   var(--fs-text-lg);
+  --content-switcher-md-line-height: var(--lh-text-lg);
+
+  /* Size — lg */
+  --content-switcher-lg-height:      var(--space-48);
+  --content-switcher-lg-padding-x:   var(--space-20);
+  --content-switcher-lg-font-size:   var(--fs-text-xl);
+  --content-switcher-lg-line-height: var(--lh-text-xl);
+
+  /* On-color mode
+     bg-default-oncolor and border-oncolor use raw rgba values:
+     no semi-transparent white primitive exists in the token scale. */
+  --content-switcher-item-bg-default-oncolor:  rgba(255, 255, 255, 0.10);
+  --content-switcher-item-bg-selected-oncolor: var(--sa-600);
+  --content-switcher-item-text-oncolor:        var(--white);
+  --content-switcher-item-border-oncolor:      rgba(255, 255, 255, 0.10);
 }
 
 @supports (direction: rtl) {

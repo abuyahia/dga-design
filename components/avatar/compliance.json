@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "component": "avatar",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "last_reviewed": "2026-06-22",
+
+  "checks": [
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-001",
+      "category": "structure",
+      "description": "Root element uses correct BEM base class",
+      "rule": "Root element must carry .avatar class",
+      "status": "pass",
+      "notes": "Root element is .avatar with BEM modifier pattern."
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-002",
+      "category": "structure",
+      "description": "Size modifiers are exclusive and required",
+      "rule": "Exactly one size modifier (.avatar--24 through .avatar--120) must be present",
+      "status": "pass",
+      "notes": "Seven size modifiers documented and implemented."
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-003",
+      "category": "structure",
+      "description": "Image type uses semantic <img> element",
+      "rule": "Image avatars must use <img class='avatar__image'> with alt attribute, not CSS background",
+      "status": "pass",
+      "notes": "HTML template uses <img> with alt. Deviation from Figma RECTANGLE background is intentional and documented in analysis.md."
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-004",
+      "category": "structure",
+      "description": "Square shape at 120px uses radius-8",
+      "rule": ".avatar--square.avatar--120 must use var(--avatar-radius-square-lg, 8px)",
+      "status": "pass",
+      "notes": "Implemented in avatar.css."
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-005",
+      "category": "structure",
+      "description": "120px size uses 4px border",
+      "rule": ".avatar--120 must use border-width: 4px",
+      "status": "pass",
+      "notes": "Implemented in avatar.css."
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-001",
+      "category": "accessibility",
+      "description": "Icon and Initials types require role and aria-label",
+      "rule": "When avatar conveys identity, root element must have role='img' and aria-label with person's name",
+      "status": "pass",
+      "notes": "Documented in contract and template. Enforcement is implementation-side."
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-002",
+      "category": "accessibility",
+      "description": "Icon SVG must be aria-hidden",
+      "rule": ".avatar__icon and its SVG child must have aria-hidden='true'",
+      "status": "pass",
+      "notes": "Template and showcase use aria-hidden='true' on .avatar__icon span."
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-003",
+      "category": "accessibility",
+      "description": "Initials span must be aria-hidden",
+      "rule": ".avatar__initials must have aria-hidden='true'",
+      "status": "pass",
+      "notes": "Documented in contract. Template includes aria-hidden='true'."
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-004",
+      "category": "accessibility",
+      "description": "Image type requires meaningful alt attribute",
+      "rule": "<img class='avatar__image'> must have non-empty alt attribute",
+      "status": "pass",
+      "notes": "Documented in contract. Enforcement is implementation-side."
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-005",
+      "category": "accessibility",
+      "description": "Overflow counter must be aria-hidden",
+      "rule": ".avatar--overflow element must have aria-hidden='true'",
+      "status": "pass",
+      "notes": "Overflow counter is visual-only. Group aria-label conveys total count semantically."
+    },
+
+    {
+      "id": "PLATFORM-CODE-A11Y-006",
+      "category": "accessibility",
+      "description": "Avatar Group requires group role and label",
+      "rule": ".avatar-group must have role='group' and aria-label describing the collection",
+      "status": "pass",
+      "notes": "Template and showcase include role='group' and aria-label examples."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TOKEN-001",
+      "category": "tokens",
+      "description": "Component-level avatar tokens are defined",
+      "rule": "CSS must use --avatar-* tokens for background, border, radius, and group gap",
+      "status": "pending_audit",
+      "notes": "Component-level tokens (--avatar-bg-default, --avatar-border-color, etc.) are not yet defined in token.css. CSS currently uses fallback Figma token names with TODO comments. See analysis.md Missing Tokens section."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TOKEN-002",
+      "category": "tokens",
+      "description": "No cross-component token namespace leaks",
+      "rule": "Avatar CSS must not reference --Button-* tokens",
+      "status": "fail",
+      "notes": "--Button-button-background-neutral-default is used as avatar fill fallback. Tracked in analysis.md High severity finding. Requires --avatar-bg-default to be defined in token.css."
+    },
+
+    {
+      "id": "PLATFORM-CODE-TOKEN-003",
+      "category": "tokens",
+      "description": "No hardcoded hex values in component CSS",
+      "rule": "All color values must use CSS custom properties with hardcoded fallbacks only",
+      "status": "pass",
+      "notes": "All color values use var(--token, #fallback) pattern."
+    },
+
+    {
+      "id": "PLATFORM-CODE-STATE-001",
+      "category": "states",
+      "description": "All required states are implemented",
+      "rule": "Component must implement all states declared in Figma manifest",
+      "status": "pass",
+      "notes": "Manifest declares Default state only. No interactive states. Avatar is display-only."
+    },
+
+    {
+      "id": "PLATFORM-CODE-FOCUS-001",
+      "category": "focus",
+      "description": "Focus indicator strategy is documented",
+      "rule": "Component must document focus behavior",
+      "status": "pass",
+      "notes": "Avatar does not define its own focus ring. Focus belongs to the interactive wrapper if avatar is placed inside a link or button. Documented in analysis.md Focus Layer Decisions and contract.md Constraints."
+    }
+
+  ],
+
+  "summary": {
+    "total": 16,
+    "pass": 14,
+    "fail": 1,
+    "pending_audit": 1,
+    "blockers": [
+      "PLATFORM-CODE-TOKEN-002: --Button-button-background-neutral-default used as avatar bg fill — cross-namespace token leak"
+    ],
+    "pending_items": [
+      "PLATFORM-CODE-TOKEN-001: Component-level --avatar-* tokens not yet defined in token.css"
+    ]
+  }
+}

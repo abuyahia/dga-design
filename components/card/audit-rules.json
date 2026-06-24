@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "card",
+  "selector_root": ".card",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+
+  "rules": [
+
+    {
+      "id": "CARD-A11Y-001",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Card must have an accessible group label",
+      "description": "The card root uses role='group' to group its content. For this to be meaningful to assistive technology, the group must have an accessible name via aria-labelledby pointing to the .card__title element.",
+      "target": ".card",
+      "expected": "element has role='group' AND aria-labelledby pointing to a .card__title element with non-empty text",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "all_of",
+        "conditions": [
+          "element has role='group'",
+          "element has aria-labelledby attribute",
+          "aria-labelledby target has non-empty text content"
+        ]
+      },
+      "message": "Card is missing accessible group label. Add role='group' and aria-labelledby pointing to the .card__title element.",
+      "fix": "Add role=\"group\" aria-labelledby=\"[id-of-card-title]\" to the .card root. Add id=\"[matching-id]\" to .card__title.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-CARD-003"]
+    },
+
+    {
+      "id": "CARD-A11Y-002",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Expandable card toggle must declare aria-expanded",
+      "description": "The .card__toggle button in an Expandable card must communicate its expanded/collapsed state via aria-expanded. Value must be 'true' or 'false' — never omitted.",
+      "target": ".card--expandable .card__toggle",
+      "expected": "element has aria-expanded='true' or aria-expanded='false' AND has non-empty aria-label",
+      "check": {
+        "type": "aria_attribute_required",
+        "logic": "all_of",
+        "conditions": [
+          "element has aria-expanded with value 'true' or 'false'",
+          "element has non-empty aria-label attribute"
+        ]
+      },
+      "message": "Expandable card toggle is missing aria-expanded or aria-label. Screen reader users cannot determine the card's expansion state.",
+      "fix": "Add aria-expanded=\"false\" (or \"true\") and aria-label=\"Expand card\" to .card__toggle.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-A11Y-007"]
+    },
+
+    {
+      "id": "CARD-A11Y-003",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Expandable card toggle must reference its controlled panel",
+      "description": "The .card__toggle button must carry aria-controls pointing to the id of .card__expandable-content. This connects the trigger to its panel for assistive technology.",
+      "target": ".card--expandable .card__toggle",
+      "expected": "element has aria-controls attribute whose value matches an existing element id",
+      "check": {
+        "type": "aria_attribute_required",
+        "attribute": "aria-controls",
+        "condition": "aria-controls value matches id of an existing DOM element"
+      },
+      "message": "Expandable card toggle is missing aria-controls or the target element does not exist.",
+      "fix": "Add aria-controls=\"[id]\" to .card__toggle and id=\"[matching-id]\" to .card__expandable-content.",
+      "standard_refs": ["WCAG-2.1-4.1.2"]
+    },
+
+    {
+      "id": "CARD-A11Y-004",
+      "standard_id": "PLATFORM-CODE-FOCUS-001",
+      "rule_type": "focus_indicator_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Card focus indicator must not be suppressed",
+      "description": "The card stylesheet defines a visible focus indicator via :focus-within that changes the border to 2px solid black. Any override that removes this focus indicator violates WCAG 2.4.7.",
+      "target": ".card--expandable:focus-within, .card--selectable:focus-within",
+      "expected": "computed border-width is 2px and border-color is not transparent or matching background",
+      "check": {
+        "type": "focus_indicator_required",
+        "selector": ".card--expandable:focus-within, .card--selectable:focus-within",
+        "expected_css": {
+          "border-width": "2px",
+          "border-color": "var(--card-border-focused)"
+        }
+      },
+      "message": "Card focus-within indicator is suppressed or overridden. Keyboard users may not see which card is active.",
+      "fix": "Remove any override that changes border-width or border-color on :focus-within for .card--expandable or .card--selectable.",
+      "standard_refs": ["WCAG-2.1-2.4.7", "PLATFORM-CODE-FOCUS-001"]
+    },
+
+    {
+      "id": "CARD-A11Y-005",
+      "standard_id": "WCAG-2.1-4.1.2",
+      "rule_type": "aria_attribute_required",
+      "category": "accessibility",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Selectable card checkbox must have an accessible label",
+      "description": "The checkbox inside .card__checkbox-wrapper must have an accessible name so screen reader users understand what they are selecting.",
+      "target": ".card--selectable .card__checkbox-wrapper input[type='checkbox']",
+      "expected": "checkbox has accessible name via associated <label> OR aria-label OR aria-labelledby",
+      "check": {
+        "type": "aria_attribute_required",
+        "selector": ".card--selectable .card__checkbox-wrapper input[type='checkbox']",
+        "logic": "any_of",
+        "conditions": [
+          "element has associated <label> via for/id pairing",
+          "element has non-empty aria-label attribute",
+          "element has aria-labelledby pointing to non-empty element"
+        ]
+      },
+      "message": "Selectable card checkbox is missing an accessible label. Screen reader users cannot identify what they are selecting.",
+      "fix": "Add a <label for=\"[checkbox-id]\">Select this card</label> or aria-label to the checkbox. A visually hidden label (.sr-only) is acceptable.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "WCAG-2.1-1.1.1"]
+    },
+
+    {
+      "id": "CARD-STRUCT-001",
+      "standard_id": "PLATFORM-CODE-CARD-003",
+      "rule_type": "semantic_element_required",
+      "category": "html-structure",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Interactive card child elements must use semantic elements",
+      "description": "The .card__toggle must be a <button> element. The checkbox in .card__checkbox-wrapper must be an <input type='checkbox'>. Using non-interactive elements for these controls breaks keyboard access.",
+      "target": ".card__toggle, .card__checkbox-wrapper input",
+      "expected": ".card__toggle tag is 'button'. Checkbox inside .card__checkbox-wrapper is input[type='checkbox'].",
+      "check": {
+        "type": "semantic_element_required",
+        "rules": [
+          { "selector": ".card__toggle", "allowed_tags": ["button"] },
+          { "selector": ".card__checkbox-wrapper input", "allowed_types": ["checkbox"] }
+        ]
+      },
+      "message": "Card interactive element uses incorrect element type. .card__toggle must be <button>. Checkbox must be <input type='checkbox'>.",
+      "fix": "Use <button class=\"card__toggle\" type=\"button\"> for the expand trigger. Use <input type=\"checkbox\"> for the selection control.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-CARD-003"]
+    },
+
+    {
+      "id": "CARD-TOKEN-001",
+      "standard_id": "PLATFORM-CODE-CARD-001",
+      "rule_type": "no_hardcoded_values",
+      "category": "token-usage",
+      "severity": "error",
+      "validation_status": "not_run",
+      "title": "Colors must reference design tokens, not hardcoded values",
+      "description": "All color values applied to .card elements must reference CSS custom properties (var(--token-name)). Hardcoded hex, rgb(), or hsl() values as primary values bypass the token system.",
+      "target": ".card, .card *, .card::before, .card::after",
+      "expected": "background, color, border-color all use var(--) — or are transparent, none, inherit, currentColor",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".card, .card *, .card::before, .card::after",
+        "properties": ["background", "background-color", "color", "border-color"],
+        "allowed_literal_values": ["transparent", "none", "inherit", "currentColor"]
+      },
+      "message": "Hardcoded color '{value}' found on '{property}'. Replace with the corresponding --card-* design token.",
+      "fix": "Replace e.g. background: #F9FAFB with var(--card-bg-hover). See token surface in card.contract.md §12.",
+      "standard_refs": ["PLATFORM-CODE-CARD-001", "PLATFORM-CODE-TOKEN-001"]
+    },
+
+    {
+      "id": "CARD-RTL-001",
+      "standard_id": "PLATFORM-CODE-CARD-002",
+      "rule_type": "no_hardcoded_values",
+      "category": "rtl",
+      "severity": "warning",
+      "validation_status": "not_run",
+      "title": "Card must not use physical CSS properties that break RTL",
+      "description": "Physical directional properties on .card or its children cause visual defects under dir='rtl'. The card uses flex-direction: column which is direction-neutral. Physical horizontal properties should not be added.",
+      "target": ".card, .card__content, .card__actions, .card__icon-wrapper",
+      "expected": "padding-left, padding-right, margin-left, margin-right, border-left, border-right are absent",
+      "check": {
+        "type": "no_hardcoded_values",
+        "selector": ".card, .card__content, .card__actions, .card__icon-wrapper",
+        "forbidden_properties": [
+          "padding-left", "padding-right",
+          "margin-left", "margin-right",
+          "border-left", "border-right"
+        ]
+      },
+      "message": "Physical CSS property '{property}' found on card element. This will cause layout defects under dir='rtl'.",
+      "fix": "Replace padding-left/right with padding-inline-start/end. Remove horizontal directional margins from card children.",
+      "standard_refs": ["PLATFORM-CODE-CARD-002"]
+    }
+
+  ],
+
+  "severity_legend": {
+    "error": "Blocks release. Must be resolved before component ships to production.",
+    "warning": "Must be reviewed. Should be resolved; requires documented justification to waive.",
+    "info": "Advisory. No action required but noted in audit report."
+  },
+
+  "validation_status_legend": {
+    "not_run": "Rule has been defined but not yet executed against this component.",
+    "pass": "Rule was executed and the component passed.",
+    "fail": "Rule was executed and the component failed. See audit report for details.",
+    "skipped": "Rule was intentionally skipped with documented justification.",
+    "manual_required": "Rule cannot be validated automatically and requires human review."
+  },
+
+  "run_context": {
+    "static_analysis": ["CARD-TOKEN-001", "CARD-RTL-001", "CARD-A11Y-004"],
+    "dom_inspection": ["CARD-A11Y-001", "CARD-A11Y-002", "CARD-A11Y-003", "CARD-A11Y-005", "CARD-STRUCT-001"],
+    "manual_review": []
+  }
+}

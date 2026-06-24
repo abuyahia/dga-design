@@ -1,6 +1,32 @@
 /* ═══════════════════════════════════════════════════════════════
    Avatar — Component Styles
-   Figma source: components/avatar/avatar.json
+   Source: components/avatar/avatar.json + avatar-group.json
+   ═══════════════════════════════════════════════════════════════
+
+   TODO: --avatar-bg-default missing in token.css.
+         Proposed mapping: var(--Button-button-background-neutral-default, #F3F4F6)
+         Cross-namespace token leak — tracked in compliance.json PLATFORM-CODE-TOKEN-002.
+
+   TODO: --avatar-border-color missing in token.css.
+         Proposed mapping: var(--Border-border-white, #FFF)
+
+   TODO: --avatar-text-color missing in token.css.
+         Proposed mapping: var(--Text-text-default, #161616)
+
+   TODO: --avatar-bg-image missing in token.css.
+         Proposed mapping: var(--Background-background-white, #FFF)
+
+   TODO: --avatar-radius-circle missing in token.css.
+         Proposed mapping: var(--radius-round, 9999px)
+
+   TODO: --avatar-radius-square-sm missing in token.css.
+         Proposed mapping: var(--radius-4, 4px)
+
+   TODO: --avatar-radius-square-lg missing in token.css.
+         Proposed mapping: var(--radius-8, 8px)
+
+   TODO: --avatar-group-gap missing in token.css.
+         Proposed mapping: var(--Global-spacing-xs, 4px)
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── Base ──────────────────────────────────────────────────────── */
@@ -9,9 +35,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-round, 9999px);
-  border: 2px solid var(--Border-border-white, #fff);
-  background: var(--Button-button-background-neutral-default, #f3f4f6);
+  border-radius: var(--avatar-radius-circle, var(--radius-round, 9999px));
+  border: 2px solid var(--avatar-border-color, var(--Border-border-white, #fff));
+  background: var(--avatar-bg-default, var(--Button-button-background-neutral-default, #f3f4f6));
   overflow: hidden;
   flex-shrink: 0;
   box-sizing: border-box;
@@ -19,11 +45,11 @@
 
 /* ── Shape modifier — Square ───────────────────────────────────── */
 .avatar--square {
-  border-radius: var(--radius-4, 4px);
+  border-radius: var(--avatar-radius-square-sm, var(--radius-4, 4px));
 }
 
 .avatar--square.avatar--120 {
-  border-radius: var(--radius-8, 8px);
+  border-radius: var(--avatar-radius-square-lg, var(--radius-8, 8px));
 }
 
 /* ── Size modifiers ────────────────────────────────────────────── */
@@ -40,7 +66,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--Text-text-default, #161616);
+  color: var(--avatar-text-color, var(--Text-text-default, #161616));
   pointer-events: none;
 }
 
@@ -55,23 +81,32 @@
 /* ── Initials type ─────────────────────────────────────────────── */
 .avatar__initials {
   font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-  color: var(--Text-text-default, #161616);
+  color: var(--avatar-text-color, var(--Text-text-default, #161616));
   text-align: center;
   line-height: 1;
   user-select: none;
 }
 
-.avatar--24  .avatar__initials { font-size: var(--Size-Text-typo-size-text-2xs, 10px);       font-weight: 700; }
-.avatar--32  .avatar__initials { font-size: var(--Size-Text-typo-size-text-xs, 12px);         font-weight: 600; }
-.avatar--40  .avatar__initials { font-size: var(--Size-Text-typo-size-text-sm, 14px);         font-weight: 600; }
-.avatar--48  .avatar__initials { font-size: var(--Size-Text-typo-size-text-md, 16px);         font-weight: 500; }
-.avatar--64  .avatar__initials { font-size: var(--Size-Text-typo-size-text-xl, 20px);         font-weight: 500; }
-.avatar--80  .avatar__initials { font-size: var(--Size-Display-typo-size-display-sm, 30px);   font-weight: 500; }
-.avatar--120 .avatar__initials { font-size: var(--Size-Display-typo-size-display-md, 36px);   font-weight: 500; }
+.avatar--24  .avatar__initials { font-size: var(--Size-Text-typo-size-text-2xs, 10px); font-weight: 700; }
+.avatar--32  .avatar__initials { font-size: var(--Size-Text-typo-size-text-xs, 12px);  font-weight: 600; }
+.avatar--40  .avatar__initials { font-size: var(--Size-Text-typo-size-text-sm, 14px);  font-weight: 600; }
+.avatar--48  .avatar__initials { font-size: var(--Size-Text-typo-size-text-md, 16px);  font-weight: 500; }
+.avatar--64  .avatar__initials { font-size: var(--Size-Text-typo-size-text-xl, 20px);  font-weight: 500; }
+.avatar--80  .avatar__initials {
+  font-family: var(--Font-Family-font-family-display, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Display-typo-size-display-sm, 30px);
+  font-weight: 500;
+}
+.avatar--120 .avatar__initials {
+  font-family: var(--Font-Family-font-family-display, "IBM Plex Sans Arabic");
+  font-size: var(--Size-Display-typo-size-display-md, 36px);
+  font-weight: 500;
+  letter-spacing: -0.72px;
+}
 
 /* ── Image type ────────────────────────────────────────────────── */
 .avatar--image {
-  background: var(--Background-background-white, #fff);
+  background: var(--avatar-bg-image, var(--Background-background-white, #fff));
 }
 
 .avatar__image {
@@ -89,23 +124,23 @@
   align-items: flex-start;
 }
 
-/* Stacked — negative gap so avatars overlap */
+/* Stacked — avatars overlap via negative inline margin */
 .avatar-group--stacked .avatar + .avatar {
   margin-inline-start: -4px;
 }
 
-/* Flat — avatars side by side */
+/* Flat — avatars side by side with token gap */
 .avatar-group--flat {
-  gap: var(--Global-spacing-xs, 4px);
+  gap: var(--avatar-group-gap, var(--Global-spacing-xs, 4px));
 }
 
-/* ── Overflow counter (".avatar--overflow") ──────────────────── */
+/* ── Overflow counter ──────────────────────────────────────────── */
 .avatar--overflow {
-  background: var(--Button-button-background-neutral-default, #f3f4f6);
+  background: var(--avatar-bg-default, var(--Button-button-background-neutral-default, #f3f4f6));
 }
 
 .avatar--overflow .avatar__initials {
   font-size: var(--Size-Text-typo-size-text-xs, 12px);
   font-weight: 600;
-  color: var(--Text-text-default, #161616);
+  color: var(--avatar-text-color, var(--Text-text-default, #161616));
 }

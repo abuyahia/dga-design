@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="ltr">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css" />
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../card.css" />
+    <link rel="stylesheet" href="../../avatar/avatar.css" />
+    <link rel="stylesheet" href="../../../components/button/button.css" />
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css" />
+    <script src="../../_showcase/showcase.js" defer></script>
+
+    <!-- 4. Inline checkbox reset for selectable card demos -->
+    <style>
+      /* Minimal checkbox styling for showcase only — not part of card.css */
+      .showcase-checkbox {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 1.5px solid #6C737F;
+        border-radius: 4px;
+        background: #fff;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+      }
+
+      .showcase-checkbox:checked {
+        background: #1B8354;
+        border-color: #1B8354;
+      }
+
+      .showcase-checkbox:checked::after {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 9px;
+        border: 2px solid #fff;
+        border-top: none;
+        border-left: none;
+        transform: rotate(45deg) translate(-1px, -1px);
+      }
+
+      .showcase-checkbox:disabled {
+        background: #E5E7EB;
+        border-color: #9DA4AE;
+        cursor: not-allowed;
+      }
+
+      .showcase-checkbox:disabled:checked {
+        background: #E5E7EB;
+      }
+
+      .showcase-checkbox:focus-visible {
+        outline: 2px solid #161616;
+        outline-offset: 2px;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* card grid for side-by-side display */
+      .card-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: flex-start;
+      }
+
+    </style>
+
+  </head>
+
+  <body data-showcase data-current-component="card" data-showcase-title="Card Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
+
+        <!-- ════════════════════════════════════════════════════
+             1. Default Card
+             ════════════════════════════════════════════════════ -->
+
+        <section class="variant">
+          <h2 class="variant__title">Default</h2>
+
+          <div class="showcase">
+            <div class="showcase__row" data-props="Type=Default, State=Default, RTL=no">
+              <span class="showcase__label">Default</span>
+              <div class="showcase__item">
+                <div class="card" role="group" aria-labelledby="sc-title-d1">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-d1">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__actions">
+                    <button class="btn btn--secondary-outline" type="button">
+                      <span class="btn__text">Action</span>
+                    </button>
+                    <button class="btn btn--primary" type="button">
+                      <span class="btn__text">Action</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+
+        <!-- ════════════════════════════════════════════════════
+             2. Expandable Card
+             ════════════════════════════════════════════════════ -->
+
+        <section class="variant">
+          <h2 class="variant__title">Expandable</h2>
+
+          <div class="showcase">
+
+            <!-- Default / Collapsed -->
+            <div class="showcase__row" data-props="Type=Expandable, State=Default, Expanded=False">
+              <span class="showcase__label">Default — Collapsed</span>
+              <div class="showcase__item">
+                <div class="card card--expandable" role="group" aria-labelledby="sc-title-e1">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-e1">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__actions">
+                    <button class="card__toggle" type="button" aria-expanded="false" aria-controls="sc-expand-e1"
+                      aria-label="Expand card">
+                      <svg class="card__toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__expandable-content" id="sc-expand-e1" hidden>
+                    <p
+                      style="margin:0;font-size:var(--card-body-font-size,16px);color:var(--card-text-default,#1F2A37);">
+                      Additional content revealed on expand.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Default / Expanded -->
+            <div class="showcase__row" data-props="Type=Expandable, State=Default, Expanded=True">
+              <span class="showcase__label">Default — Expanded</span>
+              <div class="showcase__item">
+                <div class="card card--expandable card--expanded" role="group" aria-labelledby="sc-title-e2">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-e2">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__actions">
+                    <button class="card__toggle" type="button" aria-expanded="true" aria-controls="sc-expand-e2"
+                      aria-label="Collapse card">
+                      <svg class="card__toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__expandable-content" id="sc-expand-e2">
+                    <p
+                      style="margin:0;font-size:var(--card-body-font-size,16px);color:var(--card-text-default,#1F2A37);">
+                      Additional content revealed on expand.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hover (static) -->
+            <div class="showcase__row" data-props="Type=Expandable, State=Hover, Expanded=False">
+              <span class="showcase__label">Hover</span>
+              <div class="showcase__item">
+                <div class="card card--expandable is-hover" role="group" aria-labelledby="sc-title-e3">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-e3">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__actions">
+                    <button class="card__toggle" type="button" aria-expanded="false" aria-controls="sc-expand-e3"
+                      aria-label="Expand card">
+                      <svg class="card__toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__expandable-content" id="sc-expand-e3" hidden></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Focused (static) -->
+            <div class="showcase__row" data-props="Type=Expandable, State=Focused, Expanded=False">
+              <span class="showcase__label">Focused</span>
+              <div class="showcase__item">
+                <div class="card card--expandable is-focused" role="group" aria-labelledby="sc-title-e4">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-e4">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__actions">
+                    <button class="card__toggle" type="button" aria-expanded="false" aria-controls="sc-expand-e4"
+                      aria-label="Expand card">
+                      <svg class="card__toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__expandable-content" id="sc-expand-e4" hidden></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Disabled -->
+            <div class="showcase__row" data-props="Type=Expandable, State=Disabled, Expanded=False">
+              <span class="showcase__label">Disabled</span>
+              <div class="showcase__item">
+                <div class="card card--expandable card--disabled" aria-disabled="true" role="group"
+                  aria-labelledby="sc-title-e5">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-e5">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__actions">
+                    <button class="card__toggle" type="button" disabled aria-disabled="true" aria-expanded="false"
+                      aria-controls="sc-expand-e5" aria-label="Expand card (unavailable)">
+                      <svg class="card__toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__expandable-content" id="sc-expand-e5" hidden></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- ════════════════════════════════════════════════════
+             3. Selectable Card
+             ════════════════════════════════════════════════════ -->
+
+        <section class="variant">
+          <h2 class="variant__title">Selectable</h2>
+
+          <div class="showcase">
+
+            <!-- Default / Unselected -->
+            <div class="showcase__row" data-props="Type=Selectable, State=Default, Selected=False">
+              <span class="showcase__label">Default — Unselected</span>
+              <div class="showcase__item">
+                <div class="card card--selectable" role="group" aria-labelledby="sc-title-s1">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-s1">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__checkbox-wrapper">
+                    <input type="checkbox" id="sc-check-s1" class="showcase-checkbox">
+                    <label for="sc-check-s1" class="sr-only">Select this card</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Default / Selected -->
+            <div class="showcase__row" data-props="Type=Selectable, State=Default, Selected=True">
+              <span class="showcase__label">Default — Selected</span>
+              <div class="showcase__item">
+                <div class="card card--selectable card--selected" role="group" aria-labelledby="sc-title-s2">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-s2">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__checkbox-wrapper">
+                    <input type="checkbox" id="sc-check-s2" class="showcase-checkbox" checked>
+                    <label for="sc-check-s2" class="sr-only">Select this card</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hover / Unselected (static) -->
+            <div class="showcase__row" data-props="Type=Selectable, State=Hover, Selected=False">
+              <span class="showcase__label">Hover — Unselected</span>
+              <div class="showcase__item">
+                <div class="card card--selectable is-hover" role="group" aria-labelledby="sc-title-s3">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-s3">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__checkbox-wrapper">
+                    <input type="checkbox" id="sc-check-s3" class="showcase-checkbox">
+                    <label for="sc-check-s3" class="sr-only">Select this card</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hover / Selected (static) -->
+            <div class="showcase__row" data-props="Type=Selectable, State=Hover, Selected=True">
+              <span class="showcase__label">Hover — Selected</span>
+              <div class="showcase__item">
+                <div class="card card--selectable card--selected is-hover" role="group" aria-labelledby="sc-title-s4">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-s4">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__checkbox-wrapper">
+                    <input type="checkbox" id="sc-check-s4" class="showcase-checkbox" checked>
+                    <label for="sc-check-s4" class="sr-only">Select this card</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Focused / Unselected (static) -->
+            <div class="showcase__row" data-props="Type=Selectable, State=Focused, Selected=False">
+              <span class="showcase__label">Focused — Unselected</span>
+              <div class="showcase__item">
+                <div class="card card--selectable is-focused" role="group" aria-labelledby="sc-title-s5">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-s5">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__checkbox-wrapper">
+                    <input type="checkbox" id="sc-check-s5" class="showcase-checkbox">
+                    <label for="sc-check-s5" class="sr-only">Select this card</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Focused / Selected (static) -->
+            <div class="showcase__row" data-props="Type=Selectable, State=Focused, Selected=True">
+              <span class="showcase__label">Focused — Selected</span>
+              <div class="showcase__item">
+                <div class="card card--selectable card--selected is-focused" role="group" aria-labelledby="sc-title-s6">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-s6">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__checkbox-wrapper">
+                    <input type="checkbox" id="sc-check-s6" class="showcase-checkbox" checked>
+                    <label for="sc-check-s6" class="sr-only">Select this card</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Disabled / Unselected -->
+            <div class="showcase__row" data-props="Type=Selectable, State=Disabled, Selected=False">
+              <span class="showcase__label">Disabled — Unselected</span>
+              <div class="showcase__item">
+                <div class="card card--selectable card--disabled" aria-disabled="true" role="group"
+                  aria-labelledby="sc-title-s7">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-s7">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__checkbox-wrapper">
+                    <input type="checkbox" id="sc-check-s7" class="showcase-checkbox" disabled>
+                    <label for="sc-check-s7" class="sr-only">Select this card (unavailable)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Disabled / Selected -->
+            <div class="showcase__row" data-props="Type=Selectable, State=Disabled, Selected=True">
+              <span class="showcase__label">Disabled — Selected</span>
+              <div class="showcase__item">
+                <div class="card card--selectable card--selected card--disabled" aria-disabled="true" role="group"
+                  aria-labelledby="sc-title-s8">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-s8">Card Title</p>
+                    <p class="card__body">Card content placeholder text goes here.</p>
+                  </div>
+                  <div class="card__checkbox-wrapper">
+                    <input type="checkbox" id="sc-check-s8" class="showcase-checkbox" disabled checked>
+                    <label for="sc-check-s8" class="sr-only">Select this card (unavailable)</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- ════════════════════════════════════════════════════
+             4. Interactive Demo
+             ════════════════════════════════════════════════════ -->
+
+        <section class="variant">
+          <h2 class="variant__title">Interactive Demo</h2>
+
+          <div class="showcase">
+
+            <div class="showcase__row">
+              <span class="showcase__label">Expandable — click toggle to expand</span>
+              <div class="showcase__item">
+                <div class="card card--expandable" id="demo-expand-card" role="group" aria-labelledby="sc-title-demo1">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-demo1">Card Title</p>
+                    <p class="card__body">Click the arrow to expand this card and see additional content.</p>
+                  </div>
+                  <div class="card__actions">
+                    <button class="card__toggle" id="demo-expand-btn" type="button" aria-expanded="false"
+                      aria-controls="demo-expand-panel" aria-label="Expand card">
+                      <svg class="card__toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="card__expandable-content" id="demo-expand-panel" hidden>
+                    <p
+                      style="margin:0;font-size:var(--card-body-font-size,16px);color:var(--card-text-default,#1F2A37);line-height:var(--card-body-line-height,24px);">
+                      This is the additional content that appears when the card is expanded. It can contain any type of
+                      content — paragraphs, lists, nested components, or data.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase__row">
+              <span class="showcase__label">Selectable — click checkbox to select</span>
+              <div class="showcase__item">
+                <div class="card card--selectable" id="demo-select-card" role="group" aria-labelledby="sc-title-demo2">
+                  <div class="avatar avatar--40" role="img" aria-label="User">
+                    <span class="avatar__icon" aria-hidden="true">
+                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                  </div>
+                  <div class="card__content">
+                    <p class="card__title" id="sc-title-demo2">Card Title</p>
+                    <p class="card__body">Click the checkbox to select this card.</p>
+                  </div>
+                  <div class="card__checkbox-wrapper">
+                    <input type="checkbox" id="demo-select-check" class="showcase-checkbox">
+                    <label for="demo-select-check" class="sr-only">Select this card</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+
+    <!-- Interactive demo JS (showcase-only, not part of card.css) -->
+    <script>
+      (function() {
+        /* Expandable demo */
+        var expandBtn = document.getElementById('demo-expand-btn');
+        var expandCard = document.getElementById('demo-expand-card');
+        var expandPanel = document.getElementById('demo-expand-panel');
+
+        if (expandBtn && expandCard && expandPanel) {
+          expandBtn.addEventListener('click', function() {
+            var isExpanded = expandBtn.getAttribute('aria-expanded') === 'true';
+            var nowExpanded = !isExpanded;
+
+            expandBtn.setAttribute('aria-expanded', String(nowExpanded));
+            expandBtn.setAttribute('aria-label', nowExpanded ? 'Collapse card' : 'Expand card');
+            expandPanel.hidden = !nowExpanded;
+            expandCard.classList.toggle('card--expanded', nowExpanded);
+          });
+        }
+
+        /* Selectable demo */
+        var selectCheck = document.getElementById('demo-select-check');
+        var selectCard = document.getElementById('demo-select-card');
+
+        if (selectCheck && selectCard) {
+          selectCheck.addEventListener('change', function() {
+            selectCard.classList.toggle('card--selected', selectCheck.checked);
+          });
+        }
+      })();
+
+    </script>
+
+  </body>
+
+</html>

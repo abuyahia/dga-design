@@ -1,0 +1,196 @@
+/* ============================================================================
+   card.css — Card Component
+   Platform Code Design System
+   ----------------------------------------------------------------------------
+   Owns: card surface, layout, content, actions, toggle button,
+         expandable content slot, selectable state, interactive state deltas.
+   Does NOT own: Button styles, Checkbox styles, Avatar styles.
+   ============================================================================ */
+
+/* ── 1. Root ─────────────────────────────────────────────────────────────── */
+
+.card {
+  display: flex;
+  /* TODO: --card-width missing in token.css. Proposed: design canvas default 360px; override to 100% in production layouts. */
+  width: var(--card-width, 360px);
+  /* TODO: --card-padding missing in token.css. Proposed mapping: var(--Global-spacing-xl). */
+  padding: var(--card-padding, 16px);
+  flex-direction: column;
+  align-items: flex-start;
+  /* TODO: --card-gap missing in token.css. Proposed mapping: var(--Card-card-lg-gap). */
+  gap: var(--card-gap, 24px);
+  /* TODO: --card-radius missing in token.css. Proposed mapping: var(--radius-lg). */
+  border-radius: var(--card-radius, 16px);
+  /* TODO: --card-border-default missing in token.css. Proposed mapping: var(--Border-border-neutral-primary). */
+  border: 1px solid var(--card-border-default, #D2D6DB);
+  /* TODO: --card-bg-default missing in token.css. Proposed mapping: var(--Background-background-card). */
+  background: var(--card-bg-default, #FFF);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* ── 2. Content ──────────────────────────────────────────────────────────── */
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* TODO: --card-content-gap missing in token.css. Proposed mapping: var(--Global-spacing-md). */
+  gap: var(--card-content-gap, 8px);
+  align-self: stretch;
+}
+
+.card__title {
+  align-self: stretch;
+  /* TODO: --card-text-default missing in token.css. Proposed mapping: var(--Text-text-display). */
+  color: var(--card-text-default, #1F2A37);
+  /* TODO: --card-font-family missing in token.css. Proposed mapping: var(--Font-Family-font-family-text). */
+  font-family: var(--card-font-family, "IBM Plex Sans Arabic", system-ui, sans-serif);
+  /* TODO: --card-title-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-Ig). */
+  font-size: var(--card-title-font-size, 18px);
+  font-style: normal;
+  font-weight: 700;
+  /* TODO: --card-title-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-Ig). */
+  line-height: var(--card-title-line-height, 28px);
+  margin: 0;
+}
+
+.card__body {
+  align-self: stretch;
+  color: var(--card-text-default, #1F2A37);
+  font-family: var(--card-font-family, "IBM Plex Sans Arabic", system-ui, sans-serif);
+  /* TODO: --card-body-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-md). */
+  font-size: var(--card-body-font-size, 16px);
+  font-style: normal;
+  font-weight: 400;
+  /* TODO: --card-body-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-md). */
+  line-height: var(--card-body-line-height, 24px);
+  margin: 0;
+}
+
+/* ── 3. Actions ──────────────────────────────────────────────────────────── */
+
+.card__actions {
+  display: flex;
+  align-items: center;
+  /* TODO: --card-actions-gap missing in token.css. Proposed mapping: var(--Global-spacing-xl). */
+  gap: var(--card-actions-gap, 16px);
+  align-self: stretch;
+}
+
+/* ── 4. Expandable toggle ────────────────────────────────────────────────── */
+
+.card__toggle {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  /* TODO: --card-toggle-radius missing in token.css. Proposed mapping: var(--Radius-radius-sm). */
+  border-radius: var(--card-toggle-radius, 4px);
+  /* TODO: --card-toggle-icon-color missing in token.css. Proposed mapping: var(--Text-text-display). */
+  color: var(--card-toggle-icon-color, #1F2A37);
+}
+
+.card__toggle:focus {
+  outline: none;
+}
+
+.card__toggle-icon {
+  width: 24px;
+  height: 24px;
+  /* TODO: --card-toggle-transition-duration missing in token.css. Proposed mapping: var(--transition-fast). */
+  transition: transform var(--card-toggle-transition-duration, 0.2s) ease;
+  pointer-events: none;
+}
+
+.card--expanded .card__toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* ── 5. Expandable content slot ──────────────────────────────────────────── */
+
+.card__expandable-content {
+  align-self: stretch;
+}
+
+.card__expandable-content[hidden] {
+  display: none;
+}
+
+/* ── 6. Selectable checkbox wrapper + selected state ─────────────────────── */
+
+/* Selected state: card-level visual hook. Visual selection indicator is on the
+   Checkbox child — card bg stays at default (#FFF) per Figma. This rule
+   provides a CSS anchor for future card-level selected styling. */
+.card--selected {
+  /* intentionally empty — visual selected indicator is owned by Checkbox child */
+}
+
+.card__checkbox-wrapper {
+  display: flex;
+  align-self: stretch;
+}
+
+/* ── 7. Interactive states — Expandable ──────────────────────────────────── */
+
+/* Hover */
+.card--expandable:hover:not([aria-disabled="true"]):not(.card--disabled),
+.card--expandable.is-hover {
+  /* TODO: --card-bg-hover missing in token.css. Proposed mapping: var(--Background-background-neutral-50). */
+  background: var(--card-bg-hover, #F9FAFB);
+}
+
+/* Focused — bg stays white for Expandable, only border changes */
+.card--expandable:focus-within:not([aria-disabled="true"]):not(.card--disabled),
+.card--expandable.is-focused {
+  border-width: 2px;
+  /* TODO: --card-border-focused missing in token.css. Proposed mapping: var(--Border-border-black). */
+  border-color: var(--card-border-focused, #161616);
+}
+
+/* ── 8. Interactive states — Selectable ──────────────────────────────────── */
+
+/* Hover */
+.card--selectable:hover:not([aria-disabled="true"]):not(.card--disabled),
+.card--selectable.is-hover {
+  background: var(--card-bg-hover, #F9FAFB);
+}
+
+/* Focused — bg changes to hover bg + border changes for Selectable */
+.card--selectable:focus-within:not([aria-disabled="true"]):not(.card--disabled),
+.card--selectable.is-focused {
+  background: var(--card-bg-hover, #F9FAFB);
+  border-width: 2px;
+  border-color: var(--card-border-focused, #161616);
+}
+
+/* ── 9. Disabled state ──────────────────────────────────────────────────── */
+
+.card[aria-disabled="true"],
+.card--disabled {
+  /* TODO: --card-bg-disabled missing in token.css. Proposed mapping: var(--Global-background-disabled). */
+  background: var(--card-bg-disabled, #E5E7EB);
+  /* TODO: --card-border-disabled missing in token.css. Proposed mapping: var(--Global-border-disabled). */
+  border-color: var(--card-border-disabled, #9DA4AE);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.card[aria-disabled="true"] .card__title,
+.card--disabled .card__title,
+.card[aria-disabled="true"] .card__body,
+.card--disabled .card__body {
+  /* TODO: --card-text-disabled missing in token.css. Proposed mapping: var(--Global-text-default-disabled). */
+  color: var(--card-text-disabled, #9DA4AE);
+}
+
+.card[aria-disabled="true"] .card__toggle,
+.card--disabled .card__toggle {
+  color: var(--card-text-disabled, #9DA4AE);
+  cursor: not-allowed;
+}

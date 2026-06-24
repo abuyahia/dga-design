@@ -1,0 +1,247 @@
+<!--
+  card — Reference Template
+  Platform Code Design System
+  ─────────────────────────────────────────────────────────────────────────────
+  This file documents approved markup patterns for the Card component.
+  Use these patterns as-is in production HTML.
+  ─────────────────────────────────────────────────────────────────────────────
+-->
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PATTERN 1 — Default Card
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="card" role="group" aria-labelledby="card-title-1">
+  <div class="avatar avatar--40" role="img" aria-label="User">
+    <span class="avatar__icon" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="card__content">
+    <p class="card__title" id="card-title-1">Card Title</p>
+    <p class="card__body">Card content placeholder text goes here.</p>
+  </div>
+  <div class="card__actions">
+    <button class="btn btn--secondary-outline" type="button">
+      <span class="btn__text">Action</span>
+    </button>
+    <button class="btn btn--primary" type="button">
+      <span class="btn__text">Action</span>
+    </button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PATTERN 2 — Expandable Card (Collapsed)
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="card card--expandable" role="group" aria-labelledby="card-title-2">
+  <div class="avatar avatar--40" role="img" aria-label="User">
+    <span class="avatar__icon" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="card__content">
+    <p class="card__title" id="card-title-2">Card Title</p>
+    <p class="card__body">Card content placeholder text goes here.</p>
+  </div>
+  <div class="card__actions">
+    <button class="card__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="card-expandable-2"
+            aria-label="Expand card">
+      <svg class="card__toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="card__expandable-content" id="card-expandable-2" hidden>
+    <!-- Additional content revealed on expand -->
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PATTERN 3 — Expandable Card (Expanded)
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="card card--expandable card--expanded" role="group" aria-labelledby="card-title-3">
+  <div class="avatar avatar--40" role="img" aria-label="User">
+    <span class="avatar__icon" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="card__content">
+    <p class="card__title" id="card-title-3">Card Title</p>
+    <p class="card__body">Card content placeholder text goes here.</p>
+  </div>
+  <div class="card__actions">
+    <button class="card__toggle"
+            type="button"
+            aria-expanded="true"
+            aria-controls="card-expandable-3"
+            aria-label="Collapse card">
+      <svg class="card__toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="card__expandable-content" id="card-expandable-3">
+    <p style="margin: 0; font-size: var(--card-body-font-size, 16px); color: var(--card-text-default, #1F2A37);">
+      Additional content revealed when the card is expanded.
+    </p>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PATTERN 4 — Selectable Card (Unselected)
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="card card--selectable" role="group" aria-labelledby="card-title-4">
+  <div class="avatar avatar--40" role="img" aria-label="User">
+    <span class="avatar__icon" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="card__content">
+    <p class="card__title" id="card-title-4">Card Title</p>
+    <p class="card__body">Card content placeholder text goes here.</p>
+  </div>
+  <div class="card__checkbox-wrapper">
+    <input type="checkbox" id="card-check-4" class="checkbox__input">
+    <label for="card-check-4" class="sr-only">Select this card</label>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PATTERN 5 — Selectable Card (Selected)
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="card card--selectable card--selected" role="group" aria-labelledby="card-title-5">
+  <div class="avatar avatar--40" role="img" aria-label="User">
+    <span class="avatar__icon" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="card__content">
+    <p class="card__title" id="card-title-5">Card Title</p>
+    <p class="card__body">Card content placeholder text goes here.</p>
+  </div>
+  <div class="card__checkbox-wrapper">
+    <input type="checkbox" id="card-check-5" class="checkbox__input" checked>
+    <label for="card-check-5" class="sr-only">Select this card</label>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PATTERN 6 — Disabled Expandable Card
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="card card--expandable card--disabled"
+     aria-disabled="true"
+     role="group"
+     aria-labelledby="card-title-6">
+  <div class="avatar avatar--40" role="img" aria-label="User">
+    <span class="avatar__icon" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="card__content">
+    <p class="card__title" id="card-title-6">Card Title</p>
+    <p class="card__body">Card content placeholder text goes here.</p>
+  </div>
+  <div class="card__actions">
+    <button class="card__toggle"
+            type="button"
+            disabled
+            aria-disabled="true"
+            aria-expanded="false"
+            aria-controls="card-expandable-6"
+            aria-label="Expand card (unavailable)">
+      <svg class="card__toggle-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  <div class="card__expandable-content" id="card-expandable-6" hidden>
+    <!-- content hidden and inaccessible when card is disabled -->
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PATTERN 7 — Disabled Selectable Card
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="card card--selectable card--disabled"
+     aria-disabled="true"
+     role="group"
+     aria-labelledby="card-title-7">
+  <div class="avatar avatar--40" role="img" aria-label="User">
+    <span class="avatar__icon" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="card__content">
+    <p class="card__title" id="card-title-7">Card Title</p>
+    <p class="card__body">Card content placeholder text goes here.</p>
+  </div>
+  <div class="card__checkbox-wrapper">
+    <input type="checkbox" id="card-check-7" class="checkbox__input" disabled aria-disabled="true">
+    <label for="card-check-7" class="sr-only">Select this card (unavailable)</label>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     PATTERN 8 — Card without body text
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<div class="card" role="group" aria-labelledby="card-title-8">
+  <div class="avatar avatar--40" role="img" aria-label="User">
+    <span class="avatar__icon" aria-hidden="true">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 12C14.761 12 17 9.761 17 7C17 4.239 14.761 2 12 2C9.239 2 7 4.239 7 7C7 9.761 9.239 12 12 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <path d="M20.59 22C20.59 18.13 16.74 15 12 15C7.26 15 3.41 18.13 3.41 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </span>
+  </div>
+  <div class="card__content">
+    <p class="card__title" id="card-title-8">Card Title</p>
+    <!-- .card__body is optional -->
+  </div>
+  <div class="card__actions">
+    <button class="btn btn--secondary-outline" type="button">
+      <span class="btn__text">Action</span>
+    </button>
+    <button class="btn btn--primary" type="button">
+      <span class="btn__text">Action</span>
+    </button>
+  </div>
+</div>

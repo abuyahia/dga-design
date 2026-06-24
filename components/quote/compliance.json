@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "component_id": "quote",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "last_reviewed": "2026-06-13",
+  "notes": "No external audit has been performed. All compliance mappings are internal and require formal review before official compliance can be claimed.",
+
+  "wcag_mappings": [
+    {
+      "id": "PLATFORM-CODE-QUOTE-A11Y-001",
+      "wcag_criterion": "1.3.1",
+      "wcag_title": "Info and Relationships",
+      "level": "A",
+      "status": "internal_review",
+      "description": "The <blockquote> element conveys the semantic role of a quotation. <cite> conveys attribution. <footer> contextualizes the attribution within the blockquote.",
+      "implementation": "Root element is <blockquote>. Author name uses <cite>. Attribution section uses <footer>."
+    },
+    {
+      "id": "PLATFORM-CODE-QUOTE-A11Y-002",
+      "wcag_criterion": "1.3.2",
+      "wcag_title": "Meaningful Sequence",
+      "level": "A",
+      "status": "internal_review",
+      "description": "Content order in DOM reflects reading order: title → text → author attribution. Both LTR and RTL DOM order is consistent with visual presentation.",
+      "implementation": ".quote__body precedes .quote__author-details in DOM order for all variants."
+    },
+    {
+      "id": "PLATFORM-CODE-QUOTE-A11Y-003",
+      "wcag_criterion": "1.4.3",
+      "wcag_title": "Contrast (Minimum)",
+      "level": "AA",
+      "status": "pending_audit",
+      "description": "Text color tokens must meet 4.5:1 contrast against their respective backgrounds. Contrast is token-dependent and must be verified in the consuming page context.",
+      "implementation": "Title: --Text-text-default (#161616) on white/neutral-50. Text: --Text-text-primary-paragraph (#384250) on white/neutral-50. Mark: --Text-text-primary-sa-flag (#14573A). Formal contrast audit pending."
+    },
+    {
+      "id": "PLATFORM-CODE-QUOTE-A11Y-004",
+      "wcag_criterion": "1.3.5",
+      "wcag_title": "Identify Input Purpose",
+      "level": "AA",
+      "status": "not_applicable",
+      "description": "Component contains no form inputs.",
+      "implementation": "N/A"
+    },
+    {
+      "id": "PLATFORM-CODE-QUOTE-A11Y-005",
+      "wcag_criterion": "2.1.1",
+      "wcag_title": "Keyboard",
+      "level": "A",
+      "status": "internal_review",
+      "description": "Component is purely presentational with no interactive elements. No keyboard interaction is required. Component does not trap focus.",
+      "implementation": "No interactive elements. No tabindex. No event handlers."
+    },
+    {
+      "id": "PLATFORM-CODE-QUOTE-A11Y-006",
+      "wcag_criterion": "4.1.2",
+      "wcag_title": "Name, Role, Value",
+      "level": "A",
+      "status": "internal_review",
+      "description": "Semantic elements convey roles without explicit ARIA. <blockquote> provides quote role. <cite> provides citation semantics. No additional ARIA attributes needed for the static component.",
+      "implementation": "Semantic HTML used throughout. No ARIA overrides required."
+    }
+  ],
+
+  "platform_code_mappings": [
+    {
+      "id": "PLATFORM-CODE-QUOTE-001",
+      "category": "structure",
+      "status": "internal_review",
+      "title": "Root element must be <blockquote>",
+      "description": "The .quote class must be applied to a <blockquote> element."
+    },
+    {
+      "id": "PLATFORM-CODE-QUOTE-002",
+      "category": "structure",
+      "status": "internal_review",
+      "title": "Author name must use <cite>",
+      "description": "The .quote__author-name class must be applied to a <cite> element."
+    },
+    {
+      "id": "PLATFORM-CODE-QUOTE-003",
+      "category": "tokens",
+      "status": "pending_audit",
+      "title": "All visual values must use design tokens",
+      "description": "No hardcoded hex, rgba, px, or font values in component instances. All values must be sourced from CSS custom properties.",
+      "notes": "All 24 component-level tokens are currently missing from token.css. Fallbacks use raw Figma tokens. Token addition is a pending global update."
+    },
+    {
+      "id": "PLATFORM-CODE-QUOTE-004",
+      "category": "direction",
+      "status": "internal_review",
+      "title": "Direction must be set via dir attribute",
+      "description": "RTL/LTR layout is controlled by [dir='rtl'] CSS selectors. The dir attribute must be set on the .quote element or an ancestor, not via a modifier class."
+    }
+  ]
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quote — Showcase</title>
+
+    <!-- 1. Design tokens -->
+    <link rel="stylesheet" href="../../../token.css"/>
+    <!-- 2. Component styles -->
+    <link rel="stylesheet" href="../quote.css"/>
+    <!-- 3. Shared showcase infrastructure -->
+    <link rel="stylesheet" href="../../_showcase/showcase.css"/>
+    <script src="../../_showcase/showcase.js" defer></script>
+
+    <style>
+      /* Showcase canvas extra spacing for absolute-positioned quote marks */
+      .showcase__item {
+        padding: 16px 0;
+        overflow: visible;
+      }
+    </style>
+  </head>
+
+  <body data-showcase data-current-component="quote" data-showcase-title="Quote Showcase">
+    <div data-showcase-shell>
+      <main data-showcase-content class="page">
+
+        <!-- ══════════════════════════════════════════════════════════ LTR LARGE ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">LTR — Large</h2>
+
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Direction=LTR, Size=Large, White Background=No">
+              <span class="showcase__label">No Background</span>
+              <div class="showcase__item">
+                <blockquote class="quote" dir="ltr">
+                  <div class="quote__body">
+                    <p class="quote__title">Title of quote</p>
+                    <p class="quote__text">The quote is placed here to highlight a specific saying or to present a brief quote that expresses an important idea or concept.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">Author's name</cite>
+                      <span class="quote__author-description">Brief or description</span>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="showcase__row" data-props="Direction=LTR, Size=Large, White Background=Yes">
+              <span class="showcase__label">White Background</span>
+              <div class="showcase__item">
+                <blockquote class="quote quote--white-bg" dir="ltr">
+                  <div class="quote__body">
+                    <p class="quote__title">Title of quote</p>
+                    <p class="quote__text">The quote is placed here to highlight a specific saying or to present a brief quote that expresses an important idea or concept.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">Author's name</cite>
+                      <span class="quote__author-description">Brief or description</span>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ LTR SMALL ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">LTR — Small</h2>
+
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Direction=LTR, Size=Small, White Background=No">
+              <span class="showcase__label">No Background</span>
+              <div class="showcase__item">
+                <blockquote class="quote quote--sm" dir="ltr">
+                  <div class="quote__body">
+                    <p class="quote__title">Title of quote</p>
+                    <p class="quote__text">The quote is placed here to highlight a specific saying or to present a brief quote that expresses an important idea or concept.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">Author's name</cite>
+                      <span class="quote__author-description">Brief or description</span>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="showcase__row" data-props="Direction=LTR, Size=Small, White Background=Yes">
+              <span class="showcase__label">White Background</span>
+              <div class="showcase__item">
+                <blockquote class="quote quote--sm quote--white-bg" dir="ltr">
+                  <div class="quote__body">
+                    <p class="quote__title">Title of quote</p>
+                    <p class="quote__text">The quote is placed here to highlight a specific saying or to present a brief quote that expresses an important idea or concept.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">Author's name</cite>
+                      <span class="quote__author-description">Brief or description</span>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ RTL LARGE ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">RTL — Large</h2>
+
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Direction=RTL, Size=Large, White Background=No">
+              <span class="showcase__label">No Background</span>
+              <div class="showcase__item">
+                <blockquote class="quote" dir="rtl">
+                  <div class="quote__body">
+                    <p class="quote__title">عنوان الاقتباس</p>
+                    <p class="quote__text">تُوضع هنا عبارة الاقتباس لتسليط الضوء على مقولة معينة أو تقديم اقتباس مختصر يعبر عن فكرة أو مفهوم مهم.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">اسم المؤلف</cite>
+                      <span class="quote__author-description">نبذة أو وصف</span>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="showcase__row" data-props="Direction=RTL, Size=Large, White Background=Yes">
+              <span class="showcase__label">White Background</span>
+              <div class="showcase__item">
+                <blockquote class="quote quote--white-bg" dir="rtl">
+                  <div class="quote__body">
+                    <p class="quote__title">عنوان الاقتباس</p>
+                    <p class="quote__text">تُوضع هنا عبارة الاقتباس لتسليط الضوء على مقولة معينة أو تقديم اقتباس مختصر يعبر عن فكرة أو مفهوم مهم.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">اسم المؤلف</cite>
+                      <span class="quote__author-description">نبذة أو وصف</span>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ RTL SMALL ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">RTL — Small</h2>
+
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Direction=RTL, Size=Small, White Background=No">
+              <span class="showcase__label">No Background</span>
+              <div class="showcase__item">
+                <blockquote class="quote quote--sm" dir="rtl">
+                  <div class="quote__body">
+                    <p class="quote__title">عنوان الاقتباس</p>
+                    <p class="quote__text">تُوضع هنا عبارة الاقتباس لتسليط الضوء على مقولة معينة أو تقديم اقتباس مختصر يعبر عن فكرة أو مفهوم مهم.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">اسم المؤلف</cite>
+                      <span class="quote__author-description">نبذة أو وصف</span>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="showcase__row" data-props="Direction=RTL, Size=Small, White Background=Yes">
+              <span class="showcase__label">White Background</span>
+              <div class="showcase__item">
+                <blockquote class="quote quote--sm quote--white-bg" dir="rtl">
+                  <div class="quote__body">
+                    <p class="quote__title">عنوان الاقتباس</p>
+                    <p class="quote__text">تُوضع هنا عبارة الاقتباس لتسليط الضوء على مقولة معينة أو تقديم اقتباس مختصر يعبر عن فكرة أو مفهوم مهم.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">اسم المؤلف</cite>
+                      <span class="quote__author-description">نبذة أو وصف</span>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════════════ OPTIONAL SLOTS ══════════════════════════════════════════════════════════ -->
+        <section class="variant">
+          <h2 class="variant__title">Optional Slots</h2>
+
+          <div class="showcase">
+
+            <div class="showcase__row" data-props="Direction=LTR, Size=Large, White Background=Yes, Title=No">
+              <span class="showcase__label">Without Title</span>
+              <div class="showcase__item">
+                <blockquote class="quote quote--white-bg" dir="ltr">
+                  <div class="quote__body">
+                    <p class="quote__text">The quote is placed here to highlight a specific saying or to present a brief quote that expresses an important idea or concept.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">Author's name</cite>
+                      <span class="quote__author-description">Brief or description</span>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+            <div class="showcase__row" data-props="Direction=LTR, Size=Large, White Background=Yes, Description=No">
+              <span class="showcase__label">Without Author Description</span>
+              <div class="showcase__item">
+                <blockquote class="quote quote--white-bg" dir="ltr">
+                  <div class="quote__body">
+                    <p class="quote__title">Title of quote</p>
+                    <p class="quote__text">The quote is placed here to highlight a specific saying or to present a brief quote that expresses an important idea or concept.</p>
+                  </div>
+                  <footer class="quote__author-details">
+                    <div class="quote__author-info">
+                      <cite class="quote__author-name">Author's name</cite>
+                    </div>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </body>
+</html>

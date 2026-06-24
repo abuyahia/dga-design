@@ -1,0 +1,301 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "card",
+    "description": "Card component with three type variants (Default, Expandable, Selectable) and interactive states. A composite component that composes Button and Checkbox child components.",
+    "classification": "Composite"
+  },
+  "source": {
+    "manifest": "components/card/manifest-3.json",
+    "figma_component_set": "Card",
+    "figma_total_variants": 34,
+    "meaningful_variants": 17,
+    "axis_reduction_notes": [
+      "RTL axis discarded — handled by dir='rtl' on ancestor element, produces no separate CSS modifier",
+      "Effect axis discarded — single value 'Stroke', always present as base border style"
+    ]
+  },
+  "axes": ["type", "state", "expanded", "selected"],
+  "axis_values": {
+    "type": ["default", "expandable", "selectable"],
+    "state": ["default", "hover", "focused", "disabled"],
+    "expanded": ["false", "true"],
+    "selected": ["false", "true"]
+  },
+  "axis_applicability": {
+    "type=default": {
+      "applicable_states": ["default"],
+      "note": "Default type has no interactive states in Figma. Card is a static container."
+    },
+    "type=expandable": {
+      "applicable_states": ["default", "hover", "focused", "disabled"],
+      "applicable_expanded": ["false", "true"]
+    },
+    "type=selectable": {
+      "applicable_states": ["default", "hover", "focused", "disabled"],
+      "applicable_selected": ["false", "true"]
+    }
+  },
+  "css_modifiers": {
+    "type": {
+      "default": "(no modifier)",
+      "expandable": ".card--expandable",
+      "selectable": ".card--selectable"
+    },
+    "state": {
+      "default": "(base styles)",
+      "hover": ":hover — and .is-hover for showcase",
+      "focused": ":focus-within — and .is-focused for showcase",
+      "disabled": "[aria-disabled='true'] or .card--disabled"
+    },
+    "expanded": {
+      "false": "(no modifier) — aria-expanded='false' on .card__toggle",
+      "true": ".card--expanded — aria-expanded='true' on .card__toggle"
+    },
+    "selected": {
+      "false": "(no modifier)",
+      "true": ".card--selected — checkbox checked state"
+    }
+  },
+  "anatomy": {
+    "root": ".card",
+    "avatar": ".avatar.avatar--40 (Avatar component, icon type — styles owned by Avatar)",
+    "content": ".card__content",
+    "title": ".card__title",
+    "body": ".card__body",
+    "actions": ".card__actions",
+    "toggle": ".card__toggle (Expandable type only)",
+    "toggle_icon": ".card__toggle-icon (Expandable type only)",
+    "expandable_content": ".card__expandable-content (Expandable type only)",
+    "checkbox_wrapper": ".card__checkbox-wrapper (Selectable type only)"
+  },
+  "dependencies": {
+    "required": [],
+    "optional": [
+      "Avatar (avatar--40, icon type) — Card icon slot, always present",
+      "Button (btn--secondary-outline) — Default type secondary action slot",
+      "Button (btn--primary) — Default type primary action slot",
+      "Checkbox — Selectable type selection control slot"
+    ],
+    "card_owned": [
+      ".card__toggle — minimal icon-only toggle button, not the Button component"
+    ]
+  },
+  "variants": [
+    {
+      "id": "default-default",
+      "axes": { "type": "default", "state": "default" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Default, State=Default, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "root": {
+          "background": "var(--card-bg-default, #FFF)",
+          "border": "1px solid var(--card-border-default, #D2D6DB)",
+          "border-radius": "var(--card-radius, 16px)",
+          "padding": "var(--card-padding, 16px)",
+          "gap": "var(--card-gap, 24px)"
+        },
+        "title": {
+          "color": "var(--card-text-default, #1F2A37)",
+          "font-size": "var(--card-title-font-size, 18px)",
+          "font-weight": "700",
+          "line-height": "var(--card-title-line-height, 28px)"
+        },
+        "body": {
+          "color": "var(--card-text-default, #1F2A37)",
+          "font-size": "var(--card-body-font-size, 16px)",
+          "font-weight": "400",
+          "line-height": "var(--card-body-line-height, 24px)"
+        }
+      }
+    },
+    {
+      "id": "expandable-default-collapsed",
+      "axes": { "type": "expandable", "state": "default", "expanded": "false" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Expandable, State=Default, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "root": {
+          "background": "var(--card-bg-default, #FFF)",
+          "border": "1px solid var(--card-border-default, #D2D6DB)"
+        },
+        "toggle_icon_transform": "rotate(0deg)"
+      }
+    },
+    {
+      "id": "expandable-default-expanded",
+      "axes": { "type": "expandable", "state": "default", "expanded": "true" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Expandable, State=Default, Effect=Stroke, Expanded=True, Selected=False",
+      "properties": {
+        "root": {
+          "background": "var(--card-bg-default, #FFF)",
+          "border": "1px solid var(--card-border-default, #D2D6DB)"
+        },
+        "toggle_icon_transform": "rotate(180deg)",
+        "expandable_content": "visible"
+      }
+    },
+    {
+      "id": "expandable-hover-collapsed",
+      "axes": { "type": "expandable", "state": "hover", "expanded": "false" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Expandable, State=Hover, Effect=Stroke, Expanded=False, Selected=False",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-hover, #F9FAFB)"
+      }
+    },
+    {
+      "id": "expandable-hover-expanded",
+      "axes": { "type": "expandable", "state": "hover", "expanded": "true" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Expandable, State=Hover, Effect=Stroke, Expanded=True, Selected=False",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-hover, #F9FAFB)"
+      }
+    },
+    {
+      "id": "expandable-focused-collapsed",
+      "axes": { "type": "expandable", "state": "focused", "expanded": "false" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Expandable, State=Focused, Effect=Stroke, Expanded=False, Selected=False",
+      "state_delta_from_default": {
+        "border-width": "2px",
+        "border-color": "var(--card-border-focused, #161616)",
+        "background": "unchanged (#FFF)"
+      },
+      "implementation_note": "Background stays white for Expandable focused — unlike Selectable focused which adds hover bg"
+    },
+    {
+      "id": "expandable-focused-expanded",
+      "axes": { "type": "expandable", "state": "focused", "expanded": "true" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Expandable, State=Focused, Effect=Stroke, Expanded=True, Selected=False",
+      "state_delta_from_default": {
+        "border-width": "2px",
+        "border-color": "var(--card-border-focused, #161616)"
+      }
+    },
+    {
+      "id": "expandable-disabled-collapsed",
+      "axes": { "type": "expandable", "state": "disabled", "expanded": "false" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Expandable, State=Disabled, Effect=Stroke, Expanded=False, Selected=False",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-disabled, #E5E7EB)",
+        "border-color": "var(--card-border-disabled, #9DA4AE)",
+"text_color": "var(--card-text-disabled, #9DA4AE)"
+      }
+    },
+    {
+      "id": "expandable-disabled-expanded",
+      "axes": { "type": "expandable", "state": "disabled", "expanded": "true" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Expandable, State=Disabled, Effect=Stroke, Expanded=True, Selected=False",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-disabled, #E5E7EB)",
+        "border-color": "var(--card-border-disabled, #9DA4AE)",
+"text_color": "var(--card-text-disabled, #9DA4AE)"
+      }
+    },
+    {
+      "id": "selectable-default-unselected",
+      "axes": { "type": "selectable", "state": "default", "selected": "false" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Selectable, State=Default, Effect=Stroke, Expanded=False, Selected=False",
+      "properties": {
+        "root": {
+          "background": "var(--card-bg-default, #FFF)",
+          "border": "1px solid var(--card-border-default, #D2D6DB)"
+        },
+        "checkbox": "unchecked — border: 1px solid var(--Controls-control-border, #6C737F)"
+      }
+    },
+    {
+      "id": "selectable-default-selected",
+      "axes": { "type": "selectable", "state": "default", "selected": "true" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Selectable, State=Default, Effect=Stroke, Expanded=False, Selected=True",
+      "properties": {
+        "root": {
+          "background": "var(--card-bg-default, #FFF)",
+          "border": "1px solid var(--card-border-default, #D2D6DB)"
+        },
+        "checkbox": "checked — background: var(--Controls-control-primary-checked, #1B8354)"
+      }
+    },
+    {
+      "id": "selectable-hover-unselected",
+      "axes": { "type": "selectable", "state": "hover", "selected": "false" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Selectable, State=Hover, Effect=Stroke, Expanded=False, Selected=False",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-hover, #F9FAFB)"
+      }
+    },
+    {
+      "id": "selectable-hover-selected",
+      "axes": { "type": "selectable", "state": "hover", "selected": "true" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Selectable, State=Hover, Effect=Stroke, Expanded=False, Selected=True",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-hover, #F9FAFB)"
+      }
+    },
+    {
+      "id": "selectable-focused-unselected",
+      "axes": { "type": "selectable", "state": "focused", "selected": "false" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Selectable, State=Focused, Effect=Stroke, Expanded=False, Selected=False",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-hover, #F9FAFB)",
+        "border-width": "2px",
+        "border-color": "var(--card-border-focused, #161616)"
+      }
+    },
+    {
+      "id": "selectable-focused-selected",
+      "axes": { "type": "selectable", "state": "focused", "selected": "true" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Selectable, State=Focused, Effect=Stroke, Expanded=False, Selected=True",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-hover, #F9FAFB)",
+        "border-width": "2px",
+        "border-color": "var(--card-border-focused, #161616)"
+      }
+    },
+    {
+      "id": "selectable-disabled-unselected",
+      "axes": { "type": "selectable", "state": "disabled", "selected": "false" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Selectable, State=Disabled, Effect=Stroke, Expanded=False, Selected=False",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-disabled, #E5E7EB)",
+        "border-color": "var(--card-border-disabled, #9DA4AE)",
+"text_color": "var(--card-text-disabled, #9DA4AE)",
+        "checkbox": "disabled background: var(--Global-background-disabled, #E5E7EB)"
+      }
+    },
+    {
+      "id": "selectable-disabled-selected",
+      "axes": { "type": "selectable", "state": "disabled", "selected": "true" },
+      "status": "available",
+      "figma_source": "RTL=no, Type=Selectable, State=Disabled, Effect=Stroke, Expanded=False, Selected=True",
+      "state_delta_from_default": {
+        "background": "var(--card-bg-disabled, #E5E7EB)",
+        "border-color": "var(--card-border-disabled, #9DA4AE)",
+"text_color": "var(--card-text-disabled, #9DA4AE)",
+        "checkbox": "disabled+checked background: var(--Global-background-disabled, #E5E7EB)"
+      }
+    }
+  ],
+  "implementation_notes": [
+    "Card width is 360px from Figma. Use var(--card-width, 360px) to override in production.",
+    "All --card-* tokens are missing from token.css. Fallback values are present. See analysis.md Missing Tokens.",
+    "RTL axis produces no separate CSS modifier. Use dir='rtl' on an ancestor element.",
+    "Expandable and Selectable types require JavaScript for interactive behavior.",
+    "The .is-hover and .is-focused modifiers are showcase-only and must not be used in production HTML.",
+    "Default type has no hover, focused, or disabled states — it is a static container.",
+    "Expandable focused keeps white background; Selectable focused adds neutral-50 background — intentional design distinction."
+  ]
+}

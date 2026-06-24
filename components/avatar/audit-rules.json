@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0.0",
+  "component": "avatar",
+  "description": "Automated and manual audit rules for the Avatar component",
+
+  "rules": [
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-001",
+      "severity": "error",
+      "category": "structure",
+      "title": "Root class required",
+      "description": "Every avatar element must have the .avatar base class",
+      "selector": "[class*='avatar']:not(.avatar):not(.avatar-group):not(.avatar__icon):not(.avatar__initials):not(.avatar__image):not(.avatar--overflow)",
+      "check": "Element uses avatar styling without .avatar base class",
+      "fix": "Add .avatar to the root element"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-002",
+      "severity": "error",
+      "category": "structure",
+      "title": "Size modifier required",
+      "description": "Every .avatar element must have exactly one size modifier",
+      "check": ".avatar element is missing a size modifier (.avatar--24 through .avatar--120)",
+      "valid_modifiers": [
+        ".avatar--24",
+        ".avatar--32",
+        ".avatar--40",
+        ".avatar--48",
+        ".avatar--64",
+        ".avatar--80",
+        ".avatar--120"
+      ],
+      "fix": "Add the appropriate size modifier for the intended avatar dimension"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-003",
+      "severity": "error",
+      "category": "structure",
+      "title": "Multiple size modifiers forbidden",
+      "description": ".avatar must not carry more than one size modifier simultaneously",
+      "check": ".avatar element has more than one .avatar--{size} class",
+      "fix": "Remove all but one size modifier"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-004",
+      "severity": "error",
+      "category": "structure",
+      "title": "Image type requires <img> child",
+      "description": ".avatar--image must contain an <img class='avatar__image'> child element",
+      "check": ".avatar.avatar--image has no <img class='avatar__image'> child",
+      "fix": "Add <img class='avatar__image' src='...' alt='...'> inside .avatar--image"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-005",
+      "severity": "error",
+      "category": "accessibility",
+      "title": "Image alt text required",
+      "description": "<img class='avatar__image'> must have a non-empty alt attribute",
+      "selector": "img.avatar__image",
+      "check": "img.avatar__image has empty or missing alt attribute",
+      "fix": "Add alt attribute with the person's name: alt='Person Name'"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-006",
+      "severity": "error",
+      "category": "accessibility",
+      "title": "Icon/Initials type requires identity label",
+      "description": ".avatar with icon or initials content must have role='img' and aria-label when conveying identity",
+      "check": ".avatar containing .avatar__icon or .avatar__initials has no aria-label",
+      "fix": "Add role='img' aria-label='Person Name' to the .avatar root element"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-007",
+      "severity": "warning",
+      "category": "accessibility",
+      "title": "Icon must be aria-hidden",
+      "description": ".avatar__icon span and its SVG child must be aria-hidden",
+      "selector": ".avatar__icon",
+      "check": ".avatar__icon is missing aria-hidden='true'",
+      "fix": "Add aria-hidden='true' to .avatar__icon"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-008",
+      "severity": "warning",
+      "category": "accessibility",
+      "title": "Initials span must be aria-hidden",
+      "description": ".avatar__initials must be aria-hidden since the label is on the root element",
+      "selector": ".avatar__initials",
+      "check": ".avatar__initials is missing aria-hidden='true'",
+      "fix": "Add aria-hidden='true' to .avatar__initials"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-009",
+      "severity": "warning",
+      "category": "accessibility",
+      "title": "Overflow counter must be aria-hidden",
+      "description": ".avatar--overflow element must be aria-hidden; count is conveyed by group aria-label",
+      "check": ".avatar.avatar--overflow has no aria-hidden='true'",
+      "fix": "Add aria-hidden='true' to .avatar--overflow"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-010",
+      "severity": "error",
+      "category": "accessibility",
+      "title": "Avatar Group requires role and label",
+      "description": ".avatar-group must have role='group' and descriptive aria-label",
+      "selector": ".avatar-group",
+      "check": ".avatar-group is missing role='group' or aria-label",
+      "fix": "Add role='group' aria-label='N team members' to .avatar-group"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-011",
+      "severity": "error",
+      "category": "structure",
+      "title": "Group must have layout modifier",
+      "description": ".avatar-group must have either .avatar-group--stacked or .avatar-group--flat",
+      "check": ".avatar-group has no layout modifier",
+      "valid_modifiers": [
+        ".avatar-group--stacked",
+        ".avatar-group--flat"
+      ],
+      "fix": "Add .avatar-group--stacked or .avatar-group--flat to the group element"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-012",
+      "severity": "warning",
+      "category": "structure",
+      "title": "Initials length constraint",
+      "description": "Initials text should be 1–2 characters maximum",
+      "check": ".avatar__initials contains more than 2 non-whitespace characters (excluding overflow '+N' pattern)",
+      "fix": "Truncate initials to maximum 2 characters"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-013",
+      "severity": "warning",
+      "category": "tokens",
+      "title": "No hardcoded color values",
+      "description": "avatar.css must not contain hardcoded hex or rgba color values outside var() fallbacks",
+      "check": "avatar.css selector contains color property with hardcoded value not inside var()",
+      "fix": "Replace hardcoded color with var(--avatar-token, #fallback) pattern"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-014",
+      "severity": "error",
+      "category": "tokens",
+      "title": "No cross-namespace token direct usage",
+      "description": "avatar.css must not reference --Button-* tokens directly in primary property values",
+      "check": "avatar.css uses --Button-* as a primary (non-fallback) custom property",
+      "fix": "Define --avatar-bg-default in token.css and reference it in avatar.css"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-015",
+      "severity": "info",
+      "category": "structure",
+      "title": "Square 120px uses larger radius",
+      "description": ".avatar--square.avatar--120 must have border-radius: var(--avatar-radius-square-lg, 8px)",
+      "check": ".avatar--square.avatar--120 has incorrect border-radius value",
+      "fix": "Ensure CSS specificity rule .avatar--square.avatar--120 sets correct border-radius"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-016",
+      "severity": "info",
+      "category": "structure",
+      "title": "120px uses 4px border",
+      "description": ".avatar--120 must have border-width: 4px",
+      "check": ".avatar--120 border-width is not 4px",
+      "fix": "Check .avatar--120 rule in avatar.css"
+    },
+
+    {
+      "id": "PLATFORM-CODE-AVATAR-RULE-017",
+      "severity": "warning",
+      "category": "assembly",
+      "title": "Avatar Group nesting forbidden",
+      "description": ".avatar-group must not be nested inside another .avatar-group",
+      "check": ".avatar-group contains a descendant .avatar-group",
+      "fix": "Flatten the group structure"
+    }
+
+  ],
+
+  "automation": {
+    "static_analysis": [
+      "PLATFORM-CODE-AVATAR-RULE-001",
+      "PLATFORM-CODE-AVATAR-RULE-002",
+      "PLATFORM-CODE-AVATAR-RULE-003",
+      "PLATFORM-CODE-AVATAR-RULE-004",
+      "PLATFORM-CODE-AVATAR-RULE-013",
+      "PLATFORM-CODE-AVATAR-RULE-014",
+      "PLATFORM-CODE-AVATAR-RULE-015",
+      "PLATFORM-CODE-AVATAR-RULE-016",
+      "PLATFORM-CODE-AVATAR-RULE-017"
+    ],
+    "dom_inspection": [
+      "PLATFORM-CODE-AVATAR-RULE-005",
+      "PLATFORM-CODE-AVATAR-RULE-006",
+      "PLATFORM-CODE-AVATAR-RULE-007",
+      "PLATFORM-CODE-AVATAR-RULE-008",
+      "PLATFORM-CODE-AVATAR-RULE-009",
+      "PLATFORM-CODE-AVATAR-RULE-010",
+      "PLATFORM-CODE-AVATAR-RULE-011",
+      "PLATFORM-CODE-AVATAR-RULE-012"
+    ],
+    "manual_review": []
+  }
+}
