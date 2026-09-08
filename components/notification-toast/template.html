@@ -1,0 +1,196 @@
+<!--
+  Notification Toast — Base Template
+  Classification: Composite
+  Dependency: button (existing — not regenerated)
+
+  Usage:
+  1. Add one type modifier class: --neutral | --info | --critical-error | --warning | --success
+  2. Choose role="alert" (assertive) for critical-error/warning or role="status" (polite) for neutral/info/success
+  3. Replace SVG placeholders with actual icons from the icon library
+  4. Place this component in a fixed/absolute positioned toast container at the page level
+-->
+
+<!-- ═══════════════════════════════════════════════════════
+     NEUTRAL
+═══════════════════════════════════════════════════════════ -->
+<div class="notification-toast notification-toast--neutral" role="alert">
+  <div class="notification-toast__title">
+    <div class="notification-toast__icon-wrap">
+      <!-- Icon: information-circle (20×20) — source from icon library -->
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 9v5M10 7v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="notification-toast__text">
+      <p class="notification-toast__lead">عنوان رسالة الإشعار</p>
+      <p class="notification-toast__helper">عندما يحتاج الإشعار إلى تفاصيل إضافية يمكن وضعها هنا.</p>
+    </div>
+    <button type="button"
+            class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+            aria-label="إغلاق الإشعار">
+      <span class="btn__icon" aria-hidden="true">
+        <!-- Icon: multiplication-sign (20×20) -->
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div class="notification-toast__actions">
+    <button type="button" class="btn btn--secondary-solid btn--md">
+      <span class="btn__text">إجراء</span>
+    </button>
+    <button type="button" class="btn btn--subtle btn--md">
+      <span class="btn__text">تجاهل</span>
+    </button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     INFO
+═══════════════════════════════════════════════════════════ -->
+<div class="notification-toast notification-toast--info" role="status">
+  <div class="notification-toast__title">
+    <div class="notification-toast__icon-wrap">
+      <!-- Icon: information-circle (20×20) -->
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 9v5M10 7v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="notification-toast__text">
+      <p class="notification-toast__lead">عنوان رسالة الإشعار</p>
+      <p class="notification-toast__helper">عندما يحتاج الإشعار إلى تفاصيل إضافية يمكن وضعها هنا.</p>
+    </div>
+    <button type="button"
+            class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+            aria-label="إغلاق الإشعار">
+      <span class="btn__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div class="notification-toast__actions">
+    <button type="button" class="btn btn--secondary-solid btn--md">
+      <span class="btn__text">إجراء</span>
+    </button>
+    <button type="button" class="btn btn--subtle btn--md">
+      <span class="btn__text">تجاهل</span>
+    </button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     CRITICAL / ERROR
+═══════════════════════════════════════════════════════════ -->
+<div class="notification-toast notification-toast--critical-error" role="alert">
+  <div class="notification-toast__title">
+    <div class="notification-toast__icon-wrap">
+      <!-- Icon: alert-02 (20×20) -->
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 2.5L18.5 17H1.5L10 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M10 8v4M10 13.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="notification-toast__text">
+      <p class="notification-toast__lead">عنوان رسالة الخطأ</p>
+      <p class="notification-toast__helper">حدث خطأ أثناء تنفيذ العملية. يُرجى المحاولة مجدداً.</p>
+    </div>
+    <button type="button"
+            class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+            aria-label="إغلاق الإشعار">
+      <span class="btn__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div class="notification-toast__actions">
+    <button type="button" class="btn btn--secondary-solid btn--md">
+      <span class="btn__text">إعادة المحاولة</span>
+    </button>
+    <button type="button" class="btn btn--subtle btn--md">
+      <span class="btn__text">تجاهل</span>
+    </button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     WARNING
+═══════════════════════════════════════════════════════════ -->
+<div class="notification-toast notification-toast--warning" role="alert">
+  <div class="notification-toast__title">
+    <div class="notification-toast__icon-wrap">
+      <!-- Icon: alert-circle (20×20) -->
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M10 6v5M10 13.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="notification-toast__text">
+      <p class="notification-toast__lead">عنوان رسالة التحذير</p>
+      <p class="notification-toast__helper">انتبه — قد تؤدي هذه العملية إلى تأثيرات غير متوقعة.</p>
+    </div>
+    <button type="button"
+            class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+            aria-label="إغلاق الإشعار">
+      <span class="btn__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div class="notification-toast__actions">
+    <button type="button" class="btn btn--secondary-solid btn--md">
+      <span class="btn__text">متابعة</span>
+    </button>
+    <button type="button" class="btn btn--subtle btn--md">
+      <span class="btn__text">إلغاء</span>
+    </button>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SUCCESS
+═══════════════════════════════════════════════════════════ -->
+<div class="notification-toast notification-toast--success" role="status">
+  <div class="notification-toast__title">
+    <div class="notification-toast__icon-wrap">
+      <!-- Icon: checkmark-circle-02 (20×20) -->
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M6.5 10l2.5 2.5L13.5 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="notification-toast__text">
+      <p class="notification-toast__lead">تمت العملية بنجاح</p>
+      <p class="notification-toast__helper">تم حفظ جميع التغييرات بنجاح.</p>
+    </div>
+    <button type="button"
+            class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+            aria-label="إغلاق الإشعار">
+      <span class="btn__icon" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </button>
+  </div>
+  <div class="notification-toast__actions">
+    <button type="button" class="btn btn--secondary-solid btn--md">
+      <span class="btn__text">عرض التفاصيل</span>
+    </button>
+    <button type="button" class="btn btn--subtle btn--md">
+      <span class="btn__text">تجاهل</span>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,156 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "notification-toast",
+    "display_name": "Notification Toast",
+    "description": "A transient notification card that surfaces an alert, status, or informational message with an optional dismiss action and CTA buttons.",
+    "classification": "Composite"
+  },
+  "source": {
+    "manifest": "components/notification-toast/mainifest.json",
+    "manifest_type": "COMPONENT_SET",
+    "variant_count": 20
+  },
+  "axes": ["type", "rtl", "mobile"],
+  "axis_values": {
+    "type": ["neutral", "info", "critical-error", "warning", "success"],
+    "rtl": [false, true],
+    "mobile": [false, true]
+  },
+  "dependencies": {
+    "required": ["button"],
+    "optional": []
+  },
+  "anatomy": {
+    "root": ".notification-toast",
+    "elements": {
+      "title": ".notification-toast__title",
+      "icon_wrap": ".notification-toast__icon-wrap",
+      "text": ".notification-toast__text",
+      "lead": ".notification-toast__lead",
+      "helper": ".notification-toast__helper",
+      "close": ".notification-toast__close",
+      "actions": ".notification-toast__actions"
+    }
+  },
+  "type_modifiers": {
+    "neutral":        ".notification-toast--neutral",
+    "info":           ".notification-toast--info",
+    "critical-error": ".notification-toast--critical-error",
+    "warning":        ".notification-toast--warning",
+    "success":        ".notification-toast--success"
+  },
+  "layout_modifiers": {
+    "mobile": ".notification-toast--mobile"
+  },
+  "type_icon_map": {
+    "neutral":        "information-circle",
+    "info":           "information-circle",
+    "critical-error": "alert-02",
+    "warning":        "alert-circle",
+    "success":        "checkmark-circle-02"
+  },
+  "type_icon_bg_token_map": {
+    "neutral":        "--notification-toast-icon-bg-neutral",
+    "info":           "--notification-toast-icon-bg-info",
+    "critical-error": "--notification-toast-icon-bg-critical-error",
+    "warning":        "--notification-toast-icon-bg-warning",
+    "success":        "--notification-toast-icon-bg-success"
+  },
+  "layout": {
+    "desktop": {
+      "width":      "var(--notification-toast-desktop-width, 484px)",
+      "padding":    "var(--notification-toast-v-padding, 16px) var(--notification-toast-desktop-h-padding, 24px)",
+      "title_direction": "row",
+      "actions_direction": "row",
+      "actions_indent": "var(--notification-toast-actions-indent, 40px)",
+      "action_button_size": "medium"
+    },
+    "mobile": {
+      "width":      "var(--notification-toast-mobile-width, 343px)",
+      "padding":    "var(--notification-toast-v-padding, 16px) var(--notification-toast-mobile-h-padding, 16px)",
+      "title_direction": "column (flex-wrap: wrap)",
+      "close_positioning": "position: absolute; inset-inline-end: -8px; top: 0",
+      "actions_direction": "column",
+      "actions_indent": "none",
+      "action_button_size": "large (full-width)"
+    }
+  },
+  "tokens": {
+    "root": {
+      "--notification-toast-bg":                    { "fallback": "#FFF",                             "source": "--Background-background-notification-white" },
+      "--notification-toast-v-padding":             { "fallback": "16px",                             "source": "--Notification-notification-toast-v-padding" },
+      "--notification-toast-desktop-h-padding":     { "fallback": "24px",                             "source": "--Notification-notification-toast-desktop-h-padding" },
+      "--notification-toast-mobile-h-padding":      { "fallback": "16px",                             "source": "--Notification-notification-toast-mobile-h-padding" },
+      "--notification-toast-gap":                   { "fallback": "16px",                             "source": "--Notification-notification-gap" },
+      "--notification-toast-radius":                { "fallback": "8px",                              "source": "--radius-md" },
+      "--notification-toast-shadow":                { "fallback": "0 32px 64px -12px rgba(16,24,40,0.14)", "source": "TODO: missing token — hardcoded fallback" },
+      "--notification-toast-desktop-width":         { "fallback": "484px",                            "source": "TODO: no token in manifest" },
+      "--notification-toast-mobile-width":          { "fallback": "343px",                            "source": "TODO: no token in manifest" }
+    },
+    "title": {
+      "--notification-toast-title-gap":             { "fallback": "12px",  "source": "--Global-spacing-lg" }
+    },
+    "icon_wrap": {
+      "--notification-toast-icon-size":             { "fallback": "40px",    "source": "manifest layout" },
+      "--notification-toast-icon-radius":           { "fallback": "9999px",  "source": "--radius-full" },
+      "--notification-toast-icon-inner-size":       { "fallback": "20px",    "source": "manifest layout" },
+      "--notification-toast-icon-bg-neutral":       { "fallback": "#F9FAFB", "source": "--Background-background-neutral-50" },
+      "--notification-toast-icon-bg-info":          { "fallback": "#EFF8FF", "source": "--Icon-background-info-light" },
+      "--notification-toast-icon-bg-critical-error":{ "fallback": "#FEF3F2", "source": "--Icon-background-error-light" },
+      "--notification-toast-icon-bg-warning":       { "fallback": "#FFFAEB", "source": "--Icon-background-warning-light" },
+      "--notification-toast-icon-bg-success":       { "fallback": "#ECFDF3", "source": "--Icon-background-success-light" }
+    },
+    "text": {
+      "--notification-toast-text-gap":              { "fallback": "4px",                      "source": "--Global-spacing-xs" },
+      "--notification-toast-title-color":           { "fallback": "#1F2A37",                  "source": "--Text-text-display" },
+      "--notification-toast-title-font-size":       { "fallback": "16px",                     "source": "--Size-Text-typo-size-text-md" },
+      "--notification-toast-title-font-weight":     { "fallback": "600",                      "source": "manifest" },
+      "--notification-toast-title-line-height":     { "fallback": "24px",                     "source": "--Line-Height-Text-line-heights-text-md" },
+      "--notification-toast-helper-color":          { "fallback": "#384250",                  "source": "--Text-text-primary-paragraph" },
+      "--notification-toast-helper-font-size":      { "fallback": "14px",                     "source": "--Size-Text-typo-size-text-sm" },
+      "--notification-toast-helper-font-weight":    { "fallback": "400",                      "source": "manifest" },
+      "--notification-toast-helper-line-height":    { "fallback": "20px",                     "source": "--Line-Height-Text-line-heights-text-sm" },
+      "--notification-toast-font-family":           { "fallback": "\"IBM Plex Sans Arabic\"", "source": "--Font-Family-font-family-text" }
+    },
+    "close": {
+      "--notification-toast-close-size":            { "fallback": "32px", "source": "manifest layout" },
+      "--notification-toast-close-radius":          { "fallback": "4px",  "source": "--Radius-radius-sm" },
+      "--notification-toast-close-mobile-offset":   { "fallback": "8px",  "source": "manifest: right: -8px" }
+    },
+    "actions": {
+      "--notification-toast-actions-gap":           { "fallback": "8px",  "source": "--Button-button-menu-gap" },
+      "--notification-toast-actions-indent":        { "fallback": "40px", "source": "--Global-spacing-5xl" }
+    }
+  },
+  "variants": [
+    { "id": "neutral-desktop-ltr",        "axes": { "type": "neutral",        "rtl": false, "mobile": false } },
+    { "id": "neutral-desktop-rtl",        "axes": { "type": "neutral",        "rtl": true,  "mobile": false } },
+    { "id": "neutral-mobile-ltr",         "axes": { "type": "neutral",        "rtl": false, "mobile": true  } },
+    { "id": "neutral-mobile-rtl",         "axes": { "type": "neutral",        "rtl": true,  "mobile": true  } },
+    { "id": "info-desktop-ltr",           "axes": { "type": "info",           "rtl": false, "mobile": false } },
+    { "id": "info-desktop-rtl",           "axes": { "type": "info",           "rtl": true,  "mobile": false } },
+    { "id": "info-mobile-ltr",            "axes": { "type": "info",           "rtl": false, "mobile": true  } },
+    { "id": "info-mobile-rtl",            "axes": { "type": "info",           "rtl": true,  "mobile": true  } },
+    { "id": "critical-error-desktop-ltr", "axes": { "type": "critical-error", "rtl": false, "mobile": false } },
+    { "id": "critical-error-desktop-rtl", "axes": { "type": "critical-error", "rtl": true,  "mobile": false } },
+    { "id": "critical-error-mobile-ltr",  "axes": { "type": "critical-error", "rtl": false, "mobile": true  } },
+    { "id": "critical-error-mobile-rtl",  "axes": { "type": "critical-error", "rtl": true,  "mobile": true  } },
+    { "id": "warning-desktop-ltr",        "axes": { "type": "warning",        "rtl": false, "mobile": false } },
+    { "id": "warning-desktop-rtl",        "axes": { "type": "warning",        "rtl": true,  "mobile": false } },
+    { "id": "warning-mobile-ltr",         "axes": { "type": "warning",        "rtl": false, "mobile": true  } },
+    { "id": "warning-mobile-rtl",         "axes": { "type": "warning",        "rtl": true,  "mobile": true  } },
+    { "id": "success-desktop-ltr",        "axes": { "type": "success",        "rtl": false, "mobile": false } },
+    { "id": "success-desktop-rtl",        "axes": { "type": "success",        "rtl": true,  "mobile": false } },
+    { "id": "success-mobile-ltr",         "axes": { "type": "success",        "rtl": false, "mobile": true  } },
+    { "id": "success-mobile-rtl",         "axes": { "type": "success",        "rtl": true,  "mobile": true  } }
+  ],
+  "implementation_notes": {
+    "rtl": "Use `dir=\"rtl\"` on a parent element. All CSS uses logical properties (padding-inline, inset-inline-end) so RTL layout mirrors automatically.",
+    "type_icon": "The icon SVG inside .notification-toast__icon-wrap changes per type. Consumer is responsible for rendering the correct icon. Icon names are documented in type_icon_map.",
+    "actions_slot": "The .notification-toast__actions div is a layout slot. Consumers render .btn elements inside it. The notification-toast controls spacing and flex layout only.",
+    "close_button": "Implemented as .btn.btn--subtle.btn--icon-only.btn--md per button contract. Must carry aria-label=\"Dismiss notification\" (or equivalent in Arabic).",
+    "live_region": "Root element carries role=\"alert\" by default (assertive). Consumers may change to role=\"status\" for polite announcements (neutral/info/success types).",
+    "discarded_axes": "No state axis exists in manifest. RTL does not require a separate CSS modifier — it is handled by dir attribute inheritance."
+  }
+}

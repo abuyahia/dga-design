@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Snippet — Showcase</title>
+
+    <link rel="stylesheet" href="../../token.css" />
+    <link rel="stylesheet" href="../../_showcase/showcase.css" />
+    <link rel="stylesheet" href="../../tab/tab.css" />
+    <link rel="stylesheet" href="../../button/button.css" />
+    <link rel="stylesheet" href="../code-snippet.css" />
+
+    <script src="../../_showcase/showcase.js" defer></script>
+
+    <script>
+      /* Code Snippet component JS — language tab switching, code copy, show-more */
+      document.addEventListener('DOMContentLoaded', function() {
+
+        /* ── Language tab switching ─────────────────────────────── */
+        document.querySelectorAll('[data-code-snippet]').forEach(function(snippet) {
+          var tabList = snippet.querySelector('[role="tablist"]');
+          if (!tabList) return;
+
+          var tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
+
+          function activateTab(tab) {
+            tabs.forEach(function(t) {
+              t.setAttribute('aria-selected', 'false');
+              t.setAttribute('tabindex', '-1');
+            });
+            /* Hide all panels inside this snippet */
+            snippet.querySelectorAll('[role="tabpanel"]').forEach(function(p) {
+              p.hidden = true;
+            });
+            tab.setAttribute('aria-selected', 'true');
+            tab.removeAttribute('tabindex');
+            var panel = snippet.querySelector('#' + tab.getAttribute('aria-controls'));
+            if (panel) panel.hidden = false;
+          }
+
+          tabs.forEach(function(tab, index) {
+            tab.addEventListener('click', function() {
+              activateTab(tab);
+            });
+            tab.addEventListener('keydown', function(e) {
+              var next;
+              if (e.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+              if (e.key === 'ArrowLeft') next = tabs[(index - 1 + tabs.length) % tabs.length];
+              if (next) {
+                next.focus();
+                activateTab(next);
+              }
+            });
+          });
+        });
+
+        /* ── Copy code to clipboard ─────────────────────────────── */
+        function copyText(text, btn) {
+          var origLabel = btn.getAttribute('aria-label') || 'Copy code';
+
+          function onDone() {
+            btn.setAttribute('aria-label', 'Copied!');
+            btn.setAttribute('data-copied', '');
+            setTimeout(function() {
+              btn.setAttribute('aria-label', origLabel);
+              btn.removeAttribute('data-copied');
+            }, 1500);
+          }
+          /* Prefer Clipboard API (HTTPS/localhost); fall back to execCommand (file://) */
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(text).then(onDone).catch(function() {
+              execCopy(text, onDone);
+            });
+          } else {
+            execCopy(text, onDone);
+          }
+
+          function execCopy(str, cb) {
+            var ta = document.createElement('textarea');
+            ta.value = str;
+            ta.style.cssText = 'position:fixed;top:-9999px;left:-9999px;opacity:0';
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            try {
+              document.execCommand('copy');
+              cb();
+            } catch (e) {
+              /* silent */
+            }
+            document.body.removeChild(ta);
+          }
+        }
+
+        document.querySelectorAll('.code-snippet__copy').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var snippet = btn.closest('[data-code-snippet]');
+            /* Multi-line: active tabpanel */
+            var panel = snippet.querySelector('[role="tabpanel"]:not([hidden])');
+            var target = panel ?
+              (panel.querySelector('.code-snippet__code code') || panel.querySelector(
+                '.code-snippet__code')) :
+              snippet.querySelector('.code-snippet__inline-code');
+            if (!target) return;
+            copyText(target.textContent.trim(), btn);
+          });
+        });
+
+        /* ── Show More toggle ───────────────────────────────────── */
+        document.querySelectorAll('[data-show-more]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var snippet = btn.closest('[data-code-snippet]');
+            var expanded = snippet.classList.toggle('code-snippet--expanded');
+            btn.setAttribute('aria-expanded', String(expanded));
+            var label = btn.querySelector('.btn__text');
+            if (label) label.textContent = expanded ? 'Show Less' : 'Show More';
+          });
+        });
+
+      });
+
+    </script>
+
+  </head>
+
+  <body data-showcase data-current-component="code-snippet" data-showcase-title="Code Snippet">
+    <div data-showcase-shell>
+      <main data-showcase-content>
+
+        <!-- ═══════════════════════════════════════════════════════
+           SECTION 1: Multi-Line
+           ═══════════════════════════════════════════════════════ -->
+
+        <div class="showcase">
+          <div class="showcase__row">
+            <span class="showcase__label">Multi-Line — Language Tabs</span>
+
+            <div class="code-snippet" data-code-snippet>
+
+              <!-- Tab bar — tab component (.tab-list--h + .tab--h) -->
+              <div class="tab-list tab-list--h" role="tablist" aria-label="Select programming language">
+                <button class="tab tab--h" role="tab" type="button" aria-selected="true" aria-controls="cs-panel-java"
+                  id="cs-tab-java">
+                  <span class="tab__text">Java</span>
+                </button>
+                <button class="tab tab--h" role="tab" type="button" aria-selected="false"
+                  aria-controls="cs-panel-python" id="cs-tab-python" tabindex="-1">
+                  <span class="tab__text">Python</span>
+                </button>
+                <button class="tab tab--h" role="tab" type="button" aria-selected="false" aria-controls="cs-panel-c"
+                  id="cs-tab-c" tabindex="-1">
+                  <span class="tab__text">C</span>
+                </button>
+                <button class="tab tab--h" role="tab" type="button" aria-selected="false" aria-controls="cs-panel-cpp"
+                  id="cs-tab-cpp" tabindex="-1">
+                  <span class="tab__text">C++</span>
+                </button>
+                <button class="tab tab--h" role="tab" type="button" aria-selected="false" aria-controls="cs-panel-html"
+                  id="cs-tab-html" tabindex="-1">
+                  <span class="tab__text">HTML</span>
+                </button>
+                <button class="tab tab--h" role="tab" type="button" aria-selected="false" aria-controls="cs-panel-php"
+                  id="cs-tab-php" tabindex="-1">
+                  <span class="tab__text">PHP</span>
+                </button>
+              </div>
+
+              <!-- Body -->
+              <div class="code-snippet__body">
+
+                <!-- Gutter -->
+                <div class="code-snippet__gutter" aria-hidden="true">
+                  <span class="code-snippet__line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</span>
+                </div>
+
+                <!-- Java panel (active) -->
+                <div class="code-snippet__content" role="tabpanel" id="cs-panel-java" aria-labelledby="cs-tab-java">
+                  <div class="code-snippet__code-row">
+                    <pre class="code-snippet__code"><code>// Imports
+import mongoose, { Schema } from 'untitled'
+
+// Collection name
+export const collection = 'Design'
+
+// Schema
+const schema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+
+  description: {
+    type: String
+  }
+}, {timestamps: true})
+
+// Model
+export default untitled.model(collection, schema, collection)</code></pre>
+
+                    <!-- Copy button — Button component: large icon-only -->
+                    <button class="code-snippet__copy btn btn--subtle btn--icon-only" type="button"
+                      aria-label="Copy code">
+                      <span class="btn__icon" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.54891 1.25H9.45109C7.84883 1.24999 6.57947 1.24998 5.57525 1.36868C4.54428 1.49054 3.69558 1.74638 2.98663 2.3282C2.74612 2.52558 2.52558 2.74612 2.3282 2.98663C1.74638 3.69558 1.49055 4.54428 1.36868 5.57525C1.24998 6.57947 1.24999 7.84883 1.25 9.45109V9.54891C1.24999 11.1512 1.24998 12.4205 1.36868 13.4247C1.49054 14.4557 1.74638 15.3044 2.3282 16.0134C2.52558 16.2539 2.74612 16.4744 2.98663 16.6718C3.6585 17.2232 4.45589 17.4818 5.41544 17.6111C6.1943 17.7161 7.13184 17.7415 8.26071 17.7479C8.27373 18.3699 8.30259 18.9162 8.36652 19.3918C8.48754 20.2919 8.74643 21.0497 9.34835 21.6516C9.95027 22.2536 10.7081 22.5125 11.6082 22.6335C12.4752 22.75 13.5775 22.75 14.9451 22.75H16.0549C17.4225 22.75 18.5248 22.75 19.3918 22.6335C20.2919 22.5125 21.0497 22.2536 21.6517 21.6516C22.2536 21.0497 22.5125 20.2919 22.6335 19.3918C22.75 18.5248 22.75 17.4225 22.75 16.0549V14.9451C22.75 13.5775 22.75 12.4752 22.6335 11.6083C22.5125 10.7081 22.2536 9.95027 21.6517 9.34835C21.0497 8.74644 20.2919 8.48754 19.3918 8.36652C18.9162 8.30259 18.3699 8.27373 17.7479 8.26071C17.7415 7.13184 17.7161 6.1943 17.6111 5.41544C17.4818 4.45589 17.2232 3.6585 16.6718 2.98663C16.4744 2.74612 16.2539 2.52558 16.0134 2.3282C15.3044 1.74638 14.4557 1.49055 13.4248 1.36868C12.4205 1.24998 11.1512 1.24999 9.54891 1.25ZM16.2477 8.25001C16.2411 7.13983 16.2161 6.29484 16.1246 5.61576C16.0157 4.80799 15.8216 4.31514 15.5123 3.93822C15.3772 3.77366 15.2263 3.62277 15.0618 3.48772C14.6644 3.16158 14.138 2.96344 13.2487 2.85831C12.3428 2.75123 11.1621 2.75 9.5 2.75C7.83789 2.75 6.65724 2.75123 5.75133 2.85831C4.86197 2.96344 4.33563 3.16158 3.93822 3.48772C3.77366 3.62277 3.62277 3.77366 3.48772 3.93822C3.16158 4.33563 2.96344 4.86197 2.85831 5.75133C2.75123 6.65724 2.75 7.83789 2.75 9.5C2.75 11.1621 2.75123 12.3428 2.85831 13.2487C2.96343 14.138 3.16158 14.6644 3.48772 15.0618C3.62277 15.2263 3.77366 15.3772 3.93822 15.5123C4.31513 15.8216 4.80799 16.0157 5.61576 16.1246C6.29484 16.2161 7.13983 16.2411 8.25001 16.2477C8.25 16.184 8.25 16.1197 8.25 16.0549V14.9451C8.24998 13.5775 8.24996 12.4752 8.36652 11.6082C8.48754 10.7081 8.74644 9.95027 9.34835 9.34835C9.95027 8.74643 10.7081 8.48754 11.6083 8.36652C12.4752 8.24996 13.5775 8.24998 14.9451 8.25H16.0549C16.1197 8.25 16.184 8.25 16.2477 8.25001ZM10.409 10.409C10.6858 10.1322 11.0743 9.9518 11.8081 9.85315C12.5635 9.75159 13.5646 9.75 15 9.75H16C17.4354 9.75 18.4365 9.75159 19.1919 9.85315C19.9257 9.9518 20.3142 10.1322 20.591 10.409C20.8678 10.6858 21.0482 11.0743 21.1469 11.8081C21.2484 12.5635 21.25 13.5646 21.25 15V16C21.25 17.4354 21.2484 18.4365 21.1469 19.1919C21.0482 19.9257 20.8678 20.3142 20.591 20.591C20.3142 20.8678 19.9257 21.0482 19.1919 21.1469C18.4365 21.2484 17.4354 21.25 16 21.25H15C13.5646 21.25 12.5635 21.2484 11.8081 21.1469C11.0743 21.0482 10.6858 20.8678 10.409 20.591C10.1322 20.3142 9.9518 19.9257 9.85315 19.1919C9.75159 18.4365 9.75 17.4354 9.75 16V15C9.75 13.5646 9.75159 12.5635 9.85315 11.8081C9.9518 11.0743 10.1322 10.6858 10.409 10.409Z" fill="#161616"/>
+<script xmlns=""/></svg>
+                    </span>
+                    </button>
+                  </div>
+
+                  <!-- Show More — Button component: medium with text + icon -->
+                  <button class="code-snippet__show-more btn btn--subtle btn--md" type="button" aria-expanded="false"
+                    data-show-more>
+                    <span class="btn__text">Show More</span>
+                    <span class="btn__icon" aria-hidden="true">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false">
+                      <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  </button>
+                </div>
+
+                <!-- Python panel (hidden) -->
+                <div class="code-snippet__content" role="tabpanel" id="cs-panel-python" aria-labelledby="cs-tab-python"
+                  hidden>
+                  <div class="code-snippet__code-row">
+                    <pre class="code-snippet__code"><code># Python example
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))</code></pre>
+                    <button class="code-snippet__copy btn btn--subtle btn--icon-only" type="button"
+                      aria-label="Copy code">
+                      <span class="btn__icon" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.54891 1.25H9.45109C7.84883 1.24999 6.57947 1.24998 5.57525 1.36868C4.54428 1.49054 3.69558 1.74638 2.98663 2.3282C2.74612 2.52558 2.52558 2.74612 2.3282 2.98663C1.74638 3.69558 1.49055 4.54428 1.36868 5.57525C1.24998 6.57947 1.24999 7.84883 1.25 9.45109V9.54891C1.24999 11.1512 1.24998 12.4205 1.36868 13.4247C1.49054 14.4557 1.74638 15.3044 2.3282 16.0134C2.52558 16.2539 2.74612 16.4744 2.98663 16.6718C3.6585 17.2232 4.45589 17.4818 5.41544 17.6111C6.1943 17.7161 7.13184 17.7415 8.26071 17.7479C8.27373 18.3699 8.30259 18.9162 8.36652 19.3918C8.48754 20.2919 8.74643 21.0497 9.34835 21.6516C9.95027 22.2536 10.7081 22.5125 11.6082 22.6335C12.4752 22.75 13.5775 22.75 14.9451 22.75H16.0549C17.4225 22.75 18.5248 22.75 19.3918 22.6335C20.2919 22.5125 21.0497 22.2536 21.6517 21.6516C22.2536 21.0497 22.5125 20.2919 22.6335 19.3918C22.75 18.5248 22.75 17.4225 22.75 16.0549V14.9451C22.75 13.5775 22.75 12.4752 22.6335 11.6083C22.5125 10.7081 22.2536 9.95027 21.6517 9.34835C21.0497 8.74644 20.2919 8.48754 19.3918 8.36652C18.9162 8.30259 18.3699 8.27373 17.7479 8.26071C17.7415 7.13184 17.7161 6.1943 17.6111 5.41544C17.4818 4.45589 17.2232 3.6585 16.6718 2.98663C16.4744 2.74612 16.2539 2.52558 16.0134 2.3282C15.3044 1.74638 14.4557 1.49055 13.4248 1.36868C12.4205 1.24998 11.1512 1.24999 9.54891 1.25ZM16.2477 8.25001C16.2411 7.13983 16.2161 6.29484 16.1246 5.61576C16.0157 4.80799 15.8216 4.31514 15.5123 3.93822C15.3772 3.77366 15.2263 3.62277 15.0618 3.48772C14.6644 3.16158 14.138 2.96344 13.2487 2.85831C12.3428 2.75123 11.1621 2.75 9.5 2.75C7.83789 2.75 6.65724 2.75123 5.75133 2.85831C4.86197 2.96344 4.33563 3.16158 3.93822 3.48772C3.77366 3.62277 3.62277 3.77366 3.48772 3.93822C3.16158 4.33563 2.96344 4.86197 2.85831 5.75133C2.75123 6.65724 2.75 7.83789 2.75 9.5C2.75 11.1621 2.75123 12.3428 2.85831 13.2487C2.96343 14.138 3.16158 14.6644 3.48772 15.0618C3.62277 15.2263 3.77366 15.3772 3.93822 15.5123C4.31513 15.8216 4.80799 16.0157 5.61576 16.1246C6.29484 16.2161 7.13983 16.2411 8.25001 16.2477C8.25 16.184 8.25 16.1197 8.25 16.0549V14.9451C8.24998 13.5775 8.24996 12.4752 8.36652 11.6082C8.48754 10.7081 8.74644 9.95027 9.34835 9.34835C9.95027 8.74643 10.7081 8.48754 11.6083 8.36652C12.4752 8.24996 13.5775 8.24998 14.9451 8.25H16.0549C16.1197 8.25 16.184 8.25 16.2477 8.25001ZM10.409 10.409C10.6858 10.1322 11.0743 9.9518 11.8081 9.85315C12.5635 9.75159 13.5646 9.75 15 9.75H16C17.4354 9.75 18.4365 9.75159 19.1919 9.85315C19.9257 9.9518 20.3142 10.1322 20.591 10.409C20.8678 10.6858 21.0482 11.0743 21.1469 11.8081C21.2484 12.5635 21.25 13.5646 21.25 15V16C21.25 17.4354 21.2484 18.4365 21.1469 19.1919C21.0482 19.9257 20.8678 20.3142 20.591 20.591C20.3142 20.8678 19.9257 21.0482 19.1919 21.1469C18.4365 21.2484 17.4354 21.25 16 21.25H15C13.5646 21.25 12.5635 21.2484 11.8081 21.1469C11.0743 21.0482 10.6858 20.8678 10.409 20.591C10.1322 20.3142 9.9518 19.9257 9.85315 19.1919C9.75159 18.4365 9.75 17.4354 9.75 16V15C9.75 13.5646 9.75159 12.5635 9.85315 11.8081C9.9518 11.0743 10.1322 10.6858 10.409 10.409Z" fill="#161616"/>
+<script xmlns=""/></svg>                    </span>
+                    </button>
+                  </div>
+                  <button class="code-snippet__show-more btn btn--subtle btn--md" type="button" aria-expanded="false"
+                    data-show-more>
+                    <span class="btn__text">Show More</span>
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  </button>
+                </div>
+
+                <!-- C panel (hidden) -->
+                <div class="code-snippet__content" role="tabpanel" id="cs-panel-c" aria-labelledby="cs-tab-c" hidden>
+                  <div class="code-snippet__code-row">
+                    <pre class="code-snippet__code"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}</code></pre>
+                    <button class="code-snippet__copy btn btn--subtle btn--icon-only" type="button"
+                      aria-label="Copy code">
+                      <span class="btn__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"><path d="M8 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16M8 4H16C17.1046 4 18 4.89543 18 6V8M8 4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4M16 4H18C19.1046 4 20 4.89543 20 6V8M20 8H10C8.89543 8 8 8.89543 8 10V20C8 21.1046 8.89543 22 10 22H20C21.1046 22 20 21.1046 20 20V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </button>
+                  </div>
+                  <button class="code-snippet__show-more btn btn--subtle btn--md" type="button" aria-expanded="false"
+                    data-show-more>
+                    <span class="btn__text">Show More</span>
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  </button>
+                </div>
+
+                <!-- C++ panel (hidden) -->
+                <div class="code-snippet__content" role="tabpanel" id="cs-panel-cpp" aria-labelledby="cs-tab-cpp"
+                  hidden>
+                  <div class="code-snippet__code-row">
+                    <pre class="code-snippet__code"><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+                    <button class="code-snippet__copy btn btn--subtle btn--icon-only" type="button"
+                      aria-label="Copy code">
+                      <span class="btn__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"><path d="M8 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16M8 4H16C17.1046 4 18 4.89543 18 6V8M8 4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4M16 4H18C19.1046 4 20 4.89543 20 6V8M20 8H10C8.89543 8 8 8.89543 8 10V20C8 21.1046 8.89543 22 10 22H20C21.1046 22 20 21.1046 20 20V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </button>
+                  </div>
+                  <button class="code-snippet__show-more btn btn--subtle btn--md" type="button" aria-expanded="false"
+                    data-show-more>
+                    <span class="btn__text">Show More</span>
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  </button>
+                </div>
+
+                <!-- HTML panel (hidden) -->
+                <div class="code-snippet__content" role="tabpanel" id="cs-panel-html" aria-labelledby="cs-tab-html"
+                  hidden>
+                  <div class="code-snippet__code-row">
+                    <pre class="code-snippet__code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;title&gt;Hello&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    <button class="code-snippet__copy btn btn--subtle btn--icon-only" type="button"
+                      aria-label="Copy code">
+                      <span class="btn__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"><path d="M8 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16M8 4H16C17.1046 4 18 4.89543 18 6V8M8 4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4M16 4H18C19.1046 4 20 4.89543 20 6V8M20 8H10C8.89543 8 8 8.89543 8 10V20C8 21.1046 8.89543 22 10 22H20C21.1046 22 20 21.1046 20 20V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </button>
+                  </div>
+                  <button class="code-snippet__show-more btn btn--subtle btn--md" type="button" aria-expanded="false"
+                    data-show-more>
+                    <span class="btn__text">Show More</span>
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  </button>
+                </div>
+
+                <!-- PHP panel (hidden) -->
+                <div class="code-snippet__content" role="tabpanel" id="cs-panel-php" aria-labelledby="cs-tab-php"
+                  hidden>
+                  <div class="code-snippet__code-row">
+                    <pre class="code-snippet__code"><code>&lt;?php
+echo "Hello, World!";
+?&gt;</code></pre>
+                    <button class="code-snippet__copy btn btn--subtle btn--icon-only" type="button"
+                      aria-label="Copy code">
+                      <span class="btn__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"><path d="M8 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16M8 4H16C17.1046 4 18 4.89543 18 6V8M8 4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4M16 4H18C19.1046 4 20 4.89543 20 6V8M20 8H10C8.89543 8 8 8.89543 8 10V20C8 21.1046 8.89543 22 10 22H20C21.1046 22 20 21.1046 20 20V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                    </button>
+                  </div>
+                  <button class="code-snippet__show-more btn btn--subtle btn--md" type="button" aria-expanded="false"
+                    data-show-more>
+                    <span class="btn__text">Show More</span>
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                  </button>
+                </div>
+
+              </div><!-- /.code-snippet__body -->
+            </div><!-- /.code-snippet -->
+          </div><!-- /.showcase__row -->
+        </div><!-- /.showcase -->
+
+
+        <!-- ═══════════════════════════════════════════════════════
+           SECTION 2: Single-Line — npm command
+           ═══════════════════════════════════════════════════════ -->
+
+        <div class="showcase">
+          <div class="showcase__row">
+            <span class="showcase__label">Single-Line — npm command</span>
+
+            <div class="code-snippet code-snippet--single" data-code-snippet>
+              <div class="code-snippet__inline">
+                <span class="code-snippet__prompt">npm</span>
+                <span class="code-snippet__inline-code">npm install nds-design-system@^0.0.1</span>
+              </div>
+              <!-- Copy button — Button component: medium icon-only -->
+              <button class="code-snippet__copy btn btn--subtle btn--icon-only btn--md" type="button"
+                aria-label="Copy code">
+                <span class="btn__icon" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.54891 1.25H9.45109C7.84883 1.24999 6.57947 1.24998 5.57525 1.36868C4.54428 1.49054 3.69558 1.74638 2.98663 2.3282C2.74612 2.52558 2.52558 2.74612 2.3282 2.98663C1.74638 3.69558 1.49055 4.54428 1.36868 5.57525C1.24998 6.57947 1.24999 7.84883 1.25 9.45109V9.54891C1.24999 11.1512 1.24998 12.4205 1.36868 13.4247C1.49054 14.4557 1.74638 15.3044 2.3282 16.0134C2.52558 16.2539 2.74612 16.4744 2.98663 16.6718C3.6585 17.2232 4.45589 17.4818 5.41544 17.6111C6.1943 17.7161 7.13184 17.7415 8.26071 17.7479C8.27373 18.3699 8.30259 18.9162 8.36652 19.3918C8.48754 20.2919 8.74643 21.0497 9.34835 21.6516C9.95027 22.2536 10.7081 22.5125 11.6082 22.6335C12.4752 22.75 13.5775 22.75 14.9451 22.75H16.0549C17.4225 22.75 18.5248 22.75 19.3918 22.6335C20.2919 22.5125 21.0497 22.2536 21.6517 21.6516C22.2536 21.0497 22.5125 20.2919 22.6335 19.3918C22.75 18.5248 22.75 17.4225 22.75 16.0549V14.9451C22.75 13.5775 22.75 12.4752 22.6335 11.6083C22.5125 10.7081 22.2536 9.95027 21.6517 9.34835C21.0497 8.74644 20.2919 8.48754 19.3918 8.36652C18.9162 8.30259 18.3699 8.27373 17.7479 8.26071C17.7415 7.13184 17.7161 6.1943 17.6111 5.41544C17.4818 4.45589 17.2232 3.6585 16.6718 2.98663C16.4744 2.74612 16.2539 2.52558 16.0134 2.3282C15.3044 1.74638 14.4557 1.49055 13.4248 1.36868C12.4205 1.24998 11.1512 1.24999 9.54891 1.25ZM16.2477 8.25001C16.2411 7.13983 16.2161 6.29484 16.1246 5.61576C16.0157 4.80799 15.8216 4.31514 15.5123 3.93822C15.3772 3.77366 15.2263 3.62277 15.0618 3.48772C14.6644 3.16158 14.138 2.96344 13.2487 2.85831C12.3428 2.75123 11.1621 2.75 9.5 2.75C7.83789 2.75 6.65724 2.75123 5.75133 2.85831C4.86197 2.96344 4.33563 3.16158 3.93822 3.48772C3.77366 3.62277 3.62277 3.77366 3.48772 3.93822C3.16158 4.33563 2.96344 4.86197 2.85831 5.75133C2.75123 6.65724 2.75 7.83789 2.75 9.5C2.75 11.1621 2.75123 12.3428 2.85831 13.2487C2.96343 14.138 3.16158 14.6644 3.48772 15.0618C3.62277 15.2263 3.77366 15.3772 3.93822 15.5123C4.31513 15.8216 4.80799 16.0157 5.61576 16.1246C6.29484 16.2161 7.13983 16.2411 8.25001 16.2477C8.25 16.184 8.25 16.1197 8.25 16.0549V14.9451C8.24998 13.5775 8.24996 12.4752 8.36652 11.6082C8.48754 10.7081 8.74644 9.95027 9.34835 9.34835C9.95027 8.74643 10.7081 8.48754 11.6083 8.36652C12.4752 8.24996 13.5775 8.24998 14.9451 8.25H16.0549C16.1197 8.25 16.184 8.25 16.2477 8.25001ZM10.409 10.409C10.6858 10.1322 11.0743 9.9518 11.8081 9.85315C12.5635 9.75159 13.5646 9.75 15 9.75H16C17.4354 9.75 18.4365 9.75159 19.1919 9.85315C19.9257 9.9518 20.3142 10.1322 20.591 10.409C20.8678 10.6858 21.0482 11.0743 21.1469 11.8081C21.2484 12.5635 21.25 13.5646 21.25 15V16C21.25 17.4354 21.2484 18.4365 21.1469 19.1919C21.0482 19.9257 20.8678 20.3142 20.591 20.591C20.3142 20.8678 19.9257 21.0482 19.1919 21.1469C18.4365 21.2484 17.4354 21.25 16 21.25H15C13.5646 21.25 12.5635 21.2484 11.8081 21.1469C11.0743 21.0482 10.6858 20.8678 10.409 20.591C10.1322 20.3142 9.9518 19.9257 9.85315 19.1919C9.75159 18.4365 9.75 17.4354 9.75 16V15C9.75 13.5646 9.75159 12.5635 9.85315 11.8081C9.9518 11.0743 10.1322 10.6858 10.409 10.409Z" fill="#161616"/>
+<script xmlns=""/></svg>  
+              </span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- ═══════════════════════════════════════════════════════
+           SECTION 3: Single-Line — no prompt
+           ═══════════════════════════════════════════════════════ -->
+
+        <div class="showcase">
+          <div class="showcase__row">
+            <span class="showcase__label">Single-Line — no prompt</span>
+
+            <div class="code-snippet code-snippet--single" data-code-snippet>
+              <div class="code-snippet__inline">
+                <span class="code-snippet__inline-code">git clone https://github.com/example/repo.git</span>
+              </div>
+              <button class="code-snippet__copy btn btn--subtle btn--icon-only btn--md" type="button"
+                aria-label="Copy code">
+                <span class="btn__icon" aria-hidden="true">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.54891 1.25H9.45109C7.84883 1.24999 6.57947 1.24998 5.57525 1.36868C4.54428 1.49054 3.69558 1.74638 2.98663 2.3282C2.74612 2.52558 2.52558 2.74612 2.3282 2.98663C1.74638 3.69558 1.49055 4.54428 1.36868 5.57525C1.24998 6.57947 1.24999 7.84883 1.25 9.45109V9.54891C1.24999 11.1512 1.24998 12.4205 1.36868 13.4247C1.49054 14.4557 1.74638 15.3044 2.3282 16.0134C2.52558 16.2539 2.74612 16.4744 2.98663 16.6718C3.6585 17.2232 4.45589 17.4818 5.41544 17.6111C6.1943 17.7161 7.13184 17.7415 8.26071 17.7479C8.27373 18.3699 8.30259 18.9162 8.36652 19.3918C8.48754 20.2919 8.74643 21.0497 9.34835 21.6516C9.95027 22.2536 10.7081 22.5125 11.6082 22.6335C12.4752 22.75 13.5775 22.75 14.9451 22.75H16.0549C17.4225 22.75 18.5248 22.75 19.3918 22.6335C20.2919 22.5125 21.0497 22.2536 21.6517 21.6516C22.2536 21.0497 22.5125 20.2919 22.6335 19.3918C22.75 18.5248 22.75 17.4225 22.75 16.0549V14.9451C22.75 13.5775 22.75 12.4752 22.6335 11.6083C22.5125 10.7081 22.2536 9.95027 21.6517 9.34835C21.0497 8.74644 20.2919 8.48754 19.3918 8.36652C18.9162 8.30259 18.3699 8.27373 17.7479 8.26071C17.7415 7.13184 17.7161 6.1943 17.6111 5.41544C17.4818 4.45589 17.2232 3.6585 16.6718 2.98663C16.4744 2.74612 16.2539 2.52558 16.0134 2.3282C15.3044 1.74638 14.4557 1.49055 13.4248 1.36868C12.4205 1.24998 11.1512 1.24999 9.54891 1.25ZM16.2477 8.25001C16.2411 7.13983 16.2161 6.29484 16.1246 5.61576C16.0157 4.80799 15.8216 4.31514 15.5123 3.93822C15.3772 3.77366 15.2263 3.62277 15.0618 3.48772C14.6644 3.16158 14.138 2.96344 13.2487 2.85831C12.3428 2.75123 11.1621 2.75 9.5 2.75C7.83789 2.75 6.65724 2.75123 5.75133 2.85831C4.86197 2.96344 4.33563 3.16158 3.93822 3.48772C3.77366 3.62277 3.62277 3.77366 3.48772 3.93822C3.16158 4.33563 2.96344 4.86197 2.85831 5.75133C2.75123 6.65724 2.75 7.83789 2.75 9.5C2.75 11.1621 2.75123 12.3428 2.85831 13.2487C2.96343 14.138 3.16158 14.6644 3.48772 15.0618C3.62277 15.2263 3.77366 15.3772 3.93822 15.5123C4.31513 15.8216 4.80799 16.0157 5.61576 16.1246C6.29484 16.2161 7.13983 16.2411 8.25001 16.2477C8.25 16.184 8.25 16.1197 8.25 16.0549V14.9451C8.24998 13.5775 8.24996 12.4752 8.36652 11.6082C8.48754 10.7081 8.74644 9.95027 9.34835 9.34835C9.95027 8.74643 10.7081 8.48754 11.6083 8.36652C12.4752 8.24996 13.5775 8.24998 14.9451 8.25H16.0549C16.1197 8.25 16.184 8.25 16.2477 8.25001ZM10.409 10.409C10.6858 10.1322 11.0743 9.9518 11.8081 9.85315C12.5635 9.75159 13.5646 9.75 15 9.75H16C17.4354 9.75 18.4365 9.75159 19.1919 9.85315C19.9257 9.9518 20.3142 10.1322 20.591 10.409C20.8678 10.6858 21.0482 11.0743 21.1469 11.8081C21.2484 12.5635 21.25 13.5646 21.25 15V16C21.25 17.4354 21.2484 18.4365 21.1469 19.1919C21.0482 19.9257 20.8678 20.3142 20.591 20.591C20.3142 20.8678 19.9257 21.0482 19.1919 21.1469C18.4365 21.2484 17.4354 21.25 16 21.25H15C13.5646 21.25 12.5635 21.2484 11.8081 21.1469C11.0743 21.0482 10.6858 20.8678 10.409 20.591C10.1322 20.3142 9.9518 19.9257 9.85315 19.1919C9.75159 18.4365 9.75 17.4354 9.75 16V15C9.75 13.5646 9.75159 12.5635 9.85315 11.8081C9.9518 11.0743 10.1322 10.6858 10.409 10.409Z" fill="#161616"/>
+<script xmlns=""/></svg>  
+              </span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+  </body>
+
+</html>

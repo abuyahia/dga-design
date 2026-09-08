@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "component": "notification-toast",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "last_reviewed": "2026-06-26",
+  "standards": [
+    {
+      "standard": "WCAG 2.1 AA",
+      "criterion": "1.1.1",
+      "criterion_title": "Non-text Content",
+      "status": "mapped",
+      "notes": "Type icon SVG carries aria-hidden=true. Close button carries aria-label. All non-text content has a text alternative."
+    },
+    {
+      "standard": "WCAG 2.1 AA",
+      "criterion": "1.4.3",
+      "criterion_title": "Contrast (Minimum)",
+      "status": "mapped",
+      "notes": "Title color --notification-toast-title-color (#1F2A37) and helper color --notification-toast-helper-color (#384250) on white background. Contrast verification pending audit tool run."
+    },
+    {
+      "standard": "WCAG 2.1 AA",
+      "criterion": "1.4.11",
+      "criterion_title": "Non-text Contrast",
+      "status": "mapped",
+      "notes": "Icon container background color changes per type. Contrast of icon against background pending audit."
+    },
+    {
+      "standard": "WCAG 2.1 AA",
+      "criterion": "2.1.1",
+      "criterion_title": "Keyboard",
+      "status": "mapped",
+      "notes": "All interactive elements (close button, action buttons) are native <button> elements. Keyboard operability delegated to button contract."
+    },
+    {
+      "standard": "WCAG 2.1 AA",
+      "criterion": "2.4.7",
+      "criterion_title": "Focus Visible",
+      "status": "mapped",
+      "notes": "Focus styles on close and action buttons handled by button component CSS. No focus suppression in notification-toast CSS."
+    },
+    {
+      "standard": "WCAG 2.1 AA",
+      "criterion": "4.1.2",
+      "criterion_title": "Name, Role, Value",
+      "status": "mapped",
+      "notes": "Root carries role=alert or role=status. Close button has aria-label. Action buttons have .btn__text."
+    },
+    {
+      "standard": "WCAG 2.1 AA",
+      "criterion": "4.1.3",
+      "criterion_title": "Status Messages",
+      "status": "mapped",
+      "notes": "role=alert (assertive) used for critical-error and warning types. role=status (polite) recommended for neutral, info, success types. Consumer is responsible for correct role selection per type."
+    },
+    {
+      "standard": "PLATFORM-CODE-DS",
+      "criterion": "PLATFORM-CODE-TOAST-001",
+      "criterion_title": "Token compliance",
+      "status": "mapped",
+      "notes": "All visual values use component-level --notification-toast-* tokens. No hardcoded hex/px values in component selectors. --notification-toast-shadow missing from token.css — tracked as TODO."
+    },
+    {
+      "standard": "PLATFORM-CODE-DS",
+      "criterion": "PLATFORM-CODE-TOAST-002",
+      "criterion_title": "RTL compliance",
+      "status": "mapped",
+      "notes": "All directional CSS uses logical properties: padding-inline, inset-inline-end. RTL mirrors automatically via dir attribute."
+    },
+    {
+      "standard": "PLATFORM-CODE-DS",
+      "criterion": "PLATFORM-CODE-TOAST-003",
+      "criterion_title": "Live region",
+      "status": "mapped",
+      "notes": "Component contract documents role=alert / role=status usage guidance per type."
+    },
+    {
+      "standard": "PLATFORM-CODE-A11Y",
+      "criterion": "PLATFORM-CODE-A11Y-001",
+      "criterion_title": "Arabic font",
+      "status": "mapped",
+      "notes": "Font family token --notification-toast-font-family maps to IBM Plex Sans Arabic via --Font-Family-font-family-text."
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+/* ============================================================
+   notification-toast.css
+   Component: Notification Toast
+   Classification: Composite
+   Dependencies: button (read-only — no button CSS duplicated here)
+   ============================================================ */
+
+/* ── Tokens ──────────────────────────────────────────────── */
+/* TODO: Add these tokens to token.css:
+   --notification-toast-shadow: 0 32px 64px -12px rgba(16, 24, 40, 0.14);
+   --notification-toast-desktop-width: 484px;
+   --notification-toast-mobile-width: 343px;
+   --notification-toast-close-mobile-offset: 8px;
+*/
+
+/* ── Root ─────────────────────────────────────────────────── */
+
+.notification-toast {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--notification-toast-gap, 16px);
+  width: var(--notification-toast-desktop-width, 484px);
+  padding-block: var(--notification-toast-v-padding, 16px);
+  padding-inline: var(--notification-toast-desktop-h-padding, 24px);
+  border-radius: var(--notification-toast-radius, 8px);
+  background: var(--notification-toast-bg, #FFF);
+  /* TODO: --notification-toast-shadow missing in token.css. Proposed mapping: shadow token from global shadows. */
+  box-shadow: var(--notification-toast-shadow, 0 32px 64px -12px rgba(16, 24, 40, 0.14));
+  box-sizing: border-box;
+}
+
+/* ── Accent bar (desktop: vertical inline-start; mobile: horizontal block-start) ── */
+
+.notification-toast::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: var(--notification-toast-accent-width, 8px);
+  background: var(--notification-toast-accent-bg, var(--Background-background-neutral-200, #E5E7EB));
+  opacity: var(--notification-toast-accent-opacity, 0.7);
+  border-start-start-radius: var(--notification-toast-radius, 8px);
+  border-end-start-radius: var(--notification-toast-radius, 8px);
+  pointer-events: none;
+}
+
+/* ── Title row (header) ───────────────────────────────────── */
+
+.notification-toast__title {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--notification-toast-title-gap, 12px);
+  align-self: stretch;
+}
+
+/* ── Icon wrap ────────────────────────────────────────────── */
+
+.notification-toast__icon-wrap {
+  display: flex;
+  flex-shrink: 0;
+  width: var(--notification-toast-icon-size, 40px);
+  height: var(--notification-toast-icon-size, 40px);
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--notification-toast-icon-radius, 9999px);
+  background: var(--notification-toast-icon-bg-neutral, #F9FAFB);
+  box-sizing: border-box;
+}
+
+.notification-toast__icon-wrap svg {
+  width: var(--notification-toast-icon-inner-size, 20px);
+  height: var(--notification-toast-icon-inner-size, 20px);
+  flex-shrink: 0;
+}
+
+/* ── Type modifiers — accent bar color + icon background ─────── */
+
+.notification-toast--neutral {
+  --notification-toast-accent-bg: var(--Background-background-neutral-200, #E5E7EB);
+}
+.notification-toast--neutral .notification-toast__icon-wrap {
+  background: var(--notification-toast-icon-bg-neutral, #F9FAFB);
+}
+
+.notification-toast--info {
+  --notification-toast-accent-bg: var(--Background-background-info, #1570EF);
+}
+.notification-toast--info .notification-toast__icon-wrap {
+  background: var(--notification-toast-icon-bg-info, #EFF8FF);
+}
+
+.notification-toast--critical-error {
+  --notification-toast-accent-bg: var(--Background-background-error, #D92D20);
+}
+.notification-toast--critical-error .notification-toast__icon-wrap {
+  background: var(--notification-toast-icon-bg-critical-error, #FEF3F2);
+}
+
+.notification-toast--warning {
+  --notification-toast-accent-bg: var(--Background-background-warning, #DC6803);
+}
+.notification-toast--warning .notification-toast__icon-wrap {
+  background: var(--notification-toast-icon-bg-warning, #FFFAEB);
+}
+
+.notification-toast--success {
+  --notification-toast-accent-bg: var(--Background-background-success, #079455);
+}
+.notification-toast--success .notification-toast__icon-wrap {
+  background: var(--notification-toast-icon-bg-success, #ECFDF3);
+}
+
+/* ── Text block ───────────────────────────────────────────── */
+
+.notification-toast__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--notification-toast-text-gap, 4px);
+  flex: 1 0 0;
+  min-height: var(--notification-toast-icon-size, 40px);
+}
+
+.notification-toast__lead {
+  align-self: stretch;
+  margin: 0;
+  color: var(--notification-toast-title-color, #1F2A37);
+  font-family: var(--notification-toast-font-family, "IBM Plex Sans Arabic");
+  font-size: var(--notification-toast-title-font-size, 16px);
+  font-style: normal;
+  font-weight: var(--notification-toast-title-font-weight, 600);
+  line-height: var(--notification-toast-title-line-height, 24px);
+}
+
+.notification-toast__helper {
+  align-self: stretch;
+  margin: 0;
+  color: var(--notification-toast-helper-color, #384250);
+  font-family: var(--notification-toast-font-family, "IBM Plex Sans Arabic");
+  font-size: var(--notification-toast-helper-font-size, 14px);
+  font-style: normal;
+  font-weight: var(--notification-toast-helper-font-weight, 400);
+  line-height: var(--notification-toast-helper-line-height, 20px);
+}
+
+/* ── Close button ─────────────────────────────────────────── */
+
+.notification-toast__close {
+  flex-shrink: 0;
+  width: var(--notification-toast-close-size, 32px);
+  height: var(--notification-toast-close-size, 32px);
+  border-radius: var(--notification-toast-close-radius, 4px);
+  /* Button visual appearance comes from .btn.btn--subtle.btn--icon-only.btn--md */
+}
+
+/* ── Actions slot ─────────────────────────────────────────── */
+
+.notification-toast__actions {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--notification-toast-actions-gap, 8px);
+  align-self: stretch;
+  padding-inline: var(--notification-toast-actions-indent, 40px);
+}
+
+/* ── Mobile layout — explicit modifier (showcase + production) ── */
+
+.notification-toast--mobile {
+  width: var(--notification-toast-mobile-width, 343px);
+  padding-inline: var(--notification-toast-mobile-h-padding, 16px);
+}
+
+.notification-toast--mobile::before {
+  inset-block-end: auto;
+  inset-inline: 0;
+  width: auto;
+  height: var(--notification-toast-accent-width, 8px);
+  border-start-start-radius: var(--notification-toast-radius, 8px);
+  border-start-end-radius: var(--notification-toast-radius, 8px);
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
+}
+
+.notification-toast--mobile .notification-toast__title {
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+
+.notification-toast--mobile .notification-toast__text {
+  width: 100%;
+  min-height: unset;
+  margin-block-start: var(--notification-toast-gap, 16px);
+  order: 3;
+}
+
+.notification-toast--mobile .notification-toast__icon-wrap {
+  order: 1;
+}
+
+.notification-toast--mobile .notification-toast__close {
+  order: 2;
+  position: absolute;
+  inset-inline-end: calc(-1 * var(--notification-toast-close-mobile-offset, 8px));
+  top: 0;
+}
+
+.notification-toast--mobile .notification-toast__actions {
+  flex-direction: column;
+  padding-inline: 0;
+}
+
+.notification-toast--mobile .notification-toast__actions .btn {
+  align-self: stretch;
+  width: 100%;
+  height: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  justify-content: center;
+}
+
+/* ── Mobile layout (≤ 767px) — automatic responsive ──────────── */
+
+@media (max-width: 767px) {
+  .notification-toast {
+    width: var(--notification-toast-mobile-width, 343px);
+    padding-inline: var(--notification-toast-mobile-h-padding, 16px);
+  }
+
+  .notification-toast::before {
+    inset-block-end: auto;
+    inset-inline: 0;
+    width: auto;
+    height: var(--notification-toast-accent-width, 8px);
+    border-start-start-radius: var(--notification-toast-radius, 8px);
+    border-start-end-radius: var(--notification-toast-radius, 8px);
+    border-end-start-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  .notification-toast__title {
+    position: relative;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+  }
+
+  .notification-toast__text {
+    width: 100%;
+    min-height: unset;
+    margin-block-start: var(--notification-toast-gap, 16px);
+    order: 3;
+  }
+
+  .notification-toast__icon-wrap {
+    order: 1;
+  }
+
+  .notification-toast__close {
+    order: 2;
+    position: absolute;
+    inset-inline-end: calc(-1 * var(--notification-toast-close-mobile-offset, 8px));
+    top: 0;
+  }
+
+  .notification-toast__actions {
+    flex-direction: column;
+    padding-inline: 0;
+  }
+
+  .notification-toast__actions .btn {
+    align-self: stretch;
+    width: 100%;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    justify-content: center;
+  }
+}

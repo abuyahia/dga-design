@@ -441,6 +441,21 @@ Before generating any component, the skill must classify the component into one 
 
 This classification is mandatory before generation.
 
+**REQUIRED OUTPUT — always print this block before any file is created:**
+
+```text
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPONENT CLASSIFICATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Component   : [component-name]
+Type        : Primitive | Composite | Pattern | Assembly
+Reason      : [one-line explanation from manifest]
+Dependencies: [list or None]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Do not skip this block. Do not bury it inside a longer text. Output it as the first visible response after reading manifest.json.
+
 ### Classification Types
 
 #### 1. Primitive Component
@@ -572,6 +587,48 @@ Generate without confirmation
 ```
 
 the skill may proceed and must document assumptions in analysis.md.
+
+---
+
+## Existing Dependency Policy
+
+Before generating any Composite, Pattern, or Assembly component, check each detected dependency.
+
+For each detected dependency `[dep-name]`:
+
+1. Check if `components/[dep-name]/reference.json` exists.
+
+2. If **it exists**:
+   - Read `components/[dep-name]/reference.json`.
+   - Read `components/[dep-name]/[dep-name].contract.md` if available.
+   - Print the following summary block:
+
+     ```text
+     ──────────────────────────────────────────
+     EXISTING DEPENDENCY: [dep-name]
+     Type   : [component type from contract.md]
+     Source : components/[dep-name]/reference.json
+     Axes   : [list from reference.json]
+     States : [list from reference.json]
+     ──────────────────────────────────────────
+     ```
+
+   - **Do not generate or modify any file inside `components/[dep-name]/`.**
+   - **Do not recreate the dependency. Treat it as frozen.**
+   - Reference the dependency in the parent component's contract.md and analysis.md by name only.
+
+3. If **it does not exist**:
+   - Note the missing dependency.
+   - Inform the user before continuing.
+   - Add a TODO in analysis.md: `Dependency [dep-name] not yet generated.`
+   - Do not silently generate the missing dependency unless explicitly asked.
+
+Rules:
+
+- Never regenerate an already-generated dependency as part of a parent component generation.
+- Never copy or merge an existing dependency's CSS, tokens, or HTML into the parent component.
+- The parent component owns only: layout, spacing, surface, slots, and parent-specific states.
+- Existing dependencies are read-only inputs, not regeneration targets.
 
 ## reference.json Requirements
 

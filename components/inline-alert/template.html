@@ -13,6 +13,12 @@
 
   The .inline-alert__actions element is optional — omit it when no actions are needed.
   The .inline-alert__body element is optional — omit it when only a title is needed.
+
+  Button dependency:
+    Close button  → btn btn--subtle btn--icon-only btn--md
+    Primary action → btn btn--primary btn--md
+    Secondary action → btn btn--neutral btn--md
+    Requires: button.css loaded alongside inline-alert.css
 -->
 
 
@@ -33,15 +39,17 @@
       <p class="inline-alert__title">Notification/Alert message title</p>
       <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
     </div>
-    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button type="button" class="btn btn--subtle btn--icon-only btn--md inline-alert__close" aria-label="Dismiss notification">
+      <span class="btn__icon" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
     </button>
   </div>
   <div class="inline-alert__actions">
-    <button type="button" class="inline-alert__action inline-alert__action--primary">Primary Action</button>
-    <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+    <button type="button" class="btn btn--primary btn--md"><span class="btn__text">Primary Action</span></button>
+    <button type="button" class="btn btn--neutral btn--md"><span class="btn__text">Dismiss</span></button>
   </div>
 </div>
 
@@ -63,15 +71,17 @@
       <p class="inline-alert__title">Notification/Alert message title</p>
       <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
     </div>
-    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button type="button" class="btn btn--subtle btn--icon-only btn--md inline-alert__close" aria-label="Dismiss notification">
+      <span class="btn__icon" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
     </button>
   </div>
   <div class="inline-alert__actions">
-    <button type="button" class="inline-alert__action inline-alert__action--primary">Learn more</button>
-    <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+    <button type="button" class="btn btn--primary btn--md"><span class="btn__text">Learn more</span></button>
+    <button type="button" class="btn btn--neutral btn--md"><span class="btn__text">Dismiss</span></button>
   </div>
 </div>
 
@@ -93,15 +103,17 @@
       <p class="inline-alert__title">Notification/Alert message title</p>
       <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
     </div>
-    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button type="button" class="btn btn--subtle btn--icon-only btn--md inline-alert__close" aria-label="Dismiss notification">
+      <span class="btn__icon" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
     </button>
   </div>
   <div class="inline-alert__actions">
-    <button type="button" class="inline-alert__action inline-alert__action--primary">Try again</button>
-    <button type="button" class="inline-alert__action inline-alert__action--secondary">Cancel</button>
+    <button type="button" class="btn btn--primary btn--md"><span class="btn__text">Try again</span></button>
+    <button type="button" class="btn btn--neutral btn--md"><span class="btn__text">Cancel</span></button>
   </div>
 </div>
 
@@ -123,15 +135,17 @@
       <p class="inline-alert__title">Notification/Alert message title</p>
       <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
     </div>
-    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button type="button" class="btn btn--subtle btn--icon-only btn--md inline-alert__close" aria-label="Dismiss notification">
+      <span class="btn__icon" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
     </button>
   </div>
   <div class="inline-alert__actions">
-    <button type="button" class="inline-alert__action inline-alert__action--primary">Resolve</button>
-    <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+    <button type="button" class="btn btn--primary btn--md"><span class="btn__text">Resolve</span></button>
+    <button type="button" class="btn btn--neutral btn--md"><span class="btn__text">Dismiss</span></button>
   </div>
 </div>
 
@@ -152,15 +166,17 @@
       <p class="inline-alert__title">Notification/Alert message title</p>
       <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
     </div>
-    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button type="button" class="btn btn--subtle btn--icon-only btn--md inline-alert__close" aria-label="Dismiss notification">
+      <span class="btn__icon" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
     </button>
   </div>
   <div class="inline-alert__actions">
-    <button type="button" class="inline-alert__action inline-alert__action--primary">Continue</button>
-    <button type="button" class="inline-alert__action inline-alert__action--secondary">View details</button>
+    <button type="button" class="btn btn--primary btn--md"><span class="btn__text">Continue</span></button>
+    <button type="button" class="btn btn--neutral btn--md"><span class="btn__text">View details</span></button>
   </div>
 </div>
 
@@ -181,15 +197,17 @@
       <p class="inline-alert__title">Notification/Alert message title</p>
       <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
     </div>
-    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button type="button" class="btn btn--subtle btn--icon-only btn--md inline-alert__close" aria-label="Dismiss notification">
+      <span class="btn__icon" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
     </button>
   </div>
   <div class="inline-alert__actions">
-    <button type="button" class="inline-alert__action inline-alert__action--primary">Learn more</button>
-    <button type="button" class="inline-alert__action inline-alert__action--secondary">Dismiss</button>
+    <button type="button" class="btn btn--primary btn--md"><span class="btn__text">Learn more</span></button>
+    <button type="button" class="btn btn--neutral btn--md"><span class="btn__text">Dismiss</span></button>
   </div>
 </div>
 
@@ -209,10 +227,12 @@
     <div class="inline-alert__content">
       <p class="inline-alert__title">Short informational message with no supporting text.</p>
     </div>
-    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button type="button" class="btn btn--subtle btn--icon-only btn--md inline-alert__close" aria-label="Dismiss notification">
+      <span class="btn__icon" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
     </button>
   </div>
   <!-- No .inline-alert__actions — omit when no actions needed -->
@@ -235,15 +255,17 @@
       <p class="inline-alert__title">عنوان رسالة الإشعار / التنبيه</p>
       <p class="inline-alert__body">عندما يحتاج الإشعار / التنبيه إلى شرح تفصيلي إضافي، يتم وضعه هنا.</p>
     </div>
-    <button type="button" class="inline-alert__close" aria-label="إغلاق الإشعار">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button type="button" class="btn btn--subtle btn--icon-only btn--md inline-alert__close" aria-label="إغلاق الإشعار">
+      <span class="btn__icon" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
     </button>
   </div>
   <div class="inline-alert__actions">
-    <button type="button" class="inline-alert__action inline-alert__action--primary">الإجراء الأساسي</button>
-    <button type="button" class="inline-alert__action inline-alert__action--secondary">إغلاق</button>
+    <button type="button" class="btn btn--primary btn--md"><span class="btn__text">الإجراء الأساسي</span></button>
+    <button type="button" class="btn btn--neutral btn--md"><span class="btn__text">إغلاق</span></button>
   </div>
 </div>
 
@@ -263,14 +285,16 @@
       <p class="inline-alert__title">Notification/Alert message title</p>
       <p class="inline-alert__body">When a Notification/Alert needs a further detailed explanation, it goes here.</p>
     </div>
-    <button type="button" class="inline-alert__close" aria-label="Dismiss notification">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
+    <button type="button" class="btn btn--subtle btn--icon-only btn--md inline-alert__close" aria-label="Dismiss notification">
+      <span class="btn__icon" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
     </button>
   </div>
   <div class="inline-alert__actions">
-    <button type="button" class="inline-alert__action inline-alert__action--primary">Continue</button>
-    <button type="button" class="inline-alert__action inline-alert__action--secondary">View details</button>
+    <button type="button" class="btn btn--primary btn--md"><span class="btn__text">Continue</span></button>
+    <button type="button" class="btn btn--neutral btn--md"><span class="btn__text">View details</span></button>
   </div>
 </div>

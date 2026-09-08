@@ -1,0 +1,189 @@
+<!--
+  Code Snippet — Template
+  Component: code-snippet
+  Classification: Composite
+  Variants: Multi-Line | Single-Line
+
+  Dependencies:
+  - button component (copy button, show more button)
+
+  Usage:
+  - Load token.css and code-snippet.css before this markup.
+  - Initialize JS: tab switching, copy to clipboard, show more toggle.
+  - See code-snippet.contract.md for full ARIA and JS requirements.
+-->
+
+<!-- ═══════════════════════════════════════════════════════════
+     VARIANT: Multi-Line
+     ═══════════════════════════════════════════════════════════ -->
+<div class="code-snippet" data-code-snippet>
+
+  <!-- Tab Bar — uses tab component (.tab-list--h + .tab--h from tab/tab.css) -->
+  <div class="tab-list tab-list--h" role="tablist" aria-label="Select programming language">
+
+    <button class="tab tab--h" role="tab" type="button" aria-selected="true"
+      aria-controls="code-snippet-panel-java" id="code-snippet-tab-java">
+      <span class="tab__text">Java</span>
+    </button>
+
+    <button class="tab tab--h" role="tab" type="button" aria-selected="false"
+      aria-controls="code-snippet-panel-python" id="code-snippet-tab-python" tabindex="-1">
+      <span class="tab__text">Python</span>
+    </button>
+
+    <button class="tab tab--h" role="tab" type="button" aria-selected="false"
+      aria-controls="code-snippet-panel-c" id="code-snippet-tab-c" tabindex="-1">
+      <span class="tab__text">C</span>
+    </button>
+
+    <button class="tab tab--h" role="tab" type="button" aria-selected="false"
+      aria-controls="code-snippet-panel-cpp" id="code-snippet-tab-cpp" tabindex="-1">
+      <span class="tab__text">C++</span>
+    </button>
+
+    <button class="tab tab--h" role="tab" type="button" aria-selected="false"
+      aria-controls="code-snippet-panel-html" id="code-snippet-tab-html" tabindex="-1">
+      <span class="tab__text">HTML</span>
+    </button>
+
+    <button class="tab tab--h" role="tab" type="button" aria-selected="false"
+      aria-controls="code-snippet-panel-php" id="code-snippet-tab-php" tabindex="-1">
+      <span class="tab__text">PHP</span>
+    </button>
+
+  </div>
+
+  <!-- Body -->
+  <div class="code-snippet__body">
+
+    <!-- Gutter: line numbers (presentational, hidden from screen readers) -->
+    <div class="code-snippet__gutter" aria-hidden="true">
+      <span class="code-snippet__line-numbers">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20</span>
+    </div>
+
+    <!-- Active panel: Java -->
+    <div
+      class="code-snippet__content"
+      role="tabpanel"
+      id="code-snippet-panel-java"
+      aria-labelledby="code-snippet-tab-java"
+    >
+      <div class="code-snippet__code-row">
+        <pre class="code-snippet__code"><code>// Imports
+import mongoose, { Schema } from 'untitled'
+
+// Collection name
+export const collection = 'Design'
+
+// Schema
+const schema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+
+  description: {
+    type: String
+  }
+}, {timestamps: true})
+
+// Model
+export default untitled.model(collection, schema, collection)</code></pre>
+
+        <!-- Copy button — Button component: .btn .btn--subtle .btn--icon-only (40×40 large) -->
+        <button class="code-snippet__copy btn btn--subtle btn--icon-only"
+          type="button" aria-label="Copy code">
+          <span class="btn__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false">
+              <path d="M8 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16M8 4H16C17.1046 4 18 4.89543 18 6V8M8 4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4M16 4H18C19.1046 4 20 4.89543 20 6V8M20 8H10C8.89543 8 8 8.89543 8 10V20C8 21.1046 8.89543 22 10 22H20C21.1046 22 20 21.1046 20 20V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Show More — Button component: .btn .btn--subtle .btn--md with text + icon -->
+      <button class="code-snippet__show-more btn btn--subtle btn--md"
+        type="button" aria-expanded="false" data-show-more>
+        <span class="btn__text">Show More</span>
+        <span class="btn__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <!-- Hidden panels (Python, C, C++, HTML, PHP) — shown when tab is activated -->
+    <div
+      class="code-snippet__content"
+      role="tabpanel"
+      id="code-snippet-panel-python"
+      aria-labelledby="code-snippet-tab-python"
+      hidden
+    >
+      <div class="code-snippet__code-row">
+        <pre class="code-snippet__code"><code># Python example
+print("Hello, world!")</code></pre>
+        <button class="code-snippet__copy btn btn--subtle btn--icon-only" type="button" aria-label="Copy code">
+          <span class="btn__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false">
+              <path d="M8 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16M8 4H16C17.1046 4 18 4.89543 18 6V8M8 4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4M16 4H18C19.1046 4 20 4.89543 20 6V8M20 8H10C8.89543 8 8 8.89543 8 10V20C8 21.1046 8.89543 22 10 22H20C21.1046 22 20 21.1046 20 20V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <button class="code-snippet__show-more btn btn--subtle btn--md" type="button" aria-expanded="false" data-show-more>
+        <span class="btn__text">Show More</span>
+        <span class="btn__icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" focusable="false">
+            <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.667" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     VARIANT: Single-Line
+     ═══════════════════════════════════════════════════════════ -->
+<div class="code-snippet code-snippet--single" data-code-snippet>
+
+  <!-- Inline content: prompt + command -->
+  <div class="code-snippet__inline">
+    <span class="code-snippet__prompt">npm</span>
+    <span class="code-snippet__inline-code">npm install nds-design-system@^0.0.1</span>
+  </div>
+
+  <!-- Copy button — Button component: .btn .btn--subtle .btn--icon-only .btn--md (32×32 medium) -->
+  <button class="code-snippet__copy btn btn--subtle btn--icon-only btn--md"
+    type="button" aria-label="Copy code">
+    <span class="btn__icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" focusable="false">
+        <path d="M8 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16M8 4H16C17.1046 4 18 4.89543 18 6V8M8 4C8 2.89543 8.89543 2 10 2H14C15.1046 2 16 2.89543 16 4M16 4H18C19.1046 4 20 4.89543 20 6V8M20 8H10C8.89543 8 8 8.89543 8 10V20C8 21.1046 8.89543 22 10 22H20C21.1046 22 20 21.1046 20 20V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </button>
+
+</div>

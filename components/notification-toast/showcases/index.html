@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notification Toast — Showcase</title>
+    <link rel="stylesheet" href="../../../token.css" />
+    <link rel="stylesheet" href="../../_showcase/showcase.css" />
+    <link rel="stylesheet" href="../../button/button.css" />
+    <link rel="stylesheet" href="../notification-toast.css" />
+    <script src="../../_showcase/showcase.js" defer></script>
+
+  </head>
+
+  <body data-showcase data-current-component="notification-toast" data-showcase-title="Notification Toast">
+    <div data-showcase-shell>
+      <main data-showcase-content>
+
+        <!-- ─── Section: Types ───────────────────────────── -->
+
+        <section class="sc-section">
+          <h2 class="sc-section__title">Types</h2>
+
+          <!-- Neutral -->
+          <div class="sc-item">
+            <h3 class="sc-item__label">Neutral</h3>
+            <div class="sc-tabs" role="tablist">
+              <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true"
+                data-tab-target="neutral-preview">Preview</button>
+              <button type="button" class="sc-tab" role="tab" aria-selected="false"
+                data-tab-target="neutral-code">Code</button>
+            </div>
+            <div id="neutral-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+              <div class="notification-toast notification-toast--neutral" role="status" dir="rtl">
+                <div class="notification-toast__title">
+                  <div class="notification-toast__icon-wrap">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#6B7280" stroke-width="1.5"/><path d="M10 9v5M10 7v.5" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="notification-toast__text">
+                    <p class="notification-toast__lead">عنوان رسالة الإشعار</p>
+                    <p class="notification-toast__helper">عندما يحتاج الإشعار إلى تفاصيل إضافية يمكن وضعها هنا.</p>
+                  </div>
+                  <button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+                    aria-label="إغلاق الإشعار">
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  </button>
+                </div>
+                <div class="notification-toast__actions">
+                  <button type="button"
+                    class="btn btn--secondary-solid btn--md"><span class="btn__text">إجراء</span></button>
+                  <button type="button" class="btn btn--subtle btn--md"><span class="btn__text">تجاهل</span></button>
+                </div>
+              </div>
+            </div>
+            <div id="neutral-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+              <button type="button" class="sc-copy">نسخ</button>
+              <pre><code>&lt;div class="notification-toast notification-toast--neutral" role="status" dir="rtl"&gt;
+  &lt;div class="notification-toast__title"&gt;
+    &lt;div class="notification-toast__icon-wrap"&gt;
+      &lt;svg aria-hidden="true" width="20" height="20"&gt;&lt;!-- information-circle --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="notification-toast__text"&gt;
+      &lt;p class="notification-toast__lead"&gt;عنوان رسالة الإشعار&lt;/p&gt;
+      &lt;p class="notification-toast__helper"&gt;عندما يحتاج الإشعار إلى تفاصيل إضافية يمكن وضعها هنا.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md" aria-label="إغلاق الإشعار"&gt;
+      &lt;span class="btn__icon" aria-hidden="true"&gt;&lt;svg width="20" height="20"&gt;&lt;!-- multiplication-sign --&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="notification-toast__actions"&gt;
+    &lt;button type="button" class="btn btn--secondary-solid btn--md"&gt;&lt;span class="btn__text"&gt;إجراء&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn btn--subtle btn--md"&gt;&lt;span class="btn__text"&gt;تجاهل&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="sc-item">
+            <h3 class="sc-item__label">Info</h3>
+            <div class="sc-tabs" role="tablist">
+              <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true"
+                data-tab-target="info-preview">Preview</button>
+              <button type="button" class="sc-tab" role="tab" aria-selected="false"
+                data-tab-target="info-code">Code</button>
+            </div>
+            <div id="info-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+              <div class="notification-toast notification-toast--info" role="status" dir="rtl">
+                <div class="notification-toast__title">
+                  <div class="notification-toast__icon-wrap">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#1570EF" stroke-width="1.5"/><path d="M10 9v5M10 7v.5" stroke="#1570EF" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="notification-toast__text">
+                    <p class="notification-toast__lead">عنوان رسالة المعلومات</p>
+                    <p class="notification-toast__helper">معلومة إضافية يراها المستخدم هنا.</p>
+                  </div>
+                  <button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+                    aria-label="إغلاق الإشعار">
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  </button>
+                </div>
+                <div class="notification-toast__actions">
+                  <button type="button"
+                    class="btn btn--secondary-solid btn--md"><span class="btn__text">إجراء</span></button>
+                  <button type="button" class="btn btn--subtle btn--md"><span class="btn__text">تجاهل</span></button>
+                </div>
+              </div>
+            </div>
+            <div id="info-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+              <button type="button" class="sc-copy">نسخ</button>
+              <pre><code>&lt;div class="notification-toast notification-toast--info" role="status" dir="rtl"&gt;
+  &lt;div class="notification-toast__title"&gt;
+    &lt;div class="notification-toast__icon-wrap"&gt;
+      &lt;svg aria-hidden="true" width="20" height="20"&gt;&lt;!-- information-circle --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="notification-toast__text"&gt;
+      &lt;p class="notification-toast__lead"&gt;عنوان رسالة المعلومات&lt;/p&gt;
+      &lt;p class="notification-toast__helper"&gt;معلومة إضافية يراها المستخدم هنا.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md" aria-label="إغلاق الإشعار"&gt;
+      &lt;span class="btn__icon" aria-hidden="true"&gt;&lt;svg width="20" height="20"&gt;&lt;!-- multiplication-sign --&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="notification-toast__actions"&gt;
+    &lt;button type="button" class="btn btn--secondary-solid btn--md"&gt;&lt;span class="btn__text"&gt;إجراء&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn btn--subtle btn--md"&gt;&lt;span class="btn__text"&gt;تجاهل&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Critical / Error -->
+          <div class="sc-item">
+            <h3 class="sc-item__label">Critical / Error</h3>
+            <div class="sc-tabs" role="tablist">
+              <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true"
+                data-tab-target="critical-preview">Preview</button>
+              <button type="button" class="sc-tab" role="tab" aria-selected="false"
+                data-tab-target="critical-code">Code</button>
+            </div>
+            <div id="critical-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+              <div class="notification-toast notification-toast--critical-error" role="alert" dir="rtl">
+                <div class="notification-toast__title">
+                  <div class="notification-toast__icon-wrap">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2.5L18.5 17H1.5L10 2.5Z" stroke="#D92D20" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v4M10 13.5v.5" stroke="#D92D20" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="notification-toast__text">
+                    <p class="notification-toast__lead">عنوان رسالة الخطأ</p>
+                    <p class="notification-toast__helper">حدث خطأ أثناء تنفيذ العملية. يُرجى المحاولة مجدداً.</p>
+                  </div>
+                  <button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+                    aria-label="إغلاق الإشعار">
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  </button>
+                </div>
+                <div class="notification-toast__actions">
+                  <button type="button"
+                    class="btn btn--secondary-solid btn--md"><span class="btn__text">إعادة المحاولة</span></button>
+                  <button type="button" class="btn btn--subtle btn--md"><span class="btn__text">تجاهل</span></button>
+                </div>
+              </div>
+            </div>
+            <div id="critical-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+              <button type="button" class="sc-copy">نسخ</button>
+              <pre><code>&lt;div class="notification-toast notification-toast--critical-error" role="alert" dir="rtl"&gt;
+  &lt;div class="notification-toast__title"&gt;
+    &lt;div class="notification-toast__icon-wrap"&gt;
+      &lt;svg aria-hidden="true" width="20" height="20"&gt;&lt;!-- alert-02 --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="notification-toast__text"&gt;
+      &lt;p class="notification-toast__lead"&gt;عنوان رسالة الخطأ&lt;/p&gt;
+      &lt;p class="notification-toast__helper"&gt;حدث خطأ أثناء تنفيذ العملية. يُرجى المحاولة مجدداً.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md" aria-label="إغلاق الإشعار"&gt;
+      &lt;span class="btn__icon" aria-hidden="true"&gt;&lt;svg width="20" height="20"&gt;&lt;!-- multiplication-sign --&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="notification-toast__actions"&gt;
+    &lt;button type="button" class="btn btn--secondary-solid btn--md"&gt;&lt;span class="btn__text"&gt;إعادة المحاولة&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn btn--subtle btn--md"&gt;&lt;span class="btn__text"&gt;تجاهل&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Warning -->
+          <div class="sc-item">
+            <h3 class="sc-item__label">Warning</h3>
+            <div class="sc-tabs" role="tablist">
+              <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true"
+                data-tab-target="warning-preview">Preview</button>
+              <button type="button" class="sc-tab" role="tab" aria-selected="false"
+                data-tab-target="warning-code">Code</button>
+            </div>
+            <div id="warning-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+              <div class="notification-toast notification-toast--warning" role="alert" dir="rtl">
+                <div class="notification-toast__title">
+                  <div class="notification-toast__icon-wrap">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#DC6803" stroke-width="1.5"/><path d="M10 6v5M10 13.5v.5" stroke="#DC6803" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="notification-toast__text">
+                    <p class="notification-toast__lead">عنوان رسالة التحذير</p>
+                    <p class="notification-toast__helper">انتبه — قد تؤدي هذه العملية إلى تأثيرات غير متوقعة.</p>
+                  </div>
+                  <button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+                    aria-label="إغلاق الإشعار">
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  </button>
+                </div>
+                <div class="notification-toast__actions">
+                  <button type="button"
+                    class="btn btn--secondary-solid btn--md"><span class="btn__text">متابعة</span></button>
+                  <button type="button" class="btn btn--subtle btn--md"><span class="btn__text">إلغاء</span></button>
+                </div>
+              </div>
+            </div>
+            <div id="warning-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+              <button type="button" class="sc-copy">نسخ</button>
+              <pre><code>&lt;div class="notification-toast notification-toast--warning" role="alert" dir="rtl"&gt;
+  &lt;div class="notification-toast__title"&gt;
+    &lt;div class="notification-toast__icon-wrap"&gt;
+      &lt;svg aria-hidden="true" width="20" height="20"&gt;&lt;!-- alert-circle --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="notification-toast__text"&gt;
+      &lt;p class="notification-toast__lead"&gt;عنوان رسالة التحذير&lt;/p&gt;
+      &lt;p class="notification-toast__helper"&gt;انتبه — قد تؤدي هذه العملية إلى تأثيرات غير متوقعة.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md" aria-label="إغلاق الإشعار"&gt;
+      &lt;span class="btn__icon" aria-hidden="true"&gt;&lt;svg width="20" height="20"&gt;&lt;!-- multiplication-sign --&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="notification-toast__actions"&gt;
+    &lt;button type="button" class="btn btn--secondary-solid btn--md"&gt;&lt;span class="btn__text"&gt;متابعة&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn btn--subtle btn--md"&gt;&lt;span class="btn__text"&gt;إلغاء&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Success -->
+          <div class="sc-item">
+            <h3 class="sc-item__label">Success</h3>
+            <div class="sc-tabs" role="tablist">
+              <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true"
+                data-tab-target="success-preview">Preview</button>
+              <button type="button" class="sc-tab" role="tab" aria-selected="false"
+                data-tab-target="success-code">Code</button>
+            </div>
+            <div id="success-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+              <div class="notification-toast notification-toast--success" role="status" dir="rtl">
+                <div class="notification-toast__title">
+                  <div class="notification-toast__icon-wrap">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#039855" stroke-width="1.5"/><path d="M6.5 10l2.5 2.5L13.5 8" stroke="#039855" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="notification-toast__text">
+                    <p class="notification-toast__lead">تمت العملية بنجاح</p>
+                    <p class="notification-toast__helper">تم حفظ جميع التغييرات بنجاح.</p>
+                  </div>
+                  <button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+                    aria-label="إغلاق الإشعار">
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  </button>
+                </div>
+                <div class="notification-toast__actions">
+                  <button type="button"
+                    class="btn btn--secondary-solid btn--md"><span class="btn__text">عرض التفاصيل</span></button>
+                  <button type="button" class="btn btn--subtle btn--md"><span class="btn__text">تجاهل</span></button>
+                </div>
+              </div>
+            </div>
+            <div id="success-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+              <button type="button" class="sc-copy">نسخ</button>
+              <pre><code>&lt;div class="notification-toast notification-toast--success" role="status" dir="rtl"&gt;
+  &lt;div class="notification-toast__title"&gt;
+    &lt;div class="notification-toast__icon-wrap"&gt;
+      &lt;svg aria-hidden="true" width="20" height="20"&gt;&lt;!-- checkmark-circle-02 --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="notification-toast__text"&gt;
+      &lt;p class="notification-toast__lead"&gt;تمت العملية بنجاح&lt;/p&gt;
+      &lt;p class="notification-toast__helper"&gt;تم حفظ جميع التغييرات بنجاح.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md" aria-label="إغلاق الإشعار"&gt;
+      &lt;span class="btn__icon" aria-hidden="true"&gt;&lt;svg width="20" height="20"&gt;&lt;!-- multiplication-sign --&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="notification-toast__actions"&gt;
+    &lt;button type="button" class="btn btn--secondary-solid btn--md"&gt;&lt;span class="btn__text"&gt;عرض التفاصيل&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn btn--subtle btn--md"&gt;&lt;span class="btn__text"&gt;تجاهل&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ─── Section: LTR Support ──────────────────────── -->
+
+        <section class="sc-section">
+          <h2 class="sc-section__title">LTR (Left-to-Right)</h2>
+          <p class="sc-section__desc">المكوّن يدعم كلا الاتجاهين. أضف <code dir="ltr">dir="ltr"</code> على العنصر أو أحد
+            أسلافه لعرض التخطيط من اليسار إلى اليمين.</p>
+
+          <div class="sc-item">
+            <h3 class="sc-item__label">Neutral — LTR</h3>
+            <div class="sc-tabs" role="tablist">
+              <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true"
+                data-tab-target="ltr-preview">Preview</button>
+              <button type="button" class="sc-tab" role="tab" aria-selected="false"
+                data-tab-target="ltr-code">Code</button>
+            </div>
+            <div id="ltr-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+              <div class="notification-toast notification-toast--neutral" role="status" dir="ltr">
+                <div class="notification-toast__title">
+                  <div class="notification-toast__icon-wrap">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#6B7280" stroke-width="1.5"/><path d="M10 9v5M10 7v.5" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="notification-toast__text">
+                    <p class="notification-toast__lead">Notification message title</p>
+                    <p class="notification-toast__helper">Additional detail text can be placed here when needed.</p>
+                  </div>
+                  <button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+                    aria-label="Close notification">
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  </button>
+                </div>
+                <div class="notification-toast__actions">
+                  <button type="button"
+                    class="btn btn--secondary-solid btn--md"><span class="btn__text">Action</span></button>
+                  <button type="button" class="btn btn--subtle btn--md"><span class="btn__text">Dismiss</span></button>
+                </div>
+              </div>
+            </div>
+            <div id="ltr-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+              <button type="button" class="sc-copy">Copy</button>
+              <pre><code>&lt;!-- Add dir="ltr" to a parent element or directly on the component --&gt;
+&lt;div class="notification-toast notification-toast--neutral" role="status" dir="ltr"&gt;
+  &lt;!-- same inner structure --&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ─── Section: Mobile ──────────────────────────── -->
+
+        <section class="sc-section">
+          <h2 class="sc-section__title">Mobile Layout (343px)</h2>
+          <p class="sc-section__desc">أضف <code>notification-toast--mobile</code> لعرض التخطيط المحمول صراحةً في أي عرض
+            نافذة. يُطبَّق هذا التخطيط تلقائياً أيضاً عند ≤767px عبر media query دون الحاجة لأي تعديل في HTML.</p>
+
+          <div class="sc-item">
+            <h3 class="sc-item__label">Neutral — Mobile</h3>
+            <div class="sc-tabs" role="tablist">
+              <button type="button" class="sc-tab sc-tab--active" role="tab" aria-selected="true"
+                data-tab-target="mobile-preview">Preview</button>
+              <button type="button" class="sc-tab" role="tab" aria-selected="false"
+                data-tab-target="mobile-code">Code</button>
+            </div>
+            <div id="mobile-preview" class="sc-panel sc-panel--preview" role="tabpanel">
+              <div class="notification-toast notification-toast--neutral notification-toast--mobile" role="status" dir="rtl">
+                <div class="notification-toast__title">
+                  <div class="notification-toast__icon-wrap">
+                    <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8.5" stroke="#6B7280" stroke-width="1.5"/><path d="M10 9v5M10 7v.5" stroke="#6B7280" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                  <div class="notification-toast__text">
+                    <p class="notification-toast__lead">عنوان رسالة الإشعار</p>
+                    <p class="notification-toast__helper">عندما يحتاج الإشعار إلى تفاصيل إضافية يمكن وضعها هنا.</p>
+                  </div>
+                  <button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md"
+                    aria-label="إغلاق الإشعار">
+                    <span class="btn__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+                  </button>
+                </div>
+                <div class="notification-toast__actions">
+                  <button type="button"
+                    class="btn btn--secondary-solid btn--md"><span class="btn__text">إجراء</span></button>
+                  <button type="button" class="btn btn--subtle btn--md"><span class="btn__text">تجاهل</span></button>
+                </div>
+              </div>
+            </div>
+            <div id="mobile-code" class="sc-panel sc-panel--code" role="tabpanel" hidden>
+              <button type="button" class="sc-copy">نسخ</button>
+              <pre><code>&lt;!-- أضف notification-toast--mobile للتخطيط المحمول الصريح --&gt;
+&lt;div class="notification-toast notification-toast--neutral notification-toast--mobile" role="status" dir="rtl"&gt;
+  &lt;div class="notification-toast__title"&gt;
+    &lt;div class="notification-toast__icon-wrap"&gt;
+      &lt;svg aria-hidden="true" width="20" height="20"&gt;&lt;!-- information-circle --&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="notification-toast__text"&gt;
+      &lt;p class="notification-toast__lead"&gt;عنوان رسالة الإشعار&lt;/p&gt;
+      &lt;p class="notification-toast__helper"&gt;عندما يحتاج الإشعار إلى تفاصيل إضافية يمكن وضعها هنا.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;button type="button" class="notification-toast__close btn btn--subtle btn--icon-only btn--md" aria-label="إغلاق الإشعار"&gt;
+      &lt;span class="btn__icon" aria-hidden="true"&gt;&lt;svg width="20" height="20"&gt;&lt;!-- multiplication-sign --&gt;&lt;/svg&gt;&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="notification-toast__actions"&gt;
+    &lt;button type="button" class="btn btn--secondary-solid btn--md"&gt;&lt;span class="btn__text"&gt;إجراء&lt;/span&gt;&lt;/button&gt;
+    &lt;button type="button" class="btn btn--subtle btn--md"&gt;&lt;span class="btn__text"&gt;تجاهل&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+    </div>
+
+  </body>
+
+</html>

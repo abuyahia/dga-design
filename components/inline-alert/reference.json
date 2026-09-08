@@ -163,9 +163,15 @@
       "icon_name": "tick-02"
     }
   },
+  "dependencies": {
+    "required": ["button"],
+    "optional": []
+  },
   "implementation_notes": [
     "Vertical accent bar implemented as ::before pseudo-element. Fixed Figma height (132px) replaced with inset: 0; height: 100%.",
-    "Action buttons use inline-alert-scoped styles, not .btn classes. Optional dependency on Button component documented in contract.md.",
+    "Close button uses .btn .btn--subtle .btn--icon-only .btn--md. The .inline-alert__close class provides layout positioning only (flex-shrink, mobile absolute position).",
+    "Action buttons use .btn .btn--primary .btn--md (primary) and .btn .btn--neutral .btn--md (secondary). No inline-alert-scoped button styles. Requires button.css loaded alongside inline-alert.css.",
+    "In mobile context, .inline-alert__actions .btn receives width: 100% from inline-alert.css. All other button sizing and visual behavior remains delegated to Button component.",
     "Icon is an implementation slot. Production use should use the design system icon component.",
     "RTL uses CSS logical properties (inset-inline-start, inset-inline-end) for native RTL support.",
     "Mobile layout reflow is triggered by .inline-alert--mobile modifier or @media (max-width: 768px).",

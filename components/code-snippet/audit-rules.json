@@ -1,0 +1,226 @@
+{
+  "schema_version": "2.0.0",
+  "component": "code-snippet",
+  "audit_rules": [
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-001",
+      "title": "Root element uses correct class",
+      "severity": "high",
+      "check": "Root element must have class 'code-snippet'.",
+      "selector": ".code-snippet",
+      "expected": "present",
+      "category": "structure"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-002",
+      "title": "Single-line modifier applied when variant is single-line",
+      "severity": "high",
+      "check": "Single-line variant must have class 'code-snippet--single' on root.",
+      "selector": ".code-snippet--single",
+      "expected": "present when type is single-line",
+      "category": "structure"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-003",
+      "title": "Tab bar has role=tablist",
+      "severity": "high",
+      "check": ".code-snippet__tab-bar must have role='tablist'.",
+      "selector": ".code-snippet__tab-bar",
+      "attribute": "role",
+      "expected": "tablist",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-004",
+      "title": "Tab bar has aria-label",
+      "severity": "high",
+      "check": ".code-snippet__tab-bar must have a non-empty aria-label.",
+      "selector": ".code-snippet__tab-bar[aria-label]",
+      "expected": "present and non-empty",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-005",
+      "title": "Each tab has role=tab",
+      "severity": "high",
+      "check": "Every .code-snippet__tab must have role='tab'.",
+      "selector": ".code-snippet__tab",
+      "attribute": "role",
+      "expected": "tab",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-006",
+      "title": "Exactly one tab is aria-selected=true",
+      "severity": "high",
+      "check": "Exactly one .code-snippet__tab must have aria-selected='true' at any time.",
+      "selector": ".code-snippet__tab[aria-selected='true']",
+      "expected": "count == 1",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-007",
+      "title": "Inactive tabs have aria-selected=false",
+      "severity": "high",
+      "check": "Non-active .code-snippet__tab elements must have aria-selected='false'.",
+      "selector": ".code-snippet__tab:not([aria-selected='true'])",
+      "attribute": "aria-selected",
+      "expected": "false",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-008",
+      "title": "Inactive tabs have tabindex=-1",
+      "severity": "high",
+      "check": "Non-active tabs must have tabindex='-1' for keyboard roving tabindex pattern.",
+      "selector": ".code-snippet__tab:not([aria-selected='true'])",
+      "attribute": "tabindex",
+      "expected": "-1",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-009",
+      "title": "Code panel has role=tabpanel",
+      "severity": "high",
+      "check": "The content area (code panel) must have role='tabpanel'.",
+      "selector": ".code-snippet__content[role='tabpanel']",
+      "expected": "present",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-010",
+      "title": "Code panel has aria-labelledby",
+      "severity": "high",
+      "check": "Code panel must have aria-labelledby pointing to its controlling tab.",
+      "selector": ".code-snippet__content[aria-labelledby]",
+      "expected": "present and matches a tab id",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-011",
+      "title": "Code is inside <pre><code>",
+      "severity": "high",
+      "check": ".code-snippet__code must be a <pre> element containing a <code> child.",
+      "selector": "pre.code-snippet__code > code",
+      "expected": "present",
+      "category": "semantics"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-012",
+      "title": "Line numbers are aria-hidden",
+      "severity": "high",
+      "check": ".code-snippet__gutter must have aria-hidden='true'.",
+      "selector": ".code-snippet__gutter[aria-hidden='true']",
+      "expected": "present",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-013",
+      "title": "Copy button has aria-label",
+      "severity": "high",
+      "check": ".code-snippet__copy must have a non-empty aria-label.",
+      "selector": ".code-snippet__copy[aria-label]",
+      "expected": "present and non-empty",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-014",
+      "title": "Copy button is type=button",
+      "severity": "high",
+      "check": ".code-snippet__copy must have type='button'.",
+      "selector": ".code-snippet__copy[type='button']",
+      "expected": "present",
+      "category": "semantics"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-015",
+      "title": "Show More button has aria-expanded",
+      "severity": "high",
+      "check": ".code-snippet__show-more must have aria-expanded attribute.",
+      "selector": ".code-snippet__show-more[aria-expanded]",
+      "expected": "present",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-016",
+      "title": "Show More button is type=button",
+      "severity": "high",
+      "check": ".code-snippet__show-more must have type='button'.",
+      "selector": ".code-snippet__show-more[type='button']",
+      "expected": "present",
+      "category": "semantics"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-017",
+      "title": "data-code-snippet attribute present on root",
+      "severity": "medium",
+      "check": "Root element should have data-code-snippet for JS targeting.",
+      "selector": "[data-code-snippet]",
+      "expected": "present",
+      "category": "structure"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-018",
+      "title": "Tab aria-controls references valid panel id",
+      "severity": "medium",
+      "check": "aria-controls value on each tab must match a valid element id in the DOM.",
+      "selector": ".code-snippet__tab[aria-controls]",
+      "expected": "id exists in document",
+      "category": "accessibility"
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-001",
+      "title": "No hardcoded color values in component CSS",
+      "severity": "medium",
+      "check": "component CSS must not contain hex, rgb, or rgba color literals in component selectors.",
+      "target": "code-snippet.css",
+      "pattern": "/#[0-9a-fA-F]{3,8}|rgb\\(|rgba\\(/",
+      "expected": "no matches in component selectors",
+      "category": "tokens"
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-002",
+      "title": "No hardcoded spacing values in component CSS",
+      "severity": "medium",
+      "check": "Component CSS must not contain raw px/rem spacing in component selectors (fallback values inside var() are allowed).",
+      "target": "code-snippet.css",
+      "category": "tokens"
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-001",
+      "title": "Focus ring visible on tab buttons",
+      "severity": "medium",
+      "check": ".code-snippet__tab:focus-visible must produce a visible focus indicator.",
+      "selector": ".code-snippet__tab:focus-visible",
+      "expected": "outline or box-shadow defined",
+      "category": "focus"
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-002",
+      "title": "Focus ring visible on copy button",
+      "severity": "medium",
+      "check": ".code-snippet__copy:focus-visible must produce a visible focus indicator.",
+      "selector": ".code-snippet__copy:focus-visible",
+      "expected": "outline or box-shadow defined",
+      "category": "focus"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-019",
+      "title": "Single-line prompt span present when prompt exists",
+      "severity": "low",
+      "check": ".code-snippet__prompt should be present inside .code-snippet--single when a prompt keyword is shown.",
+      "selector": ".code-snippet--single .code-snippet__prompt",
+      "expected": "present when prompt is used",
+      "category": "structure"
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-020",
+      "title": "Inline code uses .code-snippet__inline-code class",
+      "severity": "low",
+      "check": "Single-line command text must use .code-snippet__inline-code class.",
+      "selector": ".code-snippet--single .code-snippet__inline-code",
+      "expected": "present",
+      "category": "structure"
+    }
+  ]
+}

@@ -41,10 +41,10 @@ The Inline Alert communicates system status, contextual feedback, or important i
 ## 4. Dependencies
 
 Required:
-- None
+- Button component (`button.css`) — close button and action buttons use `.btn` classes directly. Load `button.css` alongside `inline-alert.css`.
 
 Optional:
-- Button component — for action buttons that require full `.btn` behavioral parity (focus management, disabled states, loading states). The inline-alert provides its own `.inline-alert__action` styles that cover the common case.
+- None
 
 ---
 
@@ -120,8 +120,14 @@ Use `aria-live="assertive"` for Destructive type alerts that require immediate u
 
 ```html
 <button type="button"
-        class="inline-alert__close"
+        class="btn btn--subtle btn--icon-only btn--md inline-alert__close"
         aria-label="Dismiss notification">
+  <span class="btn__icon" aria-hidden="true">
+    <svg focusable="false" viewBox="0 0 20 20" fill="none">
+      <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </span>
+</button>
 ```
 
 ### Icon
@@ -138,8 +144,8 @@ Use `aria-live="assertive"` for Destructive type alerts that require immediate u
 
 ```html
 <div class="inline-alert__actions">
-  <button type="button" class="inline-alert__action inline-alert__action--primary">Primary Action</button>
-  <button type="button" class="inline-alert__action inline-alert__action--secondary">Secondary Action</button>
+  <button type="button" class="btn btn--primary btn--md"><span class="btn__text">Primary Action</span></button>
+  <button type="button" class="btn btn--neutral btn--md"><span class="btn__text">Secondary Action</span></button>
 </div>
 ```
 
@@ -153,9 +159,11 @@ The `.inline-alert__actions` element is **optional**. Omit it entirely when no a
 |---|---|
 | Visible | Default — no modifier |
 | Dismissed | `hidden` attribute on root OR `display: none` via JavaScript |
-| Close `:hover` | Browser default or extend in component CSS |
-| Close `:focus-visible` | Outline ring applied via `:focus-visible` |
-| Action `:focus-visible` | Outline ring applied via `:focus-visible` |
+| Close `:hover` | `.btn--subtle:hover` — handled by Button component |
+| Close `:focus-visible` | `.btn--subtle:focus-visible` — handled by Button component |
+| Action `:hover` | `.btn--primary:hover` / `.btn--neutral:hover` — handled by Button component |
+| Action `:focus-visible` | `.btn--primary:focus-visible` / `.btn--neutral:focus-visible` — handled by Button component |
+| Action `:disabled` | `disabled` attribute on `.btn` — handled by Button component |
 
 ---
 
@@ -176,11 +184,8 @@ The `.inline-alert__actions` element is **optional**. Omit it entirely when no a
 | `.inline-alert__content` | Text container |
 | `.inline-alert__title` | Alert title text |
 | `.inline-alert__body` | Supporting/body text (optional) |
-| `.inline-alert__close` | Dismiss button |
-| `.inline-alert__actions` | Actions row (optional) |
-| `.inline-alert__action` | Action button base |
-| `.inline-alert__action--primary` | Primary action button |
-| `.inline-alert__action--secondary` | Secondary action button |
+| `.inline-alert__close` | Layout class for close button positioning (visual styles from `.btn`) |
+| `.inline-alert__actions` | Actions row container (optional) |
 
 ---
 

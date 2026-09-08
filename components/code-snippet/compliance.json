@@ -1,0 +1,116 @@
+{
+  "schema_version": "2.0.0",
+  "component": "code-snippet",
+  "official_compliance_claim": false,
+  "overall_status": "pending_audit",
+  "source_status": "internal_mapping",
+  "last_reviewed": "2026-06-25",
+  "reviewed_by": "platform-component-builder",
+  "rules": [
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-001",
+      "title": "Component renders both multi-line and single-line variants",
+      "category": "structure",
+      "status": "pending_audit",
+      "notes": "Two variants detected in manifest: Type=Multi-Line, Type=Single-Line. Both implemented."
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-002",
+      "title": "Multi-line variant includes tab bar with language switching",
+      "category": "structure",
+      "status": "pending_audit",
+      "notes": "Tab bar uses role=tablist and role=tab pattern. Language tabs: Java (active), Python, C, C++, HTML, PHP."
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-003",
+      "title": "Multi-line variant includes line numbers gutter",
+      "category": "structure",
+      "status": "pending_audit",
+      "notes": "Line numbers are presentational. aria-hidden=true applied."
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-004",
+      "title": "Code content is inside <pre><code>",
+      "category": "semantics",
+      "status": "pending_audit",
+      "notes": "Manifest shows plain TEXT layer. Implementation uses <pre><code> for semantic correctness. Intentional deviation documented."
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-005",
+      "title": "Copy button has accessible label",
+      "category": "accessibility",
+      "status": "pending_audit",
+      "notes": "Copy button is icon-only. aria-label='Copy code' required. Implemented."
+    },
+    {
+      "id": "PLATFORM-CODE-CODE-SNIPPET-006",
+      "title": "Show More button uses aria-expanded",
+      "category": "accessibility",
+      "status": "pending_audit",
+      "notes": "aria-expanded toggled by JS. Default: false."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-001",
+      "title": "Tab bar implements role=tablist / role=tab ARIA pattern",
+      "category": "accessibility",
+      "status": "pending_audit",
+      "notes": "role=tablist on wrapper, role=tab on each button, aria-selected, aria-controls, tabindex=-1 on inactive tabs."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-002",
+      "title": "Code panel implements role=tabpanel",
+      "category": "accessibility",
+      "status": "pending_audit",
+      "notes": "Each code panel is role=tabpanel with aria-labelledby pointing to its tab."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-003",
+      "title": "Line numbers are aria-hidden",
+      "category": "accessibility",
+      "status": "pending_audit",
+      "notes": "Line number column is presentational. aria-hidden=true prevents screen reader interference."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-004",
+      "title": "Focus indicators are visible on interactive elements",
+      "category": "accessibility",
+      "status": "pending_audit",
+      "notes": ":focus-visible outline applied to tab buttons, copy button, and show more button."
+    },
+    {
+      "id": "PLATFORM-CODE-A11Y-005",
+      "title": "Keyboard navigation between tabs uses arrow keys",
+      "category": "accessibility",
+      "status": "pending_audit",
+      "notes": "ArrowLeft/ArrowRight move focus and activate tabs per ARIA Authoring Practices Guide."
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-001",
+      "title": "Component CSS uses component-level semantic tokens only",
+      "category": "tokens",
+      "status": "pending_audit",
+      "notes": "All --code-snippet-* tokens are used in CSS. No primitive token leakage. Tokens are proposed and not yet in token.css."
+    },
+    {
+      "id": "PLATFORM-CODE-TOKEN-002",
+      "title": "No hardcoded color, spacing, or radius values in component CSS",
+      "category": "tokens",
+      "status": "pending_audit",
+      "notes": "All visual values use CSS custom properties with fallbacks. No hex/rgba/px literals in component selectors."
+    },
+    {
+      "id": "PLATFORM-CODE-STATE-001",
+      "title": "Active tab state is visually and semantically distinct",
+      "category": "states",
+      "status": "pending_audit",
+      "notes": "Active tab: font-weight 700, --code-snippet-tab-active-text-color, green ::after bottom indicator."
+    },
+    {
+      "id": "PLATFORM-CODE-FOCUS-001",
+      "title": "Focus ring is implemented using :focus-visible",
+      "category": "focus",
+      "status": "pending_audit",
+      "notes": ":focus-visible used for keyboard-only focus. Mouse click does not show focus ring."
+    }
+  ]
+}

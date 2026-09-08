@@ -115,33 +115,11 @@
 }
 
 
-/* ── Close button ── */
-/* TODO: --inline-alert-close-size, --inline-alert-close-radius missing in token.css. */
+/* ── Close button — layout positioning only ── */
+/* Visual styles (size, bg, border-radius, cursor, focus ring) come from:
+   .btn .btn--subtle .btn--icon-only .btn--md */
 .inline-alert__close {
-  display: flex;
   flex-shrink: 0;
-  width: var(--inline-alert-close-size, 32px);
-  height: var(--inline-alert-close-size, 32px);
-  justify-content: center;
-  align-items: center;
-  border-radius: var(--inline-alert-close-radius, var(--Radius-radius-sm, 4px));
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  color: var(--inline-alert-title-color, var(--Text-text-display, #1F2A37));
-}
-
-.inline-alert__close svg {
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
-  display: block;
-}
-
-.inline-alert__close:focus-visible {
-  outline: 2px solid var(--inline-alert-border-color, var(--Border-border-neutral-primary, #D2D6DB));
-  outline-offset: 2px;
 }
 
 
@@ -158,42 +136,8 @@
   padding-inline: var(--inline-alert-actions-padding-inline, var(--Global-spacing-5xl, 40px));
   align-self: stretch;
 }
-
-.inline-alert__action {
-  display: inline-flex;
-  height: 32px;
-  min-height: 32px;
-  max-height: 32px;
-  padding-block: 0;
-  padding-inline: var(--Button-buttons-md-padding, 12px);
-  justify-content: center;
-  align-items: center;
-  gap: var(--Button-buttons-md-gap, 4px);
-  border-radius: var(--Radius-radius-sm, 4px);
-  border: none;
-  cursor: pointer;
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"), sans-serif;
-  font-size: var(--Size-Text-typo-size-text-sm, 14px);
-  font-weight: 500;
-  line-height: var(--Line-Height-Text-line-heights-text-sm, 20px);
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
-.inline-alert__action--primary {
-  background: var(--Button-button-background-primary-default, #1B8354);
-  color: var(--Text-text-on-color, #FFF);
-}
-
-.inline-alert__action--secondary {
-  background: var(--Button-button-background-neutral-default, #F3F4F6);
-  color: var(--Text-text-default, #161616);
-}
-
-.inline-alert__action:focus-visible {
-  outline: 2px solid var(--inline-alert-border-color, var(--Border-border-neutral-primary, #D2D6DB));
-  outline-offset: 2px;
-}
+/* Action buttons use .btn .btn--primary .btn--md and .btn .btn--neutral .btn--md directly.
+   No inline-alert-scoped button styles — visual behavior fully delegated to Button component. */
 
 
 /* ══════════════════════════════════════════════════════════════
@@ -311,14 +255,8 @@
   padding-inline: 0;
 }
 
-.inline-alert--mobile .inline-alert__action {
-  height: 40px;
-  min-height: 40px;
-  max-height: 40px;
-  align-self: stretch;
-  padding-inline: var(--Button-buttons-lg-padding, 16px);
-  font-size: var(--Size-Text-typo-size-text-md, 16px);
-  line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+.inline-alert--mobile .inline-alert__actions .btn {
+  width: 100%;
 }
 
 /* Responsive breakpoint (automatic mobile) */
@@ -346,13 +284,7 @@
     padding-inline: 0;
   }
 
-  .inline-alert .inline-alert__action {
-    height: 40px;
-    min-height: 40px;
-    max-height: 40px;
-    align-self: stretch;
-    padding-inline: var(--Button-buttons-lg-padding, 16px);
-    font-size: var(--Size-Text-typo-size-text-md, 16px);
-    line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+  .inline-alert .inline-alert__actions .btn {
+    width: 100%;
   }
 }

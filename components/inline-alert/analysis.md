@@ -21,14 +21,14 @@ The inline-alert contains Button INSTANCE nodes in its Actions slot (Figma type:
 ## Component Dependencies
 
 Required:
-- None (inline-alert can be rendered standalone without external component CSS)
+- Button component (`button.css`) — close button and action buttons consume `.btn` classes directly. `button.css` must be loaded alongside `inline-alert.css`.
 
 Optional:
-- Button component — for action buttons using `.btn` classes instead of inline-alert-scoped action styles
+- None
 
 ## Dependency Confirmation
 
-Proceeding with autonomous generation. Action buttons implemented as inline-alert-scoped styles (`inline-alert__action`), not using `.btn` classes. This avoids a hard dependency while preserving layout compatibility. Assumption documented here.
+Corrected post-review. Initial autonomous generation implemented action buttons as inline-alert-scoped styles (`inline-alert__action`), duplicating Button component visual behaviour. This was incorrect per platform policy — Composite components must use pre-built child components as-is. Updated to delegate all button visual behaviour to the Button component via `.btn` classes.
 
 ---
 
@@ -166,9 +166,11 @@ All criteria are internally mapped only. See `compliance.json`.
 
 3. **Mobile → `.inline-alert--mobile` + `@media`:** Mobile=True changes flex direction of the header, repositions the close button, stacks actions vertically, and enlarges action buttons. Both a modifier class and a responsive media query implement this.
 
-4. **Action buttons scoped within inline-alert:** Action buttons use `.inline-alert__action` classes with local sizing tokens rather than `.btn` classes. This avoids an explicit dependency on the button component CSS. The optional dependency is documented.
+4. **Action buttons — Button component as-is:** Action buttons use `.btn .btn--primary .btn--md` (primary) and `.btn .btn--neutral .btn--md` (secondary). No inline-alert-scoped button styles exist. The `.inline-alert__actions` container provides layout (gap, padding-inline, flex-direction); all button visual behaviour is owned by the Button component. In mobile context, `inline-alert.css` adds only `width: 100%` to `.btn` children inside `.inline-alert__actions`.
 
-5. **Icon slot:** The icon is an implementation slot. Showcase uses inline SVGs. Production use should use the design system icon component.
+5. **Close button — Button component as-is:** Close button uses `.btn .btn--subtle .btn--icon-only .btn--md`. The `.inline-alert__close` class provides only `flex-shrink: 0` and mobile absolute positioning. All visual behaviour (size, background, border-radius, hover, focus ring, cursor) is owned by the Button component.
+
+6. **Icon slot:** The icon is an implementation slot. Showcase uses inline SVGs. Production use should use the design system icon component.
 
 ---
 
@@ -180,6 +182,9 @@ All criteria are internally mapped only. See `compliance.json`.
 | `height: 132px` (accent bar) | `height: 100%` via `inset: 0` | Fluid with content height |
 | `right: -8px` (mobile close) | `inset-inline-end: -8px` | Logical property for RTL support |
 | `gap: 4px` (mobile text container) | `4px` with TODO comment | Token missing — preserved as hardcoded |
+| Button-Close INSTANCE (Figma) | `.btn .btn--subtle .btn--icon-only .btn--md` | Use Button component as-is — no custom close button CSS |
+| Action Button INSTANCE (Figma, md) | `.btn .btn--primary .btn--md` / `.btn .btn--neutral .btn--md` | Use Button component as-is — no inline-alert-scoped button styles |
+| Action Button height 40px (mobile) | `.btn--md` + `width: 100%` context override | Button stays `md`; Composite controls layout width only. Full lg height in mobile is a known deviation from Figma. |
 
 ---
 

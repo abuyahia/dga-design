@@ -1,0 +1,127 @@
+{
+  "schema_version": "2.0.0",
+  "component": {
+    "name": "code-snippet",
+    "description": "Displays formatted code content in a bordered card. Supports a multi-line variant with language tabs, line numbers, copy button, and show-more expansion; and a single-line variant for inline terminal commands."
+  },
+  "classification": "Composite",
+  "dependencies": {
+    "required": ["button", "tab"],
+    "optional": []
+  },
+  "axes": ["type"],
+  "axis_values": {
+    "type": ["multi-line", "single-line"]
+  },
+  "variants": [
+    {
+      "id": "multi-line",
+      "name": "Type=Multi-Line",
+      "description": "Multi-line code block with horizontal language tab bar, gutter with line numbers, code body, inline copy button, and show-more button.",
+      "css_modifier": null,
+      "anatomy": {
+        "root": ".code-snippet",
+        "tab_bar": ".tab-list.tab-list--h (from tab/tab.css)",
+        "tab": ".tab.tab--h (from tab/tab.css)",
+        "tab_active": ".tab--h[aria-selected='true'] (from tab/tab.css)",
+        "tab_text": ".tab__text (from tab/tab.css)",
+        "body": ".code-snippet__body",
+        "gutter": ".code-snippet__gutter",
+        "line_numbers": ".code-snippet__line-numbers",
+        "content": ".code-snippet__content",
+        "code_row": ".code-snippet__code-row",
+        "code": ".code-snippet__code",
+        "copy": ".code-snippet__copy",
+        "show_more": ".code-snippet__show-more"
+      }
+    },
+    {
+      "id": "single-line",
+      "name": "Type=Single-Line",
+      "description": "Single-line inline terminal command with optional prompt keyword and copy button.",
+      "css_modifier": ".code-snippet--single",
+      "anatomy": {
+        "root": ".code-snippet.code-snippet--single",
+        "inline": ".code-snippet__inline",
+        "prompt": ".code-snippet__prompt",
+        "inline_code": ".code-snippet__inline-code",
+        "copy": ".code-snippet__copy"
+      }
+    }
+  ],
+  "states": {
+    "tab_inactive": {
+      "description": "Default state for non-selected tabs.",
+      "selector": ".code-snippet__tab"
+    },
+    "tab_active": {
+      "description": "Selected language tab with green bottom indicator and bold weight.",
+      "selector": ".code-snippet__tab[aria-selected='true']"
+    },
+    "tab_hover": {
+      "description": "Tab hover state.",
+      "selector": ".code-snippet__tab:hover"
+    },
+    "tab_focus": {
+      "description": "Keyboard focus on a tab.",
+      "selector": ".code-snippet__tab:focus-visible"
+    },
+    "expanded": {
+      "description": "Code block is expanded; line clamp is removed.",
+      "selector": ".code-snippet--expanded .code-snippet__code"
+    }
+  },
+  "tokens": {
+    "border_radius": "var(--code-snippet-border-radius)",
+    "border_color": "var(--code-snippet-border-color)",
+    "bg": "var(--code-snippet-bg)",
+    "gutter_bg": "var(--code-snippet-gutter-bg)",
+    "gutter_border_color": "var(--code-snippet-gutter-border-color)",
+    "tab_divider_color": "var(--code-snippet-tab-divider-color)",
+    "tab_active_indicator_color": "var(--code-snippet-tab-active-indicator-color)",
+    "code_color": "var(--code-snippet-code-color)",
+    "tab_active_text_color": "var(--code-snippet-tab-active-text-color)",
+    "tab_inactive_text_color": "var(--code-snippet-tab-inactive-text-color)",
+    "line_numbers_color": "var(--code-snippet-line-numbers-color)",
+    "prompt_color": "var(--code-snippet-prompt-color)",
+    "inline_code_color": "var(--code-snippet-inline-code-color)",
+    "padding": "var(--code-snippet-padding)",
+    "content_pb": "var(--code-snippet-content-pb)",
+    "tab_button_padding": "var(--code-snippet-tab-button-padding)",
+    "tab_button_gap": "var(--code-snippet-tab-button-gap)",
+    "tab_indicator_radius": "var(--code-snippet-tab-indicator-radius)",
+    "tab_button_radius": "var(--code-snippet-tab-button-radius)",
+    "inline_gap": "var(--code-snippet-inline-gap)",
+    "font_family_mono": "var(--code-snippet-font-family-mono)",
+    "font_size_code": "var(--code-snippet-font-size-code)",
+    "font_size_tab": "var(--code-snippet-font-size-tab)",
+    "line_height_tab": "var(--code-snippet-line-height-tab)",
+    "tab_font_family": "var(--code-snippet-tab-font-family)"
+  },
+  "implementation_notes": [
+    "Tab bar uses native role=tablist / role=tab pattern. Active tab is aria-selected=true.",
+    "Tab divider (gray bar) and tab active indicator (green bar) are ::after pseudo-elements.",
+    "Line numbers are aria-hidden=true — presentational only.",
+    "Code content is inside <pre><code> for semantic correctness.",
+    "Copy button is an icon-only Button component instance. aria-label='Copy code' required.",
+    "Show More button uses aria-expanded toggled by JS.",
+    "Single-line variant uses .code-snippet--single modifier on root.",
+    "All --code-snippet-* tokens are proposed and must be added to token.css.",
+    "No syntax highlighting is included. Plain monospace rendering only.",
+    "Keyboard navigation between tabs must be handled by component JS (arrow keys)."
+  ],
+  "discarded_axes": [
+    {
+      "axis": "RTL",
+      "reason": "Manifest does not show an explicit RTL variant. IBM Plex Sans Arabic font is referenced which implies RTL readiness, but no CSS delta exists. Discarded."
+    },
+    {
+      "axis": "Size",
+      "reason": "No size axis in manifest. Code snippet does not vary by size."
+    },
+    {
+      "axis": "Theme",
+      "reason": "No dark/light theme axis in manifest. Single surface color only."
+    }
+  ]
+}
