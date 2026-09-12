@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "component_id": "link",
   "selector_root": ".link",
   "rule_types_registry": "../../standards/audit-rule-types.json",
@@ -75,7 +75,7 @@
     {
       "id": "LNK-A11Y-004",
       "standard_id": "PLATFORM-CODE-A11Y-LINK-001",
-      "rule_type": "advisory",
+      "rule_type": "manual_review",
       "category": "accessibility",
       "severity": "warning",
       "validation_status": "not_run",
@@ -89,8 +89,9 @@
       },
       "message": "Disabled link may still be activatable via keyboard. Verify that a JavaScript click guard (event.preventDefault() when aria-disabled='true') is applied.",
       "fix": "Add: element.addEventListener('click', e => { if (e.currentTarget.getAttribute('aria-disabled') === 'true') e.preventDefault(); });",
-      "standard_refs": ["PLATFORM-CODE-LINK-003"]
-    },
+      "standard_refs": ["PLATFORM-CODE-LINK-003"],
+  "source_rule_type": "advisory"
+},
 
     {
       "id": "LNK-A11Y-005",
@@ -119,7 +120,7 @@
     {
       "id": "LNK-A11Y-006",
       "standard_id": "WCAG-2.1-2.4.7",
-      "rule_type": "css_property_forbidden",
+      "rule_type": "forbidden_css_properties",
       "category": "accessibility",
       "severity": "error",
       "validation_status": "not_run",
@@ -134,8 +135,9 @@
       },
       "message": "Focus ring is suppressed on this link. Remove outline:none to restore keyboard focus visibility.",
       "fix": "Remove any outline:none or outline:0 rule from .link, .link:focus, .link:focus-visible, or inline styles.",
-      "standard_refs": ["WCAG-2.1-2.4.7", "WCAG-2.1-1.4.11"]
-    },
+      "standard_refs": ["WCAG-2.1-2.4.7", "WCAG-2.1-1.4.11"],
+  "source_rule_type": "css_property_forbidden"
+},
 
     {
       "id": "LNK-A11Y-007",
@@ -189,7 +191,7 @@
     {
       "id": "LNK-TOKEN-001",
       "standard_id": "PLATFORM-CODE-LINK-002",
-      "rule_type": "css_property_forbidden",
+      "rule_type": "forbidden_css_properties",
       "category": "tokens",
       "severity": "warning",
       "validation_status": "not_run",
@@ -205,8 +207,10 @@
       },
       "message": "Link has hardcoded color value. Replace with the appropriate --Link-link-* token.",
       "fix": "Replace hardcoded color with the correct token from reference.json style_tokens.",
-      "standard_refs": ["PLATFORM-CODE-LINK-002"]
-    }
+      "standard_refs": ["PLATFORM-CODE-LINK-002"],
+  "source_rule_type": "css_property_forbidden"
+}
 
-  ]
+  ],
+  "$schema": "../../standards/schemas/component-audit.schema.json"
 }

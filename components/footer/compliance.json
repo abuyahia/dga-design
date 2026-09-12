@@ -1,0 +1,6 @@
+{
+  "component_id": "footer",
+  "status": "pending_audit",
+  "production_ready": false,
+  "note": "Browser checks do not imply formal DGA certification."
+}

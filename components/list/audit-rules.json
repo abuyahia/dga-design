@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "component_id": "list",
   "selector_root": ".list",
   "rule_types_registry": "../../standards/audit-rule-types.json",
@@ -9,7 +9,7 @@
     {
       "id": "LIST-STRUCT-001",
       "standard_id": "WCAG-2.1-1.3.1",
-      "rule_type": "element_role",
+      "rule_type": "structure_required",
       "category": "structure",
       "severity": "error",
       "validation_status": "not_run",
@@ -27,13 +27,14 @@
       },
       "message": "List container is not a native <ol> or <ul> element, or is missing role='list'.",
       "fix": "Use <ol class=\"list list--ordered ...\"> or <ul class=\"list list--unordered ...\"> and add role=\"list\".",
-      "standard_refs": ["WCAG-2.1-1.3.1", "PLATFORM-CODE-LIST-001"]
-    },
+      "standard_refs": ["WCAG-2.1-1.3.1", "PLATFORM-CODE-LIST-001"],
+  "source_rule_type": "element_role"
+},
 
     {
       "id": "LIST-STRUCT-002",
       "standard_id": "WCAG-2.1-1.3.1",
-      "rule_type": "element_role",
+      "rule_type": "structure_required",
       "category": "structure",
       "severity": "error",
       "validation_status": "not_run",
@@ -51,13 +52,14 @@
       },
       "message": "List item is not a native <li> element or is not a direct child of <ol>/<ul>.",
       "fix": "Use <li class=\"list__item ...\"> as a direct child of the list container.",
-      "standard_refs": ["WCAG-2.1-1.3.1", "PLATFORM-CODE-LIST-002"]
-    },
+      "standard_refs": ["WCAG-2.1-1.3.1", "PLATFORM-CODE-LIST-002"],
+  "source_rule_type": "element_role"
+},
 
     {
       "id": "LIST-STRUCT-003",
       "standard_id": "WCAG-2.1-4.1.1",
-      "rule_type": "html_validity",
+      "rule_type": "structure_required",
       "category": "structure",
       "severity": "error",
       "validation_status": "not_run",
@@ -71,8 +73,9 @@
       },
       "message": "List container has non-<li> direct children.",
       "fix": "Ensure only <li> elements are direct children of the list.",
-      "standard_refs": ["WCAG-2.1-4.1.1"]
-    },
+      "standard_refs": ["WCAG-2.1-4.1.1"],
+  "source_rule_type": "html_validity"
+},
 
     {
       "id": "LIST-A11Y-001",
@@ -126,7 +129,7 @@
     {
       "id": "LIST-CONTENT-001",
       "standard_id": "PLATFORM-CODE-LIST-003",
-      "rule_type": "element_presence",
+      "rule_type": "element_required",
       "category": "content",
       "severity": "warning",
       "validation_status": "not_run",
@@ -140,13 +143,14 @@
       },
       "message": "Ordered or unordered list item contains a .list__marker element. Markers must be CSS-generated, not HTML elements.",
       "fix": "Remove <span class=\"list__marker\"> from the list item. Ensure list.css defines ::before (LTR) and ::after (RTL) counter content on .list__item.",
-      "standard_refs": ["PLATFORM-CODE-LIST-003"]
-    },
+      "standard_refs": ["PLATFORM-CODE-LIST-003"],
+  "source_rule_type": "element_presence"
+},
 
     {
       "id": "LIST-TOKEN-001",
       "standard_id": "PLATFORM-CODE-TOKEN-001",
-      "rule_type": "css_token_usage",
+      "rule_type": "token_used",
       "category": "tokens",
       "severity": "warning",
       "validation_status": "not_run",
@@ -166,13 +170,14 @@
       },
       "message": "Component CSS uses a primitive global token directly. Replace with the corresponding --list-* component token.",
       "fix": "Replace var(--Text-text-primary) with var(--list-text-primary, var(--Text-text-primary)). Add --list-text-primary to token.css.",
-      "standard_refs": ["PLATFORM-CODE-TOKEN-001"]
-    },
+      "standard_refs": ["PLATFORM-CODE-TOKEN-001"],
+  "source_rule_type": "css_token_usage"
+},
 
     {
       "id": "LIST-MODIFIER-001",
       "standard_id": "PLATFORM-CODE-LIST-001",
-      "rule_type": "css_class_required",
+      "rule_type": "class_required",
       "category": "structure",
       "severity": "warning",
       "validation_status": "not_run",
@@ -191,13 +196,14 @@
       },
       "message": "List container is missing a type modifier class.",
       "fix": "Add one of: list--ordered, list--unordered, list--with-icon to the .list element.",
-      "standard_refs": ["PLATFORM-CODE-LIST-001"]
-    },
+      "standard_refs": ["PLATFORM-CODE-LIST-001"],
+  "source_rule_type": "css_class_required"
+},
 
     {
       "id": "LIST-MODIFIER-002",
       "standard_id": "PLATFORM-CODE-LIST-001",
-      "rule_type": "css_class_required",
+      "rule_type": "class_required",
       "category": "structure",
       "severity": "warning",
       "validation_status": "not_run",
@@ -216,8 +222,10 @@
       },
       "message": "List container is missing a style modifier class.",
       "fix": "Add one of: list--primary, list--neutral, list--on-color to the .list element.",
-      "standard_refs": ["PLATFORM-CODE-LIST-001"]
-    }
+      "standard_refs": ["PLATFORM-CODE-LIST-001"],
+  "source_rule_type": "css_class_required"
+}
 
-  ]
+  ],
+  "$schema": "../../standards/schemas/component-audit.schema.json"
 }

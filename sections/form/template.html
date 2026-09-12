@@ -1,0 +1,20 @@
+<div class="form-page" data-form-template data-current-step="{{current_index}}">
+  <div class="ds-container">
+    <div class="form-page__layout">
+      {{page_intro}}
+      {{progress}}
+      <div class="form-page__main">
+        <form class="form-template" aria-label="مثال حالات حقول النص" novalidate>
+          <div class="form-template__fields">
+{{fields}}
+          </div>
+          <div class="form-template__actions">
+            <button class="btn btn--primary" type="button" data-form-next disabled>التالي</button>
+            <button class="btn btn--secondary-outline" type="button" data-form-previous disabled>رجوع</button>
+          </div>
+          <p class="sr-only" role="status" aria-live="polite" data-form-step-status>{{status}}</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

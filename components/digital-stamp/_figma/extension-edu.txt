@@ -1,0 +1,85 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/7ec4a031-f422-4ca0-be2f-f38480f4ec98.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/4604ad4f-cac0-437a-a1a2-54f0fb2bc95a.svg";
+
+type ExtensionProps = {
+  className?: string;
+  device?: "Desktop";
+  extension?: "edu.sa";
+  rtl?: "True";
+};
+
+function Extension({ className, device = "Desktop", extension = "edu.sa", rtl = "True" }: ExtensionProps) {
+  return (
+    <div className={className || "content-start flex flex-wrap gap-[var(--global\\/spacing-xl,16px)] items-start justify-end relative w-[1664px]"} data-node-id="25079:5351">
+      <div className="content-stretch flex flex-[1_0_0] gap-[var(--global\/spacing-3xl,24px)] items-start justify-end min-w-px relative" data-node-id="25079:5142" data-name="Security Confirmation">
+        <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-lg,12px)] items-end min-w-px relative text-right" data-node-id="25079:5143" data-name="Text Content">
+          <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] w-full" dir="auto" data-node-id="25079:5144">
+            <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)]">{`المواقع الإلكترونية الحكومية الموثوقة تستخدم بروتوكول `}</span>
+            <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#1b8354]">HTTPS</span>
+          </p>
+          <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-primary-paragraph,#384250)] text-[length:var(--size\/text\/typo-size-text-md,16px)] w-full" dir="auto" data-node-id="25079:5145">
+            تحقق من أن الموقع يستخدم بروتوكول HTTPS
+          </p>
+        </div>
+        <div className="border border-[var(--border\/border-success,#067647)] border-solid relative rounded-[var(--radius-full,9999px)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0 size-[48px]" data-node-id="25079:5146" data-name="Featured icon">
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I25079:5146;7:946" data-name="Style=Stroke, Type=Rounded">
+            <div className="absolute inset-[5.21%_13.54%]" data-node-id="I25079:5146;7:946;2067:24541" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-[1_0_0] gap-[var(--global\/spacing-3xl,24px)] items-start min-w-px relative" data-node-id="25079:5147" data-name="Domain Verfication">
+        <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-5xl,40px)] items-start justify-center min-w-px relative" data-node-id="25079:5148" data-name="Text">
+          <div className="content-stretch flex flex-col gap-[var(--global\/spacing-lg,12px)] items-end relative shrink-0 w-full" data-node-id="25079:5149" data-name="Text Content">
+            <div className="content-stretch flex gap-[var(--global\/spacing-xs,4px)] items-start justify-end relative shrink-0 w-full" data-node-id="25079:5150" data-name="Head domain AR">
+              <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[0] min-w-px relative text-[color:var(--text\/text-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] text-right" dir="auto" data-node-id="25079:5151">
+                <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#161616]">روابط المواقع الإلكترونية الرسمية</span>
+                <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#161616]">{` `}</span>
+                <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#161616]">التعليمية</span>
+                <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#161616]">{` `}</span>
+                <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#161616]">السعودية تنتهي ب</span>
+                <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#161616]">ـ</span>
+                <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)]">{` edu.sa `}</span>
+              </p>
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-primary-paragraph,#384250)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right w-full" dir="auto" data-node-id="25079:5152">
+              جميع روابط المواقع الرسمية التعليمية في المملكة العربية السعودية تنتهي بـ sch.sa أو edu.sa
+            </p>
+          </div>
+        </div>
+        <div className="border border-[var(--border\/border-success,#067647)] border-solid relative rounded-[var(--radius-full,9999px)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0 size-[48px]" data-node-id="25079:5153" data-name="Featured icon">
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I25079:5153;7:946" data-name="Style=Stroke, Type=Rounded">
+            <div className="absolute inset-[13.54%]" data-node-id="I25079:5153;7:946;2145:18105" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text lg/Semibold: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-semibold, size: Size/Text/typo-size-text-Ig, weight: 600, lineHeight: Line Height/Text/line-heights-text-Ig, letterSpacing: 0), Text md/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-md, weight: 400, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Shadows/shadow-xs: Effect(type: DROP_SHADOW, color: #1018280D, offset: (0, 1), radius: 2, spread: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Extension
+**Node ID:** 25079:5361
+
+The purpose of extensions is to provide clear indications of the authenticity of a website. Key details, such as domain confirmation (e.g., .gov.sa, .edu.sa, .med.sa, .org.sa, .sch.sa), HTTPS usage, and Digital Government Authority registration, reinforce user trust and security.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp](https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp)
+
+## link-04
+**Node ID:** 13758:242380
+
+link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

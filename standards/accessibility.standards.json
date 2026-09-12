@@ -5,7 +5,7 @@
   "description": "Accessibility-specific internal standards for this Government Design System. These interpret and extend WCAG 2.1 AA requirements as concrete, component-level rules for Arabic-language government digital services. source_status is 'internal_mapping' — they reference WCAG but have not been formally audited against the official WCAG test procedures.",
   "source_status": "internal_mapping",
   "official_reference": "WCAG 2.1 (https://www.w3.org/TR/WCAG21/) — referenced, not formally mapped",
-  "version": "1.0.0-draft",
+  "version": "1.1.0-draft",
 
   "standards": [
 
@@ -39,7 +39,7 @@
     {
       "id": "PLATFORM-CODE-A11Y-003",
       "title": "Visible focus indicator required on all interactive elements",
-      "description": "Every interactive element must display a visible focus ring when it receives keyboard focus. The design system mandates the two-layer ring pattern (see PLATFORM-CODE-FOCUS-001). No inline style, global reset, or page-level CSS may suppress :focus-visible on design system components.",
+      "description": "Every interactive element must display visible keyboard focus. Follow the component-appropriate pattern documented under PLATFORM-CODE-FOCUS-001. Reset, page CSS and pressed-state styling must not suppress the focus-visible indicator.",
       "category": "focus",
       "applies_to": ["button", "all-interactive"],
       "wcag_reference": "WCAG 2.4.7 Focus Visible (AA)",
@@ -65,7 +65,7 @@
     {
       "id": "PLATFORM-CODE-A11Y-005",
       "title": "Disabled state must be communicated to assistive technology",
-      "description": "Interactive elements in a disabled state must communicate that state to assistive technology. Use the HTML disabled attribute (removes from tab order, announces as 'dimmed' to screen readers) or aria-disabled='true' (keeps in tab order, announces as 'unavailable'). Never communicate disabled state via CSS class alone — it has no effect on the accessibility tree.",
+      "description": "Communicate disabled state via native disabled where supported or aria-disabled=true with an activation guard. aria-disabled does not change focusability by itself. Any deliberate tabindex exclusion must be documented in the component contract; CSS classes or pointer-events alone do not implement keyboard disabling.",
       "category": "state",
       "applies_to": ["button", "all-interactive"],
       "wcag_reference": "WCAG 4.1.2 Name, Role, Value (AA)",

@@ -1,0 +1,19 @@
+[
+  {"name": "content layout rtl 320", "pass": true},
+  {"name": "content navigation rtl 320", "pass": true},
+  {"name": "content layout rtl 430", "pass": true},
+  {"name": "content navigation rtl 430", "pass": true},
+  {"name": "content layout rtl 768", "pass": true},
+  {"name": "content navigation rtl 768", "pass": true},
+  {"name": "content layout rtl 1440", "pass": true},
+  {"name": "content navigation rtl 1440", "pass": true},
+  {"name": "content layout ltr 320", "pass": true},
+  {"name": "content navigation ltr 320", "pass": true},
+  {"name": "content layout ltr 430", "pass": true},
+  {"name": "content navigation ltr 430", "pass": true},
+  {"name": "content layout ltr 768", "pass": true},
+  {"name": "content navigation ltr 768", "pass": true},
+  {"name": "content layout ltr 1440", "pass": true},
+  {"name": "content navigation ltr 1440", "pass": true},
+  {"name": "Content anchors work without JavaScript", "pass": true}
+]

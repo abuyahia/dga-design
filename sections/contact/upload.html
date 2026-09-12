@@ -1,0 +1,7 @@
+<div class="file-upload contact-upload" aria-disabled="true" data-field="attachment">
+  <div class="file-upload__header"><div class="file-upload__label-row"><label class="file-upload__label" for="contact-attachment">رفع المرفقات (اختياري)</label></div><p class="file-upload__helper" id="contact-attachment-help">الحد الأقصى لحجم الملف 2 ميجابايت. الصيغ المدعومة: JPG وPNG وPDF.</p></div>
+  <input type="file" id="contact-attachment" name="attachment" accept=".jpg,.jpeg,.png,.pdf" hidden aria-describedby="contact-attachment-help contact-attachment-error">
+  <button class="btn btn--secondary-outline btn--md" type="button" data-contact-browse aria-describedby="contact-attachment-help">تصفح الملفات</button>
+  <div class="file-upload__file" role="status"><div class="file-item"><div class="file-item__row"><span class="file-item__name" data-contact-file-name></span><button class="btn btn--subtle btn--sm" type="button" data-contact-remove>إزالة</button></div></div></div>
+  <p class="form-field-error" id="contact-attachment-error" hidden></p>
+</div>

@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "pagination",
     "description": "Navigation bar for paginated content. Composite assembly of nav buttons and page-number items. Supports LTR/RTL, three sizes, and current-page indication."
@@ -26,12 +26,24 @@
     }
   },
   "variants": [
-    { "name": "RTL=False, Size=Large",   "css": ".pagination.pagination--lg" },
-    { "name": "RTL=True,  Size=Large",   "css": ".pagination.pagination--lg[dir='rtl']" },
-    { "name": "RTL=False, Size=Medium",  "css": ".pagination.pagination--md" },
-    { "name": "RTL=True,  Size=Medium",  "css": ".pagination.pagination--md[dir='rtl']" },
-    { "name": "RTL=False, Size=Small",   "css": ".pagination.pagination--sm" },
-    { "name": "RTL=True,  Size=Small",   "css": ".pagination.pagination--sm[dir='rtl']" }
+    { "name": "RTL=False, Size=Large",   "css": ".pagination.pagination--lg",
+  "id": "pagination-documented-001"
+},
+    { "name": "RTL=True,  Size=Large",   "css": ".pagination.pagination--lg[dir='rtl']",
+  "id": "pagination-documented-002"
+},
+    { "name": "RTL=False, Size=Medium",  "css": ".pagination.pagination--md",
+  "id": "pagination-documented-003"
+},
+    { "name": "RTL=True,  Size=Medium",  "css": ".pagination.pagination--md[dir='rtl']",
+  "id": "pagination-documented-004"
+},
+    { "name": "RTL=False, Size=Small",   "css": ".pagination.pagination--sm",
+  "id": "pagination-documented-005"
+},
+    { "name": "RTL=True,  Size=Small",   "css": ".pagination.pagination--sm[dir='rtl']",
+  "id": "pagination-documented-006"
+}
   ],
   "size_tokens": {
     "small": {
@@ -74,5 +86,7 @@
     "Medium item indicator bottom is set to 0 instead of Figma's 2.5px (sub-pixel rendering inconsistency — see analysis.md Intentional Deviations).",
     "All component-level --pagination-* tokens are missing from token.css. Fallback values are used. See analysis.md Missing Tokens."
   ],
-  "discarded_axes": []
+  "discarded_axes": [],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

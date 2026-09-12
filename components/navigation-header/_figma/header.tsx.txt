@@ -1,0 +1,503 @@
+const imgPalmSwords = "https://www.figma.com/api/mcp/asset/214145d1-8ed6-4a09-a65a-2352fa460c47.svg";
+const imgPalmSwords1 = "https://www.figma.com/api/mcp/asset/5a7d2f4a-b311-4eb5-b8d9-4dc81350169d.svg";
+const imgElements = "https://www.figma.com/api/mcp/asset/37da4af4-d28c-42f6-b58e-3d57bdfda7f7.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/047c895f-c523-4b16-bab6-d9e3e48e9853.svg";
+const imgElements2 = "https://www.figma.com/api/mcp/asset/a805d1b6-184b-454f-93a8-c8f4ed67f205.svg";
+const imgElements3 = "https://www.figma.com/api/mcp/asset/161960c2-efe5-4580-a3bc-9c5606a99ae0.svg";
+const imgElements4 = "https://www.figma.com/api/mcp/asset/f4aa89dc-5d2f-4c6a-b517-a73544f02650.svg";
+const imgElements5 = "https://www.figma.com/api/mcp/asset/4e57627d-9079-4b66-aa41-9e15a3ad2b47.svg";
+const imgElements6 = "https://www.figma.com/api/mcp/asset/46007b43-5454-4f7b-bc77-5b5df6bd3f55.svg";
+
+type LogoPlaceholderProps = {
+  className?: string;
+  logoPosition?: "Side";
+  rtl?: boolean;
+  size?: "Large" | "Medium";
+};
+
+function LogoPlaceholder({ className, logoPosition = "Side", rtl = false, size = "Large" }: LogoPlaceholderProps) {
+  const isMediumAndSide = size === "Medium" && logoPosition === "Side";
+  const isNotRtlAndMediumAndSide = !rtl && size === "Medium" && logoPosition === "Side";
+  const isRtlAndMediumAndSide = rtl && size === "Medium" && logoPosition === "Side";
+  return (
+    <div className={className || "bg-[var(--background\\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative"} id={isNotRtlAndMediumAndSide ? "node-30150_149722" : isRtlAndMediumAndSide ? "node-30150_149719" : "node-30150_149698"}>
+      {!rtl && logoPosition === "Side" && (
+        <div className={`relative shrink-0 ${isNotRtlAndMediumAndSide ? "size-[48px]" : "size-[64px]"}`} id={isNotRtlAndMediumAndSide ? "node-30150_149723" : "node-30150_149699"} data-name="Palm & Swords">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={isNotRtlAndMediumAndSide ? imgPalmSwords1 : imgPalmSwords} />
+        </div>
+      )}
+      <div className={`${String.raw`[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,"IBM_Plex_Sans_Arabic:Medium")] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-secondary-paragraph,#6c737f)] text-right whitespace-nowrap `}${isMediumAndSide ? String.raw`text-[length:var(--size\/text\/typo-size-text-sm,14px)]` : String.raw`text-[length:var(--size\/text\/typo-size-text-md,16px)]`}`} id={isNotRtlAndMediumAndSide ? "node-30150_149724" : isRtlAndMediumAndSide ? "node-30150_149720" : "node-30150_149700"}>
+        <p className={isMediumAndSide ? String.raw`leading-[var(--line-height\/text\/line-heights-text-sm,20px)]` : String.raw`leading-[var(--line-height\/text\/line-heights-text-md,24px)]`} dir="auto">
+          {isRtlAndMediumAndSide ? "شعار المنصة" : isNotRtlAndMediumAndSide ? "Platform Logo" : "Platform Logo"}
+        </p>
+      </div>
+      {isRtlAndMediumAndSide && (
+        <div className="relative shrink-0 size-[48px]" data-node-id="30150:149721" data-name="Palm & Swords">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgPalmSwords1} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+type HeaderMenuProps = {
+  className?: string;
+  opened?: boolean;
+  state?: "Default";
+};
+
+function HeaderMenu({ className, opened = false, state = "Default" }: HeaderMenuProps) {
+  return (
+    <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148861">
+      <div className="content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148862" data-name="Button">
+        <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148862;407:512161" data-name="Leading Icon">
+          <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148862;407:512161;2039:2068" style={{ containerType: "size" }}>
+            <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+              <div className="relative size-full" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type NavHeaderProps = {
+  className?: string;
+  actions?: boolean;
+  breakpoint?: "<600" | "600>960" | ">960";
+  fullWidth?: boolean;
+  logoAr?: React.ReactNode | null;
+  logoEn?: React.ReactNode | null;
+  menuItems?: boolean;
+  rtl?: boolean;
+};
+
+export default function NavHeader({ className, actions = true, breakpoint = ">960", fullWidth = false, logoAr = null, logoEn = null, menuItems = true, rtl = false }: NavHeaderProps) {
+  const isNotRtlAnd600960AndNotFullWidth = !rtl && breakpoint === "600>960" && !fullWidth;
+  const isNotRtlAnd600AndNotFullWidth = !rtl && breakpoint === "<600" && !fullWidth;
+  const isNotRtlAnd960AndFullWidth = !rtl && breakpoint === ">960" && fullWidth;
+  const isNotRtlAndNotFullWidthAndIs600960Or600 = !rtl && !fullWidth && ["600>960", "<600"].includes(breakpoint);
+  const isRtlAnd600960AndNotFullWidth = rtl && breakpoint === "600>960" && !fullWidth;
+  const isRtlAnd600AndNotFullWidth = rtl && breakpoint === "<600" && !fullWidth;
+  const isRtlAnd960 = rtl && breakpoint === ">960";
+  const isRtlAnd960AndFullWidth = rtl && breakpoint === ">960" && fullWidth;
+  const isRtlAnd960AndNotFullWidth = rtl && breakpoint === ">960" && !fullWidth;
+  return (
+    <div className={className || `${String.raw`bg-[var(--background\/background-menu,white)] content-stretch flex flex-col items-center justify-center relative `}${breakpoint === "<600" && !fullWidth ? "max-w-[600px] px-[var(--spacing-xl,16px)] w-[600px]" : breakpoint === "600>960" && !fullWidth ? "max-w-[960px] px-[var(--spacing-4xl,32px)] w-[960px]" : "px-[var(--spacing-4xl,32px)] w-[1728px]"}`} id={isRtlAnd600AndNotFullWidth ? "node-30150_148849" : isNotRtlAnd600AndNotFullWidth ? "node-30150_148838" : isRtlAnd600960AndNotFullWidth ? "node-30150_148825" : isNotRtlAnd600960AndNotFullWidth ? "node-30150_148812" : isRtlAnd960AndFullWidth ? "node-30150_148797" : isRtlAnd960AndNotFullWidth ? "node-30150_148782" : isNotRtlAnd960AndFullWidth ? "node-30150_148767" : "node-30150_148752"}>
+      <div className="content-stretch flex items-center justify-between relative shrink-0 w-full" id={isRtlAnd600AndNotFullWidth ? "node-30150_148850" : isNotRtlAnd600AndNotFullWidth ? "node-30150_148839" : isRtlAnd600960AndNotFullWidth ? "node-30150_148826" : isNotRtlAnd600960AndNotFullWidth ? "node-30150_148813" : isRtlAnd960AndFullWidth ? "node-30150_148798" : isRtlAnd960AndNotFullWidth ? "node-30150_148783" : isNotRtlAnd960AndFullWidth ? "node-30150_148768" : "node-30150_148754"} data-name="Header Content">
+        {!rtl && breakpoint === ">960" && (
+          <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center min-w-px relative" id={isNotRtlAnd960AndFullWidth ? "node-30150_148769" : "node-30150_148755"} data-name="Logo & Menu Items">
+            {logoEn || <LogoPlaceholder className="bg-[var(--background\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative shrink-0" size="Medium" />}
+            {menuItems && (
+              <div className="content-stretch flex items-center relative shrink-0" data-node-id="30150:148757" data-name="Menu Items">
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148758" data-name="Header Menu Item">
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148758;30150:148387" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148758;30150:148388">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Link</p>
+                    </div>
+                  </div>
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148758;30150:148389" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148758;30150:148389;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148759" data-name="Header Menu Item">
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148759;30150:148387" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148759;30150:148388">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Link</p>
+                    </div>
+                  </div>
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148759;30150:148389" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148759;30150:148389;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148760" data-name="Header Menu Item">
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148760;30150:148387" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148760;30150:148388">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Link</p>
+                    </div>
+                  </div>
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148760;30150:148389" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148760;30150:148389;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148761" data-name="Header Menu Item">
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148761;30150:148387" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148761;30150:148388">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Link</p>
+                    </div>
+                  </div>
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148761;30150:148389" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148761;30150:148389;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148762" data-name="Header Menu Item">
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148762;30150:148387" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148762;30150:148388">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Link</p>
+                    </div>
+                  </div>
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148762;30150:148389" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148762;30150:148389;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+        {isRtlAnd960 && actions && (
+          <div className="content-stretch flex items-center relative shrink-0" data-node-id="30150:148784" data-name="Actions">
+            <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148785" data-name="Header Action 3">
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148785;30150:148555" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="I30150:148785;30150:148556">
+                  <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+                    إجراء
+                  </p>
+                </div>
+              </div>
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148785;30150:148557" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148785;30150:148557;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148786" data-name="Header Action 2">
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148786;30150:148555" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="I30150:148786;30150:148556">
+                  <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+                    إجراء
+                  </p>
+                </div>
+              </div>
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148786;30150:148557" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148786;30150:148557;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148787" data-name="Header Action 1">
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148787;30150:148555" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="I30150:148787;30150:148556">
+                  <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+                    إجراء
+                  </p>
+                </div>
+              </div>
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148787;30150:148557" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148787;30150:148557;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {isRtlAnd960 && (
+          <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-center justify-end min-w-px relative" id={isRtlAnd960AndFullWidth ? "node-30150_148803" : "node-30150_148788"} data-name="Logo & Menu Items">
+            {menuItems && (
+              <div className="content-stretch flex items-center justify-end relative shrink-0" data-node-id="30150:148789" data-name="Menu Items">
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148790" data-name="Header Menu Item">
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148790;30150:148441" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148790;30150:148441;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements4} />
+                    </div>
+                  </div>
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148790;30150:148442" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="I30150:148790;30150:148443">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+                        تبويب
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148791" data-name="Header Menu Item">
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148791;30150:148441" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148791;30150:148441;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements4} />
+                    </div>
+                  </div>
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148791;30150:148442" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="I30150:148791;30150:148443">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+                        تبويب
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148792" data-name="Header Menu Item">
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148792;30150:148441" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148792;30150:148441;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements4} />
+                    </div>
+                  </div>
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148792;30150:148442" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="I30150:148792;30150:148443">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+                        تبويب
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148793" data-name="Header Menu Item">
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148793;30150:148441" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148793;30150:148441;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements4} />
+                    </div>
+                  </div>
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148793;30150:148442" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="I30150:148793;30150:148443">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+                        تبويب
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148794" data-name="Header Menu Item">
+                  <div className="relative shrink-0 size-[20px]" data-node-id="I30150:148794;30150:148441" data-name="Chevron">
+                    <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148794;30150:148441;2039:1971" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements4} />
+                    </div>
+                  </div>
+                  <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148794;30150:148442" data-name="Tab title">
+                    <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="I30150:148794;30150:148443">
+                      <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+                        تبويب
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            {logoAr || <LogoPlaceholder className="bg-[var(--background\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative shrink-0" rtl size="Medium" />}
+          </div>
+        )}
+        {isNotRtlAndNotFullWidthAndIs600960Or600 && (
+          <>
+            <div className="content-stretch flex flex-[1_0_0] items-center max-w-[144px] min-w-px relative" id={isNotRtlAnd600AndNotFullWidth ? "node-30150_148840" : "node-30150_148814"} data-name="Nav Menu">
+              {isNotRtlAnd600960AndNotFullWidth && <HeaderMenu className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" />}
+              {isNotRtlAnd600AndNotFullWidth && (
+                <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148841" data-name="Header Menu">
+                  <div className="content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="I30150:148841;30150:148862" data-name="Button">
+                    <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148841;30150:148862;407:512161" data-name="Leading Icon">
+                      <div className="absolute inset-[44.79%_19.76%_44.79%_19.79%]" data-node-id="I30150:148841;30150:148862;407:512161;2067:7634" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] items-center justify-center min-w-px relative" id={isNotRtlAnd600AndNotFullWidth ? "node-30150_148842" : "node-30150_148816"} data-name="Logo & Menu Items">
+              {isNotRtlAnd600960AndNotFullWidth && (logoEn || <LogoPlaceholder className="bg-[var(--background\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative shrink-0" size="Medium" />)}
+              {isNotRtlAnd600AndNotFullWidth && (
+                <div className="content-stretch flex flex-[1_0_0] gap-[var(--spacing-xl,16px)] items-center justify-center min-w-px relative" data-node-id="30150:148843" data-name="Logo & GOV Identifier">
+                  {logoEn || <LogoPlaceholder className="bg-[var(--background\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative shrink-0" size="Medium" />}
+                </div>
+              )}
+            </div>
+          </>
+        )}
+        {!rtl && breakpoint === ">960" && !fullWidth && actions && (
+          <div className="content-stretch flex items-center justify-end relative shrink-0" data-node-id="30150:148763" data-name="Actions">
+            <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148764" data-name="Header Action 1">
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148764;30150:148509" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148764;30150:148509;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148764;30150:148510" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148764;30150:148511">
+                  <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Action</p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148765" data-name="Header Action 2">
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148765;30150:148509" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148765;30150:148509;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148765;30150:148510" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148765;30150:148511">
+                  <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Action</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-row items-center self-stretch" data-node-id="30150:148766">
+              <button className="bg-[var(--button\/button-background-primary-default,#1b8354)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-full items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-name="Header Action 3">
+                <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148766;30150:148447" data-name="Leading Icon">
+                  <div className="absolute inset-[7.29%]" data-node-id="I30150:148766;30150:148447;2145:19360" data-name="elements">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements3} />
+                  </div>
+                </div>
+                <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148766;30150:148448" data-name="Tab title">
+                  <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="I30150:148766;30150:148449">
+                    <p className="leading-[24px]">Action</p>
+                  </div>
+                </div>
+                <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="I30150:148766;30150:148450" data-name="Selection indicator">
+                  <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="I30150:148766;30150:148451" data-name="Selector" />
+                </div>
+              </button>
+            </div>
+          </div>
+        )}
+        {isNotRtlAnd960AndFullWidth && actions && (
+          <div className="content-stretch flex items-center justify-end relative shrink-0" data-node-id="30150:148777" data-name="Actions">
+            <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148778" data-name="Header Action 1">
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148778;30150:148509" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148778;30150:148509;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148778;30150:148510" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148778;30150:148511">
+                  <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Action</p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148779" data-name="Header Action 2">
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148779;30150:148509" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148779;30150:148509;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148779;30150:148510" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148779;30150:148511">
+                  <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Action</p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148780" data-name="Header Action 3">
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148780;30150:148509" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148780;30150:148509;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I30150:148780;30150:148510" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I30150:148780;30150:148511">
+                  <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">Action</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {isNotRtlAnd600960AndNotFullWidth && actions && (
+          <div className="content-stretch flex flex-[1_0_0] items-center justify-end max-w-[144px] min-w-px relative" data-node-id="30150:148818" data-name="Actions">
+            <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148819" data-name="Header Action 1">
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148819;30150:148667" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148819;30150:148667;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148822" data-name="Utility Menu">
+              <div className="content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148823" data-name="Button">
+                <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148823;407:512161" data-name="Leading Icon">
+                  <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148823;407:512161;2039:2068" style={{ containerType: "size" }}>
+                    <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                      <div className="relative size-full" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {isRtlAnd600960AndNotFullWidth && actions && (
+          <div className="content-stretch flex flex-[1_0_0] items-center max-w-[144px] min-w-px relative" data-node-id="30150:148827" data-name="Actions">
+            <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148828" data-name="Utility Menu">
+              <div className="content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148829" data-name="Button">
+                <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148829;407:512161" data-name="Leading Icon">
+                  <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148829;407:512161;2039:2068" style={{ containerType: "size" }}>
+                    <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                      <div className="relative size-full" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148832" data-name="Header Action 1">
+              <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148832;30150:148741" data-name="Leading Icon">
+                <div className="absolute inset-[7.29%]" data-node-id="I30150:148832;30150:148741;2145:19360" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {isRtlAnd600960AndNotFullWidth && (
+          <>
+            <div className="content-stretch flex flex-[1_0_0] items-center justify-center min-w-px relative" data-node-id="30150:148833" data-name="Logo & Menu Items">
+              {logoAr || <LogoPlaceholder className="bg-[var(--background\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative shrink-0" rtl size="Medium" />}
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] items-center justify-end max-w-[144px] min-w-px relative" data-node-id="30150:148835" data-name="Nav Menu">
+              <HeaderMenu className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" />
+            </div>
+          </>
+        )}
+        {isNotRtlAnd600AndNotFullWidth && actions && (
+          <div className="content-stretch flex flex-[1_0_0] items-center justify-end max-w-[144px] min-w-px relative" data-node-id="30150:148845" data-name="Actions">
+            <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148846" data-name="Utility Menu">
+              <div className="content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148847" data-name="Button">
+                <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148847;407:512161" data-name="Style=Stroke, Type=Rounded">
+                  <div className="absolute inset-[17.71%_13.54%]" data-node-id="I30150:148847;407:512161;2067:6779" data-name="elements">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {isRtlAnd600AndNotFullWidth && actions && (
+          <div className="content-stretch flex flex-[1_0_0] items-center max-w-[144px] min-w-px relative" data-node-id="30150:148851" data-name="Actions">
+            <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148852" data-name="Utility Menu">
+              <div className="content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148853" data-name="Button">
+                <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148853;407:512161" data-name="Style=Stroke, Type=Rounded">
+                  <div className="absolute inset-[17.71%_13.54%]" data-node-id="I30150:148853;407:512161;2067:6779" data-name="elements">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {isRtlAnd600AndNotFullWidth && (
+          <>
+            <div className="content-stretch flex flex-[1_0_0] items-center justify-center min-w-px relative" data-node-id="30150:148854" data-name="Logo & Menu Items">
+              <div className="content-stretch flex flex-[1_0_0] gap-[var(--spacing-xl,16px)] items-center justify-center min-w-px relative" data-node-id="30150:148855" data-name="Logo & GOV Identifier">
+                {logoAr || <LogoPlaceholder className="bg-[var(--background\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative shrink-0" rtl size="Medium" />}
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] items-center justify-end max-w-[144px] min-w-px relative" data-node-id="30150:148857" data-name="Nav Menu">
+              <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="30150:148858" data-name="Header Menu">
+                <div className="content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="I30150:148858;30150:148862" data-name="Button">
+                  <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148858;30150:148862;407:512161" data-name="Leading Icon">
+                    <div className="absolute inset-[44.79%_19.76%_44.79%_19.79%]" data-node-id="I30150:148858;30150:148862;407:512161;2067:7634" data-name="elements">
+                      <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements5} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  );
+}

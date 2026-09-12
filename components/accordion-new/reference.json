@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "accordion-new",
     "figma_name": "Accordion",
@@ -164,5 +164,8 @@
     "Flush interaction background uses ::before with negative inset-inline to bleed beyond 0-padded header.",
     "Flush focus ring uses ::after pseudo with negative inset-inline — parent overflow:clip required for clean bleed.",
     "All component tokens are pending addition to token.css — see analysis.md Missing Tokens."
-  ]
+  ],
+  "variants": [],
+  "variant_coverage": "axes_only",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

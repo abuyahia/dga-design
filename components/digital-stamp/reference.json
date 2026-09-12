@@ -1,0 +1,115 @@
+{
+  "schema_version": "2.1.0",
+  "component": {
+    "name": "digital-stamp"
+  },
+  "source": {
+    "url": "https://www.figma.com/design/j5WtaAEIcO9MgO2QYFVN0i/?node-id=17274-104",
+    "placement_url": "https://www.kku.edu.sa/",
+    "reviewed": "2026-09-09"
+  },
+  "axes": [
+    "direction",
+    "opened",
+    "device",
+    "extension"
+  ],
+  "axis_values": {
+    "direction": [
+      "ltr",
+      "rtl"
+    ],
+    "opened": [
+      false,
+      true
+    ],
+    "device": [
+      "desktop",
+      "mobile"
+    ],
+    "extension": [
+      "gov.sa",
+      "edu.sa",
+      "med.sa",
+      "org.sa",
+      "sch.sa",
+      ".sa"
+    ]
+  },
+  "variants": [
+    {
+      "id": "17504:521",
+      "axes": {
+        "direction": "ltr",
+        "opened": false,
+        "device": "desktop",
+        "extension": "gov.sa"
+      }
+    },
+    {
+      "id": "17504:526",
+      "axes": {
+        "direction": "ltr",
+        "opened": true,
+        "device": "desktop",
+        "extension": "gov.sa"
+      }
+    },
+    {
+      "id": "31095:10748",
+      "axes": {
+        "direction": "ltr",
+        "opened": false,
+        "device": "mobile",
+        "extension": "gov.sa"
+      }
+    },
+    {
+      "id": "31099:5728",
+      "axes": {
+        "direction": "ltr",
+        "opened": true,
+        "device": "mobile",
+        "extension": "gov.sa"
+      }
+    },
+    {
+      "id": "17504:562",
+      "axes": {
+        "direction": "rtl",
+        "opened": false,
+        "device": "desktop",
+        "extension": "gov.sa"
+      }
+    },
+    {
+      "id": "17504:543",
+      "axes": {
+        "direction": "rtl",
+        "opened": true,
+        "device": "desktop",
+        "extension": "gov.sa"
+      }
+    },
+    {
+      "id": "31107:6244",
+      "axes": {
+        "direction": "rtl",
+        "opened": false,
+        "device": "mobile",
+        "extension": "gov.sa"
+      }
+    },
+    {
+      "id": "31107:6261",
+      "axes": {
+        "direction": "rtl",
+        "opened": true,
+        "device": "mobile",
+        "extension": "gov.sa"
+      }
+    }
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
+}

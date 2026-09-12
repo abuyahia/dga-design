@@ -1,0 +1,91 @@
+const imgFrame1 = "https://www.figma.com/api/mcp/asset/d503f064-2b2c-40bb-88a4-436619dbd340.svg";
+const imgElements = "https://www.figma.com/api/mcp/asset/b8da1d73-8584-4925-8106-07129ebf4d28.svg";
+
+type CountryFlagsProps = {
+  className?: string;
+  flags?: "Saudi Arabia";
+  shape?: "Square";
+  size?: "Medium";
+};
+
+function CountryFlags({ className, flags = "Saudi Arabia", shape = "Square", size = "Medium" }: CountryFlagsProps) {
+  return (
+    <div className={className || "bg-white h-[14px] overflow-clip relative w-[20px]"} data-node-id="17394:9382">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="17394:19750" data-name="flag">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="17394:19751" data-name="contents">
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[#006923] h-[14px] left-1/2 top-1/2 w-[20px]" data-node-id="17394:19752" data-name="base" />
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[8.392px] left-1/2 top-[calc(50%+0.2px)] w-[14px]" data-node-id="17394:19753">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type DigitalStampProps = {
+  className?: string;
+  device?: "Desktop";
+  opened?: boolean;
+  rtl?: "Yes";
+};
+
+function DigitalStamp({ className, device = "Desktop", opened = false, rtl = "Yes" }: DigitalStampProps) {
+  return (
+    <div className={className || "bg-[var(--background\\/background-neutral-100,#f3f4f6)] content-stretch flex h-[32px] items-center justify-end overflow-clip px-[var(--section\\/section-padding,32px)] py-[var(--global\\/spacing-none,0px)] relative w-[1728px]"} data-node-id="17504:562">
+      <div className="content-stretch flex gap-[10px] items-center relative shrink-0" data-node-id="17504:563" data-name="Content">
+        <button className="content-stretch cursor-pointer flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="31215:865" data-name="Link">
+          <div className="relative shrink-0 size-[16px]" data-node-id="I31215:865;12415:42240" data-name="Style=Stroke, Type=Rounded">
+            <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I31215:865;12415:42240;2039:1971" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I31215:865;2508:25156">
+            كيف تتحقق؟
+          </p>
+        </button>
+        <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] whitespace-nowrap" dir="auto" data-node-id="17504:565">
+          موقع حكومي مسجل لدى هيئة الحكومة الرقمية
+        </p>
+        <CountryFlags className="bg-white h-[14px] overflow-clip relative shrink-0 w-[20px]" />
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text sm/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-sm, weight: 400, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Text sm/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-sm, weight: 500, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Digital Stamp
+**Node ID:** 17504:520
+
+The Digital Stamp Component is an interface element that ensures users are interacting with a verified and secure source, confirming the integrity and authenticity of government sites. It provides an encrypted digital stamp, reinforcing trust and transparency in the website's content.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp](https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp)
+
+## Link
+**Node ID:** 2508:25804
+
+Links facilitate navigation by allowing users to click (or tap) and navigate users to another location, such as a different site, resource, or section within the same page.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/link](https://design.dga.gov.sa/guidelines/components/actions/link)
+
+## arrow-down-01
+**Node ID:** 13758:241814
+
+down-arrow, arrow, down, decrease arrow, drop arrow, drop down, drop down arrow
+
+## Flags=Saudi Arabia, Size=Medium, Shape=Square
+**Node ID:** 17394:9382
+
+medium - 20x15
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

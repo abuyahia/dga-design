@@ -4,74 +4,29 @@
 
 /* ── Internal design tokens ─────────────────────────────────── */
 .quote {
-  /* TODO: --quote-padding missing in token.css. Proposed mapping: var(--Global-spacing-2xl, 20px). */
-  --_quote-padding: var(--quote-padding, var(--Global-spacing-2xl, 20px));
-
-  /* TODO: --quote-gap missing in token.css. Proposed mapping: var(--Global-spacing-6xl, 48px). */
-  --_quote-gap: var(--quote-gap, var(--Global-spacing-6xl, 48px));
-
-  /* TODO: --quote-radius missing in token.css. Proposed mapping: var(--Radius-radius-lg, 16px). */
-  --_quote-radius: var(--quote-radius, var(--Radius-radius-lg, 16px));
-
-  /* TODO: --quote-bg missing in token.css. Proposed mapping: var(--Background-background-neutral-50, #F9FAFB). */
-  --_quote-bg: var(--quote-bg, var(--Background-background-neutral-50, #F9FAFB));
-
-  /* TODO: --quote-body-padding-x missing in token.css. Proposed mapping: var(--Global-spacing-7xl, 64px). */
-  --_quote-body-padding-x: var(--quote-body-padding-x, var(--Global-spacing-7xl, 64px));
-
-  /* TODO: --quote-body-gap missing in token.css. Proposed mapping: var(--Global-spacing-xl, 16px). */
-  --_quote-body-gap: var(--quote-body-gap, var(--Global-spacing-xl, 16px));
-
-  /* TODO: --quote-author-gap missing in token.css. Proposed mapping: var(--Global-spacing-xl, 16px). */
-  --_quote-author-gap: var(--quote-author-gap, var(--Global-spacing-xl, 16px));
-
-  /* TODO: --quote-author-info-gap missing in token.css. Proposed mapping: var(--Global-spacing-md, 8px). */
-  --_quote-author-info-gap: var(--quote-author-info-gap, var(--Global-spacing-md, 8px));
-
-  /* TODO: --quote-title-color missing in token.css. Proposed mapping: var(--Text-text-default, #161616). */
-  --_quote-title-color: var(--quote-title-color, var(--Text-text-default, #161616));
-
-  /* TODO: --quote-title-font-family missing in token.css. Proposed mapping: var(--Font-Family-font-family-display). */
-  --_quote-title-font-family: var(--quote-title-font-family, var(--Font-Family-font-family-display, "IBM Plex Sans Arabic", sans-serif));
-
-  /* TODO: --quote-title-font-size missing in token.css. Proposed mapping: var(--Size-Display-typo-size-display-xs, 24px). */
-  --_quote-title-font-size: var(--quote-title-font-size, var(--Size-Display-typo-size-display-xs, 24px));
-
-  /* TODO: --quote-title-line-height missing in token.css. Proposed mapping: var(--Line-Height-Display-line-heights-display-xs, 32px). */
-  --_quote-title-line-height: var(--quote-title-line-height, var(--Line-Height-Display-line-heights-display-xs, 32px));
-
-  /* TODO: --quote-text-color missing in token.css. Proposed mapping: var(--Text-text-primary-paragraph, #384250). */
-  --_quote-text-color: var(--quote-text-color, var(--Text-text-primary-paragraph, #384250));
-
-  /* TODO: --quote-text-font-family missing in token.css. Proposed mapping: var(--Font-Family-font-family-text). */
-  --_quote-text-font-family: var(--quote-text-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic", sans-serif));
-
-  /* TODO: --quote-text-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-xl, 20px). */
-  --_quote-text-font-size: var(--quote-text-font-size, var(--Size-Text-typo-size-text-xl, 20px));
-
-  /* TODO: --quote-text-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-xl, 30px). */
-  --_quote-text-line-height: var(--quote-text-line-height, var(--Line-Height-Text-line-heights-text-xl, 30px));
-
-  /* TODO: --quote-author-name-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-xl, 20px). */
-  --_quote-author-name-font-size: var(--quote-author-name-font-size, var(--Size-Text-typo-size-text-xl, 20px));
-
-  /* TODO: --quote-author-name-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-xl, 30px). */
-  --_quote-author-name-line-height: var(--quote-author-name-line-height, var(--Line-Height-Text-line-heights-text-xl, 30px));
-
-  /* TODO: --quote-author-description-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-Ig, 18px). Note: 'Ig' may be a typo for 'lg' in upstream token. */
-  --_quote-author-description-font-size: var(--quote-author-description-font-size, var(--Size-Text-typo-size-text-Ig, 18px));
-
-  /* TODO: --quote-author-description-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-Ig, 28px). */
-  --_quote-author-description-line-height: var(--quote-author-description-line-height, var(--Line-Height-Text-line-heights-text-Ig, 28px));
-
-  /* TODO: --quote-mark-color missing in token.css. Proposed mapping: var(--Text-text-primary-sa-flag, #14573A). */
-  --_quote-mark-color: var(--quote-mark-color, var(--Text-text-primary-sa-flag, #14573A));
-
-  /* TODO: --quote-mark-font-size missing in token.css. No primitive token maps to 128px. Hardcoded fallback. */
-  --_quote-mark-font-size: var(--quote-mark-font-size, 128px);
-
-  /* TODO: --quote-width-lg missing in token.css. No Figma variable exists for Large width. 846px hardcoded. */
-  --_quote-width: var(--quote-width-lg, 846px);
+  --_quote-padding: var(--quote-padding);
+  --_quote-gap: var(--quote-gap);
+  --_quote-radius: var(--quote-radius);
+  --_quote-bg: var(--quote-bg);
+  --_quote-body-padding-x: var(--quote-body-padding-x);
+  --_quote-body-gap: var(--quote-body-gap);
+  --_quote-author-gap: var(--quote-author-gap);
+  --_quote-author-info-gap: var(--quote-author-info-gap);
+  --_quote-title-color: var(--quote-title-color);
+  --_quote-title-font-family: var(--quote-title-font-family);
+  --_quote-title-font-size: var(--quote-title-font-size);
+  --_quote-title-line-height: var(--quote-title-line-height);
+  --_quote-text-color: var(--quote-text-color);
+  --_quote-text-font-family: var(--quote-text-font-family);
+  --_quote-text-font-size: var(--quote-text-font-size);
+  --_quote-text-line-height: var(--quote-text-line-height);
+  --_quote-author-name-font-size: var(--quote-author-name-font-size);
+  --_quote-author-name-line-height: var(--quote-author-name-line-height);
+  --_quote-author-description-font-size: var(--quote-author-description-font-size);
+  --_quote-author-description-line-height: var(--quote-author-description-line-height);
+  --_quote-mark-color: var(--quote-mark-color);
+  --_quote-mark-font-size: var(--quote-mark-font-size);
+  --_quote-width: var(--quote-width-lg);
 }
 
 /* ── Base ──────────────────────────────────────────────────── */
@@ -97,24 +52,24 @@
   color: var(--_quote-mark-color);
   font-family: var(--_quote-text-font-family);
   font-size: var(--_quote-mark-font-size);
-  font-weight: 400;
+  font-weight: var(--font-weight-body);
   font-style: normal;
-  line-height: 32px;
+  line-height: var(--lh-display-xs);
   pointer-events: none;
 }
 
 /* LTR Large: opening mark top-left */
 .quote::before {
   content: "\201C" / "";
-  left: 14px;
-  top: 20px;
+  inset-inline-start: var(--quote-before-left);
+  top: var(--space-20);
 }
 
 /* LTR Large: closing mark bottom-right */
 .quote::after {
   content: "\201D" / "";
-  right: 19px;
-  bottom: 23px;
+  inset-inline-end: var(--quote-after-right);
+  bottom: var(--quote-after-bottom);
 }
 
 /* ── Body ────────────────────────────────────────────────────── */
@@ -135,7 +90,7 @@
   font-family: var(--_quote-title-font-family);
   font-size: var(--_quote-title-font-size);
   font-style: normal;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: var(--_quote-title-line-height);
 }
 
@@ -147,7 +102,7 @@
   font-family: var(--_quote-text-font-family);
   font-size: var(--_quote-text-font-size);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-body);
   line-height: var(--_quote-text-line-height);
 }
 
@@ -179,7 +134,7 @@
   color: var(--_quote-title-color);
   font-family: var(--_quote-text-font-family);
   font-size: var(--_quote-author-name-font-size);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: var(--_quote-author-name-line-height);
 }
 
@@ -192,26 +147,25 @@
   font-family: var(--_quote-text-font-family);
   font-size: var(--_quote-author-description-font-size);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-body);
   line-height: var(--_quote-author-description-line-height);
 }
 
 /* ── Size: Small ─────────────────────────────────────────────── */
 .quote--sm {
-  /* TODO: --quote-width-sm missing in token.css. Proposed: var(--Width-width-lg, 640px). */
   /* Note: Figma token 'width-lg' used for 'Small' size — upstream naming inconsistency. */
-  --_quote-width: var(--quote-width-sm, var(--Width-width-lg, 640px));
+  --_quote-width: var(--quote-width-sm);
 }
 
 /* LTR Small: opening mark shifts 1px left */
 .quote--sm::before {
-  left: 13px;
+  inset-inline-start: var(--quote-sm-before-left);
 }
 
 /* LTR Small: closing mark shifts right and bottom relative to Large */
 .quote--sm::after {
-  right: 13px;
-  bottom: 36px;
+  inset-inline-end: var(--quote-sm-after-right);
+  bottom: var(--space-36);
 }
 
 /* ── Background: White ───────────────────────────────────────── */
@@ -237,21 +191,21 @@
 
 [dir="rtl"] .quote__title,
 [dir="rtl"] .quote__text {
-  text-align: right;
+  text-align: start;
 }
 
 /* RTL: opening mark at top-right, closing mark at bottom-left */
 /* Positions are the same for both Large and Small in RTL per manifest */
 [dir="rtl"] .quote::before {
   content: "\201C" / "";
-  right: 7px;
-  left: unset;
-  top: 20px;
+  inset-inline-start: var(--quote-before-rtl-right);
+  inset-inline-end: unset;
+  top: var(--space-20);
 }
 
 [dir="rtl"] .quote::after {
   content: "\201D" / "";
-  left: 23px;
-  right: unset;
-  bottom: 23px;
+  inset-inline-end: var(--quote-after-rtl-left);
+  inset-inline-start: unset;
+  bottom: var(--quote-after-rtl-bottom);
 }

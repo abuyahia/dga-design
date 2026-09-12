@@ -1,5 +1,7 @@
 # Design System — Implementation Reference
 
+> **حالة المكتبة:** المكونات القائمة قيد التأهيل؛ وجود showcase أوعقد stable ليس إثبات جاهزية إنتاجية. راجع [Architecture](docs/architecture.md)، و[الجرد](docs/inventory.json)، و[عقود البيانات](docs/contracts.md)، و[تشغيل التدقيق](docs/audits.md).
+
 > **للمحادثات القادمة:** نفّذ المكوّن الموجود في مجلده بالاعتماد على هذا الملف كمرجع كامل للبنية والاتفاقيات.
 
 ---
@@ -69,7 +71,7 @@ design-system/
 
 ```json
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "component-name",
     "description": "وصف المكوّن"
@@ -80,6 +82,7 @@ design-system/
     "state": ["default", "hovered", "focused", "pressed", "disabled", "selected"],
     "size":  ["sm", "md", "lg"]
   },
+  "variant_coverage": "documented_subset",
   "variants": [ ... ]
 }
 ```
@@ -172,7 +175,7 @@ design-system/
 
 ## قواعد حالة focused
 
-حالة focused دائماً تتكوّن من **طبقتين**:
+نمط Button المرجعي يتكوّن من **طبقتين**. لا يُفرض pseudo-element على input أصلي؛ يوثق العقد wrapper أوoutline مناسبًا دون layout shift. وجود focus ظاهر وقابل للتحقق في المتصفح إلزامي، وأي اختلاف بصري يسجل للمراجعة ولا يعد اجتيازًا تلقائيًا:
 
 ```css
 /* 1. إطار خارجي على العنصر نفسه */
@@ -190,31 +193,18 @@ design-system/
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  border: 3px solid var(--[component]-focus-ring-inner-color);
+  border: var(--[component]-focus-ring-inner-width) solid var(--[component]-focus-ring-inner-color);
   pointer-events: none;
 }
 ```
 
-> العنصر الجذر يجب أن يكون `position: relative` دائماً.
+> العنصر المالك لحلقة pseudo-element يجب أن يكون `position: relative`. استخدم توكن width مسجلًا؛ لا تنشئ اسمًا موازيًا إن كان الموجود يغطي الحاجة.
 
 ---
 
 ## قاعدة حالة pressed
 
-pressed **تلغي** تأثير focused كاملاً:
-
-```css
-.component:active:not(:disabled),
-.component.is-pressed {
-  background: var(--[component]-bg-pressed);
-  border: none;
-}
-
-.component:active:not(:disabled)::after,
-.component.is-pressed::after {
-  display: none;
-}
-```
+pressed تغيّر مظهر التفعيل، لكنها لا تلغي مؤشر keyboard focus أثناء بقاء التركيز. استخدم `:active` مع حماية disabled، واحتفظ بمؤشر `:focus-visible`. كلاسات `is-pressed` و`is-focused` للمحاكاة في showcase فقط وليست API حالة إنتاجية. أمثلة CSS القائمة التي تخفي focus تحتاج تأهيلًا في دفعة المكونات.
 
 ---
 
@@ -226,9 +216,10 @@ pressed **تلغي** تأثير focused كاملاً:
   background: var(--[component]-disabled-bg);
   color: var(--[component]-disabled-text);
   cursor: not-allowed;
-  pointer-events: none;
 }
 ```
+
+`disabled` الأصلي يطبق تعطيل العنصر؛ `aria-disabled` يعلن الحالة فقط ويحتاج منع التفعيل وظيفيًا. لا يعتمد تعطيل keyboard على CSS. أي استبعاد مقصود من tab order يوثق في عقد المكوّن؛ لا يفرض على جميع العناصر.
 
 ---
 
@@ -237,7 +228,7 @@ pressed **تلغي** تأثير focused كاملاً:
 ```html
 <[tag] class="component component--[shape] component--[size]"
        type="button"
-       aria-pressed="false"
+       aria-expanded="false"
        data-expanded="false"
        data-flush="false">
 
@@ -252,13 +243,15 @@ pressed **تلغي** تأثير focused كاملاً:
 </[tag]>
 ```
 
+المثال توضيحي؛ أضف `aria-expanded` فقط لمحفز disclosure واربطه بـ`aria-controls`. زر الفعل العادي لا يحتاج أي ARIA حالة. `aria-pressed` للـtoggle، و`aria-selected` للأنماط التي تتطلبه، والحقل الأصلي يستخدم checked/selected الأصليين دون ARIA مكررة. `data-expanded` خطاف CSS اختياري وليس إعلانًا للإتاحة.
+
 ### HTML Attributes للحالات
 
 | الحالة | الـ attribute |
 |---|---|
 | disabled | `disabled` (أو `aria-disabled="true"`) |
-| selected | `aria-pressed="true"` |
-| expanded | `data-expanded="true"` |
+| selected | `aria-pressed` للـtoggle؛ `aria-selected` للتبويب؛ دلالات HTML الأصلية للحقول |
+| expanded | `aria-expanded="true"`؛ `data-expanded` اختياري للتنسيق |
 | flush | `data-flush="true"` |
 | focused (static) | class `is-focused` (للـ showcase فقط) |
 | pressed (static) | class `is-pressed` (للـ showcase فقط) |
@@ -287,7 +280,7 @@ pressed **تلغي** تأثير focused كاملاً:
 ```html
 <head>
   <!-- 1. Token أولاً -->
-  <link rel="stylesheet" href="../../token.css" />
+  <link rel="stylesheet" href="../../../token.css" />
   <!-- 2. CSS المكوّن -->
   <link rel="stylesheet" href="../[component].css" />
   <!-- 3. Page styles داخل style tag (ليس ملف خارجي) -->
@@ -387,8 +380,28 @@ Default → Hovered → Focused → Pressed → Disabled → Selected
 
 ## مثال مرجعي — Button
 
-المكوّن المكتمل كنموذج:
+المكوّن المرجعي للتسمية والبنية، مع بقاء نتيجة المطابقة pending_audit:
 
 - [reference.json](components/button/reference.json) — axes: shape + state
 - [button.css](components/button/button.css) — implementation
 - [_figma/btn-primary/](components/button/_figma/btn-primary/) — Figma source data
+
+
+## قواعد إنتاجية محدثة — الدفعة الأولى
+
+- `token.css` مصدر قيم التصميم المركزي. التعريفات المحلية وfallbacks الحالية ديون مسجلة؛ وجود var() وحده لا يحقق المطابقة.
+- القيم البنيوية مثل 0 و100% وauto وinherit وcurrentColor وnone لا تتطلب توكنًا لمجرد تحويل كل literal. القيم البصرية ذات المعنى من spacing/color/typography/border/motion تعتمد على tokens. الاستثناءات الهندسية توثق وتراجع.
+- `--bp-*` و`--breakpoint-*` الحاليان لا يستدعيان نظامًا جديدًا. قيم CSS custom properties ليست آلية مباشرة لحدود media queries؛ توثق literals هناك بالقيمة المركزية وتفحص اتساقها في دفعة Base.
+- كل الحزم تستخدم envelope الإصدار 2.1 المشروح في [عقود البيانات](docs/contracts.md). يظل مصدر Figma محفوظًا؛ لا تختلق variants لتعبئة القائمة.
+- JS الإنتاجي في ملف المكوّن المستقل، بلا inline handlers وبلا globals. الكود المضمّن أعلاه في قسم showcase توثيق عرض تاريخي فقط، ولا ينقل إلى المنتج. أداة العرض المشتركة موجودة في `components/_showcase/`.
+- لغة الصفحة وdir مسؤولية document/partial؛ المكوّن يرث الاتجاه ويستخدم logical properties. لا تعكس ترتيب flex آليًا دون اختبار لأن dir قد يكون حقق الانعكاس بالفعل.
+- قيم الحجم داخل SVG viewBox/path بيانات رسم وليست توكنز CSS لتخطيط العنصر.
+- [قرار النسخ المعتمدة](docs/decisions/001-canonical-components.md) يمنع تحميل نسختي Link أوAccordion معًا.
+
+## Foundation المنفذة — الدفعة الثانية
+
+راجع [عقد Foundation وطريقة التحميل](docs/foundation.md). ترتيب الإنتاج: token.css ثم global.css وlayout.css وaccessibility.css ثم CSS الحزم المطلوبة. لا تحتاج طبقة الأساس JavaScript.
+
+توكنز التصميم أصبحت مركزية. يسمح فقط بمتغيرات variant selection وruntime المحلية المسجلة في standards/foundation-policy.json؛ هذا يوضح الفرق بينها وبين تعريف قيم تصميم محلية. لا تنشئ aliases لأسماء Figma المصدرة عندما يغطيها الاسم العام الموجود.
+
+التعليقات وقوائم pending_tokens في المراجع والتحليلات القديمة تمثل حالة المصدر وقت إنشائها؛ حالة Foundation الحالية يحددها token.css والتقرير batch-2-result.json. لم تتغير حالة compliance إلى passed. `.sr-only` مسؤولية accessibility.css، وليست جزءًا من CSS المكوّن.

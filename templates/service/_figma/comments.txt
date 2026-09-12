@@ -1,0 +1,53 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/46b2c30a-9594-402e-b45f-807645fe4310.svg";
+
+export default function Card() {
+  return (
+    <div className="bg-[var(--background\/background-card,white)] border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex flex-col gap-[var(--card\/card-lg-gap,24px)] items-end p-[var(--global\/spacing-xl,16px)] relative rounded-[var(--radius-lg,16px)] size-full" data-node-id="1:22291" data-name="Card">
+      <div className="bg-[var(--icon\/bg-icon-brand-light,#f3fcf6)] relative rounded-[var(--radius-full,9999px)] shrink-0 size-[48px]" data-node-id="I1:22291;9359:17288" data-name="Size=Large, Color=Brand, Style=Light, Circle=True">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I1:22291;9359:17288;7:850" data-name="Style=Stroke, Type=Rounded">
+          <div className="absolute inset-[5.21%]" data-node-id="I1:22291;9359:17288;7:850;2164:18663" data-name="elements">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+          </div>
+        </div>
+      </div>
+      <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--global\/spacing-md,8px)] items-end justify-center relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-right w-full" data-node-id="I1:22291;9359:17289" data-name="Content">
+        <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-ig,28px)] relative shrink-0 text-[length:var(--size\/text\/typo-size-text-ig,18px)] w-full" dir="auto" data-node-id="I1:22291;9359:17290">
+          التعليقات والاقتراحات
+        </p>
+        <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[length:var(--size\/text\/typo-size-text-md,16px)] w-full" dir="auto" data-node-id="I1:22291;9359:17291">
+          لأي استفسار أو ملاحظات حول الخدمات الحكومية، يرجى ملء المعلومات المطلوبة.
+        </p>
+      </div>
+      <div className="content-stretch flex gap-[var(--global\/spacing-xl,16px)] items-center justify-end relative shrink-0 w-full" data-node-id="I1:22291;9359:17300" data-name="Actions">
+        <div className="bg-[var(--button\/button-background-primary-default,#1b8354)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I1:22291;9359:17301" data-name="Button">
+          <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I1:22291;9359:17301;407:510379" data-name="Text wrapper">
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-oncolor-primary,white)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I1:22291;9359:17301;407:510380">
+              تواصل معنا
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text lg/Bold: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-bold, size: Size/Text/typo-size-text-Ig, weight: 700, lineHeight: Line Height/Text/line-heights-text-Ig, letterSpacing: 0), Text md/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-md, weight: 400, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Text md/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-md, weight: 500, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Style=Stroke, Type=Rounded
+**Node ID:** 1:11507
+
+accept, tick, done
+
+## checkmark-circle-02
+**Node ID:** 1:11506
+
+tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "button",
     "description": "Button component with multiple shapes, sizes, and interactive states."
@@ -1451,7 +1451,7 @@
       "status": "available",
       "files": {
         "details_json": "_figma/btn-subtle/btn-subtle--hover-details.json",
-        "state_image": "_figma/btn-subtle/states/hovered.png"
+        "state_image": "_figma/btn-subtle/states/hovred.png"
       },
       "properties": {
         "root_css_props": {
@@ -2728,5 +2728,7 @@
         "focus_outline_css": null
       }
     }
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

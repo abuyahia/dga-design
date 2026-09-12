@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "quote",
     "description": "A blockquote presentation component for highlighting attributed quotations. Supports RTL/LTR direction, Large/Small sizes, and optional white background surface. Renders as a semantic <blockquote> with decorative quotation marks via CSS pseudo-elements. No interactive states."
@@ -106,12 +106,12 @@
     "mark-open": {
       "element": "::before pseudo-element on .quote",
       "class": null,
-      "description": "Opening decorative quotation mark " (U+201C). Absolute positioned. Not in HTML. CSS content alt text empty to suppress from screen readers."
+      "description": "Opening decorative quotation mark \" (U+201C). Absolute positioned. Not in HTML. CSS content alt text empty to suppress from screen readers."
     },
     "mark-close": {
       "element": "::after pseudo-element on .quote",
       "class": null,
-      "description": "Closing decorative quotation mark " (U+201D). Absolute positioned. Not in HTML. CSS content alt text empty to suppress from screen readers."
+      "description": "Closing decorative quotation mark \" (U+201D). Absolute positioned. Not in HTML. CSS content alt text empty to suppress from screen readers."
     }
   },
   "missing_component_tokens": [
@@ -140,11 +140,7 @@
     "--quote-width-lg",
     "--quote-width-sm"
   ],
-  "variants": {
-    "total_in_manifest": 8,
-    "meaningful_css_variants": 8,
-    "notes": "8 = 2 direction × 2 size × 2 background. All 8 produce distinct CSS output. No axis was discarded. RTL axis is NOT discarded because it produces layout and positioning deltas (unlike text-only components)."
-  },
+  "variants": [],
   "implementation_notes": [
     "Decorative quotation marks \" and \" are rendered via ::before and ::after pseudo-elements, not HTML. CSS content alt text ('/ \"\"') suppresses them from modern screen readers.",
     "Quote mark positions differ between LTR Large, LTR Small, and RTL (same for both RTL sizes). Handled via .quote--sm and [dir='rtl'] selectors.",
@@ -155,5 +151,12 @@
     "No interactive states in this component. No hover, focus, pressed, or disabled CSS needed.",
     "Large width 846px has no Figma variable. Token --quote-width-lg proposed and documented. Fallback 846px hardcoded.",
     "Figma token --Width-width-lg (640px) used for Small. The 'lg' suffix for the Small variant is an upstream naming inconsistency — preserved as-is."
-  ]
+  ],
+  "variant_summary": {
+    "total_in_manifest": 8,
+    "meaningful_css_variants": 8,
+    "notes": "8 = 2 direction × 2 size × 2 background. All 8 produce distinct CSS output. No axis was discarded. RTL axis is NOT discarded because it produces layout and positioning deltas (unlike text-only components)."
+  },
+  "variant_coverage": "axes_only",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

@@ -1,0 +1,203 @@
+const imgFrame1 = "https://www.figma.com/api/mcp/asset/de92ee51-b51a-45ed-b1a2-6ecded4f5b2f.svg";
+const imgElements = "https://www.figma.com/api/mcp/asset/1611af08-026c-4b9b-80b3-c8f13de0fc93.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/bed1f9ff-38d4-4628-8d33-b363b0b7aea5.svg";
+const imgElements2 = "https://www.figma.com/api/mcp/asset/eb0f4901-ae6b-48b4-897b-f8bcb712d595.svg";
+const imgElements3 = "https://www.figma.com/api/mcp/asset/79e605f4-0fdd-4317-84d8-d8a2a535a36f.svg";
+const imgDgaLogo = "https://www.figma.com/api/mcp/asset/bd77b3b5-98bd-4ae8-ba37-e98a75eee4c1.svg";
+
+type CountryFlagsProps = {
+  className?: string;
+  flags?: "Saudi Arabia";
+  shape?: "Square";
+  size?: "Medium";
+};
+
+function CountryFlags({ className, flags = "Saudi Arabia", shape = "Square", size = "Medium" }: CountryFlagsProps) {
+  return (
+    <div className={className || "bg-white h-[14px] overflow-clip relative w-[20px]"} data-node-id="17394:9382">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="17394:19750" data-name="flag">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="17394:19751" data-name="contents">
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[#006923] h-[14px] left-1/2 top-1/2 w-[20px]" data-node-id="17394:19752" data-name="base" />
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[8.392px] left-1/2 top-[calc(50%+0.2px)] w-[14px]" data-node-id="17394:19753">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type DigitalStampProps = {
+  className?: string;
+  device?: "Desktop";
+  opened?: boolean;
+  rtl?: "No";
+};
+
+function DigitalStamp({ className, device = "Desktop", opened = false, rtl = "No" }: DigitalStampProps) {
+  const isNoAndNotOpenedAndDesktop = rtl === "No" && !opened && device === "Desktop";
+  const isNoAndOpenedAndDesktop = rtl === "No" && opened && device === "Desktop";
+  return (
+    <div className={className || `${String.raw`bg-[var(--background\/background-neutral-100,#f3f4f6)] content-stretch flex overflow-clip px-[var(--section\/section-padding,32px)] relative w-[1728px] `}${isNoAndOpenedAndDesktop ? String.raw`flex-col gap-[var(--global\/spacing-5xl,40px)] items-start pb-[var(--card\/card-lg-padding,32px)] pt-[var(--global\/spacing-sm,6px)]` : String.raw`h-[32px] items-center py-[var(--global\/spacing-none,0px)]`}`} id={isNoAndOpenedAndDesktop ? "node-17504_526" : "node-17504_521"}>
+      <div className={`${String.raw`content-stretch flex gap-[var(--global\/spacing-md,8px)] items-center relative shrink-0 `}${isNoAndOpenedAndDesktop ? "w-full" : ""}`} id={isNoAndOpenedAndDesktop ? "node-17812_44586" : "node-17504_522"} data-name="Content">
+        {isNoAndNotOpenedAndDesktop && (
+          <>
+            <div className="bg-white h-[14px] overflow-clip relative shrink-0 w-[20px]" data-node-id="17504:523" data-name="Country Flags">
+              <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="I17504:523;7:15097" data-name="flag">
+                <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="I17504:523;7:15098" data-name="contents">
+                  <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[#006923] h-[14px] left-1/2 top-1/2 w-[20px]" data-node-id="I17504:523;7:15099" data-name="base" />
+                  <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[8.392px] left-1/2 top-[calc(50%+0.2px)] w-[14px]" data-node-id="I17504:523;7:15100">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] whitespace-nowrap" data-node-id="17504:524">
+              A government website registered with the Digital Government Authority.
+            </p>
+            <button className="content-stretch cursor-pointer flex gap-[var(--link\/link-sm-gap,4px)] items-center p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="31215:901" data-name="Link">
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-left whitespace-nowrap" data-node-id="I31215:901;2508:24764">
+                How you know?
+              </p>
+              <div className="relative shrink-0 size-[16px]" data-node-id="I31215:901;12461:2361" data-name="Style=Stroke, Type=Rounded">
+                <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I31215:901;12461:2361;2039:1971" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                </div>
+              </div>
+            </button>
+          </>
+        )}
+        {isNoAndOpenedAndDesktop && (
+          <>
+            <CountryFlags className="bg-white h-[14px] overflow-clip relative shrink-0 w-[20px]" />
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] whitespace-nowrap" data-node-id="17812:44588">
+              A government website registered with the Digital Government Authority.
+            </p>
+            <button className="content-stretch cursor-pointer flex gap-[var(--link\/link-sm-gap,4px)] items-center p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="31215:920" data-name="Link">
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-left whitespace-nowrap" data-node-id="I31215:920;2508:24764">
+                How you know?
+              </p>
+              <div className="relative shrink-0 size-[16px]" data-node-id="I31215:920;12461:2361" data-name="Style=Stroke, Type=Rounded">
+                <div className="absolute inset-[34.37%_21.87%_34.38%_21.88%]" data-node-id="I31215:920;12461:2361;2039:1947" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+                </div>
+              </div>
+            </button>
+          </>
+        )}
+      </div>
+      {isNoAndOpenedAndDesktop && (
+        <>
+          <div className="content-start flex flex-wrap gap-[var(--global\/spacing-xl,16px)] items-start relative shrink-0 w-full" data-node-id="25079:5409" data-name="Extension">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--global\/spacing-3xl,24px)] items-start min-w-px relative" data-node-id="I25079:5409;25072:4996" data-name="Domain Verfication">
+              <div className="border border-[var(--border\/border-success,#067647)] border-solid relative rounded-[var(--radius-full,9999px)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0 size-[48px]" data-node-id="I25079:5409;25072:4997" data-name="Featured icon">
+                <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I25079:5409;25072:4997;7:946" data-name="Style=Stroke, Type=Rounded">
+                  <div className="absolute inset-[13.54%]" data-node-id="I25079:5409;25072:4997;7:946;2145:18105" data-name="elements">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-5xl,40px)] items-start justify-center min-w-px relative" data-node-id="I25079:5409;25072:4998" data-name="Text">
+                <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--global\/spacing-lg,12px)] items-start relative shrink-0 w-full" data-node-id="I25079:5409;25072:4999" data-name="Text Content">
+                  <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[0] relative shrink-0 text-[0px] text-[color:var(--text\/text-default,#161616)] w-full" dir="auto" data-node-id="I25079:5409;25072:5000">
+                    <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[18px]">{`Official Saudi Government websites URL ends with `}</span>
+                    <span className="font-['IBM_Plex_Sans_Arabic:SemiBold'] leading-[28px] not-italic text-[#1b8354] text-[18px]">.gov.sa</span>
+                    <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[18px]">{` `}</span>
+                  </p>
+                  <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-primary-paragraph,#384250)] text-[length:var(--size\/text\/typo-size-text-md,16px)] w-full" data-node-id="I25079:5409;25072:5001">
+                    Website belongs to an official government organization in the Kingdom of Saudi Arabia always ends with .gov.sa .
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--global\/spacing-3xl,24px)] items-start min-w-px relative" data-node-id="I25079:5409;25072:5002" data-name="Security Confirmation">
+              <div className="border border-[var(--border\/border-success,#067647)] border-solid relative rounded-[var(--radius-full,9999px)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0 size-[48px]" data-node-id="I25079:5409;25072:5003" data-name="Featured icon">
+                <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I25079:5409;25072:5003;7:946" data-name="Style=Stroke, Type=Rounded">
+                  <div className="absolute inset-[5.21%_13.54%]" data-node-id="I25079:5409;25072:5003;7:946;2067:24541" data-name="elements">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements3} />
+                  </div>
+                </div>
+              </div>
+              <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-lg,12px)] items-start min-w-px relative self-stretch" data-node-id="I25079:5409;25072:5004" data-name="Text Content">
+                <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] w-full" data-node-id="I25079:5409;25072:5005">
+                  <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)]">{`Official Reliable websites use `}</span>
+                  <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#1b8354]">HTTPS</span>
+                </p>
+                <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-primary-paragraph,#384250)] text-[length:var(--size\/text\/typo-size-text-md,16px)] w-full" data-node-id="I25079:5409;25072:5006">
+                  Ensure the website is using the HTTPS protocol.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--background\/background-white,white)] content-start flex flex-wrap gap-y-[18px] items-start px-[var(--global\/spacing-3xl,24px)] py-[var(--global\/spacing-md,8px)] relative rounded-[var(--radius\/radius-md,8px)] shrink-0 w-full" data-node-id="19848:20655" data-name="Section">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--global\/spacing-3xl,24px)] items-center min-w-px relative" data-node-id="19848:20656" data-name="Content">
+              <div className="h-[30.574px] relative shrink-0 w-[20.986px]" data-node-id="19848:20660" data-name="DGA logo">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDgaLogo} />
+              </div>
+              <div className="content-center flex flex-[1_0_0] flex-wrap gap-[var(--global\/spacing-lg,12px)] items-center min-w-px relative" data-node-id="19848:20657" data-name="Text">
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="19848:20659">
+                  Registered on Digital Government Authority:
+                </p>
+                <div className="content-stretch flex gap-[var(--link\/link-md-gap,8px)] items-center p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="19848:20658" data-name="Link">
+                  <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-md,16px)] underline whitespace-nowrap" data-node-id="I19848:20658;2508:24770">
+                    20230103200
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text sm/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-sm, weight: 500, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Text sm/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-sm, weight: 400, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Shadows/shadow-xs: Effect(type: DROP_SHADOW, color: #1018280D, offset: (0, 1), radius: 2, spread: 0), Text lg/Semibold: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-semibold, size: Size/Text/typo-size-text-Ig, weight: 600, lineHeight: Line Height/Text/line-heights-text-Ig, letterSpacing: 0), Text md/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-md, weight: 400, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Text md/Regular underlined: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-md, weight: 400, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Digital Stamp
+**Node ID:** 17504:520
+
+The Digital Stamp Component is an interface element that ensures users are interacting with a verified and secure source, confirming the integrity and authenticity of government sites. It provides an encrypted digital stamp, reinforcing trust and transparency in the website's content.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp](https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp)
+
+## Flags=Saudi Arabia, Size=Medium, Shape=Square
+**Node ID:** 17394:9382
+
+medium - 20x15
+
+## Link
+**Node ID:** 2508:25804
+
+Links facilitate navigation by allowing users to click (or tap) and navigate users to another location, such as a different site, resource, or section within the same page.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/link](https://design.dga.gov.sa/guidelines/components/actions/link)
+
+## arrow-up-01
+**Node ID:** 13758:242553
+
+drop up-arrow, up arrow, arrow, upper direction arrow, increase arrow
+
+## Extension
+**Node ID:** 25079:5361
+
+The purpose of extensions is to provide clear indications of the authenticity of a website. Key details, such as domain confirmation (e.g., .gov.sa, .edu.sa, .med.sa, .org.sa, .sch.sa), HTTPS usage, and Digital Government Authority registration, reinforce user trust and security.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp](https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp)
+
+## link-04
+**Node ID:** 13758:242380
+
+link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

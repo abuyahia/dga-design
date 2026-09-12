@@ -13,8 +13,7 @@
   padding: 0;
   margin: 0;
   list-style: none;
-  /* TODO: --pagination-items-gap missing in token.css. Proposed mapping: var(--spacing-paginationpagination-items-padding) → 8px */
-  gap: var(--pagination-items-gap, 8px);
+  gap: var(--pagination-items-gap);
 }
 
 /* ─── Navigation buttons (prev / next) ──────────────────────── */
@@ -27,32 +26,27 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  /* TODO: --pagination-item-radius missing in token.css. Proposed mapping: var(--Radius-radius-sm) → 4px */
-  border-radius: var(--pagination-item-radius, 4px);
+  border-radius: var(--pagination-item-radius);
   color: currentColor;
   padding: 0;
 }
 
 .pagination__nav:hover {
-  /* TODO: --pagination-item-hover-bg missing in token.css. Proposed mapping: var(--Background-background-neutral-100) → #F3F4F6 */
-  background: var(--pagination-item-hover-bg, var(--Background-background-neutral-100, #F3F4F6));
+  background: var(--pagination-item-hover-bg);
 }
-
-/* TODO: --pagination-item-pressed-bg missing in token.css. Proposed mapping: var(--Background-background-neutral-200) */
 .pagination__nav:active {
-  background: var(--pagination-item-pressed-bg, var(--Background-background-neutral-100, #F3F4F6));
+  background: var(--pagination-item-pressed-bg);
 }
 
 .pagination__nav:focus-visible,
 .pagination__nav:focus {
-  /* TODO: --pagination-item-focus-border-width and --pagination-item-focus-border-color missing in token.css */
-  outline: var(--pagination-item-focus-border-width, 2px) solid var(--pagination-item-focus-border-color, var(--Border-border-black, #161616));
+  outline: var(--pagination-item-focus-border-width) solid var(--pagination-item-focus-border-color);
   outline-offset: 0;
 }
 
 .pagination__nav:disabled,
 .pagination__nav[aria-disabled="true"] {
-  opacity: 0.4;
+  opacity: var(--opacity-disabled);
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -69,13 +63,10 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  /* TODO: --pagination-item-radius missing in token.css */
-  border-radius: var(--pagination-item-radius, 4px);
-  /* TODO: --pagination-item-text-color missing in token.css. Proposed mapping: var(--Text-text-default) */
-  color: var(--pagination-item-text-color, var(--Text-text-default, #161616));
-  /* TODO: --pagination-font-family missing in token.css. Proposed mapping: var(--Font-Family-font-family-text) */
-  font-family: var(--pagination-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"));
-  font-weight: 400;
+  border-radius: var(--pagination-item-radius);
+  color: var(--pagination-item-text-color);
+  font-family: var(--pagination-font-family);
+  font-weight: var(--font-weight-body);
   font-style: normal;
   padding: 0;
 }
@@ -83,80 +74,71 @@
 /* ─── Size: Large (default assembly size) ────────────────────── */
 
 .pagination--lg .pagination__nav {
-  width: var(--pagination-nav-lg-size, 40px);
-  height: var(--pagination-nav-lg-size, 40px);
-  min-width: var(--pagination-nav-lg-size, 40px);
-  min-height: var(--pagination-nav-lg-size, 40px);
+  width: var(--pagination-nav-lg-size);
+  height: var(--pagination-nav-lg-size);
+  min-width: var(--pagination-nav-lg-size);
+  min-height: var(--pagination-nav-lg-size);
 }
 
 .pagination--lg .pagination__item {
-  /* TODO: --pagination-item-lg-padding missing in token.css. Proposed mapping: var(--spacing-paginationpagination-item-lg-padding) → 8px */
-  padding: var(--pagination-item-lg-padding, 8px);
-  height: var(--pagination-item-lg-size, 40px);
-  min-width: var(--pagination-item-lg-size, 40px);
-  /* TODO: --pagination-item-lg-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-md) → 16px */
-  font-size: var(--pagination-item-lg-font-size, var(--Size-Text-typo-size-text-md, 16px));
-  /* TODO: --pagination-item-lg-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-md) → 24px */
-  line-height: var(--pagination-item-lg-line-height, var(--Line-Height-Text-line-heights-text-md, 24px));
+  padding: var(--pagination-item-lg-padding);
+  height: var(--pagination-item-lg-size);
+  min-width: var(--pagination-item-lg-size);
+  font-size: var(--pagination-item-lg-font-size);
+  line-height: var(--pagination-item-lg-line-height);
 }
 
 /* ─── Size: Medium ───────────────────────────────────────────── */
 
 .pagination--md .pagination__nav {
-  width: var(--pagination-nav-md-size, 32px);
-  height: var(--pagination-nav-md-size, 32px);
-  min-width: var(--pagination-nav-md-size, 32px);
-  min-height: var(--pagination-nav-md-size, 32px);
+  width: var(--pagination-nav-md-size);
+  height: var(--pagination-nav-md-size);
+  min-width: var(--pagination-nav-md-size);
+  min-height: var(--pagination-nav-md-size);
 }
 
 .pagination--md .pagination__item {
-  /* TODO: --pagination-item-md-padding missing in token.css. Proposed mapping: var(--spacing-paginationpagination-item-md-padding) → 6px */
-  padding: var(--pagination-item-md-padding, 6px);
-  width: var(--pagination-item-md-size, 32px);
-  height: var(--pagination-item-md-size, 32px);
-  /* TODO: --pagination-item-md-font-size missing in token.css */
-  font-size: var(--pagination-item-md-font-size, var(--Size-Text-typo-size-text-md, 16px));
-  /* TODO: --pagination-item-md-line-height missing in token.css */
-  line-height: var(--pagination-item-md-line-height, var(--Line-Height-Text-line-heights-text-md, 24px));
+  padding: var(--pagination-item-md-padding);
+  width: var(--pagination-item-md-size);
+  height: var(--pagination-item-md-size);
+  font-size: var(--pagination-item-md-font-size);
+  line-height: var(--pagination-item-md-line-height);
 }
 
 /* ─── Size: Small ────────────────────────────────────────────── */
 
 .pagination--sm .pagination__nav {
-  width: var(--pagination-nav-sm-size, 24px);
-  height: var(--pagination-nav-sm-size, 24px);
-  min-width: var(--pagination-nav-sm-size, 24px);
-  min-height: var(--pagination-nav-sm-size, 24px);
+  width: var(--pagination-nav-sm-size);
+  height: var(--pagination-nav-sm-size);
+  min-width: var(--pagination-nav-sm-size);
+  min-height: var(--pagination-nav-sm-size);
 }
 
 .pagination--sm .pagination__item {
-  /* TODO: --pagination-item-sm-padding missing in token.css. Proposed mapping: var(--spacing-paginationpagination-item-sm-padding) → 4px */
-  padding: var(--pagination-item-sm-padding, 4px);
-  height: var(--pagination-item-sm-size, 24px);
-  min-width: var(--pagination-item-sm-size, 24px);
-  /* TODO: --pagination-item-sm-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-sm) → 14px */
-  font-size: var(--pagination-item-sm-font-size, var(--Size-Text-typo-size-text-sm, 14px));
-  /* TODO: --pagination-item-sm-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-sm) → 20px */
-  line-height: var(--pagination-item-sm-line-height, var(--Line-Height-Text-line-heights-text-sm, 20px));
+  padding: var(--pagination-item-sm-padding);
+  height: var(--pagination-item-sm-size);
+  min-width: var(--pagination-item-sm-size);
+  font-size: var(--pagination-item-sm-font-size);
+  line-height: var(--pagination-item-sm-line-height);
 }
 
 /* ─── State: Hovered ─────────────────────────────────────────── */
 
 .pagination__item:hover {
-  background: var(--pagination-item-hover-bg, var(--Background-background-neutral-100, #F3F4F6));
+  background: var(--pagination-item-hover-bg);
 }
 
 /* ─── State: Pressed (not in Figma — best-practice) ─────────── */
 
 .pagination__item:active {
-  background: var(--pagination-item-pressed-bg, var(--Background-background-neutral-100, #F3F4F6));
+  background: var(--pagination-item-pressed-bg);
 }
 
 /* ─── State: Focused ─────────────────────────────────────────── */
 
 .pagination__item:focus-visible,
 .pagination__item:focus {
-  outline: var(--pagination-item-focus-border-width, 2px) solid var(--pagination-item-focus-border-color, var(--Border-border-black, #161616));
+  outline: var(--pagination-item-focus-border-width) solid var(--pagination-item-focus-border-color);
   outline-offset: 0;
 }
 
@@ -164,9 +146,8 @@
 
 .pagination__item:disabled,
 .pagination__item[aria-disabled="true"] {
-  /* TODO: --pagination-item-disabled-text missing in token.css */
-  color: var(--pagination-item-disabled-text, var(--Text-text-default, #161616));
-  opacity: 0.4;
+  color: var(--pagination-item-disabled-text);
+  opacity: var(--opacity-disabled);
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -180,7 +161,7 @@
 
 .pagination__item[aria-current="page"],
 .pagination__item--current {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   overflow: visible;
 }
 
@@ -190,33 +171,31 @@
   content: '';
   position: absolute;
   bottom: 0;
-  height: 3px;
-  /* TODO: --pagination-item-current-indicator-bg missing in token.css. Proposed mapping: var(--Background-background-primary) → #1B8354 */
-  background: var(--pagination-item-current-indicator-bg, var(--Background-background-primary, #1B8354));
-  /* TODO: --pagination-item-current-indicator-radius missing in token.css. Proposed mapping: var(--radius-radius-full) → 9999px */
-  border-radius: var(--pagination-item-current-indicator-radius, 9999px);
+  height: var(--pagination-item-after-height);
+  background: var(--pagination-item-current-indicator-bg);
+  border-radius: var(--pagination-item-current-indicator-radius);
 }
 
 .pagination--lg .pagination__item[aria-current="page"]::after,
 .pagination--lg .pagination__item--current::after {
-  left: var(--pagination-item-lg-padding, 8px);
-  width: calc(100% - var(--pagination-item-lg-padding, 8px) * 2);
+  inset-inline-start: var(--pagination-item-lg-padding);
+  width: calc(100% - var(--pagination-item-lg-padding) * 2);
 }
 
 .pagination--md .pagination__item[aria-current="page"]::after,
 .pagination--md .pagination__item--current::after {
   /* Deviation: Figma shows left=4px but padding is 6px. Using padding-based calc for consistency. See analysis.md. */
-  left: var(--pagination-item-md-padding, 6px);
-  width: calc(100% - var(--pagination-item-md-padding, 6px) * 2);
+  inset-inline-start: var(--pagination-item-md-padding);
+  width: calc(100% - var(--pagination-item-md-padding) * 2);
   /* Deviation: Figma shows bottom=2.5px — corrected to 0 to avoid sub-pixel inconsistency. See analysis.md. */
   bottom: 0;
 }
 
 .pagination--sm .pagination__item[aria-current="page"]::after,
 .pagination--sm .pagination__item--current::after {
-  left: var(--pagination-item-sm-padding, 4px);
-  width: calc(100% - var(--pagination-item-sm-padding, 4px) * 2);
-  bottom: -1px;
+  inset-inline-start: var(--pagination-item-sm-padding);
+  width: calc(100% - var(--pagination-item-sm-padding) * 2);
+  bottom: calc(-1 * var(--pagination-item-after-bottom));
 }
 
 /* ─── Overflow wrapper (maps to _PaginationItem Figma component root) ─── */
@@ -232,21 +211,20 @@
 /* ─── State: Overflow / Ellipsis trigger ─────────────────────── */
 
 .pagination__item--overflow {
-  /* TODO: --pagination-item-overflow-border-color missing in token.css. Proposed mapping: var(--Border-border-black) → #161616 */
-  border: 1px solid var(--pagination-item-overflow-border-color, var(--Border-border-black, #161616));
+  border: var(--border-width-thin) solid var(--pagination-item-overflow-border-color);
   cursor: pointer;
   pointer-events: auto;
   overflow: visible;
 }
 
 .pagination__item--overflow:hover {
-  background: var(--pagination-item-hover-bg, var(--Background-background-neutral-100, #F3F4F6));
+  background: var(--pagination-item-hover-bg);
 }
 
 /* Opened state — 2px border + neutral background */
 .pagination__item--overflow[aria-expanded="true"] {
-  border-width: 2px;
-  background: var(--pagination-item-overflow-open-bg, var(--Background-background-neutral-100, #F3F4F6));
+  border-width: var(--border-width-thick);
+  background: var(--pagination-item-overflow-open-bg);
 }
 
 /* ─── Overflow dropdown panel ────────────────────────────────── */
@@ -255,20 +233,15 @@
   display: none;
   position: absolute;
   /* Panel left=8px from trigger in all sizes: Figma right=-28px (lg) / -44px (sm) both resolve to left=8px */
-  top: calc(100% + 4px);
-  left: 8px;
-  /* TODO: --pagination-overflow-panel-z-index missing in token.css */
-  z-index: var(--pagination-overflow-panel-z-index, 100);
+  top: calc(100% + var(--space-4));
+  inset-inline-start: var(--space-8);
+  z-index: var(--pagination-overflow-panel-z-index);
   flex-direction: column;
-  /* TODO: --pagination-overflow-panel-padding missing in token.css. Proposed mapping: var(--spacing-paginationpagination-item-sm-padding) → 4px */
-  padding: var(--pagination-overflow-panel-padding, 4px);
-  border-radius: var(--pagination-item-radius, 4px);
-  /* TODO: --pagination-overflow-panel-border-color missing in token.css. Proposed mapping: var(--Border-border-neutral-primary) → #D2D6DB */
-  border: 1px solid var(--pagination-overflow-panel-border-color, var(--Border-border-neutral-primary, #D2D6DB));
-  /* TODO: --pagination-overflow-panel-bg missing in token.css. Proposed mapping: var(--Background-background-white) → #FFF */
-  background: var(--pagination-overflow-panel-bg, var(--Background-background-white, #FFF));
-  /* TODO: --pagination-overflow-panel-shadow missing in token.css. Proposed mapping: global elevation tokens. */
-  box-shadow: var(--pagination-overflow-panel-shadow, 0 20px 24px -4px rgba(16, 24, 40, 0.08), 0 8px 8px -4px rgba(16, 24, 40, 0.03));
+  padding: var(--pagination-overflow-panel-padding);
+  border-radius: var(--pagination-item-radius);
+  border: var(--border-width-thin) solid var(--pagination-overflow-panel-border-color);
+  background: var(--pagination-overflow-panel-bg);
+  box-shadow: var(--pagination-overflow-panel-shadow);
   list-style: none;
   margin: 0;
 }
@@ -289,47 +262,42 @@
 
 .pagination__overflow-option {
   display: flex;
-  /* TODO: --pagination-overflow-option-width missing in token.css */
-  width: var(--pagination-overflow-option-width, 60px);
-  /* TODO: --pagination-overflow-option-padding missing in token.css. Proposed mapping: var(--Global-spacing-md) → 8px */
-  padding: var(--pagination-overflow-option-padding, 8px);
+  width: var(--pagination-overflow-option-width);
+  padding: var(--pagination-overflow-option-padding);
   align-items: center;
-  /* TODO: --pagination-overflow-option-gap missing in token.css. Proposed mapping: var(--Global-spacing-md) → 8px */
-  gap: var(--pagination-overflow-option-gap, 8px);
-  border-radius: var(--pagination-item-radius, 4px);
+  gap: var(--pagination-overflow-option-gap);
+  border-radius: var(--pagination-item-radius);
   border: none;
   background: transparent;
   cursor: pointer;
-  font-family: var(--pagination-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"));
-  /* TODO: --pagination-overflow-option-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-sm) → 14px */
-  font-size: var(--pagination-overflow-option-font-size, var(--Size-Text-typo-size-text-sm, 14px));
-  /* TODO: --pagination-overflow-option-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-sm) → 20px */
-  line-height: var(--pagination-overflow-option-line-height, var(--Line-Height-Text-line-heights-text-sm, 20px));
-  color: var(--pagination-item-text-color, var(--Text-text-default, #161616));
-  font-weight: 400;
+  font-family: var(--pagination-font-family);
+  font-size: var(--pagination-overflow-option-font-size);
+  line-height: var(--pagination-overflow-option-line-height);
+  color: var(--pagination-item-text-color);
+  font-weight: var(--font-weight-body);
   font-style: normal;
   text-align: start;
 }
 
 .pagination__overflow-option:hover {
-  background: var(--pagination-item-hover-bg, var(--Background-background-neutral-100, #F3F4F6));
+  background: var(--pagination-item-hover-bg);
 }
 
 .pagination__overflow-option:focus-visible,
 .pagination__overflow-option:focus {
-  outline: var(--pagination-item-focus-border-width, 2px) solid var(--pagination-item-focus-border-color, var(--Border-border-black, #161616));
+  outline: var(--pagination-item-focus-border-width) solid var(--pagination-item-focus-border-color);
   outline-offset: 0;
 }
 
 .pagination__overflow-option--selected {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 /* Check icon — visible only on selected option */
 .pagination__overflow-check {
   flex-shrink: 0;
-  width: 20px;
-  height: 20px;
+  width: var(--space-20);
+  height: var(--space-20);
 }
 
 /* ─── RTL support ────────────────────────────────────────────── */

@@ -1,0 +1,89 @@
+.error-state {
+  min-block-size: 696px;
+  padding-block: var(--space-80);
+}
+
+.error-state__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-64);
+}
+
+.error-state__illustration {
+  position: relative;
+  inline-size: min(100%, 458px);
+  aspect-ratio: 458 / 324;
+  flex: 0 0 auto;
+}
+
+.error-state__code {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--gray-700);
+  font-size: 200px;
+  font-weight: var(--font-weight-heading);
+  line-height: 1;
+  letter-spacing: var(--trk-display-2xl);
+}
+
+.error-state__symbol {
+  position: absolute;
+  display: block;
+  block-size: auto;
+}
+
+.error-state__symbol--sm { inline-size: var(--space-16); }
+.error-state__symbol--lg { inline-size: var(--space-24); }
+.error-state__symbol--alert-one { inset-block-start: 9%; left: 95%; }
+.error-state__symbol--alert-two { inset-block-start: 82%; left: 69%; }
+.error-state__symbol--cancel-one { inset-block-start: 86%; left: 18%; }
+.error-state__symbol--cancel-two { inset-block-start: 40%; left: 3.5%; }
+.error-state__symbol--circle-one { inset-block-start: 9%; left: 45%; }
+.error-state__symbol--circle-two { inset-block-start: 95%; left: 32%; }
+.error-state__symbol--square-one { inset-block-start: 36%; left: 95%; }
+.error-state__symbol--square-two { inset-block-start: 83%; left: 86%; }
+.error-state__symbol--cancel-alt-one { inset-block-start: 0; left: 61%; }
+.error-state__symbol--cancel-alt-two { inset-block-start: 21%; left: 12.5%; }
+.error-state__symbol--unavailable-one { inset-block-start: 92%; left: 56%; }
+.error-state__symbol--unavailable-two { inset-block-start: 8%; left: 77%; }
+.error-state__symbol--unavailable-three { inset-block-start: 61%; left: 96.5%; }
+.error-state__symbol--search-one { inset-block-start: 66%; left: 0; }
+.error-state__symbol--search-two { inset-block-start: 6.5%; left: 23%; }
+
+.error-state__message,
+.error-state__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-state__message { gap: var(--space-32); }
+.error-state__copy { gap: var(--space-16); text-align: center; }
+.error-state__copy h1 {
+  margin: 0;
+  font-size: var(--fs-display-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--lh-display-xs);
+}
+.error-state__copy p {
+  max-inline-size: calc(var(--width-xxs) - var(--space-16));
+  margin: 0;
+  font-size: var(--fs-text-lg);
+  line-height: var(--lh-text-lg);
+}
+.error-state .btn { text-decoration: none; }
+
+@media (max-width: 767px) {
+  .error-state { min-block-size: 588px; padding-block: var(--space-40); }
+  .error-state__illustration {
+    inline-size: min(100%, 332px);
+    aspect-ratio: 332 / 239;
+  }
+  .error-state__code { font-size: 90px; }
+  .error-state__symbol--sm { inline-size: var(--space-12); }
+  .error-state__symbol--lg { inline-size: var(--space-16); }
+  .error-state__copy p { max-inline-size: 100%; }
+}

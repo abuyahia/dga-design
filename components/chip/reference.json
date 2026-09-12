@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "chip",
     "description": "Compact interactive label for filtering, tagging, and categorization."
@@ -233,5 +233,7 @@
     { "id": "neutral-on-color-sm-rounded-selected", "axes": { "style": "neutral", "size": "small",  "state": "selected", "rounded": true, "on-color": true }, "status": "available", "css_modifiers": [".chip--neutral", ".chip--on-color", ".chip--sm", ".chip--rounded"],       "properties": { "root_css_props": { "background": "var(--chip-on-color-bg-selected)", "border-radius": "var(--chip-radius-rounded)" }, "text_css": { "color": "var(--chip-on-color-text)" }, "focus_outline_css": null } },
     { "id": "neutral-on-color-sm-rounded-disabled", "axes": { "style": "neutral", "size": "small",  "state": "disabled", "rounded": true, "on-color": true }, "status": "available", "css_modifiers": [".chip--neutral", ".chip--on-color", ".chip--sm", ".chip--rounded"],       "properties": { "root_css_props": { "background": "var(--chip-on-color-bg-disabled)", "border-radius": "var(--chip-radius-rounded)", "cursor": "not-allowed", "pointer-events": "none" }, "text_css": { "color": "var(--chip-on-color-text-disabled)" }, "focus_outline_css": null } }
 
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

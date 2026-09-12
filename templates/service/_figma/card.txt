@@ -1,0 +1,419 @@
+const imgClipPathGroup = "https://www.figma.com/api/mcp/asset/3499d78a-38d0-4e8b-a7a8-7b32d9080159.svg";
+const imgClipPathGroup1 = "https://www.figma.com/api/mcp/asset/61966fe3-4afc-4055-93a5-336c933a45b0.svg";
+const imgClipPathGroup2 = "https://www.figma.com/api/mcp/asset/aed49313-c4b6-4d8d-8f64-8394246bbd6e.svg";
+const imgClipPathGroup3 = "https://www.figma.com/api/mcp/asset/6237deac-72eb-4eab-b970-e28bf0e28ae7.svg";
+const imgClipPathGroup4 = "https://www.figma.com/api/mcp/asset/eacf7027-8372-43d7-9600-f4ce36155d2e.svg";
+const imgClipPathGroup5 = "https://www.figma.com/api/mcp/asset/758024a7-2324-41b8-aa2c-87ff9e639bfd.svg";
+const imgClipPathGroup6 = "https://www.figma.com/api/mcp/asset/bd284ee1-9239-4736-b6f8-fb8482105b0b.svg";
+const imgClipPathGroup7 = "https://www.figma.com/api/mcp/asset/e1285cf1-9aef-4f99-94c3-288b5f272818.svg";
+const imgClipPathGroup8 = "https://www.figma.com/api/mcp/asset/56d82f7d-cf00-4d49-832f-61732588ed98.svg";
+const imgClipPathGroup9 = "https://www.figma.com/api/mcp/asset/fabbb14a-2aef-493c-b85e-dfbabe7197d7.svg";
+const imgClipPathGroup10 = "https://www.figma.com/api/mcp/asset/e7ef8e36-7f43-453f-88cd-55505da2017e.svg";
+const imgClipPathGroup11 = "https://www.figma.com/api/mcp/asset/473a3b22-65c4-484e-b1e8-1ec3eff3dc38.svg";
+const imgClipPathGroup12 = "https://www.figma.com/api/mcp/asset/4a92dc31-d672-49d3-beba-f957c0b3b108.svg";
+const imgClipPathGroup13 = "https://www.figma.com/api/mcp/asset/757671cb-2afd-4725-8c4e-742dcff73da2.svg";
+const imgClipPathGroup14 = "https://www.figma.com/api/mcp/asset/cc00de78-0c97-4dd5-a5f8-59bdd5cd203b.svg";
+const imgClipPathGroup15 = "https://www.figma.com/api/mcp/asset/33d1356d-44db-421e-bbab-cb2dfda325d3.svg";
+const imgClipPathGroup16 = "https://www.figma.com/api/mcp/asset/31083fa1-5985-4ff5-b870-d56d570203ce.svg";
+const imgClipPathGroup17 = "https://www.figma.com/api/mcp/asset/bef5c4da-ef18-466d-9385-a034c1f2d06c.svg";
+const imgClipPathGroup18 = "https://www.figma.com/api/mcp/asset/be8aa01b-697a-45b3-99bf-4c1a4a59081f.svg";
+const imgClipPathGroup19 = "https://www.figma.com/api/mcp/asset/9632070c-ad64-43bc-9425-52839330ab85.svg";
+const imgClipPathGroup20 = "https://www.figma.com/api/mcp/asset/7a53da74-6b7d-4e37-9547-60f54b9f377d.svg";
+const imgClipPathGroup21 = "https://www.figma.com/api/mcp/asset/48890754-4f62-4b9a-bd06-fa2b5fd95449.svg";
+const imgClipPathGroup22 = "https://www.figma.com/api/mcp/asset/7453f47a-a0b4-4c30-928c-03873e9caad7.svg";
+const imgClipPathGroup23 = "https://www.figma.com/api/mcp/asset/aae0cb53-2455-466e-bc7b-259fd34c59d1.svg";
+const imgClipPathGroup24 = "https://www.figma.com/api/mcp/asset/355148a9-21ab-4cb3-9b2a-8f05ee6c75fc.svg";
+const imgClipPathGroup25 = "https://www.figma.com/api/mcp/asset/233b8577-b11b-443b-bb2d-8c09215b2bf2.svg";
+const imgApple = "https://www.figma.com/api/mcp/asset/6d62a797-d134-461f-9295-6c402e35177c.svg";
+const imgPlaystore = "https://www.figma.com/api/mcp/asset/726f8016-f7fe-40d5-8539-369b8eabacfc.svg";
+const imgPath90 = "https://www.figma.com/api/mcp/asset/13c81b35-6372-4dea-b064-3784778d7ab7.svg";
+const imgElements = "https://www.figma.com/api/mcp/asset/fe21c343-f402-40a9-a8aa-7cd721b905eb.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/40bcae04-3ce1-44b0-8615-36b41a015fe4.svg";
+const imgElements2 = "https://www.figma.com/api/mcp/asset/fedd5996-29da-4ab0-ab1f-91f86dfa90c1.svg";
+const imgElements3 = "https://www.figma.com/api/mcp/asset/95de20d7-9e2f-45b4-86c0-5522d1b464e0.svg";
+const imgStCpay = "https://www.figma.com/api/mcp/asset/676ecb11-2c0e-47ae-b3fa-bd96d4616bbd.svg";
+const imgMada = "https://www.figma.com/api/mcp/asset/8f6663f6-c928-4eb3-b1ae-f8285add0f0e.svg";
+const imgLine1 = "https://www.figma.com/api/mcp/asset/43a4eed1-9c8b-4faa-a068-e202dde43e9c.svg";
+const imgElements4 = "https://www.figma.com/api/mcp/asset/6a570c99-9dd5-41b5-a12c-b5a96c9bbeb8.svg";
+const imgElements5 = "https://www.figma.com/api/mcp/asset/6b849082-9d0c-4585-b4cb-597f10a881ad.svg";
+const imgElements6 = "https://www.figma.com/api/mcp/asset/42a657d4-9751-4142-bde1-17d5b2c47ada.svg";
+
+function HuaweiAppgallerySeeklogo1({ className }: { className?: string }) {
+  return (
+    <div className={className || "h-[35.745px] overflow-clip relative w-[120px]"} data-node-id="1:9519" data-name="huawei-appgallery-seeklogo 1">
+      <div className="absolute contents inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9520" data-name="Group">
+        <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9521" data-name="Clip path group">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup} />
+        </div>
+        <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9525" data-name="Clip path group">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup1} />
+        </div>
+        <div className="absolute contents inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9529" data-name="Group">
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9530" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup2} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9534" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup3} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9538" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup4} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9542" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup5} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9546" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup6} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9550" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup7} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9554" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup8} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9558" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup9} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9562" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup10} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9566" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup11} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9570" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup12} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9574" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup13} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9578" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup14} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9582" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup15} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9586" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup16} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9590" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup17} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9594" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup18} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9598" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup19} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9602" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup20} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9606" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup21} />
+          </div>
+          <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9610" data-name="Clip path group">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup22} />
+          </div>
+        </div>
+        <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9614" data-name="Clip path group">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup23} />
+        </div>
+        <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9618" data-name="Clip path group">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup24} />
+        </div>
+        <div className="absolute inset-[0_0.35%_-0.01%_0.36%]" data-node-id="1:9622" data-name="Clip path group">
+          <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgClipPathGroup25} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type StoreDownloadButtonProps = {
+  className?: string;
+  store?: "App Store" | "Google Play";
+  type?: "Dark";
+};
+
+function StoreDownloadButton({ className, store = "App Store", type = "Dark" }: StoreDownloadButtonProps) {
+  const isAppStoreAndDark = store === "App Store" && type === "Dark";
+  const isGooglePlayAndDark = store === "Google Play" && type === "Dark";
+  return (
+    <div className={className || "bg-black border border-[#a6a6a6] border-solid h-[40px] overflow-clip relative rounded-[6px] w-[120px]"} id={isGooglePlayAndDark ? "node-1_9494" : "node-1_9487"}>
+      {isAppStoreAndDark && (
+        <>
+          <div className="absolute h-[24px] left-[7px] top-[7px] w-[20px]" data-node-id="1:9488" data-name="Apple">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgApple} />
+          </div>
+          <div className="-translate-y-1/2 [word-break:break-word] absolute content-stretch flex flex-col items-start left-[35px] not-italic text-white top-1/2 w-[78px]" data-node-id="1:9491" data-name="Content">
+            <p className="font-['SF_Compact_Text:Medium'] leading-[9px] relative shrink-0 text-[9px] w-full" data-node-id="1:9492">
+              Download on the
+            </p>
+            <p className="font-['SF_Compact_Display:Medium'] leading-none relative shrink-0 text-[18px] tracking-[-0.47px] w-full" data-node-id="1:9493">
+              App Store
+            </p>
+          </div>
+        </>
+      )}
+      {isGooglePlayAndDark && (
+        <>
+          <div className="absolute h-[24px] left-[7px] top-[7px] w-[21px]" data-node-id="1:9495" data-name="Playstore">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgPlaystore} />
+          </div>
+          <div className="absolute content-stretch flex flex-col gap-[3px] items-start left-[35px] top-[4px]" data-node-id="1:9500" data-name="Content">
+            <p className="[word-break:break-word] font-['Product_Sans:Regular'] leading-[normal] min-w-full not-italic relative shrink-0 text-[10px] text-white uppercase w-[min-content]" data-node-id="1:9501">
+              GET IT ON
+            </p>
+            <div className="flex items-center justify-center relative shrink-0" data-node-id="1:9502">
+              <div className="-scale-y-100 flex-none">
+                <div className="h-[15px] relative w-[74px]" data-name="path90">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgPath90} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+export default function ServiceCard() {
+  return (
+    <div className="bg-[var(--background\/background-white,white)] border border-[var(--border\/border-background-neutral,#d2d6db)] border-solid content-stretch flex flex-col gap-[var(--global\/spacing-3xl,24px)] items-start p-[var(--global\/spacing-5xl,40px)] relative rounded-[var(--radius\/radius-lg,16px)] size-full" data-node-id="1:22171" data-name="Service Card">
+      <div className="content-stretch flex flex-col gap-[var(--global\/spacing-xl,16px)] items-start relative shrink-0 w-full" data-node-id="1:22172" data-name="Service Info">
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start relative shrink-0 w-full" data-node-id="1:22173" data-name="Content">
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-xs,4px)] items-start leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-px relative text-[color:var(--text\/text-display,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right" data-node-id="1:22174" data-name="Content">
+            <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] relative shrink-0 w-full" dir="auto" data-node-id="1:22176">
+              الفئة المستهدفة
+            </p>
+            <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] relative shrink-0 w-full" dir="auto" data-node-id="1:22175">
+              المواطنين وجنسيات دول مجلس التعاون الخليجي والمستثمرين والأجانب
+            </p>
+          </div>
+          <div className="relative shrink-0 size-[24px]" data-node-id="1:22178" data-name="user">
+            <div className="absolute inset-[5.21%_9.37%]" data-node-id="I1:22178;2067:46873" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start relative shrink-0 w-full" data-node-id="1:22179" data-name="Content">
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-xs,4px)] items-start leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-px relative text-[color:var(--text\/text-display,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right" data-node-id="1:22180" data-name="Content">
+            <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] relative shrink-0 w-full" dir="auto" data-node-id="1:22182">
+              مدة الخدمة
+            </p>
+            <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] relative shrink-0 w-full" dir="auto" data-node-id="1:22181">
+              5.0 ايام
+            </p>
+          </div>
+          <div className="relative shrink-0 size-[24px]" data-node-id="1:22184" data-name="clock-01">
+            <div className="absolute inset-[5.21%]" data-node-id="I1:22184;4028:2420" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start relative shrink-0 w-full" data-node-id="1:22185" data-name="Content">
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-xs,4px)] items-start leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-px relative text-[color:var(--text\/text-display,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right" data-node-id="1:22186" data-name="Content">
+            <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] relative shrink-0 w-full" dir="auto" data-node-id="1:22188">
+              قنوات الخدمة
+            </p>
+            <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] relative shrink-0 w-full" dir="auto" data-node-id="1:22187">
+              تطبيق الويب والجوال
+            </p>
+          </div>
+          <div className="relative shrink-0 size-[24px]" data-node-id="1:22190" data-name="computer-phone-sync">
+            <div className="absolute inset-[5.21%]" data-node-id="I1:22190;4028:3881" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start relative shrink-0 w-full" data-node-id="1:22191" data-name="Content">
+          <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-xs,4px)] items-start leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-px relative text-[color:var(--text\/text-display,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right" data-node-id="1:22192" data-name="Content">
+            <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] relative shrink-0 w-full" dir="auto" data-node-id="1:22194">
+              تكلفة الخدمة
+            </p>
+            <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] relative shrink-0 w-full" dir="auto" data-node-id="1:22193">
+              مجانًا
+            </p>
+          </div>
+          <div className="overflow-clip relative shrink-0 size-[24px]" data-node-id="1:22196" data-name="riyal-circular">
+            <div className="absolute flex inset-[5.21%] items-center justify-center" data-node-id="I1:22196;3509:66816" style={{ containerType: "size" }}>
+              <div className="-rotate-180 -scale-x-100 flex-none h-[100cqh] w-[100cqw]">
+                <div className="relative size-full" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements3} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start justify-end relative shrink-0 w-full" data-node-id="1:22197" data-name="Content">
+          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-md,8px)] items-end min-w-px relative" data-node-id="1:22198" data-name="Content">
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-ig,28px)] min-w-full relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] text-right w-[min-content]" dir="auto" data-node-id="1:22199">
+              قنوات الدفع
+            </p>
+            <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start relative shrink-0" data-node-id="1:22200" data-name="Payments">
+              <div className="bg-[var(--background\/background-white,white)] border-[1.085px] border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid h-[43.405px] relative rounded-[6.511px] shrink-0 w-[62.937px]" data-node-id="1:22201" data-name="Payment method icon">
+                <div className="absolute inset-[calc(34.56%-0.34px)_calc(12.05%-0.82px)_calc(33.19%-0.36px)_calc(12.3%-0.82px)]" data-node-id="I1:22201;1452:1583" data-name="STCpay">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgStCpay} />
+                </div>
+              </div>
+              <div className="bg-[var(--background\/background-white,white)] border-[1.085px] border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid h-[43.405px] relative rounded-[6.511px] shrink-0 w-[62.937px]" data-node-id="1:22202" data-name="Payment method icon">
+                <div className="absolute inset-[calc(31.22%-0.41px)_calc(9.4%-0.88px)_calc(29.98%-0.43px)_calc(10.35%-0.86px)]" data-node-id="I1:22202;140:2511" data-name="Mada">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgMada} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="h-0 relative shrink-0 w-full" data-node-id="1:22203">
+        <div className="absolute inset-[-1px_0_0_0]">
+          <img alt="" className="block max-w-none size-full" src={imgLine1} />
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col gap-[var(--global\/spacing-xl,16px)] items-end relative shrink-0 w-full" data-node-id="1:22204" data-name="Contact Info">
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start relative shrink-0 w-full" data-node-id="1:22205" data-name="Content">
+          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-xs,4px)] items-end min-w-px relative" data-node-id="1:22206" data-name="Content">
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-ig,28px)] min-w-full relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] text-right w-[min-content]" dir="auto" data-node-id="1:22207">
+              الاسئلة الشائعة
+            </p>
+            <div className="content-stretch flex gap-[var(--link\/link-md-gap,8px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="1:22208" data-name="Link">
+              <div className="relative shrink-0 size-[20px]" data-node-id="I1:22208;12415:34908" data-name="Style=Stroke, Type=Rounded">
+                <div className="absolute inset-[9.37%_9.38%_9.38%_9.38%]" data-node-id="I1:22208;12415:34908;2145:18527" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements4} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="I1:22208;2508:25228">{`Ministry-FAQ's-page`}</p>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start relative shrink-0 w-full" data-node-id="1:22209" data-name="Content">
+          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-xs,4px)] items-end min-w-px relative" data-node-id="1:22210" data-name="Content">
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-full relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right w-[min-content]" dir="auto" data-node-id="1:22211">
+              الهاتف
+            </p>
+            <div className="content-stretch flex gap-[var(--link\/link-md-gap,8px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="1:22212" data-name="Link">
+              <div className="relative shrink-0 size-[20px]" data-node-id="I1:22212;12415:34908" data-name="Style=Stroke, Type=Rounded">
+                <div className="absolute inset-[9.37%_9.38%_9.38%_9.38%]" data-node-id="I1:22212;12415:34908;2145:18527" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements4} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="I1:22212;2508:25228">
+                9200343222
+              </p>
+            </div>
+          </div>
+          <div className="relative shrink-0 size-[24px]" data-node-id="1:22214" data-name="call">
+            <div className="absolute inset-[5.21%]" data-node-id="I1:22214;2164:12369" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements5} />
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start relative shrink-0 w-full" data-node-id="1:22215" data-name="Content">
+          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-xs,4px)] items-end min-w-px relative" data-node-id="1:22216" data-name="Content">
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-full relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right w-[min-content]" dir="auto" data-node-id="1:22217">
+              البريد الالكتروني
+            </p>
+            <div className="content-stretch flex gap-[var(--link\/link-md-gap,8px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="1:22218" data-name="Link">
+              <div className="relative shrink-0 size-[20px]" data-node-id="I1:22218;12415:34908" data-name="Style=Stroke, Type=Rounded">
+                <div className="absolute inset-[9.37%_9.38%_9.38%_9.38%]" data-node-id="I1:22218;12415:34908;2145:18527" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements4} />
+                </div>
+              </div>
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="I1:22218;2508:25228">
+                help@company.sa
+              </p>
+            </div>
+          </div>
+          <div className="relative shrink-0 size-[24px]" data-node-id="1:22220" data-name="mail-01">
+            <div className="absolute inset-[11.46%_5.21%]" data-node-id="I1:22220;2164:13801" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--button\/button-background-neutral-default,#f3f4f6)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="1:22221" data-name="Button">
+          <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I1:22221;407:514417" data-name="Text wrapper">
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" dir="auto" data-node-id="I1:22221;407:514418">
+              تحميل دليل المستخدم
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="h-0 relative shrink-0 w-full" data-node-id="1:22222">
+        <div className="absolute inset-[-1px_0_0_0]">
+          <img alt="" className="block max-w-none size-full" src={imgLine1} />
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col gap-[var(--global\/spacing-md,8px)] h-[128px] items-end relative shrink-0 w-[336px]" data-node-id="1:22225" data-name="Apps">
+        <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-ig,28px)] relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] text-right w-full" dir="auto" data-node-id="1:22226">
+          تطبيقات الجوال
+        </p>
+        <div className="content-start flex flex-wrap gap-[var(--global\/spacing-lg,12px)] items-start justify-end relative shrink-0 w-full" data-node-id="1:22227" data-name="Apps">
+          <StoreDownloadButton className="bg-black border border-[#a6a6a6] border-solid h-[40px] overflow-clip relative rounded-[6px] shrink-0 w-[120px]" />
+          <StoreDownloadButton className="bg-black border border-[#a6a6a6] border-solid h-[40px] overflow-clip relative rounded-[6px] shrink-0 w-[120px]" store="Google Play" />
+          <HuaweiAppgallerySeeklogo1 className="h-[40px] overflow-clip relative shrink-0 w-[120px]" />
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text md/Bold: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-bold, size: Size/Text/typo-size-text-md, weight: 700, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Text md/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-md, weight: 400, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Dark: #141B34, Text lg/Bold: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-bold, size: Size/Text/typo-size-text-Ig, weight: 700, lineHeight: Line Height/Text/line-heights-text-Ig, letterSpacing: 0), Text md/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-md, weight: 500, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## user
+**Node ID:** 1:578
+
+user, profile, avatar, member, account
+
+## Style=Stroke, Type=Rounded
+**Node ID:** 1:7688
+
+time, alarm
+
+## clock-01
+**Node ID:** 1:7687
+
+timepiece, watch, timer, chronometer, hourglass, stopwatch, chronograph, timekeeper, dial, temporal gauge, clock
+
+## computer-phone-sync
+**Node ID:** 1:7712
+
+responsive, both devices, computer and mobile
+
+## Link
+**Node ID:** 840:11000
+
+Links facilitate navigation by allowing users to click (or tap) and navigate users to another location, such as a different site, resource, or section within the same page.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/link](https://design.dga.gov.sa/guidelines/components/actions/link)
+
+## link-square-02
+**Node ID:** 1:9413
+
+link-square-icon, link-box, square-link, hyperlink-square, connect-square, URL-box, square-connector, link-frame, square-hyperlink, linked-square
+
+## Style=Stroke, Type=Rounded
+**Node ID:** 1:9439
+
+phone
+
+## mail-01
+**Node ID:** 1:9461
+
+message, email, gmail
+
+## Button
+**Node ID:** 840:5823
+
+Buttons are interactive components that trigger specific actions. The label on a button describes the action that will occur when it is clicked by the user.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/buttons](https://design.dga.gov.sa/guidelines/components/actions/buttons)
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

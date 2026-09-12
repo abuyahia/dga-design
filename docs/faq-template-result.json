@@ -1,0 +1,70 @@
+[
+  {
+    "name": "layout rtl 320",
+    "pass": true
+  },
+  {
+    "name": "toggle rtl 320",
+    "pass": true
+  },
+  {
+    "name": "layout rtl 430",
+    "pass": true
+  },
+  {
+    "name": "toggle rtl 430",
+    "pass": true
+  },
+  {
+    "name": "layout rtl 768",
+    "pass": true
+  },
+  {
+    "name": "toggle rtl 768",
+    "pass": true
+  },
+  {
+    "name": "layout rtl 1440",
+    "pass": true
+  },
+  {
+    "name": "toggle rtl 1440",
+    "pass": true
+  },
+  {
+    "name": "layout ltr 320",
+    "pass": true
+  },
+  {
+    "name": "toggle ltr 320",
+    "pass": true
+  },
+  {
+    "name": "layout ltr 430",
+    "pass": true
+  },
+  {
+    "name": "toggle ltr 430",
+    "pass": true
+  },
+  {
+    "name": "layout ltr 768",
+    "pass": true
+  },
+  {
+    "name": "toggle ltr 768",
+    "pass": true
+  },
+  {
+    "name": "layout ltr 1440",
+    "pass": true
+  },
+  {
+    "name": "toggle ltr 1440",
+    "pass": true
+  },
+  {
+    "name": "Answers available without JavaScript",
+    "pass": true
+  }
+]

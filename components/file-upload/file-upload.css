@@ -10,69 +10,6 @@
    ========================================================================== */
 
 /* ── 0. Component-level token definitions ─────────────────────────────── */
-/* TODO: move all tokens below into token.css */
-
-:root {
-  /* ── File Item ──────────────────────────────────────────────────────── */
-  --file-item-border:            1px solid var(--Border-border-neutral-primary, #D2D6DB);
-  --file-item-border-error:      1px solid var(--Border-border-error, #B42318);
-  --file-item-bg:                var(--Background-background-neutral-100, #F3F4F6);
-  --file-item-radius:            var(--Radius-radius-sm, 4px);
-  --file-item-padding:           var(--global-size8, 8px);
-  --file-item-gap:               var(--Global-spacing-md, 8px);
-  --file-item-name-color:        var(--Text-text-default, #161616);
-  --file-item-name-font-size:    var(--Size-Text-typo-size-text-sm, 14px);
-  --file-item-name-font-weight:  500;
-  --file-item-name-line-height:  var(--Line-Height-Text-line-heights-text-sm, 20px);
-  --file-item-error-text-color:  var(--text-text-error-primary, #CE281C);
-  --file-item-error-separator:   1px solid var(--Border-border-neutral-primary, #D2D6DB);
-  --file-item-remove-size:       20px;
-  --file-item-remove-radius:     var(--Radius-radius-sm, 4px);
-  --file-item-icon-size:         20px;
-
-  /* ── Drop Zone ──────────────────────────────────────────────────────── */
-  --drop-zone-border:                    1px dashed var(--Border-border-neutral-primary, #D2D6DB);
-  --drop-zone-border-draghover:          2px dashed var(--Border-border-success, #067647);
-  --drop-zone-border-disabled:           1px dashed var(--Global-border-disabled, #9DA4AE);
-  --drop-zone-bg:                        var(--Background-background-neutral-100, #F3F4F6);
-  --drop-zone-bg-draghover:              var(--Background-background-success-25, #F6FEF9);
-  --drop-zone-lead-color:                var(--Text-text-display, #1F2A37);
-  --drop-zone-lead-color-draghover:      var(--Text-text-success, #067647);
-  --drop-zone-lead-color-disabled:       var(--Global-text-default-disabled, #9DA4AE);
-  --drop-zone-helper-color:              var(--Text-text-primary-paragraph, #384250);
-  --drop-zone-helper-color-draghover:    var(--Text-text-success, #067647);
-  --drop-zone-helper-color-disabled:     var(--Global-text-default-disabled, #9DA4AE);
-  --drop-zone-icon-opacity-disabled:     0.7;
-  --drop-zone-radius:                    var(--Radius-radius-sm, 4px);
-  --drop-zone-padding:                   var(--global-size24, 24px);
-  --drop-zone-gap:                       var(--Global-spacing-3xl, 24px);
-  --drop-zone-trigger-bg:                var(--Button-button-background-neutral-default, #F3F4F6);
-  --drop-zone-trigger-bg-draghover:      var(--Global-background-disabled, #E5E7EB);
-  --drop-zone-trigger-text-color:        var(--Text-text-default, #161616);
-  --drop-zone-trigger-text-disabled:     var(--Global-text-default-disabled, #9DA4AE);
-
-  /* ── Single file upload ─────────────────────────────────────────────── */
-  --file-upload-label-color:             var(--Form-field-text-label, #161616);
-  --file-upload-label-disabled-color:    var(--Global-text-default-disabled, #9DA4AE);
-  --file-upload-helper-color:            var(--text-text-tertiary, #64748B);
-  --file-upload-helper-disabled-color:   var(--Global-text-default-disabled, #9DA4AE);
-  --file-upload-gap:                     var(--Global-spacing-xl, 16px);
-
-  /* ── Shared trigger (Browse Files button) ───────────────────────────── */
-  --file-upload-trigger-height:          32px;
-  --file-upload-trigger-padding-x:       var(--Button-buttons-md-padding, 12px);
-  --file-upload-trigger-gap:             var(--Button-buttons-md-gap, 4px);
-  --file-upload-trigger-radius:          var(--Radius-radius-sm, 4px);
-  --file-upload-trigger-font-size:       var(--Size-Text-typo-size-text-sm, 14px);
-  --file-upload-trigger-font-weight:     500;
-  --file-upload-trigger-line-height:     var(--Line-Height-Text-line-heights-text-sm, 20px);
-
-  /* Single trigger — dark/primary style */
-  --file-upload-trigger-bg:              var(--Button-button-background-black-default, #0D121C);
-  --file-upload-trigger-bg-disabled:     var(--Global-background-disabled, #E5E7EB);
-  --file-upload-trigger-text-color:      var(--Text-text-oncolor-primary, #FFF);
-  --file-upload-trigger-text-disabled:   var(--Global-text-default-disabled, #9DA4AE);
-}
 
 /* ── 1. File Item ──────────────────────────────────────────────────────── */
 
@@ -121,9 +58,9 @@
 /* Loading spinner — CSS border animation */
 .file-item__icon--loading {
   border-radius: 50%;
-  border: 2px solid var(--file-item-bg);
-  border-top-color: var(--Background-background-black, #161616);
-  animation: file-item-spin 0.75s linear infinite;
+  border: var(--border-width-thick) solid var(--file-item-bg);
+  border-top-color: var(--color-text-strong);
+  animation: file-item-spin var(--transition-spinner) var(--ease-linear) infinite;
 }
 
 @keyframes file-item-spin {
@@ -134,7 +71,7 @@
 .file-item__name {
   flex: 1 0 0;
   color: var(--file-item-name-color);
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-family: var(--font-sans);
   font-size: var(--file-item-name-font-size);
   font-weight: var(--file-item-name-font-weight);
   line-height: var(--file-item-name-line-height);
@@ -147,7 +84,7 @@
 .file-item__trail {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-4);
   flex-shrink: 0;
 }
 
@@ -168,12 +105,12 @@
 }
 
 .file-item__remove:hover {
-  background: rgba(0, 0, 0, 0.06);
+  background: var(--file-item-remove-background-color);
 }
 
 .file-item__remove:focus-visible {
-  outline: 2px solid var(--file-item-name-color);
-  outline-offset: 1px;
+  outline: var(--border-width-thick) solid var(--file-item-name-color);
+  outline-offset: var(--file-item-remove-outline-offset);
 }
 
 /* Error row — hidden by default, shown in error state */
@@ -193,9 +130,9 @@
 .file-item__error-text {
   flex: 1 0 0;
   color: var(--file-item-error-text-color);
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-family: var(--font-sans);
   font-size: var(--file-item-name-font-size);
-  font-weight: 400;
+  font-weight: var(--font-weight-body);
   line-height: var(--file-item-name-line-height);
 }
 
@@ -209,7 +146,7 @@
 }
 
 [dir="rtl"] .file-item__name {
-  text-align: right;
+  text-align: start;
 }
 
 [dir="rtl"] .file-item__error-row {
@@ -217,7 +154,7 @@
 }
 
 [dir="rtl"] .file-item__error-text {
-  text-align: right;
+  text-align: start;
 }
 
 /* ── 2. Drop Zone ──────────────────────────────────────────────────────── */
@@ -232,7 +169,7 @@
   border: var(--drop-zone-border);
   border-radius: var(--drop-zone-radius);
   background: var(--drop-zone-bg);
-  transition: border-color 0.15s ease, background-color 0.15s ease;
+  transition: border-color var(--transition-feedback) var(--ease-default), background-color var(--transition-feedback) var(--ease-default);
 }
 
 /* Drag-hover state */
@@ -251,11 +188,11 @@
 
 /* Upload icon */
 .drop-zone__icon {
-  width: 24px;
-  height: 24px;
+  width: var(--space-24);
+  height: var(--space-24);
   flex-shrink: 0;
   color: var(--drop-zone-lead-color);
-  transition: opacity 0.15s ease;
+  transition: opacity var(--transition-feedback) var(--ease-default);
 }
 
 .drop-zone.is-drag-hover .drop-zone__icon {
@@ -272,7 +209,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--Text-text-content-gap, 8px);
+  gap: var(--space-8);
   align-self: stretch;
 }
 
@@ -280,10 +217,10 @@
 .drop-zone__lead {
   align-self: stretch;
   color: var(--drop-zone-lead-color);
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-  font-size: var(--Size-Text-typo-size-text-md, 16px);
-  font-weight: 500;
-  line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+  font-family: var(--font-sans);
+  font-size: var(--fs-text-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--lh-text-md);
   text-align: center;
   margin: 0;
 }
@@ -292,10 +229,10 @@
 .drop-zone__helper {
   align-self: stretch;
   color: var(--drop-zone-helper-color);
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-  font-size: var(--Size-Text-typo-size-text-xs, 12px);
-  font-weight: 400;
-  line-height: var(--Line-Height-Text-line-heights-text-xs, 18px);
+  font-family: var(--font-sans);
+  font-size: var(--fs-text-xs);
+  font-weight: var(--font-weight-body);
+  line-height: var(--lh-text-xs);
   text-align: center;
   margin: 0;
 }
@@ -330,7 +267,7 @@
   border: none;
   background: var(--drop-zone-trigger-bg);
   color: var(--drop-zone-trigger-text-color);
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-family: var(--font-sans);
   font-size: var(--file-upload-trigger-font-size);
   font-weight: var(--file-upload-trigger-font-weight);
   line-height: var(--file-upload-trigger-line-height);
@@ -338,8 +275,8 @@
 }
 
 .drop-zone__trigger:focus-visible {
-  outline: 2px solid var(--drop-zone-lead-color);
-  outline-offset: 2px;
+  outline: var(--border-width-thick) solid var(--drop-zone-lead-color);
+  outline-offset: var(--space-2);
 }
 
 .drop-zone.is-drag-hover .drop-zone__trigger,
@@ -364,23 +301,23 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--Text-text-content-gap, 8px);
+  gap: var(--space-8);
   align-self: stretch;
 }
 
 .file-upload__label-row {
   display: flex;
   align-items: flex-end;
-  gap: var(--Form-label-gap, 4px);
+  gap: var(--space-4);
   align-self: stretch;
 }
 
 .file-upload__label {
   color: var(--file-upload-label-color);
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-  font-size: var(--Size-Text-typo-size-text-md, 16px);
-  font-weight: 400;
-  line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
+  font-family: var(--font-sans);
+  font-size: var(--fs-text-md);
+  font-weight: var(--font-weight-body);
+  line-height: var(--lh-text-md);
   margin: 0;
   cursor: pointer;
 }
@@ -388,10 +325,10 @@
 .file-upload__helper {
   align-self: stretch;
   color: var(--file-upload-helper-color);
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-  font-size: var(--Size-Text-typo-size-text-xs, 12px);
-  font-weight: 400;
-  line-height: var(--Line-Height-Text-line-heights-text-xs, 18px);
+  font-family: var(--font-sans);
+  font-size: var(--fs-text-xs);
+  font-weight: var(--font-weight-body);
+  line-height: var(--lh-text-xs);
   margin: 0;
 }
 
@@ -409,7 +346,7 @@
   border: none;
   background: var(--file-upload-trigger-bg);
   color: var(--file-upload-trigger-text-color);
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
+  font-family: var(--font-sans);
   font-size: var(--file-upload-trigger-font-size);
   font-weight: var(--file-upload-trigger-font-weight);
   line-height: var(--file-upload-trigger-line-height);
@@ -417,8 +354,8 @@
 }
 
 .file-upload__trigger:focus-visible {
-  outline: 2px solid var(--file-upload-trigger-bg);
-  outline-offset: 2px;
+  outline: var(--border-width-thick) solid var(--file-upload-trigger-bg);
+  outline-offset: var(--space-2);
 }
 
 /* File container — hidden until uploaded */
@@ -455,23 +392,23 @@
 
 /* RTL — Single */
 [dir="rtl"] .file-upload {
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 [dir="rtl"] .file-upload__header {
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 [dir="rtl"] .file-upload__label-row {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 [dir="rtl"] .file-upload__label {
-  text-align: right;
+  text-align: start;
 }
 
 [dir="rtl"] .file-upload__helper {
-  text-align: right;
+  text-align: start;
 }
 
 /* ── 4. File Upload / Multiple ─────────────────────────────────────────── */
@@ -488,7 +425,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: var(--space-8);
   align-self: stretch;
 }
 

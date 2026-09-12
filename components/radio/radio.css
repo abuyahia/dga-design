@@ -1,0 +1,27 @@
+/* Native radio semantics; visual states adapted from the official DGA Radio component. */
+.radio { display: inline-flex; position: relative; align-items: center; gap: var(--radio-gap); padding: var(--space-8); cursor: pointer; isolation: isolate; color: var(--color-text-strong); font: var(--font-body); }
+.radio__input { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; margin: 0; opacity: 0; cursor: inherit; z-index: var(--z-control); }
+.radio__control { position: relative; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 var(--radio-size); inline-size: var(--radio-size); block-size: var(--radio-size); border: var(--border-width-thin) solid var(--radio-border); border-radius: var(--radius-full); }
+.radio__control::before { content: ''; inline-size: var(--radio-dot-size); block-size: var(--radio-dot-size); border-radius: var(--radius-full); background: var(--radio-neutral); transform: scale(0); }
+.radio__control::after { content: ''; position: absolute; inline-size: var(--radio-halo-size); block-size: var(--radio-halo-size); border-radius: var(--radius-full); background: var(--radio-hover); opacity: 0; z-index: -1; }
+.radio__input:checked + .radio__control { border-color: var(--radio-neutral); }
+.radio__input:checked + .radio__control::before { transform: scale(1); }
+.radio--brand .radio__input:checked + .radio__control { border-color: var(--radio-brand); }
+.radio--brand .radio__input:checked + .radio__control::before { background: var(--radio-brand); }
+.radio--brand .radio__input:checked ~ .radio__label { color: var(--radio-brand); }
+.radio:hover .radio__input:not(:disabled) + .radio__control::after { opacity: 1; }
+.radio:active .radio__input:not(:disabled):not(:checked) + .radio__control { background: var(--radio-pressed); }
+/* Square keyboard focus frame from the official behavior reference. */
+.radio__input:focus-visible + .radio__control::after { opacity: 1; background: transparent; inline-size: var(--space-32); block-size: var(--space-32); border: var(--border-width-thick) solid var(--radio-focus); border-radius: 0; }
+.radio__input:focus-visible + .radio__control { outline: none; }
+.radio:has(.radio__input:disabled) { cursor: not-allowed; }
+.radio__input:disabled + .radio__control, .radio--brand .radio__input:disabled + .radio__control { border-color: var(--radio-disabled); background: transparent; }
+.radio__input:disabled + .radio__control::before, .radio--brand .radio__input:disabled + .radio__control::before { background: var(--radio-disabled); }
+.radio__input:disabled ~ .radio__label, .radio--brand .radio__input:disabled ~ .radio__label { color: var(--radio-disabled); }
+@media (forced-colors: active) {
+ .radio__control { border-color: CanvasText; }
+ .radio__input:checked + .radio__control::before, .radio--brand .radio__input:checked + .radio__control::before { background: Highlight; forced-color-adjust: none; }
+ .radio__input:disabled + .radio__control, .radio--brand .radio__input:disabled + .radio__control { border-color: GrayText; }
+ .radio__input:disabled + .radio__control::before, .radio--brand .radio__input:disabled + .radio__control::before { background: GrayText; }
+ .radio__input:focus-visible + .radio__control::after { border-color: Highlight; }
+}

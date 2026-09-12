@@ -8,48 +8,16 @@
    ========================================================================== */
 
 /* ── 1. Component token bridge ───────────────────────────────────────────── */
-/* TODO: all --accordion-* tokens below are pending addition to token.css.   */
-/* Fallback values match Figma source. Remove fallbacks once tokens land.     */
 
 .accordion {
   /* Colors */
-  --accordion-border-color: var(--Border-border-neutral-primary, #D2D6DB);
-  --accordion-title-color: var(--Text-text-default, #161616);
-  --accordion-title-color-disabled: var(--Global-text-default-disabled, #9DA4AE);
-  --accordion-content-color: var(--Text-text-primary-paragraph, #384250);
-  --accordion-bg-hovered: var(--Button-button-background-neutral-hovered, #F3F4F6);
-  --accordion-bg-pressed: var(--Button-button-background-neutral-pressed, #E5E7EB);
-  --accordion-focus-ring-color: var(--Border-border-black, #161616);
-  --accordion-focus-ring-width: 2px;
 
   /* Typography */
-  --accordion-title-font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-  --accordion-title-font-size: var(--Size-Text-typo-size-text-md, 16px);
-  --accordion-title-font-weight: 600;
-  --accordion-title-line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
-
-  --accordion-content-font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-  --accordion-content-font-size: var(--Size-Text-typo-size-text-md, 16px);
-  --accordion-content-font-weight: 400;
-  --accordion-content-line-height: var(--Line-Height-Text-line-heights-text-md, 24px);
 
   /* Spacing — size defaults to Large */
-  --accordion-padding-block: var(--Global-spacing-xl, 16px);
-  --accordion-padding-inline: var(--Global-spacing-xl, 16px);
-  --accordion-gap: var(--Global-spacing-xl, 16px);
-  --accordion-icon-size: 16px;
+  --accordion-padding-block: var(--space-16);
 
   /* Content panel */
-  --accordion-content-padding-top: var(--Global-spacing-md, 8px);
-  --accordion-content-padding-bottom: var(--Global-spacing-3xl, 24px);
-  --accordion-content-icon-indent: var(--Global-spacing-6xl, 48px);
-  --accordion-content-icon-indent-flush: var(--Global-spacing-4xl, 32px);
-  --accordion-content-gap: var(--Global-spacing-md, 8px);
-
-  /* TODO: --accordion-transition-duration missing in token.css. Proposed: var(--transition-fast) */
-  --accordion-transition-duration: 200ms;
-  /* TODO: --accordion-transition-easing missing in token.css. Proposed: var(--ease-in-out) */
-  --accordion-transition-easing: ease-in-out;
 }
 
 /* ── 2. Root ─────────────────────────────────────────────────────────────── */
@@ -59,7 +27,7 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  border-top: 1px solid var(--accordion-border-color);
+  border-top: var(--border-width-thin) solid var(--accordion-border-color);
 }
 
 /* ── 3. Trigger ──────────────────────────────────────────────────────────── */
@@ -94,7 +62,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: var(--z-base);
   pointer-events: none;
   background: transparent;
 }
@@ -113,7 +81,7 @@
 .accordion__trigger:focus-visible,
 .accordion__trigger:focus {
   outline: var(--accordion-focus-ring-width) solid var(--accordion-focus-ring-color);
-  outline-offset: -2px;
+  outline-offset: calc(-1 * var(--space-2));
 }
 
 /* ── 6. Title ────────────────────────────────────────────────────────────── */
@@ -121,7 +89,7 @@
 .accordion__title {
   flex: 1 0 0;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
   text-align: start;
 }
 
@@ -132,7 +100,7 @@
   height: var(--accordion-icon-size);
   flex-shrink: 0;
   position: relative;
-  z-index: 1;
+  z-index: var(--z-content);
   transition: transform var(--accordion-transition-duration) var(--accordion-transition-easing);
 }
 
@@ -172,11 +140,11 @@
 /* ── 10. Size modifiers ──────────────────────────────────────────────────── */
 
 .accordion--md {
-  --accordion-padding-block: var(--Global-spacing-lg, 12px);
+  --accordion-padding-block: var(--space-12);
 }
 
 .accordion--sm {
-  --accordion-padding-block: var(--Global-spacing-md, 8px);
+  --accordion-padding-block: var(--space-8);
 }
 
 /* ── 11. Icon-leading modifier ───────────────────────────────────────────── */
@@ -218,7 +186,7 @@
   inset-inline: calc(-1 * var(--accordion-padding-inline));
   border: var(--accordion-focus-ring-width) solid var(--accordion-focus-ring-color);
   pointer-events: none;
-  z-index: 2;
+  z-index: var(--z-decoration);
 }
 
 /* Flush content panel: no inline-start padding (Trailing) */
@@ -242,7 +210,7 @@
 
 .accordion__trigger[disabled] .accordion__icon,
 .accordion__trigger[aria-disabled="true"] .accordion__icon {
-  opacity: 0.4;
+  opacity: var(--opacity-disabled);
 }
 
 /* ── 14. Reduced motion ──────────────────────────────────────────────────── */
@@ -252,3 +220,10 @@
     transition: none;
   }
 }
+/* Progressive enhancement: panels are readable until explicitly hidden. */
+.accordion__heading { margin: 0; inline-size: 100%; font: inherit; }
+.accordion__trigger { inline-size: 100%; }
+.accordion__title, .accordion__body { min-inline-size: 0; overflow-wrap: anywhere; }
+.accordion__panel { display: flex; }
+.accordion__panel[hidden] { display: none; }
+.accordion--flush .accordion__trigger:focus-visible::after { inset-inline: 0; }

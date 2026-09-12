@@ -1,0 +1,329 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/d776c8bc-34ac-43b2-977d-a9d2f07096dd.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/5baa5e23-a5f2-4fce-ae8e-0f3c223f5a38.svg";
+const imgElements2 = "https://www.figma.com/api/mcp/asset/0e6dc42d-2fe6-488d-bbb8-c123425cb37e.svg";
+const imgResizeHandler = "https://www.figma.com/api/mcp/asset/2633f84e-38ba-4a81-8190-de9364e648db.svg";
+
+type ArrowDown01Props = {
+  className?: string;
+  style?: "Stroke";
+  type?: "Rounded";
+};
+
+function ArrowDown01({ className, style = "Stroke", type = "Rounded" }: ArrowDown01Props) {
+  return (
+    <div className={className || "relative size-[24px]"} data-node-id="1:5601">
+      <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="1:5602" data-name="elements">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+      </div>
+    </div>
+  );
+}
+
+type BreadcrumbProps = {
+  className?: string;
+  levels?: "2";
+  rtl?: "True";
+};
+
+function Breadcrumb({ className, levels = "2", rtl = "True" }: BreadcrumbProps) {
+  return (
+    <div className={className || "content-stretch flex gap-[var(--global\\/spacing-none,0px)] items-center justify-end p-[var(--global\\/spacing-none,0px)] relative"} data-node-id="361:17617">
+      <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end pl-[var(--link\/link-sm-gap,4px)] relative shrink-0" data-node-id="361:17640" data-name="_Breadcrumb Item">
+        <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="I361:17640;5698:3324" data-name="Link">
+          <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--global\/text-default-disabled,#9da4ae)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I361:17640;5698:3324;2508:25171">
+            رابط
+          </p>
+        </div>
+        <div className="relative shrink-0 size-[16px]" data-node-id="I361:17640;5698:3323" data-name="arrow-left-01">
+          <div className="absolute inset-[21.88%_34.38%]" data-node-id="I361:17640;5698:3323;3509:32635" data-name="elements">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end pl-[var(--link\/link-sm-gap,4px)] relative shrink-0" data-node-id="361:17641" data-name="_Breadcrumb Item">
+        <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="I361:17641;5698:3315" data-name="Link">
+          <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I361:17641;5698:3315;2508:25159">
+            رابط
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ContactInfo() {
+  return (
+    <div className="content-stretch flex flex-col gap-[var(--global\/spacing-4xl,32px)] items-end justify-center relative size-full" data-node-id="16:7845" data-name="Contact Info">
+      <div className="content-stretch flex flex-col gap-[var(--global\/spacing-xl,16px)] items-end relative shrink-0 w-full" data-node-id="16:7846" data-name="Content">
+        <Breadcrumb className="content-stretch flex gap-[var(--global\/spacing-none,0px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" />
+        <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-display,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/display\/line-heights-display-sm,38px)] min-w-full relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/display\/typo-size-display-sm,30px)] text-right w-[min-content]" dir="auto" data-node-id="16:7847">
+          تواصل معنا
+        </p>
+        <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-full relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right w-[min-content]" dir="auto" data-node-id="16:7848">
+          مثال على وصف الخدمة لشراء قطعة أرض لبناء منزلك، يتطلب ذلك توثيق عملية البيع والشراء في مكاتب التوثيق أو خدمات كاتب العدل لتسجيل العقار باسمك.
+        </p>
+      </div>
+      <div className="content-stretch flex flex-col gap-[var(--global\/spacing-3xl,24px)] items-start relative shrink-0 w-full" data-node-id="16:7849" data-name="Input Field">
+        <div className="content-stretch flex flex-col gap-[var(--form\/field-label-gap,8px)] items-end relative shrink-0 w-full" data-node-id="16:7851" data-name="Text Input">
+          <div className="content-stretch flex flex-col items-end relative shrink-0 w-full" data-node-id="I16:7851;9080:58667" data-name="Label">
+            <div className="[word-break:break-word] content-stretch flex font-['IBM_Plex_Sans_Arabic:SemiBold'] gap-[var(--form\/label-gap,4px)] items-end leading-[20px] not-italic relative shrink-0 text-[14px] whitespace-nowrap" data-node-id="I16:7851;9080:54949" data-name="Label">
+              <p className="relative shrink-0 text-[color:var(--form\/field-text-label,#161616)] text-right" dir="auto" data-node-id="I16:7851;9080:54949;8999:56779">
+                الاسم الاول
+              </p>
+              <p className="relative shrink-0 text-[color:var(--form\/field-border-error,#b42318)]" data-node-id="I16:7851;9080:54949;8999:56780">
+                *
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--form\/field-background-darker,#f3f4f6)] content-stretch flex gap-[var(--form\/input-gap,0px)] h-[40px] items-center justify-end overflow-clip p-[var(--form\/input-padding,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 w-full" data-node-id="I16:7851;3149:55728" data-name="Input Field">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--form\/icon-enteredtext,8px)] h-full items-center justify-end min-w-px pl-[var(--form\/input-container-padding-left,8px)] pr-[var(--form\/input-container-padding-right,16px)] relative" data-node-id="I16:7851;3149:55729" data-name="Icon-Text-stack">
+              <div className="content-stretch flex flex-[1_0_0] h-full items-center justify-end min-w-px overflow-clip relative" data-node-id="I16:7851;3149:55732" data-name="Text">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--form\/field-text-placeholder,#6c737f)] whitespace-nowrap" dir="auto" data-node-id="I16:7851;3149:55733">
+                  ادخل الاسم الاول
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--form\/field-label-gap,8px)] items-end overflow-clip relative shrink-0 w-full" data-node-id="16:7852" data-name="Text Input">
+          <div className="content-stretch flex flex-col items-end relative shrink-0 w-full" data-node-id="I16:7852;9080:58667" data-name="Label">
+            <div className="[word-break:break-word] content-stretch flex font-['IBM_Plex_Sans_Arabic:SemiBold'] gap-[var(--form\/label-gap,4px)] items-end leading-[20px] not-italic relative shrink-0 text-[14px] whitespace-nowrap" data-node-id="I16:7852;9080:54949" data-name="Label">
+              <p className="relative shrink-0 text-[color:var(--form\/field-text-label,#161616)] text-right" dir="auto" data-node-id="I16:7852;9080:54949;8999:56779">
+                الاسم الاخير
+              </p>
+              <p className="relative shrink-0 text-[color:var(--form\/field-border-error,#b42318)]" data-node-id="I16:7852;9080:54949;8999:56780">
+                *
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--form\/field-background-darker,#f3f4f6)] content-stretch flex gap-[var(--form\/input-gap,0px)] h-[40px] items-center justify-end overflow-clip p-[var(--form\/input-padding,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 w-full" data-node-id="I16:7852;3149:55728" data-name="Input Field">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--form\/icon-enteredtext,8px)] h-full items-center justify-end min-w-px pl-[var(--form\/input-container-padding-left,8px)] pr-[var(--form\/input-container-padding-right,16px)] relative" data-node-id="I16:7852;3149:55729" data-name="Icon-Text-stack">
+              <div className="content-stretch flex flex-[1_0_0] h-full items-center justify-end min-w-px overflow-clip relative" data-node-id="I16:7852;3149:55732" data-name="Text">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--form\/field-text-placeholder,#6c737f)] whitespace-nowrap" dir="auto" data-node-id="I16:7852;3149:55733">{`ادخل الاسم الاخير `}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--form\/field-label-gap,8px)] items-end overflow-clip relative shrink-0 w-full" data-node-id="16:7855" data-name="Text Input">
+          <div className="content-stretch flex flex-col items-end relative shrink-0 w-full" data-node-id="I16:7855;9080:58667" data-name="Label">
+            <div className="[word-break:break-word] content-stretch flex font-['IBM_Plex_Sans_Arabic:SemiBold'] gap-[var(--form\/label-gap,4px)] items-end leading-[20px] not-italic relative shrink-0 text-[14px] whitespace-nowrap" data-node-id="I16:7855;9080:54949" data-name="Label">
+              <p className="relative shrink-0 text-[color:var(--form\/field-text-label,#161616)] text-right" dir="auto" data-node-id="I16:7855;9080:54949;8999:56779">
+                رقم الجوال
+              </p>
+              <p className="relative shrink-0 text-[color:var(--form\/field-border-error,#b42318)]" data-node-id="I16:7855;9080:54949;8999:56780">
+                *
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--form\/field-background-darker,#f3f4f6)] content-stretch flex gap-[var(--form\/input-gap,0px)] h-[40px] items-center justify-end overflow-clip p-[var(--form\/input-padding,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 w-full" data-node-id="I16:7855;3149:55728" data-name="Input Field">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--form\/icon-enteredtext,8px)] h-full items-center justify-end min-w-px pl-[var(--form\/input-container-padding-left,8px)] pr-[var(--form\/input-container-padding-right,16px)] relative" data-node-id="I16:7855;3149:55729" data-name="Icon-Text-stack">
+              <div className="content-stretch flex flex-[1_0_0] h-full items-center justify-end min-w-px overflow-clip relative" data-node-id="I16:7855;3149:55732" data-name="Text">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--form\/field-text-placeholder,#6c737f)] whitespace-nowrap" dir="auto" data-node-id="I16:7855;3149:55733">
+                  00 000 0000
+                </p>
+              </div>
+            </div>
+            <div className="bg-[var(--button\/button-background-neutral-default,#f3f4f6)] content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-full items-center justify-center overflow-clip px-[var(--global\/spacing-xl,16px)] py-[var(--global\/spacing-xxs,2px)] relative shrink-0" data-node-id="I16:7855;3219:231317" data-name="Input Prefix-Suffix">
+              <div className="relative shrink-0 size-[20px]" data-node-id="I16:7855;3219:231317;3149:63558" data-name="arrow-down-01">
+                <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I16:7855;3219:231317;3149:63558;2039:1971" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                </div>
+              </div>
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I16:7855;3219:231317;3149:63559" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-default,#161616)] whitespace-nowrap" dir="auto" data-node-id="I16:7855;3219:231317;3149:63560">
+                  +966
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--form\/field-label-gap,8px)] items-end overflow-clip relative shrink-0 w-full" data-node-id="16:7854" data-name="Text Input">
+          <div className="content-stretch flex flex-col items-end relative shrink-0 w-full" data-node-id="I16:7854;9080:58667" data-name="Label">
+            <div className="[word-break:break-word] content-stretch flex font-['IBM_Plex_Sans_Arabic:SemiBold'] gap-[var(--form\/label-gap,4px)] items-end leading-[20px] not-italic relative shrink-0 text-[14px] whitespace-nowrap" data-node-id="I16:7854;9080:54949" data-name="Label">
+              <p className="relative shrink-0 text-[color:var(--form\/field-text-label,#161616)] text-right" dir="auto" data-node-id="I16:7854;9080:54949;8999:56779">
+                البريد الالكتروني
+              </p>
+              <p className="relative shrink-0 text-[color:var(--form\/field-border-error,#b42318)]" data-node-id="I16:7854;9080:54949;8999:56780">
+                *
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--form\/field-background-darker,#f3f4f6)] content-stretch flex gap-[var(--form\/input-gap,0px)] h-[40px] items-center justify-end overflow-clip p-[var(--form\/input-padding,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 w-full" data-node-id="I16:7854;3149:55728" data-name="Input Field">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--form\/icon-enteredtext,8px)] h-full items-center justify-end min-w-px pl-[var(--form\/input-container-padding-left,8px)] pr-[var(--form\/input-container-padding-right,16px)] relative" data-node-id="I16:7854;3149:55729" data-name="Icon-Text-stack">
+              <div className="content-stretch flex flex-[1_0_0] h-full items-center justify-end min-w-px overflow-clip relative" data-node-id="I16:7854;3149:55732" data-name="Text">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--form\/field-text-placeholder,#6c737f)] whitespace-nowrap" dir="auto" data-node-id="I16:7854;3149:55733">
+                  ادخل البريد الالكتروني
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--form\/field-label-gap,8px)] items-end overflow-clip relative shrink-0 w-full" data-node-id="16:7857" data-name="Text Input">
+          <div className="content-stretch flex flex-col items-end relative shrink-0 w-full" data-node-id="I16:7857;9080:58667" data-name="Label">
+            <div className="content-stretch flex gap-[var(--form\/label-gap,4px)] items-end relative shrink-0" data-node-id="I16:7857;9080:54949" data-name="Label">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:SemiBold'] leading-[20px] not-italic relative shrink-0 text-[14px] text-[color:var(--form\/field-text-label,#161616)] text-right whitespace-nowrap" dir="auto" data-node-id="I16:7857;9080:54949;8999:56779">
+                موضوع
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--form\/field-background-darker,#f3f4f6)] content-stretch flex gap-[var(--form\/input-gap,0px)] h-[40px] items-center justify-end overflow-clip p-[var(--form\/input-padding,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 w-full" data-node-id="I16:7857;3149:55728" data-name="Input Field">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--form\/icon-enteredtext,8px)] h-full items-center justify-end min-w-px pl-[var(--form\/input-container-padding-left,8px)] pr-[var(--form\/input-container-padding-right,16px)] relative" data-node-id="I16:7857;3149:55729" data-name="Icon-Text-stack">
+              <div className="content-stretch flex flex-[1_0_0] h-full items-center justify-end min-w-px overflow-clip relative" data-node-id="I16:7857;3149:55732" data-name="Text">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--form\/field-text-placeholder,#6c737f)] whitespace-nowrap" dir="auto" data-node-id="I16:7857;3149:55733">
+                  اكتب موضوعك
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--form\/iable-container,8px)] h-[68px] items-end min-h-[40px] min-w-[200px] relative shrink-0 w-full" data-node-id="235:16368" data-name="Dropdown Input">
+          <div className="content-stretch flex flex-col items-end relative shrink-0 w-full" data-node-id="I235:16368;11708:39536" data-name="Label">
+            <div className="content-stretch flex gap-[var(--form\/label-gap,4px)] items-end relative shrink-0" data-node-id="I235:16368;11708:39537" data-name="Label">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:SemiBold'] leading-[20px] not-italic relative shrink-0 text-[14px] text-[color:var(--form\/field-text-label,#161616)] text-right whitespace-nowrap" dir="auto" data-node-id="I235:16368;11708:39537;8999:56779">
+                الفئة
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[var(--form\/select-gap,0px)] h-[40px] items-start justify-end min-w-[200px] overflow-clip p-[var(--form\/select-padding,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 w-full" data-node-id="I235:16368;3534:64884" data-name="Dropdown Field">
+            <div className="bg-[var(--form\/field-background-darker,#f3f4f6)] content-stretch flex flex-[1_0_0] h-full items-center justify-end min-w-px overflow-clip relative rounded-[4px]" data-node-id="I235:16368;3534:64885" data-name="Contents">
+              <div className="content-stretch flex flex-[1_0_0] gap-[var(--form\/dropdown-icon-content,4px)] h-full items-center justify-end min-w-px px-[var(--form\/dropdown-container-padding-left\&right,16px)] relative" data-node-id="I235:16368;3534:64886" data-name="Icon-Text-stack">
+                <ArrowDown01 className="relative shrink-0 size-[20px]" />
+                <div className="content-stretch flex flex-[1_0_0] h-full items-center justify-end min-w-px overflow-clip relative" data-node-id="I235:16368;3534:64888" data-name="Text">
+                  <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--form\/field-text-placeholder,#6c737f)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" dir="auto" data-node-id="I235:16368;3534:64889">
+                    اقتراحات
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--form\/iable-container,8px)] items-end min-h-[96px] min-w-[200px] overflow-clip relative shrink-0 w-full" data-node-id="16:7861" data-name="Textarea">
+          <div className="content-stretch flex flex-col items-end relative shrink-0 w-[320px]" data-node-id="I16:7861;9529:12214" data-name="Label">
+            <div className="content-stretch flex gap-[var(--form\/label-gap,4px)] items-end relative shrink-0" data-node-id="I16:7861;9529:12215" data-name="Label">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:SemiBold'] leading-[20px] not-italic relative shrink-0 text-[14px] text-[color:var(--form\/field-text-label,#161616)] text-right whitespace-nowrap" dir="auto" data-node-id="I16:7861;9529:12215;8999:56779">
+                كيف يمكننا المساعدة؟
+              </p>
+            </div>
+          </div>
+          <div className="bg-[var(--form\/field-background-darker,#f3f4f6)] content-stretch flex gap-[var(--form\/textarea-gap,0px)] h-[96px] items-center justify-end overflow-clip p-[var(--form\/textarea-padding,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 w-full" data-node-id="I16:7861;5462:418304" data-name="Contents">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--global\/spacing-xs,4px)] h-full items-start justify-end min-w-px px-[var(--form\/textarea-container-padding-left\&right,16px)] py-[var(--form\/textarea-container-padding-top\&bottom,12px)] relative" data-node-id="I16:7861;5462:418306" data-name="Icon-Text-stack">
+              <div className="content-stretch flex flex-[1_0_0] h-full items-start justify-end min-w-px overflow-clip relative" data-node-id="I16:7861;5462:418308" data-name="Text">
+                <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] h-full leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-px relative text-[color:var(--form\/field-text-placeholder,#6c737f)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right" dir="auto" data-node-id="I16:7861;5462:418309">
+                  نص تلميحي
+                </p>
+              </div>
+            </div>
+            <div className="absolute bottom-[2px] flex items-center justify-center left-[2px] size-[12px]" data-node-id="I16:7861;5478:422974">
+              <div className="-scale-y-100 flex-none rotate-180">
+                <div className="relative size-[12px]" data-name=".Resize handler">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgResizeHandler} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--global\/spacing-xl,16px)] items-end justify-end relative shrink-0 w-full" data-node-id="16:7860" data-name="File Upload / Single">
+          <div className="content-stretch flex flex-col gap-[var(--text\/text-content-gap,8px)] items-end relative shrink-0 w-full" data-node-id="I16:7860;12371:177029" data-name="Header">
+            <div className="content-stretch flex gap-[var(--form\/label-gap,4px)] items-center justify-end relative shrink-0 w-full" data-node-id="I16:7860;12371:177030" data-name="Label">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:SemiBold'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--form\/field-text-label,#161616)] text-right whitespace-nowrap" dir="auto" data-node-id="I16:7860;12371:177030;8999:56791">
+                رفع المرفقات
+              </p>
+            </div>
+            <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Regular'] leading-[normal] not-italic relative shrink-0 text-[12px] text-[color:var(--text\/text-tertiary,#64748b)] text-right w-full" dir="auto" data-node-id="I16:7860;12371:177031">
+              Maximum file size allowed is 2MB, supported file formats include .jpg, .png, and .pdf.
+            </p>
+          </div>
+          <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-md-gap,4px)] h-[32px] items-center justify-center max-h-[32px] min-h-[32px] overflow-clip px-[var(--button\/buttons-md-padding,12px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I16:7860;12371:177032" data-name="Button">
+            <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I16:7860;12371:177032;407:514447" data-name="Text wrapper">
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] whitespace-nowrap" dir="auto" data-node-id="I16:7860;12371:177032;407:514448">
+                تصفح الملفات
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[var(--button\/button-background-primary-default,#1b8354)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="16:7862" data-name="Button">
+        <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I16:7862;407:514412" data-name="Text wrapper">
+          <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-oncolor-primary,white)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" dir="auto" data-node-id="I16:7862;407:514413">
+            طلب تصريح
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text sm/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-sm, weight: 400, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Display sm/Bold: Font(family: "Font Family/font-family-display", style: Font Wieght/font-weight-bold, size: Size/Display/typo-size-display-sm, weight: 700, lineHeight: Line Height/Display/line-heights-display-sm, letterSpacing: 0), Text md/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-md, weight: 400, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Text sm/Semibold: Font(family: "IBM Plex Sans Arabic", style: SemiBold, size: 14, weight: 600, lineHeight: 20, letterSpacing: 0), Text md/Semibold: Font(family: "IBM Plex Sans Arabic", style: SemiBold, size: 16, weight: 600, lineHeight: 24, letterSpacing: 0), Text xs/Regular: Font(family: "IBM Plex Sans Arabic", style: Regular, size: 12, weight: 400, lineHeight: 100, letterSpacing: 0), Text sm/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-sm, weight: 500, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Text md/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-md, weight: 500, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Breadcrumb
+**Node ID:** 361:17611
+
+Breadcrumb navigation is a user interface element that enhances user orientation within a website or application. It outlines a pathway, showing how the current page fits into the overall site hierarchy. This feature improves usability by enabling users to backtrack to more general pages seamlessly.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/navigational/breadcrumbs](https://design.dga.gov.sa/guidelines/components/navigational/breadcrumbs)
+
+## _Breadcrumb Item
+**Node ID:** 361:17564
+
+Types of Breadcrumb Item.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/navigational/breadcrumbs](https://design.dga.gov.sa/guidelines/components/navigational/breadcrumbs)
+
+## Link
+**Node ID:** 361:3839
+
+Links facilitate navigation by allowing users to click (or tap) and navigate users to another location, such as a different site, resource, or section within the same page.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/link](https://design.dga.gov.sa/guidelines/components/actions/link)
+
+## arrow-left-01
+**Node ID:** 361:17532
+
+left-arrow, back-arrow, arrow, leftward indicator, go back, back navigation symbol
+
+## arrow-down-01
+**Node ID:** 1:5600
+
+down-arrow, arrow, down, decrease arrow, drop arrow, drop down, drop down arrow
+
+## Dropdown Input
+**Node ID:** 361:12146
+
+Dropdowns present a list of options from which a user can select one option, or several.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/dropdown](https://design.dga.gov.sa/guidelines/components/actions/dropdown)
+
+## Textarea
+**Node ID:** 361:10136
+
+A text area is a UI element that enables users to input and edit multiple lines of text, providing a larger space than a regular text input field, making it suitable for longer text entries, such as comments, descriptions, or messages.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/forms-and-inputs/textarea](https://design.dga.gov.sa/guidelines/components/forms-and-inputs/textarea)
+
+## .Resize handler
+**Node ID:** 1:12888
+
+**Documentation:**
+- [https://fluent2.microsoft.design/components/web/react/textarea/usage](https://fluent2.microsoft.design/components/web/react/textarea/usage)
+
+## Button
+**Node ID:** 361:5041
+
+Buttons are interactive components that trigger specific actions. The label on a button describes the action that will occur when it is clicked by the user.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/buttons](https://design.dga.gov.sa/guidelines/components/actions/buttons)
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

@@ -1,0 +1,8 @@
+.page-feedback { border-block-start: var(--border-width-thin) solid var(--gray-300); }
+.page-feedback .feedback-form { margin-block-start: var(--space-24); }
+.page-feedback .feedback-close { align-self: flex-end; }
+.page-feedback .feedback-reason { display: flex; align-items: center; gap: var(--space-8); margin-block-start: var(--space-16); }
+.page-feedback .feedback-gender { display: flex; flex-wrap: wrap; gap: var(--space-16); margin-block-start: var(--space-32); }
+.page-feedback [aria-pressed="true"] { box-shadow: 0 0 0 var(--border-width-thick) var(--white), 0 0 0 var(--space-4) var(--sa-600); }
+
+.page-feedback h2 { font-size: var(--fs-text-lg); font-weight: var(--font-weight-body); }

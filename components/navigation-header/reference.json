@@ -1,0 +1,58 @@
+{
+  "schema_version": "2.1.0",
+  "component": {
+    "name": "navigation-header",
+    "description": "Navigation header, item, action and one-level submenu."
+  },
+  "source": {
+    "url": "https://www.figma.com/design/j5WtaAEIcO9MgO2QYFVN0i/?node-id=429-130167",
+    "reviewed": "2026-09-09",
+    "images": [
+      "https://design.dga.gov.sa/navigation-header/variants1_ar.svg",
+      "https://design.dga.gov.sa/navigation-header/variants2_ar.svg",
+      "https://design.dga.gov.sa/navigation-header/variants3_ar.svg",
+      "https://design.dga.gov.sa/navigation-header/variants4_ar.svg"
+    ],
+    "figma_nodes": {
+      "menu": "30150:148312",
+      "action": "30150:148445",
+      "submenu_item": "30150:148183",
+      "item_icon": "30150:148742",
+      "header": "30150:148751",
+      "toggle": "30150:148860",
+      "panel": "30150:148877"
+    },
+    "snapshots": "_figma/",
+    "method": "Figma get_design_context and exported screenshots"
+  },
+  "axes": [
+    "part",
+    "state",
+    "action_layout"
+  ],
+  "axis_values": {
+    "part": [
+      "item",
+      "action",
+      "submenu"
+    ],
+    "state": [
+      "default",
+      "current",
+      "hover",
+      "pressed",
+      "focus",
+      "disabled",
+      "expanded"
+    ],
+    "action_layout": [
+      "inline",
+      "stacked",
+      "text",
+      "icon-only"
+    ]
+  },
+  "variants": [],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
+}

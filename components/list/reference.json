@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "list",
     "description": "List component supporting ordered, unordered, and icon-annotated lists with two nesting levels and three style variants. Includes a reusable List item atom and a List container. Fully bilingual (LTR/RTL)."
@@ -100,5 +100,8 @@
     "Icon SVG must carry aria-hidden='true'. Accessible label is provided by .list__text.",
     "The On-Color style variant requires a dark or brand-color background in the consuming layout.",
     "No interactive states. No focus ring. No hover/active/disabled states."
-  ]
+  ],
+  "variants": [],
+  "variant_coverage": "axes_only",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

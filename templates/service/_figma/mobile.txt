@@ -1,0 +1,270 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/200ee42c-0aac-4122-b159-d2a6ac152174.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/5e817b3b-c2ac-487a-bc13-c432db79e40f.svg";
+const imgElements2 = "https://www.figma.com/api/mcp/asset/b4037d54-55b4-4523-97e8-ecf2b9a08177.svg";
+
+type BreadcrumbProps = {
+  className?: string;
+  levels?: "2";
+  rtl?: "True";
+};
+
+function Breadcrumb({ className, levels = "2", rtl = "True" }: BreadcrumbProps) {
+  return (
+    <div className={className || "content-stretch flex gap-[var(--global\\/spacing-none,0px)] items-center justify-end p-[var(--global\\/spacing-none,0px)] relative"} data-node-id="840:11486">
+      <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end pl-[var(--link\/link-sm-gap,4px)] relative shrink-0" data-node-id="840:11509" data-name="_Breadcrumb Item">
+        <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="I840:11509;5698:3324" data-name="Link">
+          <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--global\/text-default-disabled,#9da4ae)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I840:11509;5698:3324;2508:25171">
+            رابط
+          </p>
+        </div>
+        <div className="relative shrink-0 size-[16px]" data-node-id="I840:11509;5698:3323" data-name="arrow-left-01">
+          <div className="absolute inset-[21.88%_34.38%]" data-node-id="I840:11509;5698:3323;3509:32635" data-name="elements">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end pl-[var(--link\/link-sm-gap,4px)] relative shrink-0" data-node-id="840:11510" data-name="_Breadcrumb Item">
+        <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="I840:11510;5698:3315" data-name="Link">
+          <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I840:11510;5698:3315;2508:25159">
+            رابط
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Service() {
+  return (
+    <div className="content-stretch flex flex-col gap-[var(--global\/spacing-7xl,64px)] items-start relative size-full" data-node-id="27:4947" data-name="Service">
+      <div className="content-stretch flex flex-col gap-[var(--global\/spacing-xl,16px)] items-end relative shrink-0 w-full" data-node-id="27:4948" data-name="Description">
+        <div className="content-stretch flex gap-[var(--global\/spacing-4xl,32px)] items-end relative shrink-0 w-full" data-node-id="27:4949" data-name="Content">
+          <div className="bg-[var(--button\/button-background-primary-default,#1b8354)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="27:4950" data-name="Button">
+            <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I27:4950;407:510379" data-name="Text wrapper">
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-oncolor-primary,white)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="I27:4950;407:510380">
+                بدء الخدمة
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-md,8px)] items-end min-w-px relative" data-node-id="27:4951" data-name="Title">
+            <Breadcrumb className="content-stretch flex gap-[var(--global\/spacing-none,0px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" />
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-display,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/display\/line-heights-display-sm,38px)] min-w-full relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/display\/typo-size-display-sm,30px)] text-right w-[min-content]" dir="auto" data-node-id="27:4953">
+              رخصة بناء
+            </p>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start relative shrink-0" data-node-id="27:4954" data-name="Tags">
+          <div className="bg-[var(--tag\/tag-background-neutral-light,#f9fafb)] border border-[var(--border\/border-neutral-secondary,#e5e7eb)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="27:4955" data-name="Tag">
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-xs,18px)] relative shrink-0 text-[color:var(--tag\/tag-text-neutral,#1f2a37)] text-[length:var(--size\/text\/typo-size-text-xs,12px)] text-center whitespace-nowrap" dir="auto" data-node-id="I27:4955;422:117693">
+              المنصة
+            </p>
+          </div>
+          <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="27:4956" data-name="Tag">
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-xs,18px)] relative shrink-0 text-[color:var(--tag\/tag-text-success,#085d3a)] text-[length:var(--size\/text\/typo-size-text-xs,12px)] text-center whitespace-nowrap" dir="auto" data-node-id="I27:4956;422:117697">
+              رحلة الحياة
+            </p>
+          </div>
+          <div className="bg-[var(--tag\/tag-background-info-light,#eff8ff)] border border-[var(--tag\/tag-border-info-light,#b2ddff)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="27:4957" data-name="Tag">
+            <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-xs,18px)] relative shrink-0 text-[color:var(--tag\/tag-text-info,#1849a9)] text-[length:var(--size\/text\/typo-size-text-xs,12px)] text-center whitespace-nowrap" dir="auto" data-node-id="I27:4957;422:117709">
+              الوزارة
+            </p>
+          </div>
+        </div>
+        <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-full relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right w-[min-content]" dir="auto" data-node-id="27:4958">
+          مثال على وصف الخدمة لشراء قطعة أرض لبناء منزلك، يتطلب ذلك توثيق عملية البيع والشراء في مكاتب التوثيق أو خدمات كاتب العدل لتسجيل العقار باسمك.
+        </p>
+        <div className="content-stretch flex gap-[var(--link\/link-md-gap,8px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="27:4960" data-name="Link">
+          <div className="relative shrink-0 size-[20px]" data-node-id="I27:4960;12415:34908" data-name="Style=Stroke, Type=Rounded">
+            <div className="absolute inset-[13.54%]" data-node-id="I27:4960;12415:34908;2145:18105" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="I27:4960;2508:25228">
+            اتفاقية مستوى الخدمة
+          </p>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col gap-[var(--global\/spacing-3xl,24px)] items-start relative shrink-0 w-full" data-node-id="27:4962" data-name="Info">
+        <div className="content-stretch flex h-[44px] isolate items-center justify-end relative shrink-0 w-full" data-node-id="27:4963" data-name="Horizontal Tab List">
+          <div className="-translate-y-1/2 absolute content-stretch flex items-center justify-end right-[-16px] top-1/2 z-[2]" data-node-id="I27:4963;2050:109189" data-name="Tabs">
+            <div className="content-stretch flex gap-[var(--tab\/tab-button-gap,4px)] items-center justify-center px-[var(--tab\/horizontal-tab-md-button-h-padding,16px)] py-[var(--tab\/horizontal-tab-md-button-v-padding,12px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I27:4963;11449:5789" data-name="Horizontal Tab">
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I27:4963;11449:5789;418:98841" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:Medium'] justify-end leading-[0] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/text-primary-paragraph,#384250)] text-right whitespace-nowrap" data-node-id="I27:4963;11449:5789;418:98842">
+                  <p className="leading-[20px]" dir="auto">
+                    المستندات المطلوبة
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--tab\/tab-button-gap,4px)] items-center justify-center px-[var(--tab\/horizontal-tab-md-button-h-padding,16px)] py-[var(--tab\/horizontal-tab-md-button-v-padding,12px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I27:4963;2050:109191" data-name="Horizontal Tab">
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I27:4963;2050:109191;418:98841" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:Medium'] justify-end leading-[0] not-italic relative shrink-0 text-[14px] text-[color:var(--text\/text-primary-paragraph,#384250)] text-right whitespace-nowrap" data-node-id="I27:4963;2050:109191;418:98842">
+                  <p className="leading-[20px]" dir="auto">
+                    شروط الاستخدام
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--tab\/tab-button-gap,4px)] items-center justify-center px-[var(--tab\/horizontal-tab-md-button-h-padding,16px)] py-[var(--tab\/horizontal-tab-md-button-v-padding,12px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I27:4963;2050:109192" data-name="Horizontal Tab">
+              <div className="content-stretch flex items-start relative shrink-0" data-node-id="I27:4963;2050:109192;418:98829" data-name="Tab title">
+                <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" data-node-id="I27:4963;2050:109192;418:98830">
+                  <p className="leading-[var(--line-height\/text\/line-heights-text-sm,20px)]" dir="auto">
+                    الخطوات
+                  </p>
+                </div>
+              </div>
+              <div className="absolute bottom-0 content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-xl,16px)] right-0" data-node-id="I27:4963;2050:109192;418:98831" data-name="Selection indicator">
+                <div className="bg-[var(--border\/border-primary,#1b8354)] h-[3px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="I27:4963;2050:109192;418:98832" data-name="Selector" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--background\/background-neutral-50,#f9fafb)] h-[344px] overflow-clip relative rounded-[var(--radius\/radius-lg,16px)] shrink-0 w-full" data-node-id="27:4964" data-name="Video">
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[var(--background\/background-success,#079455)] h-[48px] left-[calc(50%+0.5px)] rounded-[var(--radius-full,9999px)] top-1/2 w-[47px]" data-node-id="27:4965" data-name="Featured icon">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I27:4965;7:754" data-name="Style=Solid, Type=Sharp">
+              <div className="absolute inset-[13.54%_17.71%]" data-node-id="I27:4965;7:754;2067:5420" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="[word-break:break-word] content-stretch flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] gap-[var(--global\/spacing-xl,16px)] items-end justify-center leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right w-full" data-node-id="27:4966" data-name="Steps">
+          <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0 w-full" data-node-id="27:4967" data-name="List item">
+            <p className="flex-[1_0_0] min-w-px relative" dir="auto" data-node-id="I27:4967;16512:326">
+              قم بالدخول إلى البوابة الوطنية للتسجيل الموحد عبر منصة بلدي.
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" dir="auto" data-node-id="I27:4967;16512:327">
+              -1
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0 w-full" data-node-id="27:4968" data-name="List item">
+            <p className="flex-[1_0_0] min-w-px relative" dir="auto" data-node-id="I27:4968;16512:326">
+              اختيار خدمات تراخيص البناء، ثم إصدار البناء.
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" dir="auto" data-node-id="I27:4968;16512:327">
+              -2
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0 w-full" data-node-id="27:4969" data-name="List item">
+            <p className="flex-[1_0_0] min-w-px relative" dir="auto" data-node-id="I27:4969;16512:326">
+              خدمات الترخيص ثم البلدية المطلوبة.
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" dir="auto" data-node-id="I27:4969;16512:327">
+              -3
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0 w-full" data-node-id="27:4970" data-name="List item">
+            <p className="flex-[1_0_0] min-w-px relative" dir="auto" data-node-id="I27:4970;16512:326">
+              اختيار المكتب الهندسي، ثم إدخال رقم وسنة إصدار مسح البناء، وإرفاق نسخة من السند.
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" dir="auto" data-node-id="I27:4970;16512:327">
+              -4
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0 w-full" data-node-id="27:4971" data-name="List item">
+            <p className="flex-[1_0_0] min-w-px relative" dir="auto" data-node-id="I27:4971;16512:326">
+              تقديم الطلب إلى المكتب الهندسي المحدد، ثم استكمال المعلومات والمرفقات في المكتب الهندسي وإرسالها إلى البلدية.
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" dir="auto" data-node-id="I27:4971;16512:327">
+              -5
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0 w-full" data-node-id="27:4972" data-name="List item">
+            <p className="flex-[1_0_0] min-w-px relative" dir="auto" data-node-id="I27:4972;16512:326">
+              التأكد من بيانات الطلب والمرفقات والموافقات من قبل البلدية.
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" dir="auto" data-node-id="I27:4972;16512:327">
+              -6
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0 w-full" data-node-id="27:4973" data-name="List item">
+            <p className="flex-[1_0_0] min-w-px relative" dir="auto" data-node-id="I27:4973;16512:326">
+              الموافقة على الطلب وإصدار دفعة سداد. دفع الرسوم وطباعة الرخصة.
+            </p>
+            <p className="relative shrink-0 whitespace-nowrap" dir="auto" data-node-id="I27:4973;16512:327">
+              -7
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text md/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-md, weight: 500, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Text sm/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-sm, weight: 400, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Display sm/Bold: Font(family: "Font Family/font-family-display", style: Font Wieght/font-weight-bold, size: Size/Display/typo-size-display-sm, weight: 700, lineHeight: Line Height/Display/line-heights-display-sm, letterSpacing: 0), Text xs/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-xs, weight: 500, lineHeight: Line Height/Text/line-heights-text-xs, letterSpacing: 0), Text md/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-md, weight: 400, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Text sm/Medium: Font(family: "IBM Plex Sans Arabic", style: Medium, size: 14, weight: 500, lineHeight: 20, letterSpacing: 0), Text sm/Bold: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-bold, size: Size/Text/typo-size-text-sm, weight: 700, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Button
+**Node ID:** 840:5823
+
+Buttons are interactive components that trigger specific actions. The label on a button describes the action that will occur when it is clicked by the user.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/buttons](https://design.dga.gov.sa/guidelines/components/actions/buttons)
+
+## Breadcrumb
+**Node ID:** 840:11480
+
+Breadcrumb navigation is a user interface element that enhances user orientation within a website or application. It outlines a pathway, showing how the current page fits into the overall site hierarchy. This feature improves usability by enabling users to backtrack to more general pages seamlessly.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/navigational/breadcrumbs](https://design.dga.gov.sa/guidelines/components/navigational/breadcrumbs)
+
+## _Breadcrumb Item
+**Node ID:** 840:11433
+
+Types of Breadcrumb Item.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/navigational/breadcrumbs](https://design.dga.gov.sa/guidelines/components/navigational/breadcrumbs)
+
+## Link
+**Node ID:** 840:11000
+
+Links facilitate navigation by allowing users to click (or tap) and navigate users to another location, such as a different site, resource, or section within the same page.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/link](https://design.dga.gov.sa/guidelines/components/actions/link)
+
+## arrow-left-01
+**Node ID:** 840:10748
+
+left-arrow, back-arrow, arrow, leftward indicator, go back, back navigation symbol
+
+## Tag
+**Node ID:** 840:11637
+
+Tags visually convey important information or actions related to components. They use brief text, color, and icons to offer quick insights or alerts to users. Positioned near relevant content, tags grab attention and aid comprehension.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/search-and-filters/tags](https://design.dga.gov.sa/guidelines/components/search-and-filters/tags)
+
+## link-04
+**Node ID:** 1:1130
+
+link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach
+
+## play
+**Node ID:** 1:7662
+
+Play
+
+## List item
+**Node ID:** 636:12818
+
+**Ordered List**: Used when item sequence matters, ensuring a specific viewing or processing order.
+
+**Unordered List**: Used for items without a required order or hierarchy.
+
+**List with Icons**: Like an unordered list but with icons instead of bullets for visual emphasis.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/content-display/list](https://design.dga.gov.sa/guidelines/components/content-display/list)
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

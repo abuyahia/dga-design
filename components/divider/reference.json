@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "divider",
     "description": "A horizontal or vertical visual separator. Used to divide content areas, list items, or sections. Implemented as a semantic <hr> element or aria separator.",
@@ -147,5 +147,7 @@
     "Vertical divider height requires a parent with a defined height (not height:auto).",
     "All 192px dimensions in Figma are canvas preview values — not component size constraints.",
     "The --divider-color-alpha-white and --divider-color-white variants are designed for use on dark or colored backgrounds."
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "notification-toast",
     "display_name": "Notification Toast",
@@ -152,5 +152,7 @@
     "close_button": "Implemented as .btn.btn--subtle.btn--icon-only.btn--md per button contract. Must carry aria-label=\"Dismiss notification\" (or equivalent in Arabic).",
     "live_region": "Root element carries role=\"alert\" by default (assertive). Consumers may change to role=\"status\" for polite announcements (neutral/info/success types).",
     "discarded_axes": "No state axis exists in manifest. RTL does not require a separate CSS modifier — it is handled by dir attribute inheritance."
-  }
+  },
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

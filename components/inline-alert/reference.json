@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "inline-alert",
     "description": "A dismissible inline notification that communicates system status, feedback, or contextual information using typed severity levels (neutral, info, destructive, warning, success) and optional action buttons.",
@@ -23,62 +23,72 @@
       "type": "neutral",
       "background": "white",
       "css_modifiers": [],
-      "description": "Default neutral alert on white background"
-    },
+      "description": "Default neutral alert on white background",
+  "id": "inline-alert-documented-001"
+},
     {
       "type": "info",
       "background": "white",
       "css_modifiers": ["inline-alert--info"],
-      "description": "Informational alert on white background"
-    },
+      "description": "Informational alert on white background",
+  "id": "inline-alert-documented-002"
+},
     {
       "type": "destructive",
       "background": "white",
       "css_modifiers": ["inline-alert--destructive"],
-      "description": "Error/destructive alert on white background"
-    },
+      "description": "Error/destructive alert on white background",
+  "id": "inline-alert-documented-003"
+},
     {
       "type": "warning",
       "background": "white",
       "css_modifiers": ["inline-alert--warning"],
-      "description": "Warning alert on white background"
-    },
+      "description": "Warning alert on white background",
+  "id": "inline-alert-documented-004"
+},
     {
       "type": "success",
       "background": "white",
       "css_modifiers": ["inline-alert--success"],
-      "description": "Success alert on white background"
-    },
+      "description": "Success alert on white background",
+  "id": "inline-alert-documented-005"
+},
     {
       "type": "neutral",
       "background": "color",
       "css_modifiers": ["inline-alert--color-bg"],
-      "description": "Neutral alert on tinted background"
-    },
+      "description": "Neutral alert on tinted background",
+  "id": "inline-alert-documented-006"
+},
     {
       "type": "info",
       "background": "color",
       "css_modifiers": ["inline-alert--info", "inline-alert--color-bg"],
-      "description": "Informational alert on tinted background with colored border"
-    },
+      "description": "Informational alert on tinted background with colored border",
+  "id": "inline-alert-documented-007"
+},
     {
       "type": "destructive",
       "background": "color",
       "css_modifiers": ["inline-alert--destructive", "inline-alert--color-bg"],
-      "description": "Error/destructive alert on tinted background with colored border"
-    },
+      "description": "Error/destructive alert on tinted background with colored border",
+  "id": "inline-alert-documented-008"
+},
     {
       "type": "warning",
       "background": "color",
       "css_modifiers": ["inline-alert--warning", "inline-alert--color-bg"],
-      "description": "Warning alert on tinted background with colored border"
-    },
+      "description": "Warning alert on tinted background with colored border",
+  "id": "inline-alert-documented-009"
+},
     {
       "type": "success",
       "background": "color",
       "css_modifiers": ["inline-alert--success", "inline-alert--color-bg"],
-      "description": "Success alert on tinted background with colored border"
-    }
+      "description": "Success alert on tinted background with colored border",
+  "id": "inline-alert-documented-010"
+}
   ],
   "rtl_strategy": {
     "method": "dir_attribute",
@@ -176,5 +186,7 @@
     "RTL uses CSS logical properties (inset-inline-start, inset-inline-end) for native RTL support.",
     "Mobile layout reflow is triggered by .inline-alert--mobile modifier or @media (max-width: 768px).",
     "Mobile close button uses position: absolute; inset-inline-end: -8px as per Figma exact value."
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

@@ -1,0 +1,144 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/0dfa9fb7-c144-4182-bc4f-d5507d16c94a.svg";
+
+type HeaderMenuProps = {
+  className?: string;
+  opened?: boolean;
+  state?: "Default" | "Hovered" | "Pressed" | "Focused";
+};
+
+export default function HeaderMenu({ className, opened = false, state = "Default" }: HeaderMenuProps) {
+  if (opened && state === "Default") {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148863" data-name="Opened=True, State=Default">
+        <div className="content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148864" data-name="Button">
+          <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148864;407:512161" data-name="Leading Icon">
+            <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148864;407:512161;2039:2068" style={{ containerType: "size" }}>
+              <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                <div className="relative size-full" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (!opened && state === "Hovered") {
+    return (
+      <button className={className || "content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148865" data-name="Opened=False, State=Hovered">
+        <div className="bg-[var(--button\/button-background-neutral-default,#f3f4f6)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148866" data-name="Button">
+          <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148866;407:512188" data-name="Leading Icon">
+            <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148866;407:512188;2039:2068" style={{ containerType: "size" }}>
+              <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                <div className="relative size-full" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </button>
+    );
+  }
+  if (opened && state === "Hovered") {
+    return (
+      <button className={className || "content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148867" data-name="Opened=True, State=Hovered">
+        <div className="bg-[var(--button\/button-background-neutral-default,#f3f4f6)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148868" data-name="Button">
+          <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148868;407:512188" data-name="Leading Icon">
+            <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148868;407:512188;2039:2068" style={{ containerType: "size" }}>
+              <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                <div className="relative size-full" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </button>
+    );
+  }
+  if (!opened && state === "Pressed") {
+    return (
+      <button className={className || "content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148869" data-name="Opened=False, State=Pressed">
+        <div className="bg-[var(--button\/button-background-neutral-pressed,#e5e7eb)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148870" data-name="Button">
+          <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148870;407:512215" data-name="Leading Icon">
+            <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148870;407:512215;2039:2068" style={{ containerType: "size" }}>
+              <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                <div className="relative size-full" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </button>
+    );
+  }
+  if (opened && state === "Pressed") {
+    return (
+      <button className={className || "content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148871" data-name="Opened=True, State=Pressed">
+        <div className="bg-[var(--button\/button-background-neutral-pressed,#e5e7eb)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148872" data-name="Button">
+          <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148872;407:512215" data-name="Leading Icon">
+            <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148872;407:512215;2039:2068" style={{ containerType: "size" }}>
+              <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                <div className="relative size-full" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </button>
+    );
+  }
+  if (!opened && state === "Focused") {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148873" data-name="Opened=False, State=Focused">
+        <div className="border-2 border-[var(--border\/border-black,#161616)] border-solid content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148874" data-name="Button">
+          <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148874;407:512275" data-name="Leading Icon">
+            <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148874;407:512275;2039:2068" style={{ containerType: "size" }}>
+              <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                <div className="relative size-full" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (opened && state === "Focused") {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148875" data-name="Opened=True, State=Focused">
+        <div className="border-2 border-[var(--border\/border-black,#161616)] border-solid content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148876" data-name="Button">
+          <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148876;407:512275" data-name="Leading Icon">
+            <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148876;407:512275;2039:2068" style={{ containerType: "size" }}>
+              <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                <div className="relative size-full" data-name="elements">
+                  <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148861" data-name="Opened=False, State=Default">
+      <div className="content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] items-center justify-center max-h-[40px] max-w-[40px] min-h-[40px] min-w-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[40px]" data-node-id="30150:148862" data-name="Button">
+        <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148862;407:512161" data-name="Leading Icon">
+          <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:148862;407:512161;2039:2068" style={{ containerType: "size" }}>
+            <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+              <div className="relative size-full" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

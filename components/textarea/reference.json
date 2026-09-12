@@ -1,0 +1,26 @@
+{
+  "schema_version": "2.1.0",
+  "component": {
+    "name": "textarea",
+    "description": "Native textarea composed with canonical Text Input states."
+  },
+  "source": {
+    "url": "https://www.figma.com/design/6F2vdckVRGL03uQabwoIB7/?node-id=2-28129",
+    "reviewed": "2026-09-10"
+  },
+  "axes": [
+    "state"
+  ],
+  "axis_values": {
+    "state": [
+      "default",
+      "hover",
+      "focus",
+      "error",
+      "disabled"
+    ]
+  },
+  "variants": [],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
+}

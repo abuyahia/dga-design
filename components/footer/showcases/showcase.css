@@ -1,0 +1,4 @@
+body { margin: 0; font-family: var(--font-sans); }
+main > h1, main > p, main > li, main > section > h2 { margin-inline: var(--space-32); }
+main > section { margin-block: var(--space-32); }
+.footer-example-target { padding: var(--space-24); }

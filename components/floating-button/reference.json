@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "floating-button",
     "display_name": "Floating Button",
@@ -84,5 +84,8 @@
     "Pressing the button cancels the focus ring (fab:active::after { opacity: 0 }).",
     "Disabled state uses pointer-events: none to prevent hover/active interference.",
     "RTL: [dir='rtl'] .fab reverses flex-direction for labeled mode."
-  ]
+  ],
+  "variants": [],
+  "variant_coverage": "axes_only",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

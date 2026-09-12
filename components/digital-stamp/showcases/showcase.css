@@ -1,0 +1,4 @@
+body { margin: 0; font-family: var(--font-sans); }
+main > h1, main > h2, main > p, main > section > h2, main > section > h3, .stamp-reference-note { margin-inline: var(--space-32); }
+main > section { margin-block: var(--space-32); }
+.stamp-reference-note { font-size: var(--fs-text-sm); line-height: var(--lh-text-sm); }

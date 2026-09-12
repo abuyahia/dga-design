@@ -1,0 +1,7 @@
+/* Native select behavior; core Text Input owns hover, active, error and disabled states. */
+.select-input__control { appearance: none; min-block-size: var(--space-40); cursor: pointer; padding-inline-end: var(--space-32); }
+.select-input__chevron { position: absolute; inset-inline-end: var(--space-16); inline-size: var(--select-chevron-width); block-size: var(--space-8); pointer-events: none; }
+.select-input__control:disabled { cursor: not-allowed; }
+.select-input:has(select:disabled) .select-input__chevron { opacity: var(--opacity-disabled); }
+.select-input select option { background: var(--white); color: var(--color-text-strong); }
+.select-input .text-input__field:has(select:focus-visible) { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); }

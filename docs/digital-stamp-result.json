@@ -1,0 +1,1119 @@
+{
+  "component": "digital-stamp",
+  "date": "2026-09-09",
+  "reference": "https://www.figma.com/design/j5WtaAEIcO9MgO2QYFVN0i/?node-id=17274-104",
+  "placement_reference": "https://www.kku.edu.sa/",
+  "unit_tests_passed": 20,
+  "stamp_browser_cases": 73,
+  "template_browser_cases": 80,
+  "browser_passed": true,
+  "strict_audit": {
+    "errors": 0,
+    "warnings": 0,
+    "historical_rules_not_run": 309
+  },
+  "formal_compliance": "pending",
+  "site_registration_mode": "preview",
+  "stamp_results": [
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "rtl",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "rtl",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "rtl",
+      "width": 320,
+      "actual": {
+        "open": true,
+        "height": 542,
+        "icon": 32,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "rtl",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "rtl",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "rtl",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "rtl",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "rtl",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "rtl",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "rtl",
+      "width": 390,
+      "actual": {
+        "open": true,
+        "height": 442,
+        "icon": 32,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "rtl",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "rtl",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "rtl",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "rtl",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "rtl",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "rtl",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "rtl",
+      "width": 767,
+      "actual": {
+        "open": true,
+        "height": 362,
+        "icon": 32,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "rtl",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "rtl",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "rtl",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "rtl",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "rtl",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "rtl",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "rtl",
+      "width": 768,
+      "actual": {
+        "open": true,
+        "height": 316.5625,
+        "icon": 48,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "rtl",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "rtl",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "rtl",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "rtl",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "rtl",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "rtl",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "rtl",
+      "width": 1728,
+      "actual": {
+        "open": true,
+        "height": 240.5625,
+        "icon": 48,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "rtl",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "rtl",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "rtl",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "rtl",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "ltr",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "ltr",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "ltr",
+      "width": 320,
+      "actual": {
+        "open": true,
+        "height": 594,
+        "icon": 32,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "ltr",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "ltr",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "ltr",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "ltr",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "ltr",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "ltr",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "ltr",
+      "width": 390,
+      "actual": {
+        "open": true,
+        "height": 514,
+        "icon": 32,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "ltr",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "ltr",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "ltr",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "ltr",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "ltr",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "ltr",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "ltr",
+      "width": 767,
+      "actual": {
+        "open": true,
+        "height": 394,
+        "icon": 32,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "ltr",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "ltr",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "ltr",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "ltr",
+      "width": 767,
+      "pass": true
+    },
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "ltr",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "ltr",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "ltr",
+      "width": 768,
+      "actual": {
+        "open": true,
+        "height": 348.5625,
+        "icon": 48,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "ltr",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "ltr",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "ltr",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "ltr",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "Closed geometry and hidden content",
+      "direction": "ltr",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Visible keyboard focus",
+      "direction": "ltr",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Open geometry, original assets and arrow",
+      "direction": "ltr",
+      "width": 1728,
+      "actual": {
+        "open": true,
+        "height": 272.5625,
+        "icon": 48,
+        "flag": [
+          20,
+          14
+        ],
+        "gap": "40px",
+        "overflow": false,
+        "assets": true,
+        "arrow": "visible"
+      },
+      "pass": true
+    },
+    {
+      "name": "Tab reaches registration link",
+      "direction": "ltr",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "direction": "ltr",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Space opens native disclosure",
+      "direction": "ltr",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Closed registration is skipped by Tab",
+      "direction": "ltr",
+      "width": 1728,
+      "pass": true
+    },
+    {
+      "name": "Native disclosure works without JavaScript",
+      "pass": true
+    },
+    {
+      "name": "Instances toggle independently",
+      "pass": true
+    },
+    {
+      "name": "First page element after skip link, before header; explicit preview data",
+      "pass": true
+    }
+  ],
+  "template_results": [
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "name": "rtl: mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "rtl: Escape closes menu",
+      "pass": true
+    },
+    {
+      "name": "rtl: search modal",
+      "pass": true
+    },
+    {
+      "name": "rtl: search suggestions",
+      "pass": true
+    },
+    {
+      "name": "rtl: search clear",
+      "pass": true
+    },
+    {
+      "name": "rtl: search restores focus",
+      "pass": true
+    },
+    {
+      "name": "rtl: hero selection",
+      "pass": true
+    },
+    {
+      "name": "rtl: carousel advances",
+      "pass": true
+    },
+    {
+      "name": "rtl: feedback opens",
+      "pass": true
+    },
+    {
+      "name": "rtl: feedback local completion",
+      "pass": true
+    },
+    {
+      "name": "ltr: mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "ltr: Escape closes menu",
+      "pass": true
+    },
+    {
+      "name": "ltr: search modal",
+      "pass": true
+    },
+    {
+      "name": "ltr: search suggestions",
+      "pass": true
+    },
+    {
+      "name": "ltr: search clear",
+      "pass": true
+    },
+    {
+      "name": "ltr: search restores focus",
+      "pass": true
+    },
+    {
+      "name": "ltr: hero selection",
+      "pass": true
+    },
+    {
+      "name": "ltr: carousel advances",
+      "pass": true
+    },
+    {
+      "name": "ltr: feedback opens",
+      "pass": true
+    },
+    {
+      "name": "ltr: feedback local completion",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: navigation and content remain available",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation: idempotence and instance isolation",
+      "pass": true
+    },
+    {
+      "name": "navigation: cleanup restores readable fallback",
+      "pass": true
+    },
+    {
+      "name": "navigation: remount works",
+      "pass": true
+    }
+  ]
+}

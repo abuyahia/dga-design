@@ -1,0 +1,29 @@
+<section class="error-state" aria-labelledby="error-title">
+  <div class="ds-container error-state__content">
+    <div class="error-state__illustration" aria-hidden="true">
+      <span class="error-state__code" dir="ltr">{{code}}</span>
+      <img class="error-state__symbol error-state__symbol--sm error-state__symbol--alert-one" src="templates/error/assets/alert-16.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--sm error-state__symbol--alert-two" src="templates/error/assets/alert-16.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--lg error-state__symbol--cancel-one" src="templates/error/assets/cancel-24.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--sm error-state__symbol--cancel-two" src="templates/error/assets/cancel-16.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--lg error-state__symbol--circle-one" src="templates/error/assets/cancel-circle-24.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--sm error-state__symbol--circle-two" src="templates/error/assets/cancel-circle-16.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--lg error-state__symbol--square-one" src="templates/error/assets/cancel-square-24.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--lg error-state__symbol--square-two" src="templates/error/assets/cancel-square-24.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--sm error-state__symbol--cancel-alt-one" src="templates/error/assets/cancel-alt-16.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--lg error-state__symbol--cancel-alt-two" src="templates/error/assets/cancel-alt-24.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--lg error-state__symbol--unavailable-one" src="templates/error/assets/unavailable-24.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--lg error-state__symbol--unavailable-two" src="templates/error/assets/unavailable-24.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--sm error-state__symbol--unavailable-three" src="templates/error/assets/unavailable-16.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--lg error-state__symbol--search-one" src="templates/error/assets/search-remove-24.svg" alt="">
+      <img class="error-state__symbol error-state__symbol--sm error-state__symbol--search-two" src="templates/error/assets/search-remove-16.svg" alt="">
+    </div>
+    <div class="error-state__message">
+      <div class="error-state__copy">
+        <h1 id="error-title">{{error_title}}</h1>
+        <p>{{error_description}}</p>
+      </div>
+      <a class="btn btn--primary" href="{{action_href}}"><span class="btn__text">{{action_label}}</span></a>
+    </div>
+  </div>
+</section>

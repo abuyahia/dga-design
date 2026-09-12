@@ -1,0 +1,13 @@
+[
+  {"name": "layout rtl 320", "pass": true},
+  {"name": "layout rtl 430", "pass": true},
+  {"name": "layout rtl 768", "pass": true},
+  {"name": "layout rtl 1440", "pass": true},
+  {"name": "layout ltr 320", "pass": true},
+  {"name": "layout ltr 430", "pass": true},
+  {"name": "layout ltr 768", "pass": true},
+  {"name": "layout ltr 1440", "pass": true},
+  {"name": "next updates current step", "pass": true},
+  {"name": "previous reaches first step", "pass": true},
+  {"name": "no JavaScript retains content and initial progress", "pass": true}
+]

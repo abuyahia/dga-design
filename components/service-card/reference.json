@@ -1,0 +1,25 @@
+{
+  "schema_version": "2.1.0",
+  "component": {
+    "name": "service-card",
+    "description": "Reusable service card composed of Card, Button and Tag."
+  },
+  "source": {
+    "url": "https://www.figma.com/design/sDx3NM32o1cy29rqZoVOng/?node-id=252-12677",
+    "usage_example": "https://www.kku.edu.sa/ar/e-services",
+    "reviewed": "2026-09-10"
+  },
+  "axes": [
+    "context"
+  ],
+  "axis_values": {
+    "context": [
+      "home",
+      "catalogue",
+      "related"
+    ]
+  },
+  "variants": [],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
+}

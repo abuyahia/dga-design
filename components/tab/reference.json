@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "tab",
     "display_name": "Tab",
@@ -270,5 +270,36 @@
         "Tab panels must be rendered outside this component with role='tabpanel' and aria-labelledby matching the tab id."
       ]
     }
-  }
+  },
+  "axes": [
+    "orientation",
+    "size",
+    "state",
+    "selected"
+  ],
+  "axis_values": {
+    "orientation": [
+      "horizontal",
+      "vertical"
+    ],
+    "size": [
+      "sm",
+      "md",
+      "lg"
+    ],
+    "state": [
+      "default",
+      "hovered",
+      "pressed",
+      "focused",
+      "disabled"
+    ],
+    "selected": [
+      true,
+      false
+    ]
+  },
+  "variants": [],
+  "variant_coverage": "axes_only",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

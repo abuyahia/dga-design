@@ -4,37 +4,6 @@
    Source: components/code-snippet/mainifest.json
    ============================================================ */
 
-/* TODO: All --code-snippet-* tokens are proposed. Add to token.css before production. */
-:root {
-  --code-snippet-border-radius: var(--Radius-radius-lg, 16px);
-  --code-snippet-border-color: var(--Border-border-neutral-secondary, #E5E7EB);
-  --code-snippet-bg: var(--Background-background-white, #FFF);
-  --code-snippet-gutter-bg: var(--Background-background-neutral-50, #F9FAFB);
-  --code-snippet-gutter-border-color: var(--Border-border-neutral-secondary, #E5E7EB);
-  --code-snippet-tab-divider-color: var(--Border-border-neutral-primary, #D2D6DB);
-  --code-snippet-tab-active-indicator-color: var(--Border-border-primary, #1B8354);
-  --code-snippet-code-color: var(--Text-text-default, #161616);
-  --code-snippet-tab-active-text-color: var(--Text-text-default, #161616);
-  --code-snippet-tab-inactive-text-color: var(--Text-text-primary-paragraph, #384250);
-  --code-snippet-line-numbers-color: var(--colors-text-text-quarterary-500, #667085);
-  --code-snippet-prompt-color: var(--Text-text-secondary, #DBA102);
-  --code-snippet-inline-code-color: var(--Text-text-primary, #1B8354);
-  --code-snippet-padding: var(--spacing-3xl, 24px);
-  --code-snippet-content-pb: var(--spacing-4xl, 32px);
-  --code-snippet-tab-button-padding: var(--Tab-horizontal-tab-md-button-h-padding, 16px);
-  --code-snippet-tab-button-gap: var(--Tab-tab-button-gap, 4px);
-  --code-snippet-tab-indicator-radius: var(--radius-radius-full, 9999px);
-  --code-snippet-tab-button-radius: var(--Radius-radius-sm, 4px);
-  --code-snippet-inline-gap: 12px;
-  --code-snippet-font-family-mono: "Roboto Mono", monospace;
-  --code-snippet-font-size-code: 16px;
-  --code-snippet-font-size-tab: var(--Size-Text-typo-size-text-sm, 14px);
-  --code-snippet-line-height-tab: var(--Line-Height-Text-line-heights-text-sm, 20px);
-  --code-snippet-tab-font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-  /* TODO: --code-snippet-transition-duration missing in token.css. Proposed mapping: var(--transition-fast, 150ms). */
-  --code-snippet-transition-duration: var(--transition-fast, 150ms);
-}
-
 /* ── Root ─────────────────────────────────────────────────── */
 
 .code-snippet {
@@ -42,7 +11,7 @@
   flex-direction: column;
   align-items: stretch;
   border-radius: var(--code-snippet-border-radius);
-  border: 1px solid var(--code-snippet-border-color);
+  border: var(--border-width-thin) solid var(--code-snippet-border-color);
   background: var(--code-snippet-bg);
   overflow: hidden;
   width: 100%;
@@ -72,7 +41,7 @@
   align-items: flex-start;
   align-self: stretch;
   padding: var(--code-snippet-padding);
-  border-right: 1px solid var(--code-snippet-gutter-border-color);
+  border-inline-end: var(--border-width-thin) solid var(--code-snippet-gutter-border-color);
   background: var(--code-snippet-gutter-bg);
   flex-shrink: 0;
 }
@@ -82,7 +51,7 @@
   font-family: var(--code-snippet-font-family-mono);
   font-size: var(--code-snippet-font-size-code);
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--font-weight-heading);
   line-height: normal;
   white-space: pre;
   user-select: none;
@@ -95,7 +64,7 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
-  gap: 8px;
+  gap: var(--space-8);
   padding: var(--code-snippet-padding) var(--code-snippet-padding) var(--code-snippet-content-pb) var(--code-snippet-padding);
   flex: 1;
 }
@@ -117,14 +86,14 @@
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  /* TODO: --code-snippet-line-clamp missing. Default: 20. */
+  /* Content limit: 20 lines. This is disclosure behavior, not a visual token. */
   -webkit-line-clamp: 20;
   text-overflow: ellipsis;
   color: var(--code-snippet-code-color);
   font-family: var(--code-snippet-font-family-mono);
   font-size: var(--code-snippet-font-size-code);
   font-style: normal;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: normal;
   background: transparent;
   border: none;
@@ -164,7 +133,7 @@
 
 .code-snippet--expanded .code-snippet__show-more .btn__icon {
   transform: rotate(180deg);
-  transition: transform var(--code-snippet-transition-duration) ease;
+  transition: transform var(--code-snippet-transition-duration) var(--ease-default);
 }
 
 /* ── Single-Line Variant ──────────────────────────────────── */
@@ -173,7 +142,7 @@
   flex-direction: row;
   align-items: center;
   gap: var(--code-snippet-inline-gap);
-  padding: 24px;
+  padding: var(--space-24);
 }
 
 .code-snippet__inline {
@@ -188,8 +157,8 @@
   font-family: var(--code-snippet-font-family-mono);
   font-size: var(--code-snippet-font-size-code);
   font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+  font-weight: var(--font-weight-body);
+  line-height: var(--lh-text-md);
   white-space: nowrap;
 }
 
@@ -198,8 +167,8 @@
   font-family: var(--code-snippet-font-family-mono);
   font-size: var(--code-snippet-font-size-code);
   font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
+  font-weight: var(--font-weight-body);
+  line-height: var(--lh-text-md);
 }
 
 /* Single-line copy uses .btn--md sizing from button.css — no override needed */

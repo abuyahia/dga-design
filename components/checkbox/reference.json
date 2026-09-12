@@ -1,39 +1,20 @@
 {
-  "schema_version": "1.1.0",
-  "component": "checkbox-2",
+  "schema_version": "2.1.0",
+  "component": {
+  "name": "checkbox",
+  "description": "Checkbox"
+},
   "display_name": "Checkbox",
   "source": "components/checkbox-2/manifest.json",
   "figma_type": "COMPONENT_SET",
   "generation": "v2",
 
   "axes": [
-    {
-      "name": "Checked",
-      "values": ["True", "False"],
-      "css_mechanism": "CSS :checked pseudo-class on .checkbox__input",
-      "note": "JS must set input.indeterminate = true for indeterminate pseudo-class"
-    },
-    {
-      "name": "Indeterminate",
-      "values": ["True", "False"],
-      "css_mechanism": "CSS :indeterminate pseudo-class on .checkbox__input",
-      "note": "Requires JS. Checked=False+Indeterminate=True is absent from manifest (semantically invalid — not implemented)"
-    },
-    {
-      "name": "State",
-      "values": ["Default", "Hovered", "Pressed", "Focused", "Read-only", "Disabled"],
-      "css_mechanism": ":hover, :active, :focus-visible (pseudo-classes); .checkbox--readonly, .checkbox--disabled (BEM modifiers)"
-    },
-    {
-      "name": "Size",
-      "values": ["x Small", "Small", "Medium"],
-      "css_mechanism": ".checkbox--xs, .checkbox--sm, .checkbox--md BEM modifiers; CSS custom property --checkbox-size"
-    },
-    {
-      "name": "Style",
-      "values": ["Primary", "Neutral"],
-      "css_mechanism": "Implicit default = Primary; .checkbox--neutral BEM modifier for Neutral"
-    }
+    "Checked",
+    "Indeterminate",
+    "State",
+    "Size",
+    "Style"
   ],
 
   "discarded_axes": [
@@ -55,18 +36,7 @@
     "Style": ["Primary", "Neutral"]
   },
 
-  "variants": {
-    "total_figma_components": 108,
-    "calculation": "3 effective checked states × 6 interaction states × 3 sizes × 2 styles = 108",
-    "effective_checked_states": [
-      "Unchecked (Checked=False, Indeterminate=False)",
-      "Checked (Checked=True, Indeterminate=False)",
-      "Indeterminate (Checked=True, Indeterminate=True)"
-    ],
-    "discarded": [
-      "Checked=False + Indeterminate=True — absent from manifest, semantically invalid"
-    ]
-  },
+  "variants": [],
 
   "anatomy": {
     "root": {
@@ -203,5 +173,69 @@
     "Disabled: pointer-events: none on root. Native 'disabled' attribute on input. Removed from tab order.",
     "Focus ring uses mix-blend-mode: multiply — matches Figma design intent.",
     "#161616 (focus ring color) has no named primitive in token.css. Used as literal. Add --ink-black: #161616 to token.css globally."
-  ]
+  ],
+  "source_component_name": "checkbox-2",
+  "axis_details": [
+    {
+      "name": "Checked",
+      "values": [
+        "True",
+        "False"
+      ],
+      "css_mechanism": "CSS :checked pseudo-class on .checkbox__input",
+      "note": "JS must set input.indeterminate = true for indeterminate pseudo-class"
+    },
+    {
+      "name": "Indeterminate",
+      "values": [
+        "True",
+        "False"
+      ],
+      "css_mechanism": "CSS :indeterminate pseudo-class on .checkbox__input",
+      "note": "Requires JS. Checked=False+Indeterminate=True is absent from manifest (semantically invalid — not implemented)"
+    },
+    {
+      "name": "State",
+      "values": [
+        "Default",
+        "Hovered",
+        "Pressed",
+        "Focused",
+        "Read-only",
+        "Disabled"
+      ],
+      "css_mechanism": ":hover, :active, :focus-visible (pseudo-classes); .checkbox--readonly, .checkbox--disabled (BEM modifiers)"
+    },
+    {
+      "name": "Size",
+      "values": [
+        "x Small",
+        "Small",
+        "Medium"
+      ],
+      "css_mechanism": ".checkbox--xs, .checkbox--sm, .checkbox--md BEM modifiers; CSS custom property --checkbox-size"
+    },
+    {
+      "name": "Style",
+      "values": [
+        "Primary",
+        "Neutral"
+      ],
+      "css_mechanism": "Implicit default = Primary; .checkbox--neutral BEM modifier for Neutral"
+    }
+  ],
+  "variant_summary": {
+    "total_figma_components": 108,
+    "calculation": "3 effective checked states × 6 interaction states × 3 sizes × 2 styles = 108",
+    "effective_checked_states": [
+      "Unchecked (Checked=False, Indeterminate=False)",
+      "Checked (Checked=True, Indeterminate=False)",
+      "Indeterminate (Checked=True, Indeterminate=True)"
+    ],
+    "discarded": [
+      "Checked=False + Indeterminate=True — absent from manifest, semantically invalid"
+    ]
+  },
+  "variant_coverage": "axes_only",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

@@ -1,0 +1,112 @@
+{
+  "schema_version": "2.1.0",
+  "component": {
+    "name": "footer",
+    "description": "Responsive Footer composed from Link and Button."
+  },
+  "source": {
+    "url": "https://www.figma.com/design/j5WtaAEIcO9MgO2QYFVN0i/?node-id=4205-18569",
+    "reviewed": "2026-09-09",
+    "snapshots": "_figma/"
+  },
+  "axes": [
+    "direction",
+    "theme",
+    "breakpoint",
+    "nav_links"
+  ],
+  "axis_values": {
+    "direction": [
+      "rtl",
+      "ltr"
+    ],
+    "theme": [
+      "default",
+      "dark"
+    ],
+    "breakpoint": [
+      "600+",
+      "<600"
+    ],
+    "nav_links": [
+      true,
+      false
+    ]
+  },
+  "variants": [
+    {
+      "id": "30150:165938",
+      "axes": {
+        "direction": "ltr",
+        "theme": "default",
+        "breakpoint": "600+",
+        "nav_links": true
+      }
+    },
+    {
+      "id": "30150:166027",
+      "axes": {
+        "direction": "rtl",
+        "theme": "default",
+        "breakpoint": "600+",
+        "nav_links": true
+      }
+    },
+    {
+      "id": "30150:166116",
+      "axes": {
+        "direction": "ltr",
+        "theme": "dark",
+        "breakpoint": "600+",
+        "nav_links": true
+      }
+    },
+    {
+      "id": "30150:166205",
+      "axes": {
+        "direction": "rtl",
+        "theme": "dark",
+        "breakpoint": "600+",
+        "nav_links": true
+      }
+    },
+    {
+      "id": "30150:166294",
+      "axes": {
+        "direction": "ltr",
+        "theme": "default",
+        "breakpoint": "<600",
+        "nav_links": true
+      }
+    },
+    {
+      "id": "30150:166380",
+      "axes": {
+        "direction": "rtl",
+        "theme": "default",
+        "breakpoint": "<600",
+        "nav_links": true
+      }
+    },
+    {
+      "id": "30150:166466",
+      "axes": {
+        "direction": "ltr",
+        "theme": "dark",
+        "breakpoint": "<600",
+        "nav_links": true
+      }
+    },
+    {
+      "id": "30150:166552",
+      "axes": {
+        "direction": "rtl",
+        "theme": "dark",
+        "breakpoint": "<600",
+        "nav_links": true
+      }
+    }
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
+}

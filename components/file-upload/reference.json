@@ -1,10 +1,16 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "file-upload",
     "description": "File upload component supporting single-file and multiple-file modes, with a drop zone and file row indicators (loading, uploaded, error states)."
   },
-  "axes": ["type", "state", "rtl"],
+  "axes": [
+  "type",
+  "state_single",
+  "state_drop_zone",
+  "state_file_item",
+  "rtl"
+],
   "axis_values": {
     "type": ["single", "multiple"],
     "state_single": ["default", "disabled", "uploaded"],
@@ -39,26 +45,66 @@
     "rtl": "[dir='rtl'] ancestor attribute"
   },
   "variants": [
-    { "type": "single", "state": "default",  "rtl": false, "class": ".file-upload" },
-    { "type": "single", "state": "default",  "rtl": true,  "class": ".file-upload + [dir=rtl]" },
-    { "type": "single", "state": "disabled", "rtl": false, "class": ".file-upload[aria-disabled=true]" },
-    { "type": "single", "state": "disabled", "rtl": true,  "class": ".file-upload[aria-disabled=true] + [dir=rtl]" },
-    { "type": "single", "state": "uploaded", "rtl": false, "class": ".file-upload.is-uploaded" },
-    { "type": "single", "state": "uploaded", "rtl": true,  "class": ".file-upload.is-uploaded + [dir=rtl]" },
-    { "type": "drop-zone", "state": "default",    "rtl": false, "class": ".drop-zone" },
-    { "type": "drop-zone", "state": "default",    "rtl": true,  "class": ".drop-zone + [dir=rtl]" },
-    { "type": "drop-zone", "state": "drag-hover", "rtl": false, "class": ".drop-zone.is-drag-hover" },
-    { "type": "drop-zone", "state": "drag-hover", "rtl": true,  "class": ".drop-zone.is-drag-hover + [dir=rtl]" },
-    { "type": "drop-zone", "state": "disabled",   "rtl": false, "class": ".drop-zone[aria-disabled=true]" },
-    { "type": "drop-zone", "state": "disabled",   "rtl": true,  "class": ".drop-zone[aria-disabled=true] + [dir=rtl]" },
-    { "type": "file-item", "state": "loading",  "rtl": false, "class": ".file-item" },
-    { "type": "file-item", "state": "loading",  "rtl": true,  "class": ".file-item + [dir=rtl]" },
-    { "type": "file-item", "state": "uploaded", "rtl": false, "class": ".file-item" },
-    { "type": "file-item", "state": "uploaded", "rtl": true,  "class": ".file-item + [dir=rtl]" },
-    { "type": "file-item", "state": "error",    "rtl": false, "class": ".file-item.file-item--error" },
-    { "type": "file-item", "state": "error",    "rtl": true,  "class": ".file-item.file-item--error + [dir=rtl]" },
-    { "type": "multiple",  "state": "default",  "rtl": false, "class": ".file-upload--multiple" },
-    { "type": "multiple",  "state": "default",  "rtl": true,  "class": ".file-upload--multiple + [dir=rtl]" }
+    { "type": "single", "state": "default",  "rtl": false, "class": ".file-upload",
+  "id": "file-upload-documented-001"
+},
+    { "type": "single", "state": "default",  "rtl": true,  "class": ".file-upload + [dir=rtl]",
+  "id": "file-upload-documented-002"
+},
+    { "type": "single", "state": "disabled", "rtl": false, "class": ".file-upload[aria-disabled=true]",
+  "id": "file-upload-documented-003"
+},
+    { "type": "single", "state": "disabled", "rtl": true,  "class": ".file-upload[aria-disabled=true] + [dir=rtl]",
+  "id": "file-upload-documented-004"
+},
+    { "type": "single", "state": "uploaded", "rtl": false, "class": ".file-upload.is-uploaded",
+  "id": "file-upload-documented-005"
+},
+    { "type": "single", "state": "uploaded", "rtl": true,  "class": ".file-upload.is-uploaded + [dir=rtl]",
+  "id": "file-upload-documented-006"
+},
+    { "type": "drop-zone", "state": "default",    "rtl": false, "class": ".drop-zone",
+  "id": "file-upload-documented-007"
+},
+    { "type": "drop-zone", "state": "default",    "rtl": true,  "class": ".drop-zone + [dir=rtl]",
+  "id": "file-upload-documented-008"
+},
+    { "type": "drop-zone", "state": "drag-hover", "rtl": false, "class": ".drop-zone.is-drag-hover",
+  "id": "file-upload-documented-009"
+},
+    { "type": "drop-zone", "state": "drag-hover", "rtl": true,  "class": ".drop-zone.is-drag-hover + [dir=rtl]",
+  "id": "file-upload-documented-010"
+},
+    { "type": "drop-zone", "state": "disabled",   "rtl": false, "class": ".drop-zone[aria-disabled=true]",
+  "id": "file-upload-documented-011"
+},
+    { "type": "drop-zone", "state": "disabled",   "rtl": true,  "class": ".drop-zone[aria-disabled=true] + [dir=rtl]",
+  "id": "file-upload-documented-012"
+},
+    { "type": "file-item", "state": "loading",  "rtl": false, "class": ".file-item",
+  "id": "file-upload-documented-013"
+},
+    { "type": "file-item", "state": "loading",  "rtl": true,  "class": ".file-item + [dir=rtl]",
+  "id": "file-upload-documented-014"
+},
+    { "type": "file-item", "state": "uploaded", "rtl": false, "class": ".file-item",
+  "id": "file-upload-documented-015"
+},
+    { "type": "file-item", "state": "uploaded", "rtl": true,  "class": ".file-item + [dir=rtl]",
+  "id": "file-upload-documented-016"
+},
+    { "type": "file-item", "state": "error",    "rtl": false, "class": ".file-item.file-item--error",
+  "id": "file-upload-documented-017"
+},
+    { "type": "file-item", "state": "error",    "rtl": true,  "class": ".file-item.file-item--error + [dir=rtl]",
+  "id": "file-upload-documented-018"
+},
+    { "type": "multiple",  "state": "default",  "rtl": false, "class": ".file-upload--multiple",
+  "id": "file-upload-documented-019"
+},
+    { "type": "multiple",  "state": "default",  "rtl": true,  "class": ".file-upload--multiple + [dir=rtl]",
+  "id": "file-upload-documented-020"
+}
   ],
   "implementation_notes": [
     "RTL is handled via [dir=rtl] on an ancestor element — no separate RTL modifier class needed.",
@@ -73,5 +119,7 @@
       "axis": "rtl (Drop Zone CSS)",
       "reason": "Drop Zone layout is centered/symmetric — LTR and RTL produce identical CSS. Only text content differs. Handled by dir attribute on ancestor and browser text rendering."
     }
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

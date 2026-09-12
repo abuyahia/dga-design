@@ -1,0 +1,629 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/523e975e-8be2-4ed6-a240-c44bc8bdb796.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/d5074300-1cb1-450f-82a2-7c6fafa1ee50.svg";
+const imgElements2 = "https://www.figma.com/api/mcp/asset/0f4439d4-99f7-4d80-ad62-134d7661420d.svg";
+const imgElements3 = "https://www.figma.com/api/mcp/asset/fb6ef4d5-186a-49b5-afb8-f4696076109d.svg";
+const imgElements4 = "https://www.figma.com/api/mcp/asset/86beb6e4-7704-4640-8914-db43cd67c2b4.svg";
+const imgElements5 = "https://www.figma.com/api/mcp/asset/5ece2e25-1d6c-43b4-b834-3c74e6e5bed8.svg";
+const imgElements6 = "https://www.figma.com/api/mcp/asset/6b4588f0-a260-4f0d-8839-3a8bfd6688c9.svg";
+const imgElements7 = "https://www.figma.com/api/mcp/asset/d8c2d7bb-92d7-4305-a414-081a857ab80c.svg";
+const imgElements8 = "https://www.figma.com/api/mcp/asset/4ee1c40d-fda6-4dc8-9407-4398aa79e5c7.svg";
+
+type HeaderMenuItemProps = {
+  className?: string;
+  chevronUpDown?: React.ReactNode | null;
+  icon?: boolean;
+  rtl?: boolean;
+  selected?: boolean;
+  state?: "Default" | "Hovered" | "Pressed" | "Focused" | "Disabled";
+  subMenu?: boolean;
+  swapIcon?: React.ReactNode | null;
+  textAr?: string;
+  textEn?: string;
+};
+
+export default function HeaderMenuItem({ className, chevronUpDown = null, icon = true, rtl = false, selected = true, state = "Default", subMenu = true, swapIcon = null, textAr = "تبويب", textEn = "Link" }: HeaderMenuItemProps) {
+  if (!rtl && state === "Hovered" && selected) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-hovered,#166a45)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148320" data-name="RTL=False, State=Hovered, Selected=True">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148321" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148321;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148322" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="30150:148323">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148324" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148324;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148325" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148326" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Pressed" && selected) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-pressed,#104631)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148327" data-name="RTL=False, State=Pressed, Selected=True">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148328" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148328;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148329" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="30150:148330">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148331" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148331;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148332" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148333" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Focused" && selected) {
+    return (
+      <div className={className || "bg-[var(--button\\/button-background-primary-focused,#1b8354)] border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center overflow-clip px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148334" data-name="RTL=False, State=Focused, Selected=True">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148335" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148335;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148336" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] whitespace-nowrap" data-node-id="30150:148337">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148338" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148338;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-[-2px] px-[var(--spacing-md,8px)] right-[-2px] top-[64px]" data-node-id="30150:148339" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148340" data-name="Selector" />
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148341" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (!rtl && state === "Disabled" && selected) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148342" data-name="RTL=False, State=Disabled, Selected=True">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148343" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148343;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements3} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148344" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--global\/text-default-disabled,#9da4ae)] whitespace-nowrap" data-node-id="30150:148345">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148346" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148346;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements4} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148347" data-name="Selection indicator">
+          <div className="bg-[var(--global\/background-disabled,#e5e7eb)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148348" data-name="Selector" />
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Disabled" && selected) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148349" data-name="RTL=True, State=Disabled, Selected=True">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148350" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148350;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements5} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148351" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--global\/text-default-disabled,#9da4ae)] text-right whitespace-nowrap" data-node-id="30150:148352">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148353" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148353;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements3} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148354" data-name="Selection indicator">
+          <div className="bg-[var(--global\/background-disabled,#e5e7eb)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148355" data-name="Selector" />
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Focused" && selected) {
+    return (
+      <div className={className || "bg-[var(--button\\/button-background-primary-focused,#1b8354)] border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center overflow-clip px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148356" data-name="RTL=True, State=Focused, Selected=True">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148357" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148357;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148358" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148359">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148360" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148360;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-[-2px] px-[var(--spacing-md,8px)] right-[-2px] top-[64px]" data-node-id="30150:148361" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148362" data-name="Selector" />
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148363" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (rtl && state === "Pressed" && selected) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-pressed,#104631)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148364" data-name="RTL=True, State=Pressed, Selected=True">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148365" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148365;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148366" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148367">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148368" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148368;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148369" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148370" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Hovered" && selected) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-hovered,#166a45)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148371" data-name="RTL=True, State=Hovered, Selected=True">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148372" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148372;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148373" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148374">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148375" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148375;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148376" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148377" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Default" && selected) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-default,#1b8354)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148378" data-name="RTL=True, State=Default, Selected=True">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148379" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148379;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148380" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148381">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148382" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148382;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148383" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148384" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Default" && !selected) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148385" data-name="RTL=False, State=Default, Selected=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148386" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148386;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148387" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="30150:148388">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148389" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148389;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements7} />
+              </div>
+            </div>
+          ))}
+      </div>
+    );
+  }
+  if (!rtl && state === "Hovered" && !selected) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-hovered,#f3f4f6)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148390" data-name="RTL=False, State=Hovered, Selected=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148391" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148391;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148392" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-left whitespace-nowrap" data-node-id="30150:148393">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148394" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148394;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements7} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148395" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-400,#9da4ae)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148396" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Pressed" && !selected) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-pressed,#e5e7eb)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148397" data-name="RTL=False, State=Pressed, Selected=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148398" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148398;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148399" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-left whitespace-nowrap" data-node-id="30150:148400">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148401" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148401;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements8} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148402" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-800,#1f2a37)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148403" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Focused" && !selected) {
+    return (
+      <div className={className || "border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148404" data-name="RTL=False, State=Focused, Selected=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148405" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148405;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148406" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="30150:148407">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148408" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148408;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements8} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148409" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (!rtl && state === "Disabled" && !selected) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148410" data-name="RTL=False, State=Disabled, Selected=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148411" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148411;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements3} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148412" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--global\/text-default-disabled,#9da4ae)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="30150:148413">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148414" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148414;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements5} />
+              </div>
+            </div>
+          ))}
+      </div>
+    );
+  }
+  if (rtl && state === "Disabled" && !selected) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148415" data-name="RTL=True, State=Disabled, Selected=False">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148416" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148416;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements5} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148417" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--global\/text-default-disabled,#9da4ae)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148418">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148419" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148419;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements3} />
+              </div>
+            </div>
+          ))}
+      </div>
+    );
+  }
+  if (rtl && state === "Focused" && !selected) {
+    return (
+      <div className={className || "border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148420" data-name="RTL=True, State=Focused, Selected=False">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148421" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148421;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements8} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148422" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148423">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148424" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148424;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148425" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (rtl && state === "Pressed" && !selected) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-pressed,#e5e7eb)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148426" data-name="RTL=True, State=Pressed, Selected=False">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148427" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148427;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements8} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148428" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148429">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148430" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148430;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148431" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-800,#1f2a37)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148432" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Hovered" && !selected) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-hovered,#f3f4f6)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148433" data-name="RTL=True, State=Hovered, Selected=False">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148434" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148434;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements8} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148435" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148436">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148437" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148437;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148438" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-400,#9da4ae)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148439" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Default" && !selected) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148440" data-name="RTL=True, State=Default, Selected=False">
+        {subMenu &&
+          (chevronUpDown || (
+            <div className="relative shrink-0 size-[20px]" data-node-id="30150:148441" data-name="Chevron">
+              <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148441;2039:1971" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements8} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148442" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148443">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148444" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148444;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements6} />
+              </div>
+            </div>
+          ))}
+      </div>
+    );
+  }
+  return (
+    <button className={className || "bg-[var(--button\\/button-background-primary-default,#1b8354)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148313" data-name="RTL=False, State=Default, Selected=True">
+      {icon &&
+        (swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148314" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148314;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        ))}
+      <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148315" data-name="Tab title">
+        <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="30150:148316">
+          <p className="leading-[24px]">{textEn}</p>
+        </div>
+      </div>
+      {subMenu &&
+        (chevronUpDown || (
+          <div className="relative shrink-0 size-[20px]" data-node-id="30150:148317" data-name="Chevron">
+            <div className="absolute inset-[34.38%_21.88%_34.38%_21.87%]" data-node-id="I30150:148317;2039:1971" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+        ))}
+      <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148318" data-name="Selection indicator">
+        <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148319" data-name="Selector" />
+      </div>
+    </button>
+  );
+}

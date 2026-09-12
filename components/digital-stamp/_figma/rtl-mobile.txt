@@ -1,0 +1,186 @@
+const imgFrame1 = "https://www.figma.com/api/mcp/asset/a24f1496-97b6-4359-b39f-bd7f4a366e27.svg";
+const imgElements = "https://www.figma.com/api/mcp/asset/32a55357-bf54-4264-8593-3c959ba4c988.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/c29de1d8-65b3-4956-bc79-e3b6fcae372b.svg";
+const imgElements2 = "https://www.figma.com/api/mcp/asset/4740e1a5-71a0-4c6f-a8ce-d29a77919f41.svg";
+const imgElements3 = "https://www.figma.com/api/mcp/asset/7aee71bd-08bf-47ad-8f7e-ea97c085192e.svg";
+const imgDgaLogo = "https://www.figma.com/api/mcp/asset/79e5f017-8600-40e2-a0b8-bea37fd0369f.svg";
+
+type CountryFlagsProps = {
+  className?: string;
+  flags?: "Saudi Arabia";
+  shape?: "Square";
+  size?: "Medium";
+};
+
+function CountryFlags({ className, flags = "Saudi Arabia", shape = "Square", size = "Medium" }: CountryFlagsProps) {
+  return (
+    <div className={className || "bg-white h-[14px] overflow-clip relative w-[20px]"} data-node-id="17394:9382">
+      <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="17394:19750" data-name="flag">
+        <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="17394:19751" data-name="contents">
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[#006923] h-[14px] left-1/2 top-1/2 w-[20px]" data-node-id="17394:19752" data-name="base" />
+          <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[8.392px] left-1/2 top-[calc(50%+0.2px)] w-[14px]" data-node-id="17394:19753">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+type DigitalStampProps = {
+  className?: string;
+  device?: "Mobile";
+  opened?: boolean;
+  rtl?: "Yes";
+};
+
+function DigitalStamp({ className, device = "Mobile", opened = false, rtl = "Yes" }: DigitalStampProps) {
+  const isYesAndOpenedAndMobile = rtl === "Yes" && opened && device === "Mobile";
+  return (
+    <div className={className || `${String.raw`bg-[var(--background\/background-neutral-100,#f3f4f6)] content-stretch flex overflow-clip px-[var(--global\/spacing-xl,16px)] relative w-[390px] `}${isYesAndOpenedAndMobile ? String.raw`flex-col gap-[var(--global\/spacing-5xl,40px)] items-end pb-[var(--global\/spacing-xl,16px)] pt-[var(--global\/spacing-sm,6px)]` : String.raw`items-center justify-end py-[var(--global\/spacing-sm,6px)]`}`} id={isYesAndOpenedAndMobile ? "node-31107_6261" : "node-31107_6244"}>
+      <div className={`${String.raw`content-stretch flex flex-col gap-[var(--global\/spacing-md,8px)] items-end justify-center relative `}${isYesAndOpenedAndMobile ? "shrink-0 w-full" : "flex-[1_0_0] min-w-px"}`} id={isYesAndOpenedAndMobile ? "node-31107_6331" : "node-31107_6245"} data-name="Content">
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-center justify-end relative shrink-0 w-full" id={isYesAndOpenedAndMobile ? "node-31107_6332" : "node-31107_6260"} data-name="Content">
+          <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] min-w-px relative text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right" dir="auto" id={isYesAndOpenedAndMobile ? "node-31107_6333" : "node-31107_6247"}>
+            موقع حكومي مسجل لدى هيئة الحكومة الرقمية
+          </p>
+          {rtl === "Yes" && !opened && device === "Mobile" && (
+            <div className="bg-white h-[14px] overflow-clip relative shrink-0 w-[20px]" data-node-id="31107:6248" data-name="Country Flags">
+              <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="I31107:6248;7:15097" data-name="flag">
+                <div className="-translate-x-1/2 -translate-y-1/2 absolute contents left-1/2 top-1/2" data-node-id="I31107:6248;7:15098" data-name="contents">
+                  <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-[#006923] h-[14px] left-1/2 top-1/2 w-[20px]" data-node-id="I31107:6248;7:15099" data-name="base" />
+                  <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[8.392px] left-1/2 top-[calc(50%+0.2px)] w-[14px]" data-node-id="I31107:6248;7:15100">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgFrame1} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+          {isYesAndOpenedAndMobile && <CountryFlags className="bg-white h-[14px] overflow-clip relative shrink-0 w-[20px]" />}
+        </div>
+        <button className="content-stretch cursor-pointer flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" id={isYesAndOpenedAndMobile ? "node-31215_879" : "node-31215_855"} data-name="Link">
+          <div className="relative shrink-0 size-[16px]" id={isYesAndOpenedAndMobile ? "node-I31215_879-12415_42240" : "node-I31215_855-12415_42240"} data-name="Style=Stroke, Type=Rounded">
+            <div className={`absolute ${isYesAndOpenedAndMobile ? "inset-[34.37%_21.87%_34.38%_21.88%]" : "inset-[34.38%_21.88%_34.38%_21.87%]"}`} id={isYesAndOpenedAndMobile ? "node-I31215_879-12415_42240-2039_1947" : "node-I31215_855-12415_42240-2039_1971"} data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={isYesAndOpenedAndMobile ? imgElements1 : imgElements} />
+            </div>
+          </div>
+          <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" id={isYesAndOpenedAndMobile ? "node-I31215_879-2508_25156" : "node-I31215_855-2508_25156"}>
+            كيف تتحقق؟
+          </p>
+        </button>
+      </div>
+      {isYesAndOpenedAndMobile && (
+        <div className="content-stretch flex flex-col gap-[var(--section\/section-gap,32px)] items-end relative shrink-0 w-full" data-node-id="31107:6266" data-name="Content">
+          <div className="content-stretch flex flex-col gap-[var(--global\/spacing-xl,16px)] items-end relative shrink-0 w-full" data-node-id="31107:6267" data-name="Extension">
+            <div className="content-stretch flex gap-[var(--global\/spacing-lg,12px)] items-start relative shrink-0 w-full" data-node-id="I31107:6267;31101:6112" data-name="Domain Verfication">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-5xl,40px)] items-start justify-center min-w-px relative" data-node-id="I31107:6267;31101:6113" data-name="Text">
+                <div className="content-stretch flex flex-col gap-[var(--global\/spacing-lg,12px)] items-end relative shrink-0 w-full" data-node-id="I31107:6267;31101:6114" data-name="Text Content">
+                  <div className="content-stretch flex gap-[var(--global\/spacing-xs,4px)] items-start justify-end relative shrink-0 w-full" data-node-id="I31107:6267;31101:6115" data-name="Head domain AR">
+                    <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[0] min-w-px relative text-[color:var(--text\/text-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] text-right" dir="auto" data-node-id="I31107:6267;31101:6116">
+                      <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#161616]">روابط المواقع الإلكترونية الرسمية السعودية تنتهي بـ</span>
+                      <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)]">{` gov.sa `}</span>
+                    </p>
+                  </div>
+                  <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-primary-paragraph,#384250)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right w-full" dir="auto" data-node-id="I31107:6267;31101:6117">
+                    جميع روابط المواقع الرسمية التابعة للجهات الحكومية في المملكة العربية السعودية تنتهي بـ .gov.sa
+                  </p>
+                </div>
+              </div>
+              <div className="border border-[var(--border\/border-success,#067647)] border-solid relative rounded-[var(--radius-full,9999px)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0 size-[32px]" data-node-id="I31107:6267;31101:6118" data-name="Featured icon">
+                <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[16px] top-1/2" data-node-id="I31107:6267;31101:6118;7:942" data-name="Style=Stroke, Type=Rounded">
+                  <div className="absolute inset-[13.54%]" data-node-id="I31107:6267;31101:6118;7:942;2145:18105" data-name="elements">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--global\/spacing-lg,12px)] items-start justify-end relative shrink-0 w-full" data-node-id="I31107:6267;31101:6107" data-name="Security Confirmation">
+              <div className="[word-break:break-word] content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-lg,12px)] items-end min-w-px relative text-right" data-node-id="I31107:6267;31101:6108" data-name="Text Content">
+                <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] w-full" dir="auto" data-node-id="I31107:6267;31101:6109">
+                  <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)]">{`المواقع الإلكترونية الحكومية الموثوقة تستخدم بروتوكول `}</span>
+                  <span className="leading-[var(--line-height\/text\/line-heights-text-ig,28px)] text-[#1b8354]">HTTPS</span>
+                </p>
+                <p className="font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-primary-paragraph,#384250)] text-[length:var(--size\/text\/typo-size-text-md,16px)] w-full" dir="auto" data-node-id="I31107:6267;31101:6110">
+                  تحقق من أن الموقع يستخدم بروتوكول HTTPS
+                </p>
+              </div>
+              <div className="border border-[var(--border\/border-success,#067647)] border-solid relative rounded-[var(--radius-full,9999px)] shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] shrink-0 size-[32px]" data-node-id="I31107:6267;31101:6111" data-name="Featured icon">
+                <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[16px] top-1/2" data-node-id="I31107:6267;31101:6111;7:942" data-name="Style=Stroke, Type=Rounded">
+                  <div className="absolute inset-[5.21%_13.54%]" data-node-id="I31107:6267;31101:6111;7:942;2067:24541" data-name="elements">
+                    <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements3} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-[var(--background\/background-white,white)] content-start flex flex-wrap gap-y-[18px] items-start justify-end px-[var(--global\/spacing-3xl,24px)] py-[var(--global\/spacing-md,8px)] relative rounded-[var(--radius\/radius-md,8px)] shrink-0 w-full" data-node-id="31107:6268" data-name="Section">
+            <div className="content-stretch flex flex-[1_0_0] gap-[var(--global\/spacing-3xl,24px)] items-center justify-end min-w-px relative" data-node-id="31107:6269" data-name="Content">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-lg,12px)] items-end min-w-px relative" data-node-id="31107:6270" data-name="Text">
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] min-w-full relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right w-[min-content]" dir="auto" data-node-id="31107:6272">
+                  مسجل لدى هيئة الحكومة الرقمية برقم:
+                </p>
+                <div className="content-stretch flex gap-[var(--link\/link-md-gap,8px)] items-center p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="31107:6271" data-name="Link">
+                  <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--link\/link-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-md,16px)] underline whitespace-nowrap" data-node-id="I31107:6271;2508:24770">
+                    20230103200
+                  </p>
+                </div>
+              </div>
+              <div className="h-[30.574px] relative shrink-0 w-[20.986px]" data-node-id="31107:6273" data-name="DGA logo">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDgaLogo} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text sm/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-sm, weight: 500, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Text sm/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-sm, weight: 400, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Text lg/Semibold: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-semibold, size: Size/Text/typo-size-text-Ig, weight: 600, lineHeight: Line Height/Text/line-heights-text-Ig, letterSpacing: 0), Text md/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-md, weight: 400, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Shadows/shadow-xs: Effect(type: DROP_SHADOW, color: #1018280D, offset: (0, 1), radius: 2, spread: 0), Text md/Regular underlined: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-md, weight: 400, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Digital Stamp
+**Node ID:** 17504:520
+
+The Digital Stamp Component is an interface element that ensures users are interacting with a verified and secure source, confirming the integrity and authenticity of government sites. It provides an encrypted digital stamp, reinforcing trust and transparency in the website's content.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp](https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp)
+
+## Flags=Saudi Arabia, Size=Medium, Shape=Square
+**Node ID:** 17394:9382
+
+medium - 20x15
+
+## Link
+**Node ID:** 2508:25804
+
+Links facilitate navigation by allowing users to click (or tap) and navigate users to another location, such as a different site, resource, or section within the same page.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/link](https://design.dga.gov.sa/guidelines/components/actions/link)
+
+## arrow-up-01
+**Node ID:** 13758:242553
+
+drop up-arrow, up arrow, arrow, upper direction arrow, increase arrow
+
+## Extension
+**Node ID:** 25079:5361
+
+The purpose of extensions is to provide clear indications of the authenticity of a website. Key details, such as domain confirmation (e.g., .gov.sa, .edu.sa, .med.sa, .org.sa, .sch.sa), HTTPS usage, and Digital Government Authority registration, reinforce user trust and security.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp](https://design.dga.gov.sa/guidelines/components/content-display/digital-stamp)
+
+## link-04
+**Node ID:** 13758:242380
+
+link-icon, connection, web, hyperlink, chain, join, URL, anchor, tie, bridge, attach
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

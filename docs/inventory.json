@@ -1,0 +1,1760 @@
+{
+  "schema_version": "1.0.0",
+  "policy": "Paths describe existing packages only. planned does not mean implemented. dependencies list package IDs (not source assets or internal elements). See architecture.md and decisions/001-canonical-components.md.",
+  "items": [
+    {
+      "id": "accordion",
+      "semantic_id": "accordion",
+      "layer": "core",
+      "path": "components/accordion",
+      "status": "needs_improvement",
+      "selection": "legacy",
+      "replacement": "accordion-new",
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/accordion/accordion.css",
+        "reference": "components/accordion/reference.json",
+        "template": "components/accordion/template.html",
+        "contract": null,
+        "audit": null,
+        "compliance": null,
+        "showcase": "components/accordion/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "accordion-new",
+      "semantic_id": "accordion",
+      "layer": "core",
+      "path": "components/accordion-new",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/accordion-new/accordion-new.css",
+        "reference": "components/accordion-new/reference.json",
+        "template": "components/accordion-new/template.html",
+        "contract": "components/accordion-new/accordion-new.contract.md",
+        "audit": "components/accordion-new/audit-rules.json",
+        "compliance": "components/accordion-new/compliance.json",
+        "showcase": "components/accordion-new/showcases/index.html"
+      },
+      "notes": "Selected for new work; shared .accordion namespace means never co-load with legacy accordion."
+    },
+    {
+      "id": "avatar",
+      "semantic_id": "avatar",
+      "layer": "core",
+      "path": "components/avatar",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/avatar/avatar.css",
+        "reference": "components/avatar/reference.json",
+        "template": "components/avatar/template.html",
+        "contract": "components/avatar/avatar.contract.md",
+        "audit": "components/avatar/audit-rules.json",
+        "compliance": "components/avatar/compliance.json",
+        "showcase": "components/avatar/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "breadcrumb",
+      "semantic_id": "breadcrumb",
+      "layer": "core",
+      "path": "components/breadcrumb",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/breadcrumb/breadcrumb.css",
+        "reference": null,
+        "template": null,
+        "contract": null,
+        "audit": null,
+        "compliance": null,
+        "showcase": "components/breadcrumb/showcases/index.html"
+      },
+      "notes": "Missing reference/template/contract/audit package; tracked for Core phase."
+    },
+    {
+      "id": "button",
+      "semantic_id": "button",
+      "layer": "core",
+      "path": "components/button",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/button/button.css",
+        "reference": "components/button/reference.json",
+        "template": "components/button/template.html",
+        "contract": "components/button/button.contract.md",
+        "audit": "components/button/audit-rules.json",
+        "compliance": "components/button/compliance.json",
+        "showcase": "components/button/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "card",
+      "semantic_id": "card",
+      "layer": "composite",
+      "path": "components/card",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "avatar",
+        "button",
+        "checkbox"
+      ],
+      "files": {
+        "css": "components/card/card.css",
+        "reference": "components/card/reference.json",
+        "template": "components/card/template.html",
+        "contract": "components/card/card.contract.md",
+        "audit": "components/card/audit-rules.json",
+        "compliance": "components/card/compliance.json",
+        "showcase": "components/card/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "card-bk",
+      "semantic_id": "card",
+      "layer": "core",
+      "path": "components/card-bk",
+      "status": "source_only",
+      "selection": "not_implemented",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": null,
+        "reference": null,
+        "template": null,
+        "contract": null,
+        "audit": null,
+        "compliance": null,
+        "showcase": null
+      },
+      "notes": "Source backup only; not an independently consumable card."
+    },
+    {
+      "id": "checkbox",
+      "semantic_id": "checkbox",
+      "layer": "core",
+      "path": "components/checkbox",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/checkbox/checkbox-2.css",
+        "reference": "components/checkbox/reference.json",
+        "template": "components/checkbox/template.html",
+        "contract": "components/checkbox/checkbox-2.contract.md",
+        "audit": "components/checkbox/audit-rules.json",
+        "compliance": "components/checkbox/compliance.json",
+        "showcase": "components/checkbox/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "chip",
+      "semantic_id": "chip",
+      "layer": "core",
+      "path": "components/chip",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/chip/chip.css",
+        "reference": "components/chip/reference.json",
+        "template": "components/chip/template.html",
+        "contract": "components/chip/chip.contract.md",
+        "audit": "components/chip/audit-rules.json",
+        "compliance": "components/chip/compliance.json",
+        "showcase": "components/chip/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "code-snippet",
+      "semantic_id": "code-snippet",
+      "layer": "composite",
+      "path": "components/code-snippet",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "button",
+        "tab"
+      ],
+      "files": {
+        "css": "components/code-snippet/code-snippet.css",
+        "reference": "components/code-snippet/reference.json",
+        "template": "components/code-snippet/template.html",
+        "contract": "components/code-snippet/code-snippet.contract.md",
+        "audit": "components/code-snippet/audit-rules.json",
+        "compliance": "components/code-snippet/compliance.json",
+        "showcase": "components/code-snippet/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "content-switcher",
+      "semantic_id": "content-switcher",
+      "layer": "core",
+      "path": "components/content-switcher",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/content-switcher/content-switcher.css",
+        "reference": "components/content-switcher/reference.json",
+        "template": "components/content-switcher/template.html",
+        "contract": "components/content-switcher/content-switcher.contract.md",
+        "audit": "components/content-switcher/audit-rules.json",
+        "compliance": "components/content-switcher/compliance.json",
+        "showcase": "components/content-switcher/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "dga-links",
+      "semantic_id": "link",
+      "layer": "core",
+      "path": "components/dga-links",
+      "status": "needs_improvement",
+      "selection": "legacy",
+      "replacement": "link",
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/dga-links/link.css",
+        "reference": "components/dga-links/reference.json",
+        "template": "components/dga-links/template.html",
+        "contract": null,
+        "audit": null,
+        "compliance": null,
+        "showcase": "components/dga-links/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "divider",
+      "semantic_id": "divider",
+      "layer": "core",
+      "path": "components/divider",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/divider/divider.css",
+        "reference": "components/divider/reference.json",
+        "template": "components/divider/template.html",
+        "contract": "components/divider/divider.contract.md",
+        "audit": "components/divider/audit-rules.json",
+        "compliance": "components/divider/compliance.json",
+        "showcase": "components/divider/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "file-upload",
+      "semantic_id": "file-upload",
+      "layer": "composite",
+      "path": "components/file-upload",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/file-upload/file-upload.css",
+        "reference": "components/file-upload/reference.json",
+        "template": "components/file-upload/template.html",
+        "contract": "components/file-upload/file-upload.contract.md",
+        "audit": "components/file-upload/audit-rules.json",
+        "compliance": "components/file-upload/compliance.json",
+        "showcase": "components/file-upload/showcases/index.html"
+      },
+      "notes": "Internal file-item and drop-zone remain in this package."
+    },
+    {
+      "id": "floating-button",
+      "semantic_id": "floating-button",
+      "layer": "core",
+      "path": "components/floating-button",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/floating-button/floating-button.css",
+        "reference": "components/floating-button/reference.json",
+        "template": "components/floating-button/template.html",
+        "contract": "components/floating-button/floating-button.contract.md",
+        "audit": "components/floating-button/audit-rules.json",
+        "compliance": "components/floating-button/compliance.json",
+        "showcase": "components/floating-button/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "inline-alert",
+      "semantic_id": "inline-alert",
+      "layer": "composite",
+      "path": "components/inline-alert",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "button"
+      ],
+      "files": {
+        "css": "components/inline-alert/inline-alert.css",
+        "reference": "components/inline-alert/reference.json",
+        "template": "components/inline-alert/template.html",
+        "contract": "components/inline-alert/inline-alert.contract.md",
+        "audit": "components/inline-alert/audit-rules.json",
+        "compliance": "components/inline-alert/compliance.json",
+        "showcase": "components/inline-alert/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "input-affix",
+      "semantic_id": "input-affix",
+      "layer": "core",
+      "path": "components/input-affix",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/input-affix/input-affix.css",
+        "reference": "components/input-affix/reference.json",
+        "template": "components/input-affix/template.html",
+        "contract": "components/input-affix/input-affix.contract.md",
+        "audit": "components/input-affix/audit-rules.json",
+        "compliance": "components/input-affix/compliance.json",
+        "showcase": "components/input-affix/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "label",
+      "semantic_id": "label",
+      "layer": "core",
+      "path": "components/label",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/label/label.css",
+        "reference": "components/label/reference.json",
+        "template": "components/label/template.html",
+        "contract": "components/label/label.contract.md",
+        "audit": "components/label/audit-rules.json",
+        "compliance": "components/label/compliance.json",
+        "showcase": "components/label/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "link",
+      "semantic_id": "link",
+      "layer": "core",
+      "path": "components/link",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/link/link.css",
+        "reference": "components/link/reference.json",
+        "template": "components/link/template.html",
+        "contract": "components/link/link.contract.md",
+        "audit": "components/link/audit-rules.json",
+        "compliance": "components/link/compliance.json",
+        "showcase": "components/link/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "list",
+      "semantic_id": "list",
+      "layer": "core",
+      "path": "components/list",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/list/list.css",
+        "reference": "components/list/reference.json",
+        "template": "components/list/template.html",
+        "contract": "components/list/list.contract.md",
+        "audit": "components/list/audit-rules.json",
+        "compliance": "components/list/compliance.json",
+        "showcase": "components/list/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "notification-toast",
+      "semantic_id": "notification-toast",
+      "layer": "composite",
+      "path": "components/notification-toast",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "button"
+      ],
+      "files": {
+        "css": "components/notification-toast/notification-toast.css",
+        "reference": "components/notification-toast/reference.json",
+        "template": "components/notification-toast/template.html",
+        "contract": "components/notification-toast/notification-toast.contract.md",
+        "audit": "components/notification-toast/audit-rules.json",
+        "compliance": "components/notification-toast/compliance.json",
+        "showcase": "components/notification-toast/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "pagination",
+      "semantic_id": "pagination",
+      "layer": "composite",
+      "path": "components/pagination",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/pagination/pagination.css",
+        "reference": "components/pagination/reference.json",
+        "template": "components/pagination/template.html",
+        "contract": "components/pagination/pagination.contract.md",
+        "audit": "components/pagination/audit-rules.json",
+        "compliance": "components/pagination/compliance.json",
+        "showcase": "components/pagination/showcases/index.html"
+      },
+      "notes": "Composite according to reference description; kept in its existing package."
+    },
+    {
+      "id": "quote",
+      "semantic_id": "quote",
+      "layer": "core",
+      "path": "components/quote",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/quote/quote.css",
+        "reference": "components/quote/reference.json",
+        "template": "components/quote/template.html",
+        "contract": "components/quote/quote.contract.md",
+        "audit": "components/quote/audit-rules.json",
+        "compliance": "components/quote/compliance.json",
+        "showcase": "components/quote/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "rating",
+      "semantic_id": "rating",
+      "layer": "composite",
+      "path": "components/rating",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/rating/rating.css",
+        "reference": "components/rating/reference.json",
+        "template": "components/rating/template.html",
+        "contract": "components/rating/rating.contract.md",
+        "audit": "components/rating/audit-rules.json",
+        "compliance": "components/rating/compliance.json",
+        "showcase": "components/rating/showcases/index.html"
+      },
+      "notes": "Composite of internal star items according to reference; no external child package."
+    },
+    {
+      "id": "slider",
+      "semantic_id": "slider",
+      "layer": "core",
+      "path": "components/slider",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/slider/slider.css",
+        "reference": "components/slider/reference.json",
+        "template": "components/slider/template.html",
+        "contract": "components/slider/slider.contract.md",
+        "audit": "components/slider/audit-rules.json",
+        "compliance": "components/slider/compliance.json",
+        "showcase": "components/slider/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "tab",
+      "semantic_id": "tab",
+      "layer": "core",
+      "path": "components/tab",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/tab/tab.css",
+        "reference": "components/tab/reference.json",
+        "template": "components/tab/template.html",
+        "contract": "components/tab/tab.contract.md",
+        "audit": "components/tab/audit-rules.json",
+        "compliance": "components/tab/compliance.json",
+        "showcase": "components/tab/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "table-of-contents",
+      "semantic_id": "table-of-contents",
+      "layer": "composite",
+      "path": "components/table-of-contents",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/table-of-contents/table-of-contents.css",
+        "reference": null,
+        "template": "components/table-of-contents/template.html",
+        "contract": "components/table-of-contents/table-of-contents.contract.md",
+        "audit": null,
+        "compliance": null,
+        "showcase": null
+      },
+      "notes": "Reusable in-page navigation implemented from the DGA heavy-content Figma reference; package-level certification remains pending."
+    },
+    {
+      "id": "progress-indicator",
+      "semantic_id": "progress-indicator",
+      "layer": "composite",
+      "path": "components/progress-indicator",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/progress-indicator/progress-indicator.css",
+        "reference": null,
+        "template": "components/progress-indicator/template.html",
+        "contract": "components/progress-indicator/progress-indicator.contract.md",
+        "audit": null,
+        "compliance": null,
+        "showcase": null
+      },
+      "notes": "Responsive vertical and compact progress indicator implemented from the DGA form-page Figma reference; package-level certification remains pending."
+    },
+    {
+      "id": "tag",
+      "semantic_id": "tag",
+      "layer": "core",
+      "path": "components/tag",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/tag/tag.css",
+        "reference": "components/tag/reference.json",
+        "template": "components/tag/template.html",
+        "contract": "components/tag/tag.contract.md",
+        "audit": "components/tag/audit-rules.json",
+        "compliance": "components/tag/compliance.json",
+        "showcase": "components/tag/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "text-input",
+      "semantic_id": "text-input",
+      "layer": "core",
+      "path": "components/text-input",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/text-input/text-input.css",
+        "reference": "components/text-input/reference.json",
+        "template": "components/text-input/template.html",
+        "contract": "components/text-input/text-input.contract.md",
+        "audit": "components/text-input/audit-rules.json",
+        "compliance": "components/text-input/compliance.json",
+        "showcase": "components/text-input/showcases/index.html"
+      },
+      "notes": "Existing package; certification and browser behavior are pending."
+    },
+    {
+      "id": "textarea",
+      "semantic_id": "textarea",
+      "layer": "core",
+      "path": "components/textarea",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "text-input"
+      ],
+      "files": {
+        "css": "components/textarea/textarea.css",
+        "template": "components/textarea/template.html",
+        "reference": "components/textarea/reference.json",
+        "audit": "components/textarea/audit-rules.json",
+        "compliance": "components/textarea/compliance.json",
+        "contract": "components/textarea/textarea.contract.md",
+        "showcase": "components/textarea/showcases/index.html"
+      },
+      "notes": "Native form control with canonical field states; used in Contact Us."
+    },
+    {
+      "id": "select",
+      "semantic_id": "select",
+      "layer": "core",
+      "path": "components/select",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "text-input"
+      ],
+      "files": {
+        "css": "components/select/select.css",
+        "template": "components/select/template.html",
+        "reference": "components/select/reference.json",
+        "audit": "components/select/audit-rules.json",
+        "compliance": "components/select/compliance.json",
+        "contract": "components/select/select.contract.md",
+        "showcase": "components/select/showcases/index.html"
+      },
+      "notes": "Native form control with canonical field states; used in Contact Us."
+    },
+    {
+      "id": "radio",
+      "semantic_id": "radio",
+      "layer": "core",
+      "path": "components/radio",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/radio/radio.css",
+        "template": "components/radio/template.html",
+        "reference": "components/radio/reference.json",
+        "audit": "components/radio/audit-rules.json",
+        "compliance": "components/radio/compliance.json",
+        "contract": "components/radio/radio.contract.md",
+        "showcase": "components/radio/showcases/index.html"
+      },
+      "notes": "Native grouped radios with DGA default, hover, pressed, checked, focus and disabled visual states."
+    },
+    {
+      "id": "validation-message",
+      "semantic_id": "validation-message",
+      "layer": "core",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "side-navigation",
+      "semantic_id": "side-navigation",
+      "layer": "core",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "dialog",
+      "semantic_id": "dialog",
+      "layer": "core",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "dropdown",
+      "semantic_id": "dropdown",
+      "layer": "core",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "tooltip",
+      "semantic_id": "tooltip",
+      "layer": "core",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "media",
+      "semantic_id": "media",
+      "layer": "core",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "table",
+      "semantic_id": "table",
+      "layer": "core",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "definition-list",
+      "semantic_id": "definition-list",
+      "layer": "core",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "download-item",
+      "semantic_id": "download-item",
+      "layer": "core",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "field-group",
+      "semantic_id": "field-group",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "label",
+        "text-input",
+        "validation-message"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "search-field",
+      "semantic_id": "search-field",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "label",
+        "text-input",
+        "button"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "section-header",
+      "semantic_id": "section-header",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link",
+        "button"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "metadata-list",
+      "semantic_id": "metadata-list",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "definition-list",
+        "link"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "news-card",
+      "semantic_id": "news-card",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "media",
+        "link",
+        "metadata-list"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "event-card",
+      "semantic_id": "event-card",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "media",
+        "link",
+        "metadata-list"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "profile-card",
+      "semantic_id": "profile-card",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "avatar",
+        "link",
+        "metadata-list"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "statistic-item",
+      "semantic_id": "statistic-item",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "document-card",
+      "semantic_id": "document-card",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "download-item",
+        "metadata-list",
+        "tag"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "contact-card",
+      "semantic_id": "contact-card",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "definition-list",
+        "link"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "location-card",
+      "semantic_id": "location-card",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "contact-card",
+        "metadata-list"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "quick-link",
+      "semantic_id": "quick-link",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "search-result-item",
+      "semantic_id": "search-result-item",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link",
+        "metadata-list"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "related-content-item",
+      "semantic_id": "related-content-item",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "filter-group",
+      "semantic_id": "filter-group",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "field-group",
+        "select",
+        "checkbox",
+        "radio",
+        "button"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "social-share",
+      "semantic_id": "social-share",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link",
+        "button"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "empty-state",
+      "semantic_id": "empty-state",
+      "layer": "composite",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "button"
+      ],
+      "files": {},
+      "notes": "Dependencies describe planned slots; optional variants may use a subset."
+    },
+    {
+      "id": "site-header",
+      "semantic_id": "site-header",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "primary-navigation",
+        "mobile-navigation",
+        "link",
+        "button"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "primary-navigation",
+      "semantic_id": "primary-navigation",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link",
+        "button",
+        "dropdown"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "mobile-navigation",
+      "semantic_id": "mobile-navigation",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link",
+        "button",
+        "dropdown"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "skip-link",
+      "semantic_id": "skip-link",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "main-content",
+      "semantic_id": "main-content",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "page-header",
+      "semantic_id": "page-header",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "footer",
+      "semantic_id": "footer",
+      "layer": "composite",
+      "path": "components/footer",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link",
+        "button"
+      ],
+      "files": {
+        "css": "components/footer/footer.css",
+        "reference": "components/footer/reference.json",
+        "template": "components/footer/template.html",
+        "contract": "components/footer/footer.contract.md",
+        "audit": "components/footer/audit-rules.json",
+        "compliance": "components/footer/compliance.json",
+        "showcase": "components/footer/showcases/index.html"
+      },
+      "notes": "Implemented from Figma Footer variants; used by government template. Formal compliance pending."
+    },
+    {
+      "id": "brand-bar",
+      "semantic_id": "brand-bar",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "secondary-navigation",
+      "semantic_id": "secondary-navigation",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "side-navigation"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "search-interface",
+      "semantic_id": "search-interface",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "search-field"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "language-switcher",
+      "semantic_id": "language-switcher",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "accessibility-controls",
+      "semantic_id": "accessibility-controls",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "button"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "back-to-top",
+      "semantic_id": "back-to-top",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "consent",
+      "semantic_id": "consent",
+      "layer": "partial",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "button"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "hero",
+      "semantic_id": "hero",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "media",
+        "button",
+        "search-field"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "page-intro",
+      "semantic_id": "page-intro",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "services-grid",
+      "semantic_id": "services-grid",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "service-card"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "news-grid",
+      "semantic_id": "news-grid",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "news-card",
+        "pagination"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "events-listing",
+      "semantic_id": "events-listing",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "event-card"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "statistics",
+      "semantic_id": "statistics",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "statistic-item"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "quick-links",
+      "semantic_id": "quick-links",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "quick-link"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "documents",
+      "semantic_id": "documents",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "document-card"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "related-content",
+      "semantic_id": "related-content",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "related-content-item"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "contact-information",
+      "semantic_id": "contact-information",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "contact-card"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "cta",
+      "semantic_id": "cta",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "button"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "faq",
+      "semantic_id": "faq",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "section-header",
+        "accordion-new"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "search",
+      "semantic_id": "search",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "search-field",
+        "search-result-item",
+        "filter-group",
+        "pagination",
+        "empty-state"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "feedback",
+      "semantic_id": "feedback",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "field-group",
+        "radio",
+        "button",
+        "inline-alert"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "leadership",
+      "semantic_id": "leadership",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "profile-card"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "featured-content",
+      "semantic_id": "featured-content",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "card",
+        "media",
+        "metadata-list",
+        "link"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "locations",
+      "semantic_id": "locations",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "location-card"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "partners",
+      "semantic_id": "partners",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "media",
+        "link"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "media-gallery",
+      "semantic_id": "media-gallery",
+      "layer": "section",
+      "path": "",
+      "status": "planned",
+      "selection": "planned",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "media",
+        "dialog"
+      ],
+      "files": {},
+      "notes": ""
+    },
+    {
+      "id": "navigation-header",
+      "semantic_id": "navigation-header",
+      "layer": "composite",
+      "path": "components/navigation-header",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [],
+      "files": {
+        "css": "components/navigation-header/navigation-header.css",
+        "reference": "components/navigation-header/reference.json",
+        "template": "components/navigation-header/template.html",
+        "contract": "components/navigation-header/navigation-header.contract.md",
+        "audit": "components/navigation-header/audit-rules.json",
+        "compliance": "components/navigation-header/compliance.json",
+        "showcase": "components/navigation-header/showcases/index.html"
+      },
+      "notes": "Implemented navigation header with one-level disclosure and action variants. Formal compliance pending; used by government template."
+    },
+    {
+      "id": "digital-stamp",
+      "semantic_id": "digital-stamp",
+      "layer": "composite",
+      "path": "components/digital-stamp",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "link"
+      ],
+      "files": {
+        "css": "components/digital-stamp/digital-stamp.css",
+        "reference": "components/digital-stamp/reference.json",
+        "template": "components/digital-stamp/template.html",
+        "contract": "components/digital-stamp/digital-stamp.contract.md",
+        "audit": "components/digital-stamp/audit-rules.json",
+        "compliance": "components/digital-stamp/compliance.json",
+        "showcase": "components/digital-stamp/showcases/index.html"
+      },
+      "notes": "Figma Digital Stamp; native details disclosure, optional Escape enhancement, explicit preview/registered data; top of government template."
+    },
+    {
+      "id": "service-card",
+      "semantic_id": "service-card",
+      "layer": "composite",
+      "path": "components/service-card",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "card",
+        "button",
+        "tag"
+      ],
+      "files": {
+        "css": "components/service-card/service-card.css",
+        "reference": "components/service-card/reference.json",
+        "template": "components/service-card/template.html",
+        "contract": "components/service-card/service-card.contract.md",
+        "audit": "components/service-card/audit-rules.json",
+        "compliance": "components/service-card/compliance.json",
+        "showcase": "components/service-card/showcases/index.html"
+      },
+      "notes": "One card composition for home, service catalogue and related services."
+    },
+    {
+      "id": "page-feedback",
+      "semantic_id": "page-feedback",
+      "layer": "composite",
+      "path": "components/page-feedback",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "button",
+        "text-input",
+        "checkbox",
+        "radio"
+      ],
+      "files": {
+        "css": "components/page-feedback/page-feedback.css",
+        "reference": "components/page-feedback/reference.json",
+        "template": "components/page-feedback/template.html",
+        "contract": "components/page-feedback/page-feedback.contract.md",
+        "audit": "components/page-feedback/audit-rules.json",
+        "compliance": "components/page-feedback/compliance.json",
+        "showcase": "components/page-feedback/showcases/index.html"
+      },
+      "notes": "Reusable feedback composite; preview by default, explicit async server adapter supported."
+    },
+    {
+      "id": "service-rating",
+      "semantic_id": "service-rating",
+      "layer": "composite",
+      "path": "components/service-rating",
+      "status": "needs_improvement",
+      "selection": "canonical",
+      "replacement": null,
+      "production_ready": false,
+      "dependencies": [
+        "button",
+        "text-input",
+        "rating"
+      ],
+      "files": {
+        "css": "components/service-rating/service-rating.css",
+        "reference": "components/service-rating/reference.json",
+        "template": "components/service-rating/template.html",
+        "contract": "components/service-rating/service-rating.contract.md",
+        "audit": "components/service-rating/audit-rules.json",
+        "compliance": "components/service-rating/compliance.json",
+        "showcase": "components/service-rating/showcases/index.html"
+      },
+      "notes": "Reusable feedback composite; preview by default, explicit async server adapter supported."
+    }
+  ]
+}

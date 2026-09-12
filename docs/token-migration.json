@@ -1,0 +1,4462 @@
+{
+  "batch": 2,
+  "original_central_definitions": 437,
+  "final_central_definitions": 1128,
+  "registered_definitions": [
+    "--accordion-bg-hovered",
+    "--accordion-bg-pressed",
+    "--accordion-border-color",
+    "--accordion-content-color",
+    "--accordion-content-font-family",
+    "--accordion-content-font-size",
+    "--accordion-content-font-weight",
+    "--accordion-content-gap",
+    "--accordion-content-icon-indent",
+    "--accordion-content-icon-indent-flush",
+    "--accordion-content-line-height",
+    "--accordion-content-padding-bottom",
+    "--accordion-content-padding-top",
+    "--accordion-focus-ring-color",
+    "--accordion-focus-ring-width",
+    "--accordion-gap",
+    "--accordion-icon-size",
+    "--accordion-padding-inline",
+    "--accordion-title-color",
+    "--accordion-title-color-disabled",
+    "--accordion-title-font-family",
+    "--accordion-title-font-size",
+    "--accordion-title-font-weight",
+    "--accordion-title-line-height",
+    "--accordion-transition-duration",
+    "--accordion-transition-easing",
+    "--avatar-120-height",
+    "--avatar-120-width",
+    "--avatar-bg-default",
+    "--avatar-bg-image",
+    "--avatar-border-color",
+    "--avatar-group-gap",
+    "--avatar-initials-letter-spacing",
+    "--avatar-radius-circle",
+    "--avatar-radius-square-lg",
+    "--avatar-radius-square-sm",
+    "--avatar-text-color",
+    "--breadcrumb-dropdown-shadow",
+    "--breadcrumb-dropdown-width",
+    "--card-actions-gap",
+    "--card-bg-default",
+    "--card-bg-disabled",
+    "--card-bg-hover",
+    "--card-body-font-size",
+    "--card-body-line-height",
+    "--card-border-default",
+    "--card-border-disabled",
+    "--card-border-focused",
+    "--card-content-gap",
+    "--card-font-family",
+    "--card-gap",
+    "--card-padding",
+    "--card-radius",
+    "--card-text-default",
+    "--card-text-disabled",
+    "--card-title-font-size",
+    "--card-title-line-height",
+    "--card-toggle-icon-color",
+    "--card-toggle-radius",
+    "--card-toggle-transition-duration",
+    "--card-width",
+    "--checkbox-before-opacity",
+    "--checkbox-bg-disabled",
+    "--checkbox-bg-neutral-checked",
+    "--checkbox-bg-neutral-hovered",
+    "--checkbox-bg-neutral-pressed",
+    "--checkbox-bg-primary-checked",
+    "--checkbox-bg-primary-hovered",
+    "--checkbox-bg-primary-pressed",
+    "--checkbox-bg-unchecked-pressed",
+    "--checkbox-border-default",
+    "--checkbox-border-disabled",
+    "--checkbox-box-after-opacity",
+    "--checkbox-focus-ring-color",
+    "--checkbox-focus-ring-radius",
+    "--checkbox-input-before-opacity",
+    "--checkbox-input-opacity",
+    "--checkbox-mark-color",
+    "--checkbox-mark-color-disabled",
+    "--checkbox-mark-color-readonly",
+    "--checkbox-radius",
+    "--checkbox-ripple-bg",
+    "--checkbox-ripple-radius",
+    "--checkbox-transition-duration",
+    "--checkbox-transition-easing",
+    "--chip-bg-disabled",
+    "--chip-focus-inset",
+    "--chip-focus-outline-color",
+    "--chip-focus-outline-width",
+    "--chip-font-family",
+    "--chip-gap",
+    "--chip-lg-font-size",
+    "--chip-lg-font-weight",
+    "--chip-lg-height",
+    "--chip-lg-line-height",
+    "--chip-md-font-size",
+    "--chip-md-font-weight",
+    "--chip-md-height",
+    "--chip-md-line-height",
+    "--chip-neutral-bg-default",
+    "--chip-neutral-bg-hovered",
+    "--chip-neutral-bg-pressed",
+    "--chip-neutral-bg-selected",
+    "--chip-on-color-bg-default",
+    "--chip-on-color-bg-disabled",
+    "--chip-on-color-bg-focused",
+    "--chip-on-color-bg-hovered",
+    "--chip-on-color-bg-pressed",
+    "--chip-on-color-bg-selected",
+    "--chip-on-color-text",
+    "--chip-on-color-text-disabled",
+    "--chip-padding-inline",
+    "--chip-primary-bg-default",
+    "--chip-primary-bg-hovered",
+    "--chip-primary-bg-pressed",
+    "--chip-primary-bg-selected",
+    "--chip-radius-default",
+    "--chip-radius-rounded",
+    "--chip-sm-font-size",
+    "--chip-sm-font-weight",
+    "--chip-sm-height",
+    "--chip-sm-line-height",
+    "--chip-text-disabled",
+    "--chip-text-neutral",
+    "--chip-text-on-selected",
+    "--chip-text-primary",
+    "--chip-text-primary-pressed",
+    "--chip-transition-duration",
+    "--chip-transition-easing",
+    "--code-snippet-bg",
+    "--code-snippet-border-color",
+    "--code-snippet-border-radius",
+    "--code-snippet-code-color",
+    "--code-snippet-content-pb",
+    "--code-snippet-font-family-mono",
+    "--code-snippet-font-size-code",
+    "--code-snippet-font-size-tab",
+    "--code-snippet-gutter-bg",
+    "--code-snippet-gutter-border-color",
+    "--code-snippet-inline-code-color",
+    "--code-snippet-inline-gap",
+    "--code-snippet-line-height-tab",
+    "--code-snippet-line-numbers-color",
+    "--code-snippet-padding",
+    "--code-snippet-prompt-color",
+    "--code-snippet-tab-active-indicator-color",
+    "--code-snippet-tab-active-text-color",
+    "--code-snippet-tab-button-gap",
+    "--code-snippet-tab-button-padding",
+    "--code-snippet-tab-button-radius",
+    "--code-snippet-tab-divider-color",
+    "--code-snippet-tab-font-family",
+    "--code-snippet-tab-inactive-text-color",
+    "--code-snippet-tab-indicator-radius",
+    "--code-snippet-transition-duration",
+    "--color-text-strong",
+    "--color-white-alpha-10",
+    "--color-white-alpha-20",
+    "--color-white-alpha-30",
+    "--color-white-alpha-40",
+    "--color-white-alpha-60",
+    "--color-white-alpha-70",
+    "--color-white-alpha-80",
+    "--color-white-alpha-90",
+    "--colors-text-text-quarterary-500",
+    "--content-switcher-item-border-inline-0p5px",
+    "--content-switcher-item-min-width",
+    "--divider-color-alpha-white",
+    "--divider-color-neutral",
+    "--divider-color-primary",
+    "--divider-color-white",
+    "--divider-thickness",
+    "--drop-zone-bg",
+    "--drop-zone-bg-draghover",
+    "--drop-zone-border",
+    "--drop-zone-border-disabled",
+    "--drop-zone-border-draghover",
+    "--drop-zone-gap",
+    "--drop-zone-helper-color",
+    "--drop-zone-helper-color-disabled",
+    "--drop-zone-helper-color-draghover",
+    "--drop-zone-icon-opacity-disabled",
+    "--drop-zone-lead-color",
+    "--drop-zone-lead-color-disabled",
+    "--drop-zone-lead-color-draghover",
+    "--drop-zone-padding",
+    "--drop-zone-radius",
+    "--drop-zone-trigger-bg",
+    "--drop-zone-trigger-bg-draghover",
+    "--drop-zone-trigger-text-color",
+    "--drop-zone-trigger-text-disabled",
+    "--ease-default",
+    "--fab-after-opacity",
+    "--fab-bg-disabled",
+    "--fab-bg-disabled-on-color",
+    "--fab-bg-primary-brand-default",
+    "--fab-bg-primary-brand-hovered",
+    "--fab-bg-primary-brand-pressed",
+    "--fab-bg-primary-brand-selected",
+    "--fab-bg-primary-neutral-default",
+    "--fab-bg-primary-neutral-hovered",
+    "--fab-bg-primary-neutral-on-color-default",
+    "--fab-bg-primary-neutral-on-color-focused",
+    "--fab-bg-primary-neutral-on-color-hovered",
+    "--fab-bg-primary-neutral-on-color-pressed",
+    "--fab-bg-primary-neutral-on-color-selected",
+    "--fab-bg-primary-neutral-pressed",
+    "--fab-bg-primary-neutral-selected",
+    "--fab-bg-secondary-solid-default",
+    "--fab-bg-secondary-solid-hovered",
+    "--fab-bg-secondary-solid-on-color-default",
+    "--fab-bg-secondary-solid-on-color-focused",
+    "--fab-bg-secondary-solid-on-color-hovered",
+    "--fab-bg-secondary-solid-on-color-pressed",
+    "--fab-bg-secondary-solid-on-color-selected",
+    "--fab-bg-secondary-solid-pressed",
+    "--fab-bg-secondary-solid-selected",
+    "--fab-focus-ring-color",
+    "--fab-focus-ring-offset",
+    "--fab-focus-ring-width",
+    "--fab-gap",
+    "--fab-icon-size",
+    "--fab-label-font-family",
+    "--fab-label-font-size",
+    "--fab-label-font-weight",
+    "--fab-label-line-height",
+    "--fab-padding-lg",
+    "--fab-padding-sm",
+    "--fab-radius",
+    "--fab-text-disabled",
+    "--fab-text-disabled-on-color",
+    "--fab-text-primary-brand",
+    "--fab-text-primary-neutral",
+    "--fab-text-primary-neutral-on-color",
+    "--fab-text-secondary-solid",
+    "--fab-text-secondary-solid-on-color",
+    "--file-item-bg",
+    "--file-item-border",
+    "--file-item-border-error",
+    "--file-item-error-separator",
+    "--file-item-error-text-color",
+    "--file-item-gap",
+    "--file-item-icon-size",
+    "--file-item-name-color",
+    "--file-item-name-font-size",
+    "--file-item-name-font-weight",
+    "--file-item-name-line-height",
+    "--file-item-padding",
+    "--file-item-radius",
+    "--file-item-remove-background-color",
+    "--file-item-remove-outline-offset",
+    "--file-item-remove-radius",
+    "--file-item-remove-size",
+    "--file-upload-gap",
+    "--file-upload-helper-color",
+    "--file-upload-helper-disabled-color",
+    "--file-upload-label-color",
+    "--file-upload-label-disabled-color",
+    "--file-upload-trigger-bg",
+    "--file-upload-trigger-bg-disabled",
+    "--file-upload-trigger-font-size",
+    "--file-upload-trigger-font-weight",
+    "--file-upload-trigger-gap",
+    "--file-upload-trigger-height",
+    "--file-upload-trigger-line-height",
+    "--file-upload-trigger-padding-x",
+    "--file-upload-trigger-radius",
+    "--file-upload-trigger-text-color",
+    "--file-upload-trigger-text-disabled",
+    "--focus-ring-color",
+    "--focus-ring-inner-color",
+    "--focus-ring-offset",
+    "--focus-ring-width",
+    "--inline-alert-accent-opacity",
+    "--inline-alert-accent-width",
+    "--inline-alert-actions-gap",
+    "--inline-alert-actions-padding-inline",
+    "--inline-alert-body-color",
+    "--inline-alert-body-font-size",
+    "--inline-alert-body-font-weight",
+    "--inline-alert-body-line-height",
+    "--inline-alert-border-radius",
+    "--inline-alert-content-gap",
+    "--inline-alert-gap",
+    "--inline-alert-header-gap",
+    "--inline-alert-icon-radius",
+    "--inline-alert-padding-block",
+    "--inline-alert-padding-inline",
+    "--inline-alert-title-color",
+    "--inline-alert-title-font-size",
+    "--inline-alert-title-font-weight",
+    "--inline-alert-title-line-height",
+    "--input-affix-bg-disabled",
+    "--input-affix-bg-focused",
+    "--input-affix-bg-hovered",
+    "--input-affix-bg-pressed",
+    "--input-affix-bg-selected",
+    "--input-affix-bg-solid-default",
+    "--input-affix-focus-ring-color",
+    "--input-affix-focus-ring-width",
+    "--input-affix-font-family",
+    "--input-affix-lg-arrow-size",
+    "--input-affix-lg-font-size",
+    "--input-affix-lg-gap",
+    "--input-affix-lg-height",
+    "--input-affix-lg-icon-size",
+    "--input-affix-lg-line-height",
+    "--input-affix-lg-padding-block",
+    "--input-affix-lg-padding-inline",
+    "--input-affix-md-arrow-size",
+    "--input-affix-md-font-size",
+    "--input-affix-md-gap",
+    "--input-affix-md-height",
+    "--input-affix-md-icon-size",
+    "--input-affix-md-line-height",
+    "--input-affix-md-padding-block",
+    "--input-affix-md-padding-inline",
+    "--input-affix-radius",
+    "--input-affix-text-default",
+    "--input-affix-text-disabled",
+    "--input-affix-text-placeholder",
+    "--input-affix-text-selected",
+    "--label-font-family",
+    "--label-font-size-lg",
+    "--label-font-size-md",
+    "--label-font-weight-regular",
+    "--label-font-weight-semibold",
+    "--label-gap",
+    "--label-line-height-lg",
+    "--label-line-height-md",
+    "--label-required-color",
+    "--label-required-color-disabled",
+    "--label-text-color",
+    "--label-text-color-disabled",
+    "--link-focus-ring-offset",
+    "--link-focus-ring-width",
+    "--link-font-family",
+    "--link-font-size-md",
+    "--link-font-size-sm",
+    "--link-font-weight",
+    "--link-line-height-md",
+    "--link-line-height-sm",
+    "--list-item-font-family",
+    "--list-item-font-size",
+    "--list-item-font-weight",
+    "--list-item-gap",
+    "--list-item-icon-size",
+    "--list-item-indent",
+    "--list-item-line-height",
+    "--list-text-neutral",
+    "--list-text-oncolor",
+    "--list-text-primary",
+    "--notification-toast-accent-opacity",
+    "--notification-toast-accent-width",
+    "--notification-toast-actions-gap",
+    "--notification-toast-actions-indent",
+    "--notification-toast-bg",
+    "--notification-toast-close-mobile-offset",
+    "--notification-toast-close-radius",
+    "--notification-toast-close-size",
+    "--notification-toast-desktop-h-padding",
+    "--notification-toast-desktop-width",
+    "--notification-toast-font-family",
+    "--notification-toast-gap",
+    "--notification-toast-helper-color",
+    "--notification-toast-helper-font-size",
+    "--notification-toast-helper-font-weight",
+    "--notification-toast-helper-line-height",
+    "--notification-toast-icon-bg-critical-error",
+    "--notification-toast-icon-bg-info",
+    "--notification-toast-icon-bg-neutral",
+    "--notification-toast-icon-bg-success",
+    "--notification-toast-icon-bg-warning",
+    "--notification-toast-icon-inner-size",
+    "--notification-toast-icon-radius",
+    "--notification-toast-icon-size",
+    "--notification-toast-mobile-h-padding",
+    "--notification-toast-mobile-width",
+    "--notification-toast-radius",
+    "--notification-toast-shadow",
+    "--notification-toast-text-gap",
+    "--notification-toast-title-color",
+    "--notification-toast-title-font-size",
+    "--notification-toast-title-font-weight",
+    "--notification-toast-title-gap",
+    "--notification-toast-title-line-height",
+    "--notification-toast-v-padding",
+    "--opacity-disabled",
+    "--pagination-font-family",
+    "--pagination-item-after-bottom",
+    "--pagination-item-after-height",
+    "--pagination-item-current-indicator-bg",
+    "--pagination-item-current-indicator-radius",
+    "--pagination-item-disabled-text",
+    "--pagination-item-focus-border-color",
+    "--pagination-item-focus-border-width",
+    "--pagination-item-hover-bg",
+    "--pagination-item-lg-font-size",
+    "--pagination-item-lg-line-height",
+    "--pagination-item-lg-padding",
+    "--pagination-item-lg-size",
+    "--pagination-item-md-font-size",
+    "--pagination-item-md-line-height",
+    "--pagination-item-md-padding",
+    "--pagination-item-md-size",
+    "--pagination-item-overflow-border-color",
+    "--pagination-item-overflow-open-bg",
+    "--pagination-item-pressed-bg",
+    "--pagination-item-radius",
+    "--pagination-item-sm-font-size",
+    "--pagination-item-sm-line-height",
+    "--pagination-item-sm-padding",
+    "--pagination-item-sm-size",
+    "--pagination-item-text-color",
+    "--pagination-items-gap",
+    "--pagination-nav-lg-size",
+    "--pagination-nav-md-size",
+    "--pagination-nav-sm-size",
+    "--pagination-overflow-option-font-size",
+    "--pagination-overflow-option-gap",
+    "--pagination-overflow-option-line-height",
+    "--pagination-overflow-option-padding",
+    "--pagination-overflow-option-width",
+    "--pagination-overflow-panel-bg",
+    "--pagination-overflow-panel-border-color",
+    "--pagination-overflow-panel-padding",
+    "--pagination-overflow-panel-shadow",
+    "--pagination-overflow-panel-z-index",
+    "--quote-after-bottom",
+    "--quote-after-right",
+    "--quote-after-rtl-bottom",
+    "--quote-after-rtl-left",
+    "--quote-author-description-font-size",
+    "--quote-author-description-line-height",
+    "--quote-author-gap",
+    "--quote-author-info-gap",
+    "--quote-author-name-font-size",
+    "--quote-author-name-line-height",
+    "--quote-before-left",
+    "--quote-before-rtl-right",
+    "--quote-bg",
+    "--quote-body-gap",
+    "--quote-body-padding-x",
+    "--quote-gap",
+    "--quote-mark-color",
+    "--quote-mark-font-size",
+    "--quote-padding",
+    "--quote-radius",
+    "--quote-sm-after-right",
+    "--quote-sm-before-left",
+    "--quote-text-color",
+    "--quote-text-font-family",
+    "--quote-text-font-size",
+    "--quote-text-line-height",
+    "--quote-title-color",
+    "--quote-title-font-family",
+    "--quote-title-font-size",
+    "--quote-title-line-height",
+    "--quote-width-lg",
+    "--quote-width-sm",
+    "--radius-4",
+    "--radius-8",
+    "--radius-round",
+    "--rating-disabled-opacity",
+    "--rating-gap",
+    "--rating-star-before-opacity",
+    "--rating-star-empty-fill",
+    "--rating-star-fill-brand",
+    "--rating-star-fill-default",
+    "--rating-star-half-base-fill",
+    "--rating-star-pressed-ring-bg",
+    "--rating-star-ring-radius",
+    "--rating-star-ring-size-lg",
+    "--rating-star-ring-size-md",
+    "--rating-star-ring-size-sm",
+    "--rating-star-ring-transition-duration",
+    "--rating-star-ring-transition-easing",
+    "--rating-star-size-lg",
+    "--rating-star-size-md",
+    "--rating-star-size-sm",
+    "--slider-disabled-opacity",
+    "--slider-fill-bg",
+    "--slider-focus-ring-color",
+    "--slider-focus-ring-offset",
+    "--slider-focus-ring-width",
+    "--slider-gap",
+    "--slider-helper-color",
+    "--slider-helper-gap",
+    "--slider-label-color",
+    "--slider-label-font-family",
+    "--slider-label-gap",
+    "--slider-md-helper-font-size",
+    "--slider-md-helper-line-height",
+    "--slider-md-label-font-size",
+    "--slider-md-label-line-height",
+    "--slider-md-thumb-size",
+    "--slider-md-track-height",
+    "--slider-sm-helper-font-size",
+    "--slider-sm-helper-line-height",
+    "--slider-sm-label-font-size",
+    "--slider-sm-label-line-height",
+    "--slider-sm-thumb-size",
+    "--slider-sm-track-height",
+    "--slider-thumb-fill",
+    "--slider-thumb-stroke",
+    "--slider-track-bg",
+    "--slider-track-radius",
+    "--slider-track-row-gap",
+    "--slider-value-color",
+    "--space-10",
+    "--space-36",
+    "--space-6",
+    "--status-tag-blue-inverted-bg",
+    "--status-tag-blue-inverted-dot",
+    "--status-tag-blue-subtle-bg",
+    "--status-tag-blue-subtle-dot",
+    "--status-tag-blue-subtle-text",
+    "--status-tag-dot-size",
+    "--status-tag-font-family",
+    "--status-tag-font-size",
+    "--status-tag-font-weight",
+    "--status-tag-gap",
+    "--status-tag-ghost-text",
+    "--status-tag-green-inverted-bg",
+    "--status-tag-green-inverted-dot",
+    "--status-tag-green-subtle-bg",
+    "--status-tag-green-subtle-dot",
+    "--status-tag-green-subtle-text",
+    "--status-tag-height",
+    "--status-tag-inverted-text",
+    "--status-tag-line-height",
+    "--status-tag-neutral-inverted-bg",
+    "--status-tag-neutral-inverted-dot",
+    "--status-tag-neutral-subtle-bg",
+    "--status-tag-neutral-subtle-dot",
+    "--status-tag-neutral-subtle-text",
+    "--status-tag-padding-inline",
+    "--status-tag-radius",
+    "--status-tag-red-inverted-bg",
+    "--status-tag-red-inverted-dot",
+    "--status-tag-red-subtle-bg",
+    "--status-tag-red-subtle-dot",
+    "--status-tag-red-subtle-text",
+    "--status-tag-sm-dot-size",
+    "--status-tag-sm-font-size",
+    "--status-tag-sm-font-weight",
+    "--status-tag-sm-gap",
+    "--status-tag-sm-height",
+    "--status-tag-sm-line-height",
+    "--status-tag-sm-padding-inline",
+    "--status-tag-xs-dot-size",
+    "--status-tag-xs-font-size",
+    "--status-tag-xs-font-weight",
+    "--status-tag-xs-gap",
+    "--status-tag-xs-height",
+    "--status-tag-xs-line-height",
+    "--status-tag-xs-padding-inline",
+    "--status-tag-yellow-inverted-bg",
+    "--status-tag-yellow-inverted-dot",
+    "--status-tag-yellow-subtle-bg",
+    "--status-tag-yellow-subtle-dot",
+    "--status-tag-yellow-subtle-text",
+    "--tab-bg-hover",
+    "--tab-bg-pressed",
+    "--tab-box-shadow-1px",
+    "--tab-box-shadow-3px",
+    "--tab-button-gap",
+    "--tab-divider-color",
+    "--tab-focus-radius",
+    "--tab-font-family",
+    "--tab-h-font-size",
+    "--tab-h-font-weight-idle",
+    "--tab-h-font-weight-selected",
+    "--tab-h-lg-h-padding",
+    "--tab-h-lg-v-padding",
+    "--tab-h-line-height",
+    "--tab-h-md-h-padding",
+    "--tab-h-md-v-padding",
+    "--tab-h-sm-h-padding",
+    "--tab-h-sm-v-padding",
+    "--tab-icon-size",
+    "--tab-indicator-color",
+    "--tab-indicator-color-dark",
+    "--tab-indicator-radius",
+    "--tab-indicator-size",
+    "--tab-radius",
+    "--tab-text-active",
+    "--tab-text-disabled",
+    "--tab-text-idle",
+    "--tab-v-font-weight-idle",
+    "--tab-v-font-weight-selected",
+    "--tab-v-lg-font-size",
+    "--tab-v-lg-h-padding",
+    "--tab-v-lg-line-height",
+    "--tab-v-lg-v-padding",
+    "--tab-v-md-font-size",
+    "--tab-v-md-h-padding",
+    "--tab-v-md-line-height",
+    "--tab-v-md-v-padding",
+    "--tab-v-sm-font-size",
+    "--tab-v-sm-h-padding",
+    "--tab-v-sm-line-height",
+    "--tab-v-sm-v-padding",
+    "--tag-error-bg",
+    "--tag-error-border",
+    "--tag-error-border-outline",
+    "--tag-error-text",
+    "--tag-font-family",
+    "--tag-font-size",
+    "--tag-font-weight",
+    "--tag-gap",
+    "--tag-height",
+    "--tag-icon-only-padding",
+    "--tag-icon-size",
+    "--tag-info-bg",
+    "--tag-info-border",
+    "--tag-info-border-outline",
+    "--tag-info-text",
+    "--tag-line-height",
+    "--tag-neutral-bg",
+    "--tag-neutral-border",
+    "--tag-neutral-border-outline",
+    "--tag-neutral-text",
+    "--tag-on-color-bg",
+    "--tag-on-color-border-outline",
+    "--tag-on-color-text",
+    "--tag-padding-inline",
+    "--tag-radius",
+    "--tag-radius-rounded",
+    "--tag-sm-font-size",
+    "--tag-sm-font-weight",
+    "--tag-sm-gap",
+    "--tag-sm-height",
+    "--tag-sm-icon-size",
+    "--tag-sm-line-height",
+    "--tag-sm-padding-inline",
+    "--tag-success-bg",
+    "--tag-success-border",
+    "--tag-success-border-outline",
+    "--tag-success-text",
+    "--tag-warning-bg",
+    "--tag-warning-border",
+    "--tag-warning-border-outline",
+    "--tag-warning-text",
+    "--tag-xs-font-size",
+    "--tag-xs-font-weight",
+    "--tag-xs-gap",
+    "--tag-xs-height",
+    "--tag-xs-icon-size",
+    "--tag-xs-line-height",
+    "--tag-xs-padding-inline",
+    "--text-input-bg-darker",
+    "--text-input-bg-default",
+    "--text-input-bg-lighter",
+    "--text-input-bg-pressed",
+    "--text-input-border-default",
+    "--text-input-border-disabled",
+    "--text-input-border-error",
+    "--text-input-border-hovered",
+    "--text-input-border-readonly",
+    "--text-input-field-gap",
+    "--text-input-font-family",
+    "--text-input-icon-text-gap",
+    "--text-input-label-color",
+    "--text-input-lg-font-size",
+    "--text-input-lg-height",
+    "--text-input-lg-line-height",
+    "--text-input-md-font-size",
+    "--text-input-md-height",
+    "--text-input-md-line-height",
+    "--text-input-padding-inline-end",
+    "--text-input-padding-inline-start",
+    "--text-input-radius",
+    "--text-input-text-disabled",
+    "--text-input-text-filled",
+    "--text-input-text-focused",
+    "--text-input-text-placeholder",
+    "--text-input-text-readonly",
+    "--text-input-underline-default",
+    "--text-input-underline-error",
+    "--text-input-underline-height",
+    "--transition-feedback",
+    "--transition-spinner",
+    "--z-base",
+    "--z-content",
+    "--z-control",
+    "--z-decoration",
+    "--z-dropdown",
+    "--z-overlay",
+    "--z-skip-link",
+    "--z-sticky"
+  ],
+  "mappings": [
+    {
+      "source_name": "--Background-background-black",
+      "classification": "figma_export_name",
+      "replacement": "var(--color-text-strong)"
+    },
+    {
+      "source_name": "--Background-background-error",
+      "classification": "figma_export_name",
+      "replacement": "var(--error-600)"
+    },
+    {
+      "source_name": "--Background-background-error-25",
+      "classification": "figma_export_name",
+      "replacement": "var(--error-25)"
+    },
+    {
+      "source_name": "--Background-background-info",
+      "classification": "figma_export_name",
+      "replacement": "var(--info-600)"
+    },
+    {
+      "source_name": "--Background-background-info-25",
+      "classification": "figma_export_name",
+      "replacement": "var(--info-25)"
+    },
+    {
+      "source_name": "--Background-background-neutral-100",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-100)"
+    },
+    {
+      "source_name": "--Background-background-neutral-200",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-200)"
+    },
+    {
+      "source_name": "--Background-background-neutral-25",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-25)"
+    },
+    {
+      "source_name": "--Background-background-neutral-50",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-50)"
+    },
+    {
+      "source_name": "--Background-background-notification-white",
+      "classification": "figma_export_name",
+      "replacement": "var(--white)"
+    },
+    {
+      "source_name": "--Background-background-primary",
+      "classification": "figma_export_name",
+      "replacement": "var(--sa-600)"
+    },
+    {
+      "source_name": "--Background-background-secondary",
+      "classification": "figma_export_name",
+      "replacement": "var(--gold-600)"
+    },
+    {
+      "source_name": "--Background-background-success",
+      "classification": "figma_export_name",
+      "replacement": "var(--success-600)"
+    },
+    {
+      "source_name": "--Background-background-success-25",
+      "classification": "figma_export_name",
+      "replacement": "var(--success-25)"
+    },
+    {
+      "source_name": "--Background-background-warning",
+      "classification": "figma_export_name",
+      "replacement": "var(--warning-600)"
+    },
+    {
+      "source_name": "--Background-background-warning-25",
+      "classification": "figma_export_name",
+      "replacement": "var(--warning-25)"
+    },
+    {
+      "source_name": "--Background-background-white",
+      "classification": "figma_export_name",
+      "replacement": "var(--white)"
+    },
+    {
+      "source_name": "--Border-border-black",
+      "classification": "figma_export_name",
+      "replacement": "var(--color-text-strong)"
+    },
+    {
+      "source_name": "--Border-border-error",
+      "classification": "figma_export_name",
+      "replacement": "var(--error-700)"
+    },
+    {
+      "source_name": "--Border-border-error-light",
+      "classification": "figma_export_name",
+      "replacement": "var(--error-200)"
+    },
+    {
+      "source_name": "--Border-border-info-light",
+      "classification": "figma_export_name",
+      "replacement": "var(--info-200)"
+    },
+    {
+      "source_name": "--Border-border-neutral-primary",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-300)"
+    },
+    {
+      "source_name": "--Border-border-neutral-secondary",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-200)"
+    },
+    {
+      "source_name": "--Border-border-primary",
+      "classification": "figma_export_name",
+      "replacement": "var(--sa-600)"
+    },
+    {
+      "source_name": "--Border-border-success",
+      "classification": "figma_export_name",
+      "replacement": "var(--success-700)"
+    },
+    {
+      "source_name": "--Border-border-success-light",
+      "classification": "figma_export_name",
+      "replacement": "var(--success-200)"
+    },
+    {
+      "source_name": "--Border-border-warning-light",
+      "classification": "figma_export_name",
+      "replacement": "var(--warning-200)"
+    },
+    {
+      "source_name": "--Border-border-white",
+      "classification": "figma_export_name",
+      "replacement": "var(--white)"
+    },
+    {
+      "source_name": "--Button-button-background-black-default",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-950)"
+    },
+    {
+      "source_name": "--Button-button-background-neutral-default",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-100)"
+    },
+    {
+      "source_name": "--Button-button-background-neutral-hovered",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-100)"
+    },
+    {
+      "source_name": "--Button-button-background-neutral-pressed",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-200)"
+    },
+    {
+      "source_name": "--Button-buttons-group-gap",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-8)"
+    },
+    {
+      "source_name": "--Button-buttons-md-gap",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-4)"
+    },
+    {
+      "source_name": "--Button-buttons-md-padding",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-12)"
+    },
+    {
+      "source_name": "--Colors-Gray-neutral-300",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-300)"
+    },
+    {
+      "source_name": "--Font-Family-font-family-display",
+      "classification": "figma_export_name",
+      "replacement": "var(--font-sans)"
+    },
+    {
+      "source_name": "--Font-Family-font-family-text",
+      "classification": "figma_export_name",
+      "replacement": "var(--font-sans)"
+    },
+    {
+      "source_name": "--Form-field-text-label",
+      "classification": "figma_export_name",
+      "replacement": "var(--color-text-strong)"
+    },
+    {
+      "source_name": "--Form-icon-helpertext",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-8)"
+    },
+    {
+      "source_name": "--Form-label-gap",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-4)"
+    },
+    {
+      "source_name": "--Global-background-disabled",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-200)"
+    },
+    {
+      "source_name": "--Global-border-disabled",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-400)"
+    },
+    {
+      "source_name": "--Global-spacing-2xl",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-20)"
+    },
+    {
+      "source_name": "--Global-spacing-3xl",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-24)"
+    },
+    {
+      "source_name": "--Global-spacing-4xl",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-32)"
+    },
+    {
+      "source_name": "--Global-spacing-5xl",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-40)"
+    },
+    {
+      "source_name": "--Global-spacing-6xl",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-48)"
+    },
+    {
+      "source_name": "--Global-spacing-7xl",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-64)"
+    },
+    {
+      "source_name": "--Global-spacing-lg",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-12)"
+    },
+    {
+      "source_name": "--Global-spacing-md",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-8)"
+    },
+    {
+      "source_name": "--Global-spacing-none",
+      "classification": "figma_export_name",
+      "replacement": "0"
+    },
+    {
+      "source_name": "--Global-spacing-sm",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-6)"
+    },
+    {
+      "source_name": "--Global-spacing-xl",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-16)"
+    },
+    {
+      "source_name": "--Global-spacing-xs",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-4)"
+    },
+    {
+      "source_name": "--Global-text-default-disabled",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-400)"
+    },
+    {
+      "source_name": "--Icon-background-error-light",
+      "classification": "figma_export_name",
+      "replacement": "var(--error-50)"
+    },
+    {
+      "source_name": "--Icon-background-info-light",
+      "classification": "figma_export_name",
+      "replacement": "var(--info-50)"
+    },
+    {
+      "source_name": "--Icon-background-success-light",
+      "classification": "figma_export_name",
+      "replacement": "var(--success-50)"
+    },
+    {
+      "source_name": "--Icon-background-warning-light",
+      "classification": "figma_export_name",
+      "replacement": "var(--warning-50)"
+    },
+    {
+      "source_name": "--Line-Height-Display-line-heights-display-xs",
+      "classification": "figma_export_name",
+      "replacement": "var(--lh-display-xs)"
+    },
+    {
+      "source_name": "--Line-Height-Text-line-heights-text-Ig",
+      "classification": "figma_export_name",
+      "replacement": "var(--lh-text-lg)"
+    },
+    {
+      "source_name": "--Line-Height-Text-line-heights-text-md",
+      "classification": "figma_export_name",
+      "replacement": "var(--lh-text-md)"
+    },
+    {
+      "source_name": "--Line-Height-Text-line-heights-text-sm",
+      "classification": "figma_export_name",
+      "replacement": "var(--lh-text-sm)"
+    },
+    {
+      "source_name": "--Line-Height-Text-line-heights-text-xl",
+      "classification": "figma_export_name",
+      "replacement": "var(--lh-text-xl)"
+    },
+    {
+      "source_name": "--Line-Height-Text-line-heights-text-xs",
+      "classification": "figma_export_name",
+      "replacement": "var(--lh-text-xs)"
+    },
+    {
+      "source_name": "--Link-link-md-gap",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-8)"
+    },
+    {
+      "source_name": "--Link-link-neutral",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-700)"
+    },
+    {
+      "source_name": "--Link-link-neutral-focused",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-700)"
+    },
+    {
+      "source_name": "--Link-link-neutral-hovered",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-500)"
+    },
+    {
+      "source_name": "--Link-link-neutral-pressed",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-400)"
+    },
+    {
+      "source_name": "--Link-link-oncolor",
+      "classification": "figma_export_name",
+      "replacement": "var(--white)"
+    },
+    {
+      "source_name": "--Link-link-oncolor-disabled",
+      "classification": "figma_export_name",
+      "replacement": "var(--color-white-alpha-30)"
+    },
+    {
+      "source_name": "--Link-link-oncolor-focused",
+      "classification": "figma_export_name",
+      "replacement": "var(--white)"
+    },
+    {
+      "source_name": "--Link-link-oncolor-hovered",
+      "classification": "figma_export_name",
+      "replacement": "var(--color-white-alpha-80)"
+    },
+    {
+      "source_name": "--Link-link-oncolor-pressed",
+      "classification": "figma_export_name",
+      "replacement": "var(--color-white-alpha-60)"
+    },
+    {
+      "source_name": "--Link-link-oncolor-visited",
+      "classification": "figma_export_name",
+      "replacement": "var(--color-white-alpha-90)"
+    },
+    {
+      "source_name": "--Link-link-primary",
+      "classification": "figma_export_name",
+      "replacement": "var(--sa-600)"
+    },
+    {
+      "source_name": "--Link-link-primary-focused",
+      "classification": "figma_export_name",
+      "replacement": "var(--sa-600)"
+    },
+    {
+      "source_name": "--Link-link-primary-hovered",
+      "classification": "figma_export_name",
+      "replacement": "var(--sa-400)"
+    },
+    {
+      "source_name": "--Link-link-primary-pressed",
+      "classification": "figma_export_name",
+      "replacement": "var(--sa-300)"
+    },
+    {
+      "source_name": "--Link-link-primary-visited",
+      "classification": "figma_export_name",
+      "replacement": "var(--sa-800)"
+    },
+    {
+      "source_name": "--Link-link-sm-gap",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-4)"
+    },
+    {
+      "source_name": "--Notification-notification-gap",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-16)"
+    },
+    {
+      "source_name": "--Notification-notification-h-padding",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-24)"
+    },
+    {
+      "source_name": "--Notification-notification-padding",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-16)"
+    },
+    {
+      "source_name": "--Radius-radius-lg",
+      "classification": "figma_export_name",
+      "replacement": "var(--radius-lg)"
+    },
+    {
+      "source_name": "--Radius-radius-md",
+      "classification": "figma_export_name",
+      "replacement": "var(--radius-md)"
+    },
+    {
+      "source_name": "--Radius-radius-sm",
+      "classification": "figma_export_name",
+      "replacement": "var(--radius-sm)"
+    },
+    {
+      "source_name": "--Size-Display-typo-size-display-md",
+      "classification": "figma_export_name",
+      "replacement": "var(--fs-display-md)"
+    },
+    {
+      "source_name": "--Size-Display-typo-size-display-sm",
+      "classification": "figma_export_name",
+      "replacement": "var(--fs-display-sm)"
+    },
+    {
+      "source_name": "--Size-Display-typo-size-display-xs",
+      "classification": "figma_export_name",
+      "replacement": "var(--fs-display-xs)"
+    },
+    {
+      "source_name": "--Size-Text-typo-size-text-2xs",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-10)"
+    },
+    {
+      "source_name": "--Size-Text-typo-size-text-Ig",
+      "classification": "figma_export_name",
+      "replacement": "var(--fs-text-lg)"
+    },
+    {
+      "source_name": "--Size-Text-typo-size-text-md",
+      "classification": "figma_export_name",
+      "replacement": "var(--fs-text-md)"
+    },
+    {
+      "source_name": "--Size-Text-typo-size-text-sm",
+      "classification": "figma_export_name",
+      "replacement": "var(--fs-text-sm)"
+    },
+    {
+      "source_name": "--Size-Text-typo-size-text-xl",
+      "classification": "figma_export_name",
+      "replacement": "var(--fs-text-xl)"
+    },
+    {
+      "source_name": "--Size-Text-typo-size-text-xs",
+      "classification": "figma_export_name",
+      "replacement": "var(--fs-text-xs)"
+    },
+    {
+      "source_name": "--Tab-horizontal-tab-md-button-h-padding",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-16)"
+    },
+    {
+      "source_name": "--Tab-tab-button-gap",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-4)"
+    },
+    {
+      "source_name": "--Text-text-content-gap",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-8)"
+    },
+    {
+      "source_name": "--Text-text-default",
+      "classification": "figma_export_name",
+      "replacement": "var(--color-text-strong)"
+    },
+    {
+      "source_name": "--Text-text-display",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-800)"
+    },
+    {
+      "source_name": "--Text-text-oncolor-primary",
+      "classification": "figma_export_name",
+      "replacement": "var(--white)"
+    },
+    {
+      "source_name": "--Text-text-primary",
+      "classification": "figma_export_name",
+      "replacement": "var(--sa-600)"
+    },
+    {
+      "source_name": "--Text-text-primary-paragraph",
+      "classification": "figma_export_name",
+      "replacement": "var(--gray-700)"
+    },
+    {
+      "source_name": "--Text-text-primary-sa-flag",
+      "classification": "figma_export_name",
+      "replacement": "var(--sa-800)"
+    },
+    {
+      "source_name": "--Text-text-secondary",
+      "classification": "figma_export_name",
+      "replacement": "var(--gold-600)"
+    },
+    {
+      "source_name": "--Text-text-success",
+      "classification": "figma_export_name",
+      "replacement": "var(--success-700)"
+    },
+    {
+      "source_name": "--Width-width-lg",
+      "classification": "figma_export_name",
+      "replacement": "var(--width-lg)"
+    },
+    {
+      "source_name": "--accordion-bg-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-bg-hovered)"
+    },
+    {
+      "source_name": "--accordion-bg-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-bg-pressed)"
+    },
+    {
+      "source_name": "--accordion-border-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-border-color)"
+    },
+    {
+      "source_name": "--accordion-content-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-color)"
+    },
+    {
+      "source_name": "--accordion-content-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-font-family)"
+    },
+    {
+      "source_name": "--accordion-content-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-font-size)"
+    },
+    {
+      "source_name": "--accordion-content-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-font-weight)"
+    },
+    {
+      "source_name": "--accordion-content-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-gap)"
+    },
+    {
+      "source_name": "--accordion-content-icon-indent",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-icon-indent)"
+    },
+    {
+      "source_name": "--accordion-content-icon-indent-flush",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-icon-indent-flush)"
+    },
+    {
+      "source_name": "--accordion-content-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-line-height)"
+    },
+    {
+      "source_name": "--accordion-content-padding-bottom",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-padding-bottom)"
+    },
+    {
+      "source_name": "--accordion-content-padding-top",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-content-padding-top)"
+    },
+    {
+      "source_name": "--accordion-focus-ring-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-focus-ring-color)"
+    },
+    {
+      "source_name": "--accordion-focus-ring-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-focus-ring-width)"
+    },
+    {
+      "source_name": "--accordion-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-gap)"
+    },
+    {
+      "source_name": "--accordion-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-icon-size)"
+    },
+    {
+      "source_name": "--accordion-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-padding-inline)"
+    },
+    {
+      "source_name": "--accordion-title-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-title-color)"
+    },
+    {
+      "source_name": "--accordion-title-color-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-title-color-disabled)"
+    },
+    {
+      "source_name": "--accordion-title-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-title-font-family)"
+    },
+    {
+      "source_name": "--accordion-title-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-title-font-size)"
+    },
+    {
+      "source_name": "--accordion-title-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-title-font-weight)"
+    },
+    {
+      "source_name": "--accordion-title-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-title-line-height)"
+    },
+    {
+      "source_name": "--accordion-transition-duration",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-transition-duration)"
+    },
+    {
+      "source_name": "--accordion-transition-easing",
+      "classification": "component_contract_token",
+      "replacement": "var(--accordion-transition-easing)"
+    },
+    {
+      "source_name": "--avatar-bg-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--avatar-bg-default)"
+    },
+    {
+      "source_name": "--avatar-bg-image",
+      "classification": "component_contract_token",
+      "replacement": "var(--avatar-bg-image)"
+    },
+    {
+      "source_name": "--avatar-border-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--avatar-border-color)"
+    },
+    {
+      "source_name": "--avatar-group-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--avatar-group-gap)"
+    },
+    {
+      "source_name": "--avatar-radius-circle",
+      "classification": "component_contract_token",
+      "replacement": "var(--avatar-radius-circle)"
+    },
+    {
+      "source_name": "--avatar-radius-square-lg",
+      "classification": "component_contract_token",
+      "replacement": "var(--avatar-radius-square-lg)"
+    },
+    {
+      "source_name": "--avatar-radius-square-sm",
+      "classification": "component_contract_token",
+      "replacement": "var(--avatar-radius-square-sm)"
+    },
+    {
+      "source_name": "--avatar-text-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--avatar-text-color)"
+    },
+    {
+      "source_name": "--card-actions-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-actions-gap)"
+    },
+    {
+      "source_name": "--card-bg-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-bg-default)"
+    },
+    {
+      "source_name": "--card-bg-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-bg-disabled)"
+    },
+    {
+      "source_name": "--card-bg-hover",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-bg-hover)"
+    },
+    {
+      "source_name": "--card-body-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-body-font-size)"
+    },
+    {
+      "source_name": "--card-body-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-body-line-height)"
+    },
+    {
+      "source_name": "--card-border-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-border-default)"
+    },
+    {
+      "source_name": "--card-border-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-border-disabled)"
+    },
+    {
+      "source_name": "--card-border-focused",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-border-focused)"
+    },
+    {
+      "source_name": "--card-content-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-content-gap)"
+    },
+    {
+      "source_name": "--card-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-font-family)"
+    },
+    {
+      "source_name": "--card-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-gap)"
+    },
+    {
+      "source_name": "--card-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-padding)"
+    },
+    {
+      "source_name": "--card-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-radius)"
+    },
+    {
+      "source_name": "--card-text-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-text-default)"
+    },
+    {
+      "source_name": "--card-text-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-text-disabled)"
+    },
+    {
+      "source_name": "--card-title-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-title-font-size)"
+    },
+    {
+      "source_name": "--card-title-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-title-line-height)"
+    },
+    {
+      "source_name": "--card-toggle-icon-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-toggle-icon-color)"
+    },
+    {
+      "source_name": "--card-toggle-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-toggle-radius)"
+    },
+    {
+      "source_name": "--card-toggle-transition-duration",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-toggle-transition-duration)"
+    },
+    {
+      "source_name": "--card-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--card-width)"
+    },
+    {
+      "source_name": "--checkbox-bg-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-bg-disabled)"
+    },
+    {
+      "source_name": "--checkbox-bg-neutral-checked",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-bg-neutral-checked)"
+    },
+    {
+      "source_name": "--checkbox-bg-neutral-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-bg-neutral-hovered)"
+    },
+    {
+      "source_name": "--checkbox-bg-neutral-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-bg-neutral-pressed)"
+    },
+    {
+      "source_name": "--checkbox-bg-primary-checked",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-bg-primary-checked)"
+    },
+    {
+      "source_name": "--checkbox-bg-primary-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-bg-primary-hovered)"
+    },
+    {
+      "source_name": "--checkbox-bg-primary-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-bg-primary-pressed)"
+    },
+    {
+      "source_name": "--checkbox-bg-unchecked-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-bg-unchecked-pressed)"
+    },
+    {
+      "source_name": "--checkbox-border-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-border-default)"
+    },
+    {
+      "source_name": "--checkbox-border-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-border-disabled)"
+    },
+    {
+      "source_name": "--checkbox-focus-ring-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-focus-ring-color)"
+    },
+    {
+      "source_name": "--checkbox-focus-ring-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-focus-ring-radius)"
+    },
+    {
+      "source_name": "--checkbox-mark-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-mark-color)"
+    },
+    {
+      "source_name": "--checkbox-mark-color-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-mark-color-disabled)"
+    },
+    {
+      "source_name": "--checkbox-mark-color-readonly",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-mark-color-readonly)"
+    },
+    {
+      "source_name": "--checkbox-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-radius)"
+    },
+    {
+      "source_name": "--checkbox-ripple-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-ripple-bg)"
+    },
+    {
+      "source_name": "--checkbox-ripple-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-ripple-radius)"
+    },
+    {
+      "source_name": "--checkbox-transition-duration",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-transition-duration)"
+    },
+    {
+      "source_name": "--checkbox-transition-easing",
+      "classification": "component_contract_token",
+      "replacement": "var(--checkbox-transition-easing)"
+    },
+    {
+      "source_name": "--chip-bg-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-bg-disabled)"
+    },
+    {
+      "source_name": "--chip-focus-inset",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-focus-inset)"
+    },
+    {
+      "source_name": "--chip-focus-outline-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-focus-outline-color)"
+    },
+    {
+      "source_name": "--chip-focus-outline-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-focus-outline-width)"
+    },
+    {
+      "source_name": "--chip-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-font-family)"
+    },
+    {
+      "source_name": "--chip-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-gap)"
+    },
+    {
+      "source_name": "--chip-lg-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-lg-font-size)"
+    },
+    {
+      "source_name": "--chip-lg-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-lg-font-weight)"
+    },
+    {
+      "source_name": "--chip-lg-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-lg-height)"
+    },
+    {
+      "source_name": "--chip-lg-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-lg-line-height)"
+    },
+    {
+      "source_name": "--chip-md-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-md-font-size)"
+    },
+    {
+      "source_name": "--chip-md-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-md-font-weight)"
+    },
+    {
+      "source_name": "--chip-md-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-md-height)"
+    },
+    {
+      "source_name": "--chip-md-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-md-line-height)"
+    },
+    {
+      "source_name": "--chip-neutral-bg-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-neutral-bg-default)"
+    },
+    {
+      "source_name": "--chip-neutral-bg-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-neutral-bg-hovered)"
+    },
+    {
+      "source_name": "--chip-neutral-bg-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-neutral-bg-pressed)"
+    },
+    {
+      "source_name": "--chip-neutral-bg-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-neutral-bg-selected)"
+    },
+    {
+      "source_name": "--chip-on-color-bg-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-on-color-bg-default)"
+    },
+    {
+      "source_name": "--chip-on-color-bg-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-on-color-bg-disabled)"
+    },
+    {
+      "source_name": "--chip-on-color-bg-focused",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-on-color-bg-focused)"
+    },
+    {
+      "source_name": "--chip-on-color-bg-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-on-color-bg-hovered)"
+    },
+    {
+      "source_name": "--chip-on-color-bg-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-on-color-bg-pressed)"
+    },
+    {
+      "source_name": "--chip-on-color-bg-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-on-color-bg-selected)"
+    },
+    {
+      "source_name": "--chip-on-color-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-on-color-text)"
+    },
+    {
+      "source_name": "--chip-on-color-text-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-on-color-text-disabled)"
+    },
+    {
+      "source_name": "--chip-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-padding-inline)"
+    },
+    {
+      "source_name": "--chip-primary-bg-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-primary-bg-default)"
+    },
+    {
+      "source_name": "--chip-primary-bg-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-primary-bg-hovered)"
+    },
+    {
+      "source_name": "--chip-primary-bg-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-primary-bg-pressed)"
+    },
+    {
+      "source_name": "--chip-primary-bg-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-primary-bg-selected)"
+    },
+    {
+      "source_name": "--chip-radius-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-radius-default)"
+    },
+    {
+      "source_name": "--chip-radius-rounded",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-radius-rounded)"
+    },
+    {
+      "source_name": "--chip-sm-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-sm-font-size)"
+    },
+    {
+      "source_name": "--chip-sm-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-sm-font-weight)"
+    },
+    {
+      "source_name": "--chip-sm-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-sm-height)"
+    },
+    {
+      "source_name": "--chip-sm-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-sm-line-height)"
+    },
+    {
+      "source_name": "--chip-text-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-text-disabled)"
+    },
+    {
+      "source_name": "--chip-text-neutral",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-text-neutral)"
+    },
+    {
+      "source_name": "--chip-text-on-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-text-on-selected)"
+    },
+    {
+      "source_name": "--chip-text-primary",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-text-primary)"
+    },
+    {
+      "source_name": "--chip-text-primary-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-text-primary-pressed)"
+    },
+    {
+      "source_name": "--chip-transition-duration",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-transition-duration)"
+    },
+    {
+      "source_name": "--chip-transition-easing",
+      "classification": "component_contract_token",
+      "replacement": "var(--chip-transition-easing)"
+    },
+    {
+      "source_name": "--code-snippet-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-bg)"
+    },
+    {
+      "source_name": "--code-snippet-border-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-border-color)"
+    },
+    {
+      "source_name": "--code-snippet-border-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-border-radius)"
+    },
+    {
+      "source_name": "--code-snippet-code-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-code-color)"
+    },
+    {
+      "source_name": "--code-snippet-content-pb",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-content-pb)"
+    },
+    {
+      "source_name": "--code-snippet-font-family-mono",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-font-family-mono)"
+    },
+    {
+      "source_name": "--code-snippet-font-size-code",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-font-size-code)"
+    },
+    {
+      "source_name": "--code-snippet-font-size-tab",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-font-size-tab)"
+    },
+    {
+      "source_name": "--code-snippet-gutter-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-gutter-bg)"
+    },
+    {
+      "source_name": "--code-snippet-gutter-border-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-gutter-border-color)"
+    },
+    {
+      "source_name": "--code-snippet-inline-code-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-inline-code-color)"
+    },
+    {
+      "source_name": "--code-snippet-inline-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-inline-gap)"
+    },
+    {
+      "source_name": "--code-snippet-line-height-tab",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-line-height-tab)"
+    },
+    {
+      "source_name": "--code-snippet-line-numbers-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-line-numbers-color)"
+    },
+    {
+      "source_name": "--code-snippet-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-padding)"
+    },
+    {
+      "source_name": "--code-snippet-prompt-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-prompt-color)"
+    },
+    {
+      "source_name": "--code-snippet-tab-active-indicator-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-tab-active-indicator-color)"
+    },
+    {
+      "source_name": "--code-snippet-tab-active-text-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-tab-active-text-color)"
+    },
+    {
+      "source_name": "--code-snippet-tab-button-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-tab-button-gap)"
+    },
+    {
+      "source_name": "--code-snippet-tab-button-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-tab-button-padding)"
+    },
+    {
+      "source_name": "--code-snippet-tab-button-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-tab-button-radius)"
+    },
+    {
+      "source_name": "--code-snippet-tab-divider-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-tab-divider-color)"
+    },
+    {
+      "source_name": "--code-snippet-tab-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-tab-font-family)"
+    },
+    {
+      "source_name": "--code-snippet-tab-inactive-text-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-tab-inactive-text-color)"
+    },
+    {
+      "source_name": "--code-snippet-tab-indicator-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-tab-indicator-radius)"
+    },
+    {
+      "source_name": "--code-snippet-transition-duration",
+      "classification": "component_contract_token",
+      "replacement": "var(--code-snippet-transition-duration)"
+    },
+    {
+      "source_name": "--colors-text-text-quarterary-500",
+      "classification": "component_contract_token",
+      "replacement": "var(--colors-text-text-quarterary-500)"
+    },
+    {
+      "source_name": "--divider-color-alpha-white",
+      "classification": "component_contract_token",
+      "replacement": "var(--divider-color-alpha-white)"
+    },
+    {
+      "source_name": "--divider-color-neutral",
+      "classification": "component_contract_token",
+      "replacement": "var(--divider-color-neutral)"
+    },
+    {
+      "source_name": "--divider-color-primary",
+      "classification": "component_contract_token",
+      "replacement": "var(--divider-color-primary)"
+    },
+    {
+      "source_name": "--divider-color-white",
+      "classification": "component_contract_token",
+      "replacement": "var(--divider-color-white)"
+    },
+    {
+      "source_name": "--divider-thickness",
+      "classification": "component_contract_token",
+      "replacement": "var(--divider-thickness)"
+    },
+    {
+      "source_name": "--drop-zone-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-bg)"
+    },
+    {
+      "source_name": "--drop-zone-bg-draghover",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-bg-draghover)"
+    },
+    {
+      "source_name": "--drop-zone-border",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-border)"
+    },
+    {
+      "source_name": "--drop-zone-border-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-border-disabled)"
+    },
+    {
+      "source_name": "--drop-zone-border-draghover",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-border-draghover)"
+    },
+    {
+      "source_name": "--drop-zone-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-gap)"
+    },
+    {
+      "source_name": "--drop-zone-helper-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-helper-color)"
+    },
+    {
+      "source_name": "--drop-zone-helper-color-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-helper-color-disabled)"
+    },
+    {
+      "source_name": "--drop-zone-helper-color-draghover",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-helper-color-draghover)"
+    },
+    {
+      "source_name": "--drop-zone-icon-opacity-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-icon-opacity-disabled)"
+    },
+    {
+      "source_name": "--drop-zone-lead-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-lead-color)"
+    },
+    {
+      "source_name": "--drop-zone-lead-color-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-lead-color-disabled)"
+    },
+    {
+      "source_name": "--drop-zone-lead-color-draghover",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-lead-color-draghover)"
+    },
+    {
+      "source_name": "--drop-zone-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-padding)"
+    },
+    {
+      "source_name": "--drop-zone-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-radius)"
+    },
+    {
+      "source_name": "--drop-zone-trigger-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-trigger-bg)"
+    },
+    {
+      "source_name": "--drop-zone-trigger-bg-draghover",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-trigger-bg-draghover)"
+    },
+    {
+      "source_name": "--drop-zone-trigger-text-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-trigger-text-color)"
+    },
+    {
+      "source_name": "--drop-zone-trigger-text-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--drop-zone-trigger-text-disabled)"
+    },
+    {
+      "source_name": "--fab-bg-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-disabled)"
+    },
+    {
+      "source_name": "--fab-bg-disabled-on-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-disabled-on-color)"
+    },
+    {
+      "source_name": "--fab-bg-primary-brand-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-brand-default)"
+    },
+    {
+      "source_name": "--fab-bg-primary-brand-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-brand-hovered)"
+    },
+    {
+      "source_name": "--fab-bg-primary-brand-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-brand-pressed)"
+    },
+    {
+      "source_name": "--fab-bg-primary-brand-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-brand-selected)"
+    },
+    {
+      "source_name": "--fab-bg-primary-neutral-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-neutral-default)"
+    },
+    {
+      "source_name": "--fab-bg-primary-neutral-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-neutral-hovered)"
+    },
+    {
+      "source_name": "--fab-bg-primary-neutral-on-color-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-neutral-on-color-default)"
+    },
+    {
+      "source_name": "--fab-bg-primary-neutral-on-color-focused",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-neutral-on-color-focused)"
+    },
+    {
+      "source_name": "--fab-bg-primary-neutral-on-color-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-neutral-on-color-hovered)"
+    },
+    {
+      "source_name": "--fab-bg-primary-neutral-on-color-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-neutral-on-color-pressed)"
+    },
+    {
+      "source_name": "--fab-bg-primary-neutral-on-color-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-neutral-on-color-selected)"
+    },
+    {
+      "source_name": "--fab-bg-primary-neutral-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-neutral-pressed)"
+    },
+    {
+      "source_name": "--fab-bg-primary-neutral-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-primary-neutral-selected)"
+    },
+    {
+      "source_name": "--fab-bg-secondary-solid-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-secondary-solid-default)"
+    },
+    {
+      "source_name": "--fab-bg-secondary-solid-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-secondary-solid-hovered)"
+    },
+    {
+      "source_name": "--fab-bg-secondary-solid-on-color-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-secondary-solid-on-color-default)"
+    },
+    {
+      "source_name": "--fab-bg-secondary-solid-on-color-focused",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-secondary-solid-on-color-focused)"
+    },
+    {
+      "source_name": "--fab-bg-secondary-solid-on-color-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-secondary-solid-on-color-hovered)"
+    },
+    {
+      "source_name": "--fab-bg-secondary-solid-on-color-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-secondary-solid-on-color-pressed)"
+    },
+    {
+      "source_name": "--fab-bg-secondary-solid-on-color-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-secondary-solid-on-color-selected)"
+    },
+    {
+      "source_name": "--fab-bg-secondary-solid-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-secondary-solid-pressed)"
+    },
+    {
+      "source_name": "--fab-bg-secondary-solid-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-bg-secondary-solid-selected)"
+    },
+    {
+      "source_name": "--fab-focus-ring-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-focus-ring-color)"
+    },
+    {
+      "source_name": "--fab-focus-ring-offset",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-focus-ring-offset)"
+    },
+    {
+      "source_name": "--fab-focus-ring-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-focus-ring-width)"
+    },
+    {
+      "source_name": "--fab-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-gap)"
+    },
+    {
+      "source_name": "--fab-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-icon-size)"
+    },
+    {
+      "source_name": "--fab-label-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-label-font-family)"
+    },
+    {
+      "source_name": "--fab-label-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-label-font-size)"
+    },
+    {
+      "source_name": "--fab-label-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-label-font-weight)"
+    },
+    {
+      "source_name": "--fab-label-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-label-line-height)"
+    },
+    {
+      "source_name": "--fab-padding-lg",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-padding-lg)"
+    },
+    {
+      "source_name": "--fab-padding-sm",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-padding-sm)"
+    },
+    {
+      "source_name": "--fab-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-radius)"
+    },
+    {
+      "source_name": "--fab-text-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-text-disabled)"
+    },
+    {
+      "source_name": "--fab-text-disabled-on-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-text-disabled-on-color)"
+    },
+    {
+      "source_name": "--fab-text-primary-brand",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-text-primary-brand)"
+    },
+    {
+      "source_name": "--fab-text-primary-neutral",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-text-primary-neutral)"
+    },
+    {
+      "source_name": "--fab-text-primary-neutral-on-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-text-primary-neutral-on-color)"
+    },
+    {
+      "source_name": "--fab-text-secondary-solid",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-text-secondary-solid)"
+    },
+    {
+      "source_name": "--fab-text-secondary-solid-on-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--fab-text-secondary-solid-on-color)"
+    },
+    {
+      "source_name": "--file-item-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-bg)"
+    },
+    {
+      "source_name": "--file-item-border",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-border)"
+    },
+    {
+      "source_name": "--file-item-border-error",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-border-error)"
+    },
+    {
+      "source_name": "--file-item-error-separator",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-error-separator)"
+    },
+    {
+      "source_name": "--file-item-error-text-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-error-text-color)"
+    },
+    {
+      "source_name": "--file-item-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-gap)"
+    },
+    {
+      "source_name": "--file-item-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-icon-size)"
+    },
+    {
+      "source_name": "--file-item-name-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-name-color)"
+    },
+    {
+      "source_name": "--file-item-name-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-name-font-size)"
+    },
+    {
+      "source_name": "--file-item-name-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-name-font-weight)"
+    },
+    {
+      "source_name": "--file-item-name-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-name-line-height)"
+    },
+    {
+      "source_name": "--file-item-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-padding)"
+    },
+    {
+      "source_name": "--file-item-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-radius)"
+    },
+    {
+      "source_name": "--file-item-remove-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-remove-radius)"
+    },
+    {
+      "source_name": "--file-item-remove-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-item-remove-size)"
+    },
+    {
+      "source_name": "--file-upload-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-gap)"
+    },
+    {
+      "source_name": "--file-upload-helper-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-helper-color)"
+    },
+    {
+      "source_name": "--file-upload-helper-disabled-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-helper-disabled-color)"
+    },
+    {
+      "source_name": "--file-upload-label-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-label-color)"
+    },
+    {
+      "source_name": "--file-upload-label-disabled-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-label-disabled-color)"
+    },
+    {
+      "source_name": "--file-upload-trigger-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-bg)"
+    },
+    {
+      "source_name": "--file-upload-trigger-bg-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-bg-disabled)"
+    },
+    {
+      "source_name": "--file-upload-trigger-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-font-size)"
+    },
+    {
+      "source_name": "--file-upload-trigger-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-font-weight)"
+    },
+    {
+      "source_name": "--file-upload-trigger-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-gap)"
+    },
+    {
+      "source_name": "--file-upload-trigger-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-height)"
+    },
+    {
+      "source_name": "--file-upload-trigger-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-line-height)"
+    },
+    {
+      "source_name": "--file-upload-trigger-padding-x",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-padding-x)"
+    },
+    {
+      "source_name": "--file-upload-trigger-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-radius)"
+    },
+    {
+      "source_name": "--file-upload-trigger-text-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-text-color)"
+    },
+    {
+      "source_name": "--file-upload-trigger-text-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--file-upload-trigger-text-disabled)"
+    },
+    {
+      "source_name": "--global-size24",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-24)"
+    },
+    {
+      "source_name": "--global-size8",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-8)"
+    },
+    {
+      "source_name": "--inline-alert-accent-opacity",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-accent-opacity)"
+    },
+    {
+      "source_name": "--inline-alert-accent-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-accent-width)"
+    },
+    {
+      "source_name": "--inline-alert-actions-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-actions-gap)"
+    },
+    {
+      "source_name": "--inline-alert-actions-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-actions-padding-inline)"
+    },
+    {
+      "source_name": "--inline-alert-body-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-body-color)"
+    },
+    {
+      "source_name": "--inline-alert-body-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-body-font-size)"
+    },
+    {
+      "source_name": "--inline-alert-body-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-body-font-weight)"
+    },
+    {
+      "source_name": "--inline-alert-body-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-body-line-height)"
+    },
+    {
+      "source_name": "--inline-alert-border-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-border-radius)"
+    },
+    {
+      "source_name": "--inline-alert-content-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-content-gap)"
+    },
+    {
+      "source_name": "--inline-alert-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-gap)"
+    },
+    {
+      "source_name": "--inline-alert-header-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-header-gap)"
+    },
+    {
+      "source_name": "--inline-alert-icon-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-icon-radius)"
+    },
+    {
+      "source_name": "--inline-alert-padding-block",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-padding-block)"
+    },
+    {
+      "source_name": "--inline-alert-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-padding-inline)"
+    },
+    {
+      "source_name": "--inline-alert-title-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-title-color)"
+    },
+    {
+      "source_name": "--inline-alert-title-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-title-font-size)"
+    },
+    {
+      "source_name": "--inline-alert-title-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-title-font-weight)"
+    },
+    {
+      "source_name": "--inline-alert-title-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--inline-alert-title-line-height)"
+    },
+    {
+      "source_name": "--input-affix-bg-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-bg-disabled)"
+    },
+    {
+      "source_name": "--input-affix-bg-focused",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-bg-focused)"
+    },
+    {
+      "source_name": "--input-affix-bg-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-bg-hovered)"
+    },
+    {
+      "source_name": "--input-affix-bg-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-bg-pressed)"
+    },
+    {
+      "source_name": "--input-affix-bg-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-bg-selected)"
+    },
+    {
+      "source_name": "--input-affix-bg-solid-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-bg-solid-default)"
+    },
+    {
+      "source_name": "--input-affix-focus-ring-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-focus-ring-color)"
+    },
+    {
+      "source_name": "--input-affix-focus-ring-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-focus-ring-width)"
+    },
+    {
+      "source_name": "--input-affix-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-font-family)"
+    },
+    {
+      "source_name": "--input-affix-lg-arrow-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-lg-arrow-size)"
+    },
+    {
+      "source_name": "--input-affix-lg-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-lg-font-size)"
+    },
+    {
+      "source_name": "--input-affix-lg-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-lg-gap)"
+    },
+    {
+      "source_name": "--input-affix-lg-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-lg-height)"
+    },
+    {
+      "source_name": "--input-affix-lg-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-lg-icon-size)"
+    },
+    {
+      "source_name": "--input-affix-lg-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-lg-line-height)"
+    },
+    {
+      "source_name": "--input-affix-lg-padding-block",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-lg-padding-block)"
+    },
+    {
+      "source_name": "--input-affix-lg-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-lg-padding-inline)"
+    },
+    {
+      "source_name": "--input-affix-md-arrow-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-md-arrow-size)"
+    },
+    {
+      "source_name": "--input-affix-md-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-md-font-size)"
+    },
+    {
+      "source_name": "--input-affix-md-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-md-gap)"
+    },
+    {
+      "source_name": "--input-affix-md-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-md-height)"
+    },
+    {
+      "source_name": "--input-affix-md-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-md-icon-size)"
+    },
+    {
+      "source_name": "--input-affix-md-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-md-line-height)"
+    },
+    {
+      "source_name": "--input-affix-md-padding-block",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-md-padding-block)"
+    },
+    {
+      "source_name": "--input-affix-md-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-md-padding-inline)"
+    },
+    {
+      "source_name": "--input-affix-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-radius)"
+    },
+    {
+      "source_name": "--input-affix-text-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-text-default)"
+    },
+    {
+      "source_name": "--input-affix-text-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-text-disabled)"
+    },
+    {
+      "source_name": "--input-affix-text-placeholder",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-text-placeholder)"
+    },
+    {
+      "source_name": "--input-affix-text-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--input-affix-text-selected)"
+    },
+    {
+      "source_name": "--label-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-font-family)"
+    },
+    {
+      "source_name": "--label-font-size-lg",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-font-size-lg)"
+    },
+    {
+      "source_name": "--label-font-size-md",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-font-size-md)"
+    },
+    {
+      "source_name": "--label-font-weight-regular",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-font-weight-regular)"
+    },
+    {
+      "source_name": "--label-font-weight-semibold",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-font-weight-semibold)"
+    },
+    {
+      "source_name": "--label-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-gap)"
+    },
+    {
+      "source_name": "--label-line-height-lg",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-line-height-lg)"
+    },
+    {
+      "source_name": "--label-line-height-md",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-line-height-md)"
+    },
+    {
+      "source_name": "--label-required-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-required-color)"
+    },
+    {
+      "source_name": "--label-required-color-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-required-color-disabled)"
+    },
+    {
+      "source_name": "--label-text-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-text-color)"
+    },
+    {
+      "source_name": "--label-text-color-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--label-text-color-disabled)"
+    },
+    {
+      "source_name": "--link-focus-ring-offset",
+      "classification": "component_contract_token",
+      "replacement": "var(--link-focus-ring-offset)"
+    },
+    {
+      "source_name": "--link-focus-ring-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--link-focus-ring-width)"
+    },
+    {
+      "source_name": "--link-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--link-font-family)"
+    },
+    {
+      "source_name": "--link-font-size-md",
+      "classification": "component_contract_token",
+      "replacement": "var(--link-font-size-md)"
+    },
+    {
+      "source_name": "--link-font-size-sm",
+      "classification": "component_contract_token",
+      "replacement": "var(--link-font-size-sm)"
+    },
+    {
+      "source_name": "--link-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--link-font-weight)"
+    },
+    {
+      "source_name": "--link-line-height-md",
+      "classification": "component_contract_token",
+      "replacement": "var(--link-line-height-md)"
+    },
+    {
+      "source_name": "--link-line-height-sm",
+      "classification": "component_contract_token",
+      "replacement": "var(--link-line-height-sm)"
+    },
+    {
+      "source_name": "--list-item-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-item-font-family)"
+    },
+    {
+      "source_name": "--list-item-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-item-font-size)"
+    },
+    {
+      "source_name": "--list-item-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-item-font-weight)"
+    },
+    {
+      "source_name": "--list-item-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-item-gap)"
+    },
+    {
+      "source_name": "--list-item-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-item-icon-size)"
+    },
+    {
+      "source_name": "--list-item-indent",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-item-indent)"
+    },
+    {
+      "source_name": "--list-item-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-item-line-height)"
+    },
+    {
+      "source_name": "--list-text-neutral",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-text-neutral)"
+    },
+    {
+      "source_name": "--list-text-oncolor",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-text-oncolor)"
+    },
+    {
+      "source_name": "--list-text-primary",
+      "classification": "component_contract_token",
+      "replacement": "var(--list-text-primary)"
+    },
+    {
+      "source_name": "--notification-toast-accent-opacity",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-accent-opacity)"
+    },
+    {
+      "source_name": "--notification-toast-accent-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-accent-width)"
+    },
+    {
+      "source_name": "--notification-toast-actions-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-actions-gap)"
+    },
+    {
+      "source_name": "--notification-toast-actions-indent",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-actions-indent)"
+    },
+    {
+      "source_name": "--notification-toast-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-bg)"
+    },
+    {
+      "source_name": "--notification-toast-close-mobile-offset",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-close-mobile-offset)"
+    },
+    {
+      "source_name": "--notification-toast-close-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-close-radius)"
+    },
+    {
+      "source_name": "--notification-toast-close-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-close-size)"
+    },
+    {
+      "source_name": "--notification-toast-desktop-h-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-desktop-h-padding)"
+    },
+    {
+      "source_name": "--notification-toast-desktop-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-desktop-width)"
+    },
+    {
+      "source_name": "--notification-toast-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-font-family)"
+    },
+    {
+      "source_name": "--notification-toast-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-gap)"
+    },
+    {
+      "source_name": "--notification-toast-helper-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-helper-color)"
+    },
+    {
+      "source_name": "--notification-toast-helper-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-helper-font-size)"
+    },
+    {
+      "source_name": "--notification-toast-helper-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-helper-font-weight)"
+    },
+    {
+      "source_name": "--notification-toast-helper-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-helper-line-height)"
+    },
+    {
+      "source_name": "--notification-toast-icon-bg-critical-error",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-icon-bg-critical-error)"
+    },
+    {
+      "source_name": "--notification-toast-icon-bg-info",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-icon-bg-info)"
+    },
+    {
+      "source_name": "--notification-toast-icon-bg-neutral",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-icon-bg-neutral)"
+    },
+    {
+      "source_name": "--notification-toast-icon-bg-success",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-icon-bg-success)"
+    },
+    {
+      "source_name": "--notification-toast-icon-bg-warning",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-icon-bg-warning)"
+    },
+    {
+      "source_name": "--notification-toast-icon-inner-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-icon-inner-size)"
+    },
+    {
+      "source_name": "--notification-toast-icon-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-icon-radius)"
+    },
+    {
+      "source_name": "--notification-toast-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-icon-size)"
+    },
+    {
+      "source_name": "--notification-toast-mobile-h-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-mobile-h-padding)"
+    },
+    {
+      "source_name": "--notification-toast-mobile-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-mobile-width)"
+    },
+    {
+      "source_name": "--notification-toast-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-radius)"
+    },
+    {
+      "source_name": "--notification-toast-shadow",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-shadow)"
+    },
+    {
+      "source_name": "--notification-toast-text-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-text-gap)"
+    },
+    {
+      "source_name": "--notification-toast-title-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-title-color)"
+    },
+    {
+      "source_name": "--notification-toast-title-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-title-font-size)"
+    },
+    {
+      "source_name": "--notification-toast-title-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-title-font-weight)"
+    },
+    {
+      "source_name": "--notification-toast-title-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-title-gap)"
+    },
+    {
+      "source_name": "--notification-toast-title-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-title-line-height)"
+    },
+    {
+      "source_name": "--notification-toast-v-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--notification-toast-v-padding)"
+    },
+    {
+      "source_name": "--pagination-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-font-family)"
+    },
+    {
+      "source_name": "--pagination-item-current-indicator-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-current-indicator-bg)"
+    },
+    {
+      "source_name": "--pagination-item-current-indicator-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-current-indicator-radius)"
+    },
+    {
+      "source_name": "--pagination-item-disabled-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-disabled-text)"
+    },
+    {
+      "source_name": "--pagination-item-focus-border-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-focus-border-color)"
+    },
+    {
+      "source_name": "--pagination-item-focus-border-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-focus-border-width)"
+    },
+    {
+      "source_name": "--pagination-item-hover-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-hover-bg)"
+    },
+    {
+      "source_name": "--pagination-item-lg-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-lg-font-size)"
+    },
+    {
+      "source_name": "--pagination-item-lg-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-lg-line-height)"
+    },
+    {
+      "source_name": "--pagination-item-lg-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-lg-padding)"
+    },
+    {
+      "source_name": "--pagination-item-lg-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-lg-size)"
+    },
+    {
+      "source_name": "--pagination-item-md-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-md-font-size)"
+    },
+    {
+      "source_name": "--pagination-item-md-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-md-line-height)"
+    },
+    {
+      "source_name": "--pagination-item-md-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-md-padding)"
+    },
+    {
+      "source_name": "--pagination-item-md-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-md-size)"
+    },
+    {
+      "source_name": "--pagination-item-overflow-border-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-overflow-border-color)"
+    },
+    {
+      "source_name": "--pagination-item-overflow-open-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-overflow-open-bg)"
+    },
+    {
+      "source_name": "--pagination-item-pressed-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-pressed-bg)"
+    },
+    {
+      "source_name": "--pagination-item-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-radius)"
+    },
+    {
+      "source_name": "--pagination-item-sm-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-sm-font-size)"
+    },
+    {
+      "source_name": "--pagination-item-sm-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-sm-line-height)"
+    },
+    {
+      "source_name": "--pagination-item-sm-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-sm-padding)"
+    },
+    {
+      "source_name": "--pagination-item-sm-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-sm-size)"
+    },
+    {
+      "source_name": "--pagination-item-text-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-item-text-color)"
+    },
+    {
+      "source_name": "--pagination-items-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-items-gap)"
+    },
+    {
+      "source_name": "--pagination-nav-lg-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-nav-lg-size)"
+    },
+    {
+      "source_name": "--pagination-nav-md-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-nav-md-size)"
+    },
+    {
+      "source_name": "--pagination-nav-sm-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-nav-sm-size)"
+    },
+    {
+      "source_name": "--pagination-overflow-option-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-option-font-size)"
+    },
+    {
+      "source_name": "--pagination-overflow-option-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-option-gap)"
+    },
+    {
+      "source_name": "--pagination-overflow-option-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-option-line-height)"
+    },
+    {
+      "source_name": "--pagination-overflow-option-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-option-padding)"
+    },
+    {
+      "source_name": "--pagination-overflow-option-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-option-width)"
+    },
+    {
+      "source_name": "--pagination-overflow-panel-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-panel-bg)"
+    },
+    {
+      "source_name": "--pagination-overflow-panel-border-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-panel-border-color)"
+    },
+    {
+      "source_name": "--pagination-overflow-panel-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-panel-padding)"
+    },
+    {
+      "source_name": "--pagination-overflow-panel-shadow",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-panel-shadow)"
+    },
+    {
+      "source_name": "--pagination-overflow-panel-z-index",
+      "classification": "component_contract_token",
+      "replacement": "var(--pagination-overflow-panel-z-index)"
+    },
+    {
+      "source_name": "--quote-author-description-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-author-description-font-size)"
+    },
+    {
+      "source_name": "--quote-author-description-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-author-description-line-height)"
+    },
+    {
+      "source_name": "--quote-author-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-author-gap)"
+    },
+    {
+      "source_name": "--quote-author-info-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-author-info-gap)"
+    },
+    {
+      "source_name": "--quote-author-name-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-author-name-font-size)"
+    },
+    {
+      "source_name": "--quote-author-name-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-author-name-line-height)"
+    },
+    {
+      "source_name": "--quote-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-bg)"
+    },
+    {
+      "source_name": "--quote-body-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-body-gap)"
+    },
+    {
+      "source_name": "--quote-body-padding-x",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-body-padding-x)"
+    },
+    {
+      "source_name": "--quote-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-gap)"
+    },
+    {
+      "source_name": "--quote-mark-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-mark-color)"
+    },
+    {
+      "source_name": "--quote-mark-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-mark-font-size)"
+    },
+    {
+      "source_name": "--quote-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-padding)"
+    },
+    {
+      "source_name": "--quote-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-radius)"
+    },
+    {
+      "source_name": "--quote-text-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-text-color)"
+    },
+    {
+      "source_name": "--quote-text-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-text-font-family)"
+    },
+    {
+      "source_name": "--quote-text-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-text-font-size)"
+    },
+    {
+      "source_name": "--quote-text-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-text-line-height)"
+    },
+    {
+      "source_name": "--quote-title-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-title-color)"
+    },
+    {
+      "source_name": "--quote-title-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-title-font-family)"
+    },
+    {
+      "source_name": "--quote-title-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-title-font-size)"
+    },
+    {
+      "source_name": "--quote-title-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-title-line-height)"
+    },
+    {
+      "source_name": "--quote-width-lg",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-width-lg)"
+    },
+    {
+      "source_name": "--quote-width-sm",
+      "classification": "component_contract_token",
+      "replacement": "var(--quote-width-sm)"
+    },
+    {
+      "source_name": "--radius-4",
+      "classification": "component_contract_token",
+      "replacement": "var(--radius-4)"
+    },
+    {
+      "source_name": "--radius-8",
+      "classification": "component_contract_token",
+      "replacement": "var(--radius-8)"
+    },
+    {
+      "source_name": "--radius-radius-full",
+      "classification": "figma_export_name",
+      "replacement": "var(--radius-full)"
+    },
+    {
+      "source_name": "--radius-round",
+      "classification": "component_contract_token",
+      "replacement": "var(--radius-round)"
+    },
+    {
+      "source_name": "--rating-disabled-opacity",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-disabled-opacity)"
+    },
+    {
+      "source_name": "--rating-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-gap)"
+    },
+    {
+      "source_name": "--rating-star-empty-fill",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-empty-fill)"
+    },
+    {
+      "source_name": "--rating-star-fill-brand",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-fill-brand)"
+    },
+    {
+      "source_name": "--rating-star-fill-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-fill-default)"
+    },
+    {
+      "source_name": "--rating-star-half-base-fill",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-half-base-fill)"
+    },
+    {
+      "source_name": "--rating-star-pressed-ring-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-pressed-ring-bg)"
+    },
+    {
+      "source_name": "--rating-star-ring-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-ring-radius)"
+    },
+    {
+      "source_name": "--rating-star-ring-size-lg",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-ring-size-lg)"
+    },
+    {
+      "source_name": "--rating-star-ring-size-md",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-ring-size-md)"
+    },
+    {
+      "source_name": "--rating-star-ring-size-sm",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-ring-size-sm)"
+    },
+    {
+      "source_name": "--rating-star-ring-transition-duration",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-ring-transition-duration)"
+    },
+    {
+      "source_name": "--rating-star-ring-transition-easing",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-ring-transition-easing)"
+    },
+    {
+      "source_name": "--rating-star-size-lg",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-size-lg)"
+    },
+    {
+      "source_name": "--rating-star-size-md",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-size-md)"
+    },
+    {
+      "source_name": "--rating-star-size-sm",
+      "classification": "component_contract_token",
+      "replacement": "var(--rating-star-size-sm)"
+    },
+    {
+      "source_name": "--slider-disabled-opacity",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-disabled-opacity)"
+    },
+    {
+      "source_name": "--slider-fill-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-fill-bg)"
+    },
+    {
+      "source_name": "--slider-focus-ring-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-focus-ring-color)"
+    },
+    {
+      "source_name": "--slider-focus-ring-offset",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-focus-ring-offset)"
+    },
+    {
+      "source_name": "--slider-focus-ring-width",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-focus-ring-width)"
+    },
+    {
+      "source_name": "--slider-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-gap)"
+    },
+    {
+      "source_name": "--slider-helper-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-helper-color)"
+    },
+    {
+      "source_name": "--slider-helper-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-helper-gap)"
+    },
+    {
+      "source_name": "--slider-label-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-label-color)"
+    },
+    {
+      "source_name": "--slider-label-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-label-font-family)"
+    },
+    {
+      "source_name": "--slider-label-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-label-gap)"
+    },
+    {
+      "source_name": "--slider-md-helper-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-md-helper-font-size)"
+    },
+    {
+      "source_name": "--slider-md-helper-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-md-helper-line-height)"
+    },
+    {
+      "source_name": "--slider-md-label-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-md-label-font-size)"
+    },
+    {
+      "source_name": "--slider-md-label-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-md-label-line-height)"
+    },
+    {
+      "source_name": "--slider-md-thumb-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-md-thumb-size)"
+    },
+    {
+      "source_name": "--slider-md-track-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-md-track-height)"
+    },
+    {
+      "source_name": "--slider-sm-helper-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-sm-helper-font-size)"
+    },
+    {
+      "source_name": "--slider-sm-helper-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-sm-helper-line-height)"
+    },
+    {
+      "source_name": "--slider-sm-label-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-sm-label-font-size)"
+    },
+    {
+      "source_name": "--slider-sm-label-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-sm-label-line-height)"
+    },
+    {
+      "source_name": "--slider-sm-thumb-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-sm-thumb-size)"
+    },
+    {
+      "source_name": "--slider-sm-track-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-sm-track-height)"
+    },
+    {
+      "source_name": "--slider-thumb-fill",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-thumb-fill)"
+    },
+    {
+      "source_name": "--slider-thumb-stroke",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-thumb-stroke)"
+    },
+    {
+      "source_name": "--slider-track-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-track-bg)"
+    },
+    {
+      "source_name": "--slider-track-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-track-radius)"
+    },
+    {
+      "source_name": "--slider-track-row-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-track-row-gap)"
+    },
+    {
+      "source_name": "--slider-value-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--slider-value-color)"
+    },
+    {
+      "source_name": "--spacing-globalspacing-xs",
+      "classification": "figma_export_name",
+      "replacement": "var(--space-4)"
+    },
+    {
+      "source_name": "--status-tag-blue-inverted-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-blue-inverted-bg)"
+    },
+    {
+      "source_name": "--status-tag-blue-inverted-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-blue-inverted-dot)"
+    },
+    {
+      "source_name": "--status-tag-blue-subtle-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-blue-subtle-bg)"
+    },
+    {
+      "source_name": "--status-tag-blue-subtle-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-blue-subtle-dot)"
+    },
+    {
+      "source_name": "--status-tag-blue-subtle-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-blue-subtle-text)"
+    },
+    {
+      "source_name": "--status-tag-dot-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-dot-size)"
+    },
+    {
+      "source_name": "--status-tag-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-font-family)"
+    },
+    {
+      "source_name": "--status-tag-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-font-size)"
+    },
+    {
+      "source_name": "--status-tag-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-font-weight)"
+    },
+    {
+      "source_name": "--status-tag-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-gap)"
+    },
+    {
+      "source_name": "--status-tag-ghost-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-ghost-text)"
+    },
+    {
+      "source_name": "--status-tag-green-inverted-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-green-inverted-bg)"
+    },
+    {
+      "source_name": "--status-tag-green-inverted-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-green-inverted-dot)"
+    },
+    {
+      "source_name": "--status-tag-green-subtle-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-green-subtle-bg)"
+    },
+    {
+      "source_name": "--status-tag-green-subtle-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-green-subtle-dot)"
+    },
+    {
+      "source_name": "--status-tag-green-subtle-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-green-subtle-text)"
+    },
+    {
+      "source_name": "--status-tag-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-height)"
+    },
+    {
+      "source_name": "--status-tag-inverted-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-inverted-text)"
+    },
+    {
+      "source_name": "--status-tag-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-line-height)"
+    },
+    {
+      "source_name": "--status-tag-neutral-inverted-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-neutral-inverted-bg)"
+    },
+    {
+      "source_name": "--status-tag-neutral-inverted-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-neutral-inverted-dot)"
+    },
+    {
+      "source_name": "--status-tag-neutral-subtle-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-neutral-subtle-bg)"
+    },
+    {
+      "source_name": "--status-tag-neutral-subtle-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-neutral-subtle-dot)"
+    },
+    {
+      "source_name": "--status-tag-neutral-subtle-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-neutral-subtle-text)"
+    },
+    {
+      "source_name": "--status-tag-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-padding-inline)"
+    },
+    {
+      "source_name": "--status-tag-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-radius)"
+    },
+    {
+      "source_name": "--status-tag-red-inverted-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-red-inverted-bg)"
+    },
+    {
+      "source_name": "--status-tag-red-inverted-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-red-inverted-dot)"
+    },
+    {
+      "source_name": "--status-tag-red-subtle-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-red-subtle-bg)"
+    },
+    {
+      "source_name": "--status-tag-red-subtle-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-red-subtle-dot)"
+    },
+    {
+      "source_name": "--status-tag-red-subtle-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-red-subtle-text)"
+    },
+    {
+      "source_name": "--status-tag-sm-dot-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-sm-dot-size)"
+    },
+    {
+      "source_name": "--status-tag-sm-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-sm-font-size)"
+    },
+    {
+      "source_name": "--status-tag-sm-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-sm-font-weight)"
+    },
+    {
+      "source_name": "--status-tag-sm-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-sm-gap)"
+    },
+    {
+      "source_name": "--status-tag-sm-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-sm-height)"
+    },
+    {
+      "source_name": "--status-tag-sm-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-sm-line-height)"
+    },
+    {
+      "source_name": "--status-tag-sm-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-sm-padding-inline)"
+    },
+    {
+      "source_name": "--status-tag-xs-dot-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-xs-dot-size)"
+    },
+    {
+      "source_name": "--status-tag-xs-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-xs-font-size)"
+    },
+    {
+      "source_name": "--status-tag-xs-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-xs-font-weight)"
+    },
+    {
+      "source_name": "--status-tag-xs-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-xs-gap)"
+    },
+    {
+      "source_name": "--status-tag-xs-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-xs-height)"
+    },
+    {
+      "source_name": "--status-tag-xs-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-xs-line-height)"
+    },
+    {
+      "source_name": "--status-tag-xs-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-xs-padding-inline)"
+    },
+    {
+      "source_name": "--status-tag-yellow-inverted-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-yellow-inverted-bg)"
+    },
+    {
+      "source_name": "--status-tag-yellow-inverted-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-yellow-inverted-dot)"
+    },
+    {
+      "source_name": "--status-tag-yellow-subtle-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-yellow-subtle-bg)"
+    },
+    {
+      "source_name": "--status-tag-yellow-subtle-dot",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-yellow-subtle-dot)"
+    },
+    {
+      "source_name": "--status-tag-yellow-subtle-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--status-tag-yellow-subtle-text)"
+    },
+    {
+      "source_name": "--tab-bg-hover",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-bg-hover)"
+    },
+    {
+      "source_name": "--tab-bg-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-bg-pressed)"
+    },
+    {
+      "source_name": "--tab-button-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-button-gap)"
+    },
+    {
+      "source_name": "--tab-divider-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-divider-color)"
+    },
+    {
+      "source_name": "--tab-focus-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-focus-radius)"
+    },
+    {
+      "source_name": "--tab-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-font-family)"
+    },
+    {
+      "source_name": "--tab-h-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-font-size)"
+    },
+    {
+      "source_name": "--tab-h-font-weight-idle",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-font-weight-idle)"
+    },
+    {
+      "source_name": "--tab-h-font-weight-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-font-weight-selected)"
+    },
+    {
+      "source_name": "--tab-h-lg-h-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-lg-h-padding)"
+    },
+    {
+      "source_name": "--tab-h-lg-v-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-lg-v-padding)"
+    },
+    {
+      "source_name": "--tab-h-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-line-height)"
+    },
+    {
+      "source_name": "--tab-h-md-h-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-md-h-padding)"
+    },
+    {
+      "source_name": "--tab-h-md-v-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-md-v-padding)"
+    },
+    {
+      "source_name": "--tab-h-sm-h-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-sm-h-padding)"
+    },
+    {
+      "source_name": "--tab-h-sm-v-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-h-sm-v-padding)"
+    },
+    {
+      "source_name": "--tab-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-icon-size)"
+    },
+    {
+      "source_name": "--tab-indicator-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-indicator-color)"
+    },
+    {
+      "source_name": "--tab-indicator-color-dark",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-indicator-color-dark)"
+    },
+    {
+      "source_name": "--tab-indicator-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-indicator-radius)"
+    },
+    {
+      "source_name": "--tab-indicator-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-indicator-size)"
+    },
+    {
+      "source_name": "--tab-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-radius)"
+    },
+    {
+      "source_name": "--tab-text-active",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-text-active)"
+    },
+    {
+      "source_name": "--tab-text-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-text-disabled)"
+    },
+    {
+      "source_name": "--tab-text-idle",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-text-idle)"
+    },
+    {
+      "source_name": "--tab-v-font-weight-idle",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-font-weight-idle)"
+    },
+    {
+      "source_name": "--tab-v-font-weight-selected",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-font-weight-selected)"
+    },
+    {
+      "source_name": "--tab-v-lg-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-lg-font-size)"
+    },
+    {
+      "source_name": "--tab-v-lg-h-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-lg-h-padding)"
+    },
+    {
+      "source_name": "--tab-v-lg-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-lg-line-height)"
+    },
+    {
+      "source_name": "--tab-v-lg-v-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-lg-v-padding)"
+    },
+    {
+      "source_name": "--tab-v-md-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-md-font-size)"
+    },
+    {
+      "source_name": "--tab-v-md-h-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-md-h-padding)"
+    },
+    {
+      "source_name": "--tab-v-md-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-md-line-height)"
+    },
+    {
+      "source_name": "--tab-v-md-v-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-md-v-padding)"
+    },
+    {
+      "source_name": "--tab-v-sm-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-sm-font-size)"
+    },
+    {
+      "source_name": "--tab-v-sm-h-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-sm-h-padding)"
+    },
+    {
+      "source_name": "--tab-v-sm-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-sm-line-height)"
+    },
+    {
+      "source_name": "--tab-v-sm-v-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tab-v-sm-v-padding)"
+    },
+    {
+      "source_name": "--tag-error-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-error-bg)"
+    },
+    {
+      "source_name": "--tag-error-border",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-error-border)"
+    },
+    {
+      "source_name": "--tag-error-border-outline",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-error-border-outline)"
+    },
+    {
+      "source_name": "--tag-error-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-error-text)"
+    },
+    {
+      "source_name": "--tag-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-font-family)"
+    },
+    {
+      "source_name": "--tag-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-font-size)"
+    },
+    {
+      "source_name": "--tag-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-font-weight)"
+    },
+    {
+      "source_name": "--tag-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-gap)"
+    },
+    {
+      "source_name": "--tag-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-height)"
+    },
+    {
+      "source_name": "--tag-icon-only-padding",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-icon-only-padding)"
+    },
+    {
+      "source_name": "--tag-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-icon-size)"
+    },
+    {
+      "source_name": "--tag-info-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-info-bg)"
+    },
+    {
+      "source_name": "--tag-info-border",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-info-border)"
+    },
+    {
+      "source_name": "--tag-info-border-outline",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-info-border-outline)"
+    },
+    {
+      "source_name": "--tag-info-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-info-text)"
+    },
+    {
+      "source_name": "--tag-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-line-height)"
+    },
+    {
+      "source_name": "--tag-neutral-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-neutral-bg)"
+    },
+    {
+      "source_name": "--tag-neutral-border",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-neutral-border)"
+    },
+    {
+      "source_name": "--tag-neutral-border-outline",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-neutral-border-outline)"
+    },
+    {
+      "source_name": "--tag-neutral-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-neutral-text)"
+    },
+    {
+      "source_name": "--tag-on-color-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-on-color-bg)"
+    },
+    {
+      "source_name": "--tag-on-color-border-outline",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-on-color-border-outline)"
+    },
+    {
+      "source_name": "--tag-on-color-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-on-color-text)"
+    },
+    {
+      "source_name": "--tag-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-padding-inline)"
+    },
+    {
+      "source_name": "--tag-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-radius)"
+    },
+    {
+      "source_name": "--tag-radius-rounded",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-radius-rounded)"
+    },
+    {
+      "source_name": "--tag-sm-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-sm-font-size)"
+    },
+    {
+      "source_name": "--tag-sm-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-sm-font-weight)"
+    },
+    {
+      "source_name": "--tag-sm-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-sm-gap)"
+    },
+    {
+      "source_name": "--tag-sm-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-sm-height)"
+    },
+    {
+      "source_name": "--tag-sm-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-sm-icon-size)"
+    },
+    {
+      "source_name": "--tag-sm-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-sm-line-height)"
+    },
+    {
+      "source_name": "--tag-sm-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-sm-padding-inline)"
+    },
+    {
+      "source_name": "--tag-success-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-success-bg)"
+    },
+    {
+      "source_name": "--tag-success-border",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-success-border)"
+    },
+    {
+      "source_name": "--tag-success-border-outline",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-success-border-outline)"
+    },
+    {
+      "source_name": "--tag-success-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-success-text)"
+    },
+    {
+      "source_name": "--tag-warning-bg",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-warning-bg)"
+    },
+    {
+      "source_name": "--tag-warning-border",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-warning-border)"
+    },
+    {
+      "source_name": "--tag-warning-border-outline",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-warning-border-outline)"
+    },
+    {
+      "source_name": "--tag-warning-text",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-warning-text)"
+    },
+    {
+      "source_name": "--tag-xs-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-xs-font-size)"
+    },
+    {
+      "source_name": "--tag-xs-font-weight",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-xs-font-weight)"
+    },
+    {
+      "source_name": "--tag-xs-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-xs-gap)"
+    },
+    {
+      "source_name": "--tag-xs-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-xs-height)"
+    },
+    {
+      "source_name": "--tag-xs-icon-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-xs-icon-size)"
+    },
+    {
+      "source_name": "--tag-xs-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-xs-line-height)"
+    },
+    {
+      "source_name": "--tag-xs-padding-inline",
+      "classification": "component_contract_token",
+      "replacement": "var(--tag-xs-padding-inline)"
+    },
+    {
+      "source_name": "--text-input-bg-darker",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-bg-darker)"
+    },
+    {
+      "source_name": "--text-input-bg-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-bg-default)"
+    },
+    {
+      "source_name": "--text-input-bg-lighter",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-bg-lighter)"
+    },
+    {
+      "source_name": "--text-input-bg-pressed",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-bg-pressed)"
+    },
+    {
+      "source_name": "--text-input-border-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-border-default)"
+    },
+    {
+      "source_name": "--text-input-border-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-border-disabled)"
+    },
+    {
+      "source_name": "--text-input-border-error",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-border-error)"
+    },
+    {
+      "source_name": "--text-input-border-hovered",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-border-hovered)"
+    },
+    {
+      "source_name": "--text-input-border-readonly",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-border-readonly)"
+    },
+    {
+      "source_name": "--text-input-field-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-field-gap)"
+    },
+    {
+      "source_name": "--text-input-font-family",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-font-family)"
+    },
+    {
+      "source_name": "--text-input-icon-text-gap",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-icon-text-gap)"
+    },
+    {
+      "source_name": "--text-input-label-color",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-label-color)"
+    },
+    {
+      "source_name": "--text-input-lg-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-lg-font-size)"
+    },
+    {
+      "source_name": "--text-input-lg-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-lg-height)"
+    },
+    {
+      "source_name": "--text-input-lg-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-lg-line-height)"
+    },
+    {
+      "source_name": "--text-input-md-font-size",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-md-font-size)"
+    },
+    {
+      "source_name": "--text-input-md-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-md-height)"
+    },
+    {
+      "source_name": "--text-input-md-line-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-md-line-height)"
+    },
+    {
+      "source_name": "--text-input-padding-inline-end",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-padding-inline-end)"
+    },
+    {
+      "source_name": "--text-input-padding-inline-start",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-padding-inline-start)"
+    },
+    {
+      "source_name": "--text-input-radius",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-radius)"
+    },
+    {
+      "source_name": "--text-input-text-disabled",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-text-disabled)"
+    },
+    {
+      "source_name": "--text-input-text-filled",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-text-filled)"
+    },
+    {
+      "source_name": "--text-input-text-focused",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-text-focused)"
+    },
+    {
+      "source_name": "--text-input-text-placeholder",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-text-placeholder)"
+    },
+    {
+      "source_name": "--text-input-text-readonly",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-text-readonly)"
+    },
+    {
+      "source_name": "--text-input-underline-default",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-underline-default)"
+    },
+    {
+      "source_name": "--text-input-underline-error",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-underline-error)"
+    },
+    {
+      "source_name": "--text-input-underline-height",
+      "classification": "component_contract_token",
+      "replacement": "var(--text-input-underline-height)"
+    },
+    {
+      "source_name": "--text-text-error-primary",
+      "classification": "figma_export_name",
+      "replacement": "#CE281C"
+    },
+    {
+      "source_name": "--text-text-tertiary",
+      "classification": "figma_export_name",
+      "replacement": "#64748B"
+    }
+  ],
+  "local_variables_policy": "../standards/foundation-policy.json",
+  "note": "Mapping uses actual source values, not name similarity. Component design tokens retain their API; Figma export names do not become a parallel namespace. Historical JSON source payloads remain unchanged."
+}

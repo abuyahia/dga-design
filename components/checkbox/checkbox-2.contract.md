@@ -1,3 +1,5 @@
+> تحديث الدفعة 3.1: [العقد التنفيذي المشترك](../../docs/core-qualification.md) يحدد السلوك الحالي ويعلو على أوصاف الحالات التاريخية أدناه.
+
 # Component Contract: Checkbox (checkbox-2)
 
 **Schema version**: 1.1.0

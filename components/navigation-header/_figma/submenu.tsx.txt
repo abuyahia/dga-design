@@ -1,0 +1,160 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/9b039f01-9bac-4d17-ab47-82930870693c.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/5145f537-7993-43c9-bb71-a27b4b43d7e4.svg";
+
+type HeaderSubMenuItemProps = {
+  className?: string;
+  helperText?: boolean;
+  helperTextAr?: string;
+  helperTextEn?: string;
+  icon?: boolean;
+  leadTextAr?: string;
+  leadTextEn?: string;
+  onColor?: boolean;
+  rtl?: boolean;
+  state?: "Default" | "Hovered" | "Pressed" | "Focused";
+  tag?: boolean;
+};
+
+export default function HeaderSubMenuItem({ className, helperText = true, helperTextAr = "محتوى مساند لعنصر الوصول", helperTextEn = "Menu item helper text", icon = true, leadTextAr = "عنوان عنصر القائمة", leadTextEn = "Menu Item Label", onColor = false, rtl = false, state = "Default", tag = false }: HeaderSubMenuItemProps) {
+  const isNotRtlAndDefaultAndOnColor = !rtl && state === "Default" && onColor;
+  const isNotRtlAndFocusedAndNotOnColor = !rtl && state === "Focused" && !onColor;
+  const isNotRtlAndFocusedAndOnColor = !rtl && state === "Focused" && onColor;
+  const isNotRtlAndHoveredAndNotOnColor = !rtl && state === "Hovered" && !onColor;
+  const isNotRtlAndHoveredAndOnColor = !rtl && state === "Hovered" && onColor;
+  const isNotRtlAndPressedAndNotOnColor = !rtl && state === "Pressed" && !onColor;
+  const isNotRtlAndPressedAndOnColor = !rtl && state === "Pressed" && onColor;
+  const isRtlAndDefaultAndNotOnColor = rtl && state === "Default" && !onColor;
+  const isRtlAndDefaultAndOnColor = rtl && state === "Default" && onColor;
+  const isRtlAndFocusedAndNotOnColor = rtl && state === "Focused" && !onColor;
+  const isRtlAndFocusedAndOnColor = rtl && state === "Focused" && onColor;
+  const isRtlAndHoveredAndNotOnColor = rtl && state === "Hovered" && !onColor;
+  const isRtlAndHoveredAndOnColor = rtl && state === "Hovered" && onColor;
+  const isRtlAndPressedAndNotOnColor = rtl && state === "Pressed" && !onColor;
+  const isRtlAndPressedAndOnColor = rtl && state === "Pressed" && onColor;
+  return (
+    <div className={className || `content-stretch flex gap-[var(--spacing-xl,16px)] items-start px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] w-[320px] ${isRtlAndFocusedAndOnColor ? String.raw`border-2 border-[var(--border\/border-white,white)] border-solid justify-end` : isNotRtlAndFocusedAndOnColor ? String.raw`border-2 border-[var(--border\/border-white,white)] border-solid` : isRtlAndPressedAndOnColor ? String.raw`bg-[var(--button\/button-background-transparent-pressed,rgba(255,255,255,0.4))] justify-end` : isNotRtlAndPressedAndOnColor ? String.raw`bg-[var(--button\/button-background-transparent-pressed,rgba(255,255,255,0.4))]` : isRtlAndHoveredAndOnColor ? String.raw`bg-[var(--button\/button-background-transparent-hovered,rgba(255,255,255,0.2))] cursor-pointer justify-end` : isNotRtlAndHoveredAndOnColor ? String.raw`bg-[var(--button\/button-background-transparent-hovered,rgba(255,255,255,0.2))] cursor-pointer` : isRtlAndFocusedAndNotOnColor ? String.raw`border-2 border-[var(--border\/border-black,#161616)] border-solid justify-end` : isNotRtlAndFocusedAndNotOnColor ? String.raw`border-2 border-[var(--border\/border-black,#161616)] border-solid` : isRtlAndPressedAndNotOnColor ? String.raw`bg-[var(--button\/button-background-neutral-pressed,#e5e7eb)] justify-end` : isNotRtlAndPressedAndNotOnColor ? String.raw`bg-[var(--button\/button-background-neutral-pressed,#e5e7eb)]` : isRtlAndHoveredAndNotOnColor ? String.raw`bg-[var(--button\/button-background-neutral-hovered,#f3f4f6)] cursor-pointer justify-end` : isNotRtlAndHoveredAndNotOnColor ? String.raw`bg-[var(--button\/button-background-neutral-hovered,#f3f4f6)] cursor-pointer` : rtl && state === "Default" ? "justify-end" : ""}`} id={isRtlAndFocusedAndOnColor ? "node-30150_148304" : isNotRtlAndFocusedAndOnColor ? "node-30150_148296" : isRtlAndPressedAndOnColor ? "node-30150_148288" : isNotRtlAndPressedAndOnColor ? "node-30150_148280" : isRtlAndHoveredAndOnColor ? "node-30150_148272" : isNotRtlAndHoveredAndOnColor ? "node-30150_148264" : isRtlAndDefaultAndOnColor ? "node-30150_148256" : isNotRtlAndDefaultAndOnColor ? "node-30150_148248" : isRtlAndFocusedAndNotOnColor ? "node-30150_148240" : isNotRtlAndFocusedAndNotOnColor ? "node-30150_148232" : isRtlAndPressedAndNotOnColor ? "node-30150_148224" : isNotRtlAndPressedAndNotOnColor ? "node-30150_148216" : isRtlAndHoveredAndNotOnColor ? "node-30150_148208" : isNotRtlAndHoveredAndNotOnColor ? "node-30150_148200" : isRtlAndDefaultAndNotOnColor ? "node-30150_148192" : "node-30150_148184"}>
+      {rtl && (
+        <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" id={isRtlAndFocusedAndOnColor ? "node-30150_148305" : isRtlAndPressedAndOnColor ? "node-30150_148289" : isRtlAndHoveredAndOnColor ? "node-30150_148273" : isRtlAndDefaultAndOnColor ? "node-30150_148257" : isRtlAndFocusedAndNotOnColor ? "node-30150_148241" : isRtlAndPressedAndNotOnColor ? "node-30150_148225" : isRtlAndHoveredAndNotOnColor ? "node-30150_148209" : "node-30150_148193"} data-name="Content">
+          <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" id={isRtlAndFocusedAndOnColor ? "node-30150_148306" : isRtlAndPressedAndOnColor ? "node-30150_148290" : isRtlAndHoveredAndOnColor ? "node-30150_148274" : isRtlAndDefaultAndOnColor ? "node-30150_148258" : isRtlAndFocusedAndNotOnColor ? "node-30150_148242" : isRtlAndPressedAndNotOnColor ? "node-30150_148226" : isRtlAndHoveredAndNotOnColor ? "node-30150_148210" : "node-30150_148194"} data-name="Text and supporting text">
+            <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" id={isRtlAndFocusedAndOnColor ? "node-30150_148307" : isRtlAndPressedAndOnColor ? "node-30150_148291" : isRtlAndHoveredAndOnColor ? "node-30150_148275" : isRtlAndDefaultAndOnColor ? "node-30150_148259" : isRtlAndFocusedAndNotOnColor ? "node-30150_148243" : isRtlAndPressedAndNotOnColor ? "node-30150_148227" : isRtlAndHoveredAndNotOnColor ? "node-30150_148211" : "node-30150_148195"} data-name="Text and badge">
+              {tag && (
+                <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-full,9999px)] shrink-0" data-node-id="30150:148196" data-name="Tag">
+                  <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-xs,18px)] relative shrink-0 text-[color:var(--tag\/tag-text-success,#085d3a)] text-[length:var(--size\/text\/typo-size-text-xs,12px)] text-center whitespace-nowrap" dir="auto" data-node-id="I30150:148196;422:116725">
+                    وسم
+                  </p>
+                </div>
+              )}
+              {rtl && !onColor && ["Hovered", "Pressed", "Focused"].includes(state) && (
+                <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right underline whitespace-nowrap" dir="auto" data-node-id="30150:148213">
+                  {leadTextAr}
+                </p>
+              )}
+              {rtl && onColor && ["Hovered", "Pressed", "Focused"].includes(state) && (
+                <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-ellipsis text-right underline whitespace-nowrap" dir="auto" data-node-id="30150:148277">
+                  {leadTextAr}
+                </p>
+              )}
+              {isRtlAndDefaultAndNotOnColor && (
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="30150:148197">
+                  {leadTextAr}
+                </p>
+              )}
+              {isRtlAndDefaultAndOnColor && (
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="30150:148261">
+                  {leadTextAr}
+                </p>
+              )}
+            </div>
+            {rtl && !onColor && helperText && (
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] overflow-hidden relative shrink-0 text-[14px] text-[color:var(--text\/text-primary-paragraph,#384250)] text-ellipsis text-right w-full" dir="auto" data-node-id="30150:148198">
+                {helperTextAr}
+              </p>
+            )}
+            {rtl && onColor && helperText && (
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] overflow-hidden relative shrink-0 text-[14px] text-[color:var(--text\/text-oncolor-primary,white)] text-ellipsis text-right w-full" dir="auto" data-node-id="30150:148262">
+                {helperTextAr}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+      {!onColor && icon && (
+        <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="30150:148185" data-name="Item Icon">
+          <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148185;30150:148746" data-name="Style=Stroke, Type=Rounded">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148185;30150:148746;2164:18533" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        </div>
+      )}
+      {onColor && icon && (
+        <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="30150:148249" data-name="Item Icon">
+          <div className="relative shrink-0 size-[24px]" data-node-id="I30150:148249;30150:148750" data-name="Style=Stroke, Type=Rounded">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148249;30150:148750;2164:18533" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+        </div>
+      )}
+      {!rtl && (
+        <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-start min-w-px relative" id={isNotRtlAndFocusedAndOnColor ? "node-30150_148298" : isNotRtlAndPressedAndOnColor ? "node-30150_148282" : isNotRtlAndHoveredAndOnColor ? "node-30150_148266" : isNotRtlAndDefaultAndOnColor ? "node-30150_148250" : isNotRtlAndFocusedAndNotOnColor ? "node-30150_148234" : isNotRtlAndPressedAndNotOnColor ? "node-30150_148218" : isNotRtlAndHoveredAndNotOnColor ? "node-30150_148202" : "node-30150_148186"} data-name="Content">
+          <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" id={isNotRtlAndFocusedAndOnColor ? "node-30150_148299" : isNotRtlAndPressedAndOnColor ? "node-30150_148283" : isNotRtlAndHoveredAndOnColor ? "node-30150_148267" : isNotRtlAndDefaultAndOnColor ? "node-30150_148251" : isNotRtlAndFocusedAndNotOnColor ? "node-30150_148235" : isNotRtlAndPressedAndNotOnColor ? "node-30150_148219" : isNotRtlAndHoveredAndNotOnColor ? "node-30150_148203" : "node-30150_148187"} data-name="Text and supporting text">
+            <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center relative shrink-0 w-full" id={isNotRtlAndFocusedAndOnColor ? "node-30150_148300" : isNotRtlAndPressedAndOnColor ? "node-30150_148284" : isNotRtlAndHoveredAndOnColor ? "node-30150_148268" : isNotRtlAndDefaultAndOnColor ? "node-30150_148252" : isNotRtlAndFocusedAndNotOnColor ? "node-30150_148236" : isNotRtlAndPressedAndNotOnColor ? "node-30150_148220" : isNotRtlAndHoveredAndNotOnColor ? "node-30150_148204" : "node-30150_148188"} data-name="Text and badge">
+              {!rtl && !onColor && ["Hovered", "Pressed", "Focused"].includes(state) && (
+                <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis underline whitespace-nowrap" data-node-id="30150:148205">
+                  {leadTextEn}
+                </p>
+              )}
+              {!rtl && onColor && ["Hovered", "Pressed", "Focused"].includes(state) && (
+                <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-ellipsis underline whitespace-nowrap" data-node-id="30150:148269">
+                  {leadTextEn}
+                </p>
+              )}
+              {!rtl && (["Hovered", "Pressed"].includes(state) || (state === "Focused" && onColor)) && tag && (
+                <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-full,9999px)] shrink-0" data-node-id="30150:148206" data-name="Tag">
+                  <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-xs,18px)] relative shrink-0 text-[color:var(--tag\/tag-text-success,#085d3a)] text-[length:var(--size\/text\/typo-size-text-xs,12px)] text-center whitespace-nowrap" data-node-id="I30150:148206;422:115267">
+                    New
+                  </p>
+                </div>
+              )}
+              {!rtl && state === "Default" && !onColor && (
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis whitespace-nowrap" data-node-id="30150:148189">
+                  {leadTextEn}
+                </p>
+              )}
+              {!rtl && !onColor && ["Default", "Focused"].includes(state) && tag && (
+                <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[1000px] shrink-0" data-node-id="30150:148190" data-name="Tag">
+                  <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-xs,18px)] relative shrink-0 text-[color:var(--tag\/tag-text-success,#085d3a)] text-[length:var(--size\/text\/typo-size-text-xs,12px)] text-center whitespace-nowrap" data-node-id="I30150:148190;422:115267">
+                    New
+                  </p>
+                </div>
+              )}
+              {isNotRtlAndDefaultAndOnColor && (
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-ellipsis whitespace-nowrap" data-node-id="30150:148253">
+                  {leadTextEn}
+                </p>
+              )}
+              {isNotRtlAndDefaultAndOnColor && tag && (
+                <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-full,9999px)] shrink-0" data-node-id="30150:148254" data-name="Tag">
+                  <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-xs,18px)] relative shrink-0 text-[color:var(--tag\/tag-text-success,#085d3a)] text-[length:var(--size\/text\/typo-size-text-xs,12px)] text-center whitespace-nowrap" data-node-id="I30150:148254;422:115267">
+                    New
+                  </p>
+                </div>
+              )}
+            </div>
+            {!rtl && !onColor && helperText && (
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] overflow-hidden relative shrink-0 text-[14px] text-[color:var(--text\/text-primary-paragraph,#384250)] text-ellipsis w-full" data-node-id="30150:148191">
+                {helperTextEn}
+              </p>
+            )}
+            {!rtl && onColor && helperText && (
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] overflow-hidden relative shrink-0 text-[14px] text-[color:var(--text\/text-oncolor-primary,white)] text-ellipsis w-full" data-node-id="30150:148255">
+                {helperTextEn}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

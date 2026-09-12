@@ -1,0 +1,19 @@
+{
+  "template": "service",
+  "reviewed": "2026-09-10",
+  "figma": "https://www.figma.com/design/sDx3NM32o1cy29rqZoVOng/?node-id=1-22148",
+  "nodes": {
+    "main": "1:22231",
+    "sidebar": "1:22171",
+    "mobile": "27:4947",
+    "related": "252:12677",
+    "comments": "1:22291"
+  },
+  "references": [
+    "https://design.dga.gov.sa/guidelines/templates/service-page",
+    "https://design.dga.gov.sa/templates/service",
+    "https://www.kku.edu.sa/ar/e-services",
+    "https://www.kku.edu.sa/ar/e-services/107337"
+  ],
+  "formal_compliance": "pending"
+}

@@ -1,0 +1,84 @@
+.table-of-contents {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  inline-size: 100%;
+  min-inline-size: 0;
+}
+
+.table-of-contents__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.table-of-contents__eyebrow {
+  color: var(--gray-700);
+  font-size: var(--fs-text-sm);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--lh-text-sm);
+}
+
+.table-of-contents__title {
+  color: var(--gray-800);
+  font-size: var(--fs-text-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--lh-text-xl);
+}
+
+.table-of-contents__list {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.table-of-contents__list-item {
+  position: relative;
+  min-inline-size: 0;
+  border-radius: var(--radius-xs);
+}
+
+.table-of-contents__link {
+  display: block;
+  min-inline-size: var(--toc-item-min-inline-size);
+  padding-block: var(--space-6);
+  padding-inline-start: var(--space-16);
+  padding-inline-end: var(--space-8);
+  color: var(--gray-700);
+  font-size: var(--fs-text-sm);
+  line-height: var(--lh-text-sm);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.table-of-contents__link:hover {
+  color: var(--gray-950);
+  background: var(--gray-50);
+}
+
+.table-of-contents__link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+
+.table-of-contents__link[aria-current="location"] {
+  color: var(--gray-950);
+  font-weight: var(--font-weight-semibold);
+}
+
+.table-of-contents__link[aria-current="location"]::before {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inline-size: var(--toc-selection-indicator-width);
+  border-radius: var(--radius-full);
+  background: var(--sa-500);
+  content: "";
+}
+
+.table-of-contents__list-item--nested {
+  border-inline-start: var(--toc-nesting-indicator-width) solid var(--gray-300);
+  margin-inline-start: var(--space-16);
+}

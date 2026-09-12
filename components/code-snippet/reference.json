@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "code-snippet",
     "description": "Displays formatted code content in a bordered card. Supports a multi-line variant with language tabs, line numbers, copy button, and show-more expansion; and a single-line variant for inline terminal commands."
@@ -123,5 +123,7 @@
       "axis": "Theme",
       "reason": "No dark/light theme axis in manifest. Single surface color only."
     }
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

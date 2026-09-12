@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "component_id": "quote",
   "selector_root": ".quote",
   "rule_types_registry": "../../standards/audit-rule-types.json",
@@ -91,9 +91,9 @@
     {
       "id": "QUOTE-A11Y-005",
       "standard_id": "WCAG-2.1-1.1.1",
-      "rule_type": "advisory",
+      "rule_type": "manual_review",
       "category": "accessibility",
-      "severity": "advisory",
+      "severity": "info",
       "validation_status": "not_run",
       "title": "Decorative quote marks must not generate meaningful accessible names",
       "description": "The decorative \" and \" marks are rendered via CSS ::before/::after pseudo-elements using content alt text ('/ \"\"'). Verify that no HTML element containing literal quotation mark characters \" or \" exists inside .quote — these would be announced by screen readers redundantly.",
@@ -105,8 +105,10 @@
       },
       "message": "Verify that opening and closing quotation marks are only rendered via CSS pseudo-elements, not HTML text nodes.",
       "fix": "Remove any HTML text nodes containing \" or \" from inside .quote. These characters are managed exclusively by CSS ::before and ::after.",
-      "standard_refs": ["WCAG-2.1-1.1.1"]
-    },
+      "standard_refs": ["WCAG-2.1-1.1.1"],
+  "source_rule_type": "advisory",
+  "source_severity": "advisory"
+},
 
     {
       "id": "QUOTE-STRUCT-001",
@@ -151,7 +153,7 @@
     {
       "id": "QUOTE-STRUCT-003",
       "standard_id": "PLATFORM-CODE-QUOTE-004",
-      "rule_type": "css_class_forbidden",
+      "rule_type": "class_forbidden",
       "category": "structure",
       "severity": "error",
       "validation_status": "not_run",
@@ -165,13 +167,14 @@
       },
       "message": "RTL modifier class .quote--rtl found. RTL layout is activated by dir='rtl' attribute, not a class.",
       "fix": "Remove .quote--rtl class. Add dir=\"rtl\" attribute to the <blockquote> element instead.",
-      "standard_refs": ["PLATFORM-CODE-QUOTE-004"]
-    },
+      "standard_refs": ["PLATFORM-CODE-QUOTE-004"],
+  "source_rule_type": "css_class_forbidden"
+},
 
     {
       "id": "QUOTE-TOKEN-001",
       "standard_id": "PLATFORM-CODE-QUOTE-003",
-      "rule_type": "css_property_forbidden",
+      "rule_type": "forbidden_css_properties",
       "category": "tokens",
       "severity": "warning",
       "validation_status": "not_run",
@@ -187,8 +190,10 @@
       },
       "message": "Hardcoded color found in .quote or a child element. Replace with the appropriate design token.",
       "fix": "Replace hardcoded color with the corresponding --quote-* token from reference.json.",
-      "standard_refs": ["PLATFORM-CODE-QUOTE-003"]
-    }
+      "standard_refs": ["PLATFORM-CODE-QUOTE-003"],
+  "source_rule_type": "css_property_forbidden"
+}
 
-  ]
+  ],
+  "$schema": "../../standards/schemas/component-audit.schema.json"
 }

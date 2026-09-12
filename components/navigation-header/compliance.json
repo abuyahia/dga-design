@@ -1,0 +1,6 @@
+{
+  "component_id": "navigation-header",
+  "status": "pending_audit",
+  "production_ready": false,
+  "note": "Browser acceptance is recorded separately from formal standards compliance."
+}

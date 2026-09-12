@@ -1,0 +1,315 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/d28e9ddf-9f23-4769-b889-55b5ad74ee38.svg";
+const imgCarouselControls = "https://www.figma.com/api/mcp/asset/642a7dc0-9b74-4b32-8c6c-40a22d215d43.svg";
+const imgCarouselControls1 = "https://www.figma.com/api/mcp/asset/e7e3472c-c818-4607-babc-e515a306e9c2.svg";
+
+export default function Carousel() {
+  return (
+    <div className="content-stretch flex flex-col gap-[var(--global\/spacing-3xl,24px)] items-center px-[var(--global\/spacing-3xl,24px)] py-[var(--global\/spacing-none,0px)] relative size-full" data-node-id="252:12677" data-name="Carousel">
+      <div className="content-stretch flex gap-[var(--global\/spacing-xl,16px)] items-center justify-center relative shrink-0 w-full" data-node-id="I252:12677;17243:820" data-name="RTL=Yes">
+        <div className="bg-[var(--background\/background-card,white)] border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex flex-col gap-[var(--card\/card-lg-gap,24px)] items-end p-[var(--global\/spacing-xl,16px)] relative rounded-[var(--radius-lg,16px)] shrink-0 w-[320px]" data-node-id="I252:12677;17243:820;510:11620" data-name="Card">
+          <div className="bg-[var(--icon\/bg-icon-brand-light,#f3fcf6)] relative rounded-[var(--radius-full,9999px)] shrink-0 size-[48px]" data-node-id="I252:12677;17243:820;510:11620;9359:17288" data-name="Size=Large, Color=Brand, Style=Light, Circle=True">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I252:12677;17243:820;510:11620;9359:17288;7:850" data-name="Style=Stroke, Type=Rounded">
+              <div className="absolute inset-[5.21%]" data-node-id="I252:12677;17243:820;510:11620;9359:17288;7:850;2164:18663" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--global\/spacing-md,8px)] items-end justify-center not-italic relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-right w-full" data-node-id="I252:12677;17243:820;510:11620;9359:17289" data-name="Content">
+            <p className="font-['IBM_Plex_Sans_Arabic:Bold'] leading-[28px] relative shrink-0 text-[18px] w-full" dir="auto" data-node-id="I252:12677;17243:820;510:11620;9359:17290">
+              عنوان البطاقة
+            </p>
+            <p className="font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] relative shrink-0 text-[16px] w-full" dir="auto" data-node-id="I252:12677;17243:820;510:11620;9359:17291">
+              نص إضافي لمحتوى البطاقة
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-start relative shrink-0" data-node-id="I252:12677;17243:820;510:11620;9359:17293" data-name="Tags">
+            <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11620;9359:17294" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-success,#085d3a)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11620;9359:17294;422:117697">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-info-light,#eff8ff)] border border-[var(--tag\/tag-border-info-light,#b2ddff)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11620;9359:17295" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-info,#1849a9)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11620;9359:17295;422:117709">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-neutral-light,#f9fafb)] border border-[var(--border\/border-neutral-secondary,#e5e7eb)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11620;9359:17296" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-neutral,#1f2a37)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11620;9359:17296;422:117693">
+                وسم
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-xl,16px)] items-center justify-end relative shrink-0 w-full" data-node-id="I252:12677;17243:820;510:11620;9359:17300" data-name="Actions">
+            <div className="bg-[var(--button\/button-background-primary-default,#1b8354)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11620;9359:17301" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;510:11620;9359:17301;407:510379" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] whitespace-nowrap" data-node-id="I252:12677;17243:820;510:11620;9359:17301;407:510380">
+                  اجراء
+                </p>
+              </div>
+            </div>
+            <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11620;9359:17302" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;510:11620;9359:17302;407:511736" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-default,#161616)] whitespace-nowrap" data-node-id="I252:12677;17243:820;510:11620;9359:17302;407:511737">
+                  اجراء ثانوي
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--background\/background-card,white)] border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex flex-col gap-[var(--card\/card-lg-gap,24px)] items-end p-[var(--global\/spacing-xl,16px)] relative rounded-[var(--radius-lg,16px)] shrink-0 w-[320px]" data-node-id="I252:12677;17243:820;574:10662" data-name="Card">
+          <div className="bg-[var(--icon\/bg-icon-brand-light,#f3fcf6)] relative rounded-[var(--radius-full,9999px)] shrink-0 size-[48px]" data-node-id="I252:12677;17243:820;574:10662;9359:17288" data-name="Size=Large, Color=Brand, Style=Light, Circle=True">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I252:12677;17243:820;574:10662;9359:17288;7:850" data-name="Style=Stroke, Type=Rounded">
+              <div className="absolute inset-[5.21%]" data-node-id="I252:12677;17243:820;574:10662;9359:17288;7:850;2164:18663" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--global\/spacing-md,8px)] items-end justify-center not-italic relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-right w-full" data-node-id="I252:12677;17243:820;574:10662;9359:17289" data-name="Content">
+            <p className="font-['IBM_Plex_Sans_Arabic:Bold'] leading-[28px] relative shrink-0 text-[18px] w-full" dir="auto" data-node-id="I252:12677;17243:820;574:10662;9359:17290">
+              عنوان البطاقة
+            </p>
+            <p className="font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] relative shrink-0 text-[16px] w-full" dir="auto" data-node-id="I252:12677;17243:820;574:10662;9359:17291">
+              نص إضافي لمحتوى البطاقة
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-start relative shrink-0" data-node-id="I252:12677;17243:820;574:10662;9359:17293" data-name="Tags">
+            <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;574:10662;9359:17294" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-success,#085d3a)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;574:10662;9359:17294;422:117697">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-info-light,#eff8ff)] border border-[var(--tag\/tag-border-info-light,#b2ddff)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;574:10662;9359:17295" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-info,#1849a9)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;574:10662;9359:17295;422:117709">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-neutral-light,#f9fafb)] border border-[var(--border\/border-neutral-secondary,#e5e7eb)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;574:10662;9359:17296" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-neutral,#1f2a37)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;574:10662;9359:17296;422:117693">
+                وسم
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-xl,16px)] items-center justify-end relative shrink-0 w-full" data-node-id="I252:12677;17243:820;574:10662;9359:17300" data-name="Actions">
+            <div className="bg-[var(--button\/button-background-primary-default,#1b8354)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;574:10662;9359:17301" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;574:10662;9359:17301;407:510379" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] whitespace-nowrap" data-node-id="I252:12677;17243:820;574:10662;9359:17301;407:510380">
+                  اجراء
+                </p>
+              </div>
+            </div>
+            <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;574:10662;9359:17302" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;574:10662;9359:17302;407:511736" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-default,#161616)] whitespace-nowrap" data-node-id="I252:12677;17243:820;574:10662;9359:17302;407:511737">
+                  اجراء ثانوي
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--background\/background-card,white)] border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex flex-col gap-[var(--card\/card-lg-gap,24px)] items-end p-[var(--global\/spacing-xl,16px)] relative rounded-[var(--radius-lg,16px)] shrink-0 w-[320px]" data-node-id="I252:12677;17243:820;510:11622" data-name="Card">
+          <div className="bg-[var(--icon\/bg-icon-brand-light,#f3fcf6)] relative rounded-[var(--radius-full,9999px)] shrink-0 size-[48px]" data-node-id="I252:12677;17243:820;510:11622;9359:17288" data-name="Size=Large, Color=Brand, Style=Light, Circle=True">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I252:12677;17243:820;510:11622;9359:17288;7:850" data-name="Style=Stroke, Type=Rounded">
+              <div className="absolute inset-[5.21%]" data-node-id="I252:12677;17243:820;510:11622;9359:17288;7:850;2164:18663" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--global\/spacing-md,8px)] items-end justify-center not-italic relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-right w-full" data-node-id="I252:12677;17243:820;510:11622;9359:17289" data-name="Content">
+            <p className="font-['IBM_Plex_Sans_Arabic:Bold'] leading-[28px] relative shrink-0 text-[18px] w-full" dir="auto" data-node-id="I252:12677;17243:820;510:11622;9359:17290">
+              عنوان البطاقة
+            </p>
+            <p className="font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] relative shrink-0 text-[16px] w-full" dir="auto" data-node-id="I252:12677;17243:820;510:11622;9359:17291">
+              نص إضافي لمحتوى البطاقة
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-start relative shrink-0" data-node-id="I252:12677;17243:820;510:11622;9359:17293" data-name="Tags">
+            <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11622;9359:17294" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-success,#085d3a)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11622;9359:17294;422:117697">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-info-light,#eff8ff)] border border-[var(--tag\/tag-border-info-light,#b2ddff)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11622;9359:17295" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-info,#1849a9)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11622;9359:17295;422:117709">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-neutral-light,#f9fafb)] border border-[var(--border\/border-neutral-secondary,#e5e7eb)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11622;9359:17296" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-neutral,#1f2a37)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11622;9359:17296;422:117693">
+                وسم
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-xl,16px)] items-center justify-end relative shrink-0 w-full" data-node-id="I252:12677;17243:820;510:11622;9359:17300" data-name="Actions">
+            <div className="bg-[var(--button\/button-background-primary-default,#1b8354)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11622;9359:17301" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;510:11622;9359:17301;407:510379" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] whitespace-nowrap" data-node-id="I252:12677;17243:820;510:11622;9359:17301;407:510380">
+                  اجراء
+                </p>
+              </div>
+            </div>
+            <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11622;9359:17302" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;510:11622;9359:17302;407:511736" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-default,#161616)] whitespace-nowrap" data-node-id="I252:12677;17243:820;510:11622;9359:17302;407:511737">
+                  اجراء ثانوي
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--background\/background-card,white)] border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex flex-col gap-[var(--card\/card-lg-gap,24px)] items-end p-[var(--global\/spacing-xl,16px)] relative rounded-[var(--radius-lg,16px)] shrink-0 w-[320px]" data-node-id="I252:12677;17243:820;510:11623" data-name="Card">
+          <div className="bg-[var(--icon\/bg-icon-brand-light,#f3fcf6)] relative rounded-[var(--radius-full,9999px)] shrink-0 size-[48px]" data-node-id="I252:12677;17243:820;510:11623;9359:17288" data-name="Size=Large, Color=Brand, Style=Light, Circle=True">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I252:12677;17243:820;510:11623;9359:17288;7:850" data-name="Style=Stroke, Type=Rounded">
+              <div className="absolute inset-[5.21%]" data-node-id="I252:12677;17243:820;510:11623;9359:17288;7:850;2164:18663" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--global\/spacing-md,8px)] items-end justify-center not-italic relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-right w-full" data-node-id="I252:12677;17243:820;510:11623;9359:17289" data-name="Content">
+            <p className="font-['IBM_Plex_Sans_Arabic:Bold'] leading-[28px] relative shrink-0 text-[18px] w-full" dir="auto" data-node-id="I252:12677;17243:820;510:11623;9359:17290">
+              عنوان البطاقة
+            </p>
+            <p className="font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] relative shrink-0 text-[16px] w-full" dir="auto" data-node-id="I252:12677;17243:820;510:11623;9359:17291">
+              نص إضافي لمحتوى البطاقة
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-start relative shrink-0" data-node-id="I252:12677;17243:820;510:11623;9359:17293" data-name="Tags">
+            <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11623;9359:17294" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-success,#085d3a)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11623;9359:17294;422:117697">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-info-light,#eff8ff)] border border-[var(--tag\/tag-border-info-light,#b2ddff)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11623;9359:17295" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-info,#1849a9)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11623;9359:17295;422:117709">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-neutral-light,#f9fafb)] border border-[var(--border\/border-neutral-secondary,#e5e7eb)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11623;9359:17296" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-neutral,#1f2a37)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11623;9359:17296;422:117693">
+                وسم
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-xl,16px)] items-center justify-end relative shrink-0 w-full" data-node-id="I252:12677;17243:820;510:11623;9359:17300" data-name="Actions">
+            <div className="bg-[var(--button\/button-background-primary-default,#1b8354)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11623;9359:17301" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;510:11623;9359:17301;407:510379" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] whitespace-nowrap" data-node-id="I252:12677;17243:820;510:11623;9359:17301;407:510380">
+                  اجراء
+                </p>
+              </div>
+            </div>
+            <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11623;9359:17302" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;510:11623;9359:17302;407:511736" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-default,#161616)] whitespace-nowrap" data-node-id="I252:12677;17243:820;510:11623;9359:17302;407:511737">
+                  اجراء ثانوي
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="bg-[var(--background\/background-card,white)] border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex flex-col gap-[var(--card\/card-lg-gap,24px)] items-end p-[var(--global\/spacing-xl,16px)] relative rounded-[var(--radius-lg,16px)] shrink-0 w-[320px]" data-node-id="I252:12677;17243:820;510:11624" data-name="Card">
+          <div className="bg-[var(--icon\/bg-icon-brand-light,#f3fcf6)] relative rounded-[var(--radius-full,9999px)] shrink-0 size-[48px]" data-node-id="I252:12677;17243:820;510:11624;9359:17288" data-name="Size=Large, Color=Brand, Style=Light, Circle=True">
+            <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 size-[24px] top-1/2" data-node-id="I252:12677;17243:820;510:11624;9359:17288;7:850" data-name="Style=Stroke, Type=Rounded">
+              <div className="absolute inset-[5.21%]" data-node-id="I252:12677;17243:820;510:11624;9359:17288;7:850;2164:18663" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          </div>
+          <div className="[word-break:break-word] content-stretch flex flex-col gap-[var(--global\/spacing-md,8px)] items-end justify-center not-italic relative shrink-0 text-[color:var(--text\/text-display,#1f2a37)] text-right w-full" data-node-id="I252:12677;17243:820;510:11624;9359:17289" data-name="Content">
+            <p className="font-['IBM_Plex_Sans_Arabic:Bold'] leading-[28px] relative shrink-0 text-[18px] w-full" dir="auto" data-node-id="I252:12677;17243:820;510:11624;9359:17290">
+              عنوان البطاقة
+            </p>
+            <p className="font-['IBM_Plex_Sans_Arabic:Regular'] leading-[24px] relative shrink-0 text-[16px] w-full" dir="auto" data-node-id="I252:12677;17243:820;510:11624;9359:17291">
+              نص إضافي لمحتوى البطاقة
+            </p>
+          </div>
+          <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-start relative shrink-0" data-node-id="I252:12677;17243:820;510:11624;9359:17293" data-name="Tags">
+            <div className="bg-[var(--tag\/tag-background-success-light,#ecfdf3)] border border-[var(--tag\/tag-border-success-light,#abefc6)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11624;9359:17294" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-success,#085d3a)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11624;9359:17294;422:117697">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-info-light,#eff8ff)] border border-[var(--tag\/tag-border-info-light,#b2ddff)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11624;9359:17295" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-info,#1849a9)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11624;9359:17295;422:117709">
+                وسم
+              </p>
+            </div>
+            <div className="bg-[var(--tag\/tag-background-neutral-light,#f9fafb)] border border-[var(--border\/border-neutral-secondary,#e5e7eb)] border-solid content-stretch flex gap-[var(--global\/spacing-xs,4px)] h-[24px] items-center justify-center px-[var(--global\/spacing-md,8px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11624;9359:17296" data-name="Tag">
+              <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[18px] not-italic relative shrink-0 text-[12px] text-[color:var(--tag\/tag-text-neutral,#1f2a37)] text-center whitespace-nowrap" dir="auto" data-node-id="I252:12677;17243:820;510:11624;9359:17296;422:117693">
+                وسم
+              </p>
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[var(--global\/spacing-xl,16px)] items-center justify-end relative shrink-0 w-full" data-node-id="I252:12677;17243:820;510:11624;9359:17300" data-name="Actions">
+            <div className="bg-[var(--button\/button-background-primary-default,#1b8354)] content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11624;9359:17301" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;510:11624;9359:17301;407:510379" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] whitespace-nowrap" data-node-id="I252:12677;17243:820;510:11624;9359:17301;407:510380">
+                  اجراء
+                </p>
+              </div>
+            </div>
+            <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-lg-gap,4px)] h-[40px] items-center justify-center max-h-[40px] min-h-[40px] overflow-clip px-[var(--button\/buttons-lg-padding,16px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0" data-node-id="I252:12677;17243:820;510:11624;9359:17302" data-name="Button">
+              <div className="content-stretch flex items-center justify-center relative shrink-0" data-node-id="I252:12677;17243:820;510:11624;9359:17302;407:511736" data-name="Text wrapper">
+                <p className="[word-break:break-word] font-['IBM_Plex_Sans_Arabic:Medium'] leading-[24px] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-default,#161616)] whitespace-nowrap" data-node-id="I252:12677;17243:820;510:11624;9359:17302;407:511737">
+                  اجراء ثانوي
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex items-center justify-center relative shrink-0 w-full" data-node-id="I252:12677;17242:313" data-name="Controls">
+        <div className="content-stretch flex gap-[var(--global\/spacing-md,8px)] items-start p-[var(--global\/spacing-lg,12px)] relative rounded-[var(--radius\/radius-full,9999px)] shrink-0" data-node-id="I252:12677;17242:4295" data-name="Controls Container">
+          <div className="relative shrink-0 size-[12px]" data-node-id="I252:12677;17242:4296" data-name="Carousel Controls">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCarouselControls} />
+          </div>
+          <div className="relative shrink-0 size-[12px]" data-node-id="I252:12677;17242:4297" data-name="Carousel Controls">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCarouselControls1} />
+          </div>
+          <div className="relative shrink-0 size-[12px]" data-node-id="I252:12677;17242:4298" data-name="Carousel Controls">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCarouselControls1} />
+          </div>
+          <div className="relative shrink-0 size-[12px]" data-node-id="I252:12677;17242:4299" data-name="Carousel Controls">
+            <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgCarouselControls1} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text lg/Bold: Font(family: "IBM Plex Sans Arabic", style: Bold, size: 18, weight: 700, lineHeight: 28, letterSpacing: 0), Text md/Regular: Font(family: "IBM Plex Sans Arabic", style: Regular, size: 16, weight: 400, lineHeight: 24, letterSpacing: 0), Text xs/Medium: Font(family: "IBM Plex Sans Arabic", style: Medium, size: 12, weight: 500, lineHeight: 18, letterSpacing: 0), Text md/Medium: Font(family: "IBM Plex Sans Arabic", style: Medium, size: 16, weight: 500, lineHeight: 24, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Carousel
+**Node ID:** 840:10974
+
+A Carousel allows users to browse through a collection of content (like images, text, or other types of media) by sliding or scrolling between items.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/content-display/carousel](https://design.dga.gov.sa/guidelines/components/content-display/carousel)
+
+## Style=Stroke, Type=Rounded
+**Node ID:** 1:11507
+
+accept, tick, done
+
+## checkmark-circle-02
+**Node ID:** 1:11506
+
+tick, confirm, approve, validate, select, mark, accept, endorse, okay, pass, verify, affirm, agree, endorse, consent, indicate, checkmark, check mark, checkmark circle
+
+## Carousel Controls
+**Node ID:** 636:14112
+
+It typically refers to the navigation elements used to indicate the current position within the carousel and to provide direct access to any slide/item. These controls are located usually below the carousel content.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/content-display/carousel](https://design.dga.gov.sa/guidelines/components/content-display/carousel)
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

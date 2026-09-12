@@ -1,0 +1,819 @@
+{
+  "date": "2026-09-10",
+  "components": [
+    "page-feedback",
+    "service-rating"
+  ],
+  "unit_tests_passed": 26,
+  "feedback_browser_cases": 64,
+  "template_browser_cases": 80,
+  "browser_passed": true,
+  "strict_audit": {
+    "errors": 0,
+    "warnings": 0,
+    "historical_rules_not_run": 309
+  },
+  "formal_compliance": "pending",
+  "submission_mode": "local preview; explicit async adapter required for server submission",
+  "visual_review": [
+    "desktop open service rating",
+    "362px mobile open service rating",
+    "desktop open page feedback"
+  ],
+  "feedback_results": [
+    {
+      "name": "page default rtl 320",
+      "pass": true
+    },
+    {
+      "name": "page open rtl 320",
+      "pass": true
+    },
+    {
+      "name": "page escape rtl 320",
+      "pass": true
+    },
+    {
+      "name": "page default rtl 430",
+      "pass": true
+    },
+    {
+      "name": "page open rtl 430",
+      "pass": true
+    },
+    {
+      "name": "page escape rtl 430",
+      "pass": true
+    },
+    {
+      "name": "page default rtl 768",
+      "pass": true
+    },
+    {
+      "name": "page open rtl 768",
+      "pass": true
+    },
+    {
+      "name": "page escape rtl 768",
+      "pass": true
+    },
+    {
+      "name": "page default rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "page open rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "page escape rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "page default ltr 320",
+      "pass": true
+    },
+    {
+      "name": "page open ltr 320",
+      "pass": true
+    },
+    {
+      "name": "page escape ltr 320",
+      "pass": true
+    },
+    {
+      "name": "page default ltr 430",
+      "pass": true
+    },
+    {
+      "name": "page open ltr 430",
+      "pass": true
+    },
+    {
+      "name": "page escape ltr 430",
+      "pass": true
+    },
+    {
+      "name": "page default ltr 768",
+      "pass": true
+    },
+    {
+      "name": "page open ltr 768",
+      "pass": true
+    },
+    {
+      "name": "page escape ltr 768",
+      "pass": true
+    },
+    {
+      "name": "page default ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "page open ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "page escape ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "service default rtl 320",
+      "pass": true
+    },
+    {
+      "name": "service open rtl 320",
+      "pass": true
+    },
+    {
+      "name": "service escape rtl 320",
+      "pass": true
+    },
+    {
+      "name": "service default rtl 430",
+      "pass": true
+    },
+    {
+      "name": "service open rtl 430",
+      "pass": true
+    },
+    {
+      "name": "service escape rtl 430",
+      "pass": true
+    },
+    {
+      "name": "service default rtl 768",
+      "pass": true
+    },
+    {
+      "name": "service open rtl 768",
+      "pass": true
+    },
+    {
+      "name": "service escape rtl 768",
+      "pass": true
+    },
+    {
+      "name": "service default rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "service open rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "service escape rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "service default ltr 320",
+      "pass": true
+    },
+    {
+      "name": "service open ltr 320",
+      "pass": true
+    },
+    {
+      "name": "service escape ltr 320",
+      "pass": true
+    },
+    {
+      "name": "service default ltr 430",
+      "pass": true
+    },
+    {
+      "name": "service open ltr 430",
+      "pass": true
+    },
+    {
+      "name": "service escape ltr 430",
+      "pass": true
+    },
+    {
+      "name": "service default ltr 768",
+      "pass": true
+    },
+    {
+      "name": "service open ltr 768",
+      "pass": true
+    },
+    {
+      "name": "service escape ltr 768",
+      "pass": true
+    },
+    {
+      "name": "service default ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "service open ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "service escape ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "Page reason required",
+      "pass": true
+    },
+    {
+      "name": "Two reason limit",
+      "pass": true
+    },
+    {
+      "name": "Changing choice clears stale reasons",
+      "pass": true
+    },
+    {
+      "name": "Page local completion honest",
+      "pass": true
+    },
+    {
+      "name": "Score required before submitting",
+      "pass": true
+    },
+    {
+      "name": "Native stars keyboard selection",
+      "pass": true
+    },
+    {
+      "name": "Selected stars fill up to score",
+      "pass": true
+    },
+    {
+      "name": "Service local completion and chosen value",
+      "pass": true
+    },
+    {
+      "name": "Pending disables controls and prevents duplicate submit",
+      "pass": true
+    },
+    {
+      "name": "Failure keeps input and permits retry",
+      "pass": true
+    },
+    {
+      "name": "Confirmed adapter success and subject",
+      "pass": true
+    },
+    {
+      "name": "page-feedback multiple instances valid",
+      "pass": true
+    },
+    {
+      "name": "page-feedback instances isolated",
+      "pass": true
+    },
+    {
+      "name": "service-rating multiple instances valid",
+      "pass": true
+    },
+    {
+      "name": "service-rating instances isolated",
+      "pass": true
+    },
+    {
+      "name": "No JS feedback explains availability",
+      "pass": true
+    }
+  ],
+  "template_results": [
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "name": "rtl: mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "rtl: Escape closes menu",
+      "pass": true
+    },
+    {
+      "name": "rtl: search modal",
+      "pass": true
+    },
+    {
+      "name": "rtl: search suggestions",
+      "pass": true
+    },
+    {
+      "name": "rtl: search clear",
+      "pass": true
+    },
+    {
+      "name": "rtl: search restores focus",
+      "pass": true
+    },
+    {
+      "name": "rtl: hero selection",
+      "pass": true
+    },
+    {
+      "name": "rtl: carousel advances",
+      "pass": true
+    },
+    {
+      "name": "rtl: feedback opens",
+      "pass": true
+    },
+    {
+      "name": "rtl: feedback local completion",
+      "pass": true
+    },
+    {
+      "name": "ltr: mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "ltr: Escape closes menu",
+      "pass": true
+    },
+    {
+      "name": "ltr: search modal",
+      "pass": true
+    },
+    {
+      "name": "ltr: search suggestions",
+      "pass": true
+    },
+    {
+      "name": "ltr: search clear",
+      "pass": true
+    },
+    {
+      "name": "ltr: search restores focus",
+      "pass": true
+    },
+    {
+      "name": "ltr: hero selection",
+      "pass": true
+    },
+    {
+      "name": "ltr: carousel advances",
+      "pass": true
+    },
+    {
+      "name": "ltr: feedback opens",
+      "pass": true
+    },
+    {
+      "name": "ltr: feedback local completion",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: navigation and content remain available",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation: idempotence and instance isolation",
+      "pass": true
+    },
+    {
+      "name": "navigation: cleanup restores readable fallback",
+      "pass": true
+    },
+    {
+      "name": "navigation: remount works",
+      "pass": true
+    }
+  ]
+}

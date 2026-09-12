@@ -1,52 +1,10 @@
-/* =============================================================================
-   Text Input — Component Styles
-   Source: components/text-input/manifest.json
-   Contract: components/text-input/text-input.contract.md
-   Tokens: All --text-input-* tokens below are missing from token.css.
-           Fallback values are inline. Add to token.css before production.
-   ============================================================================= */
-
-/* TODO: Add the following --text-input-* token block to token.css:
-   --text-input-border-default: #9DA4AE;
-   --text-input-border-hovered: #384250;
-   --text-input-border-error: #B42318;
-   --text-input-border-disabled: #D2D6DB;
-   --text-input-border-readonly: #D2D6DB;
-   --text-input-bg-default: #FFF;
-   --text-input-bg-pressed: #F3F4F6;
-   --text-input-bg-darker: #F3F4F6;
-   --text-input-bg-lighter: #FCFCFD;
-   --text-input-underline-default: #0D121C;
-   --text-input-underline-error: #B42318;
-   --text-input-underline-height: 2px;
-   --text-input-text-placeholder: #6C737F;
-   --text-input-text-filled: #161616;
-   --text-input-text-focused: #384250;
-   --text-input-text-readonly: #161616;
-   --text-input-text-disabled: #9DA4AE;
-   --text-input-label-color: #161616;
-   --text-input-font-family: "IBM Plex Sans Arabic";
-   --text-input-lg-font-size: 16px;
-   --text-input-lg-line-height: 24px;
-   --text-input-md-font-size: 14px;
-   --text-input-md-line-height: 20px;
-   --text-input-lg-height: 40px;
-   --text-input-md-height: 32px;
-   --text-input-field-gap: 8px;
-   --text-input-padding-inline-start: 8px;
-   --text-input-padding-inline-end: 16px;
-   --text-input-icon-text-gap: 8px;
-   --text-input-radius: 4px;
-*/
-
-
 /* ── Root ──────────────────────────────────────────────────────────────────── */
 
 .text-input {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--text-input-field-gap, 8px);
+  gap: var(--text-input-field-gap);
   width: 100%;
 }
 
@@ -55,16 +13,16 @@
 
 .text-input__label {
   display: block;
-  color: var(--text-input-label-color, #161616);
-  font-family: var(--text-input-font-family, "IBM Plex Sans Arabic");
-  font-size: var(--text-input-md-font-size, 14px);
-  font-weight: 400;
-  line-height: var(--text-input-md-line-height, 20px);
+  color: var(--text-input-label-color);
+  font-family: var(--text-input-font-family);
+  font-size: var(--text-input-md-font-size);
+  font-weight: var(--font-weight-body);
+  line-height: var(--text-input-md-line-height);
   cursor: default;
 }
 
 .text-input--disabled .text-input__label {
-  color: var(--text-input-text-disabled, #9DA4AE);
+  color: var(--text-input-text-disabled);
   cursor: not-allowed;
 }
 
@@ -76,12 +34,12 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: var(--text-input-lg-height, 40px);
-  border-radius: var(--text-input-radius, 4px);
-  border: 1px solid var(--text-input-border-default, #9DA4AE);
-  background: var(--text-input-bg-default, #FFF);
+  height: var(--text-input-lg-height);
+  border-radius: var(--text-input-radius);
+  border: var(--border-width-thin) solid var(--text-input-border-default);
+  background: var(--text-input-bg-default);
   overflow: hidden;
-  transition: border-color 0.1s ease, background-color 0.1s ease;
+  transition: border-color var(--transition-fast) var(--ease-default), background-color var(--transition-fast) var(--ease-default);
 }
 
 /* Focus underline via ::after */
@@ -91,11 +49,11 @@
   bottom: 0;
   inset-inline-start: 0;
   inset-inline-end: 0;
-  height: var(--text-input-underline-height, 2px);
-  background: var(--text-input-underline-default, #0D121C);
+  height: var(--text-input-underline-height);
+  background: var(--text-input-underline-default);
   transform: scaleX(0);
   transform-origin: center;
-  transition: transform 0.15s ease;
+  transition: transform var(--transition-feedback) var(--ease-default);
   pointer-events: none;
   border-radius: 0;
 }
@@ -108,9 +66,9 @@
   align-items: center;
   flex: 1 0 0;
   align-self: stretch;
-  gap: var(--text-input-icon-text-gap, 8px);
-  padding-inline-start: var(--text-input-padding-inline-start, 8px);
-  padding-inline-end: var(--text-input-padding-inline-end, 16px);
+  gap: var(--text-input-icon-text-gap);
+  padding-inline-start: var(--text-input-padding-inline-start);
+  padding-inline-end: var(--text-input-padding-inline-end);
 }
 
 
@@ -122,32 +80,32 @@
   background: transparent;
   border: none;
   outline: none;
-  color: var(--text-input-text-placeholder, #6C737F);
-  font-family: var(--text-input-font-family, "IBM Plex Sans Arabic");
-  font-size: var(--text-input-lg-font-size, 16px);
-  font-weight: 400;
-  line-height: var(--text-input-lg-line-height, 24px);
+  color: var(--text-input-text-placeholder);
+  font-family: var(--text-input-font-family);
+  font-size: var(--text-input-lg-font-size);
+  font-weight: var(--font-weight-body);
+  line-height: var(--text-input-lg-line-height);
   min-width: 0;
 }
 
 .text-input__input:not(:placeholder-shown) {
-  color: var(--text-input-text-filled, #161616);
+  color: var(--text-input-text-filled);
 }
 
 .text-input__input::placeholder {
-  color: var(--text-input-text-placeholder, #6C737F);
-  opacity: 1;
+  color: var(--text-input-text-placeholder);
+  opacity: var(--opacity-full);
 }
 
 
 /* ── State: Hover ──────────────────────────────────────────────────────────── */
 
 .text-input:not(.text-input--disabled):not(.text-input--readonly) .text-input__field:hover {
-  border-color: var(--text-input-border-hovered, #384250);
+  border-color: var(--text-input-border-hovered);
 }
 
 .text-input--error:not(.text-input--disabled) .text-input__field:hover {
-  border-color: var(--text-input-border-error, #B42318);
+  border-color: var(--text-input-border-error);
 }
 
 
@@ -162,62 +120,62 @@
 }
 
 .text-input:not(.text-input--disabled) .text-input__field:focus-within .text-input__input {
-  color: var(--text-input-text-focused, #384250);
+  color: var(--text-input-text-focused);
 }
 
 .text-input--error:not(.text-input--disabled) .text-input__field:focus-within::after {
-  background: var(--text-input-underline-error, #B42318);
+  background: var(--text-input-underline-error);
 }
 
 
 /* ── State: Pressed / Active ───────────────────────────────────────────────── */
 
 .text-input:not(.text-input--disabled) .text-input__field:active {
-  background: var(--text-input-bg-pressed, #F3F4F6);
+  background: var(--text-input-bg-pressed);
 }
 
 /* Partial underline on active (press moment) */
 .text-input:not(.text-input--disabled) .text-input__field:active::after {
   transform: scaleX(0.5);
-  transform-origin: inline-start;
+  transform-origin: left; /* Physical axis: transform-origin has no logical keyword. */
 }
 
 
 /* ── State: Disabled ───────────────────────────────────────────────────────── */
 
 .text-input--disabled .text-input__field {
-  border-color: var(--text-input-border-disabled, #D2D6DB);
+  border-color: var(--text-input-border-disabled);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .text-input--disabled .text-input__input {
-  color: var(--text-input-text-disabled, #9DA4AE);
+  color: var(--text-input-text-disabled);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .text-input--disabled .text-input__input::placeholder {
-  color: var(--text-input-text-disabled, #9DA4AE);
+  color: var(--text-input-text-disabled);
 }
 
 
 /* ── State: Read-only ──────────────────────────────────────────────────────── */
 
 .text-input--readonly .text-input__field {
-  border-color: var(--text-input-border-readonly, #D2D6DB);
+  border-color: var(--text-input-border-readonly);
 }
 
 .text-input--readonly .text-input__field:hover {
-  border-color: var(--text-input-border-readonly, #D2D6DB);
+  border-color: var(--text-input-border-readonly);
 }
 
 .text-input--readonly .text-input__input {
-  color: var(--text-input-text-readonly, #161616);
+  color: var(--text-input-text-readonly);
 }
 
 .text-input--readonly .text-input__field:focus-within {
-  border-color: var(--text-input-border-readonly, #D2D6DB);
+  border-color: var(--text-input-border-readonly);
 }
 
 .text-input--readonly .text-input__field:focus-within::after {
@@ -228,39 +186,39 @@
 /* ── Modifier: Error ───────────────────────────────────────────────────────── */
 
 .text-input--error .text-input__field {
-  border-color: var(--text-input-border-error, #B42318);
+  border-color: var(--text-input-border-error);
 }
 
 .text-input--error.text-input--disabled .text-input__field {
-  border-color: var(--text-input-border-disabled, #D2D6DB);
+  border-color: var(--text-input-border-disabled);
 }
 
 
 /* ── Modifier: Size — Medium ───────────────────────────────────────────────── */
 
 .text-input--md .text-input__field {
-  height: var(--text-input-md-height, 32px);
+  height: var(--text-input-md-height);
 }
 
 .text-input--md .text-input__input {
-  font-size: var(--text-input-md-font-size, 14px);
-  line-height: var(--text-input-md-line-height, 20px);
+  font-size: var(--text-input-md-font-size);
+  line-height: var(--text-input-md-line-height);
 }
 
 
 /* ── Modifier: Style — Filled Darker ──────────────────────────────────────── */
 
 .text-input--filled-darker .text-input__field {
-  background: var(--text-input-bg-darker, #F3F4F6);
+  background: var(--text-input-bg-darker);
   border-color: transparent;
 }
 
 .text-input--filled-darker.text-input--error .text-input__field {
-  border-color: var(--text-input-border-error, #B42318);
+  border-color: var(--text-input-border-error);
 }
 
 .text-input--filled-darker:not(.text-input--disabled):not(.text-input--readonly) .text-input__field:hover {
-  border-color: var(--text-input-border-hovered, #384250);
+  border-color: var(--text-input-border-hovered);
 }
 
 .text-input--filled-darker:not(.text-input--disabled) .text-input__field:focus-within {
@@ -271,18 +229,40 @@
 /* ── Modifier: Style — Filled Lighter ─────────────────────────────────────── */
 
 .text-input--filled-lighter .text-input__field {
-  background: var(--text-input-bg-lighter, #FCFCFD);
+  background: var(--text-input-bg-lighter);
   border-color: transparent;
 }
 
 .text-input--filled-lighter.text-input--error .text-input__field {
-  border-color: var(--text-input-border-error, #B42318);
+  border-color: var(--text-input-border-error);
 }
 
 .text-input--filled-lighter:not(.text-input--disabled):not(.text-input--readonly) .text-input__field:hover {
-  border-color: var(--text-input-border-hovered, #384250);
+  border-color: var(--text-input-border-hovered);
 }
 
 .text-input--filled-lighter:not(.text-input--disabled) .text-input__field:focus-within {
   border-color: transparent;
 }
+
+.text-input:dir(rtl):not(.text-input--disabled) .text-input__field:active::after {
+  transform-origin: right;
+}
+
+/* Native readonly inputs remain focusable. */
+.text-input__field:has(input:focus-visible) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+.text-input__inner { min-inline-size: 0; }
+
+/* Optional decorative icon slot used by form assemblies. */
+.text-input__icon {
+  inline-size: var(--space-20);
+  block-size: var(--space-20);
+  flex: 0 0 auto;
+  color: var(--gray-900);
+}
+
+/* Reusable validation message for fields composed from Text Input. */
+.form-field-error { color: var(--error-700); font-size: var(--fs-text-sm); margin: 0; }

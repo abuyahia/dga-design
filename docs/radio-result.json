@@ -1,0 +1,354 @@
+{
+  "date": "2026-09-10",
+  "component": "radio",
+  "radio_cases": 21,
+  "feedback_regression_cases": 64,
+  "passed": true,
+  "unit_tests_passed": 26,
+  "reference": "https://design.dga.gov.sa/guidelines/components/forms-and-inputs/radio",
+  "formal_compliance": "pending",
+  "radio_results": [
+    {
+      "name": "Control geometry and default rtl",
+      "pass": true
+    },
+    {
+      "name": "Brand checked rtl",
+      "pass": true
+    },
+    {
+      "name": "Neutral checked rtl",
+      "pass": true
+    },
+    {
+      "name": "Disabled preserves selection rtl",
+      "pass": true
+    },
+    {
+      "name": "Hover halo rtl",
+      "pass": true
+    },
+    {
+      "name": "Pressed unchecked rtl",
+      "pass": true
+    },
+    {
+      "name": "Click selects exclusively rtl",
+      "pass": true
+    },
+    {
+      "name": "Arrow changes selection and focus rtl",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus square rtl",
+      "pass": true
+    },
+    {
+      "name": "Control geometry and default ltr",
+      "pass": true
+    },
+    {
+      "name": "Brand checked ltr",
+      "pass": true
+    },
+    {
+      "name": "Neutral checked ltr",
+      "pass": true
+    },
+    {
+      "name": "Disabled preserves selection ltr",
+      "pass": true
+    },
+    {
+      "name": "Hover halo ltr",
+      "pass": true
+    },
+    {
+      "name": "Pressed unchecked ltr",
+      "pass": true
+    },
+    {
+      "name": "Click selects exclusively ltr",
+      "pass": true
+    },
+    {
+      "name": "Arrow changes selection and focus ltr",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus square ltr",
+      "pass": true
+    },
+    {
+      "name": "Feedback reuses canonical markup",
+      "pass": true
+    },
+    {
+      "name": "Feedback group remains exclusive",
+      "pass": true
+    },
+    {
+      "name": "Feedback disabled appearance inherited",
+      "pass": true
+    }
+  ],
+  "feedback_results": [
+    {
+      "name": "page default rtl 320",
+      "pass": true
+    },
+    {
+      "name": "page open rtl 320",
+      "pass": true
+    },
+    {
+      "name": "page escape rtl 320",
+      "pass": true
+    },
+    {
+      "name": "page default rtl 430",
+      "pass": true
+    },
+    {
+      "name": "page open rtl 430",
+      "pass": true
+    },
+    {
+      "name": "page escape rtl 430",
+      "pass": true
+    },
+    {
+      "name": "page default rtl 768",
+      "pass": true
+    },
+    {
+      "name": "page open rtl 768",
+      "pass": true
+    },
+    {
+      "name": "page escape rtl 768",
+      "pass": true
+    },
+    {
+      "name": "page default rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "page open rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "page escape rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "page default ltr 320",
+      "pass": true
+    },
+    {
+      "name": "page open ltr 320",
+      "pass": true
+    },
+    {
+      "name": "page escape ltr 320",
+      "pass": true
+    },
+    {
+      "name": "page default ltr 430",
+      "pass": true
+    },
+    {
+      "name": "page open ltr 430",
+      "pass": true
+    },
+    {
+      "name": "page escape ltr 430",
+      "pass": true
+    },
+    {
+      "name": "page default ltr 768",
+      "pass": true
+    },
+    {
+      "name": "page open ltr 768",
+      "pass": true
+    },
+    {
+      "name": "page escape ltr 768",
+      "pass": true
+    },
+    {
+      "name": "page default ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "page open ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "page escape ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "service default rtl 320",
+      "pass": true
+    },
+    {
+      "name": "service open rtl 320",
+      "pass": true
+    },
+    {
+      "name": "service escape rtl 320",
+      "pass": true
+    },
+    {
+      "name": "service default rtl 430",
+      "pass": true
+    },
+    {
+      "name": "service open rtl 430",
+      "pass": true
+    },
+    {
+      "name": "service escape rtl 430",
+      "pass": true
+    },
+    {
+      "name": "service default rtl 768",
+      "pass": true
+    },
+    {
+      "name": "service open rtl 768",
+      "pass": true
+    },
+    {
+      "name": "service escape rtl 768",
+      "pass": true
+    },
+    {
+      "name": "service default rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "service open rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "service escape rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "service default ltr 320",
+      "pass": true
+    },
+    {
+      "name": "service open ltr 320",
+      "pass": true
+    },
+    {
+      "name": "service escape ltr 320",
+      "pass": true
+    },
+    {
+      "name": "service default ltr 430",
+      "pass": true
+    },
+    {
+      "name": "service open ltr 430",
+      "pass": true
+    },
+    {
+      "name": "service escape ltr 430",
+      "pass": true
+    },
+    {
+      "name": "service default ltr 768",
+      "pass": true
+    },
+    {
+      "name": "service open ltr 768",
+      "pass": true
+    },
+    {
+      "name": "service escape ltr 768",
+      "pass": true
+    },
+    {
+      "name": "service default ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "service open ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "service escape ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "Page reason required",
+      "pass": true
+    },
+    {
+      "name": "Two reason limit",
+      "pass": true
+    },
+    {
+      "name": "Changing choice clears stale reasons",
+      "pass": true
+    },
+    {
+      "name": "Page local completion honest",
+      "pass": true
+    },
+    {
+      "name": "Score required before submitting",
+      "pass": true
+    },
+    {
+      "name": "Native stars keyboard selection",
+      "pass": true
+    },
+    {
+      "name": "Selected stars fill up to score",
+      "pass": true
+    },
+    {
+      "name": "Service local completion and chosen value",
+      "pass": true
+    },
+    {
+      "name": "Pending disables controls and prevents duplicate submit",
+      "pass": true
+    },
+    {
+      "name": "Failure keeps input and permits retry",
+      "pass": true
+    },
+    {
+      "name": "Confirmed adapter success and subject",
+      "pass": true
+    },
+    {
+      "name": "page-feedback multiple instances valid",
+      "pass": true
+    },
+    {
+      "name": "page-feedback instances isolated",
+      "pass": true
+    },
+    {
+      "name": "service-rating multiple instances valid",
+      "pass": true
+    },
+    {
+      "name": "service-rating instances isolated",
+      "pass": true
+    },
+    {
+      "name": "No JS feedback explains availability",
+      "pass": true
+    }
+  ]
+}

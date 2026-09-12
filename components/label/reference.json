@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "label",
     "description": "Form field label. Associates a visible text label with a form control. Supports required indication, two sizes, two weights, disabled state, and RTL."
@@ -468,5 +468,7 @@
     "Required asterisk (.label__required) is optional. Omit when the field is not required.",
     "aria-required='true' must be set on the associated form control, not on the <label> itself.",
     "The <label> must be linked to its form control via for='field-id' or by nesting the control inside the label."
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

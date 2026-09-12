@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foundation test — LTR</title>
+  <link rel="stylesheet" href="../../token.css">
+  <link rel="stylesheet" href="../../styles/base/global.css">
+  <link rel="stylesheet" href="../../styles/base/layout.css">
+  <link rel="stylesheet" href="../../styles/base/accessibility.css">
+  <link rel="stylesheet" href="../../components/button/button.css">
+  <link rel="stylesheet" href="../../components/text-input/text-input.css">
+  <link rel="stylesheet" href="../../components/slider/slider.css">
+  <link rel="stylesheet" href="foundation.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" class="ds-container ds-stack fixture" tabindex="-1">
+    <div class="ds-reading ds-prose">
+      <h1>Shared foundation test</h1>
+      <p>An isolated layout and typography fixture with long content. The same styles support both writing directions.</p>
+      <p lang="en">A long content example with an unbroken URL: https://example.test/very-long-content-without-spaces-to-check-responsive-layout-and-text-wrapping</p>
+      <p>Request number <bdi>REQ-2026-12345</bdi> — <a href="#fields">Go to the fields</a>.</p>
+    </div>
+    <div class="ds-grid">
+      <article class="fixture__cell ds-prose"><h2>First item</h2><p>Content to verify grid order and spacing.</p></article>
+      <article class="fixture__cell ds-prose"><h2>Second item</h2><p lang="en">Reusable foundation with a long heading and mixed content.</p></article>
+      <article class="fixture__cell ds-prose"><h2>Third item</h2><p>The grid uses one column on small screens.</p></article>
+    </div>
+    <form id="fields" class="ds-reading ds-stack">
+      <div class="text-input">
+        <label class="text-input__label" for="name">Name</label>
+        <div class="text-input__field"><div class="text-input__inner"><input class="text-input__input" id="name" name="name" autocomplete="name"></div></div>
+      </div>
+      <div class="ds-stack"><label for="message">Long message</label><textarea id="message" name="message" rows="3"></textarea></div>
+      <div class="ds-cluster"><button class="btn btn--primary" type="button"><span class="btn__text">Example action</span></button><span class="sr-only">Screen reader text</span></div>
+    </form>
+    <div class="slider slider--range fixture__range" aria-label="Example range">
+      <div class="slider__control-wrap">
+        <div class="slider__track"><div class="slider__fill"></div></div>
+        <input class="slider__input" type="range" min="0" max="100" value="25" aria-label="Range start">
+        <input class="slider__input slider__input--end" type="range" min="0" max="100" value="75" aria-label="Range end">
+      </div>
+    </div>
+    <div class="motion-probe" aria-hidden="true"></div>
+  </main>
+</body>
+</html>

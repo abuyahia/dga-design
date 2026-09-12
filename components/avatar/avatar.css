@@ -1,43 +1,12 @@
-/* ═══════════════════════════════════════════════════════════════
-   Avatar — Component Styles
-   Source: components/avatar/avatar.json + avatar-group.json
-   ═══════════════════════════════════════════════════════════════
-
-   TODO: --avatar-bg-default missing in token.css.
-         Proposed mapping: var(--Button-button-background-neutral-default, #F3F4F6)
-         Cross-namespace token leak — tracked in compliance.json PLATFORM-CODE-TOKEN-002.
-
-   TODO: --avatar-border-color missing in token.css.
-         Proposed mapping: var(--Border-border-white, #FFF)
-
-   TODO: --avatar-text-color missing in token.css.
-         Proposed mapping: var(--Text-text-default, #161616)
-
-   TODO: --avatar-bg-image missing in token.css.
-         Proposed mapping: var(--Background-background-white, #FFF)
-
-   TODO: --avatar-radius-circle missing in token.css.
-         Proposed mapping: var(--radius-round, 9999px)
-
-   TODO: --avatar-radius-square-sm missing in token.css.
-         Proposed mapping: var(--radius-4, 4px)
-
-   TODO: --avatar-radius-square-lg missing in token.css.
-         Proposed mapping: var(--radius-8, 8px)
-
-   TODO: --avatar-group-gap missing in token.css.
-         Proposed mapping: var(--Global-spacing-xs, 4px)
-   ═══════════════════════════════════════════════════════════════ */
-
 /* ── Base ──────────────────────────────────────────────────────── */
 .avatar {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--avatar-radius-circle, var(--radius-round, 9999px));
-  border: 2px solid var(--avatar-border-color, var(--Border-border-white, #fff));
-  background: var(--avatar-bg-default, var(--Button-button-background-neutral-default, #f3f4f6));
+  border-radius: var(--avatar-radius-circle);
+  border: var(--border-width-thick) solid var(--avatar-border-color);
+  background: var(--avatar-bg-default);
   overflow: hidden;
   flex-shrink: 0;
   box-sizing: border-box;
@@ -45,68 +14,68 @@
 
 /* ── Shape modifier — Square ───────────────────────────────────── */
 .avatar--square {
-  border-radius: var(--avatar-radius-square-sm, var(--radius-4, 4px));
+  border-radius: var(--avatar-radius-square-sm);
 }
 
 .avatar--square.avatar--120 {
-  border-radius: var(--avatar-radius-square-lg, var(--radius-8, 8px));
+  border-radius: var(--avatar-radius-square-lg);
 }
 
 /* ── Size modifiers ────────────────────────────────────────────── */
-.avatar--24  { width: 24px;  height: 24px; }
-.avatar--32  { width: 32px;  height: 32px; }
-.avatar--40  { width: 40px;  height: 40px; }
-.avatar--48  { width: 48px;  height: 48px; }
-.avatar--64  { width: 64px;  height: 64px; }
-.avatar--80  { width: 80px;  height: 80px; }
-.avatar--120 { width: 120px; height: 120px; border-width: 4px; }
+.avatar--24  { width: var(--space-24);  height: var(--space-24); }
+.avatar--32  { width: var(--space-32);  height: var(--space-32); }
+.avatar--40  { width: var(--space-40);  height: var(--space-40); }
+.avatar--48  { width: var(--space-48);  height: var(--space-48); }
+.avatar--64  { width: var(--space-64);  height: var(--space-64); }
+.avatar--80  { width: var(--space-80);  height: var(--space-80); }
+.avatar--120 { width: var(--avatar-120-width); height: var(--avatar-120-height); border-width: var(--border-width-heavy); }
 
 /* ── Icon type ─────────────────────────────────────────────────── */
 .avatar__icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--avatar-text-color, var(--Text-text-default, #161616));
+  color: var(--avatar-text-color);
   pointer-events: none;
 }
 
-.avatar--24  .avatar__icon { width: 16px; height: 16px; }
-.avatar--32  .avatar__icon { width: 24px; height: 24px; }
-.avatar--40  .avatar__icon { width: 32px; height: 32px; }
-.avatar--48  .avatar__icon { width: 32px; height: 32px; }
-.avatar--64  .avatar__icon { width: 40px; height: 40px; }
-.avatar--80  .avatar__icon { width: 56px; height: 56px; }
-.avatar--120 .avatar__icon { width: 80px; height: 80px; }
+.avatar--24  .avatar__icon { width: var(--space-16); height: var(--space-16); }
+.avatar--32  .avatar__icon { width: var(--space-24); height: var(--space-24); }
+.avatar--40  .avatar__icon { width: var(--space-32); height: var(--space-32); }
+.avatar--48  .avatar__icon { width: var(--space-32); height: var(--space-32); }
+.avatar--64  .avatar__icon { width: var(--space-40); height: var(--space-40); }
+.avatar--80  .avatar__icon { width: var(--space-56); height: var(--space-56); }
+.avatar--120 .avatar__icon { width: var(--space-80); height: var(--space-80); }
 
 /* ── Initials type ─────────────────────────────────────────────── */
 .avatar__initials {
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-  color: var(--avatar-text-color, var(--Text-text-default, #161616));
+  font-family: var(--font-sans);
+  color: var(--avatar-text-color);
   text-align: center;
   line-height: 1;
   user-select: none;
 }
 
-.avatar--24  .avatar__initials { font-size: var(--Size-Text-typo-size-text-2xs, 10px); font-weight: 700; }
-.avatar--32  .avatar__initials { font-size: var(--Size-Text-typo-size-text-xs, 12px);  font-weight: 600; }
-.avatar--40  .avatar__initials { font-size: var(--Size-Text-typo-size-text-sm, 14px);  font-weight: 600; }
-.avatar--48  .avatar__initials { font-size: var(--Size-Text-typo-size-text-md, 16px);  font-weight: 500; }
-.avatar--64  .avatar__initials { font-size: var(--Size-Text-typo-size-text-xl, 20px);  font-weight: 500; }
+.avatar--24  .avatar__initials { font-size: var(--space-10); font-weight: var(--font-weight-heading); }
+.avatar--32  .avatar__initials { font-size: var(--fs-text-xs);  font-weight: var(--font-weight-semibold); }
+.avatar--40  .avatar__initials { font-size: var(--fs-text-sm);  font-weight: var(--font-weight-semibold); }
+.avatar--48  .avatar__initials { font-size: var(--fs-text-md);  font-weight: var(--font-weight-medium); }
+.avatar--64  .avatar__initials { font-size: var(--fs-text-xl);  font-weight: var(--font-weight-medium); }
 .avatar--80  .avatar__initials {
-  font-family: var(--Font-Family-font-family-display, "IBM Plex Sans Arabic");
-  font-size: var(--Size-Display-typo-size-display-sm, 30px);
-  font-weight: 500;
+  font-family: var(--font-sans);
+  font-size: var(--fs-display-sm);
+  font-weight: var(--font-weight-medium);
 }
 .avatar--120 .avatar__initials {
-  font-family: var(--Font-Family-font-family-display, "IBM Plex Sans Arabic");
-  font-size: var(--Size-Display-typo-size-display-md, 36px);
-  font-weight: 500;
-  letter-spacing: -0.72px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-display-md);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: calc(-1 * var(--avatar-initials-letter-spacing));
 }
 
 /* ── Image type ────────────────────────────────────────────────── */
 .avatar--image {
-  background: var(--avatar-bg-image, var(--Background-background-white, #fff));
+  background: var(--avatar-bg-image);
 }
 
 .avatar__image {
@@ -126,21 +95,21 @@
 
 /* Stacked — avatars overlap via negative inline margin */
 .avatar-group--stacked .avatar + .avatar {
-  margin-inline-start: -4px;
+  margin-inline-start: calc(-1 * var(--space-4));
 }
 
 /* Flat — avatars side by side with token gap */
 .avatar-group--flat {
-  gap: var(--avatar-group-gap, var(--Global-spacing-xs, 4px));
+  gap: var(--avatar-group-gap);
 }
 
 /* ── Overflow counter ──────────────────────────────────────────── */
 .avatar--overflow {
-  background: var(--avatar-bg-default, var(--Button-button-background-neutral-default, #f3f4f6));
+  background: var(--avatar-bg-default);
 }
 
 .avatar--overflow .avatar__initials {
-  font-size: var(--Size-Text-typo-size-text-xs, 12px);
-  font-weight: 600;
-  color: var(--avatar-text-color, var(--Text-text-default, #161616));
+  font-size: var(--fs-text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--avatar-text-color);
 }

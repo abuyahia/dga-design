@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "component_id": "input-affix",
   "selector_root": ".input-affix",
   "rule_types_registry": "../../standards/audit-rule-types.json",
@@ -58,7 +58,7 @@
     {
       "id": "AFFIX-A11Y-003",
       "standard_id": "WCAG-2.1-2.4.7",
-      "rule_type": "css_property_forbidden",
+      "rule_type": "forbidden_css_properties",
       "category": "accessibility",
       "severity": "error",
       "validation_status": "not_run",
@@ -72,8 +72,9 @@
       },
       "message": "Focus ring is suppressed on dropdown affix. Keyboard users cannot determine which element has focus.",
       "fix": "Remove outline: none, or add a visible replacement: outline: var(--input-affix-focus-ring-width) solid var(--input-affix-focus-ring-color).",
-      "standard_refs": ["WCAG-2.1-2.4.7"]
-    },
+      "standard_refs": ["WCAG-2.1-2.4.7"],
+  "source_rule_type": "css_property_forbidden"
+},
 
     {
       "id": "AFFIX-A11Y-004",
@@ -100,7 +101,7 @@
     {
       "id": "AFFIX-STRUCT-001",
       "standard_id": "PLATFORM-CODE-AFFIX-003",
-      "rule_type": "element_type_required",
+      "rule_type": "semantic_element_required",
       "category": "structure",
       "severity": "error",
       "validation_status": "not_run",
@@ -117,13 +118,14 @@
       },
       "message": "input-affix uses an incorrect root element. Dropdown type requires <button>. Text type requires <div>.",
       "fix": "Change the root element to <button type=\"button\"> for Dropdown, or <div> for Text type.",
-      "standard_refs": ["PLATFORM-CODE-AFFIX-003", "WCAG-2.1-4.1.2"]
-    },
+      "standard_refs": ["PLATFORM-CODE-AFFIX-003", "WCAG-2.1-4.1.2"],
+  "source_rule_type": "element_type_required"
+},
 
     {
       "id": "AFFIX-TOKEN-001",
       "standard_id": "PLATFORM-CODE-AFFIX-001",
-      "rule_type": "css_property_forbidden",
+      "rule_type": "forbidden_css_properties",
       "category": "tokens",
       "severity": "error",
       "validation_status": "not_run",
@@ -142,13 +144,14 @@
       },
       "message": "Hardcoded visual value found in input-affix component selector. Replace with --input-affix-* token.",
       "fix": "Replace the hardcoded value with a var(--input-affix-*) token. Add the token to token.css if missing.",
-      "standard_refs": ["PLATFORM-CODE-AFFIX-001", "PLATFORM-CODE-TOKEN-001"]
-    },
+      "standard_refs": ["PLATFORM-CODE-AFFIX-001", "PLATFORM-CODE-TOKEN-001"],
+  "source_rule_type": "css_property_forbidden"
+},
 
     {
       "id": "AFFIX-RTL-001",
       "standard_id": "PLATFORM-CODE-AFFIX-002",
-      "rule_type": "css_property_forbidden",
+      "rule_type": "forbidden_css_properties",
       "category": "rtl",
       "severity": "warning",
       "validation_status": "not_run",
@@ -162,13 +165,14 @@
       },
       "message": "Physical padding property (padding-left or padding-right) found on input-affix. Use padding-inline instead.",
       "fix": "Replace padding-left/padding-right with padding-inline: var(--input-affix-*-padding-inline).",
-      "standard_refs": ["PLATFORM-CODE-AFFIX-002", "PLATFORM-CODE-RTL-001"]
-    },
+      "standard_refs": ["PLATFORM-CODE-AFFIX-002", "PLATFORM-CODE-RTL-001"],
+  "source_rule_type": "css_property_forbidden"
+},
 
     {
       "id": "AFFIX-USAGE-001",
       "standard_id": "PLATFORM-CODE-AFFIX-004",
-      "rule_type": "dom_structure_required",
+      "rule_type": "structure_required",
       "category": "usage",
       "severity": "warning",
       "validation_status": "not_run",
@@ -186,8 +190,10 @@
       },
       "message": "input-affix appears in isolation without an associated text-input. This is a usage violation.",
       "fix": "Wrap the affix and its associated input inside a .text-input container.",
-      "standard_refs": ["PLATFORM-CODE-AFFIX-004"]
-    }
+      "standard_refs": ["PLATFORM-CODE-AFFIX-004"],
+  "source_rule_type": "dom_structure_required"
+}
 
-  ]
+  ],
+  "$schema": "../../standards/schemas/component-audit.schema.json"
 }

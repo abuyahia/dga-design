@@ -1,0 +1,27 @@
+<section class="service-page" aria-labelledby="page-title">
+ <div class="ds-container service-page__layout">
+  <div class="service-page__main">
+   <div class="service-page__description">
+    <div class="service-page__title-row"><div class="service-page__title">{{breadcrumb}}<h1 id="page-title">{{title}}</h1></div><a class="btn btn--primary" href="{{start_url}}">بدء الخدمة</a></div>
+    <div class="service-card__tags">{{tags}}</div><p class="service-page__lead">{{description}}</p>
+    <div class="ds-cluster"><a class="link link--md" href="#service-agreement">اتفاقية مستوى الخدمة<span class="service-page__link-icon" aria-hidden="true"><img src="templates/service/assets/main-imgElements1.svg" alt=""></span></a></div>
+   </div>
+   <div class="service-page__details" data-service-tabs>
+    <div class="tab-list tab-list--h" aria-label="تفاصيل الخدمة" hidden>{{tab_buttons}}</div>
+    {{panels}}
+   </div>
+   <section class="service-page__agreement" id="service-agreement" tabindex="-1"><h2>اتفاقية مستوى الخدمة</h2><p>{{agreement}}</p></section>
+   {{launch}}
+  </div>
+  <aside class="card service-page__sidebar" aria-label="معلومات الخدمة">
+   <dl class="service-page__facts">{{facts}}</dl>
+   <div class="service-page__support"><h2>الدعم والمساعدة</h2>{{support}}<a class="btn btn--secondary-solid" href="#service-faq">الأسئلة الشائعة</a>{{guide}}</div>
+   {{apps}}
+  </aside>
+ </div>
+</section>
+<section class="service-page__related"><div class="ds-container"><div class="section-heading"><h2>خدمات ذات صلة</h2><a class="btn btn--secondary-outline" href="services.html">عرض جميع الخدمات</a></div><div class="service-page__related-grid">{{related}}</div></div></section>
+<section class="service-page__comments"><div class="ds-container"><div class="card"><h2>التعليقات والاقتراحات</h2><p>لأي استفسار أو ملاحظات حول الخدمة، يمكنك التواصل مع فريق الدعم.</p><a class="btn btn--primary" href="{{contact_url}}">تواصل معنا</a></div></div></section>
+<section class="service-page__faq" id="service-faq" tabindex="-1"><div class="ds-container"><h2>الأسئلة الشائعة</h2>{{faq}}</div></section>
+
+<div class="ds-container"><p class="service-page__modified">تاريخ آخر تعديل: <time datetime="{{updated}}">{{updated}}</time></p></div>

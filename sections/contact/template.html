@@ -1,0 +1,10 @@
+<section class="contact-page" aria-labelledby="page-title"><div class="ds-container contact-page__layout">
+  <div class="contact-page__main"><div class="contact-page__intro"><nav class="breadcrumb" aria-label="مسار التنقل"><ol class="breadcrumb__list"><li><a class="link link--inline" href="index.html">الرئيسية</a></li><li aria-current="page"><img src="templates/contact/assets/desktop-imgElements1.svg" width="5" height="9" alt=""> تواصل معنا</li></ol></nav><h1 id="page-title">تواصل معنا</h1><p>{{description}}</p></div>
+  <form class="contact-form" id="contact-form" novalidate aria-label="نموذج التواصل"><div class="contact-error-summary" role="alert" tabindex="-1" hidden><h2>يرجى مراجعة الحقول التالية</h2><ul></ul></div>
+    <fieldset class="contact-form__fields" disabled><legend class="sr-only">بيانات التواصل والرسالة</legend>{{fields}}</fieldset>
+    <p class="contact-form__note" id="contact-note">معاينة محلية: لا تُرسل الرسالة أو المرفقات إلى خادم.</p>
+    <div class="contact-form__actions"><button class="btn btn--primary" type="submit" aria-describedby="contact-note" disabled>إرسال الرسالة</button><p role="status" data-contact-status></p></div>
+    <noscript><p>لتعبئة النموذج، يرجى تشغيل JavaScript. يمكنك استخدام قنوات التواصل المتاحة بجانب النموذج.</p></noscript>
+  </form></div>
+  <aside class="card contact-card" aria-labelledby="contact-card-title"><h2 id="contact-card-title">{{card_title}}</h2><dl class="contact-card__channels">{{channels}}</dl>{{socials}}<div class="contact-card__support"><h2>روابط المساعدة</h2><ul>{{help_links}}</ul></div></aside>
+</div></section>

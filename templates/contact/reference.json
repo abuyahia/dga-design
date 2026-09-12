@@ -1,0 +1,17 @@
+{
+  "template": "contact",
+  "reviewed": "2026-09-10",
+  "figma": "https://www.figma.com/design/6F2vdckVRGL03uQabwoIB7/?node-id=1-27682",
+  "nodes": {
+    "desktop": "2:28056",
+    "mobile": "16:7845",
+    "card": "2:28057",
+    "select": "345:27552",
+    "textarea": "2:28129"
+  },
+  "references": [
+    "https://design.dga.gov.sa/templates/contact",
+    "https://www.kku.edu.sa/ar/contact"
+  ],
+  "formal_compliance": "pending"
+}

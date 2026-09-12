@@ -5,7 +5,7 @@
   "description": "Internal component authoring rules specific to this Government Design System. These standards define structural, token, RTL, hierarchy, and sizing requirements that go beyond general accessibility guidelines. They have not been mapped to an official external standard. source_status is 'internal_mapping' until formal ratification.",
   "source_status": "internal_mapping",
   "official_reference": null,
-  "version": "1.0.0-draft",
+  "version": "1.1.0-draft",
 
   "standards": [
 
@@ -60,12 +60,12 @@
     {
       "id": "PLATFORM-CODE-BTN-005",
       "title": "Minimum touch target: 24×24px",
-      "description": "The smallest interactive element size in this design system is 24×24px (button --sm, icon-only --sm). No interactive element may collapse below this minimum in any state, including when text is absent. This aligns with WCAG 2.5.8 (AAA) and mobile usability standards for government services.",
+      "description": "Internal minimum target baseline: 24×24 CSS pixels. WCAG 2.2 SC 2.5.8 is Level AA and includes exceptions; a component token alone cannot verify rendered target size, spacing or applicability. Measure targets in their deployed context.",
       "category": "sizing",
       "applies_to": ["button", "all-interactive"],
       "source_status": "internal_mapping",
-      "official_reference": "WCAG-2.5.8 (reference only, not formally mapped)",
-      "audit_rule_type": "token_used",
+      "official_reference": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+      "audit_rule_type": "dimension_minimum",
       "severity": "error"
     },
 
@@ -83,8 +83,8 @@
 
     {
       "id": "PLATFORM-CODE-FOCUS-001",
-      "title": "Focus indicator must follow the two-layer ring pattern",
-      "description": "All interactive components in this design system use a two-layer focus indicator: an outer border on the element root and an inner ring via ::after pseudo-element. This pattern must not be replaced by a single outline or box-shadow unless formally approved. The pattern ensures visibility against both light and dark backgrounds.",
+      "title": "Visible focus with a documented component-appropriate pattern",
+      "description": "The Button reference uses a two-layer ring. Native inputs and other elements may use a documented wrapper or outline appropriate to their rendering model. Keyboard focus must remain visible while focused, including during activation. Pattern deviations require component review and rendered verification; documentation is not a passing audit.",
       "category": "accessibility",
       "applies_to": ["button", "all-interactive"],
       "source_status": "internal_mapping",
@@ -96,7 +96,7 @@
     {
       "id": "PLATFORM-CODE-STATE-001",
       "title": "Interactive state changes must be communicated via ARIA",
-      "description": "Any component that changes state in response to user interaction (toggle, expand, select, check) must reflect that state change via an ARIA attribute update. CSS-only state changes that are not communicated to the accessibility tree are violations.",
+      "description": "Communicate state with native HTML semantics where available (checked/selected/disabled). Use aria-expanded for disclosure, aria-pressed for toggle buttons and aria-selected only for patterns that require it. Keep required ARIA synchronized; data attributes and CSS classes alone do not communicate state.",
       "category": "accessibility",
       "applies_to": ["button", "accordion", "all-interactive"],
       "source_status": "internal_mapping",

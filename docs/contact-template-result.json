@@ -1,0 +1,697 @@
+{
+  "date": "2026-09-10",
+  "template": "contact",
+  "page": "contact.html",
+  "unit_tests_passed": 29,
+  "contact_browser_cases": 33,
+  "template_browser_cases": 80,
+  "browser_passed": true,
+  "strict_audit": {
+    "errors": 0,
+    "warnings": 0,
+    "historical_rules_not_run": 309
+  },
+  "visual_review": [
+    "desktop 1440",
+    "mobile 430"
+  ],
+  "formal_compliance": "pending",
+  "submission_mode": "local preview; explicit async adapter required for server submission",
+  "contact_results": [
+    {
+      "name": "Layout rtl 320",
+      "pass": true
+    },
+    {
+      "name": "Fields and feedback rtl 320",
+      "pass": true
+    },
+    {
+      "name": "Layout rtl 430",
+      "pass": true
+    },
+    {
+      "name": "Fields and feedback rtl 430",
+      "pass": true
+    },
+    {
+      "name": "Layout rtl 768",
+      "pass": true
+    },
+    {
+      "name": "Fields and feedback rtl 768",
+      "pass": true
+    },
+    {
+      "name": "Layout rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "Fields and feedback rtl 1440",
+      "pass": true
+    },
+    {
+      "name": "Layout ltr 320",
+      "pass": true
+    },
+    {
+      "name": "Fields and feedback ltr 320",
+      "pass": true
+    },
+    {
+      "name": "Layout ltr 430",
+      "pass": true
+    },
+    {
+      "name": "Fields and feedback ltr 430",
+      "pass": true
+    },
+    {
+      "name": "Layout ltr 768",
+      "pass": true
+    },
+    {
+      "name": "Fields and feedback ltr 768",
+      "pass": true
+    },
+    {
+      "name": "Layout ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "Fields and feedback ltr 1440",
+      "pass": true
+    },
+    {
+      "name": "Required error summary and focus",
+      "pass": true
+    },
+    {
+      "name": "Error link focuses input",
+      "pass": true
+    },
+    {
+      "name": "Invalid email state",
+      "pass": true
+    },
+    {
+      "name": "Attachment type rejected",
+      "pass": true
+    },
+    {
+      "name": "Attachment size rejected",
+      "pass": true
+    },
+    {
+      "name": "Empty attachment rejected",
+      "pass": true
+    },
+    {
+      "name": "Valid attachment selected",
+      "pass": true
+    },
+    {
+      "name": "Remove clears selection and restores focus",
+      "pass": true
+    },
+    {
+      "name": "Local preview is honest and clears form",
+      "pass": true
+    },
+    {
+      "name": "Pending locks canonical control states",
+      "pass": true
+    },
+    {
+      "name": "Failure preserves data and attachment",
+      "pass": true
+    },
+    {
+      "name": "Confirmed success and normalized payload",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus contact-first_name",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus contact-category",
+      "pass": true
+    },
+    {
+      "name": "Keyboard focus contact-message",
+      "pass": true
+    },
+    {
+      "name": "Native select keyboard typeahead",
+      "details": {
+        "index": 1,
+        "value": "استفسار",
+        "active": "contact-category"
+      },
+      "pass": true
+    },
+    {
+      "name": "No JS cannot silently submit",
+      "pass": true
+    }
+  ],
+  "template_results": [
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "name": "rtl: mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "rtl: Escape closes menu",
+      "pass": true
+    },
+    {
+      "name": "rtl: search modal",
+      "pass": true
+    },
+    {
+      "name": "rtl: search suggestions",
+      "pass": true
+    },
+    {
+      "name": "rtl: search clear",
+      "pass": true
+    },
+    {
+      "name": "rtl: search restores focus",
+      "pass": true
+    },
+    {
+      "name": "rtl: hero selection",
+      "pass": true
+    },
+    {
+      "name": "rtl: carousel advances",
+      "pass": true
+    },
+    {
+      "name": "rtl: feedback opens",
+      "pass": true
+    },
+    {
+      "name": "rtl: feedback local completion",
+      "pass": true
+    },
+    {
+      "name": "ltr: mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "ltr: Escape closes menu",
+      "pass": true
+    },
+    {
+      "name": "ltr: search modal",
+      "pass": true
+    },
+    {
+      "name": "ltr: search suggestions",
+      "pass": true
+    },
+    {
+      "name": "ltr: search clear",
+      "pass": true
+    },
+    {
+      "name": "ltr: search restores focus",
+      "pass": true
+    },
+    {
+      "name": "ltr: hero selection",
+      "pass": true
+    },
+    {
+      "name": "ltr: carousel advances",
+      "pass": true
+    },
+    {
+      "name": "ltr: feedback opens",
+      "pass": true
+    },
+    {
+      "name": "ltr: feedback local completion",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: navigation and content remain available",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/375: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation rtl/1280: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/375: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: selected appearance",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: Enter opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: focus ring",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: Escape restores trigger",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: Space opens submenu",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: one submenu open",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: outside click closes",
+      "pass": true
+    },
+    {
+      "name": "navigation ltr/1280: page fits",
+      "pass": true
+    },
+    {
+      "name": "navigation: idempotence and instance isolation",
+      "pass": true
+    },
+    {
+      "name": "navigation: cleanup restores readable fallback",
+      "pass": true
+    },
+    {
+      "name": "navigation: remount works",
+      "pass": true
+    }
+  ]
+}

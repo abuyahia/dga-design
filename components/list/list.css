@@ -11,8 +11,6 @@
      for RTL via the `order` property.
    ============================================================================= */
 
-/* TODO: --list-* tokens are missing from token.css. Proposed mappings in reference.json. */
-
 /* ---- Arabic alphabetic counter for RTL Level Two -------------------------- */
 /*
  * Requires @counter-style support: Chrome 91+, Firefox 33+, Safari 17+.
@@ -57,8 +55,7 @@
 .list__item {
   display: inline-flex;
   align-items: flex-start;
-  /* TODO: --list-item-gap missing in token.css. Proposed: var(--Global-spacing-md) */
-  gap: var(--list-item-gap, var(--Global-spacing-md, 8px));
+  gap: var(--list-item-gap);
   padding: 0;
 }
 
@@ -71,14 +68,10 @@
 /* ---- Item text ------------------------------------------------------------ */
 
 .list__text {
-  /* TODO: --list-item-font-family missing in token.css */
-  font-family: var(--list-item-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"));
-  /* TODO: --list-item-font-size missing in token.css */
-  font-size: var(--list-item-font-size, var(--Size-Text-typo-size-text-md, 16px));
-  /* TODO: --list-item-font-weight missing in token.css */
-  font-weight: var(--list-item-font-weight, 400);
-  /* TODO: --list-item-line-height missing in token.css */
-  line-height: var(--list-item-line-height, var(--Line-Height-Text-line-heights-text-md, 24px));
+  font-family: var(--list-item-font-family);
+  font-size: var(--list-item-font-size);
+  font-weight: var(--list-item-font-weight);
+  line-height: var(--list-item-line-height);
   font-style: normal;
 }
 
@@ -93,13 +86,10 @@
 .list--unordered .list__item--level-one::before,
 .list--unordered .list__item--level-two::before {
   flex-shrink: 0;
-  /* TODO: --list-item-font-family missing in token.css */
-  font-family: var(--list-item-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"));
-  /* TODO: --list-item-font-size missing in token.css */
-  font-size: var(--list-item-font-size, var(--Size-Text-typo-size-text-md, 16px));
-  font-weight: var(--list-item-font-weight, 400);
-  /* TODO: --list-item-line-height missing in token.css */
-  line-height: var(--list-item-line-height, var(--Line-Height-Text-line-heights-text-md, 24px));
+  font-family: var(--list-item-font-family);
+  font-size: var(--list-item-font-size);
+  font-weight: var(--list-item-font-weight);
+  line-height: var(--list-item-line-height);
 }
 
 /* Ordered — LTR Level One: "1-", "2-", … */
@@ -149,10 +139,10 @@
 [dir="rtl"] .list--unordered .list__item--level-one::after,
 [dir="rtl"] .list--unordered .list__item--level-two::after {
   flex-shrink: 0;
-  font-family: var(--list-item-font-family, var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"));
-  font-size: var(--list-item-font-size, var(--Size-Text-typo-size-text-md, 16px));
-  font-weight: var(--list-item-font-weight, 400);
-  line-height: var(--list-item-line-height, var(--Line-Height-Text-line-heights-text-md, 24px));
+  font-family: var(--list-item-font-family);
+  font-size: var(--list-item-font-size);
+  font-weight: var(--list-item-font-weight);
+  line-height: var(--list-item-line-height);
 }
 
 /* Ordered — RTL Level One: "-1", "-2", … */
@@ -182,16 +172,15 @@
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  /* TODO: --list-item-icon-size missing in token.css. Proposed: 16px */
-  width: var(--list-item-icon-size, 16px);
-  height: var(--list-item-icon-size, 16px);
+  width: var(--list-item-icon-size);
+  height: var(--list-item-icon-size);
   color: inherit;
 }
 
 .list__icon svg {
   display: block;
-  width: var(--list-item-icon-size, 16px);
-  height: var(--list-item-icon-size, 16px);
+  width: var(--list-item-icon-size);
+  height: var(--list-item-icon-size);
 }
 
 /*
@@ -211,12 +200,7 @@
 }
 
 .list__item--level-two {
-  /*
-   * Logical property: padding-left in LTR, padding-right in RTL.
-   * Works automatically with dir="rtl" on any ancestor. No [dir=rtl] override needed.
-   * TODO: --list-item-indent missing in token.css. Proposed: var(--Global-spacing-3xl)
-   */
-  padding-inline-start: var(--list-item-indent, var(--Global-spacing-3xl, 24px));
+  padding-inline-start: var(--list-item-indent);
 }
 
 /* ---- Style: Primary ------------------------------------------------------- */
@@ -225,8 +209,7 @@
 .list--primary .list__item::after,
 .list--primary .list__text,
 .list--primary .list__icon {
-  /* TODO: --list-text-primary missing in token.css. Proposed: var(--Text-text-primary) */
-  color: var(--list-text-primary, var(--Text-text-primary, #1B8354));
+  color: var(--list-text-primary);
 }
 
 /* ---- Style: Neutral ------------------------------------------------------- */
@@ -235,8 +218,7 @@
 .list--neutral .list__item::after,
 .list--neutral .list__text,
 .list--neutral .list__icon {
-  /* TODO: --list-text-neutral missing in token.css. Proposed: var(--Text-text-default) */
-  color: var(--list-text-neutral, var(--Text-text-default, #161616));
+  color: var(--list-text-neutral);
 }
 
 /* ---- Style: On-Color ------------------------------------------------------ */
@@ -245,8 +227,7 @@
 .list--on-color .list__item::after,
 .list--on-color .list__text,
 .list--on-color .list__icon {
-  /* TODO: --list-text-oncolor missing in token.css. Proposed: var(--Text-text-oncolor-primary) */
-  color: var(--list-text-oncolor, var(--Text-text-oncolor-primary, #FFF));
+  color: var(--list-text-oncolor);
 }
 
 /*

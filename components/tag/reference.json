@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "tag",
     "display_name": "Tag / Status Tag",
@@ -326,5 +326,42 @@
         "Style names (blue/green/red/yellow) map to Figma axis values, not semantic token names."
       ]
     }
-  }
+  },
+  "axes": [
+    "size",
+    "style",
+    "outline",
+    "rounded",
+    "icon_only"
+  ],
+  "axis_values": {
+    "size": [
+      "xs",
+      "sm",
+      "md"
+    ],
+    "style": [
+      "neutral",
+      "error",
+      "info",
+      "success",
+      "warning",
+      "on-color"
+    ],
+    "outline": [
+      false,
+      true
+    ],
+    "rounded": [
+      false,
+      true
+    ],
+    "icon_only": [
+      false,
+      true
+    ]
+  },
+  "variants": [],
+  "variant_coverage": "axes_only",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

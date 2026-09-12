@@ -11,20 +11,14 @@
 
 .card {
   display: flex;
-  /* TODO: --card-width missing in token.css. Proposed: design canvas default 360px; override to 100% in production layouts. */
-  width: var(--card-width, 360px);
-  /* TODO: --card-padding missing in token.css. Proposed mapping: var(--Global-spacing-xl). */
-  padding: var(--card-padding, 16px);
+  width: var(--card-width);
+  padding: var(--card-padding);
   flex-direction: column;
   align-items: flex-start;
-  /* TODO: --card-gap missing in token.css. Proposed mapping: var(--Card-card-lg-gap). */
-  gap: var(--card-gap, 24px);
-  /* TODO: --card-radius missing in token.css. Proposed mapping: var(--radius-lg). */
-  border-radius: var(--card-radius, 16px);
-  /* TODO: --card-border-default missing in token.css. Proposed mapping: var(--Border-border-neutral-primary). */
-  border: 1px solid var(--card-border-default, #D2D6DB);
-  /* TODO: --card-bg-default missing in token.css. Proposed mapping: var(--Background-background-card). */
-  background: var(--card-bg-default, #FFF);
+  gap: var(--card-gap);
+  border-radius: var(--card-radius);
+  border: var(--border-width-thin) solid var(--card-border-default);
+  background: var(--card-bg-default);
   position: relative;
   box-sizing: border-box;
 }
@@ -35,36 +29,29 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* TODO: --card-content-gap missing in token.css. Proposed mapping: var(--Global-spacing-md). */
-  gap: var(--card-content-gap, 8px);
+  gap: var(--card-content-gap);
   align-self: stretch;
 }
 
 .card__title {
   align-self: stretch;
-  /* TODO: --card-text-default missing in token.css. Proposed mapping: var(--Text-text-display). */
-  color: var(--card-text-default, #1F2A37);
-  /* TODO: --card-font-family missing in token.css. Proposed mapping: var(--Font-Family-font-family-text). */
-  font-family: var(--card-font-family, "IBM Plex Sans Arabic", system-ui, sans-serif);
-  /* TODO: --card-title-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-Ig). */
-  font-size: var(--card-title-font-size, 18px);
+  color: var(--card-text-default);
+  font-family: var(--card-font-family);
+  font-size: var(--card-title-font-size);
   font-style: normal;
-  font-weight: 700;
-  /* TODO: --card-title-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-Ig). */
-  line-height: var(--card-title-line-height, 28px);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--card-title-line-height);
   margin: 0;
 }
 
 .card__body {
   align-self: stretch;
-  color: var(--card-text-default, #1F2A37);
-  font-family: var(--card-font-family, "IBM Plex Sans Arabic", system-ui, sans-serif);
-  /* TODO: --card-body-font-size missing in token.css. Proposed mapping: var(--Size-Text-typo-size-text-md). */
-  font-size: var(--card-body-font-size, 16px);
+  color: var(--card-text-default);
+  font-family: var(--card-font-family);
+  font-size: var(--card-body-font-size);
   font-style: normal;
-  font-weight: 400;
-  /* TODO: --card-body-line-height missing in token.css. Proposed mapping: var(--Line-Height-Text-line-heights-text-md). */
-  line-height: var(--card-body-line-height, 24px);
+  font-weight: var(--font-weight-body);
+  line-height: var(--card-body-line-height);
   margin: 0;
 }
 
@@ -73,8 +60,7 @@
 .card__actions {
   display: flex;
   align-items: center;
-  /* TODO: --card-actions-gap missing in token.css. Proposed mapping: var(--Global-spacing-xl). */
-  gap: var(--card-actions-gap, 16px);
+  gap: var(--card-actions-gap);
   align-self: stretch;
 }
 
@@ -82,18 +68,16 @@
 
 .card__toggle {
   display: inline-flex;
-  width: 40px;
-  height: 40px;
+  width: var(--space-40);
+  height: var(--space-40);
   justify-content: center;
   align-items: center;
   border: none;
   background: transparent;
   cursor: pointer;
   padding: 0;
-  /* TODO: --card-toggle-radius missing in token.css. Proposed mapping: var(--Radius-radius-sm). */
-  border-radius: var(--card-toggle-radius, 4px);
-  /* TODO: --card-toggle-icon-color missing in token.css. Proposed mapping: var(--Text-text-display). */
-  color: var(--card-toggle-icon-color, #1F2A37);
+  border-radius: var(--card-toggle-radius);
+  color: var(--card-toggle-icon-color);
 }
 
 .card__toggle:focus {
@@ -101,10 +85,9 @@
 }
 
 .card__toggle-icon {
-  width: 24px;
-  height: 24px;
-  /* TODO: --card-toggle-transition-duration missing in token.css. Proposed mapping: var(--transition-fast). */
-  transition: transform var(--card-toggle-transition-duration, 0.2s) ease;
+  width: var(--space-24);
+  height: var(--space-24);
+  transition: transform var(--card-toggle-transition-duration) var(--ease-default);
   pointer-events: none;
 }
 
@@ -127,9 +110,6 @@
 /* Selected state: card-level visual hook. Visual selection indicator is on the
    Checkbox child — card bg stays at default (#FFF) per Figma. This rule
    provides a CSS anchor for future card-level selected styling. */
-.card--selected {
-  /* intentionally empty — visual selected indicator is owned by Checkbox child */
-}
 
 .card__checkbox-wrapper {
   display: flex;
@@ -141,16 +121,14 @@
 /* Hover */
 .card--expandable:hover:not([aria-disabled="true"]):not(.card--disabled),
 .card--expandable.is-hover {
-  /* TODO: --card-bg-hover missing in token.css. Proposed mapping: var(--Background-background-neutral-50). */
-  background: var(--card-bg-hover, #F9FAFB);
+  background: var(--card-bg-hover);
 }
 
 /* Focused — bg stays white for Expandable, only border changes */
 .card--expandable:focus-within:not([aria-disabled="true"]):not(.card--disabled),
 .card--expandable.is-focused {
-  border-width: 2px;
-  /* TODO: --card-border-focused missing in token.css. Proposed mapping: var(--Border-border-black). */
-  border-color: var(--card-border-focused, #161616);
+  border-width: var(--border-width-thick);
+  border-color: var(--card-border-focused);
 }
 
 /* ── 8. Interactive states — Selectable ──────────────────────────────────── */
@@ -158,25 +136,23 @@
 /* Hover */
 .card--selectable:hover:not([aria-disabled="true"]):not(.card--disabled),
 .card--selectable.is-hover {
-  background: var(--card-bg-hover, #F9FAFB);
+  background: var(--card-bg-hover);
 }
 
 /* Focused — bg changes to hover bg + border changes for Selectable */
 .card--selectable:focus-within:not([aria-disabled="true"]):not(.card--disabled),
 .card--selectable.is-focused {
-  background: var(--card-bg-hover, #F9FAFB);
-  border-width: 2px;
-  border-color: var(--card-border-focused, #161616);
+  background: var(--card-bg-hover);
+  border-width: var(--border-width-thick);
+  border-color: var(--card-border-focused);
 }
 
 /* ── 9. Disabled state ──────────────────────────────────────────────────── */
 
 .card[aria-disabled="true"],
 .card--disabled {
-  /* TODO: --card-bg-disabled missing in token.css. Proposed mapping: var(--Global-background-disabled). */
-  background: var(--card-bg-disabled, #E5E7EB);
-  /* TODO: --card-border-disabled missing in token.css. Proposed mapping: var(--Global-border-disabled). */
-  border-color: var(--card-border-disabled, #9DA4AE);
+  background: var(--card-bg-disabled);
+  border-color: var(--card-border-disabled);
   pointer-events: none;
   cursor: not-allowed;
 }
@@ -185,12 +161,11 @@
 .card--disabled .card__title,
 .card[aria-disabled="true"] .card__body,
 .card--disabled .card__body {
-  /* TODO: --card-text-disabled missing in token.css. Proposed mapping: var(--Global-text-default-disabled). */
-  color: var(--card-text-disabled, #9DA4AE);
+  color: var(--card-text-disabled);
 }
 
 .card[aria-disabled="true"] .card__toggle,
 .card--disabled .card__toggle {
-  color: var(--card-text-disabled, #9DA4AE);
+  color: var(--card-text-disabled);
   cursor: not-allowed;
 }

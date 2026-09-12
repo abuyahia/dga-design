@@ -1,0 +1,7 @@
+/* Layout values from the home template, separate from component tokens. */
+:root {
+  --home-hero-content-height: 320px;
+  --home-hero-mobile-height: 280px;
+  --home-partner-width: 128px;
+  --home-hero-overlay: rgba(9, 42, 30, 0.8);
+}

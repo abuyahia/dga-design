@@ -337,7 +337,7 @@
 .btn--secondary-outline {
   background: transparent;
   color: var(--button-secondary-outline-text);
-  border: 1px solid var(--button-secondary-outline-border);
+  border: var(--border-width-thin) solid var(--button-secondary-outline-border);
 }
 
 /* Hovered ---------------------------------------------------- */
@@ -358,14 +358,14 @@
 .btn--secondary-outline:active:not(:disabled):not([aria-disabled="true"]),
 .btn--secondary-outline.is-pressed {
   background: var(--button-secondary-outline-bg-pressed);
-  border: 1px solid var(--button-secondary-outline-border);
+  border: var(--border-width-thin) solid var(--button-secondary-outline-border);
 }
 
 /* Disabled — transparent bg, muted border, muted text ------- */
 .btn--secondary-outline:disabled,
 .btn--secondary-outline[aria-disabled="true"] {
   background: transparent;
-  border: 1px solid var(--button-secondary-outline-border-hover);
+  border: var(--border-width-thin) solid var(--button-secondary-outline-border-hover);
   color: var(--button-disabled-text);
   cursor: not-allowed;
   pointer-events: none;
@@ -375,7 +375,7 @@
 .btn--secondary-outline[aria-pressed="true"],
 .btn--secondary-outline.is-selected {
   background: var(--button-secondary-outline-bg-selected);
-  border: 1px solid var(--button-secondary-outline-border);
+  border: var(--border-width-thin) solid var(--button-secondary-outline-border);
   color: var(--button-secondary-outline-text);
 }
 
@@ -387,7 +387,7 @@
 .btn--secondary-outline-on-color {
   background: transparent;
   color: var(--button-secondary-outline-on-color-text);
-  border: 1px solid var(--button-secondary-outline-on-color-border);
+  border: var(--border-width-thin) solid var(--button-secondary-outline-on-color-border);
 }
 
 /* Hovered ---------------------------------------------------- */
@@ -407,14 +407,14 @@
 .btn--secondary-outline-on-color:active:not(:disabled):not([aria-disabled="true"]),
 .btn--secondary-outline-on-color.is-pressed {
   background: var(--button-secondary-outline-on-color-bg-pressed);
-  border: 1px solid var(--button-secondary-outline-on-color-border);
+  border: var(--border-width-thin) solid var(--button-secondary-outline-on-color-border);
 }
 
 /* Disabled --------------------------------------------------- */
 .btn--secondary-outline-on-color:disabled,
 .btn--secondary-outline-on-color[aria-disabled="true"] {
   background: transparent;
-  border: 1px solid var(--button-secondary-outline-on-color-border);
+  border: var(--border-width-thin) solid var(--button-secondary-outline-on-color-border);
   color: var(--button-secondary-outline-on-color-disabled-text);
   cursor: not-allowed;
   pointer-events: none;
@@ -424,7 +424,7 @@
 .btn--secondary-outline-on-color[aria-pressed="true"],
 .btn--secondary-outline-on-color.is-selected {
   background: var(--button-secondary-outline-on-color-bg-selected);
-  border: 1px solid var(--button-secondary-outline-on-color-border);
+  border: var(--border-width-thin) solid var(--button-secondary-outline-on-color-border);
   color: var(--button-secondary-outline-on-color-text);
 }
 
@@ -741,3 +741,10 @@
   background: transparent;
   color: var(--button-transparent-on-color-text-selected);
 }
+/* Keyboard focus remains visible during activation, including on dark surfaces. */
+.btn:focus-visible, .btn:focus-visible:active {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+  box-shadow: 0 0 0 var(--focus-ring-offset) var(--focus-ring-inner-color);
+}
+.btn:not(.btn--icon-only) { height: auto; max-height: none; max-inline-size: 100%; overflow-wrap: anywhere; white-space: normal; }

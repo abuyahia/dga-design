@@ -1,0 +1,50 @@
+/* Digital Stamp: Figma page 17274:104. Native disclosure works without JavaScript. */
+.digital-stamp { padding: var(--space-6) var(--space-32); background: var(--gray-100); color: var(--color-text-strong); font-family: var(--font-sans); text-align: start; }
+.digital-stamp[open] { padding-block-end: var(--space-32); }
+.digital-stamp__summary { display: flex; align-items: center; gap: var(--stamp-summary-gap); list-style: none; cursor: pointer; width: fit-content; max-inline-size: 100%; outline: none; }
+.digital-stamp__summary::-webkit-details-marker { display: none; }
+.digital-stamp__identity { display: flex; align-items: center; gap: var(--stamp-summary-gap); min-inline-size: 0; }
+.digital-stamp__caption { font-size: var(--fs-text-sm); line-height: var(--lh-text-sm); font-weight: var(--font-weight-medium); }
+.digital-stamp__flag { display: inline-grid; place-items: center; flex-shrink: 0; inline-size: var(--space-20); block-size: var(--stamp-flag-height); background: var(--stamp-flag-green); }
+.digital-stamp__flag img { inline-size: var(--stamp-flag-glyph-width); block-size: var(--stamp-flag-glyph-height); transform: translateY(var(--stamp-flag-glyph-offset)); }
+.digital-stamp__action { flex-shrink: 0; white-space: nowrap; }
+.digital-stamp__summary:hover .digital-stamp__action { color: var(--sa-700); text-decoration: underline; }
+.digital-stamp__summary:active .digital-stamp__action { color: var(--sa-900); }
+.digital-stamp__summary:focus-visible .digital-stamp__action { outline: var(--focus-ring-width) solid var(--color-text-strong); outline-offset: var(--focus-ring-offset); border-radius: var(--radius-sm); }
+.digital-stamp__arrow { position: relative; display: inline-grid; place-items: center; inline-size: var(--space-16); block-size: var(--space-16); }
+.digital-stamp__arrow img { position: absolute; inline-size: 56.25%; block-size: 31.25%; }
+.digital-stamp__arrow-open { visibility: hidden; }
+.digital-stamp[open] .digital-stamp__arrow-open { visibility: visible; }
+.digital-stamp[open] .digital-stamp__arrow-closed { visibility: hidden; }
+.digital-stamp__body { margin-block-start: var(--space-40); display: flex; flex-direction: column; gap: var(--space-32); }
+.digital-stamp:not([open]) > .digital-stamp__body { display: none; }
+.digital-stamp:dir(ltr) .digital-stamp__body { gap: var(--space-40); }
+.digital-stamp:dir(ltr) .digital-stamp__summary, .digital-stamp:dir(ltr) .digital-stamp__identity { gap: var(--space-8); }
+.digital-stamp__explanations { display: flex; align-items: flex-start; gap: var(--space-16); }
+.digital-stamp__explanation { flex: 1; min-inline-size: 0; display: flex; align-items: flex-start; gap: var(--space-24); }
+.digital-stamp__text { flex: 1; min-inline-size: 0; display: flex; flex-direction: column; gap: var(--space-12); }
+.digital-stamp__heading { margin: 0; font-size: var(--fs-text-lg); line-height: var(--lh-text-lg); font-weight: var(--font-weight-semibold); }
+.digital-stamp__highlight { color: var(--sa-600); }
+.digital-stamp__description { margin: 0; font-size: var(--fs-text-md); line-height: var(--lh-text-md); color: var(--gray-700); }
+.digital-stamp__featured { display: grid; place-items: center; flex-shrink: 0; border: var(--border-width-thin) solid var(--stamp-icon-border); border-radius: var(--radius-full); box-shadow: var(--stamp-icon-shadow); inline-size: var(--space-48); block-size: var(--space-48); }
+.digital-stamp__icon { display: grid; place-items: center; inline-size: var(--space-24); block-size: var(--space-24); }
+.digital-stamp__icon img { inline-size: 72.92%; block-size: 72.92%; }
+.digital-stamp__icon--lock img { block-size: 89.58%; }
+.digital-stamp__registration { display: flex; align-items: center; gap: var(--space-24); padding: var(--space-8) var(--space-24); background: var(--white); border-radius: var(--radius-md); font-size: var(--fs-text-md); line-height: var(--lh-text-md); }
+.digital-stamp__dga-logo { inline-size: var(--stamp-dga-width); block-size: var(--stamp-dga-height); flex-shrink: 0; }
+.digital-stamp__registration-text { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--space-12); min-inline-size: 0; }
+.digital-stamp__registration .link { max-inline-size: 100%; overflow-wrap: anywhere; }
+.digital-stamp__mobile-label { display: none; }
+@media (max-width: 767px) {
+ .digital-stamp { padding-inline: var(--space-16); }
+ .digital-stamp[open] { padding-block-end: var(--space-16); }
+ .digital-stamp__summary { flex-direction: column; gap: var(--space-8); align-items: flex-start; width: 100%; }
+ .digital-stamp__identity { gap: var(--space-8); }
+ .digital-stamp__explanations { flex-direction: column; }
+ .digital-stamp__explanation { flex: auto; inline-size: 100%; gap: var(--space-12); }
+ .digital-stamp__featured { inline-size: var(--space-32); block-size: var(--space-32); }
+ .digital-stamp__icon { inline-size: var(--space-16); block-size: var(--space-16); }
+ .digital-stamp__registration-text { flex-direction: column; }
+ .digital-stamp__desktop-label { display: none; }
+ .digital-stamp__mobile-label { display: inline; }
+}

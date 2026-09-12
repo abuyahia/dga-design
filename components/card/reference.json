@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "card",
     "description": "Card component with three type variants (Default, Expandable, Selectable) and interactive states. A composite component that composes Button and Checkbox child components.",
@@ -297,5 +297,7 @@
     "The .is-hover and .is-focused modifiers are showcase-only and must not be used in production HTML.",
     "Default type has no hover, focused, or disabled states — it is a static container.",
     "Expandable focused keeps white background; Selectable focused adds neutral-50 background — intentional design distinction."
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

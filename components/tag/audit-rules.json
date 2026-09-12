@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "component_id": "tag",
   "selector_root_tag": ".tag",
   "selector_root_status_tag": ".status-tag",
@@ -82,7 +82,7 @@
     {
       "id": "TAG-STRUCT-001",
       "standard_id": "PLATFORM-CODE-TAG-003",
-      "rule_type": "element_type_required",
+      "rule_type": "semantic_element_required",
       "category": "structure",
       "severity": "error",
       "validation_status": "not_run",
@@ -99,8 +99,9 @@
       },
       "message": ".tag or .status-tag root is not a <span> element. Non-interactive labels must use <span>.",
       "fix": "Change the root element to <span>. If the tag must be interactive (e.g., clickable/dismissible), consult the extended tag patterns in tag.contract.md §8.",
-      "standard_refs": ["PLATFORM-CODE-TAG-003"]
-    },
+      "standard_refs": ["PLATFORM-CODE-TAG-003"],
+  "source_rule_type": "element_type_required"
+},
 
     {
       "id": "TAG-STRUCT-002",
@@ -151,7 +152,7 @@
     {
       "id": "TAG-RTL-001",
       "standard_id": "PLATFORM-CODE-TAG-002",
-      "rule_type": "no_physical_properties",
+      "rule_type": "forbidden_css_properties",
       "category": "rtl",
       "severity": "warning",
       "validation_status": "not_run",
@@ -167,13 +168,14 @@
       },
       "message": "Physical directional padding or margin detected in tag.css. Replace with padding-inline or use [dir='rtl'] flex-direction reversal.",
       "fix": "Replace padding-left/padding-right with padding-inline. Use [dir='rtl'] { flex-direction: row-reverse; } for visual RTL adaptation.",
-      "standard_refs": ["PLATFORM-CODE-TAG-002"]
-    },
+      "standard_refs": ["PLATFORM-CODE-TAG-002"],
+  "source_rule_type": "no_physical_properties"
+},
 
     {
       "id": "TAG-USAGE-001",
       "standard_id": "PLATFORM-CODE-TAG-003",
-      "rule_type": "modifier_combination",
+      "rule_type": "class_combination",
       "category": "usage",
       "severity": "warning",
       "validation_status": "not_run",
@@ -188,13 +190,14 @@
       },
       "message": "Multiple style modifiers on .tag. Only one style modifier is allowed at a time.",
       "fix": "Remove all but one style modifier from the element.",
-      "standard_refs": ["PLATFORM-CODE-TAG-003"]
-    },
+      "standard_refs": ["PLATFORM-CODE-TAG-003"],
+  "source_rule_type": "modifier_combination"
+},
 
     {
       "id": "TAG-USAGE-002",
       "standard_id": "PLATFORM-CODE-TAG-004",
-      "rule_type": "modifier_combination",
+      "rule_type": "class_combination",
       "category": "usage",
       "severity": "warning",
       "validation_status": "not_run",
@@ -211,15 +214,16 @@
       },
       "message": "Multiple style or status modifiers on .status-tag. Only one of each is allowed.",
       "fix": "Remove extra modifiers. Apply exactly one style and at most one status modifier.",
-      "standard_refs": ["PLATFORM-CODE-TAG-004"]
-    },
+      "standard_refs": ["PLATFORM-CODE-TAG-004"],
+  "source_rule_type": "modifier_combination"
+},
 
     {
       "id": "TAG-TOKEN-002",
       "standard_id": "PLATFORM-CODE-TAG-001",
-      "rule_type": "token_migration",
+      "rule_type": "token_exists",
       "category": "tokens",
-      "severity": "medium",
+      "severity": "warning",
       "validation_status": "not_run",
       "title": "Component tokens must be moved from tag.css :root to token.css",
       "description": "The :root block in tag.css defines proposed component tokens as a temporary measure. These must be extracted to token.css before production deployment. This rule tracks migration completion.",
@@ -238,8 +242,11 @@
       },
       "message": "Component tokens --tag-* and --status-tag-* are not yet in token.css. Migration from tag.css :root block is pending.",
       "fix": "Move all --tag-* and --status-tag-* token definitions from tag.css :root block to token.css under a TAG component tokens section.",
-      "standard_refs": ["PLATFORM-CODE-TAG-001"]
-    }
+      "standard_refs": ["PLATFORM-CODE-TAG-001"],
+  "source_rule_type": "token_migration",
+  "source_severity": "medium"
+}
 
-  ]
+  ],
+  "$schema": "../../standards/schemas/component-audit.schema.json"
 }

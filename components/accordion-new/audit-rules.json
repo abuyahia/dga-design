@@ -1,58 +1,78 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "component": "accordion-new",
   "rules": [
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-001",
-      "severity": "high",
+      "severity": "error",
       "category": "structure",
       "description": "Trigger must be a native <button> element",
       "selector": ".accordion__trigger",
       "expected_element": "button",
-      "rationale": "Native button provides keyboard accessibility (Enter/Space), implicit role=button, and disabled semantics without additional ARIA."
-    },
+      "rationale": "Native button provides keyboard accessibility (Enter/Space), implicit role=button, and disabled semantics without additional ARIA.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "high",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-002",
-      "severity": "high",
+      "severity": "error",
       "category": "accessibility",
       "description": "Trigger must have aria-expanded attribute",
       "selector": ".accordion__trigger",
       "required_attribute": "aria-expanded",
       "allowed_values": ["true", "false"],
-      "rationale": "Screen readers announce the expanded/collapsed state to users."
-    },
+      "rationale": "Screen readers announce the expanded/collapsed state to users.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "high",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-003",
-      "severity": "high",
+      "severity": "error",
       "category": "accessibility",
       "description": "Trigger must have aria-controls referencing the panel id",
       "selector": ".accordion__trigger",
       "required_attribute": "aria-controls",
-      "rationale": "Programmatically links trigger to its controlled panel."
-    },
+      "rationale": "Programmatically links trigger to its controlled panel.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "high",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-004",
-      "severity": "high",
+      "severity": "error",
       "category": "accessibility",
       "description": "Panel must have role=region and aria-labelledby",
       "selector": ".accordion__panel",
       "required_attributes": ["role", "aria-labelledby"],
       "expected_values": {"role": "region"},
-      "rationale": "Marks the panel as a landmark region labeled by its trigger for screen reader navigation."
-    },
+      "rationale": "Marks the panel as a landmark region labeled by its trigger for screen reader navigation.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "high",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-005",
-      "severity": "high",
+      "severity": "error",
       "category": "accessibility",
       "description": "Icon must have aria-hidden=true",
       "selector": ".accordion__icon",
       "required_attribute": "aria-hidden",
       "expected_value": "true",
-      "rationale": "Icon is decorative — screen readers must not announce it."
-    },
+      "rationale": "Icon is decorative — screen readers must not announce it.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "high",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-006",
-      "severity": "high",
+      "severity": "error",
       "category": "template",
       "description": "Every trigger class must have a corresponding CSS rule",
       "checks": [
@@ -63,81 +83,117 @@
         ".accordion__trigger[disabled]",
         ".accordion__trigger[aria-expanded='true'] + .accordion__panel"
       ],
-      "rationale": "Template/CSS mismatch causes broken states."
-    },
+      "rationale": "Template/CSS mismatch causes broken states.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "high",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-007",
-      "severity": "medium",
+      "severity": "warning",
       "category": "tokens",
       "description": "Component CSS must not use primitive tokens directly in selectors",
       "forbidden_patterns": ["var(--sa-", "var(--gray-", "var(--blue-"],
-      "rationale": "Component CSS must speak component-level semantic tokens."
-    },
+      "rationale": "Component CSS must speak component-level semantic tokens.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "medium",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-008",
-      "severity": "medium",
+      "severity": "warning",
       "category": "tokens",
       "description": "No hardcoded hex, rgba, or pixel values in component selectors",
       "forbidden_patterns": ["#[0-9a-fA-F]{3,6}", "rgba(", "rgb("],
       "exceptions": ["Custom property fallback values in :root or .accordion {} token bridge block are permitted"],
-      "rationale": "All visual values must use CSS custom properties to support theming."
-    },
+      "rationale": "All visual values must use CSS custom properties to support theming.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "medium",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-009",
-      "severity": "medium",
+      "severity": "warning",
       "category": "accessibility",
       "description": "Focus indicator must be visible — :focus-visible must not be removed without replacement",
       "selector": ".accordion__trigger:focus-visible",
       "forbidden": "outline: none without a ::after replacement",
-      "rationale": "2px solid focus ring required per Figma spec and accessibility standards."
-    },
+      "rationale": "2px solid focus ring required per Figma spec and accessibility standards.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "medium",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-010",
-      "severity": "medium",
+      "severity": "warning",
       "category": "states",
       "description": "Disabled trigger must not show hover or pressed backgrounds",
       "selector": ".accordion__trigger[disabled]:hover::before, .accordion__trigger[disabled]:active::before",
       "expected": "background: transparent (suppressed by :not([disabled]) guard)",
-      "rationale": "Disabled controls must not respond to pointer interaction."
-    },
+      "rationale": "Disabled controls must not respond to pointer interaction.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "medium",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-011",
-      "severity": "medium",
+      "severity": "warning",
       "category": "structure",
       "description": "Flush accordion parent must have overflow:clip or overflow:hidden",
       "applies_to": ".accordion--flush",
       "requirement": "Parent element must establish a containing block with clipping",
-      "rationale": "Flush interaction background bleeds via negative inset — parent must clip or bleed will be visible outside bounds."
-    },
+      "rationale": "Flush interaction background bleeds via negative inset — parent must clip or bleed will be visible outside bounds.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "medium",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-012",
-      "severity": "low",
+      "severity": "info",
       "category": "template",
       "description": "Title element must be a <span> with class .accordion__title",
       "selector": ".accordion__title",
       "expected_element": "span",
-      "rationale": "Heading semantics (h1-h6) are provided by the surrounding page context, not by the accordion title element itself."
-    },
+      "rationale": "Heading semantics (h1-h6) are provided by the surrounding page context, not by the accordion title element itself.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "low",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-013",
-      "severity": "low",
+      "severity": "info",
       "category": "rtl",
       "description": "All horizontal spacing must use CSS logical properties",
       "required_properties": ["padding-inline", "padding-inline-start", "padding-inline-end", "inset-inline", "margin-inline"],
       "forbidden_properties": ["padding-left", "padding-right", "left", "right", "margin-left", "margin-right"],
-      "rationale": "CSS logical properties ensure automatic RTL support via parent dir=rtl."
-    },
+      "rationale": "CSS logical properties ensure automatic RTL support via parent dir=rtl.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "source_severity": "low",
+  "validation_status": "not_run"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-014",
-      "severity": "advisory",
+      "severity": "info",
       "category": "animation",
       "description": "Icon rotation transition should respect prefers-reduced-motion",
       "recommendation": "@media (prefers-reduced-motion: reduce) { .accordion__icon { transition: none; } }",
-      "rationale": "Users who prefer reduced motion should not see rotation animation."
-    },
+      "rationale": "Users who prefer reduced motion should not see rotation animation.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "validation_status": "not_run",
+  "source_severity": "advisory"
+},
     {
       "id": "PLATFORM-CODE-ACCORDION-RULE-015",
-      "severity": "advisory",
+      "severity": "info",
       "category": "tokens",
       "description": "Component-level tokens should be added to token.css",
       "tokens_pending": [
@@ -149,7 +205,14 @@
         "--accordion-bg-pressed",
         "--accordion-focus-ring-color"
       ],
-      "rationale": "Centralizing tokens in token.css enables theming and consistent overrides."
-    }
-  ]
+      "rationale": "Centralizing tokens in token.css enables theming and consistent overrides.",
+  "source_rule_type": null,
+  "rule_type": "manual_review",
+  "validation_status": "not_run",
+  "source_severity": "advisory"
+}
+  ],
+  "component_id": "accordion-new",
+  "$schema": "../../standards/schemas/component-audit.schema.json",
+  "rule_types_registry": "../../standards/audit-rule-types.json"
 }

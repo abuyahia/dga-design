@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "component": "notification-toast",
   "rules": [
     {
@@ -10,8 +10,10 @@
       "target_file": "notification-toast.css",
       "description": "All colors, spacing, radius, shadow, and typography values must reference --notification-toast-* tokens, not raw hex, rgba, px, or rem literals.",
       "validation_status": "not_run",
-      "check": "CSS component selectors must not contain hex colors, rgba(), raw px spacing, or hardcoded font-size values outside of var() expressions."
-    },
+      "check": "CSS component selectors must not contain hex colors, rgba(), raw px spacing, or hardcoded font-size values outside of var() expressions.",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-STRUCT-001",
       "title": "Root element must not be interactive",
@@ -20,8 +22,10 @@
       "target_file": "template.html",
       "description": "The .notification-toast root element must be a <div>, not a <button>, <a>, or other interactive element.",
       "validation_status": "not_run",
-      "check": "document.querySelectorAll('.notification-toast') must all be DIV elements."
-    },
+      "check": "document.querySelectorAll('.notification-toast') must all be DIV elements.",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-STRUCT-002",
       "title": "Root must carry role=alert or role=status",
@@ -30,8 +34,10 @@
       "target_file": "template.html",
       "description": "Every .notification-toast element must carry role=alert or role=status as a live region announcement mechanism.",
       "validation_status": "not_run",
-      "check": "document.querySelectorAll('.notification-toast') must all have getAttribute('role') equal to 'alert' or 'status'."
-    },
+      "check": "document.querySelectorAll('.notification-toast') must all have getAttribute('role') equal to 'alert' or 'status'.",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-STRUCT-003",
       "title": "Type modifier class must be present",
@@ -40,8 +46,10 @@
       "target_file": "template.html",
       "description": "Every .notification-toast must carry exactly one type modifier: .notification-toast--neutral, --info, --critical-error, --warning, or --success.",
       "validation_status": "not_run",
-      "check": "document.querySelectorAll('.notification-toast') must all have at least one class matching /notification-toast--(neutral|info|critical-error|warning|success)/."
-    },
+      "check": "document.querySelectorAll('.notification-toast') must all have at least one class matching /notification-toast--(neutral|info|critical-error|warning|success)/.",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-A11Y-001",
       "title": "Close button must have aria-label",
@@ -50,8 +58,10 @@
       "target_file": "template.html",
       "description": "The .notification-toast__close button must carry a non-empty aria-label.",
       "validation_status": "not_run",
-      "check": "document.querySelectorAll('.notification-toast__close') must all have a non-empty getAttribute('aria-label')."
-    },
+      "check": "document.querySelectorAll('.notification-toast__close') must all have a non-empty getAttribute('aria-label').",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-A11Y-002",
       "title": "Icon SVG must be aria-hidden",
@@ -60,8 +70,10 @@
       "target_file": "template.html",
       "description": "The SVG inside .notification-toast__icon-wrap must carry aria-hidden=true.",
       "validation_status": "not_run",
-      "check": "document.querySelectorAll('.notification-toast__icon-wrap svg') must all have getAttribute('aria-hidden') === 'true'."
-    },
+      "check": "document.querySelectorAll('.notification-toast__icon-wrap svg') must all have getAttribute('aria-hidden') === 'true'.",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-A11Y-003",
       "title": "Close button icon must be aria-hidden",
@@ -70,8 +82,10 @@
       "target_file": "template.html",
       "description": "The .btn__icon span inside .notification-toast__close must carry aria-hidden=true.",
       "validation_status": "not_run",
-      "check": "document.querySelectorAll('.notification-toast__close .btn__icon') must all have getAttribute('aria-hidden') === 'true'."
-    },
+      "check": "document.querySelectorAll('.notification-toast__close .btn__icon') must all have getAttribute('aria-hidden') === 'true'.",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-A11Y-004",
       "title": "Action buttons must have visible text",
@@ -80,8 +94,10 @@
       "target_file": "template.html",
       "description": "Each .btn inside .notification-toast__actions must have a non-empty .btn__text element.",
       "validation_status": "not_run",
-      "check": "document.querySelectorAll('.notification-toast__actions .btn') must all contain a .btn__text with non-empty textContent."
-    },
+      "check": "document.querySelectorAll('.notification-toast__actions .btn') must all contain a .btn__text with non-empty textContent.",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-RTL-001",
       "title": "No physical directional properties in component CSS",
@@ -90,8 +106,10 @@
       "target_file": "notification-toast.css",
       "description": "Component CSS must use logical properties (padding-inline, inset-inline-end) instead of physical directional properties (padding-left, right) for RTL compatibility.",
       "validation_status": "not_run",
-      "check": "notification-toast.css must not contain padding-left, padding-right, margin-left, margin-right, left:, right: in component selectors (except in [dir='rtl'] overrides if needed)."
-    },
+      "check": "notification-toast.css must not contain padding-left, padding-right, margin-left, margin-right, left:, right: in component selectors (except in [dir='rtl'] overrides if needed).",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-CSS-001",
       "title": "All template classes must exist in component CSS",
@@ -100,8 +118,10 @@
       "target_file": "notification-toast.css",
       "description": "Every CSS class used in template.html must be defined in notification-toast.css. No orphan template classes.",
       "validation_status": "not_run",
-      "check": "Extract all class names from template.html. Each must appear in notification-toast.css."
-    },
+      "check": "Extract all class names from template.html. Each must appear in notification-toast.css.",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-CSS-002",
       "title": "No orphan CSS selectors",
@@ -110,8 +130,10 @@
       "target_file": "notification-toast.css",
       "description": "Every CSS selector in notification-toast.css must correspond to a class used in template.html or be a valid state/modifier selector.",
       "validation_status": "not_run",
-      "check": "Extract all selectors from notification-toast.css. Verify each base class name appears in template.html."
-    },
+      "check": "Extract all selectors from notification-toast.css. Verify each base class name appears in template.html.",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+},
     {
       "id": "TOAST-CONTENT-001",
       "title": "Lead text must not be empty",
@@ -120,7 +142,12 @@
       "target_file": "template.html",
       "description": "The .notification-toast__lead element must contain non-empty text content.",
       "validation_status": "not_run",
-      "check": "document.querySelectorAll('.notification-toast__lead') must all have non-empty textContent.trim()."
-    }
-  ]
+      "check": "document.querySelectorAll('.notification-toast__lead') must all have non-empty textContent.trim().",
+  "source_rule_type": null,
+  "rule_type": "manual_review"
+}
+  ],
+  "component_id": "notification-toast",
+  "$schema": "../../standards/schemas/component-audit.schema.json",
+  "rule_types_registry": "../../standards/audit-rule-types.json"
 }

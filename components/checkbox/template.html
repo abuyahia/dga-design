@@ -5,8 +5,8 @@
 
   USAGE NOTES:
   - Always provide an accessible name via aria-label or a wrapping label in form-field.
-  - For indeterminate state: JS must set input.indeterminate = true AND aria-checked="mixed".
-  - For read-only: use .checkbox--readonly + aria-readonly="true" on input. Do NOT use disabled.
+  - For indeterminate state: initCore sets the native indeterminate property.
+  - For read-only: use .checkbox--readonly + aria-readonly="true" on input. Use disabled data-readonly-fallback until initCore runs.
   - For disabled: use .checkbox--disabled + disabled attribute on input.
   - Size modifiers: --xs (16px), --sm (20px), --md (24px).
   - Style modifiers: --primary (default, green), --neutral (dark slate).
@@ -71,7 +71,7 @@
     input.setAttribute('aria-checked', 'mixed');
 -->
 <label class="checkbox checkbox--md checkbox--primary">
-  <input type="checkbox" class="checkbox__input js-indeterminate" aria-label="Select all" aria-checked="mixed" />
+  <input type="checkbox" class="checkbox__input js-indeterminate" aria-label="Select all" data-indeterminate />
   <span class="checkbox__box" aria-hidden="true">
     <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -118,7 +118,7 @@
 
 <!-- Read-only / Unchecked / Primary / Medium -->
 <label class="checkbox checkbox--md checkbox--primary checkbox--readonly">
-  <input type="checkbox" class="checkbox__input" aria-label="Option label" aria-readonly="true" tabindex="0" />
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" aria-readonly="true" disabled data-readonly-fallback tabindex="0" />
   <span class="checkbox__box" aria-hidden="true">
     <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -131,7 +131,7 @@
 
 <!-- Read-only / Checked / Primary / Medium -->
 <label class="checkbox checkbox--md checkbox--primary checkbox--readonly">
-  <input type="checkbox" class="checkbox__input" aria-label="Option label" aria-readonly="true" checked tabindex="0" />
+  <input type="checkbox" class="checkbox__input" aria-label="Option label" aria-readonly="true" disabled data-readonly-fallback checked tabindex="0" />
   <span class="checkbox__box" aria-hidden="true">
     <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -174,7 +174,7 @@
 
 <!-- Disabled / Indeterminate / Primary / Medium -->
 <label class="checkbox checkbox--md checkbox--primary checkbox--disabled">
-  <input type="checkbox" class="checkbox__input js-indeterminate-disabled" aria-label="Option label" disabled aria-checked="mixed" />
+  <input type="checkbox" class="checkbox__input js-indeterminate-disabled" aria-label="Option label" disabled data-indeterminate />
   <span class="checkbox__box" aria-hidden="true">
     <svg class="checkbox__checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -185,9 +185,6 @@
   </span>
 </label>
 
-<script>
-  /* Set indeterminate state via JS — required for :indeterminate CSS pseudo-class */
-  document.querySelectorAll('.js-indeterminate, .js-indeterminate-disabled').forEach(function(input) {
-    input.indeterminate = true;
-  });
-</script>
+
+
+<script type="module">import {initCore} from "../../scripts/core/index.js"; initCore();</script>

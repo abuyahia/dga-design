@@ -1,0 +1,74 @@
+{
+  "desktop-imgLine1.svg": {
+    "sha256": "9af3323b777897a5104824d4e2952b5309c13a5b679edd04af2f505fe985da7c",
+    "bytes": 237
+  },
+  "desktop-imgElements11.svg": {
+    "sha256": "76ad31865676baf8cbfc9fd5730494617b82cf09ab3ddf5ffd3d8664a6d19975",
+    "bytes": 1478
+  },
+  "desktop-imgElements10.svg": {
+    "sha256": "302c447a13c50ad86035111b1d4990b66f180ff8e51d563abfbbfa3bf62157e5",
+    "bytes": 2677
+  },
+  "mobile-imgElements1.svg": {
+    "sha256": "7dd0ef3ce245a70da5baaf4c1801876f504b985e2995f5155d8486e6f0412f2f",
+    "bytes": 1477
+  },
+  "mobile-imgElements.svg": {
+    "sha256": "4a20090db62268ead0b6d2f6a8fb6cd9efb363ddea3465bc99e2c748186f94a5",
+    "bytes": 1475
+  },
+  "desktop-imgElements8.svg": {
+    "sha256": "a393209e2145a7ced85d7fb2c968e1aa9127a51f98207cad76750cbc74ce225e",
+    "bytes": 992
+  },
+  "mobile-imgResizeHandler.svg": {
+    "sha256": "3018f767e621ee9795be948255a269a0c0a3fc05b021280727608df0b867a4ce",
+    "bytes": 540
+  },
+  "desktop-imgElements9.svg": {
+    "sha256": "12336536e30b7471386552b5cb000a9124e6d02e43a35079461e11f57e908ec2",
+    "bytes": 5706
+  },
+  "mobile-imgElements2.svg": {
+    "sha256": "76ad31865676baf8cbfc9fd5730494617b82cf09ab3ddf5ffd3d8664a6d19975",
+    "bytes": 1478
+  },
+  "desktop-imgElements4.svg": {
+    "sha256": "8b0fedac724bd4040794d038a00b7b0ad82c4160388347f2589ea5d747b6acfd",
+    "bytes": 2930
+  },
+  "desktop-imgElements5.svg": {
+    "sha256": "77f236c213be750c8bc45909ce9cd58fa08009f59a3d089f302df5757db5315b",
+    "bytes": 2648
+  },
+  "desktop-imgResizeHandler.svg": {
+    "sha256": "3018f767e621ee9795be948255a269a0c0a3fc05b021280727608df0b867a4ce",
+    "bytes": 540
+  },
+  "desktop-imgElements7.svg": {
+    "sha256": "9c379214ff0e37e9b3fea8eea031401660fc0b40bc1de9dea1ed783335cce850",
+    "bytes": 1656
+  },
+  "desktop-imgElements6.svg": {
+    "sha256": "4a738857298666c38e92aceeb0bb01862e89d651b90d3bfebd7c0512cf530f86",
+    "bytes": 1700
+  },
+  "desktop-imgElements2.svg": {
+    "sha256": "eacb35bbfe4220f9497d8c035dff5a88ba169f8586617f38e6504afbfcaeb96d",
+    "bytes": 3509
+  },
+  "desktop-imgElements.svg": {
+    "sha256": "4a20090db62268ead0b6d2f6a8fb6cd9efb363ddea3465bc99e2c748186f94a5",
+    "bytes": 1475
+  },
+  "desktop-imgElements3.svg": {
+    "sha256": "f32649ed3bea6053269cdb98a8865773e76190c2268943af3dc7b3d33148889d",
+    "bytes": 2097
+  },
+  "desktop-imgElements1.svg": {
+    "sha256": "7dd0ef3ce245a70da5baaf4c1801876f504b985e2995f5155d8486e6f0412f2f",
+    "bytes": 1477
+  }
+}

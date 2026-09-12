@@ -1,0 +1,17 @@
+<!doctype html><html lang="ar" dir="rtl"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Core qualification</title>
+<link rel="stylesheet" href="../../token.css"><link rel="stylesheet" href="../../styles/base/global.css"><link rel="stylesheet" href="../../styles/base/layout.css"><link rel="stylesheet" href="../../styles/base/accessibility.css">
+<link rel="stylesheet" href="../../components/button/button.css"><link rel="stylesheet" href="../../components/link/link.css"><link rel="stylesheet" href="../../components/label/label.css"><link rel="stylesheet" href="../../components/text-input/text-input.css"><link rel="stylesheet" href="../../components/checkbox/checkbox-2.css"><link rel="stylesheet" href="../../components/accordion-new/accordion-new.css">
+<body><main class="ds-container ds-stack"><h1>اختبار المكونات الأساسية</h1>
+<button id="action" class="btn btn--primary" type="button">تنفيذ الطلب</button><button id="disabled" class="btn" aria-disabled="true" type="button">غير متاح</button>
+<a class="link" href="#field">انتقل إلى الحقل</a><a id="disabled-link" class="link" role="link" aria-disabled="true" tabindex="0">رابط غير متاح</a>
+<label class="label" for="field"><span class="label__text">اسم المستفيد</span></label><div class="text-input"><div class="text-input__field"><input id="field" class="text-input__input" required></div></div>
+<div class="text-input text-input--readonly"><label for="readonly">رقم الطلب</label><div class="text-input__field"><input class="text-input__input" id="readonly" readonly value="123"></div></div>
+<form id="form"><label class="checkbox checkbox--readonly"><input id="check-readonly" class="checkbox__input" type="checkbox" checked disabled data-readonly-fallback aria-label="موافقة للقراءة فقط"><span class="checkbox__box"></span></label><label class="checkbox"><input id="mixed" class="checkbox__input" type="checkbox" data-indeterminate aria-label="اختيار جزئي"><span class="checkbox__box"></span></label></form>
+<section class="accordion"><h2 class="accordion__heading"><button id="trigger" class="accordion__trigger" type="button" aria-expanded="true" aria-controls="panel" data-initial-expanded="false" disabled data-enhancement-disabled><span class="accordion__title">متطلبات الخدمة</span></button></h2><div class="accordion__panel" id="panel"><p class="accordion__body">المحتوى متاح دون JavaScript.</p></div></section>
+<section class="accordion"><h2 class="accordion__heading"><button id="trigger2" class="accordion__trigger" type="button" aria-expanded="true" aria-controls="panel2" disabled data-enhancement-disabled>الرسوم</button></h2><div class="accordion__panel" id="panel2">خدمة مجانية</div></section>
+</main><script type="module">
+import {initCore} from '../../scripts/core/index.js';
+window.initCore=initCore;
+if (!location.search.includes('nojs')) window.dispose=initCore();
+window.ready=true;
+</script></body></html>

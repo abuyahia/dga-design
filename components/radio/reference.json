@@ -1,0 +1,37 @@
+{
+  "schema_version": "2.1.0",
+  "component": {
+    "name": "radio",
+    "description": "Native radio control with official DGA visual states."
+  },
+  "source": {
+    "url": "https://design.dga.gov.sa/guidelines/components/forms-and-inputs/radio",
+    "reviewed": "2026-09-10",
+    "visual": "https://design.dga.gov.sa/radio/behaviors-en.svg"
+  },
+  "axes": [
+    "state",
+    "selection",
+    "color"
+  ],
+  "axis_values": {
+    "state": [
+      "default",
+      "hover",
+      "pressed",
+      "focused",
+      "disabled"
+    ],
+    "selection": [
+      "unchecked",
+      "checked"
+    ],
+    "color": [
+      "brand",
+      "neutral"
+    ]
+  },
+  "variants": [],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
+}

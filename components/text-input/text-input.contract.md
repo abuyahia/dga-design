@@ -1,3 +1,5 @@
+> تحديث الدفعة 3.1: [العقد التنفيذي المشترك](../../docs/core-qualification.md) يحدد السلوك الحالي ويعلو على أوصاف الحالات التاريخية أدناه.
+
 # Text Input — Component Contract
 
 ```
@@ -43,6 +45,7 @@ It is NOT for:
     .text-input__field::after   ← focus/pressed underline accent (2px, absolute bottom)
     .text-input__inner          ← inner padding container (inline padding + flex)
       .text-input__input        ← native <input> element
+      .text-input__icon [optional] ← decorative input icon
 ```
 
 **Slot rules:**
@@ -53,6 +56,7 @@ It is NOT for:
 | `.text-input__field` | Required | Do not remove — hosts underline, border, and state styling |
 | `.text-input__inner` | Required | Do not remove — provides padding |
 | `.text-input__input` | Required | Must be a native `<input>` element |
+| `.text-input__icon` | Optional | Decorative SVG inside `.text-input__inner`; use `aria-hidden="true"` |
 
 ---
 

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "component_id": "tab",
   "generated": "2026-06-09",
   "description": "Static audit rules for the Tab component. Rules are checked against rendered HTML. All rule IDs are globally unique within the platform audit system.",
@@ -21,8 +21,11 @@
       },
       "fix": "Add aria-label='[Group name]' or aria-labelledby='[heading-id]' to the .tab-list container.",
       "example_fail": "<div class=\"tab-list tab-list--h\" role=\"tablist\">",
-      "example_pass": "<div class=\"tab-list tab-list--h\" role=\"tablist\" aria-label=\"Account settings\">"
-    },
+      "example_pass": "<div class=\"tab-list tab-list--h\" role=\"tablist\" aria-label=\"Account settings\">",
+  "source_rule_type": "attribute_presence",
+  "rule_type": "attribute_required",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-A11Y-002",
@@ -43,8 +46,11 @@
       },
       "fix": "Add role='tab' and aria-selected='true' (or 'false') to every .tab button.",
       "example_fail": "<button class=\"tab tab--h\" aria-controls=\"panel-1\" id=\"tab-1\">",
-      "example_pass": "<button class=\"tab tab--h\" role=\"tab\" aria-selected=\"true\" aria-controls=\"panel-1\" id=\"tab-1\">"
-    },
+      "example_pass": "<button class=\"tab tab--h\" role=\"tab\" aria-selected=\"true\" aria-controls=\"panel-1\" id=\"tab-1\">",
+  "source_rule_type": "attribute_presence",
+  "rule_type": "attribute_required",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-A11Y-003",
@@ -65,8 +71,11 @@
       },
       "fix": "Add role='tabpanel', id='panel-id', and aria-labelledby='tab-id' to each panel. Ensure the tab's aria-controls='panel-id' and id='tab-id' match.",
       "example_fail": "<div id=\"panel-1\">Content</div>",
-      "example_pass": "<div class=\"tab-panel\" role=\"tabpanel\" id=\"panel-1\" aria-labelledby=\"tab-1\">Content</div>"
-    },
+      "example_pass": "<div class=\"tab-panel\" role=\"tabpanel\" id=\"panel-1\" aria-labelledby=\"tab-1\">Content</div>",
+  "source_rule_type": "attribute_presence",
+  "rule_type": "attribute_required",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-A11Y-004",
@@ -84,8 +93,11 @@
       },
       "fix": "Ensure tab.css is loaded and applies outline:none to .tab. Do not override the custom ::after focus ring via additional stylesheets.",
       "example_fail": ".tab { /* no outline reset */ }",
-      "example_pass": ".tab { outline: none; } .tab:focus-visible::after { display: block; }"
-    },
+      "example_pass": ".tab { outline: none; } .tab:focus-visible::after { display: block; }",
+  "source_rule_type": "css_property",
+  "rule_type": "css_property_check",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-A11Y-005",
@@ -102,8 +114,11 @@
       },
       "fix": "Add data-tabs to the tab group wrapper. Implement a keydown listener on the tablist that handles ArrowRight/Left (horizontal) or ArrowUp/Down (vertical), Home, and End.",
       "example_fail": "<div id=\"tabs\" class=\"tab-list tab-list--h\" role=\"tablist\">",
-      "example_pass": "<div id=\"tabs\" data-tabs><div class=\"tab-list tab-list--h\" role=\"tablist\">..."
-    },
+      "example_pass": "<div id=\"tabs\" data-tabs><div class=\"tab-list tab-list--h\" role=\"tablist\">...",
+  "source_rule_type": "js_hook_presence",
+  "rule_type": "keyboard_support_required",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-A11Y-006",
@@ -120,8 +135,10 @@
       },
       "fix": "Set tabindex='-1' on all non-selected tabs. The selected tab should have tabindex='0' (or omit tabindex). JavaScript must update tabindex values on selection change.",
       "example_fail": "<button role=\"tab\" aria-selected=\"true\" tabindex=\"-1\">First</button>",
-      "example_pass": "<button role=\"tab\" aria-selected=\"true\">First</button>\n<button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Second</button>"
-    },
+      "example_pass": "<button role=\"tab\" aria-selected=\"true\">First</button>\n<button role=\"tab\" aria-selected=\"false\" tabindex=\"-1\">Second</button>",
+  "rule_type": "roving_tabindex",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-A11Y-007",
@@ -141,8 +158,11 @@
       },
       "fix": "Add aria-orientation='vertical' to every .tab-list--v container.",
       "example_fail": "<div class=\"tab-list tab-list--v\" role=\"tablist\" aria-label=\"Settings\">",
-      "example_pass": "<div class=\"tab-list tab-list--v\" role=\"tablist\" aria-label=\"Settings\" aria-orientation=\"vertical\">"
-    },
+      "example_pass": "<div class=\"tab-list tab-list--v\" role=\"tablist\" aria-label=\"Settings\" aria-orientation=\"vertical\">",
+  "source_rule_type": "attribute_presence",
+  "rule_type": "attribute_required",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-STRUCT-001",
@@ -159,8 +179,11 @@
       },
       "fix": "Change the element to <button type='button'>. Never use <div role='button'> or <a> for a tab button.",
       "example_fail": "<div class=\"tab tab--h\" role=\"tab\">Tab</div>",
-      "example_pass": "<button class=\"tab tab--h\" role=\"tab\" type=\"button\">Tab</button>"
-    },
+      "example_pass": "<button class=\"tab tab--h\" role=\"tab\" type=\"button\">Tab</button>",
+  "source_rule_type": "element_type",
+  "rule_type": "semantic_element_required",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-STRUCT-002",
@@ -177,8 +200,11 @@
       },
       "fix": "Remove any class-based selected state. Use aria-selected='true' only. JavaScript should set aria-selected on state change.",
       "example_fail": "<button class=\"tab tab--h is-selected\" role=\"tab\">",
-      "example_pass": "<button class=\"tab tab--h\" role=\"tab\" aria-selected=\"true\">"
-    },
+      "example_pass": "<button class=\"tab tab--h\" role=\"tab\" aria-selected=\"true\">",
+  "source_rule_type": "class_absence",
+  "rule_type": "class_forbidden",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-STRUCT-003",
@@ -196,8 +222,10 @@
       },
       "fix": "Add exactly one orientation modifier: .tab--h for horizontal tabs, .tab--v for vertical tabs.",
       "example_fail": "<button class=\"tab\" role=\"tab\">Tab</button>",
-      "example_pass": "<button class=\"tab tab--h\" role=\"tab\">Tab</button>"
-    },
+      "example_pass": "<button class=\"tab tab--h\" role=\"tab\">Tab</button>",
+  "rule_type": "class_combination",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-TOKEN-001",
@@ -215,8 +243,11 @@
       },
       "fix": "Replace hardcoded values with --tab-* tokens. If the token does not exist in token.css, add it to the :root block in tab.css with a primitive fallback and note a TODO comment.",
       "example_fail": ".tab--h { color: #384250; }",
-      "example_pass": ".tab--h { color: var(--tab-text-idle); }"
-    },
+      "example_pass": ".tab--h { color: var(--tab-text-idle); }",
+  "source_rule_type": "css_value_pattern",
+  "rule_type": "no_hardcoded_values",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-RTL-001",
@@ -234,8 +265,11 @@
       },
       "fix": "Pair each `left` with `[dir='rtl'] ... { left: auto; right: ...; }` or switch to logical CSS properties (`inset-inline-start`).",
       "example_fail": ".tab--v::before { left: 0; }",
-      "example_pass": ".tab--v::before { left: 0; } [dir='rtl'] .tab--v::before { left: auto; right: 0; }"
-    },
+      "example_pass": ".tab--v::before { left: 0; } [dir='rtl'] .tab--v::before { left: auto; right: 0; }",
+  "source_rule_type": "css_property_pattern",
+  "rule_type": "css_property_check",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-RTL-002",
@@ -255,8 +289,11 @@
       },
       "fix": "Add aria-hidden='true' to .tab__icon and to any <svg> directly inside a tab.",
       "example_fail": "<span class=\"tab__icon\"><svg>...</svg></span>",
-      "example_pass": "<span class=\"tab__icon\" aria-hidden=\"true\"><svg>...</svg></span>"
-    },
+      "example_pass": "<span class=\"tab__icon\" aria-hidden=\"true\"><svg>...</svg></span>",
+  "source_rule_type": "attribute_presence",
+  "rule_type": "attribute_required",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-USAGE-001",
@@ -274,8 +311,10 @@
       },
       "fix": "Ensure exactly one tab has aria-selected='true' and all others have aria-selected='false' in each tablist.",
       "example_fail": "<button role=\"tab\" aria-selected=\"true\">A</button><button role=\"tab\" aria-selected=\"true\">B</button>",
-      "example_pass": "<button role=\"tab\" aria-selected=\"true\">A</button><button role=\"tab\" aria-selected=\"false\">B</button>"
-    },
+      "example_pass": "<button role=\"tab\" aria-selected=\"true\">A</button><button role=\"tab\" aria-selected=\"false\">B</button>",
+  "rule_type": "count",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-USAGE-002",
@@ -292,8 +331,11 @@
       },
       "fix": "Use .tab--h inside .tab-list--h. Use .tab--v inside .tab-list--v. Never mix.",
       "example_fail": "<div class=\"tab-list tab-list--h\"><button class=\"tab tab--v\">Tab</button></div>",
-      "example_pass": "<div class=\"tab-list tab-list--h\"><button class=\"tab tab--h\">Tab</button></div>"
-    },
+      "example_pass": "<div class=\"tab-list tab-list--h\"><button class=\"tab tab--h\">Tab</button></div>",
+  "source_rule_type": "child_parent_class_match",
+  "rule_type": "class_combination",
+  "validation_status": "not_run"
+},
 
     {
       "id": "TAB-USAGE-003",
@@ -310,8 +352,10 @@
       },
       "fix": "For site navigation, use a Nav component or a <nav> element with <a> links instead of Tab.",
       "example_fail": "<nav><div class=\"tab-list tab-list--h\" role=\"tablist\">...</div></nav>",
-      "example_pass": "<div id=\"main-content\"><div class=\"tab-list tab-list--h\" role=\"tablist\">...</div></div>"
-    }
+      "example_pass": "<div id=\"main-content\"><div class=\"tab-list tab-list--h\" role=\"tablist\">...</div></div>",
+  "rule_type": "ancestor_check",
+  "validation_status": "not_run"
+}
 
   ],
 
@@ -328,5 +372,7 @@
       "rtl":           2,
       "usage":         3
     }
-  }
+  },
+  "$schema": "../../standards/schemas/component-audit.schema.json",
+  "rule_types_registry": "../../standards/audit-rule-types.json"
 }

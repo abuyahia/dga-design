@@ -1,0 +1,18 @@
+/* Test presentation only; not shipped as a page or component. */
+.fixture { padding-block: var(--space-32); }
+.fixture__cell {
+  padding: var(--space-24);
+  background: var(--color-surface-alt);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+}
+.fixture textarea { inline-size: 100%; min-inline-size: 0; }
+.fixture__range { --fill-start: 25%; --fill-end: 75%; inline-size: 100%; }
+.fixture__range .slider__control-wrap { inline-size: 100%; }
+.motion-probe {
+  inline-size: var(--space-24);
+  block-size: var(--space-24);
+  background: var(--color-primary);
+  animation: fixture-motion var(--transition-slow) var(--ease-linear) infinite;
+}
+@keyframes fixture-motion { to { transform: rotate(360deg); } }

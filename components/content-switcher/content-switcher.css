@@ -21,17 +21,17 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  min-width: 76px;
+  min-width: var(--content-switcher-item-min-width);
   cursor: pointer;
   font-family: var(--content-switcher-font-family);
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--font-weight-body);
   text-align: center;
   white-space: nowrap;
   background: var(--content-switcher-item-bg-default);
   color: var(--content-switcher-item-text-default);
   border-block: none;
-  border-inline: 0.5px solid var(--content-switcher-item-border);
+  border-inline: var(--content-switcher-item-border-inline-0p5px) solid var(--content-switcher-item-border);
 }
 
 /* First item: left-cap rounding, no inline-start border */
@@ -75,30 +75,30 @@
 }
 
 .content-switcher__item:focus-visible {
-  outline: 2px solid var(--content-switcher-focus-ring);
+  outline: var(--border-width-thick) solid var(--content-switcher-focus-ring);
   outline-offset: 0;
-  z-index: 1;
+  z-index: var(--z-content);
 }
 
 /* Inner focus ring: absolute white 1px inset ring */
 .content-switcher__item:focus-visible::after {
   content: "";
   position: absolute;
-  inset: 2px;
-  border: 1px solid var(--content-switcher-focus-ring-inner);
+  inset: var(--space-2);
+  border: var(--border-width-thin) solid var(--content-switcher-focus-ring-inner);
   border-radius: 0;
   pointer-events: none;
 }
 
 /* Preserve cap rounding on ::after for first/last focused items */
 .content-switcher__item:first-child:focus-visible::after {
-  border-start-start-radius: calc(var(--content-switcher-radius) - 2px);
-  border-end-start-radius: calc(var(--content-switcher-radius) - 2px);
+  border-start-start-radius: calc(var(--content-switcher-radius) - var(--radius-xs));
+  border-end-start-radius: calc(var(--content-switcher-radius) - var(--radius-xs));
 }
 
 .content-switcher__item:last-child:focus-visible::after {
-  border-start-end-radius: calc(var(--content-switcher-radius) - 2px);
-  border-end-end-radius: calc(var(--content-switcher-radius) - 2px);
+  border-start-end-radius: calc(var(--content-switcher-radius) - var(--radius-xs));
+  border-end-end-radius: calc(var(--content-switcher-radius) - var(--radius-xs));
 }
 
 /* ===================================================
@@ -107,7 +107,7 @@
 
 /* TODO: Disabled state not in manifest. Conservative opacity applied. Needs design review. */
 .content-switcher__item[aria-disabled="true"] {
-  opacity: 0.38;
+  opacity: var(--opacity-low);
   cursor: not-allowed;
   pointer-events: none;
 }
@@ -152,7 +152,7 @@
 .content-switcher--on-color .content-switcher__item {
   background: var(--content-switcher-item-bg-default-oncolor);
   color: var(--content-switcher-item-text-oncolor);
-  border-inline: 0.5px solid var(--content-switcher-item-border-oncolor);
+  border-inline: var(--content-switcher-item-border-inline-0p5px) solid var(--content-switcher-item-border-oncolor);
 }
 
 .content-switcher--on-color .content-switcher__item:first-child {

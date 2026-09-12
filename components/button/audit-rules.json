@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "component_id": "button",
   "selector_root": ".btn",
   "rule_types_registry": "../../standards/audit-rule-types.json",
@@ -281,5 +281,6 @@
     "static_analysis": ["BTN-TOKEN-001", "BTN-STRUCT-001", "BTN-STRUCT-002", "BTN-RTL-001", "BTN-A11Y-004"],
     "dom_inspection": ["BTN-A11Y-001", "BTN-A11Y-002", "BTN-A11Y-003", "BTN-A11Y-005", "BTN-USAGE-001", "BTN-CONTENT-001"],
     "manual_review": []
-  }
+  },
+  "$schema": "../../standards/schemas/component-audit.schema.json"
 }

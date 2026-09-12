@@ -1,0 +1,39 @@
+{
+  "schema_version": "2.1.0",
+  "component": {
+    "name": "service-rating",
+    "description": "Reusable feedback composite with default, open, pending, error and submitted states."
+  },
+  "source": {
+    "url": "https://www.figma.com/design/p5CNO0xQWQi4GjrRxXoU56/?node-id=2-173",
+    "reviewed": "2026-09-10",
+    "guidelines": "https://design.dga.gov.sa/guidelines/templates/rating-section",
+    "template": "https://design.dga.gov.sa/templates/rating",
+    "nodes": {
+      "default": "2:111",
+      "open": "2:173",
+      "submitted": "2:9134",
+      "mobile": "2:9190"
+    }
+  },
+  "axes": [
+    "state",
+    "direction"
+  ],
+  "axis_values": {
+    "state": [
+      "default",
+      "open",
+      "pending",
+      "error",
+      "submitted"
+    ],
+    "direction": [
+      "rtl",
+      "ltr"
+    ]
+  },
+  "variants": [],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
+}

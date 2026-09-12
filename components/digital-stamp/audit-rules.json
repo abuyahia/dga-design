@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.1.0",
+  "component_id": "digital-stamp",
+  "rule_types_registry": "../../standards/audit-rule-types.json",
+  "rules": [],
+  "note": "Executable checks: tests/browser-digital-stamp-cases.mjs; formal standards compliance pending.",
+  "$schema": "../../standards/schemas/component-audit.schema.json"
+}

@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="nav-header">
+  <div class="ds-container nav-header__bar">
+    <a class="link link--md site-brand nav-header__brand" href="index.html"><span class="site-brand__mark" aria-hidden="true">{{brand_initial}}</span><span>{{site_name}}</span></a>
+    <button class="nav-header__toggle site-menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="القائمة" hidden><span class="nav-header__toggle-face"><span class="nav-header__icon" aria-hidden="true"><img src="components/navigation-header/assets/toggle-imgElements.svg" alt=""></span></span></button>
+    <nav id="main-navigation" aria-label="{{navigation_label}}" class="nav-header__navigation"><ul class="nav-header__menu">{{navigation}}</ul></nav>
+    <div class="nav-header__actions"><button class="nav-header__action site-search-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="البحث" hidden><svg class="nav-header__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg><span class="nav-header__label">البحث</span></button></div>
+  </div>
+  </div>
+  <dialog class="site-search" aria-labelledby="search-title">
+    <div class="ds-stack"><div class="section-heading"><h2 id="search-title">البحث في الخدمات</h2><button class="btn btn--secondary-outline" type="button" data-search-close>إغلاق</button></div>
+      <label class="label" for="site-search-input"><span class="label__text">اكتب اسم الخدمة</span></label>
+      <div class="ds-cluster"><div class="text-input"><div class="text-input__field"><input type="search" class="text-input__input" id="site-search-input" autocomplete="off" aria-controls="search-results"></div></div><button class="btn btn--secondary-outline" type="button" data-search-clear hidden>مسح</button></div>
+      <p role="status" data-search-status></p><ul id="search-results">{{search_links}}</ul>
+    </div>
+  </dialog>
+</header>

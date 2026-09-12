@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "accordion",
     "description": "Accordion component with expandable content sections and interactive states."
@@ -124,5 +124,7 @@
     { "id": "small-true-focused",    "size": "small",  "expanded": true,  "state": "focused",  "source": "sizes/small/expanded-focused.json"  },
     { "id": "small-true-pressed",    "size": "small",  "expanded": true,  "state": "pressed",  "source": "sizes/small/expanded-pressed.json"  },
     { "id": "small-true-disabled",   "size": "small",  "expanded": true,  "state": "disabled", "source": "sizes/small/expanded-disabled.json" }
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

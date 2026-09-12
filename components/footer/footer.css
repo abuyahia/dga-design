@@ -1,0 +1,44 @@
+/* Figma UI Shell / Footer, page 4205:18569. Link and Button own interaction states. */
+.ds-footer { background: var(--gray-100); color: var(--color-text-strong); padding-inline: var(--space-32); font-family: var(--font-sans); text-align: start; }
+.ds-footer--dark { background: var(--footer-bg-dark); color: var(--white); }
+.ds-footer__content { max-inline-size: var(--footer-max-width); margin-inline: auto; padding-block: var(--space-40) var(--space-24); display: flex; flex-direction: column; gap: var(--space-48); }
+.ds-footer__navigation { display: flex; flex-wrap: wrap; gap: var(--space-24); padding-block: var(--space-16) var(--space-40); }
+.ds-footer__group { display: flex; flex: 1 1 var(--footer-group-min); min-inline-size: min(var(--footer-group-min),100%); flex-direction: column; gap: var(--space-8); }
+.ds-footer__heading { margin: 0; padding-block-end: calc(var(--space-8) - var(--border-width-thin)); border-block-end: var(--border-width-thin) solid var(--gray-300); font-size: var(--fs-text-md); line-height: var(--lh-text-md); font-weight: var(--font-weight-medium); }
+.ds-footer--dark .ds-footer__heading { border-color: var(--color-white-alpha-30); }
+.ds-footer__links { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--space-8); }
+.ds-footer__links > li, .ds-footer__legal-links > li { display: flex; min-inline-size: 0; }
+.ds-footer .link { max-inline-size: 100%; overflow-wrap: anywhere; }
+.ds-footer__tools { gap: var(--space-32); }
+.ds-footer__tool-group { display: flex; flex-direction: column; gap: var(--space-8); min-inline-size: 0; }
+.ds-footer .btn--secondary-outline-on-color { --button-secondary-outline-on-color-border: var(--color-white-alpha-30); }
+.ds-footer__controls { display: flex; flex-wrap: wrap; gap: var(--space-8); }
+.ds-footer__control-icon { display: grid; place-items: center; inline-size: var(--space-20); block-size: var(--space-20); flex-shrink: 0; }
+.ds-footer__control-icon img { inline-size: 47.92%; block-size: 72.92%; transform: rotate(-90deg) scaleX(-1); }
+.ds-footer__legal { display: flex; align-items: center; gap: var(--space-24); padding-block: var(--space-16); }
+.ds-footer__legal-content { flex: 1; min-inline-size: 0; display: flex; flex-direction: column; gap: var(--space-24); }
+.ds-footer:dir(ltr) .ds-footer__legal-content { gap: var(--space-40); }
+.ds-footer__legal-links { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--space-16); }
+.ds-footer__legal-info { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-8); }
+.ds-footer__copyright { margin: 0; font-size: var(--fs-text-sm); line-height: var(--lh-text-sm); font-weight: var(--font-weight-semibold); }
+.ds-footer__updated { margin: 0; font-size: var(--fs-text-sm); line-height: var(--lh-text-sm); }
+.ds-footer__logos { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-16); opacity: var(--footer-logo-opacity); }
+.ds-footer__logo { display: inline-flex; align-items: center; gap: var(--space-8); padding: var(--footer-logo-padding-block) var(--space-4); background: var(--white); color: var(--gray-500); font-size: var(--fs-text-xs); line-height: var(--lh-text-xs); font-weight: var(--font-weight-medium); }
+.ds-footer__logo img { inline-size: var(--space-32); block-size: var(--space-32); }
+@media (max-width: 599px) {
+ .ds-footer__content { gap: var(--space-40); }
+ .ds-footer__navigation { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); padding-block: var(--space-16); }
+ .ds-footer__navigation:has(.ds-footer__tools) { padding-block-end: 0; }
+ .ds-footer__group { min-inline-size: 0; }
+ .ds-footer__tools { grid-column: 1 / -1; flex-direction: row; margin-block-start: var(--space-32); }
+ .ds-footer__tool-group { flex: 1; }
+ .ds-footer__tools:dir(rtl) { flex-direction: row-reverse; }
+ .ds-footer__legal { flex-direction: column; gap: var(--space-40); }
+ .ds-footer__legal-content, .ds-footer:dir(ltr) .ds-footer__legal-content { gap: var(--space-32); inline-size: 100%; }
+ .ds-footer__legal-links { justify-content: center; }
+ .ds-footer__legal-info { align-items: center; text-align: center; }
+ /* The light LTR mobile source includes an empty 20px legal-caption slot. */
+ .ds-footer:not(.ds-footer--dark):dir(ltr) .ds-footer__legal-content::before { content: ''; display: block; block-size: var(--space-20); order: 1; }
+ .ds-footer:not(.ds-footer--dark):dir(ltr) .ds-footer__legal-info { order: 2; min-block-size: var(--footer-ltr-mobile-legal-height); justify-content: center; }
+ .ds-footer__logos { justify-content: space-between; inline-size: 100%; }
+}

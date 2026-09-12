@@ -1,0 +1,5 @@
+/* Text Input supplies state styling; this component adds multiline geometry. */
+.textarea .text-input__field { height: auto; min-block-size: var(--space-96); }
+.textarea__control { display: block; min-block-size: calc(var(--space-96) - 2 * var(--border-width-thin)); padding: var(--space-12) var(--space-16); resize: vertical; }
+.textarea .text-input__field:has(textarea:focus-visible) { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); }
+.textarea textarea:disabled { cursor: not-allowed; }

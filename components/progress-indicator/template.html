@@ -1,0 +1,16 @@
+<nav class="progress-indicator" aria-label="تقدم النموذج" data-progress-indicator>
+  <ol class="progress-indicator__steps">
+{{items}}
+  </ol>
+  <div class="progress-indicator__compact">
+    <span class="progress-indicator__radial" aria-hidden="true">
+      <span data-progress-current>{{current_index}}</span>
+      <span>/</span>
+      <span>{{total}}</span>
+    </span>
+    <span class="progress-indicator__compact-copy">
+      <strong data-progress-title>{{current_title}}</strong>
+      <span data-progress-description>{{current_description}}</span>
+    </span>
+  </div>
+</nav>

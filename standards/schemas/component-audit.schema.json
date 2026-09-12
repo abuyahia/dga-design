@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Component audit 1.1 — dispatch envelope",
+  "type": "object",
+  "required": ["schema_version", "component_id", "rule_types_registry", "rules"],
+  "properties": {
+    "schema_version": {"const": "1.1.0"},
+    "component_id": {"type": "string", "minLength": 1},
+    "rule_types_registry": {"type": "string", "minLength": 1},
+    "rules": {"type": "array", "items": {
+      "type": "object",
+      "required": ["id", "rule_type", "severity", "validation_status"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "rule_type": {"type": "string", "minLength": 1},
+        "severity": {"enum": ["error", "warning", "info"]},
+        "validation_status": {"enum": ["not_run", "passed", "failed", "not_applicable"]}
+      }
+    }}
+  }
+}

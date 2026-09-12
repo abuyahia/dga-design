@@ -1,0 +1,411 @@
+{
+  "reference": "https://design.dga.gov.sa/templates/home",
+  "date": "2026-09-09",
+  "status": "implemented_with_documented_differences",
+  "production_ready": false,
+  "unit_tests_passed": 18,
+  "browser_cases": 45,
+  "browser_passed": true,
+  "browser_results": [
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "index.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "services.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "news.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "rtl",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 320,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 768,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "page": "about.html",
+      "dir": "ltr",
+      "width": 1280,
+      "checks": {
+        "fits": true,
+        "heading": true,
+        "cards": true,
+        "styles": true,
+        "skip": true
+      },
+      "pass": true
+    },
+    {
+      "name": "rtl: mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "rtl: Escape closes menu",
+      "pass": true
+    },
+    {
+      "name": "rtl: search modal",
+      "pass": true
+    },
+    {
+      "name": "rtl: search suggestions",
+      "pass": true
+    },
+    {
+      "name": "rtl: search clear",
+      "pass": true
+    },
+    {
+      "name": "rtl: search restores focus",
+      "pass": true
+    },
+    {
+      "name": "rtl: hero selection",
+      "pass": true
+    },
+    {
+      "name": "rtl: carousel advances",
+      "pass": true
+    },
+    {
+      "name": "rtl: feedback opens",
+      "pass": true
+    },
+    {
+      "name": "rtl: feedback local completion",
+      "pass": true
+    },
+    {
+      "name": "ltr: mobile menu opens",
+      "pass": true
+    },
+    {
+      "name": "ltr: Escape closes menu",
+      "pass": true
+    },
+    {
+      "name": "ltr: search modal",
+      "pass": true
+    },
+    {
+      "name": "ltr: search suggestions",
+      "pass": true
+    },
+    {
+      "name": "ltr: search clear",
+      "pass": true
+    },
+    {
+      "name": "ltr: search restores focus",
+      "pass": true
+    },
+    {
+      "name": "ltr: hero selection",
+      "pass": true
+    },
+    {
+      "name": "ltr: carousel advances",
+      "pass": true
+    },
+    {
+      "name": "ltr: feedback opens",
+      "pass": true
+    },
+    {
+      "name": "ltr: feedback local completion",
+      "pass": true
+    },
+    {
+      "name": "No JavaScript: navigation and content remain available",
+      "pass": true
+    }
+  ],
+  "repository_errors": 0,
+  "repository_warnings": 0,
+  "historical_component_rules": "309 NOT RUN",
+  "differences_document": "template-product.md"
+}

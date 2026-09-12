@@ -1,89 +1,3 @@
-/* ==========================================================================
-   slider.css — Platform Code Design System
-   Component: Slider
-   Classification: Primitive
-   Contract: slider.contract.md
-   Analysis: analysis.md
-   --------------------------------------------------------------------------
-   All visual values use --slider-* component-scoped tokens.
-   Fallback values sourced from Figma manifest (mainifest.json).
-   TODO: Add all --slider-* tokens to token.css. See analysis.md §Missing Tokens.
-   ========================================================================== */
-
-/* ── Token declarations (fallbacks until token.css is updated) ────────────── */
-:root {
-  /* Structure */
-  /* TODO: --slider-gap missing in token.css. Proposed: var(--Global-spacing-xs, 4px) */
-  --slider-gap:                var(--Global-spacing-xs, 4px);
-  /* TODO: --slider-track-row-gap missing in token.css. Proposed: var(--Global-spacing-sm, 6px) */
-  --slider-track-row-gap:      var(--Global-spacing-sm, 6px);
-  /* TODO: --slider-label-gap missing in token.css. Proposed: var(--Form-label-gap, 4px) */
-  --slider-label-gap:          var(--Form-label-gap, 4px);
-  /* TODO: --slider-helper-gap missing in token.css. Proposed: var(--Form-icon-helpertext, 8px) */
-  --slider-helper-gap:         var(--Form-icon-helpertext, 8px);
-
-  /* Track */
-  /* TODO: --slider-track-radius missing in token.css. Proposed: var(--Radius-radius-sm, 4px) */
-  --slider-track-radius:       var(--Radius-radius-sm, 4px);
-  /* TODO: --slider-track-bg missing in token.css. Proposed: var(--Background-background-neutral-100) */
-  --slider-track-bg:           var(--Background-background-neutral-100, #F3F4F6);
-  /* TODO: --slider-fill-bg missing in token.css. Proposed: var(--Background-background-primary) */
-  --slider-fill-bg:            var(--Background-background-primary, #1B8354);
-  /* TODO: --slider-thumb-fill missing in token.css. Proposed: var(--Background-background-primary) */
-  --slider-thumb-fill:         var(--Background-background-primary, #1B8354);
-  /* TODO: --slider-thumb-stroke missing in token.css. Proposed: var(--Border-border-success) */
-  --slider-thumb-stroke:       var(--Border-border-success, #067647);
-
-  /* Typography */
-  /* TODO: --slider-label-color missing in token.css. Proposed: var(--Form-field-text-label) */
-  --slider-label-color:        var(--Form-field-text-label, #161616);
-  /* TODO: --slider-value-color missing in token.css. Proposed: var(--Text-text-primary-paragraph) */
-  --slider-value-color:        var(--Text-text-primary-paragraph, #384250);
-  /* TODO: --slider-helper-color missing in token.css. Proposed: var(--Text-text-primary-paragraph) */
-  --slider-helper-color:       var(--Text-text-primary-paragraph, #384250);
-  /* TODO: --slider-label-font-family missing in token.css. Proposed: var(--Font-Family-font-family-text) */
-  --slider-label-font-family:  var(--Font-Family-font-family-text, "IBM Plex Sans Arabic");
-
-  /* Sizes — Small (default) */
-  /* TODO: --slider-sm-track-height missing in token.css. Value from manifest: 4px */
-  --slider-sm-track-height:       4px;
-  /* TODO: --slider-sm-thumb-size missing in token.css. Value from manifest: 12px */
-  --slider-sm-thumb-size:         12px;
-  /* TODO: --slider-sm-label-font-size missing in token.css. Value from manifest: 14px */
-  --slider-sm-label-font-size:    14px;
-  /* TODO: --slider-sm-label-line-height missing in token.css. Value from manifest: 20px */
-  --slider-sm-label-line-height:  20px;
-  /* TODO: --slider-sm-helper-font-size missing in token.css. Proposed: var(--Size-Text-typo-size-text-xs) */
-  --slider-sm-helper-font-size:   var(--Size-Text-typo-size-text-xs, 12px);
-  /* TODO: --slider-sm-helper-line-height missing in token.css. Proposed: var(--Line-Height-Text-line-heights-text-xs) */
-  --slider-sm-helper-line-height: var(--Line-Height-Text-line-heights-text-xs, 18px);
-
-  /* Sizes — Medium */
-  /* TODO: --slider-md-track-height missing in token.css. Value from manifest: 8px */
-  --slider-md-track-height:       8px;
-  /* TODO: --slider-md-thumb-size missing in token.css. Value from manifest: 16px */
-  --slider-md-thumb-size:         16px;
-  /* TODO: --slider-md-label-font-size missing in token.css. Value from manifest: 16px */
-  --slider-md-label-font-size:    16px;
-  /* TODO: --slider-md-label-line-height missing in token.css. Value from manifest: 24px */
-  --slider-md-label-line-height:  24px;
-  /* TODO: --slider-md-helper-font-size missing in token.css. Proposed: var(--Size-Text-typo-size-text-sm) */
-  --slider-md-helper-font-size:   var(--Size-Text-typo-size-text-sm, 14px);
-  /* TODO: --slider-md-helper-line-height missing in token.css. Proposed: var(--Line-Height-Text-line-heights-text-sm) */
-  --slider-md-helper-line-height: var(--Line-Height-Text-line-heights-text-sm, 20px);
-
-  /* States */
-  /* TODO: --slider-disabled-opacity missing in token.css. Assumed platform convention: 0.4 */
-  --slider-disabled-opacity:   0.4;
-  /* TODO: --slider-focus-ring-color missing in token.css. Proposed: var(--Background-background-primary) */
-  --slider-focus-ring-color:   var(--Background-background-primary, #1B8354);
-  /* TODO: --slider-focus-ring-width missing in token.css. Assumed: 2px */
-  --slider-focus-ring-width:   2px;
-  /* TODO: --slider-focus-ring-offset missing in token.css. Assumed: 2px */
-  --slider-focus-ring-offset:  2px;
-}
-
-
 /* ── Root ─────────────────────────────────────────────────────────────────── */
 
 .slider {
@@ -103,7 +17,7 @@
   color: var(--slider-label-color);
   font-family: var(--slider-label-font-family);
   font-size: var(--slider-sm-label-font-size);
-  font-weight: 400;
+  font-weight: var(--font-weight-body);
   line-height: var(--slider-sm-label-line-height);
 }
 
@@ -123,9 +37,9 @@
 .slider__value {
   color: var(--slider-value-color);
   font-family: var(--slider-label-font-family);
-  font-size: var(--Size-Text-typo-size-text-xs, 12px);
-  font-weight: 400;
-  line-height: var(--Line-Height-Text-line-heights-text-xs, 18px);
+  font-size: var(--fs-text-xs);
+  font-weight: var(--font-weight-body);
+  line-height: var(--lh-text-xs);
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -160,18 +74,18 @@
 .slider__fill {
   position: absolute;
   top: 0;
-  left: 0;
+  inset-inline-start: 0;
   height: 100%;
   width: var(--fill, 0%);
   background: var(--slider-fill-bg);
   border-radius: var(--slider-track-radius);
   pointer-events: none;
-  transition: width 0.1s ease;
+  transition: width var(--transition-fast) var(--ease-default);
 }
 
 /* Range fill: positioned between start and end thumbs */
 .slider--range .slider__fill {
-  left:  var(--fill-start, 0%);
+  inset-inline-start:  var(--fill-start, 0%);
   width: calc(var(--fill-end, 100%) - var(--fill-start, 0%));
 }
 
@@ -182,7 +96,7 @@
   -webkit-appearance: none;
   appearance: none;
   position: relative;
-  z-index: 2;
+  z-index: var(--z-decoration);
   width: 100%;
   height: var(--slider-sm-track-height);
   background: transparent;
@@ -196,8 +110,8 @@
 /* Range mode: end input sits above start input */
 .slider__input--end {
   position: absolute;
-  z-index: 3;
-  left: 0;
+  z-index: var(--z-control);
+  inset-inline-start: 0;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -212,11 +126,11 @@
   height: var(--slider-sm-thumb-size);
   border-radius: 50%;
   background: var(--slider-thumb-fill);
-  border: 1px solid var(--slider-thumb-stroke);
+  border: var(--border-width-thin) solid var(--slider-thumb-stroke);
   cursor: pointer;
   position: relative;
-  z-index: 2;
-  transition: transform 0.15s ease;
+  z-index: var(--z-decoration);
+  transition: transform var(--transition-feedback) var(--ease-default);
   box-sizing: border-box;
 }
 
@@ -233,9 +147,9 @@
   height: var(--slider-sm-thumb-size);
   border-radius: 50%;
   background: var(--slider-thumb-fill);
-  border: 1px solid var(--slider-thumb-stroke);
+  border: var(--border-width-thin) solid var(--slider-thumb-stroke);
   cursor: pointer;
-  transition: transform 0.15s ease;
+  transition: transform var(--transition-feedback) var(--ease-default);
   box-sizing: border-box;
 }
 
@@ -261,7 +175,7 @@
 .slider__input:focus-visible {
   outline: var(--slider-focus-ring-width) solid var(--slider-focus-ring-color);
   outline-offset: var(--slider-focus-ring-offset);
-  border-radius: 2px;
+  border-radius: var(--radius-xs);
 }
 
 
@@ -276,8 +190,8 @@
 
 .slider__helper-icon {
   display: flex;
-  width: 16px;
-  height: 16px;
+  width: var(--space-16);
+  height: var(--space-16);
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
@@ -287,7 +201,7 @@
   color: var(--slider-helper-color);
   font-family: var(--slider-label-font-family);
   font-size: var(--slider-sm-helper-font-size);
-  font-weight: 400;
+  font-weight: var(--font-weight-body);
   line-height: var(--slider-sm-helper-line-height);
 }
 
@@ -343,7 +257,7 @@
 }
 
 [dir="rtl"] .slider__label-text {
-  text-align: right;
+  text-align: start;
   direction: rtl;
 }
 
@@ -357,13 +271,11 @@
 }
 
 [dir="rtl"] .slider__helper-text {
-  text-align: right;
+  text-align: start;
 }
 
 /* RTL fill grows from the right */
 [dir="rtl"] .slider__fill {
-  left: auto;
-  right: 0;
   border-radius: var(--slider-track-radius);
 }
 

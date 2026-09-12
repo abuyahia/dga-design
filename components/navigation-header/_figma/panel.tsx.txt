@@ -1,0 +1,237 @@
+type NavHeaderSubMenuProps = {
+  className?: string;
+  background?: "Default";
+  fullWidth?: "False";
+  linkStyle?: "Text only";
+  prop2ndCol?: boolean;
+  prop3rdCol?: boolean;
+  prop4thCol?: boolean;
+  rtl?: "True";
+};
+
+function NavHeaderSubMenu({ className, background = "Default", fullWidth = "False", linkStyle = "Text only", prop2ndCol = true, prop3rdCol = true, prop4thCol = true, rtl = "True" }: NavHeaderSubMenuProps) {
+  return (
+    <div className={className || "bg-[var(--background\\/background-menu,white)] content-stretch flex flex-col items-center overflow-clip p-[var(--spacing-3xl,24px)] relative rounded-[var(--radius-md,8px)] shadow-[0px_12px_16px_-4px_rgba(16,24,40,0.08),0px_4px_6px_-2px_rgba(16,24,40,0.03)]"} data-node-id="30150:149388">
+      <div className="content-stretch flex gap-[var(--spacing-3xl,24px)] items-start justify-end max-w-[1280px] relative shrink-0" data-node-id="30150:149389" data-name="Content">
+        {prop4thCol && (
+          <div className="content-stretch flex flex-col gap-[var(--spacing-lg,12px)] items-end relative shrink-0 w-[300px]" data-node-id="30150:149390" data-name="Section col 4">
+            <div className="content-stretch flex items-center justify-end px-[var(--spacing-xl,16px)] relative shrink-0 w-full" data-node-id="30150:149391" data-name="Group label">
+              <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-ig,28px)] min-w-px relative text-[color:var(--text\/text-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] text-right" dir="auto" data-node-id="30150:149392">
+                عنوان مجموعة
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-end relative shrink-0 w-full" data-node-id="30150:149393" data-name="Navigation">
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149394" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149394;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149394;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149394;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149394;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149395" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149395;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149395;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149395;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149395;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149396" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149396;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149396;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149396;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149396;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149397" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149397;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149397;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149397;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149397;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {prop3rdCol && (
+          <div className="content-stretch flex flex-col gap-[var(--spacing-lg,12px)] items-end relative shrink-0 w-[300px]" data-node-id="30150:149398" data-name="Section col 3">
+            <div className="content-stretch flex items-center justify-end px-[var(--spacing-xl,16px)] relative shrink-0 w-full" data-node-id="30150:149399" data-name="Group label">
+              <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-ig,28px)] min-w-px relative text-[color:var(--text\/text-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] text-right" dir="auto" data-node-id="30150:149400">
+                عنوان مجموعة
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-end relative shrink-0 w-full" data-node-id="30150:149401" data-name="Navigation">
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149402" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149402;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149402;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149402;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149402;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149403" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149403;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149403;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149403;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149403;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149404" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149404;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149404;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149404;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149404;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149405" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149405;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149405;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149405;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149405;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {prop2ndCol && (
+          <div className="content-stretch flex flex-col gap-[var(--spacing-lg,12px)] items-end relative shrink-0 w-[300px]" data-node-id="30150:149406" data-name="Section col 2">
+            <div className="content-stretch flex items-center justify-end px-[var(--spacing-xl,16px)] relative shrink-0 w-full" data-node-id="30150:149407" data-name="Group label">
+              <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-ig,28px)] min-w-px relative text-[color:var(--text\/text-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] text-right" dir="auto" data-node-id="30150:149408">
+                عنوان مجموعة
+              </p>
+            </div>
+            <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-end relative shrink-0 w-full" data-node-id="30150:149409" data-name="Navigation">
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149410" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149410;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149410;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149410;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149410;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149411" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149411;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149411;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149411;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149411;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149412" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149412;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149412;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149412;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149412;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149413" data-name="Header Sub-menu Item">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149413;30150:148193" data-name="Content">
+                  <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149413;30150:148194" data-name="Text and supporting text">
+                    <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149413;30150:148195" data-name="Text and badge">
+                      <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149413;30150:148197">
+                        عنوان عنصر القائمة
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="content-stretch flex flex-col gap-[var(--spacing-lg,12px)] items-end relative shrink-0 w-[300px]" data-node-id="30150:149414" data-name="Section col 1">
+          <div className="content-stretch flex items-center justify-end px-[var(--spacing-xl,16px)] relative shrink-0 w-full" data-node-id="30150:149415" data-name="Group label">
+            <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Bold')] font-[var(--font-wieght\/font-weight-bold,normal)] leading-[var(--line-height\/text\/line-heights-text-ig,28px)] min-w-px relative text-[color:var(--text\/text-primary,#1b8354)] text-[length:var(--size\/text\/typo-size-text-ig,18px)] text-right" dir="auto" data-node-id="30150:149416">
+              عنوان مجموعة
+            </p>
+          </div>
+          <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-end relative shrink-0 w-full" data-node-id="30150:149417" data-name="Navigation">
+            <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149418" data-name="Header Sub-menu Item">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149418;30150:148193" data-name="Content">
+                <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149418;30150:148194" data-name="Text and supporting text">
+                  <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149418;30150:148195" data-name="Text and badge">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149418;30150:148197">
+                      عنوان عنصر القائمة
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149419" data-name="Header Sub-menu Item">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149419;30150:148193" data-name="Content">
+                <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149419;30150:148194" data-name="Text and supporting text">
+                  <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149419;30150:148195" data-name="Text and badge">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149419;30150:148197">
+                      عنوان عنصر القائمة
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149420" data-name="Header Sub-menu Item">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149420;30150:148193" data-name="Content">
+                <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149420;30150:148194" data-name="Text and supporting text">
+                  <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149420;30150:148195" data-name="Text and badge">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149420;30150:148197">
+                      عنوان عنصر القائمة
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[var(--spacing-xl,16px)] items-start justify-end px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-md,8px)] shrink-0 w-full" data-node-id="30150:149421" data-name="Header Sub-menu Item">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-lg,12px)] items-end min-w-px relative" data-node-id="I30150:149421;30150:148193" data-name="Content">
+                <div className="content-stretch flex flex-col gap-[var(--spacing-xs,4px)] items-start relative shrink-0 w-full" data-node-id="I30150:149421;30150:148194" data-name="Text and supporting text">
+                  <div className="content-stretch flex gap-[var(--spacing-md,8px)] items-center justify-end relative shrink-0 w-full" data-node-id="I30150:149421;30150:148195" data-name="Text and badge">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] overflow-hidden relative shrink-0 text-[16px] text-[color:var(--text\/text-display,#1f2a37)] text-ellipsis text-right whitespace-nowrap" dir="auto" data-node-id="I30150:149421;30150:148197">
+                      عنوان عنصر القائمة
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

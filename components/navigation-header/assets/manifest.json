@@ -1,0 +1,30 @@
+{
+  "source": "https://www.figma.com/design/j5WtaAEIcO9MgO2QYFVN0i/?node-id=429-130167",
+  "sha256": {
+    "action-imgElements.svg": "ed7b31404c0fe55d0327d15578bc733d725937029537d3aa9ee216a88b1c3677",
+    "action-imgElements1.svg": "6fcbedf6b641b0791045464c5eb2a4b35f5797f4d068558a5ef5dcb6324094d3",
+    "action-imgElements2.svg": "7cd28b58bf46bb65813268670e1b9f89e2eeddea276d4e8997b7e24e36059c17",
+    "header-imgElements.svg": "1aa0953a467445ca55550f80544bcf5677a62866607911a52af310ab2baf666c",
+    "header-imgElements1.svg": "76ad31865676baf8cbfc9fd5730494617b82cf09ab3ddf5ffd3d8664a6d19975",
+    "header-imgElements2.svg": "7cd28b58bf46bb65813268670e1b9f89e2eeddea276d4e8997b7e24e36059c17",
+    "header-imgElements3.svg": "ed7b31404c0fe55d0327d15578bc733d725937029537d3aa9ee216a88b1c3677",
+    "header-imgElements4.svg": "76ad31865676baf8cbfc9fd5730494617b82cf09ab3ddf5ffd3d8664a6d19975",
+    "header-imgElements5.svg": "9dcb3d3175f6c55bc1ad6668e8997cab72973fc57fd84361d4fd734c0ede8b0e",
+    "header-imgElements6.svg": "61a87c3dc182538b9781a6326f1f8f68c2960e7d4e6e5bebadf455a0728b5038",
+    "item-icon-imgElements.svg": "629e5ae6de87248b0ed0bb3d83bad9cbdd18c9b004dde8815d7317750230a990",
+    "item-icon-imgElements1.svg": "7d954e56608a3b7c625be565ce8d9f276a9c5cab3acce3952b0ba69825f7413d",
+    "item-icon-imgElements2.svg": "773ec46e340f2368c07174d6b00413c718fbb663c9db365edcac57ff9ff79329",
+    "menu-imgElements.svg": "ed7b31404c0fe55d0327d15578bc733d725937029537d3aa9ee216a88b1c3677",
+    "menu-imgElements1.svg": "7d4c2b8cb89e9290e3a62835c56cb5c0c647149e9412381c193889c6676b3c30",
+    "menu-imgElements2.svg": "7d4c2b8cb89e9290e3a62835c56cb5c0c647149e9412381c193889c6676b3c30",
+    "menu-imgElements3.svg": "6fcbedf6b641b0791045464c5eb2a4b35f5797f4d068558a5ef5dcb6324094d3",
+    "menu-imgElements4.svg": "e214ec6e480ae58363060e00e6eb4a46552cf302df81e7167639f044cf47cfd4",
+    "menu-imgElements5.svg": "e214ec6e480ae58363060e00e6eb4a46552cf302df81e7167639f044cf47cfd4",
+    "menu-imgElements6.svg": "7cd28b58bf46bb65813268670e1b9f89e2eeddea276d4e8997b7e24e36059c17",
+    "menu-imgElements7.svg": "76ad31865676baf8cbfc9fd5730494617b82cf09ab3ddf5ffd3d8664a6d19975",
+    "menu-imgElements8.svg": "76ad31865676baf8cbfc9fd5730494617b82cf09ab3ddf5ffd3d8664a6d19975",
+    "submenu-imgElements.svg": "7d954e56608a3b7c625be565ce8d9f276a9c5cab3acce3952b0ba69825f7413d",
+    "submenu-imgElements1.svg": "773ec46e340f2368c07174d6b00413c718fbb663c9db365edcac57ff9ff79329",
+    "toggle-imgElements.svg": "1aa0953a467445ca55550f80544bcf5677a62866607911a52af310ab2baf666c"
+  }
+}

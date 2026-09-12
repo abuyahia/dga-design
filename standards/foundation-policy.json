@@ -1,0 +1,448 @@
+{
+  "schema_version": "1.0.0",
+  "local_custom_properties": [
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-padding",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-gap",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-radius",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-bg",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-body-padding-x",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-body-gap",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-author-gap",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-author-info-gap",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-title-color",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-title-font-family",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-title-font-size",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-title-line-height",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-text-color",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-text-font-family",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-text-font-size",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-text-line-height",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-author-name-font-size",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-author-name-line-height",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-author-description-font-size",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-author-description-line-height",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-mark-color",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-mark-font-size",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/quote/quote.css",
+      "name": "--_quote-width",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/checkbox/checkbox-2.css",
+      "name": "--checkbox-size",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/checkbox/checkbox-2.css",
+      "name": "--checkbox-ripple-size",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/slider/slider.css",
+      "name": "--fill",
+      "kind": "runtime",
+      "reason": "Percentage supplied on the slider instance; not a fixed design value."
+    },
+    {
+      "path": "components/slider/slider.css",
+      "name": "--fill-start",
+      "kind": "runtime",
+      "reason": "Percentage supplied on the slider instance; not a fixed design value."
+    },
+    {
+      "path": "components/slider/slider.css",
+      "name": "--fill-end",
+      "kind": "runtime",
+      "reason": "Percentage supplied on the slider instance; not a fixed design value."
+    },
+    {
+      "path": "components/accordion-new/accordion-new.css",
+      "name": "--accordion-padding-block",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/inline-alert/inline-alert.css",
+      "name": "--inline-alert-icon-bg",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/inline-alert/inline-alert.css",
+      "name": "--inline-alert-accent-bg",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/inline-alert/inline-alert.css",
+      "name": "--inline-alert-bg",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/inline-alert/inline-alert.css",
+      "name": "--inline-alert-border-color",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-font-family",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-font-size",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-line-height",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-font-weight",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-focus-ring-width",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-focus-ring-offset",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-color",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-visited-color",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-hovered-color",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-pressed-color",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-disabled-color",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/link/link.css",
+      "name": "--_link-focus-ring",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/notification-toast/notification-toast.css",
+      "name": "--notification-toast-accent-bg",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/floating-button/floating-button.css",
+      "name": "--_fab-bg",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/floating-button/floating-button.css",
+      "name": "--_fab-bg-hover",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/floating-button/floating-button.css",
+      "name": "--_fab-bg-focus",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/floating-button/floating-button.css",
+      "name": "--_fab-bg-active",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/floating-button/floating-button.css",
+      "name": "--_fab-bg-selected",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/floating-button/floating-button.css",
+      "name": "--_fab-bg-disabled",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/floating-button/floating-button.css",
+      "name": "--_fab-text",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/floating-button/floating-button.css",
+      "name": "--_fab-text-disabled",
+      "kind": "variant_binding",
+      "reason": "Scoped selection of registered design tokens; retained so sibling variants remain independent."
+    },
+    {
+      "path": "components/footer/footer.css",
+      "name": "--button-secondary-outline-on-color-border",
+      "kind": "variant_binding",
+      "reason": "Footer Figma instance binds outlined button border to white 30%; reuse Button interaction styles."
+    }
+  ],
+  "css_exceptions": [
+    {
+      "path": "components/checkbox/checkbox-2.css",
+      "property": "left",
+      "value": "50%",
+      "reason": "Centers the ripple on its physical X axis together with translate(-50%, -50%); mirroring only the inset would displace the center in RTL.",
+      "occurrences": 2
+    },
+    {
+      "path": "styles/base/accessibility.css",
+      "property": "inline-size",
+      "value": "1px",
+      "reason": "One-pixel clipping box for screen-reader-only and unfocused skip-link content; not a visual size.",
+      "occurrences": 1
+    },
+    {
+      "path": "styles/base/accessibility.css",
+      "property": "block-size",
+      "value": "1px",
+      "reason": "One-pixel clipping box for screen-reader-only and unfocused skip-link content; not a visual size.",
+      "occurrences": 1
+    },
+    {
+      "path": "styles/base/accessibility.css",
+      "property": "margin",
+      "value": "-1px",
+      "reason": "Removes the clipping box from visual flow without hiding accessible text.",
+      "occurrences": 1
+    },
+    {
+      "path": "components/quote/quote.css",
+      "property": "text-align",
+      "value": "right",
+      "reason": "Author attribution is intentionally right-aligned in both directions in the source contract; optical placement is independent of reading direction.",
+      "occurrences": 2
+    },
+    {
+      "path": "components/text-input/text-input.css",
+      "property": "transform-origin",
+      "value": "left",
+      "reason": "transform-origin accepts physical axes; paired :dir(rtl) rule is required for the pressed underline.",
+      "occurrences": 1
+    },
+    {
+      "path": "components/text-input/text-input.css",
+      "property": "transform-origin",
+      "value": "right",
+      "reason": "transform-origin accepts physical axes; paired :dir(rtl) rule is required for the pressed underline.",
+      "occurrences": 1
+    }
+  ],
+  "breakpoint_rules": [
+    {
+      "path": "styles/base/layout.css",
+      "condition": "(min-width: 768px)",
+      "token": "--bp-tablet"
+    },
+    {
+      "path": "styles/base/layout.css",
+      "condition": "(min-width: 1280px)",
+      "token": "--bp-desktop"
+    },
+    {
+      "path": "components/inline-alert/inline-alert.css",
+      "condition": "(max-width: 767px)",
+      "token": "--bp-tablet",
+      "comparison": "max-width",
+      "adjustment_px": -1
+    },
+    {
+      "path": "components/notification-toast/notification-toast.css",
+      "condition": "(max-width: 767px)",
+      "token": "--bp-tablet",
+      "comparison": "max-width",
+      "adjustment_px": -1
+    },
+    {
+      "path": "components/navigation-header/navigation-header.css",
+      "condition": "(max-width: 960px)",
+      "token": "--nav-header-breakpoint",
+      "comparison": "max-width"
+    },
+    {
+      "path": "components/navigation-header/navigation-header.css",
+      "condition": "(max-width: 599px)",
+      "token": "--nav-header-mobile-breakpoint",
+      "comparison": "max-width",
+      "adjustment_px": -1
+    },
+    {
+      "path": "components/footer/footer.css",
+      "condition": "(max-width: 599px)",
+      "token": "--footer-mobile-breakpoint",
+      "comparison": "max-width",
+      "adjustment_px": -1
+    },
+    {
+      "path": "components/digital-stamp/digital-stamp.css",
+      "condition": "(max-width: 767px)",
+      "token": "--stamp-breakpoint",
+      "comparison": "max-width",
+      "adjustment_px": -1
+    },
+    {
+      "path": "templates/service/service.css",
+      "condition": "(max-width: 767px)",
+      "token": "--bp-tablet",
+      "comparison": "max-width",
+      "adjustment_px": -1
+    }
+  ],
+  "font_delivery": "System fallback by default; --font-sans declares IBM Plex Sans Arabic and Noto Sans Arabic but no font files are shipped. Self-host licensed WOFF2 assets only when available; no external font request is added by Base.",
+  "component_readiness": "Foundation checks do not execute the 309 authored component rules or certify full component accessibility."
+}

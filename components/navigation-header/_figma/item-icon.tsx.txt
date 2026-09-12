@@ -1,0 +1,44 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/175ad943-1989-4cef-9245-58f14bdc4c99.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/c8c20fe3-9e0d-4784-aa06-6245a785667c.svg";
+const imgElements2 = "https://www.figma.com/api/mcp/asset/6af9f785-032d-4386-aee4-9a812233b156.svg";
+
+type ItemIconProps = {
+  className?: string;
+  contained?: boolean;
+  onColor?: boolean;
+  swapIcon?: React.ReactNode | null;
+};
+
+export default function ItemIcon({ className, contained = true, onColor = false, swapIcon = null }: ItemIconProps) {
+  const isContainedAndOnColor = contained && onColor;
+  const isNotContainedAndNotOnColor = !contained && !onColor;
+  return (
+    <div className={className || `content-stretch flex items-center justify-center relative ${isContainedAndOnColor ? String.raw`bg-[var(--alpha\/alpha-white-10,rgba(255,255,255,0.1))] p-[12px] rounded-[var(--radius-md,8px)]` : !contained ? "" : String.raw`bg-[var(--background\/background-primary-50,#f3fcf6)] p-[12px] rounded-[var(--radius-md,8px)]`}`} id={!contained && onColor ? "node-30150_148749" : isContainedAndOnColor ? "node-30150_148747" : isNotContainedAndNotOnColor ? "node-30150_148745" : "node-30150_148743"}>
+      {onColor &&
+        (swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148748" data-name="checkmark-square-02">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148748;2164:18533" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        ))}
+      {contained &&
+        !onColor &&
+        (swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148744" data-name="checkmark-square-02">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148744;2164:18533" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        ))}
+      {isNotContainedAndNotOnColor &&
+        (swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148746" data-name="checkmark-square-02">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148746;2164:18533" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+        ))}
+    </div>
+  );
+}

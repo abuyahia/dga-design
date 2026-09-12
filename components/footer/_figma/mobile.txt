@@ -1,0 +1,424 @@
+const imgPalmSwords = "https://www.figma.com/api/mcp/asset/42914959-e383-41ac-bece-a2766cc1388a.svg";
+const imgElements = "https://www.figma.com/api/mcp/asset/1889e672-7d3e-400f-8a69-263838c00e58.svg";
+
+type LogoPlaceholderProps = {
+  className?: string;
+  logoPosition?: "Side";
+  rtl?: "True";
+  size?: "Small";
+};
+
+function LogoPlaceholder({ className, logoPosition = "Side", rtl = "True", size = "Small" }: LogoPlaceholderProps) {
+  return (
+    <div className={className || "bg-[var(--background\\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative"} data-node-id="13518:53069">
+      <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-secondary-paragraph,#6c737f)] text-[length:var(--size\/text\/typo-size-text-xs,12px)] text-right whitespace-nowrap" data-node-id="13518:53070">
+        <p className="leading-[var(--line-height\/text\/line-heights-text-xs,18px)]" dir="auto">
+          شعار المنصة
+        </p>
+      </div>
+      <div className="relative shrink-0 size-[32px]" data-node-id="13518:53071" data-name="Palm & Swords">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgPalmSwords} />
+      </div>
+    </div>
+  );
+}
+
+type FooterProps = {
+  className?: string;
+  backgroundColor?: "Default";
+  breakpoint?: "<600";
+  navLinks?: boolean;
+  rtl?: "True";
+};
+
+function Footer({ className, backgroundColor = "Default", breakpoint = "<600", navLinks = true, rtl = "True" }: FooterProps) {
+  return (
+    <div className={className || "bg-[var(--background\\/background-neutral-100,#f3f4f6)] content-stretch flex items-start justify-center px-[var(--spacing-4xl,32px)] relative w-[600px]"} data-node-id="30150:166380">
+      <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-5xl,40px)] items-end max-w-[1280px] min-w-px pb-[var(--spacing-3xl,24px)] pt-[var(--spacing-5xl,40px)] relative" data-node-id="30150:166381" data-name="Content">
+        {navLinks && (
+          <div className="content-start flex flex-wrap gap-[var(--spacing-3xl,24px)] items-start justify-end py-[var(--spacing-xl,16px)] relative shrink-0 w-full" data-node-id="30150:166382" data-name="Nav links">
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-md,8px)] items-end min-w-[180px] relative" data-node-id="30150:166383" data-name="Footer group">
+              <div className="border-[var(--border\/border-neutral-primary,#d2d6db)] border-b border-solid content-stretch flex flex-col items-end pb-[var(--spacing-md,8px)] relative shrink-0 w-full" data-node-id="30150:166384" data-name="Group Label">
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="30150:166385">
+                  عنوان مجموعة
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-3xl,24px)] items-start justify-end relative shrink-0 w-full" data-node-id="30150:166386" data-name="Link Group">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-md,8px)] items-end min-w-px relative" data-node-id="30150:166387" data-name="Link List">
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166388" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166388;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166389" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166389;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166390" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166390;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166391" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166391;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166392" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166392;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-md,8px)] items-end min-w-[180px] relative" data-node-id="30150:166393" data-name="Footer group">
+              <div className="border-[var(--border\/border-neutral-primary,#d2d6db)] border-b border-solid content-stretch flex flex-col items-end pb-[var(--spacing-md,8px)] relative shrink-0 w-full" data-node-id="30150:166394" data-name="Group Label">
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="30150:166395">
+                  عنوان مجموعة
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-3xl,24px)] items-start justify-end relative shrink-0 w-full" data-node-id="30150:166396" data-name="Link Group">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-md,8px)] items-end min-w-px relative" data-node-id="30150:166397" data-name="Link List">
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166398" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166398;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166399" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166399;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166400" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166400;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166401" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166401;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166402" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166402;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-md,8px)] items-end min-w-[180px] relative" data-node-id="30150:166403" data-name="Footer group">
+              <div className="border-[var(--border\/border-neutral-primary,#d2d6db)] border-b border-solid content-stretch flex flex-col items-end pb-[var(--spacing-md,8px)] relative shrink-0 w-full" data-node-id="30150:166404" data-name="Group Label">
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="30150:166405">
+                  عنوان مجموعة
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-3xl,24px)] items-start justify-end relative shrink-0 w-full" data-node-id="30150:166406" data-name="Link Group">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-md,8px)] items-end min-w-px relative" data-node-id="30150:166407" data-name="Link List">
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166408" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166408;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166409" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166409;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166410" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166410;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166411" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166411;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166412" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166412;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-md,8px)] items-end min-w-[180px] relative" data-node-id="30150:166413" data-name="Footer group">
+              <div className="border-[var(--border\/border-neutral-primary,#d2d6db)] border-b border-solid content-stretch flex flex-col items-end pb-[var(--spacing-md,8px)] relative shrink-0 w-full" data-node-id="30150:166414" data-name="Group Label">
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="30150:166415">
+                  عنوان مجموعة
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-3xl,24px)] items-start justify-end relative shrink-0 w-full" data-node-id="30150:166416" data-name="Link Group">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-md,8px)] items-end min-w-px relative" data-node-id="30150:166417" data-name="Link List">
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166418" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166418;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166419" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166419;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166420" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166420;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166421" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166421;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166422" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166422;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col gap-[var(--spacing-md,8px)] items-end min-w-[180px] relative shrink-0 w-[256px]" data-node-id="30150:166423" data-name="Footer group">
+              <div className="border-[var(--border\/border-neutral-primary,#d2d6db)] border-b border-solid content-stretch flex flex-col items-end pb-[var(--spacing-md,8px)] relative shrink-0 w-full" data-node-id="30150:166424" data-name="Group Label">
+                <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="30150:166425">
+                  عنوان مجموعة
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[var(--spacing-3xl,24px)] items-start justify-end relative shrink-0 w-full" data-node-id="30150:166426" data-name="Link Group">
+                <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--spacing-md,8px)] items-end min-w-px relative" data-node-id="30150:166427" data-name="Link List">
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166428" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166428;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166429" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166429;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166430" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166430;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166431" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166431;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                  <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166432" data-name="Link">
+                    <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166432;2508:25159">
+                      رابط الجزء السفلي
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        <div className="content-stretch flex gap-[var(--spacing-4xl,32px)] items-start min-w-[180px] relative shrink-0 w-full" data-node-id="30150:166433" data-name="Footer group">
+          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-md,8px)] items-end min-w-px relative" data-node-id="30150:166434" data-name="Social media">
+            <div className="border-[var(--border\/border-neutral-primary,#d2d6db)] border-b border-solid content-stretch flex flex-col items-end pb-[var(--spacing-md,8px)] relative shrink-0 w-full" data-node-id="30150:166435" data-name="Group Label">
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="30150:166436">
+                تواصل معنا
+              </p>
+            </div>
+            <div className="content-start flex flex-wrap gap-[var(--spacing-md,8px)] items-start justify-end relative shrink-0 w-full" data-node-id="30150:166437" data-name="Social media">
+              <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-md-gap,4px)] items-center justify-center max-h-[32px] max-w-[32px] min-h-[32px] min-w-[32px] overflow-clip px-[var(--button\/buttons-md-padding,12px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[32px]" data-node-id="30150:166438" data-name="Button">
+                <div className="relative shrink-0 size-[20px]" data-node-id="I30150:166438;407:511749" data-name="Leading Icon">
+                  <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:166438;407:511749;2039:2068" style={{ containerType: "size" }}>
+                    <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                      <div className="relative size-full" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-md-gap,4px)] items-center justify-center max-h-[32px] max-w-[32px] min-h-[32px] min-w-[32px] overflow-clip px-[var(--button\/buttons-md-padding,12px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[32px]" data-node-id="30150:166439" data-name="Button">
+                <div className="relative shrink-0 size-[20px]" data-node-id="I30150:166439;407:511749" data-name="Leading Icon">
+                  <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:166439;407:511749;2039:2068" style={{ containerType: "size" }}>
+                    <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                      <div className="relative size-full" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-md-gap,4px)] items-center justify-center max-h-[32px] max-w-[32px] min-h-[32px] min-w-[32px] overflow-clip px-[var(--button\/buttons-md-padding,12px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[32px]" data-node-id="30150:166440" data-name="Button">
+                <div className="relative shrink-0 size-[20px]" data-node-id="I30150:166440;407:511749" data-name="Leading Icon">
+                  <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:166440;407:511749;2039:2068" style={{ containerType: "size" }}>
+                    <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                      <div className="relative size-full" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-md-gap,4px)] items-center justify-center max-h-[32px] max-w-[32px] min-h-[32px] min-w-[32px] overflow-clip px-[var(--button\/buttons-md-padding,12px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[32px]" data-node-id="30150:166441" data-name="Button">
+                <div className="relative shrink-0 size-[20px]" data-node-id="I30150:166441;407:511749" data-name="Leading Icon">
+                  <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:166441;407:511749;2039:2068" style={{ containerType: "size" }}>
+                    <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                      <div className="relative size-full" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex flex-[1_0_0] flex-col gap-[var(--global\/spacing-md,8px)] items-end min-w-px relative" data-node-id="30150:166442" data-name="Accessibility tools">
+            <div className="border-[var(--border\/border-neutral-primary,#d2d6db)] border-b border-solid content-stretch flex flex-col items-end pb-[var(--spacing-md,8px)] relative shrink-0 w-full" data-node-id="30150:166443" data-name="Group Label">
+              <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[var(--line-height\/text\/line-heights-text-md,24px)] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" dir="auto" data-node-id="30150:166444">
+                أدوات الاتاحة والوصول
+              </p>
+            </div>
+            <div className="content-start flex flex-wrap gap-[var(--spacing-md,8px)] items-start justify-end relative shrink-0 w-full" data-node-id="30150:166445" data-name="Social media">
+              <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-md-gap,4px)] items-center justify-center max-h-[32px] max-w-[32px] min-h-[32px] min-w-[32px] overflow-clip px-[var(--button\/buttons-md-padding,12px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[32px]" data-node-id="30150:166446" data-name="Button">
+                <div className="relative shrink-0 size-[20px]" data-node-id="I30150:166446;407:511749" data-name="Leading Icon">
+                  <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:166446;407:511749;2039:2068" style={{ containerType: "size" }}>
+                    <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                      <div className="relative size-full" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-md-gap,4px)] items-center justify-center max-h-[32px] max-w-[32px] min-h-[32px] min-w-[32px] overflow-clip px-[var(--button\/buttons-md-padding,12px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[32px]" data-node-id="30150:166447" data-name="Button">
+                <div className="relative shrink-0 size-[20px]" data-node-id="I30150:166447;407:511749" data-name="Leading Icon">
+                  <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:166447;407:511749;2039:2068" style={{ containerType: "size" }}>
+                    <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                      <div className="relative size-full" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="border border-[var(--border\/border-neutral-primary,#d2d6db)] border-solid content-stretch flex gap-[var(--button\/buttons-md-gap,4px)] items-center justify-center max-h-[32px] max-w-[32px] min-h-[32px] min-w-[32px] overflow-clip px-[var(--button\/buttons-md-padding,12px)] py-[var(--global\/spacing-none,0px)] relative rounded-[var(--radius\/radius-sm,4px)] shrink-0 size-[32px]" data-node-id="30150:166448" data-name="Button">
+                <div className="relative shrink-0 size-[20px]" data-node-id="I30150:166448;407:511749" data-name="Leading Icon">
+                  <div className="absolute flex inset-[26.04%_13.54%] items-center justify-center" data-node-id="I30150:166448;407:511749;2039:2068" style={{ containerType: "size" }}>
+                    <div className="-rotate-90 -scale-x-100 flex-none h-[100cqw] w-[100cqh]">
+                      <div className="relative size-full" data-name="elements">
+                        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex flex-col gap-[var(--spacing-5xl,40px)] items-end py-[var(--spacing-xl,16px)] relative shrink-0 w-full" data-node-id="30150:166449" data-name="Legal">
+          <div className="content-stretch flex flex-col gap-[var(--spacing-4xl,32px)] items-center justify-center relative shrink-0 w-full" data-node-id="30150:166450" data-name="Links & legal info">
+            <div className="content-center flex flex-wrap gap-[var(--spacing-xl,16px)] items-center justify-center relative shrink-0 w-full" data-node-id="30150:166451" data-name="Link List">
+              <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166452" data-name="Link">
+                <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right underline whitespace-nowrap" dir="auto" data-node-id="I30150:166452;2508:25195">
+                  رابط الجزء السفلي
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166453" data-name="Link">
+                <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right underline whitespace-nowrap" dir="auto" data-node-id="I30150:166453;2508:25195">
+                  رابط الجزء السفلي
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166454" data-name="Link">
+                <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right underline whitespace-nowrap" dir="auto" data-node-id="I30150:166454;2508:25195">
+                  رابط الجزء السفلي
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166455" data-name="Link">
+                <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right underline whitespace-nowrap" dir="auto" data-node-id="I30150:166455;2508:25195">
+                  رابط الجزء السفلي
+                </p>
+              </div>
+              <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166456" data-name="Link">
+                <p className="[text-decoration-skip-ink:none] [text-underline-position:from-font] [word-break:break-word] decoration-from-font decoration-solid font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right underline whitespace-nowrap" dir="auto" data-node-id="I30150:166456;2508:25195">
+                  رابط الجزء السفلي
+                </p>
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col gap-[var(--spacing-md,8px)] items-center justify-center relative shrink-0 w-full" data-node-id="30150:166457" data-name="Legal info">
+              <div className="content-stretch flex items-start justify-end relative shrink-0 w-full" data-node-id="30150:166458" data-name="Legal caption">
+                <p className="[word-break:break-word] flex-[1_0_0] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Semibold')] font-[var(--font-wieght\/font-weight-semibold,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] min-w-px relative text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-center" dir="auto" data-node-id="30150:166459">
+                  جميع الحقوق محفوظة لهيئة الحكومة الرقمية © 2024
+                </p>
+              </div>
+              <div className="content-start flex flex-wrap gap-[var(--spacing-xl,16px)] items-start justify-center relative shrink-0" data-node-id="30150:166460" data-name="Extra Link List">
+                <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166461" data-name="Link">
+                  <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166461;2508:25159">
+                    سياسة الخصوصية
+                  </p>
+                </div>
+                <div className="content-stretch flex gap-[var(--link\/link-sm-gap,4px)] items-center justify-end p-[var(--global\/spacing-none,0px)] relative shrink-0" data-node-id="30150:166462" data-name="Link">
+                  <p className="[word-break:break-word] font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Regular')] font-[var(--font-wieght\/font-weight-regular,normal)] leading-[var(--line-height\/text\/line-heights-text-sm,20px)] relative shrink-0 text-[color:var(--link\/link-neutral,#384250)] text-[length:var(--size\/text\/typo-size-text-sm,14px)] text-right whitespace-nowrap" dir="auto" data-node-id="I30150:166462;2508:25159">
+                    الشروط والأحكام
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="content-stretch flex items-center justify-between opacity-70 relative shrink-0 w-full" data-node-id="30150:166463" data-name="Logos">
+            <LogoPlaceholder className="bg-[var(--background\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative shrink-0" />
+            <LogoPlaceholder className="bg-[var(--background\/background-white,white)] content-stretch flex gap-[8px] items-center px-[4px] py-[5px] relative shrink-0" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+These styles are contained in the design: Text md/Semibold: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-semibold, size: Size/Text/typo-size-text-md, weight: 600, lineHeight: Line Height/Text/line-heights-text-md, letterSpacing: 0), Text sm/Regular: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-sm, weight: 400, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Text sm/Regular underlined: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-regular, size: Size/Text/typo-size-text-sm, weight: 400, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Text sm/Semibold: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-semibold, size: Size/Text/typo-size-text-sm, weight: 600, lineHeight: Line Height/Text/line-heights-text-sm, letterSpacing: 0), Text xs/Medium: Font(family: "Font Family/font-family-text", style: Font Wieght/font-weight-medium, size: Size/Text/typo-size-text-xs, weight: 500, lineHeight: Line Height/Text/line-heights-text-xs, letterSpacing: 0).
+Component descriptions: The following components have usage descriptions or documentation links defined in Figma. These descriptions provide important context about the intended usage, best practices, and any constraints for each component. Follow these guidelines when implementing or using these components.
+
+## Footer
+**Node ID:** 30150:165937
+
+A footer is serve several functions, including providing navigation, housing links to important information, offering contact information, and sometimes integrating social media icons and subscription forms.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/ui-shell/footer](https://design.dga.gov.sa/guidelines/components/ui-shell/footer)
+
+## Link
+**Node ID:** 2508:25804
+
+Links facilitate navigation by allowing users to click (or tap) and navigate users to another location, such as a different site, resource, or section within the same page.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/link](https://design.dga.gov.sa/guidelines/components/actions/link)
+
+## Button
+**Node ID:** 407:510376
+
+Buttons are interactive components that trigger specific actions. The label on a button describes the action that will occur when it is clicked by the user.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/actions/buttons](https://design.dga.gov.sa/guidelines/components/actions/buttons)
+
+## arrow-right-02
+**Node ID:** 13758:241699
+
+arrow, next-arrow, move-right, navigate-right, right-direction
+
+## Logo Placeholder
+**Node ID:** 13518:53065
+
+The Logo placeholder likely represents a company or website logo that helps to establish brand identity.
+
+**Documentation:**
+- [https://design.dga.gov.sa/guidelines/components/ui-shell/navigation-header](https://design.dga.gov.sa/guidelines/components/ui-shell/navigation-header)
+Images and SVGs will be stored as constants, e.g. const image = 'https://www.figma.com/api/mcp/asset/550e8400-e29b-41d4-a716-446655440000.png'. These constants will be used in the code as the source for the image, ex: <img src={image} />. Image assets are stored on a remote server for 7 days and can be fetched using the provided URLs until they expire.

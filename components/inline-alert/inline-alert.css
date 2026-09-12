@@ -12,38 +12,34 @@
    ══════════════════════════════════════════════════════════════ */
 
 .inline-alert {
-  /* TODO: all --inline-alert-* tokens are missing from token.css.
-     Fallbacks reference global primitive tokens from Figma manifest.
-     Add component tokens to token.css before shipping. */
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--inline-alert-gap, var(--Notification-notification-gap, 16px));
-  padding-block: var(--inline-alert-padding-block, var(--Notification-notification-padding, 16px));
-  padding-inline: var(--inline-alert-padding-inline, var(--Notification-notification-h-padding, 24px));
-  border-radius: var(--inline-alert-border-radius, var(--Radius-radius-md, 8px));
-  border: 1px solid var(--inline-alert-border-color, var(--Border-border-neutral-primary, #D2D6DB));
-  background: var(--inline-alert-bg, var(--Background-background-notification-white, #FFF));
-  font-family: var(--Font-Family-font-family-text, "IBM Plex Sans Arabic"), sans-serif;
+  gap: var(--inline-alert-gap);
+  padding-block: var(--inline-alert-padding-block);
+  padding-inline: var(--inline-alert-padding-inline);
+  border-radius: var(--inline-alert-border-radius);
+  border: var(--border-width-thin) solid var(--inline-alert-border-color, var(--gray-300));
+  background: var(--inline-alert-bg, var(--white));
+  font-family: var(--font-sans), sans-serif;
   box-sizing: border-box;
   width: 100%;
 }
 
 
 /* ── Vertical accent bar ── */
-/* TODO: --inline-alert-accent-bg, --inline-alert-accent-width, --inline-alert-accent-opacity
-   missing in token.css. Proposed: map to type-specific Background tokens. */
+/* Accent color is selected locally by variant; width and opacity are central tokens. */
 .inline-alert::before {
   content: "";
   position: absolute;
   inset-block: 0;
   inset-inline-start: 0;
-  width: var(--inline-alert-accent-width, 8px);
-  background: var(--inline-alert-accent-bg, var(--Background-background-neutral-200, #E5E7EB));
-  opacity: var(--inline-alert-accent-opacity, 0.7);
-  border-start-start-radius: var(--inline-alert-border-radius, var(--Radius-radius-md, 8px));
-  border-end-start-radius: var(--inline-alert-border-radius, var(--Radius-radius-md, 8px));
+  width: var(--inline-alert-accent-width);
+  background: var(--inline-alert-accent-bg, var(--gray-200));
+  opacity: var(--inline-alert-accent-opacity);
+  border-start-start-radius: var(--inline-alert-border-radius);
+  border-end-start-radius: var(--inline-alert-border-radius);
   pointer-events: none;
 }
 
@@ -56,62 +52,60 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: var(--inline-alert-header-gap, var(--Global-spacing-lg, 12px));
+  gap: var(--inline-alert-header-gap);
   align-self: stretch;
 }
 
 
 /* ── Icon wrap (Featured icon circle) ── */
-/* TODO: --inline-alert-icon-bg, --inline-alert-icon-radius missing in token.css. */
 .inline-alert__icon-wrap {
   display: flex;
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
+  width: var(--space-40);
+  height: var(--space-40);
+  padding: var(--space-10);
   justify-content: center;
   align-items: center;
-  border-radius: var(--inline-alert-icon-radius, var(--radius-full, 9999px));
-  background: var(--inline-alert-icon-bg, var(--Background-background-neutral-50, #F9FAFB));
+  border-radius: var(--inline-alert-icon-radius);
+  background: var(--inline-alert-icon-bg, var(--gray-50));
   box-sizing: border-box;
 }
 
 .inline-alert__icon {
-  width: 20px;
-  height: 20px;
+  width: var(--space-20);
+  height: var(--space-20);
   flex-shrink: 0;
   display: block;
 }
 
 
 /* ── Text content ── */
-/* TODO: all --inline-alert-title-* and --inline-alert-body-* tokens missing in token.css. */
 .inline-alert__content {
   display: flex;
   flex: 1 0 0;
-  min-height: 40px;
+  min-height: var(--space-40);
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: var(--inline-alert-content-gap, var(--Text-text-content-gap, 8px));
+  gap: var(--inline-alert-content-gap);
 }
 
 .inline-alert__title {
   margin: 0;
   align-self: stretch;
-  color: var(--inline-alert-title-color, var(--Text-text-display, #1F2A37));
-  font-size: var(--inline-alert-title-font-size, var(--Size-Text-typo-size-text-md, 16px));
-  font-weight: var(--inline-alert-title-font-weight, 600);
-  line-height: var(--inline-alert-title-line-height, var(--Line-Height-Text-line-heights-text-md, 24px));
+  color: var(--inline-alert-title-color);
+  font-size: var(--inline-alert-title-font-size);
+  font-weight: var(--inline-alert-title-font-weight);
+  line-height: var(--inline-alert-title-line-height);
 }
 
 .inline-alert__body {
   margin: 0;
   align-self: stretch;
-  color: var(--inline-alert-body-color, var(--Text-text-primary-paragraph, #384250));
-  font-size: var(--inline-alert-body-font-size, var(--Size-Text-typo-size-text-sm, 14px));
-  font-weight: var(--inline-alert-body-font-weight, 400);
-  line-height: var(--inline-alert-body-line-height, var(--Line-Height-Text-line-heights-text-sm, 20px));
+  color: var(--inline-alert-body-color);
+  font-size: var(--inline-alert-body-font-size);
+  font-weight: var(--inline-alert-body-font-weight);
+  line-height: var(--inline-alert-body-line-height);
 }
 
 
@@ -126,14 +120,12 @@
 /* ══════════════════════════════════════════════════════════════
    ACTIONS
    ══════════════════════════════════════════════════════════════ */
-
-/* TODO: --inline-alert-actions-gap, --inline-alert-actions-padding-inline missing in token.css. */
 .inline-alert__actions {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: var(--inline-alert-actions-gap, var(--Button-buttons-group-gap, 8px));
-  padding-inline: var(--inline-alert-actions-padding-inline, var(--Global-spacing-5xl, 40px));
+  gap: var(--inline-alert-actions-gap);
+  padding-inline: var(--inline-alert-actions-padding-inline);
   align-self: stretch;
 }
 /* Action buttons use .btn .btn--primary .btn--md and .btn .btn--neutral .btn--md directly.
@@ -146,26 +138,26 @@
 
 /* ── Info ── */
 .inline-alert--info {
-  --inline-alert-icon-bg: var(--Icon-background-info-light, #EFF8FF);
-  --inline-alert-accent-bg: var(--Background-background-info, #1570EF);
+  --inline-alert-icon-bg: var(--info-50);
+  --inline-alert-accent-bg: var(--info-600);
 }
 
 /* ── Destructive ── */
 .inline-alert--destructive {
-  --inline-alert-icon-bg: var(--Icon-background-error-light, #FEF3F2);
-  --inline-alert-accent-bg: var(--Background-background-error, #D92D20);
+  --inline-alert-icon-bg: var(--error-50);
+  --inline-alert-accent-bg: var(--error-600);
 }
 
 /* ── Warning ── */
 .inline-alert--warning {
-  --inline-alert-icon-bg: var(--Icon-background-warning-light, #FFFAEB);
-  --inline-alert-accent-bg: var(--Background-background-warning, #DC6803);
+  --inline-alert-icon-bg: var(--warning-50);
+  --inline-alert-accent-bg: var(--warning-600);
 }
 
 /* ── Success ── */
 .inline-alert--success {
-  --inline-alert-icon-bg: var(--Icon-background-success-light, #ECFDF3);
-  --inline-alert-accent-bg: var(--Background-background-success, #079455);
+  --inline-alert-icon-bg: var(--success-50);
+  --inline-alert-accent-bg: var(--success-600);
 }
 
 
@@ -175,31 +167,31 @@
 
 /* Neutral + color bg */
 .inline-alert--color-bg {
-  --inline-alert-bg: var(--Background-background-neutral-25, #FCFCFD);
+  --inline-alert-bg: var(--gray-25);
 }
 
 /* Info + color bg */
 .inline-alert--info.inline-alert--color-bg {
-  --inline-alert-bg: var(--Background-background-info-25, #F5FAFF);
-  --inline-alert-border-color: var(--Border-border-info-light, #B2DDFF);
+  --inline-alert-bg: var(--info-25);
+  --inline-alert-border-color: var(--info-200);
 }
 
 /* Destructive + color bg */
 .inline-alert--destructive.inline-alert--color-bg {
-  --inline-alert-bg: var(--Background-background-error-25, #FFFBFA);
-  --inline-alert-border-color: var(--Border-border-error-light, #FECDCA);
+  --inline-alert-bg: var(--error-25);
+  --inline-alert-border-color: var(--error-200);
 }
 
 /* Warning + color bg */
 .inline-alert--warning.inline-alert--color-bg {
-  --inline-alert-bg: var(--Background-background-warning-25, #FFFCF5);
-  --inline-alert-border-color: var(--Border-border-warning-light, #FEDF89);
+  --inline-alert-bg: var(--warning-25);
+  --inline-alert-border-color: var(--warning-200);
 }
 
 /* Success + color bg */
 .inline-alert--success.inline-alert--color-bg {
-  --inline-alert-bg: var(--Background-background-success-25, #F6FEF9);
-  --inline-alert-border-color: var(--Border-border-success-light, #ABEFC6);
+  --inline-alert-bg: var(--success-25);
+  --inline-alert-border-color: var(--success-200);
 }
 
 
@@ -213,15 +205,15 @@
 
 [dir="rtl"] .inline-alert__content {
   align-items: flex-end;
-  text-align: right;
+  text-align: start;
 }
 
 /* Accent bar moves to inline-end (right in RTL) */
 [dir="rtl"] .inline-alert::before {
   border-start-start-radius: 0;
   border-end-start-radius: 0;
-  border-start-end-radius: var(--inline-alert-border-radius, var(--Radius-radius-md, 8px));
-  border-end-end-radius: var(--inline-alert-border-radius, var(--Radius-radius-md, 8px));
+  border-start-end-radius: var(--inline-alert-border-radius);
+  border-end-end-radius: var(--inline-alert-border-radius);
 }
 
 
@@ -240,13 +232,11 @@
 .inline-alert--mobile .inline-alert__close {
   position: absolute;
   inset-block-start: 0;
-  inset-inline-end: -8px;
+  inset-inline-end: calc(-1 * var(--space-8));
 }
 
 .inline-alert--mobile .inline-alert__content {
-  /* TODO: --inline-alert-mobile-content-gap missing in token.css.
-     Figma hardcodes 4px for this gap in Mobile=True variants. */
-  gap: 4px;
+  gap: var(--space-4);
   min-height: unset;
 }
 
@@ -260,7 +250,7 @@
 }
 
 /* Responsive breakpoint (automatic mobile) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .inline-alert .inline-alert__header {
     position: relative;
     flex-direction: column;
@@ -271,11 +261,11 @@
   .inline-alert .inline-alert__close {
     position: absolute;
     inset-block-start: 0;
-    inset-inline-end: -8px;
+    inset-inline-end: calc(-1 * var(--space-8));
   }
 
   .inline-alert .inline-alert__content {
-    gap: 4px;
+    gap: var(--space-4);
     min-height: unset;
   }
 

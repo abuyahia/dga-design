@@ -1,0 +1,1215 @@
+const imgElements = "https://www.figma.com/api/mcp/asset/df4fb447-49a3-47aa-8b64-c23d4dbdb830.svg";
+const imgElements1 = "https://www.figma.com/api/mcp/asset/ace17126-40e5-4bc6-bd49-352b4dff20be.svg";
+const imgElements2 = "https://www.figma.com/api/mcp/asset/2d1faa55-a8bb-458b-acc6-85b19fd55982.svg";
+
+type HeaderActionProps = {
+  className?: string;
+  icon?: boolean;
+  iconOnly?: boolean;
+  iconPosition?: "Inline" | "Top";
+  rtl?: boolean;
+  selected?: boolean;
+  state?: "Default" | "Hovered" | "Pressed" | "Focused" | "Disabled";
+  swapIcon?: React.ReactNode | null;
+  textAr?: string;
+  textEn?: string;
+};
+
+export default function HeaderAction({ className, icon = true, iconOnly = false, iconPosition = "Inline", rtl = false, selected = true, state = "Default", swapIcon = null, textAr = "إجراء", textEn = "Action" }: HeaderActionProps) {
+  if (!rtl && state === "Hovered" && selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-hovered,#166a45)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148452" data-name="RTL=False, State=Hovered, Selected=True, Icon position=Inline, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148453" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148453;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148454" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="30150:148455">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148456" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148457" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Pressed" && selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-pressed,#104631)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148458" data-name="RTL=False, State=Pressed, Selected=True, Icon position=Inline, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148459" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148459;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148460" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="30150:148461">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148462" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148463" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Focused" && selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "bg-[var(--button\\/button-background-primary-selected,#14573a)] border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] overflow-clip px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148464" data-name="RTL=False, State=Focused, Selected=True, Icon position=Inline, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148465" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148465;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148466" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] whitespace-nowrap" data-node-id="30150:148467">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-[-2px] px-[var(--spacing-md,8px)] right-[-2px] top-[64px]" data-node-id="30150:148468" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148469" data-name="Selector" />
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148470" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (!rtl && state === "Disabled" && selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148471" data-name="RTL=False, State=Disabled, Selected=True, Icon position=Inline, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148472" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148472;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148473" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--global\/text-default-disabled,#9da4ae)] whitespace-nowrap" data-node-id="30150:148474">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148475" data-name="Selection indicator">
+          <div className="bg-[var(--global\/background-disabled,#e5e7eb)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148476" data-name="Selector" />
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Disabled" && selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148477" data-name="RTL=True, State=Disabled, Selected=True, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148478" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--global\/text-default-disabled,#9da4ae)] text-right whitespace-nowrap" data-node-id="30150:148479">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148480" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148480;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148481" data-name="Selection indicator">
+          <div className="bg-[var(--global\/background-disabled,#e5e7eb)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148482" data-name="Selector" />
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Focused" && selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "bg-[var(--button\\/button-background-primary-selected,#14573a)] border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] overflow-clip px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148483" data-name="RTL=True, State=Focused, Selected=True, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148484" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148485">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148486" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148486;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-[-2px] px-[var(--spacing-md,8px)] right-[-2px] top-[64px]" data-node-id="30150:148487" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148488" data-name="Selector" />
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148489" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (rtl && state === "Pressed" && selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-pressed,#104631)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148490" data-name="RTL=True, State=Pressed, Selected=True, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148491" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148492">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148493" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148493;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148494" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148495" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Hovered" && selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-hovered,#166a45)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148496" data-name="RTL=True, State=Hovered, Selected=True, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148497" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148498">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148499" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148499;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148500" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148501" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Default" && selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-default,#1b8354)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148502" data-name="RTL=True, State=Default, Selected=True, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148503" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148504">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148505" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148505;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148506" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148507" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Default" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148508" data-name="RTL=False, State=Default, Selected=False, Icon position=Inline, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148509" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148509;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148510" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="30150:148511">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (!rtl && state === "Hovered" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-hovered,#f3f4f6)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148512" data-name="RTL=False, State=Hovered, Selected=False, Icon position=Inline, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148513" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148513;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148514" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-left whitespace-nowrap" data-node-id="30150:148515">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148516" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-400,#9da4ae)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148517" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Pressed" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-pressed,#e5e7eb)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148518" data-name="RTL=False, State=Pressed, Selected=False, Icon position=Inline, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148519" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148519;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148520" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-left whitespace-nowrap" data-node-id="30150:148521">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148522" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-800,#1f2a37)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148523" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Focused" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148524" data-name="RTL=False, State=Focused, Selected=False, Icon position=Inline, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148525" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148525;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148526" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="30150:148527">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148528" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (!rtl && state === "Disabled" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148529" data-name="RTL=False, State=Disabled, Selected=False, Icon position=Inline, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148530" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148530;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148531" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--global\/text-default-disabled,#9da4ae)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="30150:148532">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Disabled" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148533" data-name="RTL=True, State=Disabled, Selected=False, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148534" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--global\/text-default-disabled,#9da4ae)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148535">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148536" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148536;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+      </div>
+    );
+  }
+  if (rtl && state === "Focused" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148537" data-name="RTL=True, State=Focused, Selected=False, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148538" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148539">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148540" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148540;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148541" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (rtl && state === "Pressed" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-pressed,#e5e7eb)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148542" data-name="RTL=True, State=Pressed, Selected=False, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148543" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148544">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148545" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148545;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148546" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-800,#1f2a37)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148547" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Hovered" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-hovered,#f3f4f6)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148548" data-name="RTL=True, State=Hovered, Selected=False, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148549" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148550">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148551" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148551;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148552" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-400,#9da4ae)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148553" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Default" && !selected && iconPosition === "Inline" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148554" data-name="RTL=True, State=Default, Selected=False, Icon position=Inline, Icon only=False">
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148555" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148556">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148557" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148557;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+      </div>
+    );
+  }
+  if (!rtl && state === "Default" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-default,#1b8354)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148558" data-name="RTL=False, State=Default, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148559" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148559;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148560" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="30150:148561">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148562" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148563" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Default" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-default,#1b8354)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148564" data-name="RTL=False, State=Default, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148565" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148565;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148566" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148567" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Hovered" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-hovered,#166a45)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148568" data-name="RTL=False, State=Hovered, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148569" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148569;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148570" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="30150:148571">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148572" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148573" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Hovered" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-hovered,#166a45)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148574" data-name="RTL=False, State=Hovered, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148575" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148575;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148576" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148577" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Pressed" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-pressed,#104631)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148578" data-name="RTL=False, State=Pressed, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148579" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148579;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148580" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="30150:148581">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148582" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148583" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Pressed" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-pressed,#104631)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148584" data-name="RTL=False, State=Pressed, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148585" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148585;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148586" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148587" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Focused" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "bg-[var(--button\\/button-background-primary-selected,#14573a)] border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] overflow-clip px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148588" data-name="RTL=False, State=Focused, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148589" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148589;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148590" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] whitespace-nowrap" data-node-id="30150:148591">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-[-2px] px-[var(--spacing-md,8px)] right-[-2px] top-[64px]" data-node-id="30150:148592" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148593" data-name="Selector" />
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148594" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (!rtl && state === "Focused" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "bg-[var(--button\\/button-background-primary-selected,#14573a)] border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] overflow-clip px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148595" data-name="RTL=False, State=Focused, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148596" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148596;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-[-2px] px-[var(--spacing-md,8px)] right-[-2px] top-[64px]" data-node-id="30150:148597" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148598" data-name="Selector" />
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148599" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (!rtl && state === "Disabled" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148600" data-name="RTL=False, State=Disabled, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148601" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148601;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148602" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--global\/text-default-disabled,#9da4ae)] whitespace-nowrap" data-node-id="30150:148603">
+            <p className="leading-[24px]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148604" data-name="Selection indicator">
+          <div className="bg-[var(--global\/background-disabled,#e5e7eb)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148605" data-name="Selector" />
+        </div>
+      </div>
+    );
+  }
+  if (!rtl && state === "Disabled" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148606" data-name="RTL=False, State=Disabled, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148607" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148607;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148608" data-name="Selection indicator">
+          <div className="bg-[var(--global\/background-disabled,#e5e7eb)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148609" data-name="Selector" />
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Disabled" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148610" data-name="RTL=True, State=Disabled, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148611" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148611;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148612" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--global\/text-default-disabled,#9da4ae)] text-right whitespace-nowrap" data-node-id="30150:148613">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148614" data-name="Selection indicator">
+          <div className="bg-[var(--global\/background-disabled,#e5e7eb)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148615" data-name="Selector" />
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Disabled" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148616" data-name="RTL=True, State=Disabled, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148617" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148617;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148618" data-name="Selection indicator">
+          <div className="bg-[var(--global\/background-disabled,#e5e7eb)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148619" data-name="Selector" />
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Focused" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "bg-[var(--button\\/button-background-primary-selected,#14573a)] border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] overflow-clip px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148620" data-name="RTL=True, State=Focused, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148621" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148621;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148622" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148623">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-[-2px] px-[var(--spacing-md,8px)] right-[-2px] top-[64px]" data-node-id="30150:148624" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148625" data-name="Selector" />
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148626" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (rtl && state === "Focused" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "bg-[var(--button\\/button-background-primary-selected,#14573a)] border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] overflow-clip px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148627" data-name="RTL=True, State=Focused, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148628" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148628;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-[-2px] px-[var(--spacing-md,8px)] right-[-2px] top-[64px]" data-node-id="30150:148629" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148630" data-name="Selector" />
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148631" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (rtl && state === "Pressed" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-pressed,#104631)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148632" data-name="RTL=True, State=Pressed, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148633" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148633;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148634" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148635">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148636" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148637" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Pressed" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-pressed,#104631)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148638" data-name="RTL=True, State=Pressed, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148639" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148639;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148640" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148641" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Hovered" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-hovered,#166a45)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148642" data-name="RTL=True, State=Hovered, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148643" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148643;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148644" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148645">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148646" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148647" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Hovered" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-hovered,#166a45)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148648" data-name="RTL=True, State=Hovered, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148649" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148649;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148650" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148651" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Default" && selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-default,#1b8354)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148652" data-name="RTL=True, State=Default, Selected=True, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148653" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148653;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148654" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-right whitespace-nowrap" data-node-id="30150:148655">
+            <p className="leading-[24px]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148656" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148657" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Default" && selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-primary-default,#1b8354)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148658" data-name="RTL=True, State=Default, Selected=True, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148659" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148659;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148660" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148661" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Default" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148662" data-name="RTL=False, State=Default, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148663" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148663;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148664" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="30150:148665">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (!rtl && state === "Default" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148666" data-name="RTL=False, State=Default, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148667" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148667;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+  if (!rtl && state === "Hovered" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-hovered,#f3f4f6)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148668" data-name="RTL=False, State=Hovered, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148669" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148669;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148670" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-left whitespace-nowrap" data-node-id="30150:148671">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148672" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-400,#9da4ae)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148673" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Hovered" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-hovered,#f3f4f6)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148674" data-name="RTL=False, State=Hovered, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148675" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148675;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148676" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-400,#9da4ae)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148677" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Pressed" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-pressed,#e5e7eb)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148678" data-name="RTL=False, State=Pressed, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148679" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148679;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148680" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-left whitespace-nowrap" data-node-id="30150:148681">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148682" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-800,#1f2a37)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148683" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Pressed" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-pressed,#e5e7eb)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148684" data-name="RTL=False, State=Pressed, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148685" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148685;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148686" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-800,#1f2a37)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148687" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (!rtl && state === "Focused" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148688" data-name="RTL=False, State=Focused, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148689" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148689;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148690" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="30150:148691">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148692" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (!rtl && state === "Focused" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148693" data-name="RTL=False, State=Focused, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148694" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148694;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        )}
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148695" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (!rtl && state === "Disabled" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148696" data-name="RTL=False, State=Disabled, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148697" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148697;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148698" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--global\/text-default-disabled,#9da4ae)] text-[length:var(--size\/text\/typo-size-text-md,16px)] whitespace-nowrap" data-node-id="30150:148699">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]">{textEn}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (!rtl && state === "Disabled" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148700" data-name="RTL=False, State=Disabled, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148701" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148701;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+  if (rtl && state === "Disabled" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148702" data-name="RTL=True, State=Disabled, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148703" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148703;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148704" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--global\/text-default-disabled,#9da4ae)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148705">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Disabled" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148706" data-name="RTL=True, State=Disabled, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148707" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148707;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements1} />
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+  if (rtl && state === "Focused" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148708" data-name="RTL=True, State=Focused, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148709" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148709;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148710" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148711">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148712" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (rtl && state === "Focused" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "border-2 border-[var(--border\\/border-black,#161616)] border-solid content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148713" data-name="RTL=True, State=Focused, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148714" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148714;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        )}
+        <div className="absolute border-2 border-[var(--border\/border-white,white)] border-solid inset-0 rounded-[var(--radius-xs,2px)]" data-node-id="30150:148715" data-name="Focus outline" />
+      </div>
+    );
+  }
+  if (rtl && state === "Pressed" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-pressed,#e5e7eb)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148716" data-name="RTL=True, State=Pressed, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148717" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148717;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148718" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148719">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148720" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-800,#1f2a37)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148721" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Pressed" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-pressed,#e5e7eb)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148722" data-name="RTL=True, State=Pressed, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148723" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148723;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148724" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-800,#1f2a37)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148725" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Hovered" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-hovered,#f3f4f6)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148726" data-name="RTL=True, State=Hovered, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148727" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148727;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148728" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148729">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148730" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-400,#9da4ae)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148731" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Hovered" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <button className={className || "bg-[var(--button\\/button-background-neutral-hovered,#f3f4f6)] content-stretch cursor-pointer flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148732" data-name="RTL=True, State=Hovered, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148733" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148733;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        )}
+        <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148734" data-name="Selection indicator">
+          <div className="bg-[var(--background\/background-neutral-400,#9da4ae)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148735" data-name="Selector" />
+        </div>
+      </button>
+    );
+  }
+  if (rtl && state === "Default" && !selected && iconPosition === "Top" && !iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148736" data-name="RTL=True, State=Default, Selected=False, Icon position=Top, Icon only=False">
+        {icon &&
+          (swapIcon || (
+            <div className="relative shrink-0 size-[24px]" data-node-id="30150:148737" data-name="Leading Icon">
+              <div className="absolute inset-[7.29%]" data-node-id="I30150:148737;2145:19360" data-name="elements">
+                <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+              </div>
+            </div>
+          ))}
+        <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148738" data-name="Tab title">
+          <div className="[word-break:break-word] flex flex-col font-[family-name:var(--font-family\/font-family-text,'IBM_Plex_Sans_Arabic:Medium')] font-[var(--font-wieght\/font-weight-medium,normal)] justify-end leading-[0] relative shrink-0 text-[color:var(--text\/text-default,#161616)] text-[length:var(--size\/text\/typo-size-text-md,16px)] text-right whitespace-nowrap" data-node-id="30150:148739">
+            <p className="leading-[var(--line-height\/text\/line-heights-text-md,24px)]" dir="auto">
+              {textAr}
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (rtl && state === "Default" && !selected && iconPosition === "Top" && iconOnly) {
+    return (
+      <div className={className || "content-stretch flex flex-col gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148740" data-name="RTL=True, State=Default, Selected=False, Icon position=Top, Icon only=True">
+        {swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148741" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148741;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements2} />
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+  return (
+    <button className={className || "bg-[var(--button\\/button-background-primary-default,#1b8354)] content-stretch cursor-pointer flex gap-[var(--spacing-xs,4px)] h-[72px] items-center justify-center min-w-[72px] px-[var(--spacing-xl,16px)] py-[var(--spacing-md,8px)] relative rounded-[var(--radius-sm,4px)]"} data-node-id="30150:148446" data-name="RTL=False, State=Default, Selected=True, Icon position=Inline, Icon only=False">
+      {icon &&
+        (swapIcon || (
+          <div className="relative shrink-0 size-[24px]" data-node-id="30150:148447" data-name="Leading Icon">
+            <div className="absolute inset-[7.29%]" data-node-id="I30150:148447;2145:19360" data-name="elements">
+              <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgElements} />
+            </div>
+          </div>
+        ))}
+      <div className="content-stretch flex items-start relative shrink-0" data-node-id="30150:148448" data-name="Tab title">
+        <div className="[word-break:break-word] flex flex-col font-['IBM_Plex_Sans_Arabic:SemiBold'] justify-end leading-[0] not-italic relative shrink-0 text-[16px] text-[color:var(--text\/text-oncolor-primary,white)] text-left whitespace-nowrap" data-node-id="30150:148449">
+          <p className="leading-[24px]">{textEn}</p>
+        </div>
+      </div>
+      <div className="absolute content-stretch flex flex-col items-center justify-center left-0 px-[var(--spacing-md,8px)] right-0 top-[66px]" data-node-id="30150:148450" data-name="Selection indicator">
+        <div className="bg-[var(--background\/background-primary-400,#54c08a)] h-[6px] relative rounded-[var(--radius-full,9999px)] shrink-0 w-full" data-node-id="30150:148451" data-name="Selector" />
+      </div>
+    </button>
+  );
+}

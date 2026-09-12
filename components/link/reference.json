@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "link",
     "description": "Inline navigation element. Renders as an <a> anchor. Supports Primary, Neutral, and On-color styles, Small and Medium sizes, and an Inline mode with persistent underline."
@@ -103,11 +103,7 @@
     "--link-focus-ring-offset",
     "--link-font-weight"
   ],
-  "variants": {
-    "total_in_manifest": 144,
-    "meaningful_css_variants": 36,
-    "notes": "144 = 6 states × 2 RTL × 3 styles × 2 sizes × 2 inline. RTL discarded. Inline is a boolean modifier, not a dimension. Meaningful: 6 states × 3 styles × 2 sizes = 36."
-  },
+  "variants": [],
   "implementation_notes": [
     "Focus ring implemented via CSS outline (not border) to avoid layout shift. 2px solid, outline-offset 2px.",
     "Neutral Visited uses --Link-link-primary-visited token. Intentional per Figma.",
@@ -115,5 +111,12 @@
     "pointer-events: none on disabled does not prevent keyboard activation — JavaScript click guard is required at implementation level.",
     "gap token preserved for future icon slot support even though no icon children exist in current manifest.",
     "Default size is Small. No modifier class required for Small."
-  ]
+  ],
+  "variant_summary": {
+    "total_in_manifest": 144,
+    "meaningful_css_variants": 36,
+    "notes": "144 = 6 states × 2 RTL × 3 styles × 2 sizes × 2 inline. RTL discarded. Inline is a boolean modifier, not a dimension. Meaningful: 6 states × 3 styles × 2 sizes = 36."
+  },
+  "variant_coverage": "axes_only",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

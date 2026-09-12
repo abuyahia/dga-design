@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0.0",
+  "component": "textarea",
+  "status": "implemented_subset",
+  "source_data": "reference.json",
+  "note": "Contact template multiline field composed with Text Input; full standalone variant certification pending."
+}

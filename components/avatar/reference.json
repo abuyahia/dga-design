@@ -17,12 +17,7 @@
     "square": [false, true],
     "size": [24, 32, 40, 48, 64, 80, 120]
   },
-  "variants": {
-    "count": 42,
-    "formula": "3 types × 2 shapes × 7 sizes = 42 variants",
-    "group_count": 2,
-    "group_formula": "2 group variants: Stacked=True, Stacked=False"
-  },
+  "variants": [],
   "size_tokens": {
     "24": {
       "size": "24px",
@@ -146,5 +141,13 @@
     "Border width increases from 2px to 4px at size 120px.",
     "Square shape at 120px uses border-radius-8 instead of border-radius-4.",
     "Cross-component token --Button-button-background-neutral-default used as fallback for --avatar-bg-default — tracked as blocker in compliance.json."
-  ]
+  ],
+  "variant_summary": {
+    "count": 42,
+    "formula": "3 types × 2 shapes × 7 sizes = 42 variants",
+    "group_count": 2,
+    "group_formula": "2 group variants: Stacked=True, Stacked=False"
+  },
+  "variant_coverage": "axes_only",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

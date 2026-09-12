@@ -1,0 +1,205 @@
+{
+  "batch": 2,
+  "status": "foundation_implemented",
+  "full_component_certification": false,
+  "central_tokens": {
+    "before": 437,
+    "after": 1128,
+    "registered": 691
+  },
+  "strict_audit": {
+    "errors": 0,
+    "warnings": 0,
+    "component_rules_not_run": 309
+  },
+  "static_regression_tests": 15,
+  "browser_engine": "Chrome (installed), headless, external requests blocked",
+  "token_migration_style_comparison": {
+    "showcase_cases": 54,
+    "properties_compared": 179062,
+    "differences": 0,
+    "scope": "Colors, backgrounds, borders, font size/weight/line-height, padding and gap at 1280px. Captured before later logical-position corrections. Not a pixel comparison."
+  },
+  "foundation_browser_cases": [
+    {
+      "direction": "ltr",
+      "width": 320,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 320,
+        "containerCentered": true,
+        "columns": 1,
+        "firstCardAtStart": false,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "direction": "ltr",
+      "width": 375,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 375,
+        "containerCentered": true,
+        "columns": 1,
+        "firstCardAtStart": false,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "direction": "ltr",
+      "width": 768,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 768,
+        "containerCentered": true,
+        "columns": 2,
+        "firstCardAtStart": true,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "direction": "ltr",
+      "width": 1280,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 1280,
+        "containerCentered": true,
+        "columns": 3,
+        "firstCardAtStart": true,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "direction": "ltr",
+      "width": 1600,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 1280,
+        "containerCentered": true,
+        "columns": 3,
+        "firstCardAtStart": true,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "direction": "rtl",
+      "width": 320,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 320,
+        "containerCentered": true,
+        "columns": 1,
+        "firstCardAtStart": false,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "direction": "rtl",
+      "width": 375,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 375,
+        "containerCentered": true,
+        "columns": 1,
+        "firstCardAtStart": false,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "direction": "rtl",
+      "width": 768,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 768,
+        "containerCentered": true,
+        "columns": 2,
+        "firstCardAtStart": true,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "direction": "rtl",
+      "width": 1280,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 1280,
+        "containerCentered": true,
+        "columns": 3,
+        "firstCardAtStart": true,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "direction": "rtl",
+      "width": 1600,
+      "checks": {
+        "overflow": false,
+        "containerWidth": 1280,
+        "containerCentered": true,
+        "columns": 3,
+        "firstCardAtStart": true,
+        "hiddenTextClipped": true,
+        "rangeFillCorrect": true,
+        "buttonFont": "\"IBM Plex Sans Arabic\", \"Noto Sans Arabic\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+        "formFits": true,
+        "skipFocused": true,
+        "skipTarget": true
+      }
+    },
+    {
+      "reducedMotion": true
+    }
+  ],
+  "known_limits": [
+    "No full component keyboard/ARIA/contrast or screen-reader audit.",
+    "Only Chrome was exercised.",
+    "Font files are not shipped; system fallbacks are used when declared Arabic fonts are unavailable.",
+    "Existing component readiness remains needs_improvement."
+  ],
+  "next_batch": "Global Partial contracts and Core Component qualification; not started."
+}

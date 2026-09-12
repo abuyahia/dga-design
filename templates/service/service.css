@@ -1,0 +1,58 @@
+/* Figma Service Page: 1280 content, 832/416 columns and 32px gap at 1440. */
+.service-catalog { padding-block: var(--space-40); }
+.service-catalog__search { display: flex; flex-wrap: wrap; gap: var(--space-16); margin-block-end: var(--space-48); }
+.service-catalog__search .text-input { inline-size: var(--service-search-width); max-inline-size: 100%; }
+.service-catalog__filters { display: flex; flex-wrap: wrap; gap: var(--space-8); border-block-end: var(--border-width-thin) solid var(--gray-300); }
+.service-catalog__filters .tab[aria-pressed="true"] { font-weight: var(--font-weight-heading); }
+.service-catalog__filters .tab[aria-pressed="true"]::before { display: block; }
+.service-catalog__status { margin-block: var(--space-16); font-size: var(--fs-text-sm); color: var(--gray-700); }
+.service-catalog__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-32); }
+.service-catalog__empty { padding: var(--space-40); text-align: center; }
+.service-page > .ds-container, .service-page__related > .ds-container, .service-page__faq > .ds-container, .service-catalog > .ds-container { max-inline-size: var(--service-container-width); }
+.service-page { padding-block: var(--space-40); }
+.service-page__layout { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr); align-items: start; gap: var(--space-32); }
+.service-page__main { display: flex; flex-direction: column; gap: var(--space-64); min-inline-size: 0; }
+.service-page__description { display: flex; flex-direction: column; gap: var(--space-16); }
+.service-page__title-row { display: flex; align-items: flex-end; gap: var(--space-32); }
+.service-page__title { flex: 1; min-inline-size: 0; display: flex; flex-direction: column; gap: var(--space-8); }
+.service-page__title h1 { margin: 0; font-size: var(--fs-display-sm); line-height: var(--lh-display-sm); font-weight: var(--font-weight-heading); }
+.service-page__lead { margin: 0; max-inline-size: var(--service-description-max); font-size: var(--fs-text-md); line-height: var(--lh-text-md); }
+.service-page__details { display: flex; flex-direction: column; gap: var(--space-24); }
+.service-page__details .tab-list { flex-direction: row; justify-content: flex-start; inline-size: 100%; max-inline-size: 100%; overflow-x: auto; padding-block: 0; }
+.service-page__panel { min-inline-size: 0; }
+.service-page__panel h2 { font-size: var(--fs-text-lg); }
+.service-page__panel ol, .service-page__panel ul { display: flex; flex-direction: column; gap: var(--space-16); margin: 0; padding-inline-start: var(--space-24); font-size: var(--fs-text-md); line-height: var(--lh-text-md); }
+.service-page__video { display: block; inline-size: 100%; border-radius: var(--radius-lg); background: var(--gray-50); margin-block-end: var(--space-24); }
+.service-page__facts, .service-page__support { inline-size: 100%; }
+.service-page__sidebar { inline-size: 100%; padding: var(--space-40); gap: var(--space-24); }
+.service-page__facts { display: flex; flex-direction: column; gap: var(--space-16); margin: 0; }
+.service-page__fact { display: flex; align-items: flex-start; gap: var(--space-8); }
+.service-page__fact-icon { display: grid; place-items: center; inline-size: var(--space-24); block-size: var(--space-24); flex-shrink: 0; }
+.service-page__fact-icon img { inline-size: 89.58%; block-size: 89.58%; object-fit: contain; }
+.service-page__fact dt { font-weight: var(--font-weight-heading); line-height: var(--lh-text-md); }
+.service-page__fact dd { margin: var(--space-4) 0 0; font-size: var(--fs-text-md); line-height: var(--lh-text-md); }
+.service-page__support { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-16); padding-block-start: var(--space-24); border-block-start: var(--border-width-thin) solid var(--gray-300); }
+.service-page__support h2 { margin: 0; font-size: var(--fs-text-lg); line-height: var(--lh-text-lg); }
+.service-page__sidebar .link { max-inline-size: 100%; overflow-wrap: anywhere; }
+.service-page__related { padding-block: var(--space-40); background: var(--sa-25); }
+.service-page__related-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--space-24); }
+.service-page__faq { padding-block: var(--space-40); }
+.service-page__faq details { padding-block: var(--space-16); border-block-end: var(--border-width-thin) solid var(--gray-300); }
+.service-page__faq summary { cursor: pointer; font-weight: var(--font-weight-semibold); }
+.service-page__link-icon { display: inline-grid; place-items: center; inline-size: var(--space-20); block-size: var(--space-20); }
+.service-page__link-icon img { inline-size: 72.92%; block-size: 72.92%; }
+.service-page .breadcrumb__separator img { inline-size: 31.25%; block-size: 56.25%; transform: scaleX(-1); }
+.service-page__agreement h2, .service-page__launch h2 { font-size: var(--fs-text-lg); }
+.service-page__apps { display: flex; flex-wrap: wrap; gap: var(--space-12); }
+.service-page__apps h2 { flex-basis: 100%; font-size: var(--fs-text-lg); }
+@media (max-width: 767px) {
+ .service-page__layout, .service-catalog__grid, .service-page__related-grid { grid-template-columns: minmax(0,1fr); }
+ .service-page__facts, .service-page__support { inline-size: 100%; }
+.service-page__sidebar { inline-size: 100%; padding: var(--space-40) var(--space-16); }
+ .service-page__title-row { flex-wrap: wrap; gap: var(--space-16); }
+ .service-catalog__search { margin-block-end: var(--space-24); }
+}
+
+.service-page__comments { padding-block: var(--space-40); }
+.service-page__comments .card { inline-size: 100%; }
+.service-page__comments h2, .service-page__comments p { margin: 0; }

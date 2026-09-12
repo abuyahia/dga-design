@@ -1,0 +1,31 @@
+{
+  "schema_version": "2.1.0",
+  "component": {
+    "name": "page-feedback",
+    "description": "Reusable feedback composite with default, open, pending, error and submitted states."
+  },
+  "source": {
+    "url": "https://www.kku.edu.sa/ar/portfolio/leadership-message",
+    "reviewed": "2026-09-10"
+  },
+  "axes": [
+    "state",
+    "direction"
+  ],
+  "axis_values": {
+    "state": [
+      "default",
+      "open",
+      "pending",
+      "error",
+      "submitted"
+    ],
+    "direction": [
+      "rtl",
+      "ltr"
+    ]
+  },
+  "variants": [],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
+}

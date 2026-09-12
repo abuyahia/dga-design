@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>اختبار Foundation — RTL / LTR</title>
+  <link rel="stylesheet" href="../../token.css">
+  <link rel="stylesheet" href="../../styles/base/global.css">
+  <link rel="stylesheet" href="../../styles/base/layout.css">
+  <link rel="stylesheet" href="../../styles/base/accessibility.css">
+  <link rel="stylesheet" href="../../components/button/button.css">
+  <link rel="stylesheet" href="../../components/text-input/text-input.css">
+  <link rel="stylesheet" href="../../components/slider/slider.css">
+  <link rel="stylesheet" href="foundation.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">تجاوز إلى المحتوى الرئيسي</a>
+  <main id="main-content" class="ds-container ds-stack fixture" tabindex="-1">
+    <div class="ds-reading ds-prose">
+      <h1>اختبار الأساس المشترك</h1>
+      <p>مثال اختبار معزول للتخطيط والخطوط والنص العربي الطويل، وليس قالب موقع. يمكن استخدام نفس الملفات في الاتجاهين.</p>
+      <p lang="en">A long content example with an unbroken URL: https://example.test/very-long-content-without-spaces-to-check-responsive-layout-and-text-wrapping</p>
+      <p>رقم الطلب <bdi>REQ-2026-12345</bdi> — <a href="#fields">انتقل إلى الحقول</a>.</p>
+    </div>
+    <div class="ds-grid">
+      <article class="fixture__cell ds-prose"><h2>عنصر أول</h2><p>محتوى عربي لاختبار ترتيب الأعمدة والمسافات.</p></article>
+      <article class="fixture__cell ds-prose"><h2>عنصر ثانٍ</h2><p lang="en">Reusable foundation with a long heading and mixed content.</p></article>
+      <article class="fixture__cell ds-prose"><h2>عنصر ثالث</h2><p>التخطيط يتحول إلى عمود واحد على الشاشات الصغيرة.</p></article>
+    </div>
+    <form id="fields" class="ds-reading ds-stack">
+      <div class="text-input">
+        <label class="text-input__label" for="name">الاسم</label>
+        <div class="text-input__field"><div class="text-input__inner"><input class="text-input__input" id="name" name="name" autocomplete="name"></div></div>
+      </div>
+      <div class="ds-stack"><label for="message">رسالة طويلة</label><textarea id="message" name="message" rows="3"></textarea></div>
+      <div class="ds-cluster"><button class="btn btn--primary" type="button"><span class="btn__text">إجراء تجريبي</span></button><span class="sr-only">نص لقارئ الشاشة</span></div>
+    </form>
+    <div class="slider slider--range fixture__range" aria-label="نطاق تجريبي">
+      <div class="slider__control-wrap">
+        <div class="slider__track"><div class="slider__fill"></div></div>
+        <input class="slider__input" type="range" min="0" max="100" value="25" aria-label="بداية النطاق">
+        <input class="slider__input slider__input--end" type="range" min="0" max="100" value="75" aria-label="نهاية النطاق">
+      </div>
+    </div>
+    <div class="motion-probe" aria-hidden="true"></div>
+  </main>
+</body>
+</html>

@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "text-input",
     "description": "Base text input field with label, supporting six interactive states, two sizes, error mode, and three background styles."
@@ -385,5 +385,7 @@
     "Pressed underline width: Figma uses fixed 112px on a 320px component (35%). Responsive implementation uses 50% approximation.",
     "Error state on disabled: Disabled takes visual priority. .text-input--disabled overrides .text-input--error border.",
     "Assembly: text-input is a standalone base. Compose with input-affix for prefix/suffix icons. Compose with form-field for error messages."
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }

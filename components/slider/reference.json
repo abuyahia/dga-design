@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "component": {
     "name": "slider",
     "description": "A form input control that allows users to select a value or range of values by dragging a thumb along a track. Supports single-value and range (dual-thumb) modes with LTR and RTL layout.",
@@ -50,14 +50,30 @@
     }
   },
   "variants": [
-    { "size": "small", "range": "single", "direction": "ltr", "css_classes": "slider" },
-    { "size": "small", "range": "single", "direction": "rtl", "css_classes": "slider", "dir_attr": "rtl" },
-    { "size": "small", "range": "range",  "direction": "ltr", "css_classes": "slider slider--range" },
-    { "size": "small", "range": "range",  "direction": "rtl", "css_classes": "slider slider--range", "dir_attr": "rtl" },
-    { "size": "medium","range": "single", "direction": "ltr", "css_classes": "slider slider--md" },
-    { "size": "medium","range": "single", "direction": "rtl", "css_classes": "slider slider--md", "dir_attr": "rtl" },
-    { "size": "medium","range": "range",  "direction": "ltr", "css_classes": "slider slider--md slider--range" },
-    { "size": "medium","range": "range",  "direction": "rtl", "css_classes": "slider slider--md slider--range", "dir_attr": "rtl" }
+    { "size": "small", "range": "single", "direction": "ltr", "css_classes": "slider",
+  "id": "slider-documented-001"
+},
+    { "size": "small", "range": "single", "direction": "rtl", "css_classes": "slider", "dir_attr": "rtl",
+  "id": "slider-documented-002"
+},
+    { "size": "small", "range": "range",  "direction": "ltr", "css_classes": "slider slider--range",
+  "id": "slider-documented-003"
+},
+    { "size": "small", "range": "range",  "direction": "rtl", "css_classes": "slider slider--range", "dir_attr": "rtl",
+  "id": "slider-documented-004"
+},
+    { "size": "medium","range": "single", "direction": "ltr", "css_classes": "slider slider--md",
+  "id": "slider-documented-005"
+},
+    { "size": "medium","range": "single", "direction": "rtl", "css_classes": "slider slider--md", "dir_attr": "rtl",
+  "id": "slider-documented-006"
+},
+    { "size": "medium","range": "range",  "direction": "ltr", "css_classes": "slider slider--md slider--range",
+  "id": "slider-documented-007"
+},
+    { "size": "medium","range": "range",  "direction": "rtl", "css_classes": "slider slider--md slider--range", "dir_attr": "rtl",
+  "id": "slider-documented-008"
+}
   ],
   "anatomy": {
     "root":            { "element": "div",    "class": "slider",                "required": true },
@@ -101,5 +117,7 @@
     "The negative gap (-46px) in the Figma Progress Bar is a Figma layout artifact for visual overlap. Not reproduced in HTML — absolute positioning handles this.",
     "Helper text icon uses a generic SVG placeholder. Integrate the actual icon component (help-circle) when available.",
     "No Hover, Focus, or Disabled states are present in the Figma manifest. These are implemented from platform accessibility standards."
-  ]
+  ],
+  "variant_coverage": "documented_subset",
+  "$schema": "../../standards/schemas/component-reference.schema.json"
 }
