@@ -3,11 +3,11 @@
 # Link — Component Contract
 
 ```
-contract_version: 1.0.0
+contract_version: 1.0.1
 component_id:     link
 status:           stable
 category:         navigation
-last_reviewed:    2026-06-09
+last_reviewed:    2026-09-13
 ```
 
 ---
@@ -96,10 +96,10 @@ It is NOT an action trigger. Use `<button>` (or the Button component) when a cli
 
 ### Disabled link
 ```html
-<a class="link link--primary" href="/destination" aria-disabled="true" tabindex="-1">Link Text</a>
+<a class="link link--primary" role="link" aria-disabled="true">Link Text</a>
 ```
 
-> `tabindex="-1"` removes the link from the tab order. Add a JavaScript click guard to prevent navigation when `aria-disabled="true"` is present.
+> Remove `href` so the markup is non-navigable without JavaScript. Keep `role="link"` and `aria-disabled="true"` for semantics. An anchor without `href` is outside the tab order by default; add `tabindex="0"` only when the disabled link should remain discoverable by focus. The shared JavaScript guard may remain as a defensive enhancement.
 
 ### External link (opens in new tab)
 ```html
@@ -202,10 +202,10 @@ Offset: 2px. Radius: 2px.
 
 | Requirement | Rule ID |
 |---|---|
-| `<a>` must have `href` for keyboard operability | LNK-A11Y-001 |
+| Active `<a>` must have `href` for keyboard operability | LNK-A11Y-001 |
 | Disabled link must have `aria-disabled="true"` | LNK-A11Y-002 |
-| Disabled link must have `tabindex="-1"` | LNK-A11Y-003 |
-| Disabled link must have JS click guard | LNK-A11Y-004 |
+| Disabled link must omit `href`, retain `role="link"`, and use only the documented optional `tabindex="0"` focus policy | LNK-A11Y-003 |
+| Shared JS may guard disabled activation defensively; it does not replace `href` removal | LNK-A11Y-004 |
 | External links must communicate `target="_blank"` to screen readers | LNK-A11Y-005 |
 | Focus ring must not be suppressed by `outline: none` | LNK-A11Y-006 |
 
@@ -217,7 +217,7 @@ Offset: 2px. Radius: 2px.
 <!-- WRONG: using button role for navigation -->
 <a class="link link--primary" role="button" href="#">Go to page</a>
 
-<!-- WRONG: link without href (not keyboard focusable) -->
+<!-- WRONG: active link without href (not keyboard operable) -->
 <a class="link link--primary">Link Text</a>
 
 <!-- WRONG: hardcoded color instead of token -->

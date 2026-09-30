@@ -38,8 +38,8 @@ def _field(variant, required):
     suffix = 'required' if required else 'optional'
     field_id = f'form-{variant}-{suffix}'
     label = 'إدخال النص الإلزامي' if required else 'إدخال النص الاختياري'
-    mark = ' <span class="contact-required" aria-hidden="true">*</span>' if required else ''
-    root_classes = ['text-input']
+    mark = ' <span class="label__required" aria-hidden="true">*</span>' if required else ''
+    root_classes = ['text-input', 'text-input--label-semibold']
     attributes = []
     support = ''
     describedby = ''

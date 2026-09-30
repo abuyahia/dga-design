@@ -1,6 +1,14 @@
-# Foundation — الدفعة الثانية
+# Foundation v1.0
 
-الحالة: التوكنز وBase منفذة ومختبرة ضمن النطاق أدناه. لا تعني جاهزية جميع المكونات أوإتمام مطابقة كود المنصات.
+الحالة: **STABILIZED** لتطوير المنتجات ضمن النطاق الموثق في هذا الملف وسجل
+المكونات. يشمل v1.0 التوكنز وBase، الغلاف المشترك، المكونات والأقسام المشتركة
+المستخدمة حاليًا، ملكية الأصول، هندسة Page Intro/Breadcrumb، ملكية عرض الحقول،
+والعقود المحدثة.
+
+لا يعني v1.0 أن كل مكوّن مرجعي مؤهل للإنتاج، أو أن كل عناصر P2 منفذة، أو أن
+البحث العام للموقع أو الجدول الدلالي موجودان، أو أن اعتماد إتاحة رسميًا أو
+اعتمادًا كاملًا لكل المتصفحات/E2E قد اكتمل، أو أن المنتجات القطاعية قد بُنيت.
+نموذج Form الحالي مثال تجريبي متعدد الخطوات، وليس محرك معاملات إنتاجيًا.
 
 ## التحميل
 
@@ -9,6 +17,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="token.css">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="styles/base/global.css">
   <link rel="stylesheet" href="styles/base/layout.css">
   <link rel="stylesheet" href="styles/base/accessibility.css">
@@ -65,11 +74,32 @@
 
 z-index: base/content/decoration/control للطبقات الداخلية الموجودة، dropdown=10، sticky=100، overlay=1000، skip-link=1100. stacking context للأب يظل مؤثرًا؛ لا تعد هذه الأرقام ضمانًا لتجاوز كل سياق تكديس. الأنماط المستقبلية توثق سياقها.
 
+## الغلاف والملكية المشتركة
+
+الغلاف القياسي في `templates/government/page.html` يركّب skip link وDigital
+Stamp وNavigation Header و`main` وFooter. البناء يحمّل CSS وJavaScript المملوكين
+للمكونات والأقسام المستخدمة فقط؛ حدود الملكية التنفيذية الحالية موثقة في
+`docs/shared-asset-ownership.md`، ولا تُنقل قواعد شبكات الصفحات أو تكاملاتها إلى
+المكوّنات لمجرد أنها مشتركة في المظهر.
+
+كل منطقة عنوان داخلية متوافقة تستخدم Page Intro بأحد متغيراته الخمسة، وتستخدم
+Breadcrumb متغير العمق عبر المصيّر المشترك. المستهلكون الحاليون: About وNews
+وFAQ وServices وForm وContact وHeavy Content وService Detail. يبقى Home Hero
+وError State استثناءين دلاليين موثقين.
+
 ## الخطوط
 
-Base لا تطلب خطوطًا خارجية. font-sans يحتفظ بـIBM Plex Sans Arabic ثم Noto Sans Arabic ثم system fallbacks. لا توجد ملفات WOFF2 مرخصة في المستودع؛ لذلك لا ندعي تحميل الخط أوالتطابق الطباعي مع Figma على جميع الأجهزة. أضف أصول self-hosted عند توفرها دون نسخ عائلات التوكنز.
+Base لا تطلب خطوطًا خارجية. يحتوي `assets/fonts/` على ملفات IBM Plex Sans Arabic
+المحلية بأوزان 400 و500 و600 و700، مع `OFL.txt` وبيان المصادر، ويعرّفها
+`assets/fonts/fonts.css` باستخدام `font-display: swap`. ينسخها البناء إلى الناتج
+ويحمّل stylesheet قبل Base. يحتفظ `font-sans` بـNoto Sans Arabic وsystem
+fallbacks عند تعذر الأصل المحلي. وجود الملفات لا يمثل ادعاء تطابق طباعي كامل
+مع Figma على كل منصة.
 
-## التحقق وحدوده
+## سجل التحقق التاريخي وحدوده
+
+النقاط التالية سجل الدفعة الثانية وقت تنفيذها؛ لم تُحوّل حالات audit القديمة
+`not_run` أو النتائج المؤرخة إلى نجاحات حالية، ولم يُعد تشغيلها في مصالحة F04:
 
 - strict repository audit: تعريفات ومراجع التوكنز، دورات aliases، المتغيرات المحلية المصرح بها، القيم البصرية والاتجاهات حسب الفحص الساكن، وتطابق breakpoints.
 - 15 اختبار regression للأداة، بما فيها أخطاء tokens والاستثناءات وعدم تصنيف BEM pseudo-selectors كتوكِنات.
@@ -77,3 +107,15 @@ Base لا تطلب خطوطًا خارجية. font-sans يحتفظ بـIBM Plex 
 - مقارنة 54 حالة showcase قبل وبعد نقل التوكنز لم تجد اختلافًا في خصائص الألوان والحدود وحجم/وزن/ارتفاع سطر النص وpadding وgap المقاسة. هذه مقارنة computed styles محددة، وليست pixel-perfect لكل حالة تفاعلية أوخط مستضاف. التصحيحات الاتجاهية تمت بعد هذه المقارنة ولها فحوص منفصلة.
 
 المثالان في tests/fixtures/foundation.html وfoundation-ltr.html أمثلة اختبار معزولة، وليسا Templates. جميع قواعد المكونات الـ309 باقية not_run. تأهيل السلوك الكامل، contrast، screen readers، المتصفحات الأخرى، ومشكلات مثل حجم Chip الصغير أوحجب focus في CSS قديم تنتمي إلى الدفعة التالية؛ لا تخفيها نتيجة strict الخاصة بهذا النطاق.
+
+## مؤجل بعد v1.0
+
+- F06 — مرونة مستوى عناوين FAQ
+- F07 — توضيح المسارات القديمة
+- F08 — تركيب Core خارج FAQ
+- F09 — قابلية ضبط المسارات وحدود المحتوى
+- F11 — وسائط Heavy Content
+- F12 — جدول قابل لإعادة الاستخدام
+- F13 — بحث عام للموقع ونتائج البحث
+
+هذه عناصر P2 خارج قائمة حواجز Foundation v1.0، وتبقى دون تنفيذ في هذا الإصدار.

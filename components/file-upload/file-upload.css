@@ -17,6 +17,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  inline-size: 100%;
+  min-inline-size: 0;
   border: var(--file-item-border);
   border-radius: var(--file-item-radius);
   background: var(--file-item-bg);
@@ -33,6 +35,7 @@
   align-items: center;
   gap: var(--file-item-gap);
   align-self: stretch;
+  justify-content: space-between;
 }
 
 /* Lead: icon + filename */
@@ -75,9 +78,8 @@
   font-size: var(--file-item-name-font-size);
   font-weight: var(--file-item-name-font-weight);
   line-height: var(--file-item-name-line-height);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 /* Trail: remove button wrapper */
@@ -294,6 +296,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--file-upload-gap);
+  min-inline-size: 0;
 }
 
 /* Header: label + helper */
@@ -363,6 +366,8 @@
   display: none;
   align-self: stretch;
   flex-direction: column;
+  inline-size: 100%;
+  min-inline-size: 0;
 }
 
 .file-upload.is-uploaded .file-upload__file {

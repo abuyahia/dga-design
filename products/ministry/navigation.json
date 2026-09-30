@@ -1,0 +1,77 @@
+{
+  "navigation_label": "التنقل الرئيسي",
+  "navigation": [
+    {
+      "label": "الرئيسية",
+      "href": "index.html"
+    },
+    {
+      "label": "عن الجهة",
+      "href": "about.html",
+      "children": [
+        {
+          "label": "رؤيتنا ورسالتنا",
+          "href": "about.html#mission"
+        },
+        {
+          "label": "إمكانية الوصول",
+          "href": "about.html#accessibility"
+        },
+        {
+          "label": "الأسئلة الشائعة",
+          "href": "faq.html"
+        },
+        {
+          "label": "صفحة المحتوى",
+          "href": "content.html"
+        }
+      ]
+    },
+    {
+      "label": "الخدمات",
+      "href": "services.html",
+      "children": [
+        {
+          "label": "تقديم طلب",
+          "href": "services.html#new-request"
+        },
+        {
+          "label": "متابعة طلب",
+          "href": "services.html#follow-up"
+        },
+        {
+          "label": "طلب مساعدة",
+          "href": "services.html#support"
+        },
+        {
+          "label": "حجز موعد",
+          "href": "services.html#service-4"
+        },
+        {
+          "label": "التحقق من وثيقة",
+          "href": "services.html#service-5"
+        },
+        {
+          "label": "تحديث البيانات",
+          "href": "services.html#service-6"
+        },
+        {
+          "label": "قالب النموذج",
+          "href": "form.html"
+        }
+      ]
+    },
+    {
+      "label": "الأخبار والمقالات",
+      "href": "news.html"
+    },
+    {
+      "label": "الشركاء",
+      "href": "index.html#partners"
+    },
+    {
+      "label": "تواصل معنا",
+      "href": "contact.html"
+    }
+  ]
+}

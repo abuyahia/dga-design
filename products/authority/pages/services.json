@@ -1,0 +1,6 @@
+{
+  "id": "services",
+  "route": "services.html",
+  "renderer": "service-catalog",
+  "content": "services-page.json"
+}

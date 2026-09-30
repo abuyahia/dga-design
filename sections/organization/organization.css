@@ -1,0 +1,46 @@
+.organization-page__content,
+.organization-page__content > section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.organization-page__content {
+  padding-block: var(--space-40) var(--space-64);
+}
+
+.organization-page__summary,
+.organization-page__content h2,
+.organization-tree__card p {
+  margin: 0;
+}
+
+.organization-tree__level {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.organization-tree__level .organization-tree__level {
+  margin-block-start: var(--space-16);
+  margin-inline-start: var(--space-24);
+  padding-inline-start: var(--space-24);
+  border-inline-start: var(--border-default);
+}
+
+.organization-tree__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding: var(--space-16);
+}
+
+@media (max-width: 767px) {
+  .organization-tree__level .organization-tree__level {
+    margin-inline-start: var(--space-8);
+    padding-inline-start: var(--space-16);
+  }
+}

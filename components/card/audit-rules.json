@@ -13,10 +13,10 @@
       "category": "accessibility",
       "severity": "error",
       "validation_status": "not_run",
-      "title": "Card must have an accessible group label",
-      "description": "The card root uses role='group' to group its content. For this to be meaningful to assistive technology, the group must have an accessible name via aria-labelledby pointing to the .card__title element.",
-      "target": ".card",
-      "expected": "element has role='group' AND aria-labelledby pointing to a .card__title element with non-empty text",
+      "title": "Grouped Card must have an accessible label",
+      "description": "When a Card explicitly uses role='group', that group must have an accessible name. Plain Card surfaces may rely on surrounding section or aside semantics.",
+      "target": ".card[role='group']",
+      "expected": "grouped element has an accessible name, commonly aria-labelledby pointing to a non-empty heading",
       "check": {
         "type": "aria_attribute_required",
         "logic": "all_of",
@@ -26,8 +26,8 @@
           "aria-labelledby target has non-empty text content"
         ]
       },
-      "message": "Card is missing accessible group label. Add role='group' and aria-labelledby pointing to the .card__title element.",
-      "fix": "Add role=\"group\" aria-labelledby=\"[id-of-card-title]\" to the .card root. Add id=\"[matching-id]\" to .card__title.",
+      "message": "Card with role='group' is missing an accessible name.",
+      "fix": "Add aria-labelledby=\"[id-of-card-heading]\" or another valid accessible name to the grouped Card. Omit a redundant group role when surrounding semantics already provide the relationship.",
       "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-CARD-003"]
     },
 

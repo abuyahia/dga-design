@@ -1,8 +1,12 @@
 (function () {
-  for (const toc of document.querySelectorAll('[data-table-of-contents]')) {
+  const mounted = new WeakSet();
+  function init(root = document) {
+  for (const toc of [...(root.matches?.('[data-table-of-contents]') ? [root] : []), ...root.querySelectorAll('[data-table-of-contents]')]) {
+    if (mounted.has(toc)) continue;
     const links = [...toc.querySelectorAll('.table-of-contents__link')];
     const entries = links.map(link => ({link, section: document.getElementById(link.hash.slice(1))})).filter(entry => entry.section);
     if (!entries.length) continue;
+    mounted.add(toc);
 
     const setActive = link => {
       for (const entry of entries) {
@@ -32,4 +36,7 @@
     });
     update();
   }
+  }
+  window.PlatformTableOfContents = {init};
+  init();
 })();

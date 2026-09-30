@@ -1,0 +1,6 @@
+{
+  "id": "contact",
+  "route": "contact.html",
+  "renderer": "contact",
+  "content": "contact.json"
+}

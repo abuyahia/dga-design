@@ -76,7 +76,7 @@ Small is treated as the default (no modifier required). Medium requires `.link--
 2. **Focus ring on root.** Figma encodes focus as `border: 2px solid` on the root COMPONENT node. In HTML, this is implemented as `outline` (not `border`) to avoid layout shift. See Intentional Deviations.
 3. **Gap token is present but no icons exist.** The root has `gap` from Spacing tokens. This is preserved for future icon slot compatibility but produces no visible output currently.
 4. **Visited state is a CSS pseudo-class.** The `:visited` selector has privacy restrictions in browsers — only color and text-decoration changes are respected; other properties (opacity, transform, border) are ignored per browser security model.
-5. **Disabled state requires aria-disabled.** A link (`<a>`) cannot use the HTML `disabled` attribute. The disabled state must be communicated via `aria-disabled="true"` and `tabindex="-1"`. Click prevention must be added at the JavaScript level since CSS `pointer-events: none` does not prevent keyboard interaction.
+5. **Disabled state requires safe markup.** A link (`<a>`) cannot use the HTML `disabled` attribute. Remove `href`, then use `role="link"` and `aria-disabled="true"`. The anchor is outside the tab order by default; `tabindex="0"` is optional when focus discovery is intentional. JavaScript may guard activation defensively but does not replace `href` removal.
 
 ---
 
@@ -131,8 +131,8 @@ The following tokens reference global typography collections and need component-
 ## Accessibility Findings
 
 1. **`<a>` is the correct semantic element.** Links navigate. No `role="button"` is needed.
-2. **href is required for keyboard operability.** An `<a>` without `href` is not keyboard-focusable by default. All link instances must include a valid `href`.
-3. **Disabled links require `aria-disabled="true"` + `tabindex="-1"`.** Without `tabindex="-1"`, disabled links remain in the tab order, which is confusing for screen reader users.
+2. **href is required for active Link keyboard operability.** An active `<a>` must include a valid `href`; the disabled contract is the explicit exception.
+3. **Disabled links omit `href`.** Use `role="link"` and `aria-disabled="true"`. They remain outside the tab order by default, with optional `tabindex="0"` only when intentional focus discovery is required.
 4. **`:visited` color contrast.** The Visited color `#14573A` on white background = ~8.5:1. Passes WCAG 1.4.3.
 5. **Focus ring contrast.** `--Border-border-black` (#161616) outline on white = ~19.6:1. Passes WCAG 2.4.11 (focus appearance, 3:1 minimum).
 6. **On-color focus ring contrast.** `--Border-border-white` (#FFF) on dark background: contrast depends on the background color at deployment site. Flag as context-dependent.
@@ -158,7 +158,7 @@ The following tokens reference global typography collections and need component-
 4. **`outline-offset: 2px`** is added. Not present in Figma (which collapses focus padding into the element). Added per standard focus ring accessibility practice.
 5. **Inline underline via modifier class.** `Inline=True` adds underline to all states. Implemented as `.link--inline`. The hover/active underline states apply regardless of inline mode.
 6. **RTL discarded as a CSS axis.** See Intentional Deviations.
-7. **Disabled via `aria-disabled="true"`** on the `<a>` element. `pointer-events: none` is added; `tabindex="-1"` is required in the template but enforced in the audit rule.
+7. **Disabled via safe anchor markup.** The template removes `href`, adds `role="link"` and `aria-disabled="true"`, and keeps `tabindex="0"` optional under the documented focus policy. `pointer-events: none` preserves the visual interaction state.
 
 ---
 
@@ -225,9 +225,9 @@ Not applicable. The link has a flat anatomy (no layered pseudo-elements).
 ## Risks
 
 1. **`:visited` privacy restrictions.** Only `color` and `text-decoration` can be changed via `:visited`. Any additional Figma Visited state properties would be silently ignored by browsers.
-2. **Disabled link keyboard accessibility.** `pointer-events: none` does not prevent keyboard Tab focus or Enter activation. The template enforces `tabindex="-1"` but this can be omitted by implementors. Audit rule LNK-A11Y-004 catches this.
+2. **Disabled link activation.** `pointer-events: none` is presentation only. Removing `href` prevents navigation in the markup; the shared activation guard remains a defensive enhancement for intentionally focusable disabled links.
 3. **On-color focus ring contrast.** `--Border-border-white` (#FFF) is the focus ring color for On-color links. Contrast against the actual page background depends on deployment context — cannot be guaranteed at component level.
-4. **No href = not focusable.** An `<a>` without `href` is excluded from the tab order. Audit rule LNK-A11Y-005 catches links without href.
+4. **No href = not focusable by default.** This is intentional for disabled Links. Active Links still require `href`; disabled Links may add `tabindex="0"` only for intentional focus discovery. Audit rules LNK-A11Y-001 and LNK-A11Y-003 cover the two states.
 
 ---
 

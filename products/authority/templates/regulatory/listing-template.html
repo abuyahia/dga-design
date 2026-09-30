@@ -1,0 +1,16 @@
+<section class="regulatory-library" data-record-filter>
+ <div class="ds-container">
+  {{page_intro}}
+  {{alert}}
+  <div class="regulatory-library__controls" hidden>
+   <label>بحث <input type="search" data-filter-query></label>
+   <label>نوع الوثيقة <select data-filter-kind>{{type_options}}</select></label>
+   <label>الحالة <select data-filter-status>{{status_options}}</select></label>
+   <label>الموضوع <select data-filter-topic>{{topic_options}}</select></label>
+   <button class="btn btn--secondary-outline" type="button" data-filter-reset>مسح الفلاتر</button>
+  </div>
+  <p role="status" data-filter-status-text hidden>{{count}} وثائق</p>
+  <div class="regulatory-library__list">{{records}}</div>
+  <p data-filter-empty hidden>لا توجد وثائق مطابقة.</p>
+ </div>
+</section>

@@ -72,7 +72,7 @@
   "dependencies": {
     "required": [],
     "optional": [
-      "Avatar (avatar--40, icon type) — Card icon slot, always present",
+      "Avatar (avatar--40, icon type) — present in the Figma reference variants; optional in the reusable implementation contract",
       "Button (btn--secondary-outline) — Default type secondary action slot",
       "Button (btn--primary) — Default type primary action slot",
       "Checkbox — Selectable type selection control slot"
@@ -290,8 +290,8 @@
     }
   ],
   "implementation_notes": [
-    "Card width is 360px from Figma. Use var(--card-width, 360px) to override in production.",
-    "All --card-* tokens are missing from token.css. Fallback values are present. See analysis.md Missing Tokens.",
+    "Card width is 360px from Figma. The registered --card-width token controls the reusable implementation.",
+    "All --card-* tokens used by card.css are registered in token.css; historical audit validation remains not_run.",
     "RTL axis produces no separate CSS modifier. Use dir='rtl' on an ancestor element.",
     "Expandable and Selectable types require JavaScript for interactive behavior.",
     "The .is-hover and .is-focused modifiers are showcase-only and must not be used in production HTML.",

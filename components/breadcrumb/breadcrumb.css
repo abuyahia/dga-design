@@ -6,6 +6,7 @@
 /* ── Root nav ───────────────────────────────────────────────── */
 .breadcrumb {
   display: inline-flex;
+  max-inline-size: 100%;
 }
 
 /* ── List ───────────────────────────────────────────────────── */
@@ -34,6 +35,7 @@
 
 .breadcrumb__item--current {
   padding-inline-end: 0;
+  min-inline-size: 0;
 }
 
 /* ── Separator ──────────────────────────────────────────────── */
@@ -80,6 +82,8 @@ a.breadcrumb__link:hover {
   color: var(--gray-400);
   cursor: default;
   pointer-events: none;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 /* ── Overflow trigger button ────────────────────────────────── */

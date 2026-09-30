@@ -215,3 +215,8 @@ This component is designed to participate in:
 3. **form** — via form-field
 
 Do not use input-affix in isolation without a connected `<input>` element. The affix is visually meaningless without the input it modifies.
+
+When `.input-affix` is a direct child of `.text-input__field`, component CSS
+stretches it to the field height and removes the joined-side radius. Consumers
+own whether the affix precedes or follows `.text-input__inner`; they do not need
+page-specific sizing rules.

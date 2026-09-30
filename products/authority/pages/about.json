@@ -1,0 +1,6 @@
+{
+  "id": "about",
+  "route": "about.html",
+  "renderer": "heavy-content",
+  "content": "about.json"
+}

@@ -1,6 +1,10 @@
 """Service catalogue, cards and detail-page composition from one service record."""
 import html
 from urllib.parse import urlsplit
+try:
+    from scripts.page_intro_markup import render_page_intro
+except ImportError:
+    from page_intro_markup import render_page_intro
 
 
 def detail_url(service): return 'service-'+service['id']+'.html'
@@ -8,6 +12,11 @@ def start_url(service): return service.get('start_url') or detail_url(service)+'
 
 
 def validate_services(services):
+    if not isinstance(services, list) or not services:
+        raise ValueError('Services must be a nonempty list')
+    ids = [service.get('id') for service in services]
+    if len(ids) != len(set(ids)):
+        raise ValueError('Service IDs must be unique')
     for service in services:
         for field in ['start_url','guide_url','video_url','support_url']:
             value=service.get(field)
@@ -20,6 +29,16 @@ def validate_services(services):
                 raise ValueError('Service detail lists are required: '+field)
         for app in service.get('apps',[]):
             if urlsplit(app['href']).scheme!='https': raise ValueError('App links must use HTTPS')
+        if 'category' in service and (not isinstance(service['category'], str) or not service['category'].strip()):
+            raise ValueError('Service category must be nonempty text')
+        for field in ('related_service_ids', 'program_ids', 'regulation_ids', 'resource_ids'):
+            values = service.get(field, [])
+            if not isinstance(values, list) or len(values) != len(set(values)):
+                raise ValueError('Service relationship IDs must be unique lists: ' + field)
+        if service.get('id') in service.get('related_service_ids', []):
+            raise ValueError('A service cannot relate to itself')
+        if any(target not in ids for service_id in service.get('related_service_ids', []) for target in [service_id]):
+            raise ValueError('Related service IDs must resolve inside the service collection')
 
 
 def tags(service):
@@ -27,18 +46,23 @@ def tags(service):
 
 
 def service_card(service,render,prefix=''):
-    return render('components/service-card/template.html',{**service,'card_id':prefix+service['id'],'audience_keys':'|'.join(service['audiences']),'search_text':service['title']+' '+service['description'],'tags':tags(service),'detail_url':detail_url(service),'start_url':start_url(service)},('tags',))
+    return render('components/service-card/template.html',{**service,'card_id':prefix+service['id'],'category':service.get('category',''),'audience_keys':'|'.join(service['audiences']),'search_text':service['title']+' '+service['description'],'tags':tags(service),'detail_url':detail_url(service),'start_url':start_url(service)},('tags',))
 
 
 def catalogue(services,render):
     audiences=list(dict.fromkeys(a for s in services for a in s['audiences']))
+    categories=list(dict.fromkeys(s['category'] for s in services if s.get('category')))
     filters=''.join('<button class="tab tab--h" type="button" data-audience="'+html.escape(a,quote=True)+'" aria-pressed="'+str(i==0).lower()+'">'+html.escape('الكل' if not a else a)+'</button>' for i,a in enumerate(['']+audiences))
-    return render('sections/service-catalog/template.html',{'filters':filters,'cards':''.join(service_card(s,render) for s in services)},('filters','cards'))
+    category_options=''.join('<option value="'+html.escape(value,quote=True)+'">'+html.escape(value)+'</option>' for value in categories)
+    return render('sections/service-catalog/template.html',{'filters':filters,'category_options':category_options,'cards':''.join(service_card(s,render) for s in services)},('filters','category_options','cards'))
 
 
-def overview(service,services,render,default_contact_url=None):
-    separator='<span class="breadcrumb__separator" aria-hidden="true"><img src="templates/service/assets/main-imgElements.svg" alt=""></span>'
-    breadcrumb='<nav class="breadcrumb" aria-label="مسار التنقل"><ol class="breadcrumb__list"><li class="breadcrumb__item"><a class="breadcrumb__link" href="index.html">الرئيسية</a>'+separator+'</li><li class="breadcrumb__item"><a class="breadcrumb__link" href="services.html">الخدمات الإلكترونية</a>'+separator+'</li><li class="breadcrumb__item breadcrumb__item--current"><span class="breadcrumb__link" aria-current="page">'+html.escape(service['title'])+'</span></li></ol></nav>'
+def overview(service,services,render,default_contact_url=None,relations=None):
+    page_intro = render_page_intro({'title': service['title']}, render, breadcrumb_items=[
+        {'label': 'الرئيسية', 'href': 'index.html'},
+        {'label': 'الخدمات الإلكترونية', 'href': 'services.html'},
+        {'label': service['title'], 'current': True},
+    ])
     labels=[('steps','الخطوات'),('requirements','شروط الاستخدام'),('documents','المستندات المطلوبة')]
     buttons=''.join('<button class="tab tab--h" type="button" id="tab-'+key+'" data-panel="panel-'+key+'">'+label+'</button>' for key,label in labels)
     panels=[]
@@ -57,6 +81,17 @@ def overview(service,services,render,default_contact_url=None):
     apps='<div class="service-page__apps"><h2>تطبيقات الجوال</h2>'+''.join('<a class="link" href="'+html.escape(a['href'],quote=True)+'">'+html.escape(a['label'])+'</a>' for a in service.get('apps',[]))+'</div>' if service.get('apps') else ''
     launch='' if service.get('start_url') else '<section class="service-page__launch" id="start" tabindex="-1"><h2>بدء '+html.escape(service['title'])+'</h2><p>هذه معاينة لمسار بدء الخدمة. يضاف رابط منصة التنفيذ عند تخصيص القالب للجهة، ولا تُرسل طلبات من هذه الصفحة.</p><a class="link link--md" href="#panel-steps" data-open-steps>مراجعة خطوات الخدمة</a></section>'
     faq=''.join('<details><summary>'+html.escape(x['question'])+'</summary><p>'+html.escape(x['answer'])+'</p></details>' for x in service['faq'])
-    related=[s for s in services if s['id']!=service['id']]
-    related.sort(key=lambda s:not bool(set(s['audiences'])&set(service['audiences'])))
-    return render('sections/service-overview/template.html',{**service,'contact_url':contact_url,'start_url':start_url(service),'breadcrumb':breadcrumb,'tags':tags(service),'tab_buttons':buttons,'panels':''.join(panels),'facts':facts,'support':support,'guide':guide,'apps':apps,'launch':launch,'related':''.join(service_card(s,render,'related-') for s in related[:3]),'faq':faq},('breadcrumb','tags','tab_buttons','panels','facts','support','guide','apps','launch','related','faq'))
+    related_ids=service.get('related_service_ids', [])
+    related=[s for service_id in related_ids for s in services if s['id']==service_id]
+    if not related:
+        related=[s for s in services if s['id']!=service['id']]
+        related.sort(key=lambda s:not bool(set(s['audiences'])&set(service['audiences'])))
+    relationship_links=[]
+    if relations:
+        mappings=(('program_ids',relations.get('portfolio',{})),('regulation_ids',relations.get('regulatory',{})),('resource_ids',relations.get('resources',{})))
+        for field,mapping in mappings:
+            for identifier in service.get(field,[]):
+                target=mapping.get(identifier)
+                if target: relationship_links.append('<li><a class="link link--inline" href="{}">{}</a></li>'.format(html.escape(target['route'],quote=True),html.escape(target['title'])))
+    relationships='<section class="service-page__relations"><div class="ds-container"><h2>محتوى مرتبط بالخدمة</h2><ul class="list">{}</ul></div></section>'.format(''.join(relationship_links)) if relationship_links else ''
+    return render('sections/service-overview/template.html',{**service,'contact_url':contact_url,'start_url':start_url(service),'page_intro':page_intro,'tags':tags(service),'tab_buttons':buttons,'panels':''.join(panels),'facts':facts,'support':support,'guide':guide,'apps':apps,'launch':launch,'related':''.join(service_card(s,render,'related-') for s in related[:3]),'faq':faq,'relationships':relationships},('page_intro','tags','tab_buttons','panels','facts','support','guide','apps','launch','related','faq','relationships'))

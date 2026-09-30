@@ -42,10 +42,10 @@ class SiteTests(unittest.TestCase):
                 self.assertEqual(len(page.ids), len(set(page.ids)))
                 self.assertNotIn('<script>', (folder / 'out' / name).read_text())
                 for asset in page.assets:
-                    if asset == 'templates/faq/core.js':
+                    if asset == 'sections/faq/faq.runtime.js':
                         runtime = (folder / 'out' / asset).read_text()
                         self.assertIn((ROOT / 'scripts/core/index.js').read_text().replace('export function initCore', 'function initCore'), runtime)
-                        self.assertIn((ROOT / 'templates/faq/faq.js').read_text(), runtime)
+                        self.assertIn((ROOT / 'sections/faq/faq.js').read_text(), runtime)
                     elif asset.endswith('.runtime.js'):
                         self.assertNotIn('export function', (folder / 'out' / asset).read_text())
                         self.assertIn('initDigitalStamps();' if 'digital-stamp' in asset else 'initNavigationHeaders();', (folder / 'out' / asset).read_text())
@@ -149,7 +149,7 @@ class SiteTests(unittest.TestCase):
             self.assertIn('&lt;script&gt;alert', content)
             self.assertEqual(content.count('data-content-section'), 9)
             self.assertEqual(content.count('class="table-of-contents__link"'), 9)
-            self.assertIn('templates/content/content.js', content)
+            self.assertIn('components/table-of-contents/table-of-contents.js', content)
 
         for mutate in [
             lambda item: item['heavy_content']['sections'][1].update(id='section-1'),

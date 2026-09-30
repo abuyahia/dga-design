@@ -2,6 +2,7 @@
  <div class="ds-container">
   <h2 class="sr-only" id="catalog-title">دليل الخدمات</h2>
   <form class="service-catalog__search" role="search" hidden><label class="sr-only" for="catalog-query">ابحث باسم الخدمة</label><div class="text-input"><div class="text-input__field"><input class="text-input__input" id="catalog-query" type="search" placeholder="ابحث باسم الخدمة أو وصفها" autocomplete="off"></div></div><button class="btn btn--primary" type="submit">بحث</button><button class="btn btn--secondary-outline" type="button" data-catalog-reset>مسح الفلاتر</button></form>
+  <div class="service-catalog__category" hidden><label for="catalog-category">مجال الخدمة</label><select id="catalog-category"><option value="">كل المجالات</option>{{category_options}}</select></div>
   <div class="service-catalog__filters" aria-label="الفئة المستفيدة" hidden>{{filters}}</div>
   <p class="service-catalog__status" role="status" aria-live="polite" data-catalog-status hidden></p>
   <div class="service-catalog__grid">{{cards}}</div>

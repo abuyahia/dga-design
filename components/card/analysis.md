@@ -17,7 +17,7 @@ Figma export — `COMPONENT_SET` named `Card`. Total Figma variants: 34. Meaning
 
 ```
 .card                        ← root surface (border, bg, radius, padding, gap)
-  .avatar.avatar--40         ← Avatar component (icon type, 40px) — styles owned by Avatar
+  [optional media/icon]      ← optional child component; reference variants use Avatar
   .card__content             ← title + body text column
     .card__title             ← h-level heading text
     .card__body              ← paragraph body text
@@ -101,7 +101,7 @@ The Card owns its surface, border, radius, spacing, layout, and slots. Child com
 
 | Dependency | Role | Required by |
 |---|---|---|
-| Avatar (avatar--40, icon type) | Card icon slot | All types |
+| Avatar (avatar--40, icon type) | Optional Card media/icon slot | Any type when the content calls for it |
 | Button (outline) | Secondary action slot | Default type |
 | Button (primary) | Primary action slot | Default type |
 | Button (icon-only toggle, custom) | Expand/collapse trigger | Expandable type |
@@ -186,7 +186,8 @@ No interaction layers (ripple, overlay) detected in Figma. No focus ring layer d
 
 ## Token Findings
 
-All `--card-*` tokens listed below are missing from `token.css`. They are used in `card.css` with fallback values. Mapping proposals are documented.
+All `--card-*` tokens listed below are registered in `token.css` and consumed by
+`card.css`. Their source mappings remain documented for traceability.
 
 ---
 
@@ -202,9 +203,9 @@ All `--card-*` tokens listed below are missing from `token.css`. They are used i
 
 ## Compliance Findings
 
-1. All color values use `--card-*` component-level tokens with fallback values.
+1. All color values use registered `--card-*` component-level tokens.
 2. No primitive tokens (`--sa-600`, `--gray-200`, etc.) used in component selectors.
-3. No hardcoded hex values used as primary values (all are CSS custom property fallbacks).
+3. No hardcoded hex values are used as primary component values.
 4. RTL support via `dir="rtl"` on ancestor — no physical CSS properties used.
 5. No official compliance claim made (`official_compliance_claim: false`).
 
@@ -278,7 +279,7 @@ RTL axis discarded. No separate CSS class generated.
 ### High (none identified)
 
 ### Medium
-- All `--card-*` tokens are missing from `token.css` (PLATFORM-CODE-TOKEN-001)
+- The `--card-*` token surface is registered in `token.css`; its audit rules remain historically `not_run`
 - No automated contrast rule covers WCAG 1.4.3 (disabled text #9DA4AE on #E5E7EB)
 
 ### Low
@@ -309,17 +310,19 @@ Card must remain independently reusable. Do not merge card behavior into layout 
 
 ## Known Issues
 
-1. `--card-*` token suite does not exist in `token.css`. Fallback values are used. Token definition PR needed.
+1. `--card-*` token suite exists in `token.css` and maps to the established primitives. Full Card qualification remains pending.
 2. No automated WCAG 1.4.3 contrast check for disabled state (text: #9DA4AE on bg: #E5E7EB = ~2.1:1 — exempt per WCAG inactive UI exemption).
 3. Selectable card selection behavior (click-card → toggle-checkbox) requires JavaScript not provided by this component. Implementors must wire this behavior.
 
 ---
 
-## Missing Tokens
+## Registered Tokens
 
-All `--card-*` tokens are missing from `token.css`:
+All `--card-*` tokens below are registered in `token.css`. The table preserves
+their original source mapping for traceability; the former fallback values are
+now the resolved token values or their equivalent primitives.
 
-| Token | Proposed source token | Fallback |
+| Token | Source mapping | Resolved value |
 |---|---|---|
 | `--card-width` | — | `360px` |
 | `--card-padding` | `var(--Global-spacing-xl)` | `16px` |
@@ -354,8 +357,8 @@ All `--card-*` tokens are missing from `token.css`:
 
 ## Assumptions
 
-1. The Featured Icon instance in Figma maps to the Avatar component (`avatar--40`, icon type). Card composes Avatar as a child component and does not own Avatar internals.
-2. The `--card-*` token suite will be defined in a future `token.css` update.
+1. The Featured Icon instance in Figma maps to the optional Avatar component (`avatar--40`, icon type). Current valid Card consumers may omit Avatar or compose a different consumer-owned media/icon slot.
+2. The `--card-*` token suite is defined in `token.css`.
 3. Selectable card click-to-select behavior will be implemented by the consuming team via JavaScript.
 4. The toggle button in Expandable cards does not reuse the Button component — it is a card-internal control.
 5. Default type card has no interactive states — this is correct per Figma (no hover, focused, or disabled variants exist for Default type).
@@ -364,7 +367,7 @@ All `--card-*` tokens are missing from `token.css`:
 
 ## TODO
 
-- [ ] Define `--card-*` token suite in `token.css`
+- [x] Define `--card-*` token suite in `token.css`
 - [ ] Write PLATFORM-CODE-CARD-* standard IDs in `standards/platform-code.standards.json`
 - [ ] Add JS behavior for Selectable card click-to-select
 - [ ] Add JS behavior for Expandable card toggle

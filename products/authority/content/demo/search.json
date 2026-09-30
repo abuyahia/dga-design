@@ -1,0 +1,11 @@
+{
+  "title": "نتائج البحث",
+  "description": "ابحث في صفحات وخدمات هيئة نماء التجريبية المسجلة في المنتج.",
+  "updated": "2026-09-14",
+  "intro_variant": "compact",
+  "robots": "noindex,follow",
+  "search": {
+    "empty_message": "لم نجد محتوى تجريبيًا يطابق عبارة البحث أو نوع المحتوى المحدد.",
+    "records": []
+  }
+}

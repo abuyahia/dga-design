@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "id": "ministry",
+  "name": "Ministry Website",
+  "source_config": "../../site/government.json",
+  "navigation": "navigation.json",
+  "footer": "footer.json",
+  "pages": "pages/index.json",
+  "templates": "templates",
+  "demo_content": "content/demo",
+  "assets": "assets"
+}

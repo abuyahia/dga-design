@@ -1,0 +1,11 @@
+{
+  "footer_navigation_label":"روابط تذييل معاينة هيئة نماء",
+  "footer_note":"منتج تجريبي خيالي لمعاينة قالب موقع هيئة؛ لا يمثل جهة حكومية أو خدمة أو التزامًا فعليًا.",
+  "footer_groups":[
+    {"title":"الهيئة","links":[{"label":"عن الهيئة","href":"about.html"},{"label":"الاختصاص","href":"mandate.html"},{"label":"الاستراتيجية","href":"strategy.html"},{"label":"المسؤول التنفيذي","href":"leadership.html"},{"label":"الهيكل التنظيمي","href":"organization.html"}]},
+    {"title":"الخدمات والمحتوى","links":[{"label":"الخدمات","href":"services.html"},{"label":"البرامج والمبادرات","href":"programs.html"},{"label":"التنظيمات","href":"regulations.html"},{"label":"مكتبة المعرفة","href":"knowledge.html"},{"label":"أخبار الهيئة","href":"news.html"}]},
+    {"title":"المشاركة والدعم","links":[{"label":"تواصل معنا","href":"contact.html"},{"label":"الأسئلة الشائعة","href":"faq.html"}]}
+  ],
+  "footer_tools":[{"title":"معلومات المعاينة","links":[{"label":"تنبيه المحتوى التجريبي","href":"about.html"},{"label":"البحث","href":"search.html"}]}],
+  "footer_legal_links":[{"label":"تنبيه الاستخدام التجريبي","href":"about.html"}]
+}

@@ -1,0 +1,6 @@
+{
+  "id": "organization",
+  "route": "organization.html",
+  "renderer": "organization",
+  "content": "organization.json"
+}

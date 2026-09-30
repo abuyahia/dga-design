@@ -122,8 +122,8 @@
 }
 
 /* ── Disabled ────────────────────────────────────────────────── */
-/* <a> cannot use disabled attribute. Use aria-disabled="true" + tabindex="-1" in HTML. */
-/* pointer-events: none suppresses mouse clicks but NOT keyboard activation — add a JS guard. */
+/* <a> cannot use disabled. Remove href, then use role="link" + aria-disabled="true". */
+/* A JS guard may remain as a defensive enhancement, but href removal prevents navigation. */
 .link[aria-disabled="true"] {
   color: var(--_link-disabled-color);
   cursor: not-allowed;

@@ -1,0 +1,113 @@
+.heavy-content__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  min-inline-size: 0;
+}
+
+.heavy-content__section,
+.heavy-content__subsection,
+.heavy-content__blocks {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+}
+
+.heavy-content__section {
+  gap: var(--space-24);
+  scroll-margin-block-start: var(--space-24);
+}
+
+.heavy-content__subsection {
+  gap: var(--space-8);
+  scroll-margin-block-start: var(--space-24);
+}
+
+.heavy-content__section > h2,
+.heavy-content__subsection > h3,
+.heavy-content__blocks > p,
+.heavy-content__media {
+  margin: 0;
+}
+
+.heavy-content__section > h2 {
+  font-size: var(--fs-display-sm);
+  line-height: var(--lh-display-sm);
+}
+
+.heavy-content__subsection > h3 {
+  font-size: var(--fs-display-xs);
+  line-height: var(--lh-display-xs);
+}
+
+.heavy-content__blocks {
+  gap: var(--space-16);
+  color: var(--gray-700);
+  font-size: var(--fs-text-md);
+  line-height: var(--lh-text-md);
+}
+
+.heavy-content__blocks .list {
+  gap: 0;
+}
+
+.heavy-content__metadata {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-16);
+  margin: 0;
+}
+
+.heavy-content__metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-16);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+}
+
+.heavy-content__metadata-item dt {
+  color: var(--gray-600);
+  font-size: var(--fs-text-sm);
+}
+
+.heavy-content__metadata-item dd {
+  margin: 0;
+  color: var(--gray-950);
+  font-weight: var(--font-weight-semibold);
+}
+
+.heavy-content__media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.heavy-content__media-placeholder {
+  inline-size: 100%;
+  block-size: 379px;
+  background: var(--gray-50);
+}
+
+.heavy-content__media figcaption {
+  color: var(--gray-600);
+  font-size: var(--fs-text-sm);
+  line-height: var(--lh-text-sm);
+}
+
+@media (max-width: 767px) {
+  .heavy-content__metadata {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .heavy-content__section > h2 {
+    font-size: var(--fs-display-xs);
+    line-height: var(--lh-display-xs);
+  }
+
+  .heavy-content__subsection > h3 {
+    font-size: var(--fs-text-xl);
+    line-height: var(--lh-text-xl);
+  }
+}

@@ -1,0 +1,7 @@
+<dialog class="site-search" aria-labelledby="search-title">
+  <div class="ds-stack"><div class="section-heading"><h2 id="search-title">البحث في الخدمات</h2><button class="btn btn--secondary-outline" type="button" data-search-close>إغلاق</button></div>
+    <label class="label" for="site-search-input"><span class="label__text">اكتب اسم الخدمة</span></label>
+    <div class="ds-cluster"><div class="text-input"><div class="text-input__field"><input type="search" class="text-input__input" id="site-search-input" autocomplete="off" aria-controls="search-results"></div></div><button class="btn btn--secondary-outline" type="button" data-search-clear hidden>مسح</button></div>
+    <p role="status" data-search-status></p><ul id="search-results">{{search_links}}</ul>
+  </div>
+</dialog>

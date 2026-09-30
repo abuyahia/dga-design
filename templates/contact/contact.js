@@ -32,15 +32,8 @@
     if(input.maxLength>0 && value.length>input.maxLength)return `الحد الأقصى ${input.maxLength} حرفًا.`;
     return '';
    };
-   form.querySelector('[data-contact-browse]').addEventListener('click',()=>file.click());
-   const clearFile=()=>{file.value='';upload.classList.remove('is-uploaded');form.querySelector('[data-contact-file-name]').textContent='';errorFor(file,'');};
-   form.querySelector('[data-contact-remove]').addEventListener('click',()=>{clearFile();form.querySelector('[data-contact-browse]').focus();});
-   file.addEventListener('change',()=>{
-    const error=attachmentError();errorFor(file,error);
-    upload.classList.toggle('is-uploaded',Boolean(file.files[0]));
-    form.querySelector('[data-contact-file-name]').textContent=file.files[0]?.name || '';
-    upload.querySelector('.file-item').classList.toggle('file-item--error',Boolean(error));
-   });
+   const fileUI=PlatformFileUpload.mount(upload,{validate:attachmentError,onError:message=>errorFor(file,message)});
+   const clearFile=()=>fileUI.clear();
    form.addEventListener('focusout',event=>{if(event.target.matches('input:not([type=file]),textarea,select'))errorFor(event.target,validate(event.target));});
    form.addEventListener('input',event=>{if(event.target.matches('input:not([type=file]),textarea,select')&&event.target.getAttribute('aria-invalid')==='true')errorFor(event.target,validate(event.target));});
    form.addEventListener('submit',async event=>{

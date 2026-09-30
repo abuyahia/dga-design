@@ -1,0 +1,6 @@
+{
+  "id": "strategy",
+  "route": "strategy.html",
+  "renderer": "heavy-content",
+  "content": "strategy.json"
+}

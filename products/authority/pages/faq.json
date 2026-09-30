@@ -1,0 +1,6 @@
+{
+  "id": "faq",
+  "route": "faq.html",
+  "renderer": "faq",
+  "content": "faq.json"
+}

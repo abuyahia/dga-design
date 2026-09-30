@@ -55,7 +55,7 @@
           "id": "4.1.2",
           "title": "Name, Role, Value",
           "status": "mapped",
-          "evidence": "Card root uses role='group' with aria-labelledby pointing to .card__title. Expandable toggle: role from native <button>, name from aria-label, state from aria-expanded. Selectable checkbox: role from native <input>, name from associated <label>. Disabled state: communicated via aria-disabled='true' on card root.",
+          "evidence": "A Card that exposes role='group' uses an accessible name such as aria-labelledby. Plain Card surfaces may rely on surrounding section/aside semantics. Expandable toggle and Selectable checkbox retain native control roles and explicit state/name contracts. Disabled state is communicated via aria-disabled='true' on the card root.",
           "audit_rule_ids": ["CARD-A11Y-001", "CARD-A11Y-002", "CARD-A11Y-003", "CARD-A11Y-005"]
         }
       ]
@@ -72,7 +72,7 @@
           "id": "PLATFORM-CODE-CARD-001",
           "title": "Component must use design tokens for all visual values",
           "status": "mapped",
-          "evidence": "All color, spacing, radius, and font values in card.css reference --card-* CSS custom properties. All tokens include fallback values for pre-token-suite compatibility. Hardcoded value detection enforced by CARD-TOKEN-001 (error severity). Note: --card-* token suite is missing from token.css — see analysis.md Missing Tokens.",
+          "evidence": "All color, spacing, radius, and font values in card.css reference the --card-* CSS custom properties registered in token.css. Hardcoded value detection is defined by CARD-TOKEN-001; its historical validation status remains not_run.",
           "audit_rule_ids": ["CARD-TOKEN-001"]
         },
         {

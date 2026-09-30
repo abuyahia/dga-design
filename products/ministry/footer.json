@@ -1,0 +1,92 @@
+{
+  "footer_navigation_label": "روابط التذييل",
+  "footer_note": "قالب توضيحي بمحتوى تجريبي؛ لا يمثل جهة حكومية أو خدمة فعلية.",
+  "footer_groups": [
+    {
+      "title": "ملخص",
+      "links": [
+        {
+          "label": "حول الجهة",
+          "href": "about.html"
+        },
+        {
+          "label": "الخصوصية وشروط الاستخدام",
+          "href": "about.html#privacy"
+        },
+        {
+          "label": "الأخبار والمقالات",
+          "href": "news.html"
+        },
+        {
+          "label": "صفحة المحتوى",
+          "href": "content.html"
+        }
+      ]
+    },
+    {
+      "title": "روابط مهمة",
+      "links": [
+        {
+          "label": "الخدمات الإلكترونية",
+          "href": "services.html"
+        },
+        {
+          "label": "قالب النموذج",
+          "href": "form.html"
+        },
+        {
+          "label": "قالب صفحة الخطأ",
+          "href": "error.html"
+        },
+        {
+          "label": "شركاؤنا",
+          "href": "index.html#partners"
+        },
+        {
+          "label": "رؤيتنا ورسالتنا",
+          "href": "about.html#mission"
+        }
+      ]
+    },
+    {
+      "title": "الاتصال والدعم",
+      "links": [
+        {
+          "label": "تواصل معنا",
+          "href": "contact.html"
+        },
+        {
+          "label": "طلب مساعدة",
+          "href": "services.html#support"
+        },
+        {
+          "label": "متابعة طلب",
+          "href": "services.html#follow-up"
+        },
+        {
+          "label": "حجز موعد",
+          "href": "services.html#service-4"
+        },
+        {
+          "label": "الأسئلة الشائعة",
+          "href": "faq.html"
+        }
+      ]
+    }
+  ],
+  "footer_tools": [
+    {
+      "title": "أدوات الإتاحة والوصول",
+      "links": [
+        {
+          "label": "إمكانية الوصول",
+          "href": "about.html#accessibility"
+        },
+        {
+          "label": "دليل الخدمات",
+          "href": "services.html"
+        }
+      ]
+    }
+  ]
+}

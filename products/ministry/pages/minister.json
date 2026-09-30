@@ -1,0 +1,6 @@
+{
+  "id": "minister",
+  "route": "minister.html",
+  "renderer": "minister-profile",
+  "content": "minister.json"
+}

@@ -7,7 +7,7 @@
   Style:          .link--primary (default) | .link--neutral | .link--on-color
   Size:           (none = small) | .link--md
   Mode:           (none = standalone) | .link--inline
-  States via HTML: default | :visited (browser) | aria-disabled="true" + tabindex="-1" | :focus-visible (browser) | :hover (browser) | :active (browser)
+  States via HTML: default | :visited (browser) | role="link" + aria-disabled="true" without href | :focus-visible (browser) | :hover (browser) | :active (browser)
 -->
 
 <!-- ─────────────────────────────────────────────
@@ -27,11 +27,12 @@
 
 <!-- ─────────────────────────────────────────────
      Primary — Disabled
-     • tabindex="-1" removes from tab order
+     • No href: the markup is non-navigable without JavaScript
+     • role="link" retains link semantics on an anchor without href
      • aria-disabled="true" announces state to screen readers
-     • Add JS click guard: event.preventDefault() when aria-disabled="true"
+     • Add tabindex="0" only when the disabled link should remain discoverable by focus
      ───────────────────────────────────────────── -->
-<a class="link link--primary" href="/destination" aria-disabled="true" tabindex="-1">Link Text</a>
+<a class="link link--primary" role="link" aria-disabled="true">Link Text</a>
 
 <!-- ─────────────────────────────────────────────
      Neutral — Small
@@ -51,7 +52,7 @@
 <!-- ─────────────────────────────────────────────
      Neutral — Disabled
      ───────────────────────────────────────────── -->
-<a class="link link--neutral" href="/destination" aria-disabled="true" tabindex="-1">Link Text</a>
+<a class="link link--neutral" role="link" aria-disabled="true">Link Text</a>
 
 <!-- ─────────────────────────────────────────────
      On-color — Small
@@ -72,7 +73,7 @@
 <!-- ─────────────────────────────────────────────
      On-color — Disabled
      ───────────────────────────────────────────── -->
-<a class="link link--on-color" href="/destination" aria-disabled="true" tabindex="-1">Link Text</a>
+<a class="link link--on-color" role="link" aria-disabled="true">Link Text</a>
 
 <!-- ─────────────────────────────────────────────
      External link (opens in new tab)

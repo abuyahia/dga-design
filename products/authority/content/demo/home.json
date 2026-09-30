@@ -1,0 +1,13 @@
+{
+  "title": "منظومات خدمات مترابطة تصنع أثرًا مستدامًا",
+  "description": "معاينة خيالية لهيئة تمكينية تنظيمية تساعد الجهات على تحسين منظومات الخدمات العامة وقياس أثرها؛ لا تمثل جهة حكومية فعلية.",
+  "updated": "2026-09-14",
+  "profile": "regulatory",
+  "featured_service_ids": ["journey-readiness", "impact-measurement-review", "enablement-session"],
+  "featured_regulation_ids": ["service-ecosystem-improvement-framework", "demo-indicator-publishing-rules"],
+  "featured_resource_ids": ["service-journey-guide", "impact-indicators-guide"],
+  "featured_portfolio_ids": ["ecosystems-360", "impact-lab"],
+  "featured_news_ids": ["demo-work-guide-library", "enablement-sessions-registration", "framework-feedback-open"],
+  "about_title": "نبذة عن هيئة نماء التجريبية",
+  "about_summary": "هيئة افتراضية أُنشئت لعرض تنظيم محتوى الهيئات وخدماتها وعلاقاتها. جميع الأسماء والسجلات والوثائق خيالية وغير نافذة."
+}

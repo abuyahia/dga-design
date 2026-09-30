@@ -1,5 +1,9 @@
 """Compose the shared Page Intro with the existing Breadcrumb component."""
 import html
+try:
+    from scripts.breadcrumb_markup import render_breadcrumb
+except ImportError:
+    from breadcrumb_markup import render_breadcrumb
 
 
 PAGE_INTRO_SUFFIXES = {
@@ -20,17 +24,18 @@ def validate_page_intro(page):
         raise ValueError('Page Intro extra content must be nonempty text')
 
 
-def render_page_intro(page, render, *, variant=None, extra_content_markup=None):
+def render_page_intro(page, render, *, variant=None, extra_content_markup=None, breadcrumb_items=None, description_markup=None):
     validate_page_intro(page)
     description = page.get('description')
     selected = variant or page.get('intro_variant') or ('description' if description else 'default')
     if selected not in PAGE_INTRO_SUFFIXES:
         raise ValueError('Unknown Page Intro variant')
-    breadcrumb = render('components/breadcrumb/two-level.html', {
-        'root_href': 'index.html',
-        'root_label': 'الرئيسية',
-        'current_label': page['title'],
-    })
+    breadcrumb = render_breadcrumb(breadcrumb_items if breadcrumb_items is not None else [
+        {'label': 'الرئيسية', 'href': 'index.html'},
+        {'label': page['title'], 'current': True},
+    ], render)
+    if description_markup is None:
+        description_markup = '<p class="page-intro__description ds-reading">' + html.escape(description) + '</p>' if description else ''
     if extra_content_markup is None:
         extra = page.get('intro_extra')
         extra_content_markup = '<div class="page-intro__extra"><p>{}</p></div>'.format(html.escape(extra)) if extra else ''
@@ -40,6 +45,6 @@ def render_page_intro(page, render, *, variant=None, extra_content_markup=None):
         'breadcrumb_markup': breadcrumb,
         'eyebrow_markup': '<p class="page-intro__eyebrow">' + html.escape(eyebrow) + '</p>' if eyebrow else '',
         'title': page['title'],
-        'description_markup': '<p class="page-intro__description ds-reading">' + html.escape(description) + '</p>' if description else '',
+        'description_markup': description_markup,
         'extra_content_markup': extra_content_markup,
     }, ('breadcrumb_markup', 'eyebrow_markup', 'description_markup', 'extra_content_markup'))

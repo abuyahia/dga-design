@@ -1,0 +1,25 @@
+{
+  "title": "الهيكل التنظيمي",
+  "description": "تسلسل تنظيمي نصي خيالي يوضح وحدات هيئة نماء التجريبية وعلاقاتها دون تمثيل جهة حكومية فعلية.",
+  "updated": "2026-09-14",
+  "organization": {
+    "summary": "يعرض الهيكل جميع الوحدات التجريبية في قوائم متداخلة قابلة للقراءة دون صورة أو JavaScript، وتصف كل وحدة مسؤوليتها في نموذج العرض.",
+    "nodes": [
+      {"id": "demo-board", "parent_id": null, "label": "مجلس الإدارة التجريبي", "description": "يوجه نموذج الهيئة ويعتمد أولويات العرض فقط."},
+      {"id": "chief-executive", "parent_id": "demo-board", "label": "الرئيس التنفيذي", "description": "يقود فرق العرض ويربط أعمال القطاعات التجريبية."},
+      {"id": "strategy-impact-office", "parent_id": "chief-executive", "label": "مكتب الاستراتيجية والأثر", "description": "ينظم محاور الاستراتيجية ونماذج قياس الأثر التجريبية."},
+      {"id": "ecosystem-development", "parent_id": "chief-executive", "label": "قطاع تطوير المنظومات", "description": "ينسق أعمال تصميم الرحلات والشراكات في نموذج العرض."},
+      {"id": "journey-design", "parent_id": "ecosystem-development", "label": "إدارة تصميم الرحلات", "description": "تطور أمثلة رحلات الخدمات المترابطة."},
+      {"id": "partnership-integration", "parent_id": "ecosystem-development", "label": "إدارة الشراكات والتكامل", "description": "توثق علاقات الشركاء والتكاملات التجريبية."},
+      {"id": "standards-knowledge", "parent_id": "chief-executive", "label": "قطاع المعايير والمعرفة", "description": "ينظم الأدلة والمحتوى وبيانات القياس الاصطناعية."},
+      {"id": "guidance-content", "parent_id": "standards-knowledge", "label": "إدارة الأدلة والمحتوى", "description": "تدير موارد مكتبة العرض وإصداراتها."},
+      {"id": "measurement-data", "parent_id": "standards-knowledge", "label": "إدارة القياس والبيانات", "description": "تدير نماذج المؤشرات والبيانات الاصطناعية."},
+      {"id": "programs-enablement", "parent_id": "chief-executive", "label": "قطاع البرامج والتمكين", "description": "يشرف على البرامج التجريبية وبناء القدرات."},
+      {"id": "programs", "parent_id": "programs-enablement", "label": "إدارة البرامج", "description": "تنظم سجلات البرامج والمبادرات ومخرجاتها."},
+      {"id": "capability-building", "parent_id": "programs-enablement", "label": "إدارة بناء القدرات", "description": "تنسق جلسات التمكين ومواد التعلم التجريبية."},
+      {"id": "corporate-services", "parent_id": "chief-executive", "label": "قطاع الخدمات المؤسسية", "description": "يدعم تشغيل نموذج المنتج وقنواته الداخلية."},
+      {"id": "technology-data", "parent_id": "corporate-services", "label": "إدارة التقنية والبيانات", "description": "تدير أصول المعاينة والبيانات التقنية التجريبية."},
+      {"id": "communication-support", "parent_id": "corporate-services", "label": "إدارة التواصل والدعم", "description": "تنظم قنوات التواصل والدعم غير التشغيلية."}
+    ]
+  }
+}

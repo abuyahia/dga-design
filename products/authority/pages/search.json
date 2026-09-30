@@ -1,0 +1,6 @@
+{
+  "id": "search",
+  "route": "search.html",
+  "renderer": "search-results",
+  "content": "search.json"
+}

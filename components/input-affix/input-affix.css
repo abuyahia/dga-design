@@ -97,6 +97,14 @@
   cursor: default;
 }
 
+/* Connected affixes fill a Text Input field without changing standalone sizing. */
+.text-input__field > .input-affix {
+  align-self: stretch;
+  block-size: auto;
+  flex: 0 0 auto;
+  border-radius: 0;
+}
+
 .input-affix--text .input-affix__text {
   color: var(--input-affix-text-placeholder);
 }

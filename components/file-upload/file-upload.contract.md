@@ -112,6 +112,10 @@ Optional:
 | `.file-upload__trigger`   | Yes      | "Browse Files" button          |
 | `.file-upload__file`      | No       | Container for `.file-item` (shown in Uploaded state) |
 
+The root, uploaded-file container and File Item shrink safely inside responsive
+layouts. File names wrap at arbitrary points and the action row distributes the
+name and remove control without a consumer-specific width repair.
+
 **Required ARIA:**
 
 ```html

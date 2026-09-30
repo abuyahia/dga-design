@@ -48,7 +48,7 @@
           "id": "2.1.1",
           "title": "Keyboard",
           "status": "mapped",
-          "evidence": "Native <a href> is keyboard operable by default (Enter key activates, Tab for focus). Disabled links use tabindex='-1' to remove from tab order. External link pattern uses standard anchor behavior.",
+          "evidence": "Active <a href> links are keyboard operable by default. Disabled links omit href and are outside the tab order unless the documented optional tabindex='0' discovery policy is used. External links use standard anchor behavior.",
           "audit_rule_ids": ["LNK-A11Y-001", "LNK-A11Y-003"]
         },
         {
@@ -69,8 +69,8 @@
           "id": "4.1.2",
           "title": "Name, Role, Value",
           "status": "mapped",
-          "evidence": "Native <a> element provides role='link' by default. Text content provides the accessible name. aria-disabled='true' communicates disabled state. External links should add aria-label or visually hidden text to communicate target behavior.",
-          "audit_rule_ids": ["LNK-A11Y-001", "LNK-A11Y-002", "LNK-A11Y-005"]
+          "evidence": "Active <a href> elements provide the native link role. Disabled anchors omit href, restore role='link' explicitly, and use aria-disabled='true'. Text content provides the accessible name. External links should add aria-label or visually hidden text to communicate target behavior.",
+          "audit_rule_ids": ["LNK-A11Y-001", "LNK-A11Y-002", "LNK-A11Y-003", "LNK-A11Y-005"]
         }
       ]
     },
@@ -96,9 +96,9 @@
         },
         {
           "id": "PLATFORM-CODE-LINK-003",
-          "title": "Disabled links must not receive keyboard focus",
+          "title": "Disabled links must be non-navigable",
           "status": "mapped",
-          "evidence": "Template requires tabindex='-1' on aria-disabled links. LNK-A11Y-003 audits this.",
+          "evidence": "Template omits href, keeps role='link' and aria-disabled='true', and allows tabindex='0' only when focus discovery is intentional. LNK-A11Y-003 audits this.",
           "audit_rule_ids": ["LNK-A11Y-003"]
         },
         {

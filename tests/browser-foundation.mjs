@@ -33,7 +33,7 @@ async function evaluate(expression){const r=await send('Runtime.evaluate',{expre
 await send('Page.enable');
 await send('Page.setLifecycleEventsEnabled',{enabled:true});
 await send('Network.enable');
-await send('Network.setBlockedURLs',{urls:mode==='core'?['https://*']:['http://*','https://*']});
+await send('Network.setBlockedURLs',{urls:['core','link'].includes(mode)?['https://*']:['http://*','https://*']});
 const results=[];
 try {
  if(mode==='capture') {
@@ -67,9 +67,13 @@ try {
   const {runFeedback}=await import('./browser-feedback-cases.mjs');
   results.push(...await runFeedback({send,evaluate,wait,root}));
   if(results.some(r=>!r.pass)) process.exitCode=1;
- } else if(mode==='services') {
+} else if(mode==='services') {
   const {runServices}=await import('./browser-service-cases.mjs');
   results.push(...await runServices({send,evaluate,wait,root}));
+  if(results.some(r=>!r.pass)) process.exitCode=1;
+ } else if(mode==='authority') {
+ const {runAuthority}=await import('./browser-authority-v1.mjs');
+  results.push(...await runAuthority({send,evaluate,wait,root}));
   if(results.some(r=>!r.pass)) process.exitCode=1;
  } else if(mode==='digital-stamp') {
   const {runDigitalStamp}=await import('./browser-digital-stamp-cases.mjs');
@@ -86,6 +90,10 @@ try {
  } else if(mode==='template') {
   const {runTemplate}=await import('./browser-template-cases.mjs');
   results.push(...await runTemplate({send,evaluate,wait,root}));
+  if(results.some(r=>!r.pass)) process.exitCode=1;
+ } else if(mode==='link') {
+  const {runLink}=await import('./browser-link-cases.mjs');
+  results.push(...await runLink({send,evaluate,wait,root}));
   if(results.some(r=>!r.pass)) process.exitCode=1;
  } else if(mode==='core') {
   const {runCore}=await import('./browser-core-cases.mjs');

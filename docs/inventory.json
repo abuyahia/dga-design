@@ -78,13 +78,13 @@
       "files": {
         "css": "components/breadcrumb/breadcrumb.css",
         "reference": null,
-        "template": null,
-        "contract": null,
+        "template": "components/breadcrumb/template.html",
+        "contract": "components/breadcrumb/breadcrumb.contract.md",
         "audit": null,
         "compliance": null,
         "showcase": "components/breadcrumb/showcases/index.html"
       },
-      "notes": "Missing reference/template/contract/audit package; tracked for Core phase."
+      "notes": "Canonical variable-depth 1..N renderer is implemented by scripts/breadcrumb_markup.py with ordered item fragments and one non-navigable current item. Formal component audit/compliance files remain absent."
     },
     {
       "id": "button",
@@ -130,7 +130,7 @@
         "compliance": "components/card/compliance.json",
         "showcase": "components/card/showcases/index.html"
       },
-      "notes": "Existing package; certification and browser behavior are pending."
+      "notes": "Reusable Card surface with optional content, actions and media/icon composition. Avatar, Button and Checkbox dependencies apply only to variants that compose them; current valid static consumers may omit Avatar. Certification and full browser behavior remain pending."
     },
     {
       "id": "card-bk",
@@ -294,6 +294,7 @@
       "dependencies": [],
       "files": {
         "css": "components/file-upload/file-upload.css",
+        "javascript": "components/file-upload/file-upload.js",
         "reference": "components/file-upload/reference.json",
         "template": "components/file-upload/template.html",
         "contract": "components/file-upload/file-upload.contract.md",
@@ -301,7 +302,7 @@
         "compliance": "components/file-upload/compliance.json",
         "showcase": "components/file-upload/showcases/index.html"
       },
-      "notes": "Internal file-item and drop-zone remain in this package."
+      "notes": "Owns reusable single-file presentation, wrapping and selection/removal/focus behavior. Contact retains file policy, validation messages and submission orchestration. Internal file-item and drop-zone remain in this package."
     },
     {
       "id": "floating-button",
@@ -366,7 +367,7 @@
         "compliance": "components/input-affix/compliance.json",
         "showcase": "components/input-affix/showcases/index.html"
       },
-      "notes": "Existing package; certification and browser behavior are pending."
+      "notes": "Owns intrinsic connected-affix sizing and alignment; consumer placement remains local. Certification and broader browser behavior are pending."
     },
     {
       "id": "label",
@@ -387,7 +388,7 @@
         "compliance": "components/label/compliance.json",
         "showcase": "components/label/showcases/index.html"
       },
-      "notes": "Existing package; certification and browser behavior are pending."
+      "notes": "Owns the canonical label and label__required presentation used by Contact and Form. Certification and broader browser behavior are pending."
     },
     {
       "id": "link",
@@ -408,7 +409,7 @@
         "compliance": "components/link/compliance.json",
         "showcase": "components/link/showcases/index.html"
       },
-      "notes": "Existing package; certification and browser behavior are pending."
+      "notes": "Disabled contract: omit href, retain role='link' and aria-disabled='true'; tabindex='0' is optional only for intentional focus discovery. Formal certification remains pending."
     },
     {
       "id": "list",
@@ -550,6 +551,7 @@
       "dependencies": [],
       "files": {
         "css": "components/tab/tab.css",
+        "javascript": "components/tab/tab.js",
         "reference": "components/tab/reference.json",
         "template": "components/tab/template.html",
         "contract": "components/tab/tab.contract.md",
@@ -557,7 +559,7 @@
         "compliance": "components/tab/compliance.json",
         "showcase": "components/tab/showcases/index.html"
       },
-      "notes": "Existing package; certification and browser behavior are pending."
+      "notes": "Owns generic horizontal tab roles, panel state, roving tabindex and RTL/LTR keyboard behavior. Service routing/hash behavior remains consumer-owned; certification is pending."
     },
     {
       "id": "table-of-contents",
@@ -571,6 +573,7 @@
       "dependencies": [],
       "files": {
         "css": "components/table-of-contents/table-of-contents.css",
+        "javascript": "components/table-of-contents/table-of-contents.js",
         "reference": null,
         "template": "components/table-of-contents/template.html",
         "contract": "components/table-of-contents/table-of-contents.contract.md",
@@ -592,6 +595,7 @@
       "dependencies": [],
       "files": {
         "css": "components/progress-indicator/progress-indicator.css",
+        "javascript": "components/progress-indicator/progress-indicator.js",
         "reference": null,
         "template": "components/progress-indicator/template.html",
         "contract": "components/progress-indicator/progress-indicator.contract.md",
@@ -599,7 +603,7 @@
         "compliance": null,
         "showcase": null
       },
-      "notes": "Responsive vertical and compact progress indicator implemented from the DGA form-page Figma reference; package-level certification remains pending."
+      "notes": "Responsive vertical and compact presentation plus current/completed/mobile-summary runtime are component-owned. Form keeps its demo workflow navigation; package-level certification remains pending."
     },
     {
       "id": "tag",
@@ -641,7 +645,7 @@
         "compliance": "components/text-input/compliance.json",
         "showcase": "components/text-input/showcases/index.html"
       },
-      "notes": "Existing package; certification and browser behavior are pending."
+      "notes": "Owns intrinsic field presentation and the reusable semibold-label modifier used by Contact and Form. Page grids and workflow spacing remain local; certification is pending."
     },
     {
       "id": "textarea",
@@ -1106,96 +1110,111 @@
       "id": "site-header",
       "semantic_id": "site-header",
       "layer": "partial",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "partials/site-header",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "primary-navigation",
-        "mobile-navigation",
+        "navigation-header",
         "link",
         "button"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "template": "partials/site-header/template.html"
+      },
+      "notes": "Implemented shared government shell partial composing the canonical Navigation Header. Search dialog content is currently service-specific; production qualification remains pending."
     },
     {
       "id": "primary-navigation",
       "semantic_id": "primary-navigation",
       "layer": "partial",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "components/navigation-header",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
         "link",
-        "button",
-        "dropdown"
+        "button"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "css": "components/navigation-header/navigation-header.css",
+        "javascript": "components/navigation-header/navigation-header.js",
+        "template": "components/navigation-header/template.html"
+      },
+      "notes": "Implemented within the canonical Navigation Header package; it is not a separate package. One-level disclosure and current government navigation are covered; qualification remains pending."
     },
     {
       "id": "mobile-navigation",
       "semantic_id": "mobile-navigation",
       "layer": "partial",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "components/navigation-header",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
         "link",
-        "button",
-        "dropdown"
+        "button"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "css": "components/navigation-header/navigation-header.css",
+        "javascript": "components/navigation-header/navigation-header.js",
+        "template": "components/navigation-header/template.html"
+      },
+      "notes": "Responsive mobile navigation is implemented within Navigation Header rather than as a standalone package. Production qualification remains pending."
     },
     {
       "id": "skip-link",
       "semantic_id": "skip-link",
       "layer": "partial",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "templates/government",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
         "link"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "css": "styles/base/accessibility.css",
+        "template": "templates/government/page.html"
+      },
+      "notes": "Implemented as the first focusable navigation link in the shared government shell; it targets the shared main-content landmark."
     },
     {
       "id": "main-content",
       "semantic_id": "main-content",
       "layer": "partial",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "templates/government",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [],
-      "files": {},
-      "notes": ""
+      "files": {
+        "template": "templates/government/page.html"
+      },
+      "notes": "Implemented as the shared main landmark with id='main-content' and tabindex='-1' for skip-link focus."
     },
     {
       "id": "page-header",
       "semantic_id": "page-header",
       "layer": "partial",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
-      "replacement": null,
+      "path": "sections/page-intro",
+      "status": "needs_improvement",
+      "selection": "legacy",
+      "replacement": "page-intro",
       "production_ready": false,
       "dependencies": [
-        "section-header"
+        "breadcrumb"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "css": "sections/page-intro/page-intro.css",
+        "template": "sections/page-intro/template.html"
+      },
+      "notes": "Internal-page header capability is fulfilled by the canonical Page Intro section. Do not create a parallel page-header package for compatible heading areas."
     },
     {
       "id": "footer",
@@ -1330,67 +1349,71 @@
       "id": "hero",
       "semantic_id": "hero",
       "layer": "section",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "sections/hero",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "section-header",
-        "media",
-        "button",
-        "search-field"
+        "button"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "template": "sections/hero/template.html"
+      },
+      "notes": "Implemented for the current government home composition. Its carousel dots and route/content configuration remain composition-owned; it is not qualified as a universal Hero family."
     },
     {
       "id": "page-intro",
       "semantic_id": "page-intro",
       "layer": "section",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "sections/page-intro",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "section-header"
+        "breadcrumb"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "css": "sections/page-intro/page-intro.css",
+        "template": "sections/page-intro/template.html",
+        "documentation": "sections/page-intro/README.md"
+      },
+      "notes": "Canonical internal-page heading section with default, compact, description, featured and decorative variants. Used by About, News, FAQ, Services, Form, Contact, Heavy Content and Service Detail; production_ready remains false because section-wide certification is not claimed."
     },
     {
       "id": "services-grid",
       "semantic_id": "services-grid",
       "layer": "section",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "sections/services",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "section-header",
         "service-card"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "template": "sections/services/template.html"
+      },
+      "notes": "Implemented static services grid; the home carousel composition remains in sections/home-services. Full section qualification remains pending."
     },
     {
       "id": "news-grid",
       "semantic_id": "news-grid",
       "layer": "section",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "sections/news",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "section-header",
-        "news-card",
-        "pagination"
+        "card"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "template": "sections/news/template.html"
+      },
+      "notes": "Implemented current home news-card grid composition. It is not a general paginated news product and remains unqualified for production as a standalone section package."
     },
     {
       "id": "events-listing",
@@ -1476,48 +1499,59 @@
       "id": "contact-information",
       "semantic_id": "contact-information",
       "layer": "section",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "sections/contact",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "contact-card"
+        "card",
+        "label",
+        "text-input",
+        "file-upload"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "template": "sections/contact/template.html"
+      },
+      "notes": "Implemented Contact composition with Page Intro, form preview and contact-information sidebar. Submission remains an explicit preview/integration concern."
     },
     {
       "id": "cta",
       "semantic_id": "cta",
       "layer": "section",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "sections/contact-cta",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "section-header",
+        "card",
         "button"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "css": "sections/contact-cta/contact-cta.css",
+        "template": "sections/contact-cta/template.html"
+      },
+      "notes": "Implemented reusable Contact CTA composition. This record does not claim a universal CTA variant family."
     },
     {
       "id": "faq",
       "semantic_id": "faq",
       "layer": "section",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "sections/faq",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "section-header",
         "accordion-new"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "css": "sections/faq/faq.css",
+        "javascript": "sections/faq/faq.js",
+        "template": "sections/faq/template.html"
+      },
+      "notes": "Implemented reusable FAQ section and bootstrap around the canonical Accordion. F06 heading flexibility remains deferred."
     },
     {
       "id": "search",
@@ -1542,19 +1576,18 @@
       "id": "feedback",
       "semantic_id": "feedback",
       "layer": "section",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "sections/feedback",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "field-group",
-        "radio",
-        "button",
-        "inline-alert"
+        "page-feedback"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "template": "sections/feedback/template.html"
+      },
+      "notes": "Implemented shared section wrapper around Page Feedback and the updated-content timestamp. Backend submission remains adapter-owned."
     },
     {
       "id": "leadership",
@@ -1608,17 +1641,19 @@
       "id": "partners",
       "semantic_id": "partners",
       "layer": "section",
-      "path": "",
-      "status": "planned",
-      "selection": "planned",
+      "path": "sections/partners",
+      "status": "needs_improvement",
+      "selection": "canonical",
       "replacement": null,
       "production_ready": false,
       "dependencies": [
-        "media",
-        "link"
+        "card",
+        "button"
       ],
-      "files": {},
-      "notes": ""
+      "files": {
+        "template": "sections/partners/template.html"
+      },
+      "notes": "Implemented for the current government home carousel. It remains a bounded composition rather than a production-qualified partner directory."
     },
     {
       "id": "media-gallery",

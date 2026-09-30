@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "pages": [
+    "home.json",
+    "about.json",
+    "mandate.json",
+    "strategy.json",
+    "leadership.json",
+    "organization.json",
+    "contact.json",
+    "faq.json",
+    "search.json",
+    "services.json",
+    "news.json",
+    "programs.json",
+    "knowledge.json",
+    "regulations.json"
+  ]
+}

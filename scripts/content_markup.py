@@ -1,10 +1,14 @@
 """Validate and render the reusable heavy-content template."""
 import html
 import re
+try:
+    from scripts.page_intro_markup import render_page_intro
+except ImportError:
+    from page_intro_markup import render_page_intro
 
 
 SLUG = re.compile(r'[a-z][a-z0-9-]*')
-BLOCK_TYPES = {'paragraph', 'ordered-list', 'unordered-list', 'link', 'media'}
+BLOCK_TYPES = {'paragraph', 'ordered-list', 'unordered-list', 'metadata-list', 'link', 'media'}
 
 
 def _text(value):
@@ -31,8 +35,31 @@ def _validate_blocks(blocks, paths):
             raise ValueError('Paragraph blocks require text')
         if kind in ('ordered-list', 'unordered-list') and (not isinstance(block.get('items'), list) or not block['items'] or any(not _text(item) for item in block['items'])):
             raise ValueError('List blocks require text items')
-        if kind == 'link' and (not _text(block.get('label')) or not _safe_href(block.get('href'), paths)):
-            raise ValueError('Link blocks require a safe destination')
+        if kind == 'metadata-list':
+            items = block.get('items')
+            if (
+                not isinstance(items, list) or not items
+                or any(
+                    not isinstance(item, dict)
+                    or set(item) != {'label', 'value'}
+                    or not _text(item['label']) or not _text(item['value'])
+                    for item in items
+                )
+            ):
+                raise ValueError('Metadata lists require label and value text')
+        if kind == 'link':
+            planned_route = block.get('planned_route')
+            if planned_route is not None:
+                if (
+                    set(block) != {'type', 'label', 'planned_route'}
+                    or not _text(block.get('label'))
+                    or not _text(planned_route)
+                    or not re.fullmatch(r'[a-z][a-z0-9-]*\.html', planned_route)
+                    or planned_route in paths
+                ):
+                    raise ValueError('Planned link blocks require one safe, not-yet-generated route')
+            elif not _text(block.get('label')) or not _safe_href(block.get('href'), paths):
+                raise ValueError('Link blocks require a safe destination')
         if kind == 'media' and not _text(block.get('alt')):
             raise ValueError('Media blocks require alternative text')
         if kind == 'media' and block.get('caption') is not None and not _text(block['caption']):
@@ -78,10 +105,30 @@ def _render_block(block):
         return '<p>{}</p>'.format(html.escape(block['text']))
     if kind in ('ordered-list', 'unordered-list'):
         return _render_list(block)
+    if kind == 'metadata-list':
+        items = ''.join(
+            '<div class="heavy-content__metadata-item"><dt>{}</dt><dd><bdi>{}</bdi></dd></div>'.format(
+                html.escape(item['label']), html.escape(item['value'])
+            )
+            for item in block['items']
+        )
+        return '<dl class="heavy-content__metadata">{}</dl>'.format(items)
     if kind == 'link':
+        if block.get('planned_route'):
+            return '<p><a class="link link--primary link--md" role="link" aria-disabled="true">{}<span class="sr-only"> — صفحة مخطط تنفيذها لاحقًا</span></a></p>'.format(html.escape(block['label']))
         return '<p><a class="link link--primary link--md" href="{}">{}</a></p>'.format(html.escape(block['href'], quote=True), html.escape(block['label']))
     caption = '<figcaption>{}</figcaption>'.format(html.escape(block['caption'])) if block.get('caption') else ''
     return '<figure class="heavy-content__media"><div class="heavy-content__media-placeholder" role="img" aria-label="{}"></div>{}</figure>'.format(html.escape(block['alt'], quote=True), caption)
+
+
+def validate_content_blocks(blocks, paths=()):
+    """Public shared block-contract entry point for composed detail renderers."""
+    _validate_blocks(blocks, set(paths))
+
+
+def render_content_blocks(blocks):
+    """Render already validated Heavy Content blocks without its page shell."""
+    return ''.join(_render_block(block) for block in blocks)
 
 
 def render_heavy_content(page, render):
@@ -110,13 +157,14 @@ def render_heavy_content(page, render):
             'subsections': ''.join(rendered_subsections),
         }, ('blocks', 'subsections')))
 
-    breadcrumb = render('components/breadcrumb/two-level.html', {
-        'root_href': 'index.html', 'root_label': 'الرئيسية', 'current_label': page['title'],
+    description_markup = render('sections/page-intro/description-group.html', {
+        'description': page['description'], 'supplement': content['overview'],
     })
+    page_intro = render_page_intro(page, render, description_markup=description_markup)
     toc = render('components/table-of-contents/template.html', {
         'page_title': page['title'], 'items': ''.join(toc_items),
     }, ('items',))
     return render('sections/heavy-content/template.html', {
-        **page, 'overview': content['overview'], 'breadcrumb': breadcrumb,
+        **page, 'overview': content['overview'], 'page_intro': page_intro,
         'toc': toc, 'sections': ''.join(rendered_sections),
-    }, ('breadcrumb', 'toc', 'sections'))
+    }, ('page_intro', 'toc', 'sections'))

@@ -1,11 +1,6 @@
 <article class="heavy-content" data-heavy-content>
   <div class="ds-container heavy-content__container">
-    <header class="heavy-content__header">
-      {{breadcrumb}}
-      <h1 id="page-title">{{title}}</h1>
-      <p class="heavy-content__lead">{{description}}</p>
-      <p class="heavy-content__overview">{{overview}}</p>
-    </header>
+    {{page_intro}}
     <hr class="divider" role="none" aria-hidden="true">
     <div class="heavy-content__layout">
       {{toc}}
@@ -13,4 +8,4 @@
     </div>
   </div>
 </article>
-<script src="templates/content/content.js" defer></script>
+<script src="components/table-of-contents/table-of-contents.js" defer></script>

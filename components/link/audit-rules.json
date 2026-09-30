@@ -13,10 +13,10 @@
       "category": "accessibility",
       "severity": "error",
       "validation_status": "not_run",
-      "title": "Link must use native anchor element with href",
-      "description": "The .link class must be applied to an <a> element with a non-empty href attribute. An <a> without href is not keyboard-focusable and does not have the link role.",
-      "target": ".link",
-      "expected": "element is <a> AND has non-empty href attribute",
+      "title": "Active link must use native anchor element with href",
+      "description": "An active .link must be applied to an <a> element with a non-empty href attribute. Disabled links follow LNK-A11Y-003 instead.",
+      "target": ".link:not([aria-disabled='true'])",
+      "expected": "active element is <a> AND has non-empty href attribute",
       "check": {
         "type": "element_required",
         "logic": "all_of",
@@ -25,8 +25,8 @@
           "element has non-empty href attribute"
         ]
       },
-      "message": "Link is missing href attribute or is not an <a> element. Add href to make the link keyboard operable.",
-      "fix": "Ensure the element is <a href=\"/destination\" class=\"link ...\">. If no destination exists yet, use href=\"#\" with aria-current or a placeholder.",
+      "message": "Active Link is missing href or is not an <a> element. Add a real destination to make it keyboard operable.",
+      "fix": "Ensure an active Link is <a href=\"/destination\" class=\"link ...\">. Use the documented no-href contract when the Link is disabled.",
       "standard_refs": ["WCAG-2.1-4.1.2", "WCAG-2.1-2.1.1", "PLATFORM-CODE-LINK-001"]
     },
 
@@ -47,29 +47,33 @@
         "expected_value": "true"
       },
       "message": "Disabled link has aria-disabled but the value is not 'true'. Use aria-disabled=\"true\".",
-      "fix": "Set aria-disabled=\"true\" on the <a> element. Pair with tabindex=\"-1\" and a JavaScript click guard.",
+      "fix": "Remove href, then set role=\"link\" and aria-disabled=\"true\" on the <a> element. Add tabindex=\"0\" only when it should remain discoverable by focus.",
       "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-LINK-003"]
     },
 
     {
       "id": "LNK-A11Y-003",
-      "standard_id": "WCAG-2.1-2.1.1",
-      "rule_type": "attribute_required",
+      "standard_id": "PLATFORM-CODE-A11Y-LINK-001",
+      "rule_type": "structure_required",
       "category": "accessibility",
       "severity": "error",
       "validation_status": "not_run",
-      "title": "Disabled link must have tabindex='-1'",
-      "description": "A link with aria-disabled='true' must also have tabindex='-1' to remove it from the keyboard tab order. Without this, screen reader users can still tab to the link and may attempt to activate it.",
+      "title": "Disabled link must be non-navigable and retain link semantics",
+      "description": "A link with aria-disabled='true' must omit href and use role='link'. It is outside the tab order by default; tabindex='0' is permitted only when intentional focus discovery is required.",
       "target": ".link[aria-disabled='true']",
-      "expected": "element has tabindex='-1'",
+      "expected": "element has no href, has role='link', and has either no tabindex or tabindex='0'",
       "check": {
-        "type": "attribute_value",
-        "attribute": "tabindex",
-        "expected_value": "-1"
+        "type": "structure_required",
+        "logic": "all_of",
+        "conditions": [
+          "element has no href attribute",
+          "element role is 'link'",
+          "element has no tabindex or tabindex is '0'"
+        ]
       },
-      "message": "Disabled link (.link[aria-disabled='true']) is missing tabindex='-1'. Keyboard users can still reach and activate this link.",
-      "fix": "Add tabindex=\"-1\" to the disabled <a> element.",
-      "standard_refs": ["WCAG-2.1-2.1.1", "PLATFORM-CODE-LINK-003"]
+      "message": "Disabled Link has a live destination or is missing its explicit link role.",
+      "fix": "Remove href, add role=\"link\" and aria-disabled=\"true\", and omit tabindex unless tabindex=\"0\" is intentionally required for focus discovery.",
+      "standard_refs": ["WCAG-2.1-4.1.2", "PLATFORM-CODE-LINK-003"]
     },
 
     {
@@ -79,16 +83,16 @@
       "category": "accessibility",
       "severity": "warning",
       "validation_status": "not_run",
-      "title": "Disabled link should have JavaScript click guard",
-      "description": "CSS pointer-events:none prevents mouse clicks on a disabled link but does not prevent keyboard Enter activation. A JavaScript event listener that calls event.preventDefault() when aria-disabled='true' is set is required to fully disable keyboard interaction.",
+      "title": "Disabled link may retain a defensive JavaScript guard",
+      "description": "Removing href is the primary navigation-prevention mechanism. A JavaScript event listener that calls event.preventDefault() when aria-disabled='true' is set remains useful as defense in depth, especially for focusable disabled links.",
       "target": ".link[aria-disabled='true']",
-      "expected": "element has data-js-guarded attribute OR surrounding implementation provides click prevention",
+      "expected": "element has no href; shared runtime may additionally provide click prevention",
       "check": {
         "type": "advisory",
         "note": "Cannot be validated via static analysis. Verify in runtime testing."
       },
-      "message": "Disabled link may still be activatable via keyboard. Verify that a JavaScript click guard (event.preventDefault() when aria-disabled='true') is applied.",
-      "fix": "Add: element.addEventListener('click', e => { if (e.currentTarget.getAttribute('aria-disabled') === 'true') e.preventDefault(); });",
+      "message": "Verify href is absent. When the shared runtime is used, retain its defensive aria-disabled activation guard.",
+      "fix": "Remove href first. Optionally add: element.addEventListener('click', e => { if (e.currentTarget.getAttribute('aria-disabled') === 'true') e.preventDefault(); });",
       "standard_refs": ["PLATFORM-CODE-LINK-003"],
   "source_rule_type": "advisory"
 },

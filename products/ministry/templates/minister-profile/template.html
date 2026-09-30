@@ -1,0 +1,27 @@
+<article class="minister-profile" data-minister-profile>
+  {{page_intro}}
+  <div class="ds-container minister-profile__content">
+    <section class="minister-profile__overview" aria-labelledby="minister-name">
+      <figure class="minister-profile__portrait">
+        <div class="avatar avatar--120 avatar--square avatar--image">
+          <img class="avatar__image" src="{{portrait}}" alt="{{portrait_alt}}" width="120" height="120">
+        </div>
+      </figure>
+      <div class="minister-profile__identity">
+        <h2 id="minister-name">{{name}}</h2>
+        <p class="minister-profile__official-title">{{official_title}}</p>
+      </div>
+    </section>
+    <div class="minister-profile__details ds-reading">
+      {{message_markup}}
+      <section class="minister-profile__section" aria-labelledby="minister-biography">
+        <h2 id="minister-biography">السيرة التعريفية</h2>
+        <div class="minister-profile__prose">{{biography_markup}}</div>
+      </section>
+      {{qualifications_markup}}
+      {{experience_markup}}
+      {{role_markup}}
+      {{links_markup}}
+    </div>
+  </div>
+</article>

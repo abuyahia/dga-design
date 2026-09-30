@@ -1,0 +1,19 @@
+<article class="search-results" data-search-results>
+  {{page_intro}}
+  <div class="ds-container search-results__content">
+    <form class="search-results__form" method="get" action="search.html" role="search">
+      <div>
+        <label class="label" for="site-results-query"><span class="label__text">ابحث في محتوى الموقع</span></label>
+        <div class="text-input"><div class="text-input__field"><input class="text-input__input" id="site-results-query" name="q" type="search" autocomplete="off"></div></div>
+      </div>
+      <div>
+        <label class="label" for="site-results-type"><span class="label__text">نوع المحتوى</span></label>
+        <select class="search-results__select" id="site-results-type" name="type"><option value="">كل الأنواع</option>{{options}}</select>
+      </div>
+      <button class="btn btn--primary" type="submit">بحث</button>
+    </form>
+    <p class="search-results__status" role="status"><span data-search-count>{{count}}</span> نتيجة متاحة</p>
+    <ol class="search-results__list">{{items}}</ol>
+    <p class="search-results__empty" data-search-empty hidden>{{empty_message}}</p>
+  </div>
+</article>

@@ -1,0 +1,25 @@
+<article class="executive-profile" data-executive-profile>
+  {{page_intro}}
+  <div class="ds-container executive-profile__content">
+    <header class="executive-profile__identity">
+      <figure class="executive-profile__portrait">
+        <div class="avatar avatar--120 avatar--square avatar--image">
+          <img class="avatar__image" src="{{portrait}}" alt="{{portrait_alt}}" width="120" height="120">
+        </div>
+      </figure>
+      <div>
+        <h2>{{name}}</h2>
+        <p>{{role_label}}</p>
+      </div>
+    </header>
+    <div class="executive-profile__details ds-reading">
+      <section aria-labelledby="executive-biography">
+        <h2 id="executive-biography">السيرة التعريفية</h2>
+        <p>{{biography}}</p>
+      </section>
+      {{qualifications_markup}}
+      {{experience_markup}}
+      {{links_markup}}
+    </div>
+  </div>
+</article>

@@ -6,6 +6,7 @@
   align-items: flex-start;
   gap: var(--text-input-field-gap);
   width: 100%;
+  min-inline-size: 0;
 }
 
 
@@ -19,6 +20,10 @@
   font-weight: var(--font-weight-body);
   line-height: var(--text-input-md-line-height);
   cursor: default;
+}
+
+.text-input--label-semibold .text-input__label {
+  font-weight: var(--font-weight-semibold);
 }
 
 .text-input--disabled .text-input__label {

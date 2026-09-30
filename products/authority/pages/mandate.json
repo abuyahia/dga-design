@@ -1,0 +1,6 @@
+{
+  "id": "mandate",
+  "route": "mandate.html",
+  "renderer": "heavy-content",
+  "content": "mandate.json"
+}

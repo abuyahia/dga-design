@@ -58,6 +58,10 @@ It is NOT for:
 | `.text-input__input` | Required | Must be a native `<input>` element |
 | `.text-input__icon` | Optional | Decorative SVG inside `.text-input__inner`; use `aria-hidden="true"` |
 
+Use `.text-input--label-semibold` on the root when a semibold field label is
+required. Required markers reuse `.label__required` from the Label component;
+do not introduce consumer-specific marker classes.
+
 ---
 
 ## 4. HTML Contract
@@ -91,7 +95,7 @@ It is NOT for:
 ```html
 <div class="text-input">
   <label class="text-input__label" for="field-id">
-    Label <span aria-hidden="true">*</span>
+    Label <span class="label__required" aria-hidden="true">*</span>
   </label>
   <div class="text-input__field">
     <div class="text-input__inner">

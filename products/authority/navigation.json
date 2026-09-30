@@ -1,0 +1,19 @@
+{
+  "navigation_label": "التنقل الرئيسي لمعاينة هيئة نماء",
+  "search_route": "search.html",
+  "navigation": [
+    {"label":"الرئيسية","href":"index.html"},
+    {"label":"عن الهيئة","href":"about.html","children":[
+      {"label":"الاختصاص والأساس التنظيمي","href":"mandate.html"},
+      {"label":"الاستراتيجية","href":"strategy.html"},
+      {"label":"المسؤول التنفيذي","href":"leadership.html"},
+      {"label":"الهيكل التنظيمي","href":"organization.html"}
+    ]},
+    {"label":"الخدمات","href":"services.html"},
+    {"label":"التنظيمات","href":"regulations.html"},
+    {"label":"البرامج والمبادرات","href":"programs.html"},
+    {"label":"مكتبة المعرفة","href":"knowledge.html"},
+    {"label":"أخبار الهيئة","href":"news.html"},
+    {"label":"تواصل معنا","href":"contact.html"}
+  ]
+}

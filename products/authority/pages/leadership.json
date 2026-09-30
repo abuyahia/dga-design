@@ -1,0 +1,6 @@
+{
+  "id": "leadership",
+  "route": "leadership.html",
+  "renderer": "executive-profile",
+  "content": "leadership.json"
+}
